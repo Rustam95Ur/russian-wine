@@ -3,7 +3,7 @@
         <div class="row">
                 <div class="col-sm-2">
                     <div id="logo">
-                        <a href=" home hyperlink ">
+                        <a href="{{route('home')}}">
                             <img src="{{ asset ('image/mainLogo.png') }}" title="Русское Вино" alt="Русское Вино" class="img-responsive">
                         </a>
                     </div>
@@ -16,8 +16,8 @@
                         <img src="{{ asset ('image/instagram.png') }}">
                     </a>
                 </div>
-            <div class="col-sm-8"> 
-                    <!----> 
+            <div class="col-sm-8">
+                    <!---->
                 <nav id="menu" class="navbar navbar-right" style="pointer-events:all">
                     <div class="navbar-header">
                         <button type="button" class="btn btn-navbar navbar-toggle" onclick="$('body').addClass('nooverflow');" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -32,15 +32,15 @@
             	                <div></div>
                         </button>
                         <ul class="nav navbar-nav">
-                            <li><a href=" hyperlink ">Вино</a></li>
-                            <li><a href=" hyperlink ">Сеты</a></li>
-                            <li><a href=" hyperlink ">Подписка на вино</a></li>
+                            <li><a href="{{route('wineshop')}}">{{trans('header.wine')}}</a></li>
+                            <li><a href="{{route('sets')}}">{{trans('header.sets')}}</a></li>
+                            <li><a href="{{route('subscription')}}">{{trans('header.subscription')}}</a></li>
                             <li><a href=" hyperlink ">Именное вино</a></li>
                             <li><a href=" hyperlink ">Дегустации</a></li>
                             <li><a href=" hyperlink ">Франшиза</a></li>
                             <li class="newdrop"><a href="" class="dropdown-toggle" data-toggle="dropdown">Информация</a>
                                 <div class="dropdown-menu-custom">
-                                    <div class="dropdown-inner"> 
+                                    <div class="dropdown-inner">
                                         <ul class="list-unstyled">
 	                    		            <li><a href=" hyperlink ">Регионы виноделия</a></li>
                                             <li><a href=" hyperlink ">Русские винодельни</a></li>
@@ -50,14 +50,14 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </li> 
+                            </li>
                         </ul>
                     </div>
                 </nav>
             </div>
             <div class="col-sm-2"><div id="cart"><a onclick="$('#cart-cont').addClass('open');$('body').addClass('nooverflow1');$('body').addClass('nooverflow');">
                 <img src="{{ asset ('image/cart.png') }}">
-		        <b>0</b> 
+		        <b>0</b>
                 </a>
             </div>
             <div id="cart-cont">

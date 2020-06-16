@@ -5,9 +5,7 @@
     <meta charset="utf-8">
     <!--[if IE]>
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <title>Wizym-Templae shared on thmelock.com</title>
-
-    <meta name="author" content="themesflat.com">
+    <title>{{Voyager::setting('site.title')}}</title>
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -41,7 +39,7 @@
 
     <!-- Old style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/Custom/old-site.css') }}">
-
+    @stack('styles')
 </head>
 <body>
 <div id="loading-overlay">
@@ -77,6 +75,6 @@
 <script src="{{ asset('rev-slider/js/extensions/revolution.extension.parallax.min.js')  }}"></script>
 <script src="{{ asset('rev-slider/js/extensions/revolution.extension.slideanims.min.js')  }}"></script>
 <script src="{{ asset('rev-slider/js/extensions/revolution.extension.video.min.js')  }}"></script>
-
+@stack('scripts')
 </body>
 </html>
