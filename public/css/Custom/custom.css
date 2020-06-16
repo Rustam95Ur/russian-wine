@@ -1,0 +1,16 @@
+#menu.navbar-right .dropdown-menu-custom {
+    left: 0;
+    right: auto;
+    border-radius: 0;
+    padding: 15px !important;
+    margin-left: 0 !important;
+    position: absolute;
+    display: none;
+    top: 100%;
+    transition: all .3s linear;
+    margin-top: 0px;
+    background: #fff;
+}
+#menu.navbar-right li:hover .dropdown-menu-custom {
+    display: block;
+}

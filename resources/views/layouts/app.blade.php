@@ -35,6 +35,13 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('rev-slider/css/settings.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('rev-slider/css/layers.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('rev-slider/css/navigation.css') }}">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/Custom/custom.css') }}">
+
+    <!-- Old style -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/Custom/old-site.css') }}">
+
 </head>
 <body>
 <div id="loading-overlay">

@@ -2,913 +2,158 @@
 @section('content')
     <div class="flat-slider style1">
         <!-- SLIDER -->
-        <div class="rev_slider_wrapper fullwidthbanner-container" >
-            <div id="rev-slider1" class="rev_slider fullwidthabanner">
-                <ul>
-                    <!-- Slide 1 -->
-                    <li data-transition="random">
-                        <!-- Main Image -->
-                        <img src="image/homepage11.jpg" alt="" data-bgposition="center center" data-no-retina>
-                        <div class="overlay"></div>
+            <div id="home_slid">
+                <center>
+                    <video autoplay="" muted="" loop="" id="myVideo">
+                        <source src="{{ asset ('video/wineclub.mp4') }}" type="video/mp4">
+                    </video>
+                </center>
+                <div class="swiper-viewport">
+                    <div id="home_slider" class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide text-center"><a href="/wineshop">
+                            <img src="{{ asset ('image/background_podpiska.png') }}">
+                                <span>Вино</span>
+                                <p>
+                                    Мы собрали для Вас самую полную коллекцию Русских Вин, как крупных заводов, так авторских микровиноделен.
+                                </p>
+                                </a>
+                                <a href="/wineshop" class="home_btn">Все вина</a>
+                        
+                                    <!--<div id="mouse_img"><a target="_blank" href="https://www.youtube.com/channel/UCN-RcIaaNGUmZBYg9HJtoKg">
+                                            <div id="chevrons">
+                                            <div class="chevron"></div>
+                                            <div class="chevron"></div>
+                                            <div class="chevron"></div>
+                                            </div>
+                                            </a></div> -->
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <a href="/sety">
+                                <img src="{{ asset ('image/background_sety.png') }}">
+                                    <span>Сеты</span>
+                                    <p>
+                                        Мы объехали все винодельни нашей страны и отобрали лучшие и самые интересные вина. Собрали из них сеты на любой случай.
+                                    </p>
+                                </a><a href="/sety" class="home_btn">Выбрать Сет</a>
 
-                        <!-- Layers -->
-                        <div class="tp-caption tp-resizeme text-ffb922 font-rubik font-weight-500 wellcome"
-                             data-x="['left','left','left','center']" data-hoffset="['2','4','4','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['-132','-118','-98','-78']"
-                             data-fontsize="['36','20','20','16']"
-                             data-lineheight="['48','48','28','14']"
-                             data-width="full"
-                             data-height="none"
-                             data-whitespace="normal"
-                             data-transform_idle="o:1;"
-                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-mask_in="x:0px;y:[100%];"
-                             data-mask_out="x:inherit;y:inherit;"
-                             data-start="700"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-paddingleft= "['3','3','3','3']"
-                             data-responsive_offset="on">Welcome to Wizym</div>
+                            </div>
+                            <div class="swiper-slide text-center"><a href="https://russianvine.ru/tasting/">
+                                    <img src="{{ asset ('image/background_club.png') }}">
+                                    <span>Дегустации</span>
+                                    <p>
 
-                        <div class="tp-caption tp-resizeme font-rubik font-weight-700 best"
-                             data-x="['left','left','left','center']" data-hoffset="['-4','-4','-4','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['-60','-60','-50','-40']"
-                             data-fontsize="['72','60','40','32']"
-                             data-lineheight="['80','80','45','35']"
-                             data-width="full"
-                             data-height="none"
-                             data-whitespace="normal"
-                             data-transform_idle="o:1;"
-                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-mask_in="x:0px;y:[100%];"
-                             data-mask_out="x:inherit;y:inherit;"
-                             data-start="1000"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-responsive_offset="on"> <a href="#" class="text-white">Best Of Wine Store</a> </div>
+                                        Обладая опытом проведения дегустаций различного уровня, берёмся за форматы любой сложности, как для профессионалов, так и для новичков в мире вина.
+                                    </p>
+                                </a><a href="https://tasting.russianvine.ru" class="home_btn">Записаться</a>
 
-                        <div class="tp-caption tp-resizeme text-white font-rubik font-weight-400 text-wizym"
-                             data-x="['left','left','left','center']" data-hoffset="['0','-2','-2','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['27','27','27','17']"
-                             data-fontsize="['18','18','16','14']"
-                             data-lineheight="['32','32','26','22']"
-                             data-width="full"
-                             data-height="none"
-                             data-whitespace="normal"
-                             data-transform_idle="o:1;"
-                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-mask_in="x:0px;y:[100%];"
-                             data-mask_out="x:inherit;y:inherit;"
-                             data-start="1000"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-responsive_offset="on"
-                             data-paddingright="['550','155','50','2']" >Wizym offers extensive collections of over 2,000 unique wines from prestigious brands to family-owed wineries </div>
+                            </div>
+                            <div class="swiper-slide text-center">
+                                <a href="/imennoe-vino">
+                                    <img src="{{ asset ('image/background_imennoe.png') }}">
+                                    <span>Именное вино</span>
+                                    <p>
+                                        Создайте семейную традицию – заложите свою бочку вина. По окончании выдержки, вино разливается в бутылки с Вашей именной этикеткой.
+                                    </p>
+                                </a><a class="home_btn" href="/imennoe-vino">Узнать больше</a>
 
-                        <div class="tp-caption"
-                             data-x="['left','left','left','center']" data-hoffset="['0','-4','-4','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['102','102','92','70']"
-                             data-width="full"
-                             data-height="none"
-                             data-whitespace="normal"
-                             data-transform_idle="o:1;"
-                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-mask_in="x:0px;y:[100%];"
-                             data-mask_out="x:inherit;y:inherit;"
-                             data-start="1000"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-responsive_offset="on"
-                             data-paddingtop= "['50','50','50','50']"
-                             data-paddingbottom= "['50','50','50','50']"> <a href="#" class="btn btn-styl button-project">READ MORE</a></div>
-                    </li><!-- /End Slide 1 -->
 
-                    <!-- Slide 2 -->
-                    <li data-transition="random">
-                        <!-- Main Image -->
-                        <img src="image/homepage11.jpg" alt="" data-bgposition="center center" data-no-retina>
-                        <div class="overlay"></div>
+                            </div>
 
-                        <!-- Layers -->
-                        <div class="tp-caption tp-resizeme text-ffb922 font-rubik font-weight-500 wellcome"
-                             data-x="['left','left','left','center']" data-hoffset="['2','4','4','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['-132','-118','-98','-78']"
-                             data-fontsize="['36','20','20','16']"
-                             data-lineheight="['48','48','28','14']"
-                             data-width="full"
-                             data-height="none"
-                             data-whitespace="normal"
-                             data-transform_idle="o:1;"
-                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-mask_in="x:0px;y:[100%];"
-                             data-mask_out="x:inherit;y:inherit;"
-                             data-start="700"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-paddingleft= "['3','3','3','3']"
-                             data-responsive_offset="on">Welcome to Wizym  </div>
-
-                        <div class="tp-caption tp-resizeme font-rubik font-weight-700 best"
-                             data-x="['left','left','left','center']" data-hoffset="['-4','-4','-4','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['-60','-60','-50','-40']"
-                             data-fontsize="['72','60','40','32']"
-                             data-lineheight="['80','80','45','35']"
-                             data-width="full"
-                             data-height="none"
-                             data-whitespace="normal"
-                             data-transform_idle="o:1;"
-                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-mask_in="x:0px;y:[100%];"
-                             data-mask_out="x:inherit;y:inherit;"
-                             data-start="1000"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-responsive_offset="on"> <a href="#" class="text-white">Best Of Wine Store</a> </div>
-
-                        <div class="tp-caption tp-resizeme text-white font-rubik font-weight-400 text-wizym"
-                             data-x="['left','left','left','center']" data-hoffset="['0','-2','-2','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['27','27','27','17']"
-                             data-fontsize="['18','18','16','14']"
-                             data-lineheight="['32','32','26','22']"
-                             data-width="full"
-                             data-height="none"
-                             data-whitespace="normal"
-                             data-transform_idle="o:1;"
-                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-mask_in="x:0px;y:[100%];"
-                             data-mask_out="x:inherit;y:inherit;"
-                             data-start="1000"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-responsive_offset="on"
-                             data-paddingright="['550','155','50','2']" >Wizym offers extensive collections of over 2,000 unique wines from prestigious brands to family-owed wineries </div>
-
-                        <div class="tp-caption"
-                             data-x="['left','left','left','center']" data-hoffset="['0','-4','-4','0']"
-                             data-y="['middle','middle','middle','middle']" data-voffset="['102','102','92','70']"
-                             data-width="full"
-                             data-height="none"
-                             data-whitespace="normal"
-                             data-transform_idle="o:1;"
-                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-mask_in="x:0px;y:[100%];"
-                             data-mask_out="x:inherit;y:inherit;"
-                             data-start="1000"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-responsive_offset="on"
-                             data-paddingtop= "['50','50','50','50']"
-                             data-paddingbottom= "['50','50','50','50']"> <a href="#" class="btn btn-styl button-project">READ MORE</a></div>
-                    </li><!-- /End Slide 2 -->
-                </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination home-pagination"></div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next "></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <div id="mouse_img"><a href="#first_block"><img src="       ">
+                    <div id="chevrons">
+                        <div class="chevron"></div>
+                        <div class="chevron"></div>
+                        <div class="chevron"></div>
+                    </div>
+                </a>
             </div>
         </div>
     </div> <!-- /.flat-slider -->
 
     <div class="main-homepage-1">
-        <section class="flat-about style1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7 col-md-7">
-                        <div class="image-single">
-                            <img src="image/homepage144.png" alt="image">
-                        </div>
-                    </div> <!-- /col-lg-7 -->
-                    <div class="col-lg-5 col-md-5">
-                        <div class="flat-divider margin-top50px"></div>
-                        <div class="flat-textbox">
-                            <h3 class="textbox-title"><a href="#"> Our Form Wizym </a></h3>
-                            <h1 class="textbox-main"><a href="#"> Welcome To Wizym </a></h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.</p>
-                        </div> <!-- /flat-textbox -->
-                        <div class="flat-divider margin-top24px"></div>
-                        <div class="information">
-                            <div class="information-address">
-                                <span>Address:</span>
-                                <span class="information-content">40 Baria Sreet 133/2, NY, US</span>
-                            </div>
-                            <div class="information-hotline information-bottom">
-                                <span>Hotline:</span>
-                                <span class="information-content">1-677-124-44227</span>
-                            </div>
-                            <div class="information-open information-bottom">
-                                <span>We're Open</span>
-                                <span class="information-content">Mon-Sun: 9.00 - 20.00</span>
-                            </div>
-                        </div> <!-- /information -->
-                    </div><!-- /col-lg-5 -->
-                </div> <!-- /row-->
-            </div> <!-- /container -->
-        </section> <!-- /flat-about -->
-        <section class="flat-our-product our-product-new">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="title-section">
-                            <h3 class="our-product-title"><a href="#"> Our Products </a></h3>
-                            <h1 class="our-product-main"><a href="#"> Popular This Month </a></h1>
-                            <div class="our-product-image">
-                                <img src="image/homepage14.png" alt="image">
-                            </div>
-                        </div> <!-- /title-section -->
-                    </div> <!-- /col-lg-12 -->
-                    <div class="product-content product-fourcolumn clearfix">
-                        <ul class="product clearfix">
-                            <li class="product-item">
-                                <div class="product-thumb clearfix">
-                                    <a href="#" class="product-thumb">
-                                        <img src="image/homepage16.png" alt="image">
-                                    </a>
-                                </div>
-                                <div class="product-info text-center clearfix">
-                                    <span class="product-title">Laboure Chardonnay</span>
-                                    <div class="price">
-                                        <ins>
-                                            <span class="amount">$19.99</span>
-                                        </ins>
-                                    </div>
-                                </div>
-                                <div class="product-review">
-                                    <div class="add-cart">
-                                        <a href="#" class="like1"><i class="fa fa-refresh" aria-hidden="true"></i></a>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a href="#" class="like2"><i class="fa fa-heart-o"></i></a>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a href="#" class="like3"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </li> <!-- /product-item -->
-                            <li class="product-item">
-                                <div class="product-thumb clearfix">
-                                    <a href="#" class="product-thumb">
-                                        <img src="image/homepage19.png" alt="image">
-                                    </a>
-                                    <span class="new">Sale</span>
-                                </div>
-                                <div class="product-info product-hight clearfix">
-                                    <span class="product-title">Josh Cellars Cabarnet</span>
-                                    <div class="price">
-                                        <ins>
-                                            <span class="amount">$29.99</span>
-                                            <del>$38.99</del>
-                                        </ins>
-                                    </div>
 
-                                </div>
-                                <div class="product-review">
-                                    <div class="add-cart">
-                                        <a href="#" class="like1"><i class="fa fa-refresh" aria-hidden="true"></i></a>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a href="#" class="like2"><i class="fa fa-heart-o"></i></a>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a href="#" class="like3"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </li> <!-- /product-item -->
-                            <li class="product-item">
-                                <div class="product-thumb clearfix">
-                                    <a href="#" class="product-thumb">
-                                        <img src="image/homepage18.png" alt="image">
-                                    </a>
+    <!-- Ниже по хорошему нужна отдельная вьюха под слайдер продуктов слайдер позже сделаю там ебанутый у них -->
+    <section id="content_top">
+        <!-- slider here -->
+        <a class="all_wines" href="/wineshop">Все вина</a> 
+    </section>
 
-                                </div>
-                                <div class="product-info clearfix">
-                                    <span class="product-title">Dark Horse Rosé</span>
-                                    <div class="price">
-                                        <ins>
-                                            <span class="amount">$38.49</span>
-                                        </ins>
-                                    </div>
-                                </div>
-                                <div class="product-review">
-                                    <div class="add-cart">
-                                        <a href="#" class="like1"><i class="fa fa-refresh" aria-hidden="true"></i></a>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a href="#" class="like2"><i class="fa fa-heart-o"></i></a>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a href="#" class="like3"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </li> <!-- /product-item -->
-                            <li class="product-item">
-                                <div class="product-thumb clearfix">
-                                    <a href="#" class="product-thumb">
-                                        <img src="image/homepage19.png" alt="image">
-                                    </a>
-                                </div>
-                                <div class="product-info clearfix">
-                                    <span class="product-title">Dark Hose Rosé</span>
-                                    <div class="price">
-                                        <ins>
-                                            <span class="amount">$38.49</span>
-                                        </ins>
-                                    </div>
-                                </div>
-                                <div class="product-review">
-                                    <div class="add-cart">
-                                        <a href="#" class="like1"><i class="fa fa-refresh" aria-hidden="true"></i></a>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a href="#" class="like2"><i class="fa fa-heart-o"></i></a>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a href="#" class="like3"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </li> <!-- /product-item -->
-                        </ul>
-                    </div> <!-- /product-content -->
-                    <div class="elm-btn">
-                        <a href="#" class="themesflat-button outline ol-accent margin-top-40 hvr-shutter-out-horizontal">VIEW MORE</a>
-                    </div>
-
-                </div> <!-- /row -->
-            </div> <!-- /container -->
-        </section> <!-- /flat-out-product -->
-        <section class="flat-deal-of-the-week style1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="title-section">
-                            <h3 class="our-product-title"><a href="#"> Our Products </a></h3>
-                            <h1 class="our-product-main"><a href="#"> Deal Of The Week </a></h1>
-                            <div class="our-product-image">
-                                <img src="image/homepage14.png" alt="image">
-                            </div>
-                        </div> <!-- /title-section -->
-                    </div> <!-- /col-lg-12 -->
-                    <div class="col-lg-6 col-md-12">
-                        <div class="flat-deal-week">
-                            <img src="image/homepage22.png" alt="image">
-                            <div class="flat-counter count-time" data-day="20" data-month="3" data-year="2019" data-hour="12" data-minute="12" data-second="12">
-                                <div class="counter">
-                                    <ul>
-                                        <li class="content-counter">
-                                            <div class="wrap-bg">
-                                                <div class="inner-bg days">
-                                                    <div class="numb-count numb" data-from="0" data-to="18" data-speed="2000" data-inviewport="yes">18</div>
-                                                    <div class="name-count">Day</div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="content-counter">
-                                            <div class="wrap-bg">
-                                                <div class="inner-bg hours">
-                                                    <div class="numb-count numb" data-from="0" data-to="11" data-speed="2000" data-inviewport="yes">11</div>
-                                                    <div class="name-count">Hour</div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="content-counter">
-                                            <div class="wrap-bg">
-                                                <div class="inner-bg minutes">
-                                                    <div class="numb-count numb" data-from="0" data-to="14" data-speed="2000" data-inviewport="yes">14</div>
-                                                    <div class="name-count">Min</div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="content-counter">
-                                            <div class="wrap-bg numb">
-                                                <div class="inner-bg seconds">
-                                                    <div class="numb-count numb" data-from="0" data-to="47" data-speed="2000" data-inviewport="yes">47</div>
-                                                    <div class="name-count">Sec</div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div> <!-- /counter -->
-                            </div> <!-- /flat-counter -->
-                        </div> <!-- /flat-deal-week -->
-                    </div> <!-- /col-lg-6 -->
-                    <div class="col-lg-6 col-md-12">
-                        <div class="flat-deal-week-content">
-                            <h3 class="deal-week-title"><a href="#"> 51 Eden Valley Riesling 1918</a></h3>
-                            <span class="deal-week-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.</span>
-                            <span class="flat-dolar">$22.99</span>
-                            <div class="elm-btn">
-                                <a href="#" class="themesflat-button outline ol-accent margin-top-40 hvr-shutter-out-horizontal">BUY NOW</a>
-                            </div>
-                        </div>
-                    </div> <!-- /col-lg-6 -->
-                </div> <!-- /row -->
-            </div> <!-- /container -->
-        </section> <!-- /flat-deal-our-of-the-week -->
-        <section class="flat-products style1 straight ">
-            <div class="container">
-                <div class="row straight">
-                    <div class="col-lg-4 col-md-4 col-sm-4">
-                        <div class="flat-latest">
-                            <div class="latest-title mb-mgtop0">
-                                <h3><a href="#">Latest Products</a></h3>
-                            </div>
-                            <div class="flat-next">
-                                <a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                            </div>
-                            <article class="post-border post-top">
-                                <div class="featured-post">
-                                    <img src="image/homepage28.png" alt="image">
-                                </div>
-                                <div class="content-post">
-                                    <div class="post-title">
-                                        <span><a href="#"> Laboure Chardonnay </a></span>
-                                    </div>
-                                    <div class="post-dolar">
-                                        <span>$19.99</span>
-                                    </div>
-                                    <div class="post-rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="post-border post-between">
-                                <div class="featured-post">
-                                    <img src="image/homepage29.png" alt="image">
-                                </div>
-                                <div class="content-post">
-                                    <div class="post-title">
-                                        <span><a href="#"> Godiva Chocolates Gift</a></span>
-                                    </div>
-                                    <div class="post-dolar">
-                                        <span>$28.99</span>
-                                    </div>
-                                    <div class="post-rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="post-border post-between">
-                                <div class="featured-post">
-                                    <img src="image/homepage30.png" alt="image">
-                                </div>
-                                <div class="content-post">
-                                    <div class="post-title">
-                                        <span><a href="#"> Bertrana Cap Insula Red</a></span>
-                                    </div>
-                                    <div class="post-dolar">
-                                        <span>$22.99</span>
-                                    </div>
-                                    <div class="post-rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div> <!-- /col-lg-4 -->
-                    <div class="col-lg-4 col-md-4 col-sm-4">
-                        <div class="flat-latest">
-                            <div class="latest-title title-between">
-                                <h3><a href="#">Top Rated Products</a></h3>
-                            </div>
-                            <div class="flat-next">
-                                <a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                            </div>
-                            <article class="post-border post-top">
-                                <div class="featured-post">
-                                    <img src="image/homepage31.png" alt="image">
-                                </div>
-                                <div class="content-post">
-                                    <div class="post-title">
-                                        <span><a href="#"> Red Wine Trio 1988</a></span>
-                                    </div>
-                                    <div class="post-dolar">
-                                        <span>$22.99</span>
-                                    </div>
-                                    <div class="post-rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="post-border post-between">
-                                <div class="featured-post">
-                                    <img src="image/homepage32.png" alt="image">
-                                </div>
-                                <div class="content-post">
-                                    <div class="post-title">
-                                        <span><a href="#"> Dreaming Wine Trio</a></span>
-                                    </div>
-                                    <div class="post-dolar">
-                                        <span>$28.99</span>
-                                    </div>
-                                    <div class="post-rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="post-border post-between">
-                                <div class="featured-post">
-                                    <img src="image/homepage33.png" alt="image">
-                                </div>
-                                <div class="content-post">
-                                    <div class="post-title">
-                                        <span><a href="#"> Hall Eighteen Seventy</a></span>
-                                    </div>
-                                    <div class="post-dolar">
-                                        <span>$49.99</span>
-                                    </div>
-                                    <div class="post-rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div> <!-- /col-lg-4 -->
-                    <div class="col-lg-4 col-md-4 col-sm-4">
-                        <div class="flat-latest">
-                            <div class="latest-title title-bottom">
-                                <h3><a href="#">Review Products</a></h3>
-                            </div>
-                            <div class="flat-next">
-                                <a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                            </div>
-                            <article class="post-border post-top">
-                                <div class="featured-post">
-                                    <img src="image/homepage34.png" alt="image">
-                                </div>
-                                <div class="content-post">
-                                    <div class="post-title">
-                                        <span><a href="#"> Brothers Patricia Pinot</a></span>
-                                    </div>
-                                    <div class="post-dolar">
-                                        <span>$24.99</span>
-                                    </div>
-                                    <div class="post-rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="post-border post-between">
-                                <div class="featured-post">
-                                    <img src="image/homepage35.png" alt="image">
-                                </div>
-                                <div class="content-post">
-                                    <div class="post-title">
-                                        <span><a href="#"> Adelaide Hills Chardonnay</a></span>
-                                    </div>
-                                    <div class="post-dolar">
-                                        <span>$49.99</span>
-                                    </div>
-                                    <div class="post-rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="post-border post-between">
-                                <div class="featured-post">
-                                    <img src="image/homepage36.png" alt="image">
-                                </div>
-                                <div class="content-post">
-                                    <div class="post-title">
-                                        <span><a href="#"> 51 Eden Valley Riesling 1918</a></span>
-                                    </div>
-                                    <div class="post-dolar">
-                                        <span>$19.99</span>
-                                    </div>
-                                    <div class="post-rating">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div> <!-- /col-lg-4 -->
-                </div> <!-- /row -->
-            </div> <!-- /container -->
-        </section> <!-- /flat-prodcuts -->
-        <section class="flat-event style1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="title-section">
-                            <h3 class="our-product-title"><a href="#"> Dont't Miss Anything </a></h3>
-                            <h1 class="our-product-main"><a href="#"> Upcoming Events </a></h1>
-                            <div class="our-product-image-background">
-                                <img src="image/test.png" alt="image">
-                            </div>
-                        </div> <!-- /title-section -->
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="flat-carousel-box data-effect clearfix" data-gap="30" data-column="4" data-column2="2" data-column3="1" data-dots= "true" data-auto="false">
-                            <div class="owl-carousel">
-                                <div class="team-member">
-                                    <div class="team-border">
-                                        <div class="team-title">
-                                            <h1 class="title">14</h1>
-                                            <span>March</span>
-                                        </div>
-                                        <div class="team-meta">
-                                            <span>SunDay: 11.30 - 19.30 PM</span>
-                                        </div>
-                                        <div class="team-content">
-                                            <h2><a href="#"> Adgio Vertical Tasting</a></h2>
-                                        </div>
-                                        <div class="team-dolar">
-                                            <span>$28.99/Per Person</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-member">
-                                    <div class="team-border">
-                                        <div class="team-title">
-                                            <h1 class="title">18</h1>
-                                            <span>March</span>
-                                        </div>
-                                        <div class="team-meta">
-                                            <span>Monday: 9.30 - 15.30 PM</span>
-                                        </div>
-                                        <div class="team-content">
-                                            <h2><a href="#"> Reasons To Be Cheerful</a></h2>
-                                        </div>
-                                        <div class="team-dolar">
-                                            <span>$30.99/Per Person</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-member">
-                                    <div class="team-border">
-                                        <div class="team-title">
-                                            <h1 class="title">27</h1>
-                                            <span>April</span>
-                                        </div>
-                                        <div class="team-meta">
-                                            <span>Thursday: 9.30 - 11.30 AM</span>
-                                        </div>
-                                        <div class="team-content">
-                                            <h2><a href="#"> New Wines For Old?</a></h2>
-                                        </div>
-                                        <div class="team-dolar">
-                                            <span>$22.99/Per Person</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-member">
-                                    <div class="team-border">
-                                        <div class="team-title">
-                                            <h1 class="title">11</h1>
-                                            <span>April</span>
-                                        </div>
-                                        <div class="team-meta">
-                                            <span>Friday: 8.00 - 11.30 PM</span>
-                                        </div>
-                                        <div class="team-content">
-                                            <h2><a href="#"> Catering For Higher</a></h2>
-                                        </div>
-                                        <div class="team-dolar">
-                                            <span>$18.99/Per Person</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-member">
-                                    <div class="team-border">
-                                        <div class="team-title">
-                                            <h1 class="title">14</h1>
-                                            <span>March</span>
-                                        </div>
-                                        <div class="team-meta">
-                                            <span>SunDay: 11.30 - 19.30 PM</span>
-                                        </div>
-                                        <div class="team-content">
-                                            <h2><a href="#"> Adgio Vertical Tasting</a></h2>
-                                        </div>
-                                        <div class="team-dolar">
-                                            <span>$28.99/Per Person</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-member">
-                                    <div class="team-border">
-                                        <div class="team-title">
-                                            <h1 class="title">18</h1>
-                                            <span>March</span>
-                                        </div>
-                                        <div class="team-meta">
-                                            <span>Monday: 9.30 - 15.30 PM</span>
-                                        </div>
-                                        <div class="team-content">
-                                            <h2><a href="#"> Reasons To Be Cheerful</a></h2>
-                                        </div>
-                                        <div class="team-dolar">
-                                            <span>$30.99/Per Person</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-member">
-                                    <div class="team-border">
-                                        <div class="team-title">
-                                            <h1 class="title">27</h1>
-                                            <span>April</span>
-                                        </div>
-                                        <div class="team-meta">
-                                            <span>Thursday: 9.30 - 11.30 AM</span>
-                                        </div>
-                                        <div class="team-content">
-                                            <h2><a href="#"> New Wines For Old?</a></h2>
-                                        </div>
-                                        <div class="team-dolar">
-                                            <span>$22.99/Per Person</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-member">
-                                    <div class="team-border">
-                                        <div class="team-title">
-                                            <h1 class="title">11</h1>
-                                            <span>April</span>
-                                        </div>
-                                        <div class="team-meta">
-                                            <span>Friday: 8.00 - 11.30 PM</span>
-                                        </div>
-                                        <div class="team-content">
-                                            <h2><a href="#"> Catering For Higher</a></h2>
-                                        </div>
-                                        <div class="team-dolar">
-                                            <span>$18.99/Per Person</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-member">
-                                    <div class="team-border">
-                                        <div class="team-title">
-                                            <h1 class="title">14</h1>
-                                            <span>March</span>
-                                        </div>
-                                        <div class="team-meta">
-                                            <span>SunDay: 11.30 - 19.30 PM</span>
-                                        </div>
-                                        <div class="team-content">
-                                            <h2><a href="#"> Adgio Vertical Tasting</a></h2>
-                                        </div>
-                                        <div class="team-dolar">
-                                            <span>$28.99/Per Person</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-member">
-                                    <div class="team-border">
-                                        <div class="team-title">
-                                            <h1 class="title">18</h1>
-                                            <span>March</span>
-                                        </div>
-                                        <div class="team-meta">
-                                            <span>Monday: 9.30 - 15.30 PM</span>
-                                        </div>
-                                        <div class="team-content">
-                                            <h2><a href="#"> Reasons To Be Cheerful</a></h2>
-                                        </div>
-                                        <div class="team-dolar">
-                                            <span>$30.99/Per Person</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-member">
-                                    <div class="team-border">
-                                        <div class="team-title">
-                                            <h1 class="title">27</h1>
-                                            <span>April</span>
-                                        </div>
-                                        <div class="team-meta">
-                                            <span>Thursday: 9.30 - 11.30 AM</span>
-                                        </div>
-                                        <div class="team-content">
-                                            <h2><a href="#"> New Wines For Old?</a></h2>
-                                        </div>
-                                        <div class="team-dolar">
-                                            <span>$22.99/Per Person</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team-member">
-                                    <div class="team-border">
-                                        <div class="team-title">
-                                            <h1 class="title">11</h1>
-                                            <span>April</span>
-                                        </div>
-                                        <div class="team-meta">
-                                            <span>Friday: 8.00 - 11.30 PM</span>
-                                        </div>
-                                        <div class="team-content">
-                                            <h2><a href="#"> Catering For Higher</a></h2>
-                                        </div>
-                                        <div class="team-dolar">
-                                            <span>$18.99/Per Person</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- /owl-carouse -->
-                        </div> <!-- /flat-carousel-box -->
-                    </div> <!-- /col-lg-12 -->
-                </div> <!-- /row -->
-            </div> <!-- /container -->
-        </section> <!-- /flat-event -->
-        <section class="flat-new-latest style1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="title-section">
-                            <h3 class="our-product-title"><a href="#"> Our Blog </a></h3>
-                            <h1 class="our-product-main"><a href="#"> News Latest </a></h1>
-                            <div class="our-product-image">
-                                <img src="image/homepage14.png" alt="image">
-                            </div>
-                        </div> <!-- /title-section -->
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <article class="post">
-                            <div class="featured-post">
-                                <img src="image/homepage44.png" alt="image">
-                            </div>
-                            <div class="content-post">
-                                <div class="post-title">
-                                    <span><a href="#">Restaurant, The Wines</a></span>
-                                </div>
-                                <div class="post-content">
-                                    <h3><a href="#">Champagne billecart-Salmon Releases Rare 'Cuvée 200' To Celebrate 200 Years</a></h3>
-                                </div>
-                                <div class="post-meta">
-                                    <span><a href="#">May 28, 2018</a></span>
-                                </div>
-                                <div class="post-btn">
-                                    <span><a href="#">READ MORE <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="content-box">
-                            <ul>
-                                <li>
-                                    <span class="box-heading"><a href="#">The Wines, Grape Wine</a></span>
-                                    <h3 class="box-content"><a href="#">World Wine Awards 2018: Full results now available</a></h3>
-                                    <span class="box-meta"><a href="#">June 02, 2018</a></span>
-                                </li>
-                                <li class="box-border">
-                                    <span class="box-heading"><a href="#">Restaurant, Grape Wine</a></span>
-                                    <h3 class="box-content"><a href="#">Taittinger launches Comtes de Champagne 2007</a></h3>
-                                    <span class="box-meta"><a href="#">June 08, 2018</a></span>
-                                </li>
-                                <li class="box-border">
-                                    <span class="box-heading"><a href="#">The Wines, Rose</a></span>
-                                    <h3 class="box-content"><a href="#">Jefford on Monday: "Fine, fresh wines"</a></h3>
-                                    <span class="box-meta"><a href="#">June 12, 2018</a></span>
-                                </li>
-                                <li class="box-border">
-                                    <span class="box-heading"><a href="#">Bordeaux, Champagne</a></span>
-                                    <h3 class="box-content"><a href="#">Colgate-Palmolive renews with Morz in Malaysia</a></h3>
-                                    <span class="box-meta"><a href="#">June 19, 2018</a></span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+    <section id="specials">
+        <div id="specials-cont">
+            <div class="col-md-4 bannerstitle" onclick="$('#degustacii_modal').css('display', 'block');$('body').addClass('nooverflow');">
+                <img src="{{ asset ('image/degustag-main.png') }}">
+                <h6>дегустации <span>Органические вина</span></h6>
+                <button>ЗАПИСАТЬСЯ</button>
+                <div id="bannerdate">
+                    <span>10</span>
+                    июня
                 </div>
             </div>
-        </section> <!-- /flat-latest -->
-    </div> <!-- /homepage1 -->
+            <div class="col-md-4 bannerstitle">
+                <a href="https://russianvine.ru/vino-set-dzitoev">
+                    <img src="{{ asset ('image/set-dzitoev-mesyasc.png') }}">
+                    <h6>сет месяца <span>Вина Дзитоева</span></h6>
+                    <button>ЗАКАЗАТЬ СЕТ</button>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 cwp">
+            <h2>Нам важно, какое вино Вы выбираете</h2>
+            <ul class="special-list">
+                <li class="youtube_icon"><svg width="52" height="36" viewBox="0 0 52 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M46.3078 1.10118C48.5333 1.69412 50.2881 3.43059 50.8872 5.63294C52 9.65647 51.9572 18.0424 51.9572 18.0424C51.9572 18.0424 51.9572 26.3859 50.8872 30.4094C50.2881 32.6118 48.5333 34.3482 46.3078 34.9412C42.242 36 25.9786 36 25.9786 36C25.9786 36 9.75802 36 5.64938 34.8988C3.42387 34.3059 1.66914 32.5694 1.06996 30.3671C0 26.3859 0 18 0 18C0 18 0 9.65647 1.06996 5.63294C1.66914 3.43059 3.46667 1.65176 5.64938 1.05882C9.71523 0 25.9786 0 25.9786 0C25.9786 0 42.242 0 46.3078 1.10118ZM34.3242 18L20.8 25.7082V10.2917L34.3242 18Z" fill="#DA224D"></path>
+                    </svg>
+                    Смотрите все о русском вине на нашем youtube-канале <span>«Негоциант»</span></li>
+                <li class="instagram_icon">
+                    <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M36.3915 11.2473C36.3915 12.7046 35.2088 13.8873 33.7515 13.8873C32.2907 13.8873 31.1098 12.7046 31.1098 11.2473C31.1098 9.78999 32.2907 8.60727 33.7515 8.60727C35.2088 8.60727 36.3915 9.78999 36.3915 11.2473ZM22.0035 30.3239C17.952 30.3239 14.6696 27.0415 14.6696 22.99C14.6696 18.9402 17.952 15.6578 22.0035 15.6578C26.055 15.6578 29.341 18.9402 29.341 22.99C29.341 27.0415 26.055 30.3239 22.0035 30.3239ZM22.0035 11.6925C15.7626 11.6925 10.7043 16.7508 10.7043 22.99C10.7043 29.2309 15.7626 34.2874 22.0035 34.2874C28.2462 34.2874 33.3045 29.2309 33.3045 22.99C33.3045 16.7508 28.2462 11.6925 22.0035 11.6925ZM22.0035 4.95527C27.8802 4.95527 28.5754 4.97815 30.895 5.08375C33.0422 5.18231 34.2074 5.53783 34.9818 5.84055C36.0096 6.24007 36.7418 6.71703 37.5162 7.48615C38.2853 8.25703 38.7587 8.98919 39.1582 10.0153C39.461 10.7932 39.8182 11.9565 39.9168 14.102C40.0242 16.4217 40.0453 17.1186 40.0453 22.9917C40.0453 28.8649 40.0242 29.5618 39.9168 31.8815C39.8182 34.027 39.461 35.1903 39.1582 35.9682C38.7587 36.9925 38.2853 37.7265 37.5162 38.4938C36.7435 39.2665 36.0114 39.7417 34.9818 40.143C34.2074 40.4439 33.0422 40.7994 30.895 40.8997C28.5754 41.0036 27.8802 41.0282 22.0035 41.0282C16.1269 41.0282 15.4317 41.0036 13.1138 40.8997C10.9648 40.7994 9.80144 40.4439 9.02704 40.143C7.99744 39.7417 7.26704 39.2665 6.49616 38.4938C5.72704 37.7265 5.24832 36.9925 4.8488 35.9682C4.54784 35.1903 4.1888 34.027 4.09024 31.8815C3.9864 29.5618 3.96352 28.8649 3.96352 22.9917C3.96352 17.1186 3.9864 16.4217 4.09024 14.102C4.1888 11.9565 4.54784 10.7932 4.8488 10.0153C5.24832 8.98919 5.72704 8.25703 6.49616 7.48615C7.26704 6.71703 7.99744 6.24007 9.02704 5.84055C9.80144 5.53959 10.9648 5.18231 13.1138 5.08375C15.4317 4.97815 16.1286 4.95527 22.0035 4.95527ZM22.0035 0.98999C16.0301 0.98999 15.2803 1.01639 12.9325 1.12199C10.5899 1.22935 8.99008 1.60247 7.59088 2.14631C6.1424 2.70775 4.91392 3.46103 3.69248 4.68247C2.46928 5.90567 1.71776 7.13239 1.15456 8.58087C0.60896 9.98007 0.23936 11.5799 0.132 13.9207C0.02288 16.2668 0 17.0166 0 22.99C0 28.9652 0.02288 29.7132 0.132 32.0628C0.23936 34.4036 0.60896 36.0017 1.15456 37.4009C1.71776 38.8476 2.46928 40.0761 3.69248 41.2993C4.91392 42.5225 6.1424 43.274 7.59088 43.8354C8.99008 44.3793 10.5899 44.7506 12.9325 44.858C15.2803 44.9654 16.0301 44.9918 22.0035 44.9918C27.9822 44.9918 28.732 44.9654 31.0781 44.858C33.4189 44.7506 35.0187 44.3793 36.4214 43.8354C37.8664 43.274 39.0949 42.5225 40.3163 41.2993C41.5413 40.0761 42.291 38.8476 42.856 37.4009C43.3998 36.0017 43.7712 34.4036 43.8786 32.0628C43.9842 29.7132 44.0106 28.9652 44.0106 22.99C44.0106 17.0166 43.9842 16.2668 43.8786 13.9207C43.7712 11.5799 43.3998 9.98007 42.856 8.58087C42.291 7.13239 41.5413 5.90567 40.3163 4.68247C39.0949 3.46103 37.8664 2.70775 36.4214 2.14631C35.0187 1.60247 33.4189 1.22935 31.0781 1.12199C28.732 1.01639 27.9822 0.98999 22.0035 0.98999Z" fill="#DA224D"></path>
+                    </svg>                    
+                    Подписывайтесь на <span>инстаграм</span>, чтобы быть в курсе всех дегустаций, которые мы проводим</li>
+                <li class="bag_icon">
+                    <svg width="57" height="62" viewBox="0 0 57 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M37.8017 20.3343V11.696C37.8017 6.4073 33.4287 2 28.1812 2C22.9337 2 18.5607 6.4073 18.5607 11.696V20.1581M6.1416 13.9878H49.871C51.0954 13.9878 52.1449 15.0456 52.1449 16.2796L54.5937 57.7082C54.5937 58.9423 53.5442 60 52.3198 60H3.86768C2.64325 60 1.59375 58.9423 1.59375 57.7082L3.86768 16.2796C4.04259 15.0456 4.91718 13.9878 6.1416 13.9878ZM18.2109 18.924C19.7852 18.924 21.0096 20.1581 21.0096 21.7447C21.0096 23.3313 19.7852 24.5654 18.2109 24.5654C16.6367 24.5654 15.4122 23.3313 15.4122 21.7447C15.4122 20.1581 16.6367 18.924 18.2109 18.924ZM37.9766 18.924C39.5508 18.924 40.7753 20.1581 40.7753 21.7447C40.7753 23.3313 39.5508 24.5654 37.9766 24.5654C36.4023 24.5654 35.1779 23.3313 35.1779 21.7447C35.1779 20.1581 36.4023 18.924 37.9766 18.924Z" stroke="#DA224D" stroke-width="3" stroke-miterlimit="22.9256"></path>
+                        </svg>
+                        
+                    Оформляйте <span class="podpis">подписку</span> на вино, покупайте <span class="forset">сеты</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Еще один ебанутый слайдер + вьюха под него т.к. идет сортировка по новизне -->
+    <section id="content_bottom">
+    <!-- 2nd slider here -->
+    <br>
+    </section>
+
+    <section class="swp" id="swineries">
+        <div class="scol col-rs-8">
+            <h5><a href="/wineries">Русские винодельни</a></h5>
+            <p>За последние десятилетия в русском виноделии совершён качественный рывок. В России появились винодельни мирового уровня.</p>
+            <a href="https://russianvine.ru/wineries"></a>
+        </div>
+        <div class="scol col-rs-6">
+            <h5><a href="https://russianvine.ru/mikrovinodelni">Микровинодельни</a></h5>
+            <p>Новое и самое интересное в современном виноделии России. Небольшие фермерские хозяйства, а также семейные винодельни. </p>
+            <a href="https://russianvine.ru/mikrovinodelni"></a>
+        </div>
+    </section>
+
+    <!-- Еще один ебанутый слайдер + вьюха под него т.к. идет сортировка по виноделам -->
+    <section id="swinemakers" class="">
+        <div class="col-md-12">
+            <h4>Русские виноделы</h4>
+            <a href="/winemakers">Все виноделы</a>
+            <!-- 3rd slider here -->      
+        </div>
+    </section>
+</div> <!-- /homepage1 -->
 @endsection
