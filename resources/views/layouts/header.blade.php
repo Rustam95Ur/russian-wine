@@ -32,7 +32,7 @@
             	                <div></div>
                         </button>
                         <ul class="nav navbar-nav">
-                            <li><a href="{{route('wineshop')}}">{{trans('header.wine')}}</a></li>
+                            <li><a href="{{route('wine-shop')}}">{{trans('header.wine')}}</a></li>
                             <li><a href="{{route('sets')}}">{{trans('header.sets')}}</a></li>
                             <li><a href="{{route('subscription')}}">{{trans('header.subscription')}}</a></li>
                             <li><a href=" hyperlink ">Именное вино</a></li>

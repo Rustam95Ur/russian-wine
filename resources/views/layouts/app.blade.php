@@ -26,9 +26,9 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css') }}">
 
     <!-- Favicon and touch icons  -->
-    <link href="icon/icon.png" rel="apple-touch-icon-precomposed" sizes="48x48">
-    <link href="icon/icon.png" rel="apple-touch-icon-precomposed">
-    <link href="icon/icon.png" rel="shortcut icon">
+    <link href="{{asset('icon/favicon.png')}}" rel="apple-touch-icon-precomposed" sizes="48x48">
+    <link href="{{asset('icon/favicon.png')}}" rel="apple-touch-icon-precomposed">
+    <link href="{{asset('icon/favicon.png')}}" rel="shortcut icon">
     <!-- Slider Revolution CSS Files -->
     <link rel="stylesheet" type="text/css" href="{{ asset('rev-slider/css/settings.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('rev-slider/css/layers.css') }}">
