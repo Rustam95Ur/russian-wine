@@ -10,6 +10,9 @@
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+    <!-- Owl carousel  -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.min.css') }}">
+    
     <!-- Bootstrap  -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
 
