@@ -13,6 +13,9 @@
     <!-- Owl carousel  -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.min.css') }}">
     
+    <!-- Swiper.js  -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('swiperJs/swiper.min.css') }}">    
+
     <!-- Bootstrap  -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
 
@@ -62,6 +65,7 @@
 <script src="{{ asset('js/jquery-waypoints.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/jquery.easing.js') }}"></script>
+<script src="{{ asset('swiperJs/swiper.min.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
 
 <!-- Slider -->
