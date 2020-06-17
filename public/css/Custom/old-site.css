@@ -1934,7 +1934,7 @@ header #form-language .language-select {
 #vinotheque .wine h2 {
     padding-top: 30px;
     font-size: 1.042vw;
-    font-family: 'ProximaNova-Reg'
+    font-family: 'ProximaNova-Reg', sans-serif;
 }
 
 #vinotheque .wine h2 a {
@@ -7660,7 +7660,7 @@ max-height: 1.823vw;
 
 #button-carts {
     outline: 0;
-    background-image: url(/image/btnbag.png);
+    background-image: url(/image/cart.png);
     background-repeat: no-repeat;
     background-position: center
 }
@@ -9298,7 +9298,7 @@ section#specials #specials-cont div.col-md-4 {
 }
 
 #swinemakers .swiper-slide ul li p {
-    font: 0.938vw 'ProximaNova-Reg';
+    font: 0.938vw 'ProximaNova-Reg', sans-serif;;
     margin: 0;
     padding: 0;
     line-height: 1.458vw;
@@ -9481,7 +9481,7 @@ section#specials #specials-cont div.col-md-4 {
         margin-top:5.556vw;
     }
     footer .email  a {
-        font:4.444vw 'ProximaNova-Reg';
+        font:4.444vw 'ProximaNova-Reg', sans-serif;;
     }
     footer .phone a {
         font: 5.556vw 'ProximaNova-Bold';
@@ -11290,7 +11290,7 @@ section#specials #specials-cont div.col-md-4 {
         font-size: 5.833vw;
     }
     #cart-cart .name a {
-        font: 4.722vw 'ProximaNova-Reg';
+        font: 4.722vw 'ProximaNova-Reg', sans-serif;;
         margin-left: 0;
         width: auto;
     }
@@ -12158,7 +12158,7 @@ nav ul > li:hover #inda-club {
 }
 
 #top_podpiska p {
-    font-family: 'ProximaNova-Reg';
+    font-family: 'ProximaNova-Reg', sans-serif;;
     font-size: 1.3541666666666667VW;
     padding-left: 12.5VW;
     position: relative;
@@ -12203,7 +12203,7 @@ nav ul > li:hover #inda-club {
 .text_s_s {
     font-size: 1.1458333333333333VW;
     line-height: 1.8;
-    font-family: 'ProximaNova-Reg';
+    font-family: 'ProximaNova-Reg', sans-serif;;
 }
 
 #firstblock {
@@ -12249,7 +12249,7 @@ nav ul > li:hover #inda-club {
     opacity: 0;
     transition: 0.3s;
     padding-top: 21.897810218978105VW;
-    font: 1.25vw 'ProximaNova-Reg';
+    font: 1.25vw 'ProximaNova-Reg', sans-serif;;
     line-height: 1.8;
 }
 
@@ -12291,7 +12291,7 @@ nav ul > li:hover #inda-club {
 }
 
 #thirdblock p {
-    font-family: 'ProximaNova-Reg';
+    font-family: 'ProximaNova-Reg', sans-serif;;
     font-size: 1.1541666666666667VW;
     margin-bottom: 3.694836VW;
     line-height: 1.6;
@@ -12390,7 +12390,7 @@ nav ul > li:hover #inda-club {
 
 #pod_lastblock .col-sp-12 #mailto {
     font-size: 1.3541666666666667VW;
-    font-family: 'ProximaNova-Reg';
+    font-family: 'ProximaNova-Reg', sans-serif;;
     color: #fff;
 }
 
@@ -12591,7 +12591,7 @@ header.other img {
     position: absolute;
     bottom: 0;
     background: #000;
-    font-family: 'ProximaNova-Reg';
+    font-family: 'ProximaNova-Reg', sans-serif;;
     text-align: center;
     left: 2.8VW;
 }
@@ -12720,7 +12720,7 @@ form h2 {
     letter-spacing: 0.03vw;
     line-height: 1.8;
     color: #fff;
-    font: 0.9375vw 'ProximaNova-Reg';
+    font: 0.9375vw 'ProximaNova-Reg', sans-serif;;
     margin-bottom: 3.645vw;
 }
 
@@ -12841,7 +12841,7 @@ form h2 {
     .sort-vinogradawc span,
     .vyderzhkawc span,
     .tirajwc span {
-        font: 0.8333333333333334VW 'ProximaNova-Reg';
+        font: 0.8333333333333334VW 'ProximaNova-Reg', sans-serif;;
         letter-spacing: 0.1vw;
     }
     .volumewc,
@@ -13133,7 +13133,7 @@ html .ui-button.ui-state-disabled:active {
     position: absolute;
     color: #fff;
     bottom: -2.3vw;
-    font: 18px 'ProximaNova-Reg';
+    font: 18px 'ProximaNova-Reg', sans-serif;;
 }
 
 #tick3 {
@@ -13219,7 +13219,7 @@ label {
 #zakaz input[type=text],
 .sections_block input,
 .sections_block_rquaired input {
-    font: 0.9375VW 'ProximaNova-Reg';
+    font: 0.9375VW 'ProximaNova-Reg', sans-serif;;
     margin-bottom: 2.08vw;
     background: transparent;
     display: block;
@@ -13246,7 +13246,7 @@ label {
 }
 
 #zakaz input[type=text] + p {
-    font: 0.83vw 'ProximaNova-Reg';
+    font: 0.83vw 'ProximaNova-Reg', sans-serif;;
     text-align: center;
     margin-bottom: 0;
     color: #928da1;
@@ -13287,7 +13287,7 @@ label {
 
 #zakaz input[type=submit] + p {
     color: #fff;
-    font: 0.83vw 'ProximaNova-Reg';
+    font: 0.83vw 'ProximaNova-Reg', sans-serif;;
 }
 
 #quantity span {
@@ -13569,7 +13569,7 @@ select:-internal-autofill-selected {
 }
 
 .slide-tr {
-    font: 1.146vw 'ProximaNova-Reg';
+    font: 1.146vw 'ProximaNova-Reg', sans-serif;;
     color: #fff;
 }
 
@@ -15451,7 +15451,7 @@ header ul li.active span:after {
         }
         .slide-tl,
         .slide-tr {
-            font: 5vw 'ProximaNova-Reg';
+            font: 5vw 'ProximaNova-Reg', sans-serif;;
         }
         #slide-2 .slide-mt {
             font: 8.333vw 'ProximaNova-Bold';
@@ -16309,7 +16309,7 @@ header ul li.active span:after {
 .featured_cont .swiper-slide {height: 33.854vw;width:22.292vw; padding: 2.396vw 2.083vw 2.865vw;border-right: 1px solid #E0E0E0;overflow: visible;}
 .featured_cont .swiper-slide img {height:20.547vw;width:auto;display: block; margin: 0 auto;}
 .featured_cont .swiper-slide h2 a {
-        font: 1.042vw 'ProximaNova-Reg';
+        font: 1.042vw 'ProximaNova-Reg', sans-serif;;
         line-height: 1.458vw;
         color:#23252b;   
 }
@@ -16354,7 +16354,7 @@ header ul li.active span:after {
 }
 .featured_cont .swiper-slide p {
     color: #9A9A9A;
-    font:0.885vw 'ProximaNova-Reg';
+    font:0.885vw 'ProximaNova-Reg', sans-serif;;
     padding:0;
     line-height:1;
     margin-top:0.521vw;
@@ -16363,19 +16363,19 @@ header ul li.active span:after {
     overflow: visible;
 }
 .button_cont {
-    position: absolute;
     width: auto;
-    top: 100%;
+    top: 90%;
     left: 2.083vw;
     right: 2.083vw;
     height: 5.573vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top:1px solid #D2D2D2;
-    overflow:hidden;
-    opacity:0;
-    transition:0.3s;
+    border-top: 1px solid #D2D2D2;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    margin-top: 21%;
 }
 .featured_cont .wine:hover .button_cont {
     opacity:1;
@@ -16397,13 +16397,14 @@ header ul li.active span:after {
     font-size:1.042vw;
 }
 .button_cont span:first-child {
-    background: url('image/minus.png') top left no-repeat ;
+    background: url('/image/minus.png') top left no-repeat ;
 }
 .button_cont button > span {
-    background:none !important;
+    background: none !important;
+    white-space: nowrap;
 }
 .button_cont span:last-child {
-    background: url('image/plus.png') top left no-repeat ;
+    background: url('/image/plus.png') top left no-repeat ;
 }
 .button_cont button#button-carts {
     padding: 0.417vw 1.563vw 0.417vw 3.125vw;

@@ -68,6 +68,7 @@
 <script src="{{ asset('swiperJs/swiper.min.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
 
+
 <!-- Slider -->
 <script src="{{ asset('rev-slider/js/jquery.themepunch.tools.min.js') }}"></script>
 <script src="{{ asset('rev-slider/js/jquery.themepunch.revolution.min.js') }}"></script>

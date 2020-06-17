@@ -14,21 +14,60 @@
 * headerFixed();
 *
 */
-var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 4,
-    spaceBetween: 30,
+
+
+if ($(window).width() < 991) {
+    var swiper = new Swiper('#home_slider', {
+        slidesPerView: 'auto',
+        spaceBetween: 0,
+        loop: true,
+        pagination: {
+            el: '.home-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+}
+
+
+    var swiper1 = new Swiper('#featured_slide0.swiper-container', {
+        slidesPerView: 'auto',
+        loop: true,
+        spaceBetween: 0,
+        pagination: {
+                    el: '.feat-pagination0',
+                    clickable: true,
+                },
+        navigation: {
+            nextEl: '.nextslide0',
+            prevEl: '.prevslide0',
+        },
+    });
+
+var swiper = new Swiper('#featured_slide1.swiper-container', {
+    slidesPerView: 'auto',
+    loop: true,
+    spaceBetween: 0,
+    pagination: {
+                el: '.feat-pagination1',
+                clickable: true,
+            },
+    navigation: {
+        nextEl: '.nextslide1',
+        prevEl: '.prevslide1',
+    },
+});
+var swiper = new Swiper('#winemakers_slider1.swiper-container', {
+    slidesPerView: 'auto',
     slidesPerGroup: 1,
     loop: true,
     loopFillGroupWithBlank: true,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
+
 });
+
 ;(function($) {
     "use strict";
     
