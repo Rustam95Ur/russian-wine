@@ -10,7 +10,7 @@ class IndexController extends Controller
 
     public function index()
     {
-        $wines = Product::where('status', '=', 'ACTIVE')->get();
+        $wines = Product::where('status', '=', 'ACTIVE')->with('color', 'sugar')->orderBy('id', 'DESC')->get();
         return view('home.index', [
             'wines' => $wines
         ]);

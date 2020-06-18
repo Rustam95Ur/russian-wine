@@ -32,6 +32,7 @@ class CreateProductsTable extends Migration
             $table->integer('fortress');
             $table->integer('year');
             $table->string('volume');
+            $table->string('sugar_id');
             $table->integer('count');
             $table->string('image')->nullable();
             $table->string('slug')->unique();

@@ -1,447 +1,130 @@
 @extends('layouts.app')
 @section('content')
-        <!-- SLIDER -->
-        <div id="home_slid">
-            <center>
-                <video autoplay="" muted="" loop="" id="myVideo">
-                    <source src="{{ asset ('video/wineclub.mp4') }}" type="video/mp4">
-                </video>
-            </center>
-            <div class="swiper-viewport">
-                <div id="home_slider" class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide text-center"><a href="{{route('wine-shop')}}">
-                                <img src="{{ asset ('image/background_podpiska.png') }}">
-                                <span>Вино</span>
-                                <p>
-                                    Мы собрали для Вас самую полную коллекцию Русских Вин, как крупных заводов, так
-                                    авторских микровиноделен.
-                                </p>
-                            </a>
-                            <a href="{{route('wine-shop')}}" class="home_btn">Все вина</a>
+    <!-- SLIDER -->
+    <div id="home_slid">
+        <center>
+            <video autoplay="" muted="" loop="" id="myVideo">
+                <source src="{{ asset ('video/wineclub.mp4') }}" type="video/mp4">
+            </video>
+        </center>
+        <div class="swiper-viewport">
+            <div id="home_slider" class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide text-center"><a href="{{route('wine-shop')}}">
+                            <img src="{{ asset ('image/background_podpiska.png') }}">
+                            <span>Вино</span>
+                            <p>
+                                Мы собрали для Вас самую полную коллекцию Русских Вин, как крупных заводов, так
+                                авторских микровиноделен.
+                            </p>
+                        </a>
+                        <a href="{{route('wine-shop')}}" class="home_btn">Все вина</a>
 
-                            <!--<div id="mouse_img"><a target="_blank" href="https://www.youtube.com/channel/UCN-RcIaaNGUmZBYg9HJtoKg">
-                                    <div id="chevrons">
-                                    <div class="chevron"></div>
-                                    <div class="chevron"></div>
-                                    <div class="chevron"></div>
-                                    </div>
-                                    </a></div> -->
-                        </div>
-                        <div class="swiper-slide text-center">
-                            <a href="{{route('sets')}}">
-                                <img src="{{ asset ('image/background_sety.png') }}">
-                                <span>Сеты</span>
-                                <p>
-                                    Мы объехали все винодельни нашей страны и отобрали лучшие и самые интересные вина.
-                                    Собрали из них сеты на любой случай.
-                                </p>
-                            </a><a href="{{route('sets')}}" class="home_btn">Выбрать Сет</a>
-
-                        </div>
-                        <div class="swiper-slide text-center"><a href="https://russianvine.ru/tasting/">
-                                <img src="{{ asset ('image/background_club.png') }}">
-                                <span>Дегустации</span>
-                                <p>
-                                    Обладая опытом проведения дегустаций различного уровня, берёмся за форматы любой
-                                    сложности, как для профессионалов, так и для новичков в мире вина.
-                                </p>
-                            </a><a href="https://tasting.russianvine.ru" class="home_btn">Записаться</a>
-
-                        </div>
-                        <div class="swiper-slide text-center">
-                            <a href="/imennoe-vino">
-                                <img src="{{ asset ('image/background_imennoe.png') }}">
-                                <span>Именное вино</span>
-                                <p>
-                                    Создайте семейную традицию – заложите свою бочку вина. По окончании выдержки, вино
-                                    разливается в бутылки с Вашей именной этикеткой.
-                                </p>
-                            </a><a class="home_btn" href="/imennoe-vino">Узнать больше</a>
-
-
-                        </div>
+                        <!--<div id="mouse_img"><a target="_blank" href="https://www.youtube.com/channel/UCN-RcIaaNGUmZBYg9HJtoKg">
+                                <div id="chevrons">
+                                <div class="chevron"></div>
+                                <div class="chevron"></div>
+                                <div class="chevron"></div>
+                                </div>
+                                </a></div> -->
+                    </div>
+                    <div class="swiper-slide text-center">
+                        <a href="{{route('sets')}}">
+                            <img src="{{ asset ('image/background_sety.png') }}">
+                            <span>Сеты</span>
+                            <p>
+                                Мы объехали все винодельни нашей страны и отобрали лучшие и самые интересные вина.
+                                Собрали из них сеты на любой случай.
+                            </p>
+                        </a><a href="{{route('sets')}}" class="home_btn">Выбрать Сет</a>
 
                     </div>
+                    <div class="swiper-slide text-center"><a href="https://russianvine.ru/tasting/">
+                            <img src="{{ asset ('image/background_club.png') }}">
+                            <span>Дегустации</span>
+                            <p>
+                                Обладая опытом проведения дегустаций различного уровня, берёмся за форматы любой
+                                сложности, как для профессионалов, так и для новичков в мире вина.
+                            </p>
+                        </a><a href="https://tasting.russianvine.ru" class="home_btn">Записаться</a>
+
+                    </div>
+                    <div class="swiper-slide text-center">
+                        <a href="/imennoe-vino">
+                            <img src="{{ asset ('image/background_imennoe.png') }}">
+                            <span>Именное вино</span>
+                            <p>
+                                Создайте семейную традицию – заложите свою бочку вина. По окончании выдержки, вино
+                                разливается в бутылки с Вашей именной этикеткой.
+                            </p>
+                        </a><a class="home_btn" href="/imennoe-vino">Узнать больше</a>
+
+
+                    </div>
+
                 </div>
-                <div class="swiper-pagination home-pagination"></div>
-                <!-- Add Arrows -->
-                <div class="swiper-button-next "></div>
-                <div class="swiper-button-prev"></div>
             </div>
-            <div id="mouse_img"><a href="#first_block"><img src="       ">
-                    <div id="chevrons">
-                        <div class="chevron"></div>
-                        <div class="chevron"></div>
-                        <div class="chevron"></div>
-                    </div>
-                </a>
-            </div>
+            <div class="swiper-pagination home-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next "></div>
+            <div class="swiper-button-prev"></div>
         </div>
-    </div> <!-- /.flat-slider -->
-
+        <div id="mouse_img"><a href="#first_block"><img src="">
+                <div id="chevrons">
+                    <div class="chevron"></div>
+                    <div class="chevron"></div>
+                    <div class="chevron"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- /.flat-slider -->
     <div class="main-homepage-1">
-
         <!-- Ниже по хорошему нужна отдельная вьюха под слайдер продуктов слайдер позже сделаю там ебанутый у них -->
         <section id="content_top">
             <div class="featured_cont">
-            <!-- slider here -->
-            <!-- Swiper -->
-                <h4>Новинки</h4>
-                <div class="prevslide0" id="prevslide" tabindex="0" role="button" aria-label="Previous slide"><img src="{{ asset ('image/slidearrow.png') }}" style="transform: rotate(180deg);"></div>
-                <div class="nextslide0" id="nextslide" tabindex="0" role="button" aria-label="Next slide"><img src="{{ asset ('image/slidearrow.png') }}"></div>
+                <!-- slider here -->
+                <!-- Swiper -->
+                <h4>{{trans('home.new')}}</h4>
+                <div class="prevslide0" id="prevslide" tabindex="0" role="button" aria-label="Previous slide"><img
+                        src="{{ asset ('image/slidearrow.png') }}" style="transform: rotate(180deg);"></div>
+                <div class="nextslide0" id="nextslide" tabindex="0" role="button" aria-label="Next slide"><img
+                        src="{{ asset ('image/slidearrow.png') }}"></div>
                 <div class="swiper-container" id="featured_slide0">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">Марселан1</a>
-                                    </h2>
-
-                                    <p>YAIYLA</p>
-
-                                <div class="meta">
-                                    <span class="color">Красное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
+                        @foreach($wines as $wine)
+                            <div class="swiper-slide">
+                                <div class="wine">
+                                    <div class="image">
+                                        <a href="#" class="preview">
+                                            <img src="{{ Voyager::image($wine->image) }}">
+                                            <span class="attributes"></span>
+                                        </a>
                                     </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
+                                    <h2><a href="#" class="preview">{{$wine->title}}</a></h2>
+                                    <p>{{$wine->winery_id}}</p>
+                                    <div class="meta">
+                                        <span class="color">{{$wine->color->title}} </span><span class="sep"> | </span>
+                                        <span class="hardness">{{$wine->sugar->title}} </span><span
+                                            class="sep"> | </span>
+                                        <span class="year"> {{$wine->year}}</span>
+                                        <div class="price-vinoteka">
+                                            <a href="#" class="preview">{{$wine->price}} <span>п</span></a>
                                         </div>
-                                        <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
+                                        <div class="button_cont">
+                                            <div class="prod_quantity">
+                                                <span class="qua_mins"></span>
+                                                <input type="number" class="quantity" data-id="{{$wine->id}}" value="1">
+                                                <span class="qua_plus"></span>
+                                            </div>
+                                            <button id="button-carts"
+                                                    onclick="cart.add('{{$wine->id}}'); $(this).addClass('active');">
+                                                <span>В корзину</span></button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">Марсеан2</a>
-                                    </h2>
-
-                                    <p>YAIYLA</p>
-
-                                <div class="meta">
-                                    <span class="color">Красное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
-                                        </div>
-                                        <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">Марсен3</a>
-                                    </h2>
-
-                                    <p>YAIYLA</p>
-
-                                <div class="meta">
-                                    <span class="color">Красное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
-                                        </div>
-                                        <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">Марлан4</a>
-                                    </h2>
-
-                                    <p>YAIYLA</p>
-
-                                <div class="meta">
-                                    <span class="color">Красное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
-                                        </div>
-                                        <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">Малан5</a>
-                                    </h2>
-
-                                    <p>YAIYLA</p>
-
-                                <div class="meta">
-                                    <span class="color">Красное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
-                                        </div>
-                                        <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                    
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">6</a>
-                                    </h2>
-
-                                    <p>YAIYLA</p>
-
-                                <div class="meta">
-                                    <span class="color">Красное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
-                                        </div>
-                                        <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">Марлан7</a>
-                                    </h2>
-
-                                    <p>YALA</p>
-
-                                <div class="meta">
-                                    <span class="color">Красное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
-                                        </div>
-                                        <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">Марслан8</a>
-                                    </h2>
-
-                                    <p>YAIYA</p>
-
-                                <div class="meta">
-                                    <span class="color">Краное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
-                                        </div>
-                                        <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">Марселан9</a>
-                                    </h2>
-
-                                    <p>YAILA</p>
-
-                                <div class="meta">
-                                    <span class="color">Красное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
-                                        </div>
-                                            <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">Мрселан10</a>
-                                    </h2>
-
-                                    <p>YAIYLA</p>
-
-                                <div class="meta">
-                                    <span class="color">Красное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
-                                        </div>
-                                        <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
-                                </div>
-                                </div>
-                            </div>
-                        </div>                    
+                        @endforeach
                     </div>
                     <!-- Add Pagination -->
                     <!-- Add Arrows -->
@@ -509,370 +192,59 @@
         <section id="content_bottom">
             <!-- 2nd slider here -->
             <div class="featured_cont">
-            <!-- slider here -->
-            <!-- Swiper -->
-                <h4>Популярное  </h4>
-                <div class="prevslide1" id="prevslide" tabindex="0" role="button" aria-label="Previous slide"><img src="{{ asset ('image/slidearrow.png') }}" style="transform: rotate(180deg);"></div>
-                <div class="nextslide1" id="nextslide" tabindex="0" role="button" aria-label="Next slide"><img src="{{ asset ('image/slidearrow.png') }}"></div>
+                <!-- slider here -->
+                <!-- Swiper -->
+                <h4>{{trans('home.popular')}} </h4>
+                <div class="prevslide1" id="prevslide" tabindex="0" role="button" aria-label="Previous slide"><img
+                        src="{{ asset ('image/slidearrow.png') }}" style="transform: rotate(180deg);"></div>
+                <div class="nextslide1" id="nextslide" tabindex="0" role="button" aria-label="Next slide"><img
+                        src="{{ asset ('image/slidearrow.png') }}"></div>
                 <div class="swiper-container" id="featured_slide1">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">Марселан1</a>
-                                    </h2>
-
-                                    <p>YAIYLA</p>
-
-                                <div class="meta">
-                                    <span class="color">Красное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
+                        @foreach($wines as $wine)
+                            @if ($wine->featured)
+                                <div class="swiper-slide">
+                                    <div class="wine">
+                                        <div class="image">
+                                            <a href="#" class="preview">
+                                                <img src="{{ Voyager::image($wine->image) }}">
+                                                <span class="attributes"></span>
+                                            </a>
                                         </div>
-                                        <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">Марсеан2</a>
-                                    </h2>
-
-                                    <p>YAIYLA</p>
-
-                                <div class="meta">
-                                    <span class="color">Красное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
+                                        <h2><a href="#" class="preview">{{$wine->title}}</a></h2>
+                                        <p>{{$wine->winery_id}}</p>
+                                        <div class="meta">
+                                            <span class="color">{{$wine->color->title}} </span><span
+                                                class="sep"> | </span>
+                                            <span class="hardness">{{$wine->sugar->title}} </span><span
+                                                class="sep"> | </span>
+                                            <span class="year"> {{$wine->year}}</span>
+                                            <div class="price-vinoteka">
+                                                <a href="#" class="preview">{{$wine->price}} <span>п</span></a>
+                                            </div>
+                                            <div class="button_cont">
+                                                <div class="prod_quantity">
+                                                    <span class="qua_mins"></span>
+                                                    <input type="number" class="quantity" data-id="{{$wine->id}}"
+                                                           value="1">
+                                                    <span class="qua_plus"></span>
+                                                </div>
+                                                <button id="button-carts"
+                                                        onclick="cart.add('{{$wine->id}}'); $(this).addClass('active');">
+                                                    <span>В корзину</span></button>
+                                            </div>
                                         </div>
-                                        <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">Марсен3</a>
-                                    </h2>
-
-                                    <p>YAIYLA</p>
-
-                                <div class="meta">
-                                    <span class="color">Красное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
-                                        </div>
-                                        <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">Марлан4</a>
-                                    </h2>
-
-                                    <p>YAIYLA</p>
-
-                                <div class="meta">
-                                    <span class="color">Красное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
-                                        </div>
-                                        <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">Малан5</a>
-                                    </h2>
-
-                                    <p>YAIYLA</p>
-
-                                <div class="meta">
-                                    <span class="color">Красное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
-                                        </div>
-                                        <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                    
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">6</a>
-                                    </h2>
-
-                                    <p>YAIYLA</p>
-
-                                <div class="meta">
-                                    <span class="color">Красное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
-                                        </div>
-                                        <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">Марлан7</a>
-                                    </h2>
-
-                                    <p>YALA</p>
-
-                                <div class="meta">
-                                    <span class="color">Красное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
-                                        </div>
-                                        <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">Марслан8</a>
-                                    </h2>
-
-                                    <p>YAIYA</p>
-
-                                <div class="meta">
-                                    <span class="color">Краное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
-                                        </div>
-                                        <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">Марселан9</a>
-                                    </h2>
-
-                                    <p>YAILA</p>
-
-                                <div class="meta">
-                                    <span class="color">Красное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
-                                        </div>
-                                            <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="wine">
-                                <div class="image">
-                                    <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">
-                                    <img src="{{ asset ('image/6.png') }}">
-                                    <span class="attributes">
-                                        
-                                    <br>
-                                                <br>
-                                    </span>
-                                    </a>
-                                </div>
-                                    <h2>
-                                        <a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">Мрселан10</a>
-                                    </h2>
-
-                                    <p>YAIYLA</p>
-
-                                <div class="meta">
-                                    <span class="color">Красное </span><span class="sep"> | </span>
-                                    <span class="hardness"> Сухое </span><span class="sep"> | </span>
-                                    <span class="year"> 2018</span>
-                                    <div class="price-vinoteka"><a href="https://russianvine.ru/vino-yala-marselan-2018" class="preview">1600 <span>п</span> </a>
-                                    </div>
-                                    <div class="button_cont">
-                                        <div class="prod_quantity">
-                                            <span class="qua_mins"></span>
-                                            <input type="number" class="quantity" data-id="786" value="1">
-                                            <span class="qua_plus"></span>
-                                        </div>
-                                        <button id="button-carts" onclick="cart.add('786'); $(this).addClass('active');"> <span>В корзину</span></button>
-                                </div>
-                                </div>
-                            </div>
-                        </div>                    
+                            @endif
+                        @endforeach
                     </div>
                     <!-- Add Pagination -->
                     <!-- Add Arrows -->
                 </div>
                 <div class="swiper-pagination feat-pagination1"></div>
                 <!-- Swiper JS -->
-                
+
             </div>
         </section>
 
@@ -898,101 +270,108 @@
                 <a href="/winemakers">Все виноделы</a>
                 <!-- 3rd slider here -->
                 <div class="swiper-container" id="winemakers_slider1">
-                <div class="swiper-wrapper" id="winemakers_slider">
-                    <div class="swiper-slide">
-                        <div class="slide-inner">
-                            <div>
-                            <a href="https://russianvine.ru/winemakers?id=64"> <img src="{{ asset ('image/yala-aleksei14.png') }}"></a>
+                    <div class="swiper-wrapper" id="winemakers_slider">
+                        <div class="swiper-slide">
+                            <div class="slide-inner">
+                                <div>
+                                    <a href="https://russianvine.ru/winemakers?id=64"> <img
+                                            src="{{ asset ('image/yala-aleksei14.png') }}"></a>
+                                </div>
+                                <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
+                                <ul>
+                                    <li><p>YAIYLA</p></li>
+                                    <li><p>Крым</p></li>
+                                    <li><p>Виа: Мальбек, Мускат, Кокур, Сира, Пино уар</p></li>
+                                </ul>
                             </div>
-                            <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
-                            <ul>
-                                <li><p>YAIYLA</p></li>
-                                <li><p>Крым</p></li>
-                                <li><p>Виа: Мальбек, Мускат, Кокур, Сира, Пино уар</p></li>
-                            </ul>
-                        </div>   
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-inner">
+                                <div>
+                                    <a href="https://russianvine.ru/winemakers?id=64"> <img
+                                            src="{{ asset ('image/6.png') }}"></a>
+                                </div>
+                                <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
+                                <ul>
+                                    <li><p>YAIYLA</p></li>
+                                    <li><p>Крым</p></li>
+                                    <li><p>Виа: Мальбек, Мускат, Кокур, Сра, Пино Нуар</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-inner">
+                                <div>
+                                    <a href="https://russianvine.ru/winemakers?id=64"> <img
+                                            src="{{ asset ('image/yala-aleksei14.png') }}"></a>
+                                </div>
+                                <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
+                                <ul>
+                                    <li><p>YAIYLA</p></li>
+                                    <li><p>Крым</p></li>
+                                    <li><p>Виа: Мальбек, Мускат, Ккур, Сира, Пино Нуар</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-inner">
+                                <div>
+                                    <a href="https://russianvine.ru/winemakers?id=64"> <img
+                                            src="{{ asset ('image/yala-aleksei14.png') }}"></a>
+                                </div>
+                                <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
+                                <ul>
+                                    <li><p>YAIYLA</p></li>
+                                    <li><p>Крым</p></li>
+                                    <li><p>Виа: Мальбек, Мусат, Кокур, Сира, Пино Нуар</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-inner">
+                                <div>
+                                    <a href="https://russianvine.ru/winemakers?id=64"> <img
+                                            src="{{ asset ('image/yala-aleksei14.png') }}"></a>
+                                </div>
+                                <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
+                                <ul>
+                                    <li><p>YAIYLA</p></li>
+                                    <li><p>Крым</p></li>
+                                    <li><p>Виа: Малбек, Мускат, Кокур, Сира, Пино Нуар</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-inner">
+                                <div>
+                                    <a href="https://russianvine.ru/winemakers?id=64"> <img
+                                            src="{{ asset ('image/yala-aleksei14.png') }}"></a>
+                                </div>
+                                <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
+                                <ul>
+                                    <li><p>YAIYLA</p></li>
+                                    <li><p>Крым</p></li>
+                                    <li><p>Виа: Маьбек, Мускат, Кокур, Сира, Пино Нуар</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-inner">
+                                <div>
+                                    <a href="https://russianvine.ru/winemakers?id=64"> <img
+                                            src="{{ asset ('image/yala-aleksei14.png') }}"></a>
+                                </div>
+                                <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
+                                <ul>
+                                    <li><p>YAIYLA</p></li>
+                                    <li><p>Крым</p></li>
+                                    <li><p>Виа: Мальек, Мускат, Кокур, Сира, Пино Нуар</p></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="slide-inner">
-                            <div>
-                            <a href="https://russianvine.ru/winemakers?id=64"> <img src="{{ asset ('image/6.png') }}"></a>
-                            </div>
-                            <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
-                            <ul>
-                                <li><p>YAIYLA</p></li>
-                                <li><p>Крым</p></li>
-                                <li><p>Виа: Мальбек, Мускат, Кокур, Сра, Пино Нуар</p></li>
-                            </ul>
-                        </div>   
-                    </div>   
-                    <div class="swiper-slide">
-                        <div class="slide-inner">
-                            <div>
-                            <a href="https://russianvine.ru/winemakers?id=64"> <img src="{{ asset ('image/yala-aleksei14.png') }}"></a>
-                            </div>
-                            <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
-                            <ul>
-                                <li><p>YAIYLA</p></li>
-                                <li><p>Крым</p></li>
-                                <li><p>Виа: Мальбек, Мускат, Ккур, Сира, Пино Нуар</p></li>
-                            </ul>
-                        </div>   
-                    </div>   
-                    <div class="swiper-slide">
-                        <div class="slide-inner">
-                            <div>
-                            <a href="https://russianvine.ru/winemakers?id=64"> <img src="{{ asset ('image/yala-aleksei14.png') }}"></a>
-                            </div>
-                            <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
-                            <ul>
-                                <li><p>YAIYLA</p></li>
-                                <li><p>Крым</p></li>
-                                <li><p>Виа: Мальбек, Мусат, Кокур, Сира, Пино Нуар</p></li>
-                            </ul>
-                        </div>   
-                    </div>   
-                    <div class="swiper-slide">
-                        <div class="slide-inner">
-                            <div>
-                            <a href="https://russianvine.ru/winemakers?id=64"> <img src="{{ asset ('image/yala-aleksei14.png') }}"></a>
-                            </div>
-                            <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
-                            <ul>
-                                <li><p>YAIYLA</p></li>
-                                <li><p>Крым</p></li>
-                                <li><p>Виа: Малбек, Мускат, Кокур, Сира, Пино Нуар</p></li>
-                            </ul>
-                        </div>   
-                    </div>   
-                    <div class="swiper-slide">
-                        <div class="slide-inner">
-                            <div>
-                            <a href="https://russianvine.ru/winemakers?id=64"> <img src="{{ asset ('image/yala-aleksei14.png') }}"></a>
-                            </div>
-                            <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
-                            <ul>
-                                <li><p>YAIYLA</p></li>
-                                <li><p>Крым</p></li>
-                                <li><p>Виа: Маьбек, Мускат, Кокур, Сира, Пино Нуар</p></li>
-                            </ul>
-                        </div>   
-                    </div>   
-                    <div class="swiper-slide">
-                        <div class="slide-inner">
-                            <div>
-                            <a href="https://russianvine.ru/winemakers?id=64"> <img src="{{ asset ('image/yala-aleksei14.png') }}"></a>
-                            </div>
-                            <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
-                            <ul>
-                                <li><p>YAIYLA</p></li>
-                                <li><p>Крым</p></li>
-                                <li><p>Виа: Мальек, Мускат, Кокур, Сира, Пино Нуар</p></li>
-                            </ul>
-                        </div>   
-                    </div>                     
                 </div>
             </div>
-            </div>
         </section>
-         <!-- /homepage1 -->
+        <!-- /homepage1 -->
 @endsection
