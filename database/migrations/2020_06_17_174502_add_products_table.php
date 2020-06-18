@@ -13,7 +13,7 @@ class AddProductsTable extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
+        Schema::table('wines', function (Blueprint $table) {
             $table->boolean('featured')->default(0);
             $table->integer('price');
         });
@@ -26,7 +26,7 @@ class AddProductsTable extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
+        Schema::table('wines', function (Blueprint $table) {
             //
         });
     }

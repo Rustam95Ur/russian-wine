@@ -271,104 +271,27 @@
                 <!-- 3rd slider here -->
                 <div class="swiper-container" id="winemakers_slider1">
                     <div class="swiper-wrapper" id="winemakers_slider">
-                        <div class="swiper-slide">
-                            <div class="slide-inner">
-                                <div>
-                                    <a href="https://russianvine.ru/winemakers?id=64"> <img
-                                            src="{{ asset ('image/yala-aleksei14.png') }}"></a>
+                        @foreach($winemakers as $winemaker)
+                            <div class="swiper-slide">
+                                <div class="slide-inner">
+                                    <div>
+                                        <a href="#">
+                                            <img alt="{{$winemaker->seo_title}}"
+                                                 src="{{ Voyager::image($winemaker->image) }}"></a>
+                                    </div>
+                                    <h6><a href="#">{{$winemaker->full_name}}</a></h6>
+                                    <ul>
+                                        <li><p>{{$winemaker->winery_id}}</p></li>
+                                        <li><p>{{$winemaker->region->title}}</p></li>
+                                        <li><p>Вина:
+                                                @foreach($winemaker->wines as $wine)
+                                                    {{$wine->title}}@if(!$loop->last),@endif
+                                                @endforeach
+                                            </p></li>
+                                    </ul>
                                 </div>
-                                <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
-                                <ul>
-                                    <li><p>YAIYLA</p></li>
-                                    <li><p>Крым</p></li>
-                                    <li><p>Виа: Мальбек, Мускат, Кокур, Сира, Пино уар</p></li>
-                                </ul>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide-inner">
-                                <div>
-                                    <a href="https://russianvine.ru/winemakers?id=64"> <img
-                                            src="{{ asset ('image/6.png') }}"></a>
-                                </div>
-                                <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
-                                <ul>
-                                    <li><p>YAIYLA</p></li>
-                                    <li><p>Крым</p></li>
-                                    <li><p>Виа: Мальбек, Мускат, Кокур, Сра, Пино Нуар</p></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide-inner">
-                                <div>
-                                    <a href="https://russianvine.ru/winemakers?id=64"> <img
-                                            src="{{ asset ('image/yala-aleksei14.png') }}"></a>
-                                </div>
-                                <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
-                                <ul>
-                                    <li><p>YAIYLA</p></li>
-                                    <li><p>Крым</p></li>
-                                    <li><p>Виа: Мальбек, Мускат, Ккур, Сира, Пино Нуар</p></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide-inner">
-                                <div>
-                                    <a href="https://russianvine.ru/winemakers?id=64"> <img
-                                            src="{{ asset ('image/yala-aleksei14.png') }}"></a>
-                                </div>
-                                <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
-                                <ul>
-                                    <li><p>YAIYLA</p></li>
-                                    <li><p>Крым</p></li>
-                                    <li><p>Виа: Мальбек, Мусат, Кокур, Сира, Пино Нуар</p></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide-inner">
-                                <div>
-                                    <a href="https://russianvine.ru/winemakers?id=64"> <img
-                                            src="{{ asset ('image/yala-aleksei14.png') }}"></a>
-                                </div>
-                                <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
-                                <ul>
-                                    <li><p>YAIYLA</p></li>
-                                    <li><p>Крым</p></li>
-                                    <li><p>Виа: Малбек, Мускат, Кокур, Сира, Пино Нуар</p></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide-inner">
-                                <div>
-                                    <a href="https://russianvine.ru/winemakers?id=64"> <img
-                                            src="{{ asset ('image/yala-aleksei14.png') }}"></a>
-                                </div>
-                                <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
-                                <ul>
-                                    <li><p>YAIYLA</p></li>
-                                    <li><p>Крым</p></li>
-                                    <li><p>Виа: Маьбек, Мускат, Кокур, Сира, Пино Нуар</p></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide-inner">
-                                <div>
-                                    <a href="https://russianvine.ru/winemakers?id=64"> <img
-                                            src="{{ asset ('image/yala-aleksei14.png') }}"></a>
-                                </div>
-                                <h6><a href="https://russianvine.ru/winemakers?id=64">Чернега Алексей</a></h6>
-                                <ul>
-                                    <li><p>YAIYLA</p></li>
-                                    <li><p>Крым</p></li>
-                                    <li><p>Виа: Мальек, Мускат, Кокур, Сира, Пино Нуар</p></li>
-                                </ul>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

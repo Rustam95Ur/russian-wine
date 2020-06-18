@@ -13,7 +13,7 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('wines', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('seo_title')->nullable();
@@ -50,6 +50,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('wines');
     }
 }
