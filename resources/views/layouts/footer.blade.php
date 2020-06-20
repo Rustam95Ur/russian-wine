@@ -25,7 +25,7 @@
                 <h5>Партнерам <i class="fa fa-chevron-down"></i></h5>
                 <ul class="list-unstyled">
                     <li><a href="/distributors">Дистрибьюторам</a></li>
-                    <li><a href="/franchise">Франшиза</a></li>
+                    <li><a href="{{route('franchise')}}">{{trans('header.franchise')}}</a></li>
                     <li><a href="/wine-tour">Винный тур</a></li>
                 </ul>
             </div>
@@ -35,7 +35,7 @@
                 <div class="social">
                     <a href="https://www.facebook.com">
                         <img alt="facebook-icon" src="{{ asset ('image/iconFacebook.png') }}"></a>
-                    <a href="https://www.instagram.com">
+                    <a href="https://instagram.com/russianvine.ru?igshid=1kot521x7b8l">
                         <img alt='instagram-icon' src="{{ asset ('image/iconInstagram.png') }}"></a>
                 </div>
             </div>

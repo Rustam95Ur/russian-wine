@@ -14,3 +14,7 @@
 #menu.navbar-right li:hover .dropdown-menu-custom {
     display: block;
 }
+
+.navbar-nav .active_link {
+    border-bottom:2px solid rgba(218, 34, 77, 0.6);
+}
