@@ -94,7 +94,6 @@
                     <div class="swiper-wrapper">
                         @foreach($wines as $wine)
                             @if ($wine->featured)
-
                                 <div class="swiper-slide">
                                     <div class="wine">
                                         <div class="image">
