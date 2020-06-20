@@ -11,8 +11,5 @@ class IndexController extends Controller
         return view('shop.wine-list');
     }
 
-    public function sets()
-    {
-        return view('shop.sets');
-    }
+
 }

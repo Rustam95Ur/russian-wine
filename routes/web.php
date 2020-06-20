@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('', 'Home\IndexController@index')->name('home');
 Route::get('/wine-shop', 'Shop\IndexController@wine_list')->name('wine-shop');
-Route::get('/sets', 'Shop\IndexController@sets')->name('sets');
+Route::get('/sets', 'Shop\SetController@index')->name('sets');
 Route::get('/subscription', 'Shop\SubscriptionController@index')->name('subscription');
 Route::get('/winemakers', 'Page\WinemakerController@index')->name('winemakers');
 

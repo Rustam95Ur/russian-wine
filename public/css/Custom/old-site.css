@@ -15267,7 +15267,7 @@ header ul li.active span:after {
     width: 100%;
 }
 .sety-category #sety-banner {
-    background: url('/image/catalog/wineclub/sety/setybg.png');
+    background: url('/image/bg/sets_page_bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     height: 56.250vw;

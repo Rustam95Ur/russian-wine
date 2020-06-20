@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 18 2020 г., 22:09
+-- Время создания: Июн 20 2020 г., 18:19
 -- Версия сервера: 5.7.25
 -- Версия PHP: 7.3.9
 
@@ -235,7 +235,51 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (129, 19, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 12),
 (131, 19, 'winemaker_belongsto_region_relationship', 'relationship', 'Регион', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Region\",\"table\":\"regions\",\"type\":\"belongsTo\",\"column\":\"region_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 13),
 (132, 19, 'winery_id', 'text', 'Winery Id', 1, 1, 1, 1, 1, 1, '{}', 5),
-(133, 19, 'winemaker_belongstomany_wine_relationship', 'relationship', 'Вины', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Wine\",\"table\":\"wines\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"winemaker_wine\",\"pivot\":\"1\",\"taggable\":\"on\"}', 14);
+(133, 19, 'winemaker_belongstomany_wine_relationship', 'relationship', 'Вины', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Wine\",\"table\":\"wines\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"winemaker_wine\",\"pivot\":\"1\",\"taggable\":\"on\"}', 14),
+(134, 20, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(135, 20, 'title', 'text', 'Название', 1, 1, 1, 1, 1, 1, '{}', 2),
+(136, 20, 'signature', 'text', 'Сигнатура', 1, 0, 1, 1, 1, 1, '{}', 3),
+(137, 20, 'description', 'text_area', 'Описание', 1, 0, 1, 1, 1, 1, '{}', 4),
+(138, 20, 'header_image', 'image', 'Основное фото в хедере', 1, 0, 1, 1, 1, 1, '{}', 5),
+(139, 20, 'logo_image', 'image', 'Логотип', 1, 1, 1, 1, 1, 1, '{}', 6),
+(140, 20, 'catalog_image', 'image', 'Изображение для каталога', 1, 0, 1, 1, 1, 1, '{}', 7),
+(141, 20, 'region_id', 'text', 'Регион', 1, 0, 1, 1, 1, 1, '{}', 8),
+(142, 20, 'seo_title', 'text', 'Seo Title', 0, 0, 1, 1, 1, 1, '{}', 9),
+(143, 20, 'type_id', 'select_dropdown', 'Тип винодельни', 1, 1, 1, 1, 1, 1, '{\"default\":\"1\",\"options\":{\"1\":\"\\u0412\\u0438\\u043d\\u043e\\u0434\\u0435\\u043b\\u044c\\u043d\\u044f\",\"2\":\"\\u041c\\u0438\\u043a\\u0440\\u043e\\u0432\\u0438\\u043d\\u043e\\u0434\\u0435\\u043b\\u044c\\u043d\\u044f\"}}', 10),
+(144, 20, 'layout_id', 'number', 'Номер макета', 1, 1, 1, 1, 1, 1, '{}', 11),
+(145, 20, 'subscribe_status', 'select_dropdown', 'Выводить винодельню в разделе \"Подписка\"', 1, 0, 1, 1, 1, 1, '{\"default\":\"1\",\"options\":{\"1\":\"\\u0414\\u0430\",\"2\":\"\\u041d\\u0435\\u0442\"}}', 12),
+(146, 20, 'slug', 'text', 'SEO URL', 1, 0, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\",\"forceUpdate\":true},\"validation\":{\"rule\":\"unique:wineries,slug\"}}', 13),
+(147, 20, 'status', 'select_dropdown', 'Статус', 1, 1, 1, 1, 1, 1, '{\"default\":\"ACTIVE\",\"options\":{\"ACTIVE\":\"\\u0430\\u043a\\u0442\\u0438\\u0432\\u043d\\u044b\\u0439\",\"INACTIVE\":\"\\u043d\\u0435\\u0430\\u043a\\u0442\\u0438\\u0432\\u043d\\u044b\\u0439\"}}', 14),
+(148, 20, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 1, '{}', 17),
+(149, 20, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 18),
+(150, 20, 'winery_belongsto_region_relationship', 'relationship', 'Регион', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Region\",\"table\":\"regions\",\"type\":\"belongsTo\",\"column\":\"region_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 19),
+(151, 20, 'coordinate_lon', 'number', 'Координаты долготы', 1, 1, 1, 1, 1, 1, '{}', 15),
+(152, 20, 'coordinate_lat', 'number', 'Координаты широты', 1, 1, 1, 1, 1, 1, '{}', 16),
+(153, 9, 'wine_belongsto_winery_relationship', 'relationship', 'Винедельня', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Winery\",\"table\":\"wineries\",\"type\":\"belongsTo\",\"column\":\"winery_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 33),
+(154, 19, 'winemaker_belongsto_winery_relationship', 'relationship', 'Винодельня', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Winery\",\"table\":\"wineries\",\"type\":\"belongsTo\",\"column\":\"winery_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 15),
+(155, 21, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(156, 21, 'title', 'text', 'Название', 1, 1, 1, 1, 1, 1, '{}', 2),
+(157, 21, 'description', 'text_area', 'Описание', 0, 0, 1, 1, 1, 1, '{}', 3),
+(158, 21, 'model', 'text', 'Модель', 1, 0, 1, 1, 1, 1, '{}', 4),
+(159, 21, 'price', 'number', 'Цена', 1, 1, 1, 1, 1, 1, '{}', 5),
+(160, 21, 'year', 'number', 'Год', 1, 0, 1, 1, 1, 1, '{}', 6),
+(161, 21, 'image', 'image', 'Картинка', 1, 0, 1, 1, 1, 1, '{}', 7),
+(163, 21, 'count', 'number', 'Количество', 1, 1, 1, 1, 1, 1, '{}', 9),
+(164, 21, 'prev_set_id', 'text', 'Предыдущий сет', 0, 0, 1, 1, 1, 1, '{}', 10),
+(165, 21, 'next_set_id', 'text', 'Следующий сет', 0, 0, 1, 1, 1, 1, '{}', 11),
+(166, 21, 'next_category_set_id', 'text', 'Следующий сет (для категории \"Сеты\")', 0, 0, 1, 1, 1, 1, '{}', 12),
+(167, 21, 'prev_category_set_id', 'text', 'Предыдущий сет (для категории \"Сеты\")', 0, 0, 1, 1, 1, 1, '{}', 13),
+(168, 21, 'meta_description', 'text_area', 'Meta Description', 1, 0, 1, 1, 1, 1, '{}', 14),
+(169, 21, 'meta_keywords', 'text_area', 'Meta Keywords', 1, 0, 1, 1, 1, 1, '{}', 15),
+(170, 21, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 1, '{}', 17),
+(171, 21, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 18),
+(172, 21, 'set_belongsto_wine_relationship', 'relationship', 'Предыдущий сет', 0, 0, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Set\",\"table\":\"sets\",\"type\":\"belongsTo\",\"column\":\"prev_set_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 19),
+(173, 21, 'set_belongsto_set_relationship', 'relationship', 'Следующий сет', 0, 0, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Set\",\"table\":\"sets\",\"type\":\"belongsTo\",\"column\":\"next_set_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 20),
+(174, 21, 'slug', 'text', 'SEO Url', 1, 1, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\",\"forceUpdate\":true},\"validation\":{\"rule\":\"unique:sets,slug\"}}', 8),
+(175, 21, 'set_hasone_set_relationship', 'relationship', 'Следующий сет (для категории \"Сеты\")', 0, 0, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Set\",\"table\":\"sets\",\"type\":\"belongsTo\",\"column\":\"next_category_set_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 21),
+(176, 21, 'set_hasone_set_relationship_1', 'relationship', 'Предыдущий сет (для категории \"Сеты\")', 0, 0, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Set\",\"table\":\"sets\",\"type\":\"belongsTo\",\"column\":\"prev_category_set_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 22),
+(178, 21, 'status', 'select_dropdown', 'Статус', 1, 1, 1, 1, 1, 1, '{\"default\":\"ACTIVE\",\"options\":{\"ACTIVE\":\"\\u0430\\u043a\\u0442\\u0438\\u0432\\u043d\\u044b\\u0439\",\"INACTIVE\":\"\\u043d\\u0435\\u0430\\u043a\\u0442\\u0438\\u0432\\u043d\\u044b\\u0439\"}}', 16),
+(179, 21, 'set_belongstomany_wine_relationship', 'relationship', 'Вина для сета', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Wine\",\"table\":\"wines\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"set_wine\",\"pivot\":\"1\",\"taggable\":\"on\"}', 23);
 
 -- --------------------------------------------------------
 
@@ -272,14 +316,16 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (4, 'categories', 'categories', 'Категория', 'Категории', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, '', '', 1, 0, NULL, '2020-06-17 09:43:45', '2020-06-17 09:43:45'),
 (5, 'posts', 'posts', 'Статья', 'Статьи', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', '', '', 1, 0, NULL, '2020-06-17 09:43:45', '2020-06-17 09:43:45'),
 (6, 'pages', 'pages', 'Страница', 'Страницы', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, '', '', 1, 0, NULL, '2020-06-17 09:43:45', '2020-06-17 09:43:45'),
-(9, 'wines', 'wines', 'Вино', 'Вина', NULL, 'App\\Models\\Wine', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-17 09:47:26', '2020-06-18 11:49:56'),
+(9, 'wines', 'wines', 'Вино', 'Вина', NULL, 'App\\Models\\Wine', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-17 09:47:26', '2020-06-20 04:46:33'),
 (10, 'regions', 'regions', 'Регион', 'Регионы', NULL, 'App\\Models\\Region', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-06-18 08:29:12', '2020-06-18 08:29:12'),
 (11, 'countries', 'countries', 'Страна', 'Страны', NULL, 'App\\Models\\Country', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-06-18 08:30:07', '2020-06-18 08:30:07'),
 (12, 'colors', 'colors', 'Цвет', 'Цвета', NULL, 'App\\Models\\Color', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-18 08:32:13', '2020-06-18 08:35:21'),
 (13, 'manufacturers', 'manufacturers', 'Производитель', 'Производители', NULL, 'App\\Models\\Manufacturer', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-06-18 08:53:55', '2020-06-18 08:53:55'),
 (15, 'grape_sorts', 'grape-sorts', 'Сорт винограда', 'Сорты винограда', NULL, 'App\\Models\\GrapeSort', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-06-18 09:06:22', '2020-06-18 09:06:22'),
 (18, 'sugars', 'sugars', 'Содержание сахара', 'Содержание сахара', NULL, 'App\\Models\\Sugar', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-18 10:11:01', '2020-06-18 10:13:09'),
-(19, 'winemakers', 'winemakers', 'Винодел', 'Виноделы', NULL, 'App\\Models\\Winemaker', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-18 11:13:29', '2020-06-18 12:56:27');
+(19, 'winemakers', 'winemakers', 'Винодел', 'Виноделы', NULL, 'App\\Models\\Winemaker', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-18 11:13:29', '2020-06-20 04:47:43'),
+(20, 'wineries', 'wineries', 'Винодельня', 'Винодельни', NULL, 'App\\Models\\Winery', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-20 04:23:20', '2020-06-20 04:39:52'),
+(21, 'sets', 'sets', 'Сет', 'Сеты', NULL, 'App\\Models\\Set', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-20 06:14:12', '2020-06-20 07:42:08');
 
 -- --------------------------------------------------------
 
@@ -384,28 +430,30 @@ CREATE TABLE `menu_items` (
 
 INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
 (1, 1, 'Панель управления', '', '_self', 'voyager-boat', NULL, NULL, 1, '2020-06-17 09:43:44', '2020-06-17 09:43:44', 'voyager.dashboard', NULL),
-(2, 1, 'Медиа', '', '_self', 'voyager-images', NULL, NULL, 4, '2020-06-17 09:43:44', '2020-06-18 12:37:38', 'voyager.media.index', NULL),
+(2, 1, 'Медиа', '', '_self', 'voyager-images', NULL, NULL, 5, '2020-06-17 09:43:44', '2020-06-20 04:17:43', 'voyager.media.index', NULL),
 (3, 1, 'Пользователи', '', '_self', 'voyager-person', NULL, NULL, 3, '2020-06-17 09:43:45', '2020-06-17 09:43:45', 'voyager.users.index', NULL),
 (4, 1, 'Роли', '', '_self', 'voyager-lock', NULL, NULL, 2, '2020-06-17 09:43:45', '2020-06-17 09:43:45', 'voyager.roles.index', NULL),
-(5, 1, 'Инструменты', '', '_self', 'voyager-tools', NULL, NULL, 8, '2020-06-17 09:43:45', '2020-06-18 12:37:38', NULL, NULL),
+(5, 1, 'Инструменты', '', '_self', 'voyager-tools', NULL, NULL, 9, '2020-06-17 09:43:45', '2020-06-20 06:26:59', NULL, NULL),
 (6, 1, 'Конструктор Меню', '', '_self', 'voyager-list', NULL, 5, 1, '2020-06-17 09:43:45', '2020-06-18 12:37:38', 'voyager.menus.index', NULL),
 (7, 1, 'База данных', '', '_self', 'voyager-data', NULL, 5, 2, '2020-06-17 09:43:45', '2020-06-18 12:37:38', 'voyager.database.index', NULL),
 (8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 3, '2020-06-17 09:43:45', '2020-06-18 12:37:38', 'voyager.compass.index', NULL),
 (9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 4, '2020-06-17 09:43:45', '2020-06-18 12:37:38', 'voyager.bread.index', NULL),
-(10, 1, 'Настройки', '', '_self', 'voyager-settings', NULL, NULL, 10, '2020-06-17 09:43:45', '2020-06-18 12:37:38', 'voyager.settings.index', NULL),
-(11, 1, 'Категории', '', '_self', 'voyager-categories', NULL, NULL, 7, '2020-06-17 09:43:45', '2020-06-18 12:37:38', 'voyager.categories.index', NULL),
-(12, 1, 'Статьи', '', '_self', 'voyager-news', NULL, NULL, 5, '2020-06-17 09:43:45', '2020-06-18 12:37:38', 'voyager.posts.index', NULL),
-(13, 1, 'Страницы', '', '_self', 'voyager-file-text', NULL, NULL, 6, '2020-06-17 09:43:45', '2020-06-18 12:37:38', 'voyager.pages.index', NULL),
-(14, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, NULL, 9, '2020-06-17 09:43:45', '2020-06-18 12:37:38', 'voyager.hooks', NULL),
+(10, 1, 'Настройки', '', '_self', 'voyager-settings', NULL, NULL, 11, '2020-06-17 09:43:45', '2020-06-20 06:26:59', 'voyager.settings.index', NULL),
+(11, 1, 'Категории', '', '_self', 'voyager-categories', NULL, NULL, 8, '2020-06-17 09:43:45', '2020-06-20 06:26:59', 'voyager.categories.index', NULL),
+(12, 1, 'Статьи', '', '_self', 'voyager-news', NULL, NULL, 6, '2020-06-17 09:43:45', '2020-06-20 04:17:43', 'voyager.posts.index', NULL),
+(13, 1, 'Страницы', '', '_self', 'voyager-file-text', NULL, NULL, 7, '2020-06-17 09:43:45', '2020-06-20 06:26:59', 'voyager.pages.index', NULL),
+(14, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, NULL, 10, '2020-06-17 09:43:45', '2020-06-20 06:26:59', 'voyager.hooks', NULL),
 (15, 1, 'Вина', '', '_self', NULL, '#000000', 23, 1, '2020-06-17 09:47:26', '2020-06-18 12:38:02', 'voyager.wines.index', 'null'),
 (16, 1, 'Регионы', '', '_self', NULL, NULL, 23, 2, '2020-06-18 08:29:12', '2020-06-18 12:38:02', 'voyager.regions.index', NULL),
 (17, 1, 'Страны', '', '_self', NULL, NULL, 23, 4, '2020-06-18 08:30:07', '2020-06-18 12:38:02', 'voyager.countries.index', NULL),
-(18, 1, 'Цвета', '', '_self', NULL, NULL, 23, 8, '2020-06-18 08:32:13', '2020-06-18 12:38:02', 'voyager.colors.index', NULL),
+(18, 1, 'Цвета', '', '_self', NULL, NULL, 23, 9, '2020-06-18 08:32:13', '2020-06-20 04:30:13', 'voyager.colors.index', NULL),
 (19, 1, 'Производители', '', '_self', NULL, NULL, 23, 7, '2020-06-18 08:53:56', '2020-06-18 12:38:02', 'voyager.manufacturers.index', NULL),
 (20, 1, 'Сорты винограда', '', '_self', NULL, NULL, 23, 6, '2020-06-18 09:06:22', '2020-06-18 12:38:02', 'voyager.grape-sorts.index', NULL),
 (21, 1, 'Содержание сахара', '', '_self', NULL, NULL, 23, 5, '2020-06-18 10:11:01', '2020-06-18 12:38:02', 'voyager.sugars.index', NULL),
 (22, 1, 'Виноделы', '', '_self', NULL, '#000000', 23, 3, '2020-06-18 11:13:29', '2020-06-18 12:38:26', 'voyager.winemakers.index', 'null'),
-(23, 1, 'Каталог', '', '_self', 'voyager-folder', '#000000', NULL, 11, '2020-06-18 12:37:32', '2020-06-18 12:38:02', NULL, '');
+(23, 1, 'Каталог', '', '_self', 'voyager-folder', '#000000', NULL, 4, '2020-06-18 12:37:32', '2020-06-20 04:17:43', NULL, ''),
+(24, 1, 'Винодельни', '', '_self', NULL, NULL, 23, 8, '2020-06-20 04:23:20', '2020-06-20 04:30:13', 'voyager.wineries.index', NULL),
+(25, 1, 'Сеты', '', '_self', NULL, NULL, 23, 10, '2020-06-20 06:14:12', '2020-06-20 06:26:59', 'voyager.sets.index', NULL);
 
 -- --------------------------------------------------------
 
@@ -458,7 +506,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (32, '2020_06_18_145203_create_manufacturers_table', 4),
 (33, '2020_06_18_150433_create_grape_sorts_table', 5),
 (35, '2020_06_18_160813_create_sugars_table', 6),
-(37, '2020_06_18_164507_create_winemakers_table', 7);
+(37, '2020_06_18_164507_create_winemakers_table', 7),
+(38, '2020_06_18_172829_create_winemaker_wine_table', 8),
+(39, '2020_06_20_100554_create_wineries_table', 8),
+(41, '2020_06_20_113629_create_sets_table', 9),
+(43, '2020_06_20_132711_create_set_wine_table', 10);
 
 -- --------------------------------------------------------
 
@@ -588,7 +640,17 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (79, 'edit_winemakers', 'winemakers', '2020-06-18 11:13:29', '2020-06-18 11:13:29'),
 (80, 'add_winemakers', 'winemakers', '2020-06-18 11:13:29', '2020-06-18 11:13:29'),
 (81, 'delete_winemakers', 'winemakers', '2020-06-18 11:13:29', '2020-06-18 11:13:29'),
-(82, 'delete_wines', 'wines', '2020-06-18 11:49:56', '2020-06-18 11:49:56');
+(82, 'delete_wines', 'wines', '2020-06-18 11:49:56', '2020-06-18 11:49:56'),
+(83, 'browse_wineries', 'wineries', '2020-06-20 04:23:20', '2020-06-20 04:23:20'),
+(84, 'read_wineries', 'wineries', '2020-06-20 04:23:20', '2020-06-20 04:23:20'),
+(85, 'edit_wineries', 'wineries', '2020-06-20 04:23:20', '2020-06-20 04:23:20'),
+(86, 'add_wineries', 'wineries', '2020-06-20 04:23:20', '2020-06-20 04:23:20'),
+(87, 'delete_wineries', 'wineries', '2020-06-20 04:23:20', '2020-06-20 04:23:20'),
+(88, 'browse_sets', 'sets', '2020-06-20 06:14:12', '2020-06-20 06:14:12'),
+(89, 'read_sets', 'sets', '2020-06-20 06:14:12', '2020-06-20 06:14:12'),
+(90, 'edit_sets', 'sets', '2020-06-20 06:14:12', '2020-06-20 06:14:12'),
+(91, 'add_sets', 'sets', '2020-06-20 06:14:12', '2020-06-20 06:14:12'),
+(92, 'delete_sets', 'sets', '2020-06-20 06:14:12', '2020-06-20 06:14:12');
 
 -- --------------------------------------------------------
 
@@ -686,7 +748,17 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (79, 1),
 (80, 1),
 (81, 1),
-(82, 1);
+(82, 1),
+(83, 1),
+(84, 1),
+(85, 1),
+(86, 1),
+(87, 1),
+(88, 1),
+(89, 1),
+(90, 1),
+(91, 1),
+(92, 1);
 
 -- --------------------------------------------------------
 
@@ -767,6 +839,40 @@ INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) V
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `sets`
+--
+
+CREATE TABLE `sets` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `model` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` int(11) NOT NULL,
+  `year` int(11) NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `count` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prev_set_id` int(11) DEFAULT NULL,
+  `next_set_id` int(11) DEFAULT NULL,
+  `next_category_set_id` int(11) DEFAULT NULL,
+  `prev_category_set_id` int(11) DEFAULT NULL,
+  `meta_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_keywords` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` enum('ACTIVE','INACTIVE') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'ACTIVE',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `sets`
+--
+
+INSERT INTO `sets` (`id`, `title`, `description`, `model`, `price`, `year`, `image`, `slug`, `count`, `prev_set_id`, `next_set_id`, `next_category_set_id`, `prev_category_set_id`, `meta_description`, `meta_keywords`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Автохтонные вина', 'Уникальный сет. Это наши, русские, аборигенные сорта винограда: Красностоп Золотовский, Сибирьковый, Цимлянский Черный, который произрастают только в России', 'Автохтонный сет', 14500, 1, 'sets\\June2020\\nGQPUWRByUgQsboPbPYY.png', 'avtohtonnye-vina', '100', NULL, NULL, NULL, NULL, 'dwadwadawd', 'wadwda', 'ACTIVE', '2020-06-20 09:12:57', '2020-06-20 09:18:37');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `settings`
 --
 
@@ -796,6 +902,24 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 (8, 'admin.loader', 'Загрузчик Админки', '', '', 'image', 3, 'Admin'),
 (9, 'admin.icon_image', 'Иконка Админки', '', '', 'image', 4, 'Admin'),
 (10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (используется для панели администратора)', '', '', 'text', 1, 'Admin');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `set_wine`
+--
+
+CREATE TABLE `set_wine` (
+  `wine_id` int(11) NOT NULL,
+  `set_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `set_wine`
+--
+
+INSERT INTO `set_wine` (`wine_id`, `set_id`) VALUES
+(2, 1);
 
 -- --------------------------------------------------------
 
@@ -935,7 +1059,7 @@ CREATE TABLE `winemakers` (
 --
 
 INSERT INTO `winemakers` (`id`, `full_name`, `description`, `region_id`, `winery_id`, `seo_title`, `meta_description`, `meta_keywords`, `slug`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Андриенко Павелв', 'Российский винодел Павел Андриенко родился в 1974 году в Краснодарском крае. В 2004 году окончил Кубанский государственный технологический университет, в Краснодаре по специальности \"Технология бродильных производств и виноделие». С 2003 г. по 2005 г. работал в ЗАО АПФ «Мирный». Прошел путь от рабочего до технолога-винодела. Один из участников проекта по запуску цеха по производству игристых вин. С 2005 г. по 2013 г. работал в ООО «Кубанские вина» сначала в должности технолога, а затем - заместителем генерального директора, директором по производству. За все время работы основным направлением было улучшение качества выпускаемых вин с применением передовых технологий. Сохранение производства Хереса классическим способом. Непосредственное участие над выпуском вин Шардоне, Каберне, Мерло, серии «Звезда Тамани». В настоящее время работает на «Заводе марочных вин Коктебель» в качестве главного технолога-винодела. Основное направление - это сохранение заводских традиций виноделия с постоянным совершенствованием. Продолжение классического производства вина Мадера Коктебель, выпуска вина «Кагор Высшего качества», так же Шардоне, Каберне-Совиньон, Бастардо.', 1, 0, 'awdawd', 'daw', 'dawdaw', 'andrienko-pavelv', 'winemakers\\June2020\\2TXdIAa0vUHRq3DWeGXL.jpg', 'ACTIVE', '2020-06-18 12:42:56', '2020-06-18 12:46:30');
+(1, 'Андриенко Павелв', 'Российский винодел Павел Андриенко родился в 1974 году в Краснодарском крае. В 2004 году окончил Кубанский государственный технологический университет, в Краснодаре по специальности \"Технология бродильных производств и виноделие». С 2003 г. по 2005 г. работал в ЗАО АПФ «Мирный». Прошел путь от рабочего до технолога-винодела. Один из участников проекта по запуску цеха по производству игристых вин. С 2005 г. по 2013 г. работал в ООО «Кубанские вина» сначала в должности технолога, а затем - заместителем генерального директора, директором по производству. За все время работы основным направлением было улучшение качества выпускаемых вин с применением передовых технологий. Сохранение производства Хереса классическим способом. Непосредственное участие над выпуском вин Шардоне, Каберне, Мерло, серии «Звезда Тамани». В настоящее время работает на «Заводе марочных вин Коктебель» в качестве главного технолога-винодела. Основное направление - это сохранение заводских традиций виноделия с постоянным совершенствованием. Продолжение классического производства вина Мадера Коктебель, выпуска вина «Кагор Высшего качества», так же Шардоне, Каберне-Совиньон, Бастардо.', 1, 1, 'awdawd', 'daw', 'dawdaw', 'andrienko-pavelv', 'winemakers\\June2020\\fDuMzOzCEvDsmF5A5iB4.jpg', 'ACTIVE', '2020-06-18 12:42:56', '2020-06-20 04:47:58');
 
 -- --------------------------------------------------------
 
@@ -954,6 +1078,40 @@ CREATE TABLE `winemaker_wine` (
 
 INSERT INTO `winemaker_wine` (`winemaker_id`, `wine_id`) VALUES
 (1, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wineries`
+--
+
+CREATE TABLE `wineries` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `signature` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `header_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `logo_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `catalog_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `region_id` int(11) NOT NULL,
+  `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type_id` int(11) NOT NULL,
+  `layout_id` int(11) NOT NULL,
+  `subscribe_status` int(11) NOT NULL DEFAULT '1',
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `coordinate_lon` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `coordinate_lat` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` enum('ACTIVE','INACTIVE') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'ACTIVE',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `wineries`
+--
+
+INSERT INTO `wineries` (`id`, `title`, `signature`, `description`, `header_image`, `logo_image`, `catalog_image`, `region_id`, `seo_title`, `type_id`, `layout_id`, `subscribe_status`, `slug`, `coordinate_lon`, `coordinate_lat`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Вилла Виктория', 'Краснодарский край, Новороссийск, х. Ленинский Путь', 'Реализованная идея семьи Яновых создать хозяйство бургундско-луарского стиля. Самая крайняя и самая высоко расположенная винодельня Анапской долины по пути к Новороссийску. Консультантом хозяйства выступил Джон Ворончак. Первые вина делались в «Мысхако» Романом Неборским.', 'wineries\\June2020\\8A6KWkh8j65vqNo36m6D.jpg', 'wineries\\June2020\\XT1kELsHnmmSuGXbaR0l.png', 'wineries\\June2020\\mHVnZ2SdPuZKq4l7HWTm.png', 1, 'Купить вино Вилла Виктория, каберне фран, рислинг, шардоне', 1, 8, 1, 'villa-viktoriya', '37.627732', '44.862104', 'ACTIVE', '2020-06-20 04:43:54', '2020-06-20 04:43:54');
 
 -- --------------------------------------------------------
 
@@ -998,7 +1156,7 @@ CREATE TABLE `wines` (
 --
 
 INSERT INTO `wines` (`id`, `title`, `price`, `seo_title`, `description`, `production_feature`, `combination`, `feature`, `innings`, `model`, `winery_id`, `grape_sort_id`, `edition`, `manufacturer_id`, `region_id`, `color_id`, `fortress`, `year`, `volume`, `sugar_id`, `count`, `image`, `slug`, `meta_description`, `meta_keywords`, `status`, `featured`, `created_at`, `updated_at`) VALUES
-(2, '100 оттенков Каберне', 5000, 'a13123', 'awdaw', 'Вино выдерживается не менее одного года во французской дубовой бочке, а после розлива - 6 месяцев непосредственно в бутылке.', 'Станет идеальной парой для мясных блюд, твёрдых сыров. Особенно хорошо для говяжьих рёбрышек.', 'Вино обладает тёмно-рубиновым цветом. В сложном букете доминирует аромат специй, ванили на общем фоне \"дымки\" дубовой бочки. Вкус вина классический, сортовой с оттенками чёрной смородины, табака, чернослива, кожи. Отличная структура и хорошо сбалансированность делают вино необычайно изысканным.', 'Подавать при температуре 14 - 16 С .', 'Fanagoria 100 Cabernet 2013', 1, 1, 5670, 1, 1, 1, 13, 2013, '0.75', 1, 1000, 'products\\June2020\\XZlYeawdFK2nPtKOg2DA.png', '100-ottenkov-kaberne', '213231', '131231', 'ACTIVE', 1, '2020-06-18 08:49:49', '2020-06-18 10:14:42');
+(2, '100 оттенков Каберне', 5000, 'a13123', 'awdaw', 'Вино выдерживается не менее одного года во французской дубовой бочке, а после розлива - 6 месяцев непосредственно в бутылке.', 'Станет идеальной парой для мясных блюд, твёрдых сыров. Особенно хорошо для говяжьих рёбрышек.', 'Вино обладает тёмно-рубиновым цветом. В сложном букете доминирует аромат специй, ванили на общем фоне \"дымки\" дубовой бочки. Вкус вина классический, сортовой с оттенками чёрной смородины, табака, чернослива, кожи. Отличная структура и хорошо сбалансированность делают вино необычайно изысканным.', 'Подавать при температуре 14 - 16 С .', 'Fanagoria 100 Cabernet 2013', 1, 1, 5670, 1, 1, 1, 13, 2013, '0.75', 1, 1000, 'wines\\June2020\\yTUMTzvki3AP4JJACcQK.png', '100-ottenkov-kaberne', '213231', '131231', 'ACTIVE', 1, '2020-06-18 08:49:49', '2020-06-20 01:10:44');
 
 --
 -- Индексы сохранённых таблиц
@@ -1120,6 +1278,12 @@ ALTER TABLE `roles`
   ADD UNIQUE KEY `roles_name_unique` (`name`);
 
 --
+-- Индексы таблицы `sets`
+--
+ALTER TABLE `sets`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `settings`
 --
 ALTER TABLE `settings`
@@ -1162,6 +1326,12 @@ ALTER TABLE `winemakers`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `wineries`
+--
+ALTER TABLE `wineries`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `wines`
 --
 ALTER TABLE `wines`
@@ -1194,13 +1364,13 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT для таблицы `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=180;
 
 --
 -- AUTO_INCREMENT для таблицы `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT для таблицы `failed_jobs`
@@ -1230,13 +1400,13 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT для таблицы `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT для таблицы `pages`
@@ -1248,7 +1418,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT для таблицы `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT для таблицы `posts`
@@ -1267,6 +1437,12 @@ ALTER TABLE `regions`
 --
 ALTER TABLE `roles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `sets`
+--
+ALTER TABLE `sets`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `settings`
@@ -1296,6 +1472,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `winemakers`
 --
 ALTER TABLE `winemakers`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `wineries`
+--
+ALTER TABLE `wineries`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
