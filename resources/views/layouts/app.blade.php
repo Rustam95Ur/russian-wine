@@ -12,15 +12,15 @@
 
     <!-- Owl carousel  -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.min.css') }}">
-    
+
     <!-- Swiper.js  -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('swiperJs/swiper.min.css') }}">    
+    <link rel="stylesheet" type="text/css" href="{{ asset('swiperJs/swiper.min.css') }}">
 
     <!-- Bootstrap  -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
 
     <!-- Theme Style -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+{{--    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">--}}
 
     <!-- Responsive -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">

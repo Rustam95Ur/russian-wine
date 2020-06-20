@@ -83,11 +83,11 @@
                     </div>
                 </div>
                 <script>
-                    $('#close-mask').click(function() {
-                        $('#cart-cont').removeClass('open');
-                        $('body').removeClass('nooverflow1');
-                        $('body').removeClass('nooverflow');
-                    });
+                    // $('#close-mask').click(function() {
+                    //     $('#cart-cont').removeClass('open');
+                    //     $('body').removeClass('nooverflow1');
+                    //     $('body').removeClass('nooverflow');
+                    // });
                     function recountTotal() {
                         var sum = 0;
                         $('#product_buy .total b').each(function() {

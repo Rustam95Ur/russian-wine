@@ -2002,7 +2002,7 @@ header #form-language .language-select {
 
 #winemakers .heading-wrap {
     min-height: 400px;
-    background: url(../image/winemakers_header.jpg) no-repeat top center;
+    background: url(/image/winemakers_header.jpg) no-repeat top center;
     background-size: cover;
     color: #fff
 }
@@ -8853,7 +8853,7 @@ img {
     header .container.container-lg .col-sm-1 #cart a {
         padding: 0;
         display: flex;
-        
+
         margin: 0;
         display: flex;
         height: 100%;
@@ -9164,7 +9164,7 @@ section#specials #specials-cont div.col-md-4 {
     position: relative;
     background-size: 66.667vw auto;
     background-repeat: no-repeat;
- 
+
 }
 
 .scol.col-rs-8 {
@@ -9509,7 +9509,7 @@ section#specials #specials-cont div.col-md-4 {
         align-items: center;
         justify-content: center;
     }
-    
+
     .fixed_h.homepageh#head_f {
         background: #2c2030!important
     }
@@ -9703,7 +9703,7 @@ section#specials #specials-cont div.col-md-4 {
         padding-bottom: 16.667vw;
         margin: 0 0 6.111vw;
         padding-left:2.786vw !important;
-        
+
     }
 
     #swinemakers .swiper-slide h6 {
@@ -11756,8 +11756,10 @@ section#specials #specials-cont div.col-md-4 {
 /* new menu */
 
 #head_f.home_header {
-    background: transparent;
-    position: absolute !important;
+    /*background: transparent;*/
+    /*position: absolute !important;*/
+    background: black;
+    position: fixed;
 }
 
 #head_f .container {
@@ -12004,7 +12006,7 @@ nav ul > li:hover #inda-club {
     #home_slid .swiper-slide a > * {
         position: absolute;
         color: #fff;
-        
+
     }
     #home_slid .swiper-slide a > span {
         top: 5.556vw;
@@ -14133,7 +14135,7 @@ header ul li.active span:after {
     left: 0;
     transform: rotate(-45deg);
 }
-#product-preview .winemaker-details + .icon-icon_x:before, 
+#product-preview .winemaker-details + .icon-icon_x:before,
 #product-preview .winemaker-details + .icon-icon_x:after {
     background:#000;
 }
@@ -14395,31 +14397,31 @@ header ul li.active span:after {
         width: 100%;
         position: relative;
     }
-    
+
     #home_slid .swiper-slide > #mouse_img a {
         background: transparent;
         position: relative;
         display: block;
         padding-left: 0 !important;
     }
-    
+
     #home_slid .swiper-slide > #mouse_img a img {
         width: auto;
         min-height: none;
         min-height: 1vw;
         position: relative;
     }
-    
+
     #home_slid .swiper-slide > #mouse_img a #chevrons {
         position: relative;
         margin: 0 auto;
         padding-left: 0 !important;
     }
-    
+
     .price-quantity-quickorder.text-center {
         margin-top: 10.889vw;
     }
-    
+
     .product-page .podisatsa-desktop,
     .product-page #slider-range-min,
     .product-page .ticks,
@@ -14427,88 +14429,88 @@ header ul li.active span:after {
     .product-page #podpisatsa {
         display: none !important;
     }
-    
+
     .product-page {
         display: flex;
         flex-direction: column;
         margin-top: 19.056vw;
         padding: 0;
     }
-    
+
     .product-page .col-sp-15 {
         order: 2;
     }
-    
+
     .product-page .col-sp-7 {
         order: 1;
     }
-    
+
     #other-page header.other {
         height: auto;
         position: absolute;
     }
-    
+
     .product-page .description-set {
         padding: 0 5.556vw;
         box-sizing: border-box;
     }
-    
+
     .product-page .description-set h1 {
         font: 10vw ProximaNova-Bold;
     }
-    
+
     .product-page .description-set p {
         font: 4.444vw ProximaNova-Light;
         line-height: 1.8;
         margin-bottom: 8.333vw;
     }
-    
+
     .mobile #blur_cont #firstblock .text_s_s p {
         line-height: 1.8;
     }
-    
+
     .image-set a {
         height: 102.778vw;
         margin-right: 6vw;
         width: auto;
     }
-    
+
     .image-set {
         overflow: scroll;
         display: flex;
         padding-left: 0;
         padding-right: 0;
     }
-    
+
     .image-set .swiper-wrapper {
         margin-left: -11vw !important;
     }
-    
+
     #spec-cont {
         width: 100%;
         margin: 0 0 -2.8vw 0;
     }
-    
+
     #spec-cont .inner-image {
         right: 0;
         left: 0;
         width: 100%;
     }
-    
+
     .other-product {
         display: none;
     }
-    
+
     .image-set a:hover img {
         transform: scale(1);
     }
     /* bottle page */
-    
+
     #bottle .col-sp-12 {
         height: Auto;
         position: inherit;
     }
-    
+
     #bottle .col-sp-12 #bottle-main-title,
     #fastorder_data h4 {
         position: Absolute;
@@ -14523,16 +14525,16 @@ header ul li.active span:after {
         align-items: center;
         justify-content: center;
     }
-    
+
     #bottle {
         overflow: scroll;
         overflow-x: hidden;
     }
-    
+
     .bottle_info .attributes {
         position: relative !important;
     }
-    
+
     .proizvoditelwc,
     .colorwc,
     .vyderzhkawc,
@@ -14544,7 +14546,7 @@ header ul li.active span:after {
         box-sizing: border-box;
         margin-bottom: 10vw;
     }
-    
+
     .sort-vinogradawc span,
     .vyderzhkawc span,
     .proizvoditelwc:before,
@@ -14553,11 +14555,11 @@ header ul li.active span:after {
         font-family: 'latoregular';
         margin-bottom: 2.778vw;
     }
-    
+
     .proizvoditelwc:before {
         content: 'Производитель';
     }
-    
+
     .sort-vinogradawc,
     .vyderzhkawc,
     .proizvoditelwc,
@@ -14565,7 +14567,7 @@ header ul li.active span:after {
     .colorwc {
         font-family: 'latoheavy';
     }
-    
+
     .graduswc,
     .volumewc {
         color: #dedddf;
@@ -14573,42 +14575,42 @@ header ul li.active span:after {
         font-family: 'latoheavy';
         padding-left: 25vw;
     }
-    
+
     .main_img {
         display: block;
         width: 31.944vw
     }
-    
+
     .bottle_info .attributes {
         margin-bottom: 10vw;
     }
-    
+
     .bottle-image {
         display: flex;
         flex-direction: column;
         margin-top: 7vw;
     }
-    
+
     .proizvoditelwc {
         order: 1;
     }
-    
+
     .colorwc {
         order: 2;
         left: 0;
     }
-    
+
     .colorwc img {
         width: 10.833vw;
         position: absolute;
         left: 7vw;
         top: -2.5vw;
     }
-    
+
     .graduswc {
         order: 3;
     }
-    
+
     .graduswc img {
         height: 12.222vw;
         left: 12vw;
@@ -14616,19 +14618,19 @@ header ul li.active span:after {
         position: absolute;
         left: 11vw;
     }
-    
+
     .vyderzhkawc {
         order: 4;
     }
-    
+
     .vyderzhkawc img {
         display: none;
     }
-    
+
     .sort-vinogradawc {
         order: 5;
     }
-    
+
     .sort-vinogradawc:before {
         content: '';
         width: 12.778vw;
@@ -14639,16 +14641,16 @@ header ul li.active span:after {
         bottom: auto;
         left: 6vw;
     }
-    
+
     .volumewc {
         order: 6;
     }
-    
+
     .tirajwc {
         order: 7;
         right: 0;
     }
-    
+
     .attributes.yearwc {
         position: absolute !important;
         margin-bottom: 0;
@@ -14656,23 +14658,23 @@ header ul li.active span:after {
         right: -24.5vw;
         top: 30vw;
     }
-    
+
     #bottle ul li {
         margin-left: 0;
     }
-    
+
     #bottle ul li.active {
         margin-left: 10px;
     }
-    
+
     #bottle ul {
         padding: 8.666667VH 0;
     }
-    
+
     #bottle .close img {
         display: none;
     }
-    
+
     #bottle .close,
     #popup-quickorder #mfp-close {
         left: 5.556vw;
@@ -14682,24 +14684,24 @@ header ul li.active span:after {
         width: 28px;
         height: 16px;
     }
-    
+
     #bottle .col-sp-12 + .col-sp-12 {
         padding: 12.500vw 5.556vw 3vw;
         height: auto;
     }
-    
+
     #bottle .col-sp-12 + .col-sp-12 h2 {
         font: 11.111vw ProximaNova-Bold;
         margin-bottom: 11.111vw;
     }
-    
+
     #bottle .col-sp-12 + .col-sp-12 p {
         font: 5vw ProximaNova-Reg;
         margin-bottom: 13.889vw;
         letter-spacing: 0.2vw;
         line-height: 1.8;
     }
-    
+
     #bottle .col-sp-12 + .col-sp-12 span {
         font: 5vw ProximaNova-Bold;
         text-transform: uppercase;
@@ -14707,12 +14709,12 @@ header ul li.active span:after {
         letter-spacing: 0.3vw;
         line-height: 1.8;
     }
-    
+
     #mobile-price .price,
     #mobile-price #podpisatsa {
         display: block;
     }
-    
+
     #mobile-price {
         position: fixed;
         bottom: 0px;
@@ -14726,7 +14728,7 @@ header ul li.active span:after {
         display: flex;
         align-items: center;
     }
-    
+
     #mobile-price #podpisatsa {
         width: 44.444vw;
         height: 12.500vw;
@@ -14736,18 +14738,18 @@ header ul li.active span:after {
         letter-spacing: 0.5vw;
         margin-top: 0 !important;
     }
-    
+
     #mobile-price .price {
         width: 50%;
         text-align: center;
         font: 10vw ProximaNova-Light;
         color: #fff;
     }
-    
+
     #spec-cont {
         height: 105.056vw;
     }
-    
+
     #mobile-instructions {
         background: #fff;
         font: 3.611vw ProximaNova-Bold;
@@ -14760,112 +14762,112 @@ header ul li.active span:after {
         line-height: 1.4;
     }
     /* oformlenie */
-    
+
     #cart-letter {
         display: block;
         margin-top: 16.889vw;
     }
-    
+
     #fastorder_data h4 {
         color: #fff;
         margin: 0;
     }
-    
+
     #fastorder_data h4 span {
         display: none;
     }
-    
+
     #popup-quickorder .col-sp-14 {
         display: none;
     }
-    
+
     #popup-quickorder {
         background: #201c2a;
         height: 150%;
         ;
         -webkit-overflow-scrolling: unset;
     }
-    
+
     #popup-quickorder .col-sp-10 {
         display: flex;
         flex-direction: column;
     }
-    
+
     #popup-quickorder .col-sm-12:first-child {
         order: 1;
     }
-    
+
     #popup-quickorder .col-sm-12:nth-child(2) {
         order: 3;
     }
-    
+
     #popup-quickorder .col-sm-12:nth-child(3) {
         order: 2;
     }
-    
+
     #popup-quickorder .col-sm-12:nth-child(4) {
         order: 4;
     }
-    
+
     #popup-quickorder .col-sm-12:nth-child(5) {
         order: 5;
     }
-    
+
     #popup-quickorder #quickorder_btn {
         order: 7;
     }
-    
+
     .podisatsa-desktop {
         margin-bottom: 6.333vw!important;
     }
-    
+
     .tick:before {
         display: none;
     }
-    
+
     .podisatsa-desktop label,
     .quantity_quickorder p,
     #amount {
         font-size: 4.444vw;
     }
-    
+
     #amount {
         width: 18vw;
         height: 20px;
     }
-    
+
     .price-quantity-quickorder.text-center .price_fast {
         display: none !important;
     }
-    
+
     .ticks .tick.active:first-child::after {
         display: none;
     }
-    
+
     #popup-quickorder input[type=text],
     #popup-quickorder textarea {
         font-size: 5vw;
     }
-    
+
     .quantity_quickorder p {
         float: left;
         margin-top: 0;
         position: absolute;
         left: 0;
     }
-    
+
     #popup-quickorder .quantity_quickorder input {
         font-size: 10vw;
         margin-top: -5vw;
     }
-    
+
     #popup-quickorder .quantity_quickorder {
         margin-bottom: 26.944vw;
         float: right;
         display: flex;
         align-items: center;
     }
-    
+
     #mobile-price-fast .price {
         position: absolute;
         top: 43vw;
@@ -14873,71 +14875,71 @@ header ul li.active span:after {
         text-align: center;
         left: 0;
     }
-    
+
     #mobile-price-fast .price span {
         font-size: 16.667vw;
     }
-    
+
     #mobile-price-fast .price span:first-child {
         font-family: 'ProximaNova-Light';
     }
-    
+
     #quickorder_btn p {
         display: none;
     }
-    
+
     #quickorder_btn button {
         height: 13.889vw;
         width: 100%;
         font-size: 4.167vw;
         margin-top: 13.889vw;
     }
-    
+
     #contact-email,
     #contact-name,
     #contact-phone {
         margin-bottom: 6.944vw;
     }
-    
+
     .done {
         background: url(/image/done_mob.jpg);
     }
-    
+
     .content-cont {
         display: none;
     }
-    
+
     #for-mobile.content-cont {
         display: flex;
     }
-    
+
     .done .content-cont {
         padding: 19vw 5.556vw 0;
     }
-    
+
     .done .content-cont h1 {
         font-size: 10vw;
         order: 1;
         margin-bottom: 9.111vw;
     }
-    
+
     .done .content-cont h2 {
         font-size: 7.222vw;
         order: 2;
         margin-bottom: 9.111vw;
     }
-    
+
     .done .content-cont > p {
         font-size: 5vw;
         order: 3;
         margin-bottom: 9.111vw;
     }
-    
+
     .done .terms {
         order: 4;
         margin-top: 0;
     }
-    
+
     .done .content-cont a {
         order: 5;
         font-size: 4.167vw;
@@ -14948,43 +14950,43 @@ header ul li.active span:after {
         line-height: 14vw;
         margin-top: 8vw;
     }
-    
+
     .done .terms p {
         font-size: 3.056vw;
     }
-    
+
     .done header {
         position: absolute;
     }
-    
+
     .done .content-cont {
         display: flex;
         flex-direction: column;
     }
-    
+
     #modal_sviaz {
         padding: 7.813vh 13.889vw 0;
         pointer-events: all;
     }
-    
+
     #modal_sviaz .close {
         right: 7vw;
         top: 6vh;
     }
-    
+
     #modal_sviaz h2#form-title-feedback {
         font-size: 10vw;
         padding-right: 3vw;
         margin-bottom: 5.625vh;
         margin-top: 0vw;
     }
-    
+
     #modal_sviaz input[type=text],
     #modal_sviaz textarea {
         font-size: 5vw;
         margin-bottom: 7.031vh;
     }
-    
+
     #modal_sviaz #feedsend {
         margin-top: 15.625vw;
         width: 45.833vw;
@@ -14999,11 +15001,11 @@ header ul li.active span:after {
         -moz-box-shadow: none;
         box-shadow: none;
     }
-    
+
     #amount {
         float: right;
     }
-    
+
     #mobile-list {
         position: fixed;
         top: 0;
@@ -15014,11 +15016,11 @@ header ul li.active span:after {
         display: none;
         z-index: 2000;
     }
-    
+
     #mobile-list.show {
         display: block;
     }
-    
+
     header button {
         position: absolute;
         top: 5.556vw;
@@ -15029,31 +15031,31 @@ header ul li.active span:after {
         border: none;
         background-size: cover;
     }
-    
+
     #mobile-list button {
         width: 5.556vw;
         background: url(/image/menu_close.png);
     }
-    
+
     header a {
         display: block;
         margin-top: 3.889vw !important;
     }
-    
+
     header a img {
         width: 100%;
     }
-    
+
     header ul {
         padding-top: 18.889vw;
     }
-    
+
     header ul li {
         display: block;
         text-align: center;
         width: 100%!important;
     }
-    
+
     header ul li a,
     #menu .dropdown-inner li a {
         padding: 12px 15px !important;
@@ -15065,69 +15067,69 @@ header ul li.active span:after {
         display: block !important;
         height: auto !important;
     }
-    
+
     header {
         width: 100% !important;
     }
-    
+
     #popup-quickorder .tick.active .ball {
         width: 8.333vw !important;
         height: 8.333vw!important;
         top: -2.4vw!important
     }
-    
+
     #popup-quickorder .col-sp-10 {
         padding: 0 !important;
     }
-    
+
     #fastorder_data {
         padding: 0 8.333333333333332vw;
         box-sizing: border-box;
     }
-    
+
     .ticks .tick.active::after {
         top: calc(2vw + 1px)!important;
     }
-    
+
     .ticks .tick:nth-child(4n) .ball {
         left: calc(50% - 7.7vw) !important;
     }
-    
+
     .mobile #blur_cont .podpiska-thumb,
     .mobile #blur_cont #firstblock .image_s_s,
     #thirdblock img {
         width: 100%;
     }
-    
+
     body {
         overflow-x: hidden;
     }
-    
+
     #arrow_mob {
         position: absolute;
         top: 94vh;
         left: calc(50vw - 7.5px);
     }
-    
+
     #mobile-price-fast {
         display: block;
     }
-    
+
     #mobile-price .price {
         margin: 0;
     }
-    
+
     .image-set .swiper-slide img {
         display: block;
         margin-left: auto;
         margin-right: auto;
     }
-    
+
     .image-set .swiper-slide a {
         width: 100%;
         display: block;
     }
-    
+
     #qminus input,
     #qplus input,
     #qminus,
@@ -15135,20 +15137,20 @@ header ul li.active span:after {
         margin-top: 0 !important;
         height: 30px !important;
     }
-    
+
     .quantity_quickorder p {
         line-height: 30px;
     }
-    
+
     #skidka {
         display: none;
     }
-    
+
     .price span + span {
         font-family: RUBSN;
         font-style: normal;
     }
-    
+
     @media(max-width: 365px) {
         header ul li a,
         #menu .dropdown-inner li a {
@@ -15156,28 +15158,28 @@ header ul li.active span:after {
             font: 5.5vw ProximaNova-Bold!important;
         }
     }
-    
+
     #swiper-bottle .swiper-button-next,
     #swiper-bottle .swiper-button-prev {
         bottom: 0;
         filter: brightness(0)!important;
         top: auto!important;
     }
-    
+
     #swiper-bottle .swiper-button-next {
         right: 3vw!important;
     }
-    
+
     #swiper-bottle .swiper-button-prev {
         left: 3vw!important;
     }
-    
+
     #spec-cont,
     .product-page {
         width: 100vw;
         overflow: hidden;
     }
-    
+
     #for-menu-close {
         background-repeat: no-repeat !important;
     }
@@ -15387,30 +15389,30 @@ header ul li.active span:after {
     .swiper-button-prev:after {
         content: ''!important;
     }
-    
+
     #sety-calc {
         float: left;
         margin-top: 5.51vw;
     }
-    
+
     #sety-calc > input {
         float: left;
         text-align: center;
     }
-    
+
     #sety-calc + .price {
         float: right;
         font-size: 2.865vw;
     }
-    
+
     .cartaddspec {
         clear: both;
     }
-    
+
     #podpisatsa.specmargbtn {
         margin-top: 15.5vw !important;
     }
-    
+
     @media (max-width: 991px) {
         .empty_cart h2 {
             font-size: 8vw;
@@ -15893,33 +15895,33 @@ header ul li.active span:after {
         }
     }
     /* additional WC */
-    
+
     body {
         overflow-x: hidden;
     }
-    
+
     #head_f > .container > .row > div {
         padding: 0;
     }
-    
+
     #product-category .row {
         margin-left: 0;
         margin-right: 0;
     }
-    
+
     #product-category .col-sm-12 {
         padding-left: 0;
         padding-right: 0;
     }
-    
+
     #desktop-product #other-page {
         padding-top: 89px;
     }
-    
+
     #information-informationwc * {
         box-sizing: initial;
     }
-    
+
     #information-informationwc .swiper-pagination-h {
         text-align: right;
         left: auto;
@@ -15992,12 +15994,12 @@ header ul li.active span:after {
         height: auto;
         left: auto;
     }
-    
+
     header #cart-cont #close-cart {
         position: absolute;
         left: auto;
     }
-    
+
     #cart {
         height: 9.722vw;
         width: 9.722vw;
@@ -16013,25 +16015,25 @@ header ul li.active span:after {
         display:flex;
         justify-content: center;;
     }
-    
+
     .swiper-container-v {
         max-height: none !important;
     }
-    
+
     #podpisatsa.cartaddspec.alreadyin {
         background: transparent;
         border: 1px solid #fff;
         color: #fff;
     }
-    
+
     #sety-calc {
         display: none;
     }
-    
+
     #other-page {
         background-image: none;
     }
-    
+
     body#other-page {
         background-size: 100% auto;
         background-image: url(/image/background_top_mob.jpg);
@@ -16039,13 +16041,13 @@ header ul li.active span:after {
         background-position: top center;
     }
     /* сеты моб */
-    
+
     #sety-banner {
         position: relative;
         margin: 0 -5.556vw;
         background-image: url(/image/setybgmob.png) !important;
     }
-    
+
     .product_cont {
         width: 100%;
         float: left;
@@ -16053,80 +16055,80 @@ header ul li.active span:after {
         padding: 6.944vw 8.333vw 3.750vw;
         margin: 0 0 2.222vw 0;
     }
-    
+
     .sety-category .product_info a {
         font-size: 5.556vw;
     }
-    
+
     .sety-category .product_info {
         margin-bottom: 2.778vw;
     }
-    
+
     .sety-category .product_info span {
         font-size: 7.222vw;
     }
-    
+
     .sety-category h1 {
         font-size: 13.889vw;
         top: 36.111vw;
         left: 5.556vw;
         margin-bottom: 6.528vw;
     }
-    
+
     .sety-category h1:after {
         display: none;
     }
-    
+
     .sety-category #sety-banner p {
         font-size: 5vw;
         left: 5.556vw;
         top: 80vw;
         right: 5.556vw;
     }
-    
+
     #sety-section {
         margin-top: -83vw;
         position: relative;
         z-index: 1;
         padding: 0;
     }
-    
+
     .sety-category #sety-banner {
         height: 200vw;
     }
-    
+
     .sety-category {
         padding: 0 5.556vw;
         box-sizing: border-box;
     }
-    
+
     .sety-category .product_info {
         margin: 0;
     }
-    
+
     #nmenu > a > img {
         width: 38.889vw;
         margin-top: 0;
         margin-left: 14vw;
         ;
     }
-    
+
     #nmenu > a {
         float: left;
         z-index: 3;
     }
-    
+
     #nmenu a {
         margin: 0 !important;
     }
-    
+
     #cart img {
         width: 3.611vw;
         height: 5vw;
         height: auto;
-        
+
     }
-    
+
     #cart a {
         font-size: 4.167vw;
         display: flex;
@@ -16136,11 +16138,11 @@ header ul li.active span:after {
         margin: 0 !important;
         padding:0;
     }
-    
+
     #nmenu {
         padding: 4.333vw 5.556vw;
     }
-    
+
     #cart span {
         font-family: 'RUBSN';
         margin-top: -1vw;
@@ -16148,29 +16150,29 @@ header ul li.active span:after {
         font-style: normal;
         margin-left: 1vw;
     }
-    
+
     #sety-footer {
         padding: 30px 0 35px;
     }
-    
+
     #sety-footer,
     #sety-footer .left-side a {
         display: block;
         height: auto;
         width: 100%;
     }
-    
+
     #sety-footer .left-side a {
         background: transparent;
     }
-    
+
     #sety-footer .left-side,
     #sety-footer .right-side {
         width: 100%;
         text-align: center;
         background: transparent;
     }
-    
+
     #sety-footer .left-side button {
         width: 252px;
         height: 55px;
@@ -16178,33 +16180,33 @@ header ul li.active span:after {
         letter-spacing: 3px;
         margin: 27.5px auto 35px;
     }
-    
+
     #sety-footer .left-side img {
         margin-right: auto;
         margin-left: auto;
         width: 41.667vw;
     }
-    
+
     #sety-footer .right-side a {
         font-size: 20px !important;
     }
-    
+
     #logo {
         padding-top: 0px;
     }
-    
+
     .imennoe > .row {
         margin: 0;
     }
-    
+
     #menu div.dropdown-inner>ul.list-unstyled {
         padding-top: 0;
     }
-    
+
     #mouse_img {
         display: none;
     }
-    
+
     #information-winerywc .swiper-container .swiper-pagination {
         top: auto;
         left: 5.5556vw;
@@ -16217,13 +16219,13 @@ header ul li.active span:after {
         background: #fff;
     }
     /* is 18 */
-    
+
     #is18plus {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    
+
     #is18plus .is18plus-box {
         border-radius: 0;
         width: 80%;
@@ -16234,37 +16236,37 @@ header ul li.active span:after {
         bottom: auto;
         right: auto;
     }
-    
+
     #is18plus .is18plus-box img {
         display: none;
     }
-    
+
     #is18plus .is18plus-box .is18plus-content > div {
         padding: 8.333vw 2.889vw;
         width: 100%;
     }
-    
+
     #is18plus .circle {
         font-size: 16.667vw;
         margin-bottom: 35px;
     }
-    
+
     #is18plus p {
         padding-right: 0;
         font: 4.722vw ProximaNova-Reg;
         line-height: 1.8;
     }
-    
+
     #is18plus .btn-white {
         font-size: 3.2vw;
     }
     /* dropdown menu mob */
-    
+
     .newdrop > a,
     .newdrop:after {
         display: none !important;
     }
-    
+
     #menu.navbar-right .newdrop .dropdown-menu-custom {
         position: relative;
         display: block;
@@ -16311,7 +16313,7 @@ header ul li.active span:after {
 .featured_cont .swiper-slide h2 a {
         font: 1.042vw 'ProximaNova-Reg', sans-serif;;
         line-height: 1.458vw;
-        color:#23252b;   
+        color:#23252b;
 }
 .featured_cont .swiper-slide h2 {
     margin:1.250vw 0 0;
@@ -16319,7 +16321,7 @@ header ul li.active span:after {
 
 .featured_cont .swiper-slide .meta .sep {
     margin: 0 0.3vw;
-} 
+}
 .featured_cont .swiper-slide .meta span {
     font: 0.729vw 'ProximaNova-Bold' ;
     text-transform: uppercase;
@@ -16347,7 +16349,7 @@ header ul li.active span:after {
     margin-top:0;
 }
 #swinemakers h4 + a {
-    position:absolute; 
+    position:absolute;
 }
 #swinemakers .col-md-12{
     padding: 3.802vw 0 0;
@@ -16433,7 +16435,7 @@ header ul li.active span:after {
     letter-spacing:1.6px;
     margin: 0 auto;
     text-transform:uppercase;
-    
+
 }
 .all_wines:hover, #swinemakers .col-md-12 > a:hover {
     color:#fff;
@@ -16493,7 +16495,7 @@ input[type=number] {
         height: 108.206vw;
         background: #fff;
         padding: 0 1.389vw;
-        margin:0; 
+        margin:0;
         box-shadow: none;
         overflow: visible;
     }
@@ -16518,7 +16520,7 @@ input[type=number] {
         font: 2.778vw 'ProximaNova-Bold';
     }
     .featured_cont .swiper-slide .price-vinoteka a {
-        margin-top:3.056vw; 
+        margin-top:3.056vw;
         font:5.556vw 'ProximaNova-Bold';
     }
     .featured_cont .swiper-slide .price-vinoteka a span {
