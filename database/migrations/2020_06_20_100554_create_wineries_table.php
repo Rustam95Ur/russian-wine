@@ -22,7 +22,7 @@ class CreateWineriesTable extends Migration
             $table->string('logo_image');
             $table->string('catalog_image');
             $table->integer('region_id');
-            $table->string('seo_title')->nullable();
+            $table->string('meta_title')->nullable();
             $table->integer('type_id');
             $table->integer('layout_id');
             $table->integer('subscribe_status')->default(1);

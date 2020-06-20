@@ -19,7 +19,7 @@ class CreateWinemakersTable extends Migration
             $table->text('description');
             $table->integer('region_id');
             $table->integer('winery_id');
-            $table->string('seo_title')->nullable();
+            $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();
             $table->string('slug');

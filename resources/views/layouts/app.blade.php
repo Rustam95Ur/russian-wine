@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <!--[if IE]>
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <title>{{Voyager::setting('site.title')}}</title>
-
+    <title>@yield('title', Voyager::setting('site.title'))</title>
+    <meta name="description" content="@yield('description', Voyager::setting('site.description'))">
+    <meta name="keywords" content="@yield('keywords', Voyager::setting('site.keywords'))" />
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 

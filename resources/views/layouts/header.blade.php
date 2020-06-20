@@ -4,7 +4,7 @@
                 <div class="col-sm-2">
                     <div id="logo">
                         <a href="{{route('home')}}">
-                            <img src="{{ asset ('image/mainLogo.png') }}" title="Русское Вино" alt="Русское Вино" class="img-responsive">
+                            <img src="{{ Voyager::image(setting('site.logo'))}}" title="{{Voyager::setting('site.title')}}" alt="{{Voyager::setting('site.title')}}" class="img-responsive">
                         </a>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                             <li><a href="{{route('subscription')}}">{{trans('header.subscription')}}</a></li>
                             <li><a href=" hyperlink ">Именное вино</a></li>
                             <li><a href=" hyperlink ">Дегустации</a></li>
-                            <li><a href=" hyperlink ">Франшиза</a></li>
+                            <li><a href="{{route('franchise')}}">{{trans('header.franchise')}}</a></li>
                             <li class="newdrop"><a href="" class="dropdown-toggle" data-toggle="dropdown">Информация</a>
                                 <div class="dropdown-menu-custom">
                                     <div class="dropdown-inner">

@@ -16,7 +16,7 @@ class CreateProductsTable extends Migration
         Schema::create('wines', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('seo_title')->nullable();
+            $table->string('wine_title')->nullable();
             $table->text('description')->nullable();
             $table->text('production_feature')->nullable();
             $table->text('combination')->nullable();
