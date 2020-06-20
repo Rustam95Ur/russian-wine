@@ -85,7 +85,7 @@
             <div class="featured_cont">
                 <!-- slider here -->
                 <!-- Swiper -->
-                <h4>{{trans('home.new')}}</h4>
+                <h4>{{trans('home.popular')}}</h4>
                 <div class="prevslide0" id="prevslide" tabindex="0" role="button" aria-label="Previous slide"><img
                         src="{{ asset ('image/slidearrow.png') }}" style="transform: rotate(180deg);"></div>
                 <div class="nextslide0" id="nextslide" tabindex="0" role="button" aria-label="Next slide"><img
@@ -93,37 +93,42 @@
                 <div class="swiper-container" id="featured_slide0">
                     <div class="swiper-wrapper">
                         @foreach($wines as $wine)
-                            <div class="swiper-slide">
-                                <div class="wine">
-                                    <div class="image">
-                                        <a href="#" class="preview">
-                                            <img src="{{ Voyager::image($wine->image) }}">
-                                            <span class="attributes"></span>
-                                        </a>
-                                    </div>
-                                    <h2><a href="#" class="preview">{{$wine->title}}</a></h2>
-                                    <p>{{$wine->winery_id}}</p>
-                                    <div class="meta">
-                                        <span class="color">{{$wine->color->title}} </span><span class="sep"> | </span>
-                                        <span class="hardness">{{$wine->sugar->title}} </span><span
-                                            class="sep"> | </span>
-                                        <span class="year"> {{$wine->year}}</span>
-                                        <div class="price-vinoteka">
-                                            <a href="#" class="preview">{{$wine->price}} <span>п</span></a>
+                            @if ($wine->featured)
+
+                                <div class="swiper-slide">
+                                    <div class="wine">
+                                        <div class="image">
+                                            <a href="#" class="preview">
+                                                <img src="{{ Voyager::image($wine->image) }}">
+                                                <span class="attributes"></span>
+                                            </a>
                                         </div>
-                                        <div class="button_cont">
-                                            <div class="prod_quantity">
-                                                <span class="qua_mins"></span>
-                                                <input type="number" class="quantity" data-id="{{$wine->id}}" value="1">
-                                                <span class="qua_plus"></span>
+                                        <h2><a href="#" class="preview">{{$wine->title}}</a></h2>
+                                        <p>{{$wine->winery_id}}</p>
+                                        <div class="meta">
+                                            <span class="color">{{$wine->color->title}} </span><span
+                                                class="sep"> | </span>
+                                            <span class="hardness">{{$wine->sugar->title}} </span><span
+                                                class="sep"> | </span>
+                                            <span class="year"> {{$wine->year}}</span>
+                                            <div class="price-vinoteka">
+                                                <a href="#" class="preview">{{$wine->price}} <span>п</span></a>
                                             </div>
-                                            <button id="button-carts"
-                                                    onclick="cart.add('{{$wine->id}}'); $(this).addClass('active');">
-                                                <span>В корзину</span></button>
+                                            <div class="button_cont">
+                                                <div class="prod_quantity">
+                                                    <span class="qua_mins"></span>
+                                                    <input type="number" class="quantity" data-id="{{$wine->id}}"
+                                                           value="1">
+                                                    <span class="qua_plus"></span>
+                                                </div>
+                                                <button id="button-carts"
+                                                        onclick="cart.add('{{$wine->id}}'); $(this).addClass('active');">
+                                                    <span>В корзину</span></button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
                         @endforeach
                     </div>
                     <!-- Add Pagination -->
@@ -194,7 +199,7 @@
             <div class="featured_cont">
                 <!-- slider here -->
                 <!-- Swiper -->
-                <h4>{{trans('home.popular')}} </h4>
+                <h4>{{trans('home.new')}} </h4>
                 <div class="prevslide1" id="prevslide" tabindex="0" role="button" aria-label="Previous slide"><img
                         src="{{ asset ('image/slidearrow.png') }}" style="transform: rotate(180deg);"></div>
                 <div class="nextslide1" id="nextslide" tabindex="0" role="button" aria-label="Next slide"><img
@@ -202,41 +207,39 @@
                 <div class="swiper-container" id="featured_slide1">
                     <div class="swiper-wrapper">
                         @foreach($wines as $wine)
-                            @if ($wine->featured)
-                                <div class="swiper-slide">
-                                    <div class="wine">
-                                        <div class="image">
-                                            <a href="#" class="preview">
-                                                <img src="{{ Voyager::image($wine->image) }}">
-                                                <span class="attributes"></span>
-                                            </a>
+                            <div class="swiper-slide">
+                                <div class="wine">
+                                    <div class="image">
+                                        <a href="#" class="preview">
+                                            <img src="{{ Voyager::image($wine->image) }}">
+                                            <span class="attributes"></span>
+                                        </a>
+                                    </div>
+                                    <h2><a href="#" class="preview">{{$wine->title}}</a></h2>
+                                    <p>{{$wine->winery_id}}</p>
+                                    <div class="meta">
+                                        <span class="color">{{$wine->color->title}} </span><span
+                                            class="sep"> | </span>
+                                        <span class="hardness">{{$wine->sugar->title}} </span><span
+                                            class="sep"> | </span>
+                                        <span class="year"> {{$wine->year}}</span>
+                                        <div class="price-vinoteka">
+                                            <a href="#" class="preview">{{$wine->price}} <span>п</span></a>
                                         </div>
-                                        <h2><a href="#" class="preview">{{$wine->title}}</a></h2>
-                                        <p>{{$wine->winery_id}}</p>
-                                        <div class="meta">
-                                            <span class="color">{{$wine->color->title}} </span><span
-                                                class="sep"> | </span>
-                                            <span class="hardness">{{$wine->sugar->title}} </span><span
-                                                class="sep"> | </span>
-                                            <span class="year"> {{$wine->year}}</span>
-                                            <div class="price-vinoteka">
-                                                <a href="#" class="preview">{{$wine->price}} <span>п</span></a>
+                                        <div class="button_cont">
+                                            <div class="prod_quantity">
+                                                <span class="qua_mins"></span>
+                                                <input type="number" class="quantity" data-id="{{$wine->id}}"
+                                                       value="1">
+                                                <span class="qua_plus"></span>
                                             </div>
-                                            <div class="button_cont">
-                                                <div class="prod_quantity">
-                                                    <span class="qua_mins"></span>
-                                                    <input type="number" class="quantity" data-id="{{$wine->id}}"
-                                                           value="1">
-                                                    <span class="qua_plus"></span>
-                                                </div>
-                                                <button id="button-carts"
-                                                        onclick="cart.add('{{$wine->id}}'); $(this).addClass('active');">
-                                                    <span>В корзину</span></button>
-                                            </div>
+                                            <button id="button-carts"
+                                                    onclick="cart.add('{{$wine->id}}'); $(this).addClass('active');">
+                                                <span>В корзину</span></button>
                                         </div>
                                     </div>
                                 </div>
-                            @endif
+                            </div>
                         @endforeach
                     </div>
                     <!-- Add Pagination -->
@@ -281,7 +284,7 @@
                                     </div>
                                     <h6><a href="#">{{$winemaker->full_name}}</a></h6>
                                     <ul>
-                                        <li><p>{{$winemaker->winery_id}}</p></li>
+                                        <li><p>{{$winemaker->winery->title}}</p></li>
                                         <li><p>{{$winemaker->region->title}}</p></li>
                                         <li><p>Вина:
                                                 @foreach($winemaker->wines as $wine)

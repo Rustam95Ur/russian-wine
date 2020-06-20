@@ -15,10 +15,8 @@ class CreateWinemakerWineTable extends Migration
     {
         Schema::create('winemaker_wine', function (Blueprint $table) {
             $table->id();
-            $table->integer('winemaker_id')->unsigned();
-            $table->foreign('winemaker_id')->references('id')->on('winemakers')->onDelete('cascade');
-            $table->integer('wine_id')->unsigned();
-            $table->foreign('wine_id')->references('id')->on('wines');
+            $table->integer('winemaker_id');
+            $table->integer('wine_id');
             $table->timestamps();
         });
     }
