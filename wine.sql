@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 20 2020 г., 18:19
+-- Время создания: Июн 20 2020 г., 21:34
 -- Версия сервера: 5.7.25
 -- Версия PHP: 7.3.9
 
@@ -150,21 +150,18 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (41, 5, 'updated_at', 'timestamp', 'Дата обновления', 0, 0, 0, 0, 0, 0, NULL, 13),
 (42, 5, 'seo_title', 'text', 'SEO Название', 0, 1, 1, 1, 1, 1, NULL, 14),
 (43, 5, 'featured', 'checkbox', 'Рекомендовано', 1, 1, 1, 1, 1, 1, NULL, 15),
-(44, 6, 'id', 'number', 'ID', 1, 0, 0, 0, 0, 0, NULL, 1),
-(45, 6, 'author_id', 'text', 'Автор', 1, 0, 0, 0, 0, 0, NULL, 2),
-(46, 6, 'title', 'text', 'Название', 1, 1, 1, 1, 1, 1, NULL, 3),
-(47, 6, 'excerpt', 'text_area', 'Отрывок', 1, 0, 1, 1, 1, 1, NULL, 4),
-(48, 6, 'body', 'rich_text_box', 'Содержимое', 1, 0, 1, 1, 1, 1, NULL, 5),
-(49, 6, 'slug', 'text', 'Slug (ЧПУ)', 1, 0, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\"},\"validation\":{\"rule\":\"unique:pages,slug\"}}', 6),
-(50, 6, 'meta_description', 'text', 'Meta Description', 1, 0, 1, 1, 1, 1, NULL, 7),
-(51, 6, 'meta_keywords', 'text', 'Meta Keywords', 1, 0, 1, 1, 1, 1, NULL, 8),
-(52, 6, 'status', 'select_dropdown', 'Статус', 1, 1, 1, 1, 1, 1, '{\"default\":\"INACTIVE\",\"options\":{\"INACTIVE\":\"INACTIVE\",\"ACTIVE\":\"ACTIVE\"}}', 9),
-(53, 6, 'created_at', 'timestamp', 'Дата создания', 1, 1, 1, 0, 0, 0, NULL, 10),
-(54, 6, 'updated_at', 'timestamp', 'Дата обновления', 1, 0, 0, 0, 0, 0, NULL, 11),
-(55, 6, 'image', 'image', 'Изображение Страницы', 0, 1, 1, 1, 1, 1, NULL, 12),
+(44, 6, 'id', 'number', 'ID', 1, 0, 0, 0, 0, 0, '{}', 1),
+(46, 6, 'title', 'text', 'Название', 1, 1, 1, 1, 1, 1, '{}', 2),
+(48, 6, 'body', 'rich_text_box', 'Содержимое', 0, 0, 1, 1, 1, 1, '{}', 4),
+(49, 6, 'slug', 'text', 'Slug (ЧПУ)', 1, 0, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\"},\"validation\":{\"rule\":\"unique:pages,slug\"}}', 5),
+(50, 6, 'meta_description', 'text_area', 'Meta Description', 0, 0, 1, 1, 1, 1, '{}', 6),
+(51, 6, 'meta_keywords', 'text_area', 'Meta Keywords', 0, 0, 1, 1, 1, 1, '{}', 7),
+(52, 6, 'status', 'select_dropdown', 'Статус', 1, 1, 1, 1, 1, 1, '{\"default\":\"INACTIVE\",\"options\":{\"INACTIVE\":\"INACTIVE\",\"ACTIVE\":\"ACTIVE\"}}', 8),
+(53, 6, 'created_at', 'timestamp', 'Дата создания', 0, 1, 1, 0, 0, 0, '{}', 9),
+(54, 6, 'updated_at', 'timestamp', 'Дата обновления', 0, 0, 0, 0, 0, 0, '{}', 10),
+(55, 6, 'image', 'image', 'Изображение Страницы', 0, 1, 1, 1, 1, 1, '{}', 11),
 (56, 9, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (57, 9, 'title', 'text', 'Название', 1, 1, 1, 1, 1, 1, '{}', 2),
-(58, 9, 'seo_title', 'text', 'Seo Title', 0, 0, 1, 1, 1, 1, '{}', 3),
 (59, 9, 'description', 'text_area', 'Описание', 0, 0, 1, 1, 1, 1, '{}', 4),
 (60, 9, 'production_feature', 'text_area', 'Особенности производства', 0, 0, 1, 1, 1, 1, '{}', 5),
 (61, 9, 'combination', 'text_area', 'Гастрономическое сочетание', 0, 0, 1, 1, 1, 1, '{}', 6),
@@ -225,7 +222,6 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (119, 19, 'full_name', 'text', 'ФИО', 1, 1, 1, 1, 1, 1, '{}', 2),
 (120, 19, 'description', 'text_area', 'Описание', 1, 0, 1, 1, 1, 1, '{}', 3),
 (121, 19, 'region_id', 'text', 'Region Id', 1, 0, 1, 1, 1, 1, '{}', 4),
-(122, 19, 'seo_title', 'text', 'Seo Title', 0, 0, 1, 1, 1, 1, '{}', 5),
 (123, 19, 'meta_description', 'text_area', 'Meta Description', 0, 0, 1, 1, 1, 1, '{}', 6),
 (124, 19, 'meta_keywords', 'text_area', 'Meta Keywords', 0, 0, 1, 1, 1, 1, '{}', 7),
 (125, 19, 'slug', 'text', 'Slug', 1, 0, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"full_name\",\"forceUpdate\":true},\"validation\":{\"rule\":\"unique:winemakers,slug\"}}', 8),
@@ -244,7 +240,6 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (139, 20, 'logo_image', 'image', 'Логотип', 1, 1, 1, 1, 1, 1, '{}', 6),
 (140, 20, 'catalog_image', 'image', 'Изображение для каталога', 1, 0, 1, 1, 1, 1, '{}', 7),
 (141, 20, 'region_id', 'text', 'Регион', 1, 0, 1, 1, 1, 1, '{}', 8),
-(142, 20, 'seo_title', 'text', 'Seo Title', 0, 0, 1, 1, 1, 1, '{}', 9),
 (143, 20, 'type_id', 'select_dropdown', 'Тип винодельни', 1, 1, 1, 1, 1, 1, '{\"default\":\"1\",\"options\":{\"1\":\"\\u0412\\u0438\\u043d\\u043e\\u0434\\u0435\\u043b\\u044c\\u043d\\u044f\",\"2\":\"\\u041c\\u0438\\u043a\\u0440\\u043e\\u0432\\u0438\\u043d\\u043e\\u0434\\u0435\\u043b\\u044c\\u043d\\u044f\"}}', 10),
 (144, 20, 'layout_id', 'number', 'Номер макета', 1, 1, 1, 1, 1, 1, '{}', 11),
 (145, 20, 'subscribe_status', 'select_dropdown', 'Выводить винодельню в разделе \"Подписка\"', 1, 0, 1, 1, 1, 1, '{\"default\":\"1\",\"options\":{\"1\":\"\\u0414\\u0430\",\"2\":\"\\u041d\\u0435\\u0442\"}}', 12),
@@ -279,7 +274,11 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (175, 21, 'set_hasone_set_relationship', 'relationship', 'Следующий сет (для категории \"Сеты\")', 0, 0, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Set\",\"table\":\"sets\",\"type\":\"belongsTo\",\"column\":\"next_category_set_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 21),
 (176, 21, 'set_hasone_set_relationship_1', 'relationship', 'Предыдущий сет (для категории \"Сеты\")', 0, 0, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Set\",\"table\":\"sets\",\"type\":\"belongsTo\",\"column\":\"prev_category_set_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 22),
 (178, 21, 'status', 'select_dropdown', 'Статус', 1, 1, 1, 1, 1, 1, '{\"default\":\"ACTIVE\",\"options\":{\"ACTIVE\":\"\\u0430\\u043a\\u0442\\u0438\\u0432\\u043d\\u044b\\u0439\",\"INACTIVE\":\"\\u043d\\u0435\\u0430\\u043a\\u0442\\u0438\\u0432\\u043d\\u044b\\u0439\"}}', 16),
-(179, 21, 'set_belongstomany_wine_relationship', 'relationship', 'Вина для сета', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Wine\",\"table\":\"wines\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"set_wine\",\"pivot\":\"1\",\"taggable\":\"on\"}', 23);
+(179, 21, 'set_belongstomany_wine_relationship', 'relationship', 'Вина для сета', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Wine\",\"table\":\"wines\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"set_wine\",\"pivot\":\"1\",\"taggable\":\"on\"}', 23),
+(180, 20, 'meta_title', 'text', 'Meta Title', 0, 1, 1, 1, 1, 1, '{}', 9),
+(181, 19, 'meta_title', 'text', 'Meta Title', 0, 1, 1, 1, 1, 1, '{}', 6),
+(182, 9, 'meta_title', 'text', 'Meta Title', 0, 1, 1, 1, 1, 1, '{}', 4),
+(183, 6, 'meta_title', 'text', 'Meta Title', 1, 0, 1, 1, 1, 1, '{}', 3);
 
 -- --------------------------------------------------------
 
@@ -315,16 +314,16 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (3, 'roles', 'roles', 'Роль', 'Роли', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, 'TCG\\Voyager\\Http\\Controllers\\VoyagerRoleController', '', 1, 0, NULL, '2020-06-17 09:43:44', '2020-06-17 09:43:44'),
 (4, 'categories', 'categories', 'Категория', 'Категории', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, '', '', 1, 0, NULL, '2020-06-17 09:43:45', '2020-06-17 09:43:45'),
 (5, 'posts', 'posts', 'Статья', 'Статьи', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', '', '', 1, 0, NULL, '2020-06-17 09:43:45', '2020-06-17 09:43:45'),
-(6, 'pages', 'pages', 'Страница', 'Страницы', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, '', '', 1, 0, NULL, '2020-06-17 09:43:45', '2020-06-17 09:43:45'),
-(9, 'wines', 'wines', 'Вино', 'Вина', NULL, 'App\\Models\\Wine', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-17 09:47:26', '2020-06-20 04:46:33'),
+(6, 'pages', 'pages', 'Страница', 'Страницы', 'voyager-file-text', 'App\\Models\\Page', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-06-17 09:43:45', '2020-06-20 11:15:54'),
+(9, 'wines', 'wines', 'Вино', 'Вина', NULL, 'App\\Models\\Wine', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-17 09:47:26', '2020-06-20 11:12:33'),
 (10, 'regions', 'regions', 'Регион', 'Регионы', NULL, 'App\\Models\\Region', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-06-18 08:29:12', '2020-06-18 08:29:12'),
 (11, 'countries', 'countries', 'Страна', 'Страны', NULL, 'App\\Models\\Country', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-06-18 08:30:07', '2020-06-18 08:30:07'),
 (12, 'colors', 'colors', 'Цвет', 'Цвета', NULL, 'App\\Models\\Color', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-18 08:32:13', '2020-06-18 08:35:21'),
 (13, 'manufacturers', 'manufacturers', 'Производитель', 'Производители', NULL, 'App\\Models\\Manufacturer', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-06-18 08:53:55', '2020-06-18 08:53:55'),
 (15, 'grape_sorts', 'grape-sorts', 'Сорт винограда', 'Сорты винограда', NULL, 'App\\Models\\GrapeSort', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-06-18 09:06:22', '2020-06-18 09:06:22'),
 (18, 'sugars', 'sugars', 'Содержание сахара', 'Содержание сахара', NULL, 'App\\Models\\Sugar', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-18 10:11:01', '2020-06-18 10:13:09'),
-(19, 'winemakers', 'winemakers', 'Винодел', 'Виноделы', NULL, 'App\\Models\\Winemaker', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-18 11:13:29', '2020-06-20 04:47:43'),
-(20, 'wineries', 'wineries', 'Винодельня', 'Винодельни', NULL, 'App\\Models\\Winery', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-20 04:23:20', '2020-06-20 04:39:52'),
+(19, 'winemakers', 'winemakers', 'Винодел', 'Виноделы', NULL, 'App\\Models\\Winemaker', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-18 11:13:29', '2020-06-20 11:11:17'),
+(20, 'wineries', 'wineries', 'Винодельня', 'Винодельни', NULL, 'App\\Models\\Winery', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-20 04:23:20', '2020-06-20 11:10:14'),
 (21, 'sets', 'sets', 'Сет', 'Сеты', NULL, 'App\\Models\\Set', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-20 06:14:12', '2020-06-20 07:42:08');
 
 -- --------------------------------------------------------
@@ -520,9 +519,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `pages` (
   `id` int(10) UNSIGNED NOT NULL,
-  `author_id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `excerpt` text COLLATE utf8mb4_unicode_ci,
+  `meta_title` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL,
   `body` text COLLATE utf8mb4_unicode_ci,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -537,8 +535,9 @@ CREATE TABLE `pages` (
 -- Дамп данных таблицы `pages`
 --
 
-INSERT INTO `pages` (`id`, `author_id`, `title`, `excerpt`, `body`, `image`, `slug`, `meta_description`, `meta_keywords`, `status`, `created_at`, `updated_at`) VALUES
-(1, 0, 'Hello World', 'Hang the jib grog grog blossom grapple dance the hempen jig gangway pressgang bilge rat to go on account lugger. Nelsons folly gabion line draught scallywag fire ship gaff fluke fathom case shot. Sea Legs bilge rat sloop matey gabion long clothes run a shot across the bow Gold Road cog league.', '<p>Hello World. Scallywag grog swab Cat o\'nine tails scuttle rigging hardtack cable nipper Yellow Jack. Handsomely spirits knave lad killick landlubber or just lubber deadlights chantey pinnace crack Jennys tea cup. Provost long clothes black spot Yellow Jack bilged on her anchor league lateen sail case shot lee tackle.</p>\n<p>Ballast spirits fluke topmast me quarterdeck schooner landlubber or just lubber gabion belaying pin. Pinnace stern galleon starboard warp carouser to go on account dance the hempen jig jolly boat measured fer yer chains. Man-of-war fire in the hole nipperkin handsomely doubloon barkadeer Brethren of the Coast gibbet driver squiffy.</p>', 'pages/page1.jpg', 'hello-world', 'Yar Meta Description', 'Keyword1, Keyword2', 'ACTIVE', '2020-06-17 09:43:45', '2020-06-17 09:43:45');
+INSERT INTO `pages` (`id`, `title`, `meta_title`, `body`, `image`, `slug`, `meta_description`, `meta_keywords`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Hello World', '', '<p>Hello World. Scallywag grog swab Cat o\'nine tails scuttle rigging hardtack cable nipper Yellow Jack. Handsomely spirits knave lad killick landlubber or just lubber deadlights chantey pinnace crack Jennys tea cup. Provost long clothes black spot Yellow Jack bilged on her anchor league lateen sail case shot lee tackle.</p>\n<p>Ballast spirits fluke topmast me quarterdeck schooner landlubber or just lubber gabion belaying pin. Pinnace stern galleon starboard warp carouser to go on account dance the hempen jig jolly boat measured fer yer chains. Man-of-war fire in the hole nipperkin handsomely doubloon barkadeer Brethren of the Coast gibbet driver squiffy.</p>', 'pages/page1.jpg', 'hello-world', 'Yar Meta Description', 'Keyword1, Keyword2', 'ACTIVE', '2020-06-17 09:43:45', '2020-06-17 09:43:45'),
+(2, 'Франшиза', 'Винная Франшиза, магазин русское вино, винный магазин, винотека', '<p>Франшиза</p>', NULL, 'franchise', 'Хотите открыть винный магазин? Русское вино - винный магазин российского вина. Напишите нам, если вы хотите открыть винный магазин по франшизе.', 'Франшиза', 'ACTIVE', '2020-06-20 10:48:33', '2020-06-20 11:15:16');
 
 -- --------------------------------------------------------
 
@@ -892,16 +891,17 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`, `order`, `group`) VALUES
-(1, 'site.title', 'Название Сайта', 'Название Сайта', '', 'text', 1, 'Site'),
+(1, 'site.title', 'Название Сайта', 'Купить Русское Вино', '', 'text', 1, 'Site'),
 (2, 'site.description', 'Описание Сайта', 'Описание Сайта', '', 'text', 2, 'Site'),
-(3, 'site.logo', 'Логотип Сайта', '', '', 'image', 3, 'Site'),
-(4, 'site.google_analytics_tracking_id', 'Google Analytics Tracking ID', '', '', 'text', 4, 'Site'),
+(3, 'site.logo', 'Логотип Сайта', 'settings\\June2020\\XFfvhH9DhoiWTcPWKhD6.png', '', 'image', 3, 'Site'),
+(4, 'site.google_analytics_tracking_id', 'Google Analytics Tracking ID', NULL, '', 'text', 4, 'Site'),
 (5, 'admin.bg_image', 'Фоновое Изображение для Админки', '', '', 'image', 5, 'Admin'),
 (6, 'admin.title', 'Название Админки', 'Voyager', '', 'text', 1, 'Admin'),
 (7, 'admin.description', 'Описание Админки', 'Добро пожаловать в Voyager. Пропавшую Админку для Laravel', '', 'text', 2, 'Admin'),
 (8, 'admin.loader', 'Загрузчик Админки', '', '', 'image', 3, 'Admin'),
 (9, 'admin.icon_image', 'Иконка Админки', '', '', 'image', 4, 'Admin'),
-(10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (используется для панели администратора)', '', '', 'text', 1, 'Admin');
+(10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (используется для панели администратора)', NULL, '', 'text', 1, 'Admin'),
+(11, 'site.keywords', 'Ключевые слова', 'Вино', NULL, 'text', 6, 'Site');
 
 -- --------------------------------------------------------
 
@@ -1044,7 +1044,7 @@ CREATE TABLE `winemakers` (
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `region_id` int(11) NOT NULL,
   `winery_id` int(11) NOT NULL,
-  `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_description` text COLLATE utf8mb4_unicode_ci,
   `meta_keywords` text COLLATE utf8mb4_unicode_ci,
   `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -1058,7 +1058,7 @@ CREATE TABLE `winemakers` (
 -- Дамп данных таблицы `winemakers`
 --
 
-INSERT INTO `winemakers` (`id`, `full_name`, `description`, `region_id`, `winery_id`, `seo_title`, `meta_description`, `meta_keywords`, `slug`, `image`, `status`, `created_at`, `updated_at`) VALUES
+INSERT INTO `winemakers` (`id`, `full_name`, `description`, `region_id`, `winery_id`, `meta_title`, `meta_description`, `meta_keywords`, `slug`, `image`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'Андриенко Павелв', 'Российский винодел Павел Андриенко родился в 1974 году в Краснодарском крае. В 2004 году окончил Кубанский государственный технологический университет, в Краснодаре по специальности \"Технология бродильных производств и виноделие». С 2003 г. по 2005 г. работал в ЗАО АПФ «Мирный». Прошел путь от рабочего до технолога-винодела. Один из участников проекта по запуску цеха по производству игристых вин. С 2005 г. по 2013 г. работал в ООО «Кубанские вина» сначала в должности технолога, а затем - заместителем генерального директора, директором по производству. За все время работы основным направлением было улучшение качества выпускаемых вин с применением передовых технологий. Сохранение производства Хереса классическим способом. Непосредственное участие над выпуском вин Шардоне, Каберне, Мерло, серии «Звезда Тамани». В настоящее время работает на «Заводе марочных вин Коктебель» в качестве главного технолога-винодела. Основное направление - это сохранение заводских традиций виноделия с постоянным совершенствованием. Продолжение классического производства вина Мадера Коктебель, выпуска вина «Кагор Высшего качества», так же Шардоне, Каберне-Совиньон, Бастардо.', 1, 1, 'awdawd', 'daw', 'dawdaw', 'andrienko-pavelv', 'winemakers\\June2020\\fDuMzOzCEvDsmF5A5iB4.jpg', 'ACTIVE', '2020-06-18 12:42:56', '2020-06-20 04:47:58');
 
 -- --------------------------------------------------------
@@ -1094,7 +1094,7 @@ CREATE TABLE `wineries` (
   `logo_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `catalog_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `region_id` int(11) NOT NULL,
-  `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `type_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   `subscribe_status` int(11) NOT NULL DEFAULT '1',
@@ -1110,7 +1110,7 @@ CREATE TABLE `wineries` (
 -- Дамп данных таблицы `wineries`
 --
 
-INSERT INTO `wineries` (`id`, `title`, `signature`, `description`, `header_image`, `logo_image`, `catalog_image`, `region_id`, `seo_title`, `type_id`, `layout_id`, `subscribe_status`, `slug`, `coordinate_lon`, `coordinate_lat`, `status`, `created_at`, `updated_at`) VALUES
+INSERT INTO `wineries` (`id`, `title`, `signature`, `description`, `header_image`, `logo_image`, `catalog_image`, `region_id`, `meta_title`, `type_id`, `layout_id`, `subscribe_status`, `slug`, `coordinate_lon`, `coordinate_lat`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'Вилла Виктория', 'Краснодарский край, Новороссийск, х. Ленинский Путь', 'Реализованная идея семьи Яновых создать хозяйство бургундско-луарского стиля. Самая крайняя и самая высоко расположенная винодельня Анапской долины по пути к Новороссийску. Консультантом хозяйства выступил Джон Ворончак. Первые вина делались в «Мысхако» Романом Неборским.', 'wineries\\June2020\\8A6KWkh8j65vqNo36m6D.jpg', 'wineries\\June2020\\XT1kELsHnmmSuGXbaR0l.png', 'wineries\\June2020\\mHVnZ2SdPuZKq4l7HWTm.png', 1, 'Купить вино Вилла Виктория, каберне фран, рислинг, шардоне', 1, 8, 1, 'villa-viktoriya', '37.627732', '44.862104', 'ACTIVE', '2020-06-20 04:43:54', '2020-06-20 04:43:54');
 
 -- --------------------------------------------------------
@@ -1123,7 +1123,7 @@ CREATE TABLE `wines` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` int(11) NOT NULL,
-  `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `description` text COLLATE utf8mb4_unicode_ci,
   `production_feature` text COLLATE utf8mb4_unicode_ci,
   `combination` text COLLATE utf8mb4_unicode_ci,
@@ -1155,7 +1155,7 @@ CREATE TABLE `wines` (
 -- Дамп данных таблицы `wines`
 --
 
-INSERT INTO `wines` (`id`, `title`, `price`, `seo_title`, `description`, `production_feature`, `combination`, `feature`, `innings`, `model`, `winery_id`, `grape_sort_id`, `edition`, `manufacturer_id`, `region_id`, `color_id`, `fortress`, `year`, `volume`, `sugar_id`, `count`, `image`, `slug`, `meta_description`, `meta_keywords`, `status`, `featured`, `created_at`, `updated_at`) VALUES
+INSERT INTO `wines` (`id`, `title`, `price`, `meta_title`, `description`, `production_feature`, `combination`, `feature`, `innings`, `model`, `winery_id`, `grape_sort_id`, `edition`, `manufacturer_id`, `region_id`, `color_id`, `fortress`, `year`, `volume`, `sugar_id`, `count`, `image`, `slug`, `meta_description`, `meta_keywords`, `status`, `featured`, `created_at`, `updated_at`) VALUES
 (2, '100 оттенков Каберне', 5000, 'a13123', 'awdaw', 'Вино выдерживается не менее одного года во французской дубовой бочке, а после розлива - 6 месяцев непосредственно в бутылке.', 'Станет идеальной парой для мясных блюд, твёрдых сыров. Особенно хорошо для говяжьих рёбрышек.', 'Вино обладает тёмно-рубиновым цветом. В сложном букете доминирует аромат специй, ванили на общем фоне \"дымки\" дубовой бочки. Вкус вина классический, сортовой с оттенками чёрной смородины, табака, чернослива, кожи. Отличная структура и хорошо сбалансированность делают вино необычайно изысканным.', 'Подавать при температуре 14 - 16 С .', 'Fanagoria 100 Cabernet 2013', 1, 1, 5670, 1, 1, 1, 13, 2013, '0.75', 1, 1000, 'wines\\June2020\\yTUMTzvki3AP4JJACcQK.png', '100-ottenkov-kaberne', '213231', '131231', 'ACTIVE', 1, '2020-06-18 08:49:49', '2020-06-20 01:10:44');
 
 --
@@ -1364,7 +1364,7 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT для таблицы `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=180;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=184;
 
 --
 -- AUTO_INCREMENT для таблицы `data_types`
@@ -1412,7 +1412,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT для таблицы `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `permissions`
@@ -1448,7 +1448,7 @@ ALTER TABLE `sets`
 -- AUTO_INCREMENT для таблицы `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT для таблицы `sugars`
