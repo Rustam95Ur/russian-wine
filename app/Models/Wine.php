@@ -25,4 +25,14 @@ class Wine extends Model
     {
         return $this->belongsTo('App\Models\Sugar', 'sugar_id', 'id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function winery()
+    {
+        return $this->belongsTo('App\Models\Winery', 'winery_id', 'id');
+    }
+
 }
+

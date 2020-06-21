@@ -11,7 +11,7 @@ class IndexController extends Controller
 
     public function index()
     {
-        $wines = Wine::where('status', '=', 'ACTIVE')->with('color', 'sugar')->orderBy('id', 'DESC')->get();
+        $wines = Wine::where('status', '=', 'ACTIVE')->with('color', 'sugar', 'winery')->orderBy('id', 'DESC')->get();
         $winemakers = Winemaker::where('status', '=', 'ACTIVE')->with('wines', 'region', 'winery')->get();
         return view('home.index', [
             'wines' => $wines,

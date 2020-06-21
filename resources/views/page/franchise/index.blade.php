@@ -11,7 +11,7 @@
                         <div class="col-md-12 text-center">
                             <h1>Хотите открыть винный магазин в своём городе?</h1>
                             <p><a href="#searching">Необходимые требования к партнеру
-                                    <span class="icon-icon_arrow_down_2"></span></a>
+                                    <span class="fa fa-arrow-down"></span></a>
                             </p>
                         </div>
                     </div>

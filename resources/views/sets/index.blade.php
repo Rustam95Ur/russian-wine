@@ -22,7 +22,7 @@
         </div>
         <footer id="sety-footer">
             <div class="left-side">
-                <a href="https://russianvine.ru"><img src="image/catalog/wineclub/logo.png"></a>
+                <a href="{{route('home')}}"><img alt="logo" src="{{asset('image//logo/logo-club.png')}}"></a>
                 <button onclick="document.getElementById('modal_sviaz').style.display = 'block';$('#blur_cont').addClass('show');$('body').attr('class','nooverflow');">задать вопрос</button>
             </div>
             <div class="right-side">

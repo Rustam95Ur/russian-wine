@@ -10,8 +10,9 @@
         <div class="swiper-viewport">
             <div id="home_slider" class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide text-center"><a href="{{route('wine-shop')}}">
-                            <img src="{{ asset ('image/background_podpiska.png') }}">
+                    <div class="swiper-slide text-center">
+                        <a href="{{route('wine-shop')}}">
+                            <img alt="Subscribe Bg" src="{{ asset ('image/background_podpiska.png') }}">
                             <span>Вино</span>
                             <p>
                                 Мы собрали для Вас самую полную коллекцию Русских Вин, как крупных заводов, так
@@ -19,18 +20,10 @@
                             </p>
                         </a>
                         <a href="{{route('wine-shop')}}" class="home_btn">Все вина</a>
-
-                        <!--<div id="mouse_img"><a target="_blank" href="https://www.youtube.com/channel/UCN-RcIaaNGUmZBYg9HJtoKg">
-                                <div id="chevrons">
-                                <div class="chevron"></div>
-                                <div class="chevron"></div>
-                                <div class="chevron"></div>
-                                </div>
-                                </a></div> -->
                     </div>
                     <div class="swiper-slide text-center">
                         <a href="{{route('sets')}}">
-                            <img src="{{ asset ('image/background_sety.png') }}">
+                            <img alt="Sets Bg" src="{{ asset ('image/background_sety.png') }}">
                             <span>Сеты</span>
                             <p>
                                 Мы объехали все винодельни нашей страны и отобрали лучшие и самые интересные вина.
@@ -40,7 +33,7 @@
 
                     </div>
                     <div class="swiper-slide text-center"><a href="https://russianvine.ru/tasting/">
-                            <img src="{{ asset ('image/background_club.png') }}">
+                            <img alt="Club Bg" src="{{ asset ('image/background_club.png') }}">
                             <span>Дегустации</span>
                             <p>
                                 Обладая опытом проведения дегустаций различного уровня, берёмся за форматы любой
@@ -51,17 +44,15 @@
                     </div>
                     <div class="swiper-slide text-center">
                         <a href="/imennoe-vino">
-                            <img src="{{ asset ('image/background_imennoe.png') }}">
+                            <img alt="Personal wine" src="{{ asset ('image/background_imennoe.png') }}">
                             <span>Именное вино</span>
                             <p>
                                 Создайте семейную традицию – заложите свою бочку вина. По окончании выдержки, вино
                                 разливается в бутылки с Вашей именной этикеткой.
                             </p>
-                        </a><a class="home_btn" href="/imennoe-vino">Узнать больше</a>
-
-
+                        </a>
+                        <a class="home_btn" href="/imennoe-vino">Узнать больше</a>
                     </div>
-
                 </div>
             </div>
             <div class="swiper-pagination home-pagination"></div>
@@ -103,7 +94,7 @@
                                             </a>
                                         </div>
                                         <h2><a href="#" class="preview">{{$wine->title}}</a></h2>
-                                        <p>{{$wine->winery_id}}</p>
+                                        <p>{{$wine->winery->title}}</p>
                                         <div class="meta">
                                             <span class="color">{{$wine->color->title}} </span><span
                                                 class="sep"> | </span>
@@ -215,7 +206,7 @@
                                         </a>
                                     </div>
                                     <h2><a href="#" class="preview">{{$wine->title}}</a></h2>
-                                    <p>{{$wine->winery_id}}</p>
+                                    <p>{{$wine->winery->title}}</p>
                                     <div class="meta">
                                         <span class="color">{{$wine->color->title}} </span><span
                                             class="sep"> | </span>
