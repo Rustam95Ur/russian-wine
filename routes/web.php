@@ -21,6 +21,8 @@ Route::get('/winemakers', 'Page\WinemakerController@index')->name('winemakers');
 Route::get('/franchise', 'Page\FranchiseController@index')->name('franchise');
 Route::get('/personal-wine', 'Page\WinemakerController@personal_wine')->name('personal-wine');
 Route::get('/tastings', 'Shop\TastingsController@index')->name('tastings');
+Route::get('/wine-tour', 'Page\IndexController@tour')->name('wine-tour');
+Route::get('/agreement', 'Page\IndexController@agreement')->name('agreement');
 
 
 

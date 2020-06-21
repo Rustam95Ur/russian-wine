@@ -135,151 +135,19 @@
                     <img id="talks_before" src="{{asset('image/page/testing/talks_before.png')}}">
                     <h5 id="block_title">О НАС ГОВОРЯТ</h5>
                     <div class="swiper-container swiper-container-horizontal" id="testimonials">
-                        <div class="swiper-wrapper"
-                             style="transition-duration: 0ms; transform: translate3d(-1549px, 0px, 0px);">
-                            <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
-                                 data-swiper-slide-index="0" style="width: 486.333px; margin-right: 30px;">
-                                <div class="swiper-inner">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/filatov-156x156.png">
-                                    <a href="Филатов" target="_blank" style="display:none !important;"><img
-                                            src="{{asset('image/page/testing/youtube_link.png')}}"></a>
-                                    <h5>Евгений Филатов</h5>
-                                    <div class="testimonial">
-                                        Я шел абсолютно скептически настроенный, что у меня ничего не получится! Но у
-                                        меня так замечательно получилось!!! Мне очень понравилось! Я получил эмоции,
-                                        которые давно не испытывал в своей жизни. И самое главное, я впервые в жизни
-                                        попробовал русское вино приличного качества. Это просто потрясающе! Спасибо вам
-                                        огромное!&nbsp;
+                        <div class="swiper-wrapper">
+                            @foreach($comments as $comment)
+                                <div class="swiper-slide">
+                                    <div class="swiper-inner">
+                                        <img alt="{{$comment->full_name}}"
+                                             src="{{Voyager::image($comment->image)}}">
+                                        <h5>{{$comment->full_name}}</h5>
+                                        <div class="testimonial text-center">
+                                            {{$comment->body}}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next"
-                                 data-swiper-slide-index="1" style="width: 486.333px; margin-right: 30px;">
-                                <div class="swiper-inner">
-                                    <img
-                                        src="https://russianvine.ru/image/cache/catalog/s_avatar/no_avatar-156x156.png">
-                                    <a href="фрейм" target="_blank" style="display:none !important;"><img
-                                            src="{{asset('image/page/testing/youtube_link.png')}}"></a>
-                                    <h5>Компания Нордтекс</h5>
-                                    <div class="testimonial">
-                                        Дегустация по Русским Винам была яркой, интересной, вкусной! За два часа мы
-                                        узнали, что у нас в стране есть шикарные вина. Высокий уровень дегустации, все
-                                        было профессионально и увлекательно. Спасибо за такую организацию мероприятия!
-                                        &nbsp;&nbsp;
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-duplicate swiper-slide-prev"
-                                 data-swiper-slide-index="2" style="width: 486.333px; margin-right: 30px;">
-                                <div class="swiper-inner">
-                                    <img
-                                        src="https://russianvine.ru/image/cache/catalog/s_avatar/no_avatar-156x156.png">
-                                    <a href="фрейм 3" target="_blank" style="display:none !important;"><img
-                                            src="{{asset('image/page/testing/youtube_link.png')}}"></a>
-                                    <h5>Компания друзей</h5>
-                                    <div class="testimonial">
-                                        Для нас провели слепую дегустацию - мы сравнивали русское вино и европейское. К
-                                        нашему удивлению, три первых места заняло наше вино из Волгограда, Владикавказа
-                                        и Кубани! Все вина очень высокого уровня. Нам понравилось)&nbsp;
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0"
-                                 style="width: 486.333px; margin-right: 30px;">
-                                <div class="swiper-inner">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/filatov-156x156.png">
-                                    <a href="Филатов" target="_blank" style="display:none !important;"><img
-                                            src="{{asset('image/page/testing/youtube_link.png')}}"></a>
-                                    <h5>Евгений Филатов</h5>
-                                    <div class="testimonial">
-                                        Я шел абсолютно скептически настроенный, что у меня ничего не получится! Но у
-                                        меня так замечательно получилось!!! Мне очень понравилось! Я получил эмоции,
-                                        которые давно не испытывал в своей жизни. И самое главное, я впервые в жизни
-                                        попробовал русское вино приличного качества. Это просто потрясающе! Спасибо вам
-                                        огромное!&nbsp;
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="1"
-                                 style="width: 486.333px; margin-right: 30px;">
-                                <div class="swiper-inner">
-                                    <img
-                                        src="https://russianvine.ru/image/cache/catalog/s_avatar/no_avatar-156x156.png">
-                                    <a href="фрейм" target="_blank" style="display:none !important;"><img
-                                            src="{{asset('image/page/testing/youtube_link.png')}}"></a>
-                                    <h5>Компания Нордтекс</h5>
-                                    <div class="testimonial">
-                                        Дегустация по Русским Винам была яркой, интересной, вкусной! За два часа мы
-                                        узнали, что у нас в стране есть шикарные вина. Высокий уровень дегустации, все
-                                        было профессионально и увлекательно. Спасибо за такую организацию мероприятия!
-                                        &nbsp;&nbsp;
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-duplicate-prev" data-swiper-slide-index="2"
-                                 style="width: 486.333px; margin-right: 30px;">
-                                <div class="swiper-inner">
-                                    <img
-                                        src="https://russianvine.ru/image/cache/catalog/s_avatar/no_avatar-156x156.png">
-                                    <a href="фрейм 3" target="_blank" style="display:none !important;"><img
-                                            src="{{asset('image/page/testing/youtube_link.png')}}"></a>
-                                    <h5>Компания друзей</h5>
-                                    <div class="testimonial">
-                                        Для нас провели слепую дегустацию - мы сравнивали русское вино и европейское. К
-                                        нашему удивлению, три первых места заняло наше вино из Волгограда, Владикавказа
-                                        и Кубани! Все вина очень высокого уровня. Нам понравилось)&nbsp;
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
-                                 data-swiper-slide-index="0" style="width: 486.333px; margin-right: 30px;">
-                                <div class="swiper-inner">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/filatov-156x156.png">
-                                    <a href="Филатов" target="_blank" style="display:none !important;"><img
-                                            src="{{asset('image/page/testing/youtube_link.png')}}"></a>
-                                    <h5>Евгений Филатов</h5>
-                                    <div class="testimonial">
-                                        Я шел абсолютно скептически настроенный, что у меня ничего не получится! Но у
-                                        меня так замечательно получилось!!! Мне очень понравилось! Я получил эмоции,
-                                        которые давно не испытывал в своей жизни. И самое главное, я впервые в жизни
-                                        попробовал русское вино приличного качества. Это просто потрясающе! Спасибо вам
-                                        огромное!&nbsp;
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next"
-                                 data-swiper-slide-index="1" style="width: 486.333px; margin-right: 30px;">
-                                <div class="swiper-inner">
-                                    <img
-                                        src="https://russianvine.ru/image/cache/catalog/s_avatar/no_avatar-156x156.png">
-                                    <a href="фрейм" target="_blank" style="display:none !important;"><img
-                                            src="{{asset('image/page/testing/youtube_link.png')}}"></a>
-                                    <h5>Компания Нордтекс</h5>
-                                    <div class="testimonial">
-                                        Дегустация по Русским Винам была яркой, интересной, вкусной! За два часа мы
-                                        узнали, что у нас в стране есть шикарные вина. Высокий уровень дегустации, все
-                                        было профессионально и увлекательно. Спасибо за такую организацию мероприятия!
-                                        &nbsp;&nbsp;
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2"
-                                 style="width: 486.333px; margin-right: 30px;">
-                                <div class="swiper-inner">
-                                    <img
-                                        src="https://russianvine.ru/image/cache/catalog/s_avatar/no_avatar-156x156.png">
-                                    <a href="фрейм 3" target="_blank" style="display:none !important;"><img
-                                            src="{{asset('image/page/testing/youtube_link.png')}}"></a>
-                                    <h5>Компания друзей</h5>
-                                    <div class="testimonial">
-                                        Для нас провели слепую дегустацию - мы сравнивали русское вино и европейское. К
-                                        нашему удивлению, три первых места заняло наше вино из Волгограда, Владикавказа
-                                        и Кубани! Все вина очень высокого уровня. Нам понравилось)&nbsp;
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                         <!-- Add Pagination -->
                         <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span
@@ -290,121 +158,7 @@
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                     </div>
-
                     <!-- Swiper JS -->
-                    <script src="https://unpkg.com/swiper@4.0.7/dist/js/swiper.min.js"></script>
-
-                    <!-- Initialize Swiper -->
-                    <script>
-                        var swiper = new Swiper('#testimonials', {
-                            slidesPerView: 3,
-                            spaceBetween: 30,
-                            slidesPerGroup: 1,
-                            loop: true,
-                            loopFillGroupWithBlank: true,
-                            pagination: {
-                                el: '.swiper-pagination',
-                                clickable: true,
-                            },
-                            navigation: {
-                                nextEl: '.swiper-button-next',
-                                prevEl: '.swiper-button-prev',
-                            },
-                        });
-                    </script>
-
-
-                    <div class="swiper-container slider-1 swiper-container-horizontal">
-                        <div class="swiper-wrapper"
-                             style="transition-duration: 0ms; transform: translate3d(-1519px, 0px, 0px);">
-                            <div class="swiper-slide swiper-slide-duplicate swiper-slide-prev"
-                                 data-swiper-slide-index="2" style="width: 1519px;">
-                                <div class="swiper-inner">
-                                    <img
-                                        src="https://russianvine.ru/image/cache/catalog/s_avatar/no_avatar-156x156.png">
-                                    <a href="фрейм 3" style="display:none !important;"><img
-                                            src="{{asset('image/page/testing/youtube_link.png')}}"></a>
-                                    <h5>Компания друзей</h5>
-                                    <div class="testimonial">
-                                        Для нас провели слепую дегустацию - мы сравнивали русское вино и европейское. К
-                                        нашему удивлению, три первых места заняло наше вино из Волгограда, Владикавказа
-                                        и Кубани! Все вина очень высокого уровня. Нам понравилось)&nbsp;
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0"
-                                 style="width: 1519px;">
-                                <div class="swiper-inner">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/filatov-156x156.png">
-                                    <a href="Филатов" style="display:none !important;"><img
-                                            src="{{asset('image/page/testing/youtube_link.png')}}"></a>
-                                    <h5>Евгений Филатов</h5>
-                                    <div class="testimonial">
-                                        Я шел абсолютно скептически настроенный, что у меня ничего не получится! Но у
-                                        меня так замечательно получилось!!! Мне очень понравилось! Я получил эмоции,
-                                        которые давно не испытывал в своей жизни. И самое главное, я впервые в жизни
-                                        попробовал русское вино приличного качества. Это просто потрясающе! Спасибо вам
-                                        огромное!&nbsp;
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="1"
-                                 style="width: 1519px;">
-                                <div class="swiper-inner">
-                                    <img
-                                        src="https://russianvine.ru/image/cache/catalog/s_avatar/no_avatar-156x156.png">
-                                    <a href="фрейм" style="display:none !important;"><img
-                                            src="{{asset('image/page/testing/youtube_link.png')}}"></a>
-                                    <h5>Компания Нордтекс</h5>
-                                    <div class="testimonial">
-                                        Дегустация по Русским Винам была яркой, интересной, вкусной! За два часа мы
-                                        узнали, что у нас в стране есть шикарные вина. Высокий уровень дегустации, все
-                                        было профессионально и увлекательно. Спасибо за такую организацию мероприятия!
-                                        &nbsp;&nbsp;
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-duplicate-prev" data-swiper-slide-index="2"
-                                 style="width: 1519px;">
-                                <div class="swiper-inner">
-                                    <img
-                                        src="https://russianvine.ru/image/cache/catalog/s_avatar/no_avatar-156x156.png">
-                                    <a href="фрейм 3" style="display:none !important;"><img
-                                            src="{{asset('image/page/testing/youtube_link.png')}}"></a>
-                                    <h5>Компания друзей</h5>
-                                    <div class="testimonial">
-                                        Для нас провели слепую дегустацию - мы сравнивали русское вино и европейское. К
-                                        нашему удивлению, три первых места заняло наше вино из Волгограда, Владикавказа
-                                        и Кубани! Все вина очень высокого уровня. Нам понравилось)&nbsp;
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
-                                 data-swiper-slide-index="0" style="width: 1519px;">
-                                <div class="swiper-inner">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/filatov-156x156.png">
-                                    <a href="Филатов" style="display:none !important;"><img
-                                            src="{{asset('image/page/testing/youtube_link.png')}}"></a>
-                                    <h5>Евгений Филатов</h5>
-                                    <div class="testimonial">
-                                        Я шел абсолютно скептически настроенный, что у меня ничего не получится! Но у
-                                        меня так замечательно получилось!!! Мне очень понравилось! Я получил эмоции,
-                                        которые давно не испытывал в своей жизни. И самое главное, я впервые в жизни
-                                        попробовал русское вино приличного качества. Это просто потрясающе! Спасибо вам
-                                        огромное!&nbsp;
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span
-                                class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span
-                                class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span>
-                        </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-
-
-                    </div>
                 </section>
             </div>
         </section>
@@ -554,8 +308,25 @@
                     });
 
                 })(jQuery); // End of use strict
+
+                var swiper = new Swiper('#testimonials', {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    slidesPerGroup: 1,
+                    loop: true,
+                    loopFillGroupWithBlank: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                });
             </script>
             <script src="{{asset('js/tasting.js')}}"></script>
+
         @endpush
     </div>
 @endsection

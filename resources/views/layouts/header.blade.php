@@ -37,15 +37,19 @@
                             <div></div>
                         </button>
                         <ul class="nav navbar-nav">
-                            <li>
-                                <a class="{{(\Request::route()->getName() == 'wine-shop') ? 'active_link' : ''}}"
+                            <li><a class="{{(\Request::route()->getName() == 'wine-shop') ? 'active_link' : ''}}"
                                    href="{{route('wine-shop')}}">{{trans('header.wine')}}</a>
                             </li>
-                            <li><a class="{{(\Request::route()->getName() == 'sets') ? 'active_link' : ''}}" href="{{route('sets')}}">{{trans('header.sets')}}</a></li>
-                            <li><a class="{{(\Request::route()->getName() == 'subscription') ? 'active_link' : ''}}" href="{{route('subscription')}}">{{trans('header.subscription')}}</a></li>
-                            <li><a class="{{(\Request::route()->getName() == 'personal-wine') ? 'active_link' : ''}}" href="{{route('personal-wine')}}">{{trans('header.personal-wine')}}</a></li>
-                            <li><a href="{{route('tastings')}}">{{trans('header.testing')}}</a></li>
-                            <li><a class="{{(\Request::route()->getName() == 'franchise') ? 'active_link' : ''}}" href="{{route('franchise')}}">{{trans('header.franchise')}}</a></li>
+                            <li><a class="{{(\Request::route()->getName() == 'sets') ? 'active_link' : ''}}"
+                                   href="{{route('sets')}}">{{trans('header.sets')}}</a></li>
+                            <li><a class="{{(\Request::route()->getName() == 'subscription') ? 'active_link' : ''}}"
+                                   href="{{route('subscription')}}">{{trans('header.subscription')}}</a></li>
+                            <li><a class="{{(\Request::route()->getName() == 'personal-wine') ? 'active_link' : ''}}"
+                                   href="{{route('personal-wine')}}">{{trans('header.personal-wine')}}</a></li>
+                            <li><a class="{{(\Request::route()->getName() == 'tastings') ? 'active_link' : ''}}"
+                                   href="{{route('tastings')}}">{{trans('header.testing')}}</a></li>
+                            <li><a class="{{(\Request::route()->getName() == 'franchise') ? 'active_link' : ''}}"
+                                   href="{{route('franchise')}}">{{trans('header.franchise')}}</a></li>
                             <li class="newdrop"><a href="" class="dropdown-toggle" data-toggle="dropdown">Информация</a>
                                 <div class="dropdown-menu-custom">
                                     <div class="dropdown-inner">
@@ -53,7 +57,8 @@
                                             <li><a href="#">Регионы виноделия</a></li>
                                             <li><a href="#">Русские винодельни</a></li>
                                             <li><a href="#">Микровинодельни</a></li>
-                                            <li><a href="{{route('winemakers')}}">{{trans('header.winemakers')}}</a></li>
+                                            <li><a href="{{route('winemakers')}}">{{trans('header.winemakers')}}</a>
+                                            </li>
                                             <li><a href="#">Где купить</a></li>
                                         </ul>
                                     </div>
@@ -94,41 +99,42 @@
                     </div>
                 </div>
                 @push('scripts')
-                <script>
-                    $('#close-mask').click(function() {
-                        $('#cart-cont').removeClass('open');
-                        $('body').removeClass('nooverflow1');
-                        $('body').removeClass('nooverflow');
-                    });
-                    function recountTotal() {
-                        var sum = 0;
-                        $('#product_buy .total b').each(function () {
-                            sum = sum + parseInt($(this).text());
-                        })
-                        $('#total_price').text(sum);
-                    };
+                    <script>
+                        $('#close-mask').click(function () {
+                            $('#cart-cont').removeClass('open');
+                            $('body').removeClass('nooverflow1');
+                            $('body').removeClass('nooverflow');
+                        });
 
-                    function increaseQty(productid) {
-                        $('input[name="quantity[' + productid + ']"]').val(parseInt($('input[name="quantity[' + productid + ']"]').val()) + 1);
-                        cart.addmini(productid, 1);
-                        var prodsum = parseInt($('input[name="quantity[' + productid + ']"]').val()) * parseInt($('input[name="quantity[' + productid + ']"]').attr('data-price'));
-                        $('input[name="quantity[' + productid + ']"]').parent().parent().siblings('.total').html('<b>' + prodsum + '</b><span>о</span>');
-                        recountTotal();
-                    };
+                        function recountTotal() {
+                            var sum = 0;
+                            $('#product_buy .total b').each(function () {
+                                sum = sum + parseInt($(this).text());
+                            })
+                            $('#total_price').text(sum);
+                        };
 
-                    function decreaseQty(productid) {
-                        $('input[name="quantity[' + productid + ']"]').val(parseInt($('input[name="quantity[' + productid + ']"]').val()) - 1);
-                        cart.addmini(productid, -1);
-                        if (parseInt($('input[name="quantity[' + productid + ']"]').val()) > 0) {
+                        function increaseQty(productid) {
+                            $('input[name="quantity[' + productid + ']"]').val(parseInt($('input[name="quantity[' + productid + ']"]').val()) + 1);
+                            cart.addmini(productid, 1);
                             var prodsum = parseInt($('input[name="quantity[' + productid + ']"]').val()) * parseInt($('input[name="quantity[' + productid + ']"]').attr('data-price'));
                             $('input[name="quantity[' + productid + ']"]').parent().parent().siblings('.total').html('<b>' + prodsum + '</b><span>о</span>');
-                        } else {
-                            $('#cart-cart > .newcart').load('index.php?route=common/cart/info #newcart');
-                        }
-                        recountTotal();
-                    };
-                </script>
-                    @endpush
+                            recountTotal();
+                        };
+
+                        function decreaseQty(productid) {
+                            $('input[name="quantity[' + productid + ']"]').val(parseInt($('input[name="quantity[' + productid + ']"]').val()) - 1);
+                            cart.addmini(productid, -1);
+                            if (parseInt($('input[name="quantity[' + productid + ']"]').val()) > 0) {
+                                var prodsum = parseInt($('input[name="quantity[' + productid + ']"]').val()) * parseInt($('input[name="quantity[' + productid + ']"]').attr('data-price'));
+                                $('input[name="quantity[' + productid + ']"]').parent().parent().siblings('.total').html('<b>' + prodsum + '</b><span>о</span>');
+                            } else {
+                                $('#cart-cart > .newcart').load('index.php?route=common/cart/info #newcart');
+                            }
+                            recountTotal();
+                        };
+                    </script>
+                @endpush
             </div>
         </div>
     </div>

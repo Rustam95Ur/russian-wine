@@ -6,9 +6,9 @@
                 <ul class="list-unstyled">
                     <li><a href="{{route('wine-shop')}}">{{trans('header.wine')}}</a></li>
                     <li><a href="{{route('sets')}}">{{trans('footer.sets')}}</a></li>
-                    <li><a href="/podpiska/">Подписка на вино</a></li>
-                    <li><a href="/imennoe-vino">Именное вино</a></li>
-                    <li><a href="/tasting/">Дегустации</a></li>
+                    <li><a href="{{route('subscription')}}">{{trans('header.subscription')}}</a></li>
+                    <li><a href="{{route('personal-wine')}}">{{trans('header.personal-wine')}}</a></li>
+                    <li><a href="{{route('tastings')}}">{{trans('header.testing')}}</a></li>
                 </ul>
             </div>
             <div class="ftr__list nav col-sm-3 col-md-4 col-lg-3 col-lg-push-3">
@@ -18,7 +18,7 @@
                     <li><a href="/wineries">Винодельни</a></li>
                     <li><a href="/winemakers">Виноделы</a></li>
                     <li><a href="/where-to-buy">Где купить</a></li>
-                    <li><a href="/agreement">Пользовательское соглашение</a></li>
+                    <li><a href="{{route('agreement')}}">{{trans('footer.agreement')}}</a></li>
                 </ul>
             </div>
             <div class="ftr__list nav col-sm-3 col-md-3 col-lg-2 col-lg-push-3">
@@ -26,7 +26,7 @@
                 <ul class="list-unstyled">
                     <li><a href="/distributors">Дистрибьюторам</a></li>
                     <li><a href="{{route('franchise')}}">{{trans('header.franchise')}}</a></li>
-                    <li><a href="/wine-tour">Винный тур</a></li>
+                    <li><a href="{{route('wine-tour')}}">{{trans('footer.tour')}}</a></li>
                 </ul>
             </div>
             <div class="footer-contact col-sm-5 col-md-5 col-lg-3 col-lg-push-3">

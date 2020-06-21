@@ -2346,7 +2346,7 @@ header #form-language .language-select {
 
 #winetours .heading-wrap {
     min-height: 400px;
-    background: #7F7E87 url(../image/wine_tours_header_2.jpg) no-repeat top center;
+    background: #7F7E87 url(/image/bg/wine_tours_header_2.jpg) no-repeat top center;
     background-size: cover;
     color: #fff
 }
