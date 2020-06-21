@@ -44,7 +44,7 @@
                             <li><a class="{{(\Request::route()->getName() == 'sets') ? 'active_link' : ''}}" href="{{route('sets')}}">{{trans('header.sets')}}</a></li>
                             <li><a class="{{(\Request::route()->getName() == 'subscription') ? 'active_link' : ''}}" href="{{route('subscription')}}">{{trans('header.subscription')}}</a></li>
                             <li><a class="{{(\Request::route()->getName() == 'personal-wine') ? 'active_link' : ''}}" href="{{route('personal-wine')}}">{{trans('header.personal-wine')}}</a></li>
-                            <li><a href="#">Дегустации</a></li>
+                            <li><a href="{{route('tastings')}}">{{trans('header.testing')}}</a></li>
                             <li><a class="{{(\Request::route()->getName() == 'franchise') ? 'active_link' : ''}}" href="{{route('franchise')}}">{{trans('header.franchise')}}</a></li>
                             <li class="newdrop"><a href="" class="dropdown-toggle" data-toggle="dropdown">Информация</a>
                                 <div class="dropdown-menu-custom">

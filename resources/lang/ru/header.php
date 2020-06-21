@@ -7,4 +7,5 @@ return [
         'franchise'         => 'Франшиза',
         'winemakers'        => 'Русские виноделы',
         'personal-wine'     => 'Именное вино',
+        'testing'           => 'Дегустации',
 ];

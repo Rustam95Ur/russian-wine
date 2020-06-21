@@ -20,6 +20,7 @@ Route::get('/subscription', 'Shop\SubscriptionController@index')->name('subscrip
 Route::get('/winemakers', 'Page\WinemakerController@index')->name('winemakers');
 Route::get('/franchise', 'Page\FranchiseController@index')->name('franchise');
 Route::get('/personal-wine', 'Page\WinemakerController@personal_wine')->name('personal-wine');
+Route::get('/tastings', 'Shop\TastingsController@index')->name('tastings');
 
 
 
