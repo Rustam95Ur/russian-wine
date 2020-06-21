@@ -6,4 +6,5 @@ return [
         'subscription'      => 'Подписка на вино',
         'franchise'         => 'Франшиза',
         'winemakers'        => 'Русские виноделы',
+        'personal-wine'     => 'Именное вино',
 ];

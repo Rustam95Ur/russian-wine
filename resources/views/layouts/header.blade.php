@@ -43,7 +43,7 @@
                             </li>
                             <li><a class="{{(\Request::route()->getName() == 'sets') ? 'active_link' : ''}}" href="{{route('sets')}}">{{trans('header.sets')}}</a></li>
                             <li><a class="{{(\Request::route()->getName() == 'subscription') ? 'active_link' : ''}}" href="{{route('subscription')}}">{{trans('header.subscription')}}</a></li>
-                            <li><a href="#">Именное вино</a></li>
+                            <li><a class="{{(\Request::route()->getName() == 'personal-wine') ? 'active_link' : ''}}" href="{{route('personal-wine')}}">{{trans('header.personal-wine')}}</a></li>
                             <li><a href="#">Дегустации</a></li>
                             <li><a class="{{(\Request::route()->getName() == 'franchise') ? 'active_link' : ''}}" href="{{route('franchise')}}">{{trans('header.franchise')}}</a></li>
                             <li class="newdrop"><a href="" class="dropdown-toggle" data-toggle="dropdown">Информация</a>
@@ -64,9 +64,9 @@
                 </nav>
             </div>
             <div class="col-sm-2">
-                <div id="cart"><a
-                        onclick="$('#cart-cont').addClass('open');$('body').addClass('nooverflow1');$('body').addClass('nooverflow');">
-                        <img src="{{ asset ('image/cart.png') }}">
+                <div id="cart">
+                    <a onclick="$('#cart-cont').addClass('open');$('body').addClass('nooverflow1');$('body').addClass('nooverflow');">
+                        <img alt="cart icon" src="{{ asset ('image/cart.png') }}">
                         <b>0</b>
                     </a>
                 </div>

@@ -12155,7 +12155,7 @@ nav ul > li:hover #inda-club {
     background: url(/image/page/subscription/background_top.jpg);
     height: 59.1VW;
     background-size: cover;
-    color: #fff;    
+    color: #fff;
     box-sizing: initial;
 }
 
@@ -13605,17 +13605,17 @@ select:-internal-autofill-selected {
 }
 
 #slide-1 {
-    background: url(/image/imennoe/slide1.jpg);
+    background: url(/image/page/personal/slide1.jpg);
     background-size: cover;
 }
 
 #slide-2 {
-    background: url(/image/imennoe/slide2.jpg);
+    background: url(/image/page/personal/slide2.jpg);
     background-size: cover;
 }
 
 #slide-3 .col-ss-7 {
-    background: url(/image/imennoe/slide3.jpg);
+    background: url(/image/page/personal/slide3.jpg);
     background-size: cover;
     height: 100%;
 }
@@ -13627,13 +13627,13 @@ select:-internal-autofill-selected {
 }
 
 #slide-4 {
-    background: url(/image/imennoe/slide4.jpg);
+    background: url(/image/page/personal/slide4.jpg);
     background-size: cover;
     height: 100%;
 }
 
 #slide-5 {
-    background: url(/image/imennoe/slide5.jpg);
+    background: url(/image/page/personal/slide5.jpg);
     background-size: cover;
 }
 

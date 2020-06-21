@@ -19,6 +19,7 @@ Route::get('/sets', 'Shop\SetController@index')->name('sets');
 Route::get('/subscription', 'Shop\SubscriptionController@index')->name('subscription');
 Route::get('/winemakers', 'Page\WinemakerController@index')->name('winemakers');
 Route::get('/franchise', 'Page\FranchiseController@index')->name('franchise');
+Route::get('/personal-wine', 'Page\WinemakerController@personal_wine')->name('personal-wine');
 
 
 
