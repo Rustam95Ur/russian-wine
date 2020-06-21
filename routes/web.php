@@ -22,7 +22,9 @@ Route::get('/franchise', 'Page\FranchiseController@index')->name('franchise');
 Route::get('/personal-wine', 'Page\WinemakerController@personal_wine')->name('personal-wine');
 Route::get('/tastings', 'Shop\TastingsController@index')->name('tastings');
 Route::get('/wine-tour', 'Page\IndexController@tour')->name('wine-tour');
-Route::get('/agreement', 'Page\IndexController@agreement')->name('agreement');
+Route::get('/where-to-buy', 'Page\IndexController@where_to_by')->name('where_to_by');
+Route::get('/{slug}', 'Page\IndexController@simple_page')->name('simple_page');
+
 
 
 

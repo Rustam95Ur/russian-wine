@@ -59,7 +59,7 @@
                                             <li><a href="#">Микровинодельни</a></li>
                                             <li><a href="{{route('winemakers')}}">{{trans('header.winemakers')}}</a>
                                             </li>
-                                            <li><a href="#">Где купить</a></li>
+                                            <li><a href="{{route('where_to_by')}}">{{trans('header.where_to_by')}}</a></li>
                                         </ul>
                                     </div>
                                 </div>

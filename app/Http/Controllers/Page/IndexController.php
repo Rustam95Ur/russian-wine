@@ -12,11 +12,16 @@ class IndexController extends Controller
         return view('page.tour');
     }
 
-    public function agreement()
+    public function simple_page($slug)
     {
-        $page = Page::where('slug', '=', 'agreement')->firstOrFail();
-        return view('page.agreement', [
+        $page = Page::where('slug', '=', $slug)->where('status', '=', 'ACTIVE')->firstOrFail();
+        return view('page.simple-page', [
             'page'  => $page
         ]);
+    }
+
+    public function where_to_by()
+    {
+        return view('page.where_to_by');
     }
 }

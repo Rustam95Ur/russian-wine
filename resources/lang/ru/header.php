@@ -8,4 +8,5 @@ return [
         'winemakers'        => 'Русские виноделы',
         'personal-wine'     => 'Именное вино',
         'testing'           => 'Дегустации',
+        'where_to_by'       => 'Где купить'
 ];

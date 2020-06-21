@@ -18,13 +18,13 @@
                     <li><a href="/wineries">Винодельни</a></li>
                     <li><a href="/winemakers">Виноделы</a></li>
                     <li><a href="/where-to-buy">Где купить</a></li>
-                    <li><a href="{{route('agreement')}}">{{trans('footer.agreement')}}</a></li>
+                    <li><a href="{{route('simple_page','agreement')}}">{{trans('footer.agreement')}}</a></li>
                 </ul>
             </div>
             <div class="ftr__list nav col-sm-3 col-md-3 col-lg-2 col-lg-push-3">
                 <h5>Партнерам <i class="fa fa-chevron-down"></i></h5>
                 <ul class="list-unstyled">
-                    <li><a href="/distributors">Дистрибьюторам</a></li>
+                    <li><a href="{{route('simple_page','distributors')}}">{{trans('footer.distributors')}}</a></li>
                     <li><a href="{{route('franchise')}}">{{trans('header.franchise')}}</a></li>
                     <li><a href="{{route('wine-tour')}}">{{trans('footer.tour')}}</a></li>
                 </ul>
