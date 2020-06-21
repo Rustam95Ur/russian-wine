@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@push('styles')
+    <link rel="stylesheet" type="text/css" href="{{asset('css/subscription.css')}}">
+    @endpush
 @section('content')
     <div id="product-category" class="container">
         <ul class="breadcrumb">
@@ -143,12 +146,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <hr>
-                <p>В данной категории нет товаров.</p>
-                <div class="buttons">
-                    <div class="pull-right"><a href="https://russianvine.ru/index.php?route=common/home"
-                                               class="btn btn-primary">Продолжить</a></div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,10 @@
+#product-category {
+    width: 100%;
+}
+#product-category .breadcrumb {
+    display: none;
+}
+#product-category .col-sm-10 {
+    width: 100%;
+    padding: 0;
+}

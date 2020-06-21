@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @push('styles')
-<link rel="stylesheet" type="text/css" href="{{asset('css/tasting.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/tasting.css')}}">
 @endpush
 @section('content')
     <div id="tasting-page">
@@ -116,204 +116,14 @@
                     </div>
                     <div id="carousel0"
                          class="swiper-container swiper-container-initialized swiper-container-horizontal">
-                        <div class="swiper-wrapper"
-                             style="transition-duration: 0ms; transform: translate3d(-15492.1px, 0px, 0px);">
-                            <div class="swiper-slide text-center swiper-slide-duplicate" data-swiper-slide-index="0"
-                                 style="margin-right: 30px;">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide text-center">
                                 <div class="inner_ban in139">
                                     <img src="https://russianvine.ru/image/cache/catalog/taste/banner1-406x406.png"
                                          alt="Проведём интересно персональную дегустацию для вашей компании, м"
                                          class="img-responsive">
                                     <div class="desc">
                                         Проведём интересно персональную дегустацию для вашей компании, м
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide text-center swiper-slide-duplicate" data-swiper-slide-index="1"
-                                 style="margin-right: 30px;">
-                                <div class="inner_ban in140">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/banner0-406x406.png"
-                                         alt="Мы тщательно готовимся к каждой дегустации и обладаем запасом ре"
-                                         class="img-responsive">
-                                    <div class="desc">
-                                        Мы тщательно готовимся к каждой дегустации и обладаем запасом ре
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide text-center swiper-slide-duplicate" data-swiper-slide-index="2"
-                                 style="margin-right: 30px;">
-                                <div class="inner_ban in138">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/banner2-406x406.png"
-                                         alt="У нас есть все необходимое: бокалы, декантеры, система охлаждени"
-                                         class="img-responsive">
-                                    <div class="desc">
-                                        У нас есть все необходимое: бокалы, декантеры, система охлаждени
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide text-center swiper-slide-duplicate swiper-slide-duplicate-prev"
-                                 data-swiper-slide-index="3" style="margin-right: 30px;">
-                                <div class="inner_ban in135">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/banner3-406x406.png"
-                                         alt="На дегустации вы попробуете вина, которые совершили качественный"
-                                         class="img-responsive">
-                                    <div class="desc">
-                                        На дегустации вы попробуете вина, которые совершили качественный
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide text-center swiper-slide-duplicate swiper-slide-duplicate-active"
-                                 data-swiper-slide-index="4" style="margin-right: 30px;">
-                                <div class="inner_ban in136">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/banner4-406x406.png"
-                                         alt="За два часа вы узнаете всё о лучших винах из Крыма, Кубани, Рост"
-                                         class="img-responsive">
-                                    <div class="desc">
-                                        За два часа вы узнаете всё о лучших винах из Крыма, Кубани, Рост
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide text-center swiper-slide-duplicate swiper-slide-duplicate-next"
-                                 data-swiper-slide-index="5" style="margin-right: 30px;">
-                                <div class="inner_ban in137">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/banner5-406x406.png"
-                                         alt="Вы узнаете всё о современном русском виноделии и терруарах нашей"
-                                         class="img-responsive">
-                                    <div class="desc">
-                                        Вы узнаете всё о современном русском виноделии и терруарах нашей
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide text-center" data-swiper-slide-index="0"
-                                 style="margin-right: 30px;">
-                                <div class="inner_ban in139">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/banner1-406x406.png"
-                                         alt="Проведём интересно персональную дегустацию для вашей компании, м"
-                                         class="img-responsive">
-                                    <div class="desc">
-                                        Проведём интересно персональную дегустацию для вашей компании, м
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide text-center" data-swiper-slide-index="1"
-                                 style="margin-right: 30px;">
-                                <div class="inner_ban in140">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/banner0-406x406.png"
-                                         alt="Мы тщательно готовимся к каждой дегустации и обладаем запасом ре"
-                                         class="img-responsive">
-                                    <div class="desc">
-                                        Мы тщательно готовимся к каждой дегустации и обладаем запасом ре
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide text-center" data-swiper-slide-index="2"
-                                 style="margin-right: 30px;">
-                                <div class="inner_ban in138">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/banner2-406x406.png"
-                                         alt="У нас есть все необходимое: бокалы, декантеры, система охлаждени"
-                                         class="img-responsive">
-                                    <div class="desc">
-                                        У нас есть все необходимое: бокалы, декантеры, система охлаждени
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide text-center swiper-slide-prev" data-swiper-slide-index="3"
-                                 style="margin-right: 30px;">
-                                <div class="inner_ban in135">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/banner3-406x406.png"
-                                         alt="На дегустации вы попробуете вина, которые совершили качественный"
-                                         class="img-responsive">
-                                    <div class="desc">
-                                        На дегустации вы попробуете вина, которые совершили качественный
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide text-center swiper-slide-active" data-swiper-slide-index="4"
-                                 style="margin-right: 30px;">
-                                <div class="inner_ban in136">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/banner4-406x406.png"
-                                         alt="За два часа вы узнаете всё о лучших винах из Крыма, Кубани, Рост"
-                                         class="img-responsive">
-                                    <div class="desc">
-                                        За два часа вы узнаете всё о лучших винах из Крыма, Кубани, Рост
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide text-center swiper-slide-next" data-swiper-slide-index="5"
-                                 style="margin-right: 30px;">
-                                <div class="inner_ban in137">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/banner5-406x406.png"
-                                         alt="Вы узнаете всё о современном русском виноделии и терруарах нашей"
-                                         class="img-responsive">
-                                    <div class="desc">
-                                        Вы узнаете всё о современном русском виноделии и терруарах нашей
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide text-center swiper-slide-duplicate" data-swiper-slide-index="0"
-                                 style="margin-right: 30px;">
-                                <div class="inner_ban in139">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/banner1-406x406.png"
-                                         alt="Проведём интересно персональную дегустацию для вашей компании, м"
-                                         class="img-responsive">
-                                    <div class="desc">
-                                        Проведём интересно персональную дегустацию для вашей компании, м
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide text-center swiper-slide-duplicate" data-swiper-slide-index="1"
-                                 style="margin-right: 30px;">
-                                <div class="inner_ban in140">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/banner0-406x406.png"
-                                         alt="Мы тщательно готовимся к каждой дегустации и обладаем запасом ре"
-                                         class="img-responsive">
-                                    <div class="desc">
-                                        Мы тщательно готовимся к каждой дегустации и обладаем запасом ре
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide text-center swiper-slide-duplicate" data-swiper-slide-index="2"
-                                 style="margin-right: 30px;">
-                                <div class="inner_ban in138">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/banner2-406x406.png"
-                                         alt="У нас есть все необходимое: бокалы, декантеры, система охлаждени"
-                                         class="img-responsive">
-                                    <div class="desc">
-                                        У нас есть все необходимое: бокалы, декантеры, система охлаждени
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide text-center swiper-slide-duplicate swiper-slide-duplicate-prev"
-                                 data-swiper-slide-index="3" style="margin-right: 30px;">
-                                <div class="inner_ban in135">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/banner3-406x406.png"
-                                         alt="На дегустации вы попробуете вина, которые совершили качественный"
-                                         class="img-responsive">
-                                    <div class="desc">
-                                        На дегустации вы попробуете вина, которые совершили качественный
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide text-center swiper-slide-duplicate swiper-slide-duplicate-active"
-                                 data-swiper-slide-index="4" style="margin-right: 30px;">
-                                <div class="inner_ban in136">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/banner4-406x406.png"
-                                         alt="За два часа вы узнаете всё о лучших винах из Крыма, Кубани, Рост"
-                                         class="img-responsive">
-                                    <div class="desc">
-                                        За два часа вы узнаете всё о лучших винах из Крыма, Кубани, Рост
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide text-center swiper-slide-duplicate swiper-slide-duplicate-next"
-                                 data-swiper-slide-index="5" style="margin-right: 30px;">
-                                <div class="inner_ban in137">
-                                    <img src="https://russianvine.ru/image/cache/catalog/taste/banner5-406x406.png"
-                                         alt="Вы узнаете всё о современном русском виноделии и терруарах нашей"
-                                         class="img-responsive">
-                                    <div class="desc">
-                                        Вы узнаете всё о современном русском виноделии и терруарах нашей
                                     </div>
                                 </div>
                             </div>
