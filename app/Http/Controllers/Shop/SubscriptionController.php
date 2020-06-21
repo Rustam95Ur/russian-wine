@@ -11,4 +11,5 @@ class SubscriptionController extends Controller
     {
         return view('shop.subscription.index');
     }
+
 }

@@ -53,7 +53,7 @@
                                             <li><a href="#">Регионы виноделия</a></li>
                                             <li><a href="#">Русские винодельни</a></li>
                                             <li><a href="#">Микровинодельни</a></li>
-                                            <li><a href="#">Русские виноделы</a></li>
+                                            <li><a href="{{route('winemakers')}}">{{trans('header.winemakers')}}</a></li>
                                             <li><a href="#">Где купить</a></li>
                                         </ul>
                                     </div>

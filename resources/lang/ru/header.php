@@ -5,4 +5,5 @@ return [
         'sets'              => 'Сеты',
         'subscription'      => 'Подписка на вино',
         'franchise'         => 'Франшиза',
+        'winemakers'        => 'Русские виноделы',
 ];

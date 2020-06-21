@@ -12152,10 +12152,10 @@ nav ul > li:hover #inda-club {
 
 #top_podpiska {
     padding: 15.5VW 41.66666666666667VW 3vw 12.5VW;
-    background: url(/image/background_top.jpg);
+    background: url(/image/page/subscription/background_top.jpg);
     height: 59.1VW;
     background-size: cover;
-    color: #fff;
+    color: #fff;    
     box-sizing: initial;
 }
 
