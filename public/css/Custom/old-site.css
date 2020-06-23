@@ -8868,10 +8868,6 @@ img {
         align-items: center;
         width: 100%
     }
-    header #logo {
-        margin: 0;
-        padding: 0
-    }
     header .container.container-lg {
         max-width: 100%;
         height: 100%;
@@ -8923,6 +8919,7 @@ img {
     header #logo {
         margin: 0;
         padding: 0;
+        z-index: 111;
     }
     header .container.container-lg .col-sm-8 {
         width: 61.042vw;
@@ -8992,7 +8989,7 @@ img {
     justify-content: center;
     align-items: center;
     height: 5.313vw;
-    z-index: 250
+
 }
 
 #prevslide {
@@ -16765,4 +16762,106 @@ overflow: hidden;
     .youtube_icon svg {width:2.708vw;}
     .instagram_icon svg {width:2.292vw;}
     .bag_icon svg {width:2.760vw;}
+}
+header .col-sm-2 #navSearch img, header .col-sm-2 #login img {
+    height: 1.004vw;
+}
+header .col-sm-2 #navSearch img {
+    margin-right: 2vw;
+}
+header .col-sm-2 #login img {
+    margin-right: 1.5vw;
+}
+#myOverlay.open {
+    display: block;
+    position: absolute;
+    width: 100vw;
+    min-height: 4.85vw;
+    top: 0;
+    padding-left: 15vw;
+    background: white;
+    z-index: 110;
+    visibility: visible;
+}
+#myOverlay {
+    width: 0;
+    right: 0;
+    left: unset;
+    position: absolute;
+    transition: .3s all ease-in-out;
+    top: 0;
+    visibility: hidden;
+}
+#myOverlay .closebtn {
+    position: absolute;
+    right: 0;
+    margin-right: 2vw;
+    margin-top: 1.6vw;
+}
+#myOverlay .overlay-content {
+    height: 4.85vw;
+    border-left: 1px solid #130E15;
+}
+#myOverlay .overlay-content form {
+    height: inherit;
+}
+#myOverlay .overlay-content form input {
+    border: none;
+    height: 100%;
+    width: 100%;
+    padding-left: 4.15vw;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 70px;
+    color: #000000;
+}
+#searchInputIcon {
+    position: absolute;
+    filter: brightness(0%);
+    height: 1vw;
+    top: 2vw;
+    margin-left: 1.55vw;
+}
+#myOverlay .allResults {
+    background: #da224d;
+    font-size: .833vw;
+    text-align: center;
+    border-radius: 15vw;
+    border: none;
+    color: #fff;
+    padding: .574vw 2.085vw;
+    line-height: 2.345vw;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+#myOverlay .overlay-results {
+    padding: 2.241vw 0 1.564vw;
+}
+.overlay-results li:hover {
+    background: #da224d;
+    color: white;
+}
+.overlay-results ul li {
+    list-style: none;
+    font-size: .938vw;
+    line-height: 60px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.01em;
+    color: #000000;
+    transition: .3s all ease-in-out;
+    width: 100vw;
+    margin-left: -15vw;
+    padding-left: calc(1.251vw + 15vw);
+    margin-top: 0.105vw;
+    margin-bottom: 0.105vw;
+}
+.overlay-results ul li:last-child {
+    margin-bottom: 1vw;
+}
+.xs-thumb {
+    max-height: 3.7vw;
+    padding: 0 1.251vw 0 0;
 }

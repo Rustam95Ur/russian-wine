@@ -69,6 +69,16 @@
                 </nav>
             </div>
             <div class="col-sm-2">
+              <div id="navSearch">
+                  <a onclick="$('#myOverlay').addClass('open', 1000);" id="searchStart">
+                      <img alt="search icon" src="{{ asset ('image/search.svg') }}">
+                  </a>
+              </div>
+              <div id="login">
+                  <a href="#login_page">
+                      <img alt="login icon" src="{{ asset ('image/login.svg') }}">
+                  </a>
+              </div>
                 <div id="cart">
                     <a onclick="$('#cart-cont').addClass('open');$('body').addClass('nooverflow1');$('body').addClass('nooverflow');">
                         <img alt="cart icon" src="{{ asset ('image/cart.png') }}">
@@ -138,4 +148,24 @@
             </div>
         </div>
     </div>
+    <!-- ///////////////                Search Input                       \\\\\\\\\\\\\\\\\\-->
+                  <div id="myOverlay" class="overlay">
+                    <a class="closebtn" onclick="$('#myOverlay').removeClass('open');" title="Close Overlay"><img src="{{ asset ('image/plus.png') }}" style="transform: rotateZ(45deg); "></a>
+                    <div class="overlay-content">
+                      <form action="#">
+                        <img alt="search icon" src="{{ asset ('image/search.svg') }}" id="searchInputIcon">
+                        <input type="text" placeholder="Поиск..." name="search">
+                      </form>
+                    </div>
+                    <div class="overlay-results">
+                      <ul>
+                        <li><img src="{{ asset ('image/6.png') }}" class="xs-thumb"> Каберне Фран Сикоры, розовое сухое вино, урожая 2017, 0,75 л</li>
+                        <li>22</li>
+                        <li>333</li>
+                        <li>4444</li>
+                      </ul>
+                      <button type="button" name="all Search  Results" class="allResults">Показать все результаты</button>
+                    </div>
+                  </div>
+    <!-- ///////////////               End Search Input                    \\\\\\\\\\\\\\\\\\-->
 </header>
