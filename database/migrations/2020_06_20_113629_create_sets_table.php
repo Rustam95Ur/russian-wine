@@ -27,8 +27,8 @@ class CreateSetsTable extends Migration
             $table->integer('next_set_id')->nullable();
             $table->integer('next_category_set_id')->nullable();
             $table->integer('prev_category_set_id')->nullable();
-            $table->text('meta_description');
-            $table->text('meta_keywords');
+            $table->text('meta_description')->nullable();
+            $table->text('meta_keywords')->nullable();
             $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');
             $table->timestamps();
         });

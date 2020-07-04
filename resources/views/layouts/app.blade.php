@@ -50,7 +50,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/Custom/old-site.css') }}">
     @stack('styles')
 </head>
-<body>
+<body class="@yield('body_class', '')">
 <div id="loading-overlay">
     <div class="loader"></div>
 </div> <!-- /.loading-overlay -->
@@ -59,7 +59,7 @@
 @include('layouts.footer')
 
 
-<a id="scroll-top"><i class="fa fa-angle-right" aria-hidden="true"></i></a> <!-- /#scroll-top -->
+{{--<a id="scroll-top"><i class="fa fa-angle-right" aria-hidden="true"></i></a> <!-- /#scroll-top -->--}}
 
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 <script src="{{ asset('js/rev-slider.js') }}"></script>

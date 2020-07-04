@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июл 04 2020 г., 10:06
+-- Время создания: Июл 04 2020 г., 23:31
 -- Версия сервера: 5.7.25
 -- Версия PHP: 7.3.9
 
@@ -228,19 +228,19 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (101, 13, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 4),
 (102, 9, 'price', 'number', 'Цена', 1, 1, 1, 1, 1, 1, '{}', 3),
 (103, 9, 'manufacturer_id', 'text', 'Manufacturer Id', 1, 0, 1, 1, 1, 1, '{}', 14),
-(104, 9, 'product_belongsto_region_relationship', 'relationship', 'Регион', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Region\",\"table\":\"regions\",\"type\":\"belongsTo\",\"column\":\"region_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 30),
+(104, 9, 'product_belongsto_region_relationship', 'relationship', 'Регион', 0, 0, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Region\",\"table\":\"regions\",\"type\":\"belongsTo\",\"column\":\"region_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 30),
 (105, 15, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (106, 15, 'title', 'text', 'Название', 1, 1, 1, 1, 1, 1, '{}', 2),
 (107, 15, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 1, '{}', 3),
 (108, 15, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 4),
-(109, 9, 'grape_sort_id', 'text', 'Grape Sort Id', 1, 1, 1, 1, 1, 1, '{}', 12),
-(110, 9, 'product_belongsto_grape_sort_relationship', 'relationship', 'Сорт винограда', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\GrapeSort\",\"table\":\"grape_sorts\",\"type\":\"belongsTo\",\"column\":\"grape_sort_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 31),
+(109, 9, 'grape_sort_id', 'text', 'Grape Sort Id', 1, 0, 1, 1, 1, 1, '{}', 12),
+(110, 9, 'product_belongsto_grape_sort_relationship', 'relationship', 'Сорт винограда', 0, 0, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\GrapeSort\",\"table\":\"grape_sorts\",\"type\":\"belongsTo\",\"column\":\"grape_sort_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 31),
 (112, 18, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (113, 18, 'title', 'text', 'Название', 1, 1, 1, 1, 1, 1, '{}', 2),
 (114, 18, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 1, '{}', 3),
 (115, 18, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 4),
-(116, 9, 'sugar_id', 'text', 'Sugar Id', 1, 1, 1, 1, 1, 1, '{}', 20),
-(117, 9, 'product_belongsto_sugar_relationship', 'relationship', 'Содержание сахара', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Sugar\",\"table\":\"sugars\",\"type\":\"belongsTo\",\"column\":\"sugar_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 32),
+(116, 9, 'sugar_id', 'text', 'Sugar Id', 1, 0, 1, 1, 1, 1, '{}', 20),
+(117, 9, 'product_belongsto_sugar_relationship', 'relationship', 'Содержание сахара', 0, 0, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Sugar\",\"table\":\"sugars\",\"type\":\"belongsTo\",\"column\":\"sugar_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 32),
 (118, 19, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (119, 19, 'full_name', 'text', 'ФИО', 1, 1, 1, 1, 1, 1, '{}', 2),
 (120, 19, 'description', 'text_area', 'Описание', 1, 0, 1, 1, 1, 1, '{}', 3),
@@ -273,7 +273,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (150, 20, 'winery_belongsto_region_relationship', 'relationship', 'Регион', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Region\",\"table\":\"regions\",\"type\":\"belongsTo\",\"column\":\"region_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 19),
 (151, 20, 'coordinate_lon', 'number', 'Координаты долготы', 1, 1, 1, 1, 1, 1, '{}', 15),
 (152, 20, 'coordinate_lat', 'number', 'Координаты широты', 1, 1, 1, 1, 1, 1, '{}', 16),
-(153, 9, 'wine_belongsto_winery_relationship', 'relationship', 'Винедельня', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Winery\",\"table\":\"wineries\",\"type\":\"belongsTo\",\"column\":\"winery_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 33),
+(153, 9, 'wine_belongsto_winery_relationship', 'relationship', 'Винедельня', 0, 0, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Winery\",\"table\":\"wineries\",\"type\":\"belongsTo\",\"column\":\"winery_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 33),
 (154, 19, 'winemaker_belongsto_winery_relationship', 'relationship', 'Винодельня', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Winery\",\"table\":\"wineries\",\"type\":\"belongsTo\",\"column\":\"winery_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 15),
 (155, 21, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (156, 21, 'title', 'text', 'Название', 1, 1, 1, 1, 1, 1, '{}', 2),
@@ -285,19 +285,15 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (163, 21, 'count', 'number', 'Количество', 1, 1, 1, 1, 1, 1, '{}', 9),
 (164, 21, 'prev_set_id', 'text', 'Предыдущий сет', 0, 0, 1, 1, 1, 1, '{}', 10),
 (165, 21, 'next_set_id', 'text', 'Следующий сет', 0, 0, 1, 1, 1, 1, '{}', 11),
-(166, 21, 'next_category_set_id', 'text', 'Следующий сет (для категории \"Сеты\")', 0, 0, 1, 1, 1, 1, '{}', 12),
-(167, 21, 'prev_category_set_id', 'text', 'Предыдущий сет (для категории \"Сеты\")', 0, 0, 1, 1, 1, 1, '{}', 13),
-(168, 21, 'meta_description', 'text_area', 'Meta Description', 1, 0, 1, 1, 1, 1, '{}', 14),
-(169, 21, 'meta_keywords', 'text_area', 'Meta Keywords', 1, 0, 1, 1, 1, 1, '{}', 15),
+(168, 21, 'meta_description', 'text_area', 'Meta Description', 0, 0, 1, 1, 1, 1, '{}', 14),
+(169, 21, 'meta_keywords', 'text_area', 'Meta Keywords', 0, 0, 1, 1, 1, 1, '{}', 15),
 (170, 21, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 1, '{}', 17),
 (171, 21, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 18),
-(172, 21, 'set_belongsto_wine_relationship', 'relationship', 'Предыдущий сет', 0, 0, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Set\",\"table\":\"sets\",\"type\":\"belongsTo\",\"column\":\"prev_set_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 19),
-(173, 21, 'set_belongsto_set_relationship', 'relationship', 'Следующий сет', 0, 0, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Set\",\"table\":\"sets\",\"type\":\"belongsTo\",\"column\":\"next_set_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 20),
+(172, 21, 'set_belongsto_wine_relationship', 'relationship', 'Предыдущий сет', 0, 0, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Set\",\"table\":\"sets\",\"type\":\"belongsTo\",\"column\":\"prev_set_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 21),
+(173, 21, 'set_belongsto_set_relationship', 'relationship', 'Следующий сет', 0, 0, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Set\",\"table\":\"sets\",\"type\":\"belongsTo\",\"column\":\"next_set_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 22),
 (174, 21, 'slug', 'text', 'SEO Url', 1, 1, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\",\"forceUpdate\":true},\"validation\":{\"rule\":\"unique:sets,slug\"}}', 8),
-(175, 21, 'set_hasone_set_relationship', 'relationship', 'Следующий сет (для категории \"Сеты\")', 0, 0, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Set\",\"table\":\"sets\",\"type\":\"belongsTo\",\"column\":\"next_category_set_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 21),
-(176, 21, 'set_hasone_set_relationship_1', 'relationship', 'Предыдущий сет (для категории \"Сеты\")', 0, 0, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Set\",\"table\":\"sets\",\"type\":\"belongsTo\",\"column\":\"prev_category_set_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 22),
 (178, 21, 'status', 'select_dropdown', 'Статус', 1, 1, 1, 1, 1, 1, '{\"default\":\"ACTIVE\",\"options\":{\"ACTIVE\":\"\\u0430\\u043a\\u0442\\u0438\\u0432\\u043d\\u044b\\u0439\",\"INACTIVE\":\"\\u043d\\u0435\\u0430\\u043a\\u0442\\u0438\\u0432\\u043d\\u044b\\u0439\"}}', 16),
-(179, 21, 'set_belongstomany_wine_relationship', 'relationship', 'Вина для сета', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Wine\",\"table\":\"wines\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"set_wine\",\"pivot\":\"1\",\"taggable\":\"on\"}', 23),
+(179, 21, 'set_belongstomany_wine_relationship', 'relationship', 'Вина для сета', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Wine\",\"table\":\"wines\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"set_wine\",\"pivot\":\"1\",\"taggable\":\"on\"}', 25),
 (180, 20, 'meta_title', 'text', 'Meta Title', 0, 1, 1, 1, 1, 1, '{}', 9),
 (181, 19, 'meta_title', 'text', 'Meta Title', 0, 1, 1, 1, 1, 1, '{}', 6),
 (182, 9, 'meta_title', 'text', 'Meta Title', 0, 1, 1, 1, 1, 1, '{}', 4),
@@ -333,7 +329,15 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (213, 23, 'image', 'image', 'Картинка', 1, 1, 1, 1, 1, 1, '{}', 5),
 (214, 23, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 1, '{}', 6),
 (215, 23, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7),
-(216, 10, 'region_belongsto_quote_relationship', 'relationship', 'Цитата', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Quote\",\"table\":\"quotes\",\"type\":\"belongsTo\",\"column\":\"quote_id\",\"key\":\"id\",\"label\":\"full_name\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 22);
+(216, 10, 'region_belongsto_quote_relationship', 'relationship', 'Цитата', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Quote\",\"table\":\"quotes\",\"type\":\"belongsTo\",\"column\":\"quote_id\",\"key\":\"id\",\"label\":\"full_name\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 22),
+(217, 21, 'in_main', 'checkbox', 'Показывать на станице \'Сеты\'', 1, 0, 1, 1, 1, 1, '{}', 19),
+(218, 21, 'seo_title', 'text', 'Seo Title', 0, 0, 1, 1, 1, 1, '{}', 20),
+(219, 24, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(220, 24, 'title', 'text', 'Название', 1, 1, 1, 1, 1, 1, '{}', 2),
+(222, 24, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 1, 0, 1, '{}', 4),
+(223, 24, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 5),
+(224, 9, 'wine_belongsto_excerpt_relationship', 'relationship', 'Выдержка', 0, 0, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Excerpt\",\"table\":\"excerpts\",\"type\":\"belongsTo\",\"column\":\"excerpt_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 34),
+(225, 9, 'excerpt_id', 'text', 'Excerpt Id', 1, 0, 1, 1, 1, 1, '{}', 30);
 
 -- --------------------------------------------------------
 
@@ -370,7 +374,7 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (4, 'categories', 'categories', 'Категория', 'Категории', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, '', '', 1, 0, NULL, '2020-06-17 09:43:45', '2020-06-17 09:43:45'),
 (5, 'posts', 'posts', 'Статья', 'Статьи', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', '', '', 1, 0, NULL, '2020-06-17 09:43:45', '2020-06-17 09:43:45'),
 (6, 'pages', 'pages', 'Страница', 'Страницы', 'voyager-file-text', 'App\\Models\\Page', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-06-17 09:43:45', '2020-06-20 11:15:54'),
-(9, 'wines', 'wines', 'Вино', 'Вина', NULL, 'App\\Models\\Wine', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-17 09:47:26', '2020-07-03 11:45:45'),
+(9, 'wines', 'wines', 'Вино', 'Вина', NULL, 'App\\Models\\Wine', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-17 09:47:26', '2020-07-04 14:12:52'),
 (10, 'regions', 'regions', 'Регион', 'Регионы', NULL, 'App\\Models\\Region', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-18 08:29:12', '2020-07-04 00:55:27'),
 (11, 'countries', 'countries', 'Страна', 'Страны', NULL, 'App\\Models\\Country', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-06-18 08:30:07', '2020-06-18 08:30:07'),
 (12, 'colors', 'colors', 'Цвет', 'Цвета', NULL, 'App\\Models\\Color', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-18 08:32:13', '2020-06-18 08:35:21'),
@@ -379,9 +383,31 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (18, 'sugars', 'sugars', 'Содержание сахара', 'Содержание сахара', NULL, 'App\\Models\\Sugar', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-18 10:11:01', '2020-06-18 10:13:09'),
 (19, 'winemakers', 'winemakers', 'Винодел', 'Виноделы', NULL, 'App\\Models\\Winemaker', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-18 11:13:29', '2020-06-20 11:11:17'),
 (20, 'wineries', 'wineries', 'Винодельня', 'Винодельни', NULL, 'App\\Models\\Winery', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-20 04:23:20', '2020-06-20 11:10:14'),
-(21, 'sets', 'sets', 'Сет', 'Сеты', NULL, 'App\\Models\\Set', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-20 06:14:12', '2020-06-20 07:42:08'),
+(21, 'sets', 'sets', 'Сет', 'Сеты', NULL, 'App\\Models\\Set', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-20 06:14:12', '2020-07-04 13:13:47'),
 (22, 'comments', 'comments', 'Комментарии', 'Комментарии', NULL, 'App\\Models\\Comment', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-06-21 06:30:19', '2020-06-21 06:30:19'),
-(23, 'quotes', 'quotes', 'Цитата', 'Цитаты', NULL, 'App\\Models\\Quote', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-07-04 00:52:53', '2020-07-04 00:52:53');
+(23, 'quotes', 'quotes', 'Цитата', 'Цитаты', NULL, 'App\\Models\\Quote', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-07-04 00:52:53', '2020-07-04 00:52:53'),
+(24, 'excerpts', 'excerpts', 'Выдержка', 'Выдержки', NULL, 'App\\Models\\Excerpt', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-07-04 14:06:32', '2020-07-04 14:10:03');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `excerpts`
+--
+
+CREATE TABLE `excerpts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `excerpts`
+--
+
+INSERT INTO `excerpts` (`id`, `title`, `created_at`, `updated_at`) VALUES
+(1, 'частично в дубе', '2020-07-04 14:10:21', '2020-07-04 14:10:21'),
+(2, 'в стали', '2020-07-04 14:10:47', '2020-07-04 14:10:47');
 
 -- --------------------------------------------------------
 
@@ -511,7 +537,8 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (24, 1, 'Винодельни', '', '_self', NULL, NULL, 23, 8, '2020-06-20 04:23:20', '2020-06-20 04:30:13', 'voyager.wineries.index', NULL),
 (25, 1, 'Сеты', '', '_self', NULL, NULL, 23, 10, '2020-06-20 06:14:12', '2020-06-20 06:26:59', 'voyager.sets.index', NULL),
 (26, 1, 'Комментарии', '', '_self', NULL, NULL, 23, 12, '2020-06-21 06:30:19', '2020-07-04 01:05:49', 'voyager.comments.index', NULL),
-(27, 1, 'Цитаты', '', '_self', NULL, NULL, 23, 11, '2020-07-04 00:52:53', '2020-07-04 01:05:45', 'voyager.quotes.index', NULL);
+(27, 1, 'Цитаты', '', '_self', NULL, NULL, 23, 11, '2020-07-04 00:52:53', '2020-07-04 01:05:45', 'voyager.quotes.index', NULL),
+(28, 1, 'Выдержки', '', '_self', NULL, NULL, NULL, 12, '2020-07-04 14:06:32', '2020-07-04 14:06:32', 'voyager.excerpts.index', NULL);
 
 -- --------------------------------------------------------
 
@@ -571,7 +598,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (44, '2020_06_21_122621_create_comments_table', 11),
 (45, '2020_06_18_140742_create_regions_table', 12),
 (46, '2020_07_03_174222_add_seo_to_regions_table', 13),
-(47, '2020_07_04_064657_create_quotes_table', 14);
+(47, '2020_07_04_064657_create_quotes_table', 14),
+(48, '2020_07_04_144907_add_main_page_to_sets_table', 15),
+(49, '2020_07_04_145632_add_seo_title_to_sets_table', 16),
+(50, '2020_07_04_185126_remove_next_prev_link_sets_table', 17),
+(51, '2020_07_04_200229_add_excerpt_id_wines_table', 18),
+(52, '2020_07_04_200323_create_excerpts_table', 18);
 
 -- --------------------------------------------------------
 
@@ -723,7 +755,12 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (99, 'read_quotes', 'quotes', '2020-07-04 00:52:53', '2020-07-04 00:52:53'),
 (100, 'edit_quotes', 'quotes', '2020-07-04 00:52:53', '2020-07-04 00:52:53'),
 (101, 'add_quotes', 'quotes', '2020-07-04 00:52:53', '2020-07-04 00:52:53'),
-(102, 'delete_quotes', 'quotes', '2020-07-04 00:52:53', '2020-07-04 00:52:53');
+(102, 'delete_quotes', 'quotes', '2020-07-04 00:52:53', '2020-07-04 00:52:53'),
+(103, 'browse_excerpts', 'excerpts', '2020-07-04 14:06:32', '2020-07-04 14:06:32'),
+(104, 'read_excerpts', 'excerpts', '2020-07-04 14:06:32', '2020-07-04 14:06:32'),
+(105, 'edit_excerpts', 'excerpts', '2020-07-04 14:06:32', '2020-07-04 14:06:32'),
+(106, 'add_excerpts', 'excerpts', '2020-07-04 14:06:32', '2020-07-04 14:06:32'),
+(107, 'delete_excerpts', 'excerpts', '2020-07-04 14:06:32', '2020-07-04 14:06:32');
 
 -- --------------------------------------------------------
 
@@ -841,7 +878,12 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (99, 1),
 (100, 1),
 (101, 1),
-(102, 1);
+(102, 1),
+(103, 1),
+(104, 1),
+(105, 1),
+(106, 1),
+(107, 1);
 
 -- --------------------------------------------------------
 
@@ -977,21 +1019,22 @@ CREATE TABLE `sets` (
   `count` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `prev_set_id` int(11) DEFAULT NULL,
   `next_set_id` int(11) DEFAULT NULL,
-  `next_category_set_id` int(11) DEFAULT NULL,
-  `prev_category_set_id` int(11) DEFAULT NULL,
-  `meta_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_keywords` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_description` text COLLATE utf8mb4_unicode_ci,
+  `meta_keywords` text COLLATE utf8mb4_unicode_ci,
   `status` enum('ACTIVE','INACTIVE') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'ACTIVE',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `in_main` tinyint(1) NOT NULL DEFAULT '0',
+  `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `sets`
 --
 
-INSERT INTO `sets` (`id`, `title`, `description`, `model`, `price`, `year`, `image`, `slug`, `count`, `prev_set_id`, `next_set_id`, `next_category_set_id`, `prev_category_set_id`, `meta_description`, `meta_keywords`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Автохтонные вина', 'Уникальный сет. Это наши, русские, аборигенные сорта винограда: Красностоп Золотовский, Сибирьковый, Цимлянский Черный, который произрастают только в России', 'Автохтонный сет', 14500, 1, 'sets\\June2020\\nGQPUWRByUgQsboPbPYY.png', 'avtohtonnye-vina', '100', NULL, NULL, NULL, NULL, 'dwadwadawd', 'wadwda', 'ACTIVE', '2020-06-20 09:12:57', '2020-06-20 09:18:37');
+INSERT INTO `sets` (`id`, `title`, `description`, `model`, `price`, `year`, `image`, `slug`, `count`, `prev_set_id`, `next_set_id`, `meta_description`, `meta_keywords`, `status`, `created_at`, `updated_at`, `in_main`, `seo_title`) VALUES
+(1, 'Автохтонные вина', 'Уникальный сет. Это наши, русские, аборигенные сорта винограда: Красностоп Золотовский, Сибирьковый, Цимлянский Черный, который произрастают только в России', 'Автохтонный сет', 14500, 1, 'sets\\June2020\\nGQPUWRByUgQsboPbPYY.png', 'avtohtonnye-vina', '100', NULL, NULL, 'dwadwadawd', 'wadwda', 'ACTIVE', '2020-06-20 09:12:57', '2020-07-04 08:53:52', 0, NULL),
+(2, 'Белый РАШ', 'РАШ - рислинг, алиготе, шардоне. Лучший белый ассамбляж винодельни Узунов. В аромате белые цветы, цитрусы, персик, груша. Вкус свежий, минеральный. Отлично под морепродукты, особенно под черноморскую рыбу или сыры с белой плесенью.', 'Сеты', 4950, 1, 'sets\\July2020\\jPtxlzpQTD87Ei9F9DlR.png', 'belyj-rash', '100', NULL, 1, 'Узунов семь морей РАШ белое сухое собрали в винный сет. Семь морей Узунов белое вино под рыбу и сыры.', NULL, 'ACTIVE', '2020-07-04 09:00:46', '2020-07-04 13:19:13', 1, 'Семь морей Узунов белое сухое вино - винный сет семь морей РАШ');
 
 -- --------------------------------------------------------
 
@@ -1043,7 +1086,8 @@ CREATE TABLE `set_wine` (
 --
 
 INSERT INTO `set_wine` (`wine_id`, `set_id`) VALUES
-(2, 1);
+(2, 1),
+(2, 2);
 
 -- --------------------------------------------------------
 
@@ -1279,15 +1323,16 @@ CREATE TABLE `wines` (
   `status` enum('ACTIVE','INACTIVE') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'ACTIVE',
   `featured` tinyint(1) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `excerpt_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `wines`
 --
 
-INSERT INTO `wines` (`id`, `title`, `price`, `meta_title`, `description`, `production_feature`, `combination`, `feature`, `innings`, `model`, `winery_id`, `grape_sort_id`, `edition`, `manufacturer_id`, `region_id`, `color_id`, `fortress`, `year`, `volume`, `sugar_id`, `count`, `image`, `slug`, `meta_description`, `meta_keywords`, `status`, `featured`, `created_at`, `updated_at`) VALUES
-(2, '100 оттенков Каберне', 5000, 'a13123', 'awdaw', 'Вино выдерживается не менее одного года во французской дубовой бочке, а после розлива - 6 месяцев непосредственно в бутылке.', 'Станет идеальной парой для мясных блюд, твёрдых сыров. Особенно хорошо для говяжьих рёбрышек.', 'Вино обладает тёмно-рубиновым цветом. В сложном букете доминирует аромат специй, ванили на общем фоне \"дымки\" дубовой бочки. Вкус вина классический, сортовой с оттенками чёрной смородины, табака, чернослива, кожи. Отличная структура и хорошо сбалансированность делают вино необычайно изысканным.', 'Подавать при температуре 14 - 16 С .', 'Fanagoria 100 Cabernet 2013', 1, 1, 5670, 1, 1, 1, 13, 2013, '0.75', 1, 1000, 'wines\\June2020\\yTUMTzvki3AP4JJACcQK.png', '100-ottenkov-kaberne', '213231', '131231', 'ACTIVE', 1, '2020-06-18 08:49:49', '2020-06-20 01:10:44');
+INSERT INTO `wines` (`id`, `title`, `price`, `meta_title`, `description`, `production_feature`, `combination`, `feature`, `innings`, `model`, `winery_id`, `grape_sort_id`, `edition`, `manufacturer_id`, `region_id`, `color_id`, `fortress`, `year`, `volume`, `sugar_id`, `count`, `image`, `slug`, `meta_description`, `meta_keywords`, `status`, `featured`, `created_at`, `updated_at`, `excerpt_id`) VALUES
+(2, '100 оттенков Каберне', 5000, 'a13123', 'awdaw', 'Вино выдерживается не менее одного года во французской дубовой бочке, а после розлива - 6 месяцев непосредственно в бутылке.', 'Станет идеальной парой для мясных блюд, твёрдых сыров. Особенно хорошо для говяжьих рёбрышек.', 'Вино обладает тёмно-рубиновым цветом. В сложном букете доминирует аромат специй, ванили на общем фоне \"дымки\" дубовой бочки. Вкус вина классический, сортовой с оттенками чёрной смородины, табака, чернослива, кожи. Отличная структура и хорошо сбалансированность делают вино необычайно изысканным.', 'Подавать при температуре 14 - 16 С .', 'Fanagoria 100 Cabernet 2013', 1, 1, 5670, 1, 1, 1, 13, 2013, '0.75', 1, 1000, 'wines\\June2020\\yTUMTzvki3AP4JJACcQK.png', '100-ottenkov-kaberne', '213231', '131231', 'ACTIVE', 1, '2020-06-18 08:49:49', '2020-06-20 01:10:44', 0);
 
 --
 -- Индексы сохранённых таблиц
@@ -1333,6 +1378,12 @@ ALTER TABLE `data_types`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `data_types_name_unique` (`name`),
   ADD UNIQUE KEY `data_types_slug_unique` (`slug`);
+
+--
+-- Индексы таблицы `excerpts`
+--
+ALTER TABLE `excerpts`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `failed_jobs`
@@ -1514,13 +1565,19 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT для таблицы `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=217;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=226;
 
 --
 -- AUTO_INCREMENT для таблицы `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT для таблицы `excerpts`
+--
+ALTER TABLE `excerpts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `failed_jobs`
@@ -1550,13 +1607,13 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT для таблицы `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT для таблицы `pages`
@@ -1568,7 +1625,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT для таблицы `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT для таблицы `posts`
@@ -1598,7 +1655,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT для таблицы `sets`
 --
 ALTER TABLE `sets`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `settings`

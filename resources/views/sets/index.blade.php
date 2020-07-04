@@ -10,10 +10,10 @@
                 @foreach($sets as $set)
                 <div class="product_cont">
                     <div class="product_info">
-                        <a href="">{{$set->title}}</a>
+                        <a href="{{route('set', $set->slug)}}">{{$set->title}}</a>
                         <span>{{$set->price}} <b>п</b></span>
                     </div>
-                    <a href="">
+                    <a href="{{route('set', $set->slug)}}">
                         <img alt="{{$set->title}}" src="{{Voyager::image($set->image)}}">
                     </a>
                 </div>

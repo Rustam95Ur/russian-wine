@@ -29,10 +29,25 @@ class Wine extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
+    public function sort()
+    {
+        return $this->belongsTo('App\Models\GrapeSort', 'grape_sort_id', 'id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function winery()
     {
         return $this->belongsTo('App\Models\Winery', 'winery_id', 'id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function excerpt()
+    {
+        return $this->belongsTo('App\Models\Excerpt', 'excerpt_id', 'id');
+    }
 }
 
