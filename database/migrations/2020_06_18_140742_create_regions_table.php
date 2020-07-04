@@ -16,6 +16,19 @@ class CreateRegionsTable extends Migration
         Schema::create('regions', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->text('description');
+            $table->text('body');
+            $table->string('main_image');
+            $table->text('terroir');
+            $table->text('vineyard_start');
+            $table->text('vineyard_end');
+            $table->text('winemaking');
+            $table->string('banner_image');
+            $table->string('vineyard_image');
+            $table->string('winemaking_image');
+            $table->string('coordinate_lat');
+            $table->string('coordinate_lon');
+            $table->integer('quote_id');
             $table->timestamps();
         });
     }

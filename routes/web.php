@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
 
 Route::get('', 'Home\IndexController@index')->name('home');
 Route::get('/wine-shop', 'Shop\IndexController@wine_list')->name('wine-shop');
@@ -23,11 +26,12 @@ Route::get('/personal-wine', 'Page\WinemakerController@personal_wine')->name('pe
 Route::get('/tastings', 'Shop\TastingsController@index')->name('tastings');
 Route::get('/wine-tour', 'Page\IndexController@tour')->name('wine-tour');
 Route::get('/where-to-buy', 'Page\IndexController@where_to_by')->name('where_to_by');
+Route::get('/winemaking-regions', 'Page\RegionController@index')->name('regions');
+Route::get('/region-{slug}', 'Page\RegionController@show')->name('region');
+
 Route::get('/{slug}', 'Page\IndexController@simple_page')->name('simple_page');
 
 
 
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
+

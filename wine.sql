@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 20 2020 г., 21:34
+-- Время создания: Июл 04 2020 г., 10:06
 -- Версия сервера: 5.7.25
 -- Версия PHP: 7.3.9
 
@@ -66,6 +66,29 @@ CREATE TABLE `colors` (
 
 INSERT INTO `colors` (`id`, `title`, `image`, `created_at`, `updated_at`) VALUES
 (1, 'Красное', 'colors\\June2020\\cSJtR3KKTyqF6sEFGIOx.png', '2020-06-18 08:35:03', '2020-06-18 10:05:46');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `full_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` enum('ACTIVE','INACTIVE') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'ACTIVE',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `comments`
+--
+
+INSERT INTO `comments` (`id`, `full_name`, `body`, `image`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Евгений Филатов', 'Я шел абсолютно скептически настроенный, что у меня ничего не получится! Но у меня так замечательно получилось!!! Мне очень понравилось! Я получил эмоции, которые давно не испытывал в своей жизни. И самое главное, я впервые в жизни попробовал русское вино приличного качества. Это просто потрясающе! Спасибо вам огромное!', 'comments\\June2020\\Mltbd1cTjEgRgDMAhjjw.png', 'ACTIVE', '2020-06-21 06:31:54', '2020-06-21 06:31:54');
 
 -- --------------------------------------------------------
 
@@ -177,7 +200,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (73, 9, 'volume', 'number', 'Объем', 1, 0, 1, 1, 1, 1, '{}', 18),
 (74, 9, 'count', 'number', 'Количество', 1, 0, 1, 1, 1, 1, '{}', 19),
 (75, 9, 'image', 'image', 'Картинка', 0, 0, 1, 1, 1, 1, '{}', 20),
-(76, 9, 'slug', 'text', 'SEO URL', 1, 0, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\",\"forceUpdate\":true},\"validation\":{\"rule\":\"unique:products,slug\"}}', 21),
+(76, 9, 'slug', 'text', 'SEO URL', 1, 0, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\",\"forceUpdate\":true},\"validation\":{\"rule\":\"unique:wines,slug\"}}', 21),
 (77, 9, 'meta_description', 'text', 'Meta Description', 1, 0, 1, 1, 1, 1, '{}', 22),
 (78, 9, 'meta_keywords', 'text', 'Meta Keywords', 1, 0, 1, 1, 1, 1, '{}', 23),
 (79, 9, 'status', 'select_dropdown', 'Статус', 1, 1, 1, 1, 1, 1, '{\"default\":\"ACTIVE\",\"options\":{\"ACTIVE\":\"\\u0430\\u043a\\u0442\\u0438\\u0432\\u043d\\u044b\\u0439\",\"INACTIVE\":\"\\u043d\\u0435\\u0430\\u043a\\u0442\\u0438\\u0432\\u043d\\u044b\\u0439\"}}', 24),
@@ -186,8 +209,8 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (82, 9, 'featured', 'checkbox', 'Рекомендованный ', 1, 0, 1, 1, 1, 1, '{}', 27),
 (83, 10, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (84, 10, 'title', 'text', 'Название', 1, 1, 1, 1, 1, 1, '{}', 2),
-(85, 10, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 1, '{}', 3),
-(86, 10, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 4),
+(85, 10, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 1, '{}', 21),
+(86, 10, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 20),
 (87, 11, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (88, 11, 'title', 'text', 'Название', 1, 1, 1, 1, 1, 1, '{}', 2),
 (89, 11, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 1, '{}', 3),
@@ -278,7 +301,39 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (180, 20, 'meta_title', 'text', 'Meta Title', 0, 1, 1, 1, 1, 1, '{}', 9),
 (181, 19, 'meta_title', 'text', 'Meta Title', 0, 1, 1, 1, 1, 1, '{}', 6),
 (182, 9, 'meta_title', 'text', 'Meta Title', 0, 1, 1, 1, 1, 1, '{}', 4),
-(183, 6, 'meta_title', 'text', 'Meta Title', 1, 0, 1, 1, 1, 1, '{}', 3);
+(183, 6, 'meta_title', 'text', 'Meta Title', 1, 0, 1, 1, 1, 1, '{}', 3),
+(184, 22, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(185, 22, 'full_name', 'text', 'ФИО', 1, 1, 1, 1, 1, 1, '{}', 2),
+(186, 22, 'body', 'text_area', 'Текст', 1, 0, 1, 1, 1, 1, '{}', 3),
+(187, 22, 'image', 'image', 'Image', 1, 1, 1, 1, 1, 1, '{}', 4),
+(188, 22, 'status', 'select_dropdown', 'Статус', 1, 1, 1, 1, 1, 1, '{\"default\":\"ACTIVE\",\"options\":{\"ACTIVE\":\"\\u0430\\u043a\\u0442\\u0438\\u0432\\u043d\\u044b\\u0439\",\"INACTIVE\":\"\\u043d\\u0435\\u0430\\u043a\\u0442\\u0438\\u0432\\u043d\\u044b\\u0439\"}}', 5),
+(189, 22, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 1, '{}', 6),
+(190, 22, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7),
+(191, 10, 'description', 'text_area', 'Описание', 1, 0, 1, 1, 1, 1, '{}', 3),
+(192, 10, 'body', 'text_area', 'Основной текст', 1, 0, 1, 1, 1, 1, '{}', 5),
+(193, 10, 'terroir', 'rich_text_box', 'Терруар', 1, 0, 1, 1, 1, 1, '{}', 8),
+(195, 10, 'winemaking', 'rich_text_box', 'Виноделие', 1, 0, 1, 1, 1, 1, '{}', 9),
+(196, 10, 'banner_image', 'image', 'Баннер', 1, 0, 1, 1, 1, 1, '{}', 10),
+(197, 10, 'vineyard_image', 'multiple_images', 'Картинки для виноградникови', 1, 0, 1, 1, 1, 1, '{}', 11),
+(198, 10, 'winemaking_image', 'multiple_images', 'Картинки для Виноделие', 1, 0, 1, 1, 1, 1, '{}', 12),
+(199, 10, 'coordinate_lat', 'text', 'Широта', 1, 0, 1, 1, 1, 1, '{}', 13),
+(200, 10, 'coordinate_lon', 'text', 'Долгота', 1, 0, 1, 1, 1, 1, '{}', 14),
+(201, 10, 'quote_id', 'text', 'Цитата', 1, 0, 1, 1, 1, 1, '{}', 15),
+(202, 10, 'main_image', 'image', 'Картинка на главной странице', 1, 1, 1, 1, 1, 1, '{}', 4),
+(203, 10, 'vineyard_start', 'rich_text_box', 'Виноградники (начало)', 1, 0, 1, 1, 1, 1, '{}', 6),
+(204, 10, 'vineyard_end', 'rich_text_box', 'Виноградники (конец)', 1, 0, 1, 1, 1, 1, '{}', 7),
+(205, 10, 'seo_title', 'text', 'Seo Title', 0, 0, 1, 1, 1, 1, '{}', 16),
+(206, 10, 'meta_description', 'text_area', 'Meta Description', 1, 0, 1, 1, 1, 1, '{}', 17),
+(207, 10, 'meta_keywords', 'text_area', 'Meta Keywords', 1, 0, 1, 1, 1, 1, '{}', 18),
+(208, 10, 'slug', 'text', 'ЧПУ ', 1, 0, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\",\"forceUpdate\":true},\"validation\":{\"rule\":\"unique:regions,slug\"}}', 19),
+(209, 23, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(210, 23, 'full_name', 'text', 'ФИО', 1, 1, 1, 1, 1, 1, '{}', 2),
+(211, 23, 'profession', 'text', 'Профессия', 1, 1, 1, 1, 1, 1, '{}', 3),
+(212, 23, 'body', 'text_area', 'Цитата', 1, 0, 1, 1, 1, 1, '{}', 4),
+(213, 23, 'image', 'image', 'Картинка', 1, 1, 1, 1, 1, 1, '{}', 5),
+(214, 23, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 1, '{}', 6),
+(215, 23, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7),
+(216, 10, 'region_belongsto_quote_relationship', 'relationship', 'Цитата', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Quote\",\"table\":\"quotes\",\"type\":\"belongsTo\",\"column\":\"quote_id\",\"key\":\"id\",\"label\":\"full_name\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 22);
 
 -- --------------------------------------------------------
 
@@ -315,8 +370,8 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (4, 'categories', 'categories', 'Категория', 'Категории', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, '', '', 1, 0, NULL, '2020-06-17 09:43:45', '2020-06-17 09:43:45'),
 (5, 'posts', 'posts', 'Статья', 'Статьи', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', '', '', 1, 0, NULL, '2020-06-17 09:43:45', '2020-06-17 09:43:45'),
 (6, 'pages', 'pages', 'Страница', 'Страницы', 'voyager-file-text', 'App\\Models\\Page', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-06-17 09:43:45', '2020-06-20 11:15:54'),
-(9, 'wines', 'wines', 'Вино', 'Вина', NULL, 'App\\Models\\Wine', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-17 09:47:26', '2020-06-20 11:12:33'),
-(10, 'regions', 'regions', 'Регион', 'Регионы', NULL, 'App\\Models\\Region', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-06-18 08:29:12', '2020-06-18 08:29:12'),
+(9, 'wines', 'wines', 'Вино', 'Вина', NULL, 'App\\Models\\Wine', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-17 09:47:26', '2020-07-03 11:45:45'),
+(10, 'regions', 'regions', 'Регион', 'Регионы', NULL, 'App\\Models\\Region', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-18 08:29:12', '2020-07-04 00:55:27'),
 (11, 'countries', 'countries', 'Страна', 'Страны', NULL, 'App\\Models\\Country', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-06-18 08:30:07', '2020-06-18 08:30:07'),
 (12, 'colors', 'colors', 'Цвет', 'Цвета', NULL, 'App\\Models\\Color', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-18 08:32:13', '2020-06-18 08:35:21'),
 (13, 'manufacturers', 'manufacturers', 'Производитель', 'Производители', NULL, 'App\\Models\\Manufacturer', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-06-18 08:53:55', '2020-06-18 08:53:55'),
@@ -324,7 +379,9 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (18, 'sugars', 'sugars', 'Содержание сахара', 'Содержание сахара', NULL, 'App\\Models\\Sugar', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-18 10:11:01', '2020-06-18 10:13:09'),
 (19, 'winemakers', 'winemakers', 'Винодел', 'Виноделы', NULL, 'App\\Models\\Winemaker', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-18 11:13:29', '2020-06-20 11:11:17'),
 (20, 'wineries', 'wineries', 'Винодельня', 'Винодельни', NULL, 'App\\Models\\Winery', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-20 04:23:20', '2020-06-20 11:10:14'),
-(21, 'sets', 'sets', 'Сет', 'Сеты', NULL, 'App\\Models\\Set', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-20 06:14:12', '2020-06-20 07:42:08');
+(21, 'sets', 'sets', 'Сет', 'Сеты', NULL, 'App\\Models\\Set', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-20 06:14:12', '2020-06-20 07:42:08'),
+(22, 'comments', 'comments', 'Комментарии', 'Комментарии', NULL, 'App\\Models\\Comment', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-06-21 06:30:19', '2020-06-21 06:30:19'),
+(23, 'quotes', 'quotes', 'Цитата', 'Цитаты', NULL, 'App\\Models\\Quote', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-07-04 00:52:53', '2020-07-04 00:52:53');
 
 -- --------------------------------------------------------
 
@@ -452,7 +509,9 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (22, 1, 'Виноделы', '', '_self', NULL, '#000000', 23, 3, '2020-06-18 11:13:29', '2020-06-18 12:38:26', 'voyager.winemakers.index', 'null'),
 (23, 1, 'Каталог', '', '_self', 'voyager-folder', '#000000', NULL, 4, '2020-06-18 12:37:32', '2020-06-20 04:17:43', NULL, ''),
 (24, 1, 'Винодельни', '', '_self', NULL, NULL, 23, 8, '2020-06-20 04:23:20', '2020-06-20 04:30:13', 'voyager.wineries.index', NULL),
-(25, 1, 'Сеты', '', '_self', NULL, NULL, 23, 10, '2020-06-20 06:14:12', '2020-06-20 06:26:59', 'voyager.sets.index', NULL);
+(25, 1, 'Сеты', '', '_self', NULL, NULL, 23, 10, '2020-06-20 06:14:12', '2020-06-20 06:26:59', 'voyager.sets.index', NULL),
+(26, 1, 'Комментарии', '', '_self', NULL, NULL, 23, 12, '2020-06-21 06:30:19', '2020-07-04 01:05:49', 'voyager.comments.index', NULL),
+(27, 1, 'Цитаты', '', '_self', NULL, NULL, 23, 11, '2020-07-04 00:52:53', '2020-07-04 01:05:45', 'voyager.quotes.index', NULL);
 
 -- --------------------------------------------------------
 
@@ -501,7 +560,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (28, '2020_06_17_174502_add_products_table', 2),
 (29, '2020_06_18_140551_create_colors_table', 3),
 (30, '2020_06_18_140706_create_countries_table', 3),
-(31, '2020_06_18_140742_create_regions_table', 3),
 (32, '2020_06_18_145203_create_manufacturers_table', 4),
 (33, '2020_06_18_150433_create_grape_sorts_table', 5),
 (35, '2020_06_18_160813_create_sugars_table', 6),
@@ -509,7 +567,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (38, '2020_06_18_172829_create_winemaker_wine_table', 8),
 (39, '2020_06_20_100554_create_wineries_table', 8),
 (41, '2020_06_20_113629_create_sets_table', 9),
-(43, '2020_06_20_132711_create_set_wine_table', 10);
+(43, '2020_06_20_132711_create_set_wine_table', 10),
+(44, '2020_06_21_122621_create_comments_table', 11),
+(45, '2020_06_18_140742_create_regions_table', 12),
+(46, '2020_07_03_174222_add_seo_to_regions_table', 13),
+(47, '2020_07_04_064657_create_quotes_table', 14);
 
 -- --------------------------------------------------------
 
@@ -537,7 +599,9 @@ CREATE TABLE `pages` (
 
 INSERT INTO `pages` (`id`, `title`, `meta_title`, `body`, `image`, `slug`, `meta_description`, `meta_keywords`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'Hello World', '', '<p>Hello World. Scallywag grog swab Cat o\'nine tails scuttle rigging hardtack cable nipper Yellow Jack. Handsomely spirits knave lad killick landlubber or just lubber deadlights chantey pinnace crack Jennys tea cup. Provost long clothes black spot Yellow Jack bilged on her anchor league lateen sail case shot lee tackle.</p>\n<p>Ballast spirits fluke topmast me quarterdeck schooner landlubber or just lubber gabion belaying pin. Pinnace stern galleon starboard warp carouser to go on account dance the hempen jig jolly boat measured fer yer chains. Man-of-war fire in the hole nipperkin handsomely doubloon barkadeer Brethren of the Coast gibbet driver squiffy.</p>', 'pages/page1.jpg', 'hello-world', 'Yar Meta Description', 'Keyword1, Keyword2', 'ACTIVE', '2020-06-17 09:43:45', '2020-06-17 09:43:45'),
-(2, 'Франшиза', 'Винная Франшиза, магазин русское вино, винный магазин, винотека', '<p>Франшиза</p>', NULL, 'franchise', 'Хотите открыть винный магазин? Русское вино - винный магазин российского вина. Напишите нам, если вы хотите открыть винный магазин по франшизе.', 'Франшиза', 'ACTIVE', '2020-06-20 10:48:33', '2020-06-20 11:15:16');
+(2, 'Франшиза', 'Винная Франшиза, магазин русское вино, винный магазин, винотека', '<p>Франшиза</p>', NULL, 'franchise', 'Хотите открыть винный магазин? Русское вино - винный магазин российского вина. Напишите нам, если вы хотите открыть винный магазин по франшизе.', 'Франшиза', 'ACTIVE', '2020-06-20 10:48:33', '2020-06-20 11:15:16'),
+(3, 'Пользовательское соглашение', 'Пользовательское соглашение', '<h4>1. Общие положения</h4>\r\n<ul class=\"list-unstyled\">\r\n<li>1.1. Администрация сайта (Далее Администрация) предлагает заключить совершеннолетним физическим лицам (далее Посетителям) соглашение об использовании официального сайта Администрации http://russianvine.ru (Соглашение).</li>\r\n<li>1.2. Соглашение считается заключённым и действующим до полного исполнения взаимных обязательств с момента завершения регистрации и получения Пользователем права доступа в закрытый раздел Сайта, в котором опубликованы рекомендации по выбору вин.</li>\r\n<li>1.3. С момента заключения Договора стороны связаны обязательствами, ответственность за неисполнение которых предусмотрена Договором и законодательством.</li>\r\n</ul>\r\n<h4>2. Предмет и основные условия</h4>\r\n<ul class=\"list-unstyled\">\r\n<li>2.1. Назначение Сайта &mdash; предоставление права доступа к информационной базе о винах, винодельнях, виноделах и дегустационных сетах вин и информирования об ассортименте товаров, ценах, правилах пользования.</li>\r\n<li>2.2. Посетитель вправе использовать Сайт любым способом, предусмотренным веб-интерфейсом и не противоречащим законодательству Российской Федерации.</li>\r\n<li>2.3. Администрация предоставляет Посетителю право использования Сайта по принципам &laquo;программа как услуга&raquo; (SaaS) и &laquo;как есть&raquo; (as is), без явно или косвенно предоставляемых гарантий, в границах Российской Федерации, на срок действия исключительных прав Администрации. Посетитель вправе цитировать материалы Сайта, поставив ссылку на источник.</li>\r\n<li>2.4. Администрация не гарантирует непрерывную работу Сайта в случаях нарушения работоспособности сетей связи, неправомерного доступа третьих лиц к компьютерной информации, обычного или распределённого отказа в обслуживании (&ldquo;denial of service&rdquo;, &ldquo;distributed denial of service&rdquo;), наличия недокументированных функций программного кода (&ldquo;errors&rdquo;), программных или аппаратных сбоев, блокировании доступа органами государственной власти, проведения профилактических или иных работ.</li>\r\n</ul>\r\n<h4>3. Приобретение</h4>\r\n<ul class=\"list-unstyled\">\r\n<li>3.1. Администрация не осуществляет дистанционную торговлю алкогольной продукцией. Не продает и не доставляет алкоголь несовершеннолетним. Не продаёт и не доставляет алкоголь в ночное время.</li>\r\n<li>3.2. Информация о вине и дегустационном сете вин, обеспечивающая возможность его осознанного выбора, доступна Посетителю для получения в Магазине, продублирована в электронной форме на Сайте и включает: <br />цену и состав;<br />органолептические свойства &mdash; вкус, цвет, запах;<br />субъективные рекомендации по употреблению и сервировке;<br />наименование производителя;<br />информационный комплект о правилах употребления вина;<br />сорт винограда, регион производства вина, год урожая, крепость;<br />информацию о соответствии государственным стандартам или техническим условиям.</li>\r\n<li>3.3. В стоимость дегустационного сета входит:<br />комплект тематических вин для самостоятельной дегустации.</li>\r\n<li>3.4. Посетитель, получив от Администрации информацию, обеспечивающую возможность осознанного выбора, вправе приобрести дегустационный комплект непосредственно в Магазине.</li>\r\n</ul>\r\n<h4>4. Политика обработки персональных данных Посетителей</h4>\r\n<ul class=\"list-unstyled\">\r\n<li>4.1. Согласившись с соглашением, Посетитель разрешает обрабатывать свои персональные данные.</li>\r\n<li>4.2. Администрация является оператором персональных данных (далее в настоящем разделе &mdash; Оператор) и обрабатывает персональные данные клиентов в целях соблюдения норм законодательства РФ, а также с целью:<br />&mdash; заключать и выполнять обязательства по договорам с клиентами;<br />&mdash; осуществлять виды деятельности, разрешенные законодательством РФ;<br />&mdash; информировать о новых товарах, специальных акциях и предложениях;<br />&mdash; оформлять дисконтные карты.</li>\r\n<li>4.3. Оператор обрабатывает персональные данные клиентов с их согласия, предоставляемого на срок действия заключенных с ними договоров. В случаях, предусмотренных ФЗ &laquo;О персональных данных&raquo;, согласие предоставляется в письменном виде. В иных случаях согласие считается полученным при заключении договора или при совершении конклюдентных действий.</li>\r\n<li>4.4. Оператор обрабатывает персональные данные клиентов в течение сроков действия заключенных с ними договоров. Оператор может обрабатывать персональные данные клиентов после окончания сроков действия заключенных с ними договоров в течение срока, установленного п. 5 ч. 3 ст. 24 части первой НК РФ, ч. 1 ст. 29 ФЗ &laquo;О бухгалтерском учёте&raquo; и иными нормативными правовыми актами.</li>\r\n<li>4.5. Оператор обрабатывает следующие персональные данные клиентов: фамилия, имя, отчество;<br />день, месяц и год рождения;<br />адрес электронной почты;<br />номер телефона;<br />почтовый адрес;<br />служебный идентификатор социальной сети FaceBook;<br />серия и номер паспорта, адрес постоянной регистрации.</li>\r\n<li>4.6. Для достижения целей обработки персональных данных и с согласия клиентов Оператор предоставляет персональные данные или поручает их обработку следующим лицам: третьи лица (в информационных и маркетинговых целях).</li>\r\n<li>4.7. В целях выполнения договорных обязательств или требований федерального законодательства Оператор получает персональные данные от следующих третьих сторон: &mdash; контрагенты (в целях проведения совместных информационных и маркетинговых мероприятий).</li>\r\n</ul>\r\n<h4>5. Гарантии и ответственность</h4>\r\n<ul class=\"list-unstyled\">\r\n<ul class=\"list-unstyled\">\r\n<li>5.1. Администрация и Посетитель несут ответственность за свои действия (бездействие) согласно законодательству Российской Федерации.</li>\r\n<li>5.2. Посетитель гарантирует своё совершеннолетие и отсутствие ограничений дееспособности.</li>\r\n<li>5.3. Посетитель гарантирует: вся продукция приобретается им в Магазине исключительно в целях, не связанных с осуществлением предпринимательской деятельности.</li>\r\n<li>5.4. Посетитель обязуется сохранять уникальные реквизиты доступа к Сайту (логин и пароль)</li>\r\n<li>5.5. Стороны освобождаются от ответственности за полное или частичное неисполнение своих обязательств по Договору, если они &mdash; следствие обстоятельств непреодолимой силы (форс-мажор), удостоверенных справкой Торгово-промышленной палаты Российской Федерации.</li>\r\n</ul>\r\n</ul>\r\n<h4>6. Иные условия</h4>\r\n<ul class=\"list-unstyled\">\r\n<ul class=\"list-unstyled\">\r\n<li>6.1. Стороны не вправе передавать свои права и обязанности третьим лицам без предварительного согласия другой стороны. Администрация не несет ответственности в случае неправомерной передачи логина и пароля Посетителем третьим лицам, в том числе за любые последствия такой передачи. То же относится к похищению третьими лицами логина и пароля Посетителя в силу неосторожности последнего. Информация, доступная Посетителю &ndash; владельцу логина и пароля &ndash; является конфиденциальной и предназначенной только зарегистрированному лицу.</li>\r\n<li>6.2. Предоставляемая сторонами друг другу коммерческая и иная информация, связанная с Соглашением, конфиденциальна и не подлежит разглашению ни одной стороной.</li>\r\n<li>6.3. Переписка по электронной почте, обмен копиями документов по электронной или факсимильной связи, использование Сайта с использованием собственных реквизитов доступа (имени пользователя и пароля) признаётся юридически значимым, приравнивается к обмену оригиналами и является аналогом простой электронной подписи.</li>\r\n<li>6.4. Досудебный порядок урегулирования спора обязателен.</li>\r\n<li>6.5. Администрация вправе изменить Договор. Договор считается заключённым на новых условиях на третий день после публикации новой редакции, если Администрация не получил от Пользователя электронное письмо о расторжении Договора в трёхдневный срок. В этом случае Пользователь обязан прекратить использование Сайта.</li>\r\n<li>6.6. Согласие на получение писем. В Личном кабинете (Профиле) Посетитель имеет возможность заказать бесплатные персональные сообщения, содержащее рекомендации, сделанные с учетом оставленных Посетителем данных. Данные сообщения будут носить информационно-уведомительный характер, не являясь рекламными предложениями. Если вы пожелаете перестать получать от нас информацию, вы сможете отказаться от получения индивидуальных сообщений в любое время, пройдя по ссылке, приведенной в конце каждого письма, либо изменив настройки получения сообщений в Профиле.</li>\r\n</ul>\r\n</ul>', NULL, 'agreement', NULL, NULL, 'ACTIVE', '2020-06-21 08:55:52', '2020-06-21 08:55:52'),
+(4, 'Дистрибюторам', 'Дистрибюторам', '<p>Дистрибюторам</p>', NULL, 'distributors', NULL, NULL, 'ACTIVE', '2020-06-21 09:13:21', '2020-06-21 09:13:21');
 
 -- --------------------------------------------------------
 
@@ -649,7 +713,17 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (89, 'read_sets', 'sets', '2020-06-20 06:14:12', '2020-06-20 06:14:12'),
 (90, 'edit_sets', 'sets', '2020-06-20 06:14:12', '2020-06-20 06:14:12'),
 (91, 'add_sets', 'sets', '2020-06-20 06:14:12', '2020-06-20 06:14:12'),
-(92, 'delete_sets', 'sets', '2020-06-20 06:14:12', '2020-06-20 06:14:12');
+(92, 'delete_sets', 'sets', '2020-06-20 06:14:12', '2020-06-20 06:14:12'),
+(93, 'browse_comments', 'comments', '2020-06-21 06:30:19', '2020-06-21 06:30:19'),
+(94, 'read_comments', 'comments', '2020-06-21 06:30:19', '2020-06-21 06:30:19'),
+(95, 'edit_comments', 'comments', '2020-06-21 06:30:19', '2020-06-21 06:30:19'),
+(96, 'add_comments', 'comments', '2020-06-21 06:30:19', '2020-06-21 06:30:19'),
+(97, 'delete_comments', 'comments', '2020-06-21 06:30:19', '2020-06-21 06:30:19'),
+(98, 'browse_quotes', 'quotes', '2020-07-04 00:52:53', '2020-07-04 00:52:53'),
+(99, 'read_quotes', 'quotes', '2020-07-04 00:52:53', '2020-07-04 00:52:53'),
+(100, 'edit_quotes', 'quotes', '2020-07-04 00:52:53', '2020-07-04 00:52:53'),
+(101, 'add_quotes', 'quotes', '2020-07-04 00:52:53', '2020-07-04 00:52:53'),
+(102, 'delete_quotes', 'quotes', '2020-07-04 00:52:53', '2020-07-04 00:52:53');
 
 -- --------------------------------------------------------
 
@@ -757,7 +831,17 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (89, 1),
 (90, 1),
 (91, 1),
-(92, 1);
+(92, 1),
+(93, 1),
+(94, 1),
+(95, 1),
+(96, 1),
+(97, 1),
+(98, 1),
+(99, 1),
+(100, 1),
+(101, 1),
+(102, 1);
 
 -- --------------------------------------------------------
 
@@ -796,22 +880,62 @@ INSERT INTO `posts` (`id`, `author_id`, `category_id`, `title`, `seo_title`, `ex
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `quotes`
+--
+
+CREATE TABLE `quotes` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `full_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `profession` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `quotes`
+--
+
+INSERT INTO `quotes` (`id`, `full_name`, `profession`, `body`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'Янис Каракезиди', 'винодел', 'Не упустите уникальную возможность купить понравившееся вино от небольших виноделен.', 'quotes\\July2020\\X6lGJ1VFDUP1Faawgfjo.jpg', '2020-07-04 00:53:47', '2020-07-04 00:53:47');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `regions`
 --
 
 CREATE TABLE `regions` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `terroir` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `vineyard_start` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `vineyard_end` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `winemaking` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `banner_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `vineyard_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `winemaking_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `coordinate_lat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `coordinate_lon` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quote_id` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `main_image` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_keywords` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `regions`
 --
 
-INSERT INTO `regions` (`id`, `title`, `created_at`, `updated_at`) VALUES
-(1, 'Кубань', '2020-06-18 09:01:15', '2020-06-18 09:01:15');
+INSERT INTO `regions` (`id`, `title`, `description`, `body`, `terroir`, `vineyard_start`, `vineyard_end`, `winemaking`, `banner_image`, `vineyard_image`, `winemaking_image`, `coordinate_lat`, `coordinate_lon`, `quote_id`, `created_at`, `updated_at`, `main_image`, `seo_title`, `meta_description`, `meta_keywords`, `slug`) VALUES
+(1, 'Кубань', 'Краснодарский край является важнейшим сельскохозяйственным регионом страны. При этом, обладая не самой большой площадью южного округа (всего 75 500 кв. км), он является лидером по валовому сбору зерна. Но и конечно, Кубань - это самый мощный драйвер в области виноградарства (регион производит около 40% всех виноградных вин России). Кроме того, Краснодарский край является самым привлекательным туристическим регионом России, благодаря как наличию городов-курортов Черноморского побережья, так и функционированию современного горнолыжного курорта Красная Поляна.', 'Крупнейший в России терруар, площадь виноградников почти 30 000 гектар. Уникально расположение региона: территория края омывается водами Азовского и Чёрного морей, а рельеф его весьма разнообразен: более половины занимают равнины, ещё треть занимают горы. Территория края делится на географические зоны виноградарства, в пределах которых можно производить вина с Защищённым Географическим Указанием (ЗГУ). Регион в целом - Кубань и выделенные зоны виноделия - Анапа, Геленджик, Новороссийск, Крымск, Тамань, Долина реки Афипс, Восточное Приазовье.', '<p>Учитывая климатические особенности нашей Родины, нам остаётся только мечтать о повсеместном распространении культуры выращивания винограда. Географический фактор является основной причиной того, что российское виноградарство сосредоточено в южных пределах, и особенно оно развито в Краснодарском крае.</p>\r\n<p>Краснодарский край расположен на границе умеренных и субтропических широт, границу эту образует Главный Кавказский хребет, разделяющий регион на две резко отличающиеся части: северную (равнинную) и южную (горную).</p>\r\n<p>Климат края в целом можно охарактеризовать как умеренно-континентальный. При этом на Черноморском побережье от Анапы до Туапсе он полусухой средиземноморский, а южнее Туапсе - влажный субтропический. В районе Анапа-Новороссийск-Геленджик типичен местный сильный, порывистый и холодный ветер - Бора - со скоростью ветра более 15 м/с, а иногда более 40 м/с.</p>\r\n<p>Средняя температура января на равнинах составляет -3...-5С, на Черноморском побережье 0...+6С. Средняя температура июля +22 ...+24С. Годовое количество осадков: от 400 до 600 мм в равнинной части края. В целом, для региона характерны жаркое лето и мягкая зима.&nbsp; Кубань - самый комфортный регион в России для возделывания винограда.</p>', '<p>Первые свидетельства о том, что на территории современной Кубани были виноградники, относятся к VI веку до н.э. Традиции виноделия были подарены славянам греками. Современные виноградники Кубани произрастают в шести природно-климатических зонах: Анапа-Таманская, Черноморская, Южно-предгорная, Западная, Центральная и Северная. Почвенный покров края отличается большим разнообразием - от богатых каштановых чернозёмов и их разновидностей, до сильнокарбонатных, щебенчатых, мергелевых и песчаных почв.</p>', '<p>Виноградники Кубани расположены на \"широте Бордо\" - по региону проходит 45-я параллель (золотая середина между полюсом и экватором). При этом климат кубанских зон виноградарства сильно разнится, поэтому регион лучше сравнивать с более южными землями, например, с Тосканой .Сортовой состав виноградников настолько обширен, что перечислить все не получится. Однако среди красных сортов стоит выделить: Шираз, Мурведр, Марселан, Красностоп, Пти Вердо, Мальбек, Карменер, Каберне Фран, Одесский Чёрный, Санджовезе, Достойный, а из белых: Вионье, Руссан, Семильон, Пино Гри, Мускат, Совиньон Блан, Гевюрцтраминер, Цитронный Магарача.</p>', '<p>Кубань - самый большой кластер в России по количеству виноделен. Первые и самые серьёзные проекты в русском виноделии стартовали именно здесь. Иностранные энологи начинали свои проекты по созданию Русских Вин тоже на Кубани.</p>\r\n<p>В крае работают около 65 винодельческих предприятий, и ещё более 100 небольших частных фермерских хозяйств. Большую роль сыграла и государственная поддержка региона в советский период в 50 - 60 х годах, когда по приказу правительства создавались виноградарские совхозы. Благодаря ей площадь виноградников выросла с 3,5 тыс. га в 1957 году до 30,7 тыс. га в 1983 году. Тогда на слуху у всех был лозунг: \"Превратим Тамань в советскую Шампань\". И сегодня принятые необходимые законы о развитии виноделия и государственная поддержка виноградарей дают необходимый толчок развитию региона и отрасли в целом. Это, в свою очередь, позволило увеличить площади виноградников и провести модернизацию производств.</p>\r\n<p>Среди винодельческих хозяйств стоить отметить крупные предприятия: Кубань-Вино, Фанагория, Абрау-Дюрсо, Саук-Дере, Юбилейная, Мысхако. А также небольшие, но современные винодельни: Лефкадия, Гай-Кодзор, Бюрнье, Усадьба Мысхако, Винодельня Гунько, Винодельня Узунов, Винное подворье старого грека, Вилла Виктория, Имение Сикоры, Дивноморское.</p>', 'regions\\July2020\\yISEezbq9XJqh6wtFWiF.jpg', '[\"regions\\\\July2020\\\\HnPRDPLmzhCkGXdqG6hn.jpg\",\"regions\\\\July2020\\\\kw1fNgFpbZ7VGYhW9cyn.jpg\"]', '[\"regions\\\\July2020\\\\44TNVKpYzafGVkEW55Hl.jpg\",\"regions\\\\July2020\\\\wujeLAIKTSbpBh1cf300.jpg\"]', '45.034937', '38.984963', 1, '2020-07-03 11:35:46', '2020-07-03 12:34:31', 'regions\\July2020\\U5H3f2NGZUA80h5eqwvw.jpg', 'Купить вина Кубани, лучшие вина Краснодарского края', 'Кубань - Выбрать лучшее вино онлайн из Кубани на сайте russianvine.ru заказать вина краснодарского края, Гунько, Узуновы, Усадьба Дивноморское, Бюрнье, Лефкадия, Имение Сикоры можно на сайте русское вино.', 'Кубань, винодельня', 'kuban');
 
 -- --------------------------------------------------------
 
@@ -1032,6 +1156,13 @@ CREATE TABLE `user_roles` (
   `role_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Дамп данных таблицы `user_roles`
+--
+
+INSERT INTO `user_roles` (`user_id`, `role_id`) VALUES
+(1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -1177,6 +1308,12 @@ ALTER TABLE `colors`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `countries`
 --
 ALTER TABLE `countries`
@@ -1265,10 +1402,17 @@ ALTER TABLE `posts`
   ADD UNIQUE KEY `posts_slug_unique` (`slug`);
 
 --
+-- Индексы таблицы `quotes`
+--
+ALTER TABLE `quotes`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `regions`
 --
 ALTER TABLE `regions`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `regions_slug_unique` (`slug`);
 
 --
 -- Индексы таблицы `roles`
@@ -1355,22 +1499,28 @@ ALTER TABLE `colors`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT для таблицы `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT для таблицы `countries`
 --
 ALTER TABLE `countries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=184;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=217;
 
 --
 -- AUTO_INCREMENT для таблицы `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT для таблицы `failed_jobs`
@@ -1400,31 +1550,37 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT для таблицы `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT для таблицы `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT для таблицы `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT для таблицы `quotes`
+--
+ALTER TABLE `quotes`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `regions`
@@ -1484,7 +1640,7 @@ ALTER TABLE `wineries`
 -- AUTO_INCREMENT для таблицы `wines`
 --
 ALTER TABLE `wines`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
