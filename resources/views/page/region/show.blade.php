@@ -82,7 +82,8 @@
                                         <p>{{$region->quote->body}}</p>
                                     </div>
                                     <div class="description-cite-author">
-                                        {{$region->quote->full_name}}, {{$region->quote->profession}}
+                                        {{$region->quote->full_name}}{{isset($region->quote->profession) ? ',' : ''}}
+                                        {{$region->quote->profession}}
                                     </div>
                                 </div>
                             </div>
@@ -191,7 +192,7 @@
             <span class="icon-circle">
               <span class="icon-icon_wines"></span>
             </span><br>
-                            <h2 id="wines">Вина Кубань</h2>
+                            <h2 id="wines">Вина {{$region->title}}</h2>
                         </div>
                     </div>
                 </div>

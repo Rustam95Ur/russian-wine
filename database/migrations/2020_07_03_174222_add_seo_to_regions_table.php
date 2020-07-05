@@ -16,8 +16,8 @@ class AddSeoToRegionsTable extends Migration
         Schema::table('regions', function (Blueprint $table) {
             $table->string('seo_title')->nullable();
             $table->text('meta_description');
-            $table->text('meta_keywords');
-            $table->string('slug')->unique();
+            $table->text('meta_keywords')->nullable();
+            $table->string('slug')->unique()->nullable();
         });
     }
 
