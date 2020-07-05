@@ -83,7 +83,7 @@
                         src="{{ asset ('image/slidearrow.png') }}"></div>
                 <div class="swiper-container" id="featured_slide0">
                     <div class="swiper-wrapper">
-                        @foreach($wines as $wine)
+                        @foreach($popular_wines as $wine)
                             @if ($wine->featured)
                                 <div class="swiper-slide">
                                     <div class="wine">
@@ -197,7 +197,7 @@
                         src="{{ asset ('image/slidearrow.png') }}"></div>
                 <div class="swiper-container" id="featured_slide1">
                     <div class="swiper-wrapper">
-                        @foreach($wines as $wine)
+                        @foreach($new_wines as $wine)
                             <div class="swiper-slide">
                                 <div class="wine">
                                     <div class="image">
