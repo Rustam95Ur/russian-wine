@@ -23,13 +23,13 @@ class CreateProductsTable extends Migration
             $table->text('feature')->nullable();
             $table->text('innings')->nullable();
             $table->string('model');
-            $table->integer('winery_id');
+            $table->integer('winery_id')->nullable();
             $table->integer('grape_sort_id');
             $table->integer('edition');
-            $table->integer('manufacturer_id');
+            $table->integer('manufacturer_id')->nullable();
             $table->integer('region_id');
             $table->integer('color_id');
-            $table->integer('fortress');
+            $table->float('fortress');
             $table->integer('year');
             $table->string('volume');
             $table->string('sugar_id');

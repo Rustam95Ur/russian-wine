@@ -73,7 +73,9 @@
                                     <h2>{{$winemaker->full_name}}</h2>
                                     <div class="description">
                                         <ul>
-                                            <li><p>{{$winemaker->winery->title}}</p></li>
+                                            <li>
+                                                <p>{{isset($winemaker->winery) ? $winemaker->winery->title  : '' }}</p>
+                                            </li>
                                             <li><p>{{$winemaker->region->title}}</p></li>
                                             <li><p>Вина:
                                                     @foreach($winemaker->wines as $wine)

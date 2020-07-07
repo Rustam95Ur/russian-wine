@@ -83,7 +83,7 @@
                         src="{{ asset ('image/slidearrow.png') }}"></div>
                 <div class="swiper-container" id="featured_slide0">
                     <div class="swiper-wrapper">
-                        @foreach($wines as $wine)
+                        @foreach($popular_wines as $wine)
                             @if ($wine->featured)
                                 <div class="swiper-slide">
                                     <div class="wine">
@@ -94,11 +94,12 @@
                                             </a>
                                         </div>
                                         <h2><a href="#" class="preview">{{$wine->title}}</a></h2>
-                                        <p>{{$wine->winery->title}}</p>
+
+                                        <p>{{isset($wine->winery) ? $wine->winery->title : ''}}</p>
                                         <div class="meta">
                                             <span class="color">{{$wine->color->title}} </span><span
                                                 class="sep"> | </span>
-                                            <span class="hardness">{{$wine->sugar->title}} </span><span
+                                            <span class="hardness">{{isset($wine->sugar) ? $wine->sugar->title : ''}} </span><span
                                                 class="sep"> | </span>
                                             <span class="year"> {{$wine->year}}</span>
                                             <div class="price-vinoteka">
@@ -197,7 +198,7 @@
                         src="{{ asset ('image/slidearrow.png') }}"></div>
                 <div class="swiper-container" id="featured_slide1">
                     <div class="swiper-wrapper">
-                        @foreach($wines as $wine)
+                        @foreach($new_wines as $wine)
                             <div class="swiper-slide">
                                 <div class="wine">
                                     <div class="image">
@@ -207,11 +208,11 @@
                                         </a>
                                     </div>
                                     <h2><a href="#" class="preview">{{$wine->title}}</a></h2>
-                                    <p>{{$wine->winery->title}}</p>
+                                    <p>{{isset($wine->winery) ? $wine->winery->title : ''}}</p>
                                     <div class="meta">
-                                        <span class="color">{{$wine->color->title}} </span><span
+                                        <span class="color">{{isset($wine->color) ? $wine->color->title : '' }} </span><span
                                             class="sep"> | </span>
-                                        <span class="hardness">{{$wine->sugar->title}} </span><span
+                                        <span class="hardness">{{isset($wine->sugar) ? $wine->sugar->title : ''}} </span><span
                                             class="sep"> | </span>
                                         <span class="year"> {{$wine->year}}</span>
                                         <div class="price-vinoteka">
@@ -275,8 +276,9 @@
                                     </div>
                                     <h6><a href="#">{{$winemaker->full_name}}</a></h6>
                                     <ul>
-                                        <li><p>{{$winemaker->winery->title}}</p></li>
-                                        <li><p>{{$winemaker->region->title}}</p></li>
+
+                                        <li><p>{{isset($wine->winery) ? $wine->winery->title : ''}}</p></li>
+                                        <li><p>{{ isset($winemaker->region) ? $winemaker->region->title : ''}}</p></li>
                                         <li><p>Вина:
                                                 @foreach($winemaker->wines as $wine)
                                                     {{$wine->title}}@if(!$loop->last),@endif

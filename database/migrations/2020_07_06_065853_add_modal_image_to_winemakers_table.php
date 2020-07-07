@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSeoToRegionsTable extends Migration
+class AddModalImageToWinemakersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class AddSeoToRegionsTable extends Migration
      */
     public function up()
     {
-        Schema::table('regions', function (Blueprint $table) {
-            $table->string('seo_title')->nullable();
-            $table->text('meta_description');
-            $table->text('meta_keywords')->nullable();
-            $table->string('slug')->unique()->nullable();
+        Schema::table('winemakers', function (Blueprint $table) {
+            $table->string('modal_image');
         });
     }
 
@@ -28,7 +25,7 @@ class AddSeoToRegionsTable extends Migration
      */
     public function down()
     {
-        Schema::table('regions', function (Blueprint $table) {
+        Schema::table('winemakers', function (Blueprint $table) {
             //
         });
     }
