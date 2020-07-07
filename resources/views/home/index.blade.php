@@ -99,7 +99,7 @@
                                         <div class="meta">
                                             <span class="color">{{$wine->color->title}} </span><span
                                                 class="sep"> | </span>
-                                            <span class="hardness">{{$wine->sugar->title}} </span><span
+                                            <span class="hardness">{{isset($wine->sugar) ? $wine->sugar->title : ''}} </span><span
                                                 class="sep"> | </span>
                                             <span class="year"> {{$wine->year}}</span>
                                             <div class="price-vinoteka">
