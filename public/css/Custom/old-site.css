@@ -3797,43 +3797,6 @@ footer .footer-contact {
     padding: 8px 14px
 }
 
-.breadcrumb {
-    margin: 0 0 20px;
-    padding: 8px 0;
-    border: 1px solid #ddd
-}
-
-.breadcrumb i {
-    font-size: 15px
-}
-
-.breadcrumb>li {
-    text-shadow: 0 1px 0 #FFF;
-    padding: 0 20px;
-    position: relative;
-    white-space: nowrap
-}
-
-.breadcrumb>li+li:before {
-    content: '';
-    padding: 0
-}
-
-.breadcrumb>li:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -3px;
-    right: -5px;
-    width: 26px;
-    height: 26px;
-    border-right: 1px solid #DDD;
-    border-bottom: 1px solid #DDD;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg)
-}
 
 .pagination {
     margin: 0
@@ -7899,30 +7862,7 @@ max-height: 1.823vw;
         box-sizing: border-box;
         padding-bottom: 0
     }
-    #searchin-form input[type=text] {
-        padding: 1.563vw 4.688vw 1.563vw 1.302vw;
-        font: .833vw ProximaNova-Bold;
-        height: 4.776vw;
-        width: 100%;
-        border-bottom: 1px solid #23252b;
-        border-left: 1px solid #23252b;
-        border-top: none;
-        border-right: none;
-        outline: 0
-    }
-    #searchin-form a {
-        width: 4.688vw;
-        height: 4.776vw;
-        background: transparent;
-        border: none;
-        position: absolute;
-        right: 0;
-        top: 0;
-        background-image: url(/image/lupa.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 1.042vw auto
-    }
+
     #searchin-form {
         position: absolute;
         top: 0;
@@ -8745,7 +8685,7 @@ img {
     }
     .bannerstitle h6 {
         margin: 0;
-        font: 1.042vw ProximaNova-Xbold;
+        font: 1.042vw ProximaNova-bold;
         color: #fff;
         position: absolute;
         top: 2.135vw;
@@ -8983,7 +8923,7 @@ img {
 #prevslide,
 #nextslide {
     position: absolute;
-    top: 2.7vw;
+    top: 2.2vw  ;
     padding: 0 .729vw;
     display: flex;
     justify-content: center;
@@ -9550,7 +9490,7 @@ section#specials #specials-cont div.col-md-4 {
     }
     .bannerstitle h6 {
         margin: 0;
-        font: 3.611vw ProximaNova-Xbold;
+        font: 3.611vw ProximaNova-bold;
         color: #fff;
         position: absolute;
         top: 7.135vw;
@@ -11755,7 +11695,7 @@ section#specials #specials-cont div.col-md-4 {
 #head_f.home_header {
     /*background: transparent;*/
     /*position: absolute !important;*/
-    background: black;
+    background: transparent;
     position: fixed;
 }
 
@@ -16304,7 +16244,7 @@ header ul li.active span:after {
 }
 
 /* new home */
-.featured_cont {padding:3.125vw 0 4.490vw;position:relative; margin-bottom:2.083vw;}
+.featured_cont {padding:2.3vw 0 2.8vw;position:relative; margin-bottom:2.083vw;}
 .featured_cont .swiper-slide {height: 33.854vw;width:22.292vw; padding: 2.396vw 2.083vw 2.865vw;border-right: 1px solid #E0E0E0;overflow: visible;}
 .featured_cont .swiper-slide img {height:20.547vw;width:auto;display: block; margin: 0 auto;}
 .featured_cont .swiper-slide h2 a {

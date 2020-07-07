@@ -1,6 +1,6 @@
 /**
 *
-* themesflatSearch(); 
+* themesflatSearch();
 * tabs();
 * woocommerceTabs();
 * flatCounter();
@@ -15,6 +15,19 @@
 *
 */
 
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+
+     //>=, not <=
+    if (scroll >= 500) {
+        //clearHeader, not clearheader - caps H
+        $("#head_f").addClass("darkHeader");
+    }
+    if (scroll <= 500) {
+        //clearHeader, not clearheader - caps H
+        $("#head_f").removeClass("darkHeader");
+    }
+}); //missing );
 
 if ($(window).width() < 991) {
     var swiper = new Swiper('#home_slider', {
@@ -70,7 +83,7 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
 
 ;(function($) {
     "use strict";
-    
+
     var isMobile = {
 
         Android: function() {
@@ -110,7 +123,7 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
         }
 
     };
-     
+
 
     var inViewport =  function() {
         $('[data-inviewport="yes"]').waypoint(function() {
@@ -123,14 +136,14 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
             }, 100);
         });
     };
-    
+
     var flatCounter = function() {
         if ( $().countTo ) {
             $('.counter').on('on-appear', function() {
                 $(this).find('.numb-count').each(function() {
                     var to = $(this).data('to'),
                         speed = $(this).data('speed');
-                        
+
                     $(this).countTo({
                         to: to,
                         speed: speed
@@ -153,7 +166,7 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
                 gap = Number($this.data("gap")),
                 dots = $this.data("dots"),
                 nav = $this.data("nav");
-                
+
 
                 $this.find('.owl-carousel').owlCarousel({
                     margin: gap,
@@ -192,7 +205,7 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
                 });
             });
 
-            $('.flat-filter li').on('click',function() {                           
+            $('.flat-filter li').on('click',function() {
                 var selector = $(this).find("a").attr('data-filter');
                 $('.flat-filter li').removeClass('active');
                 $(this).addClass('active');
@@ -200,7 +213,7 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
                 return false;
             });
         };
-    }; 
+    };
 
     var flatIsotope2 = function() {
         if($().isotope) {
@@ -213,7 +226,7 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
                 });
             });
 
-            $('.flat-filter li').on('click',function() {                           
+            $('.flat-filter li').on('click',function() {
                 var selector = $(this).find("a").attr('data-filter');
                 $('.flat-filter li').removeClass('active');
                 $(this).addClass('active');
@@ -221,9 +234,9 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
                 return false;
             });
         };
-    }; 
-    
-   
+    };
+
+
     var googleMap = function () {
         // gmap default
         if ($().gmap3) {
@@ -253,7 +266,7 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
                         options: {
                             icon: "./image/icon-map.png"
                         }
-                        
+
                     }]
                 },
                 styledmaptype: {
@@ -389,15 +402,15 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
                 }
             });
         });
-    };    
-    
+    };
+
 
     var searchIcon = function () {  // Click-search
-        $(document).on('click', function(e) {   
-            var clickID = e.target.id;   
+        $(document).on('click', function(e) {
+            var clickID = e.target.id;
             if ( ( clickID !== 'input-search' ) ) {
-                $('.header-search-form').removeClass('show');                
-            } 
+                $('.header-search-form').removeClass('show');
+            }
         });
 
         $('.header-search-icon').on('click', function(event){
@@ -406,20 +419,20 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
 
         $('.header-search-form').on('click', function(event){
             event.stopPropagation();
-        });        
+        });
 
         $('.header-search-icon').on('click', function (event) {
             if(!$('.header-search-form').hasClass( "show" )) {
-                $('.header-search-form').addClass('show');  
-                event.preventDefault();                
+                $('.header-search-form').addClass('show');
+                event.preventDefault();
             }
-                
+
             else
                 $('.header-search-form').removeClass('show');
                 event.preventDefault();
 
-        });        
-  
+        });
+
     };
 
     var woocommerceTabs = function() {
@@ -497,7 +510,7 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
             }
         });
 
-        $('.mobile-button').on('click', function() {         
+        $('.mobile-button').on('click', function() {
             $('#mainnav-mobi').slideToggle(300);
             $(this).toggleClass('active');
         });
@@ -512,11 +525,11 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
         $('#header').each(function() {
         var nav = $('#header');
         $(window).on('load', function(){
-            var header = $('#header');           
+            var header = $('#header');
             var offsetTop = $('#header').offset().top;
-            var headerHeight = $('#header').height();             
-            var buffer  = $('<div>', { height: headerHeight }).insertAfter(header);   
-                buffer.hide();                 
+            var headerHeight = $('#header').height();
+            var buffer  = $('<div>', { height: headerHeight }).insertAfter(header);
+                buffer.hide();
 
             $(window).on('load scroll', function(){
                 if ( $(window).scrollTop() > offsetTop  ) {
@@ -538,7 +551,7 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
                 hour = $(".count-time").data("hour"),
                 minute = $(".count-time").data("minute"),
                 second = $(".count-time").data("second");
- 
+
             var countDownDate = new Date(year,month,day,hour,minute,second).getTime();
 
             // Update the count down every 1 second
@@ -562,7 +575,7 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
                 $(".minutes .numb").html(minutes);
                 $(".seconds .numb").html(seconds);
 
-                // If the count down is finished, write some text 
+                // If the count down is finished, write some text
                 if (distance < 0) {
                     clearInterval(x);
                     $(".days .numb").html("0");
@@ -613,7 +626,7 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
         });
     };
 
-    
+
 
     var listandgrid = function(){
         $('.filter-shop').each(function(){
@@ -623,7 +636,7 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
                 $(this).siblings().removeClass('active');
                 $(this).addClass('active');
                 $(this).closest('body').find('.flat-products').removeClass('list');
-                $(this).closest('body').find('.flat-products').addClass('grid');                
+                $(this).closest('body').find('.flat-products').addClass('grid');
             });
             $(this).find('.list').on('click', function() {
                 $(this).siblings().removeClass('active');
@@ -642,7 +655,7 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
                 $(this).siblings().removeClass('active');
                 $(this).addClass('active');
                 $(this).closest('body').find('.main-shop-fullwidth').removeClass('list');
-                $(this).closest('body').find('.main-shop-fullwidth').addClass('grid');                
+                $(this).closest('body').find('.main-shop-fullwidth').addClass('grid');
             });
             $(this).find('.list').on('click', function() {
                 $(this).siblings().removeClass('active');
@@ -662,7 +675,7 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
                 $(this).siblings().removeClass('active');
                 $(this).addClass('active');
                 $(this).closest('body').find('.main-shop-right').removeClass('list');
-                $(this).closest('body').find('.main-shop-right').addClass('grid');                
+                $(this).closest('body').find('.main-shop-right').addClass('grid');
             });
             $(this).find('.list').on('click', function() {
                 $(this).siblings().removeClass('active');
@@ -673,12 +686,12 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
         });
     };
 
-    var removePreloader = function() {        
+    var removePreloader = function() {
         $(window).on("load", function () {
             $(".loader").fadeOut();
             $("#loading-overlay").delay(500).fadeOut('slow',function(){
                 $(this).remove();
-            }); 
+            });
         });
     };
 
@@ -696,7 +709,7 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
                 width: $logo.data('width'),
                 height: $logo.data('height')
             });
-        } 
+        }
 
         if ( retina && $logo_retina_ft ) {
             $logo_ft.attr({
@@ -707,7 +720,7 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
         }
     };
 
-    var ajaxContactForm = function() {  
+    var ajaxContactForm = function() {
         $('#contactform').each(function() {
             $(this).validate({
                 submitHandler: function( form ) {
@@ -723,8 +736,8 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
                             $form.find('.form-submit').append(loading);
                         },
                         success: function( msg ) {
-                            var result, cls;                            
-                            if ( msg === 'Success' ) {                                
+                            var result, cls;
+                            if ( msg === 'Success' ) {
                                 result = 'Message Sent Successfully To Email Administrator. ( You can change the email management a very easy way to get the message of customers in the user manual )';
                                 cls = 'msg-success';
                             } else {
@@ -787,7 +800,7 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
                 });
             });
         }
-    };  
+    };
 
 
 
@@ -817,6 +830,6 @@ var swiper = new Swiper('#winemakers_slider1.swiper-container', {
         $( window ).load(function() {
             inViewport();
         });
-        
+
     });
 })(jQuery);
