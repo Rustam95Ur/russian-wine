@@ -177,3 +177,9 @@ h1.pageHeading{
 #cart-cont.open #close-cart {
   display: block;
 }
+.slide-inner div:first-child {
+    max-height: 360px;
+}
+.featured_cont:last-child {
+    padding-bottom: 5vw;
+}

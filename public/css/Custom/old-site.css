@@ -16255,7 +16255,7 @@ header ul li.active span:after {
 }
 
 /* new home */
-.featured_cont {padding:2.3vw 0 2.8vw;position:relative; margin-bottom:2.083vw;}
+.featured_cont {padding:2.3vw 0 5vw;position:relative; margin-bottom:2.083vw;}
 .featured_cont .swiper-slide {height: 33.854vw;width:22.292vw; padding: 2.396vw 2.083vw 2.865vw;border-right: 1px solid #E0E0E0;overflow: visible;}
 .featured_cont .swiper-slide img {height:20.547vw;width:auto;display: block; margin: 0 auto;}
 .featured_cont .swiper-slide h2 a {
