@@ -33,10 +33,10 @@
                 <div class="phone"><a href="tel:+7 (915) 457-60-81">+7 (915) 457-60-81</a></div>
                 <div class="email"><a href="mailto:info@russianvine.ru">info@russianvine.ru</a></div>
                 <div class="social">
-                    <a href="https://www.facebook.com">
-                        <img alt="facebook-icon" src="{{ asset ('image/iconFacebook.png') }}"></a>
                     <a href="https://instagram.com/russianvine.ru?igshid=1kot521x7b8l">
-                        <img alt='instagram-icon' src="{{ asset ('image/iconInstagram.png') }}"></a>
+                      <img alt='instagram-icon' src="{{ asset ('image/iconInst.png') }}"></a>
+                    <a href="https://www.facebook.com">
+                        <img alt="facebook-icon" src="{{ asset ('image/iconF.png') }}"></a>
                 </div>
             </div>
             <div class="footer-logo col-sm-12 col-md-12 col-lg-3 col-lg-pull-8">
