@@ -68,7 +68,7 @@
                     </div>
                 </nav>
             </div>
-            <div class="col-sm-2">
+            <div class="col-md-2 col-sm-3">
               <div id="navSearch">
                   <a onclick="$('#myOverlay').addClass('open', 1000);" id="searchStart">
                       <img alt="search icon" src="{{ asset ('image/search.svg') }}">

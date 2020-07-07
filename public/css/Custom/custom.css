@@ -171,3 +171,9 @@ h1.pageHeading{
 .darkHeader {
     background: rgb(44, 32, 48)!important;
 }
+#cart-cont #close-cart {
+  display: none;
+}
+#cart-cont.open #close-cart {
+  display: block;
+}

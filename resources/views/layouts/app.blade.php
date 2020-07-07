@@ -86,6 +86,12 @@
 <script src="{{ asset('rev-slider/js/extensions/revolution.extension.parallax.min.js')  }}"></script>
 <script src="{{ asset('rev-slider/js/extensions/revolution.extension.slideanims.min.js')  }}"></script>
 <script src="{{ asset('rev-slider/js/extensions/revolution.extension.video.min.js')  }}"></script>
+<script type="text/javascript" >
+  jQuery(".nav-folderized h5").click(function(){
+	  jQuery(this).parent(".nav").toggleClass("open");
+  });
+
+  </script>
 @stack('scripts')
 </body>
 </html>
