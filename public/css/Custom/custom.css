@@ -178,7 +178,7 @@ h1.pageHeading{
   display: block;
 }
 .slide-inner div:first-child {
-    max-height: 360px;
+    max-height: 18.76vw;
 }
 .featured_cont:last-child {
     padding-bottom: 5vw;

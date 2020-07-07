@@ -16418,6 +16418,9 @@ input[type=number] {
     .slide-inner div:first-child {
       max-height: 234px;
     }
+    .slide-inner div:first-child {
+      max-height: 360px;
+    }
     #logo img {
         width: 27.222vw;
         margin-left:14.444vw;
