@@ -5356,25 +5356,25 @@ h2.price {
 }
 
 @media (max-width: 767px) {
-    header .col-sm-3 #navSearch img, header .col-sm-3 #login img {
+    header .col-sm-2 #navSearch img, header .col-sm-2 #login img {
         height: 6.004vw!important;
     }
     #login a {
     margin-top: -0.111vw !important;
     margin-right: 3vw;
     }
-    header .col-sm-3 #navSearch img{
+    header .col-sm-2 #navSearch img{
       display: none;
     }
-    header .container .col-sm-3 img {
+    header .container .col-sm-2 img {
         margin-left: auto;
         margin-right: auto
     }
-    header .container .col-sm-3 {
+    header .container .col-sm-2 {
         margin-left: auto;
         margin-right: auto
     }
-    header .container .col-sm-3:last-child > a {
+    header .container .col-sm-2:last-child > a {
         display: none
     }
     header .container #menu .navbar-header > .btn {
@@ -8758,7 +8758,7 @@ img {
     header .col-sm-1 > a:last-child > img {
         width:1.146vw;
     }
-    header .col-sm-3:last-child #cart img {
+    header .col-sm-2:last-child #cart img {
         width: 0.990vw;
         height: 1.298vw;
         margin-right: .599vw;
@@ -8766,7 +8766,7 @@ img {
         margin-top: 0;
         height: auto
     }
-    header .col-sm-3:last-child img {
+    header .col-sm-2:last-child img {
         height: 1.302vw;
         margin-right: .599vw;
         float: left;
@@ -8792,13 +8792,13 @@ img {
     header .container.container-lg .row {
         height: 100%
     }
-    header .container.container-lg .col-sm-3 {
+    header .container.container-lg .col-sm-2 {
         width: 9%
     }
-    header .container.container-lg .col-sm-3:last-child {
+    header .container.container-lg .col-sm-2:last-child {
         width: 16%
     }
-    header .container.container-lg .col-sm-3,
+    header .container.container-lg .col-sm-2,
     header .container.container-lg .col-sm-1 #cart,
     header .container.container-lg .col-sm-1 #cart a {
         padding: 0;
@@ -8826,7 +8826,7 @@ img {
     header .container.container-lg .row {
         height: 100%;
     }
-    header .container.container-lg .col-sm-3 {
+    header .container.container-lg .col-sm-2 {
         width: 7.708vw;
     }
     header .container.container-lg .col-sm-1 {
@@ -8839,13 +8839,13 @@ img {
     header .container.container-lg .col-sm-1 a {
         padding: 0.260vw 0.625vw;
     }
-    header .container.container-lg .col-sm-3:last-child {
+    header .container.container-lg .col-sm-2:last-child {
         width: auto;
         justify-content: flex-end;
         float: right;
         justify-content: flex-end
     }
-    header .container.container-lg .col-sm-3,
+    header .container.container-lg .col-sm-2,
     header .container.container-lg .col-sm-1 #cart,
     header .container.container-lg .col-sm-1 #cart a {
         padding: 0;
@@ -9489,7 +9489,7 @@ section#specials #specials-cont div.col-md-4 {
         top: 0!important;
         position: relative!important
     }
-    #head_f .col-sm-3:last-child {
+    #head_f .col-sm-2:last-child {
         position: Absolute;
         top: 0;
         right: 0;
@@ -16717,13 +16717,13 @@ overflow: hidden;
     .instagram_icon svg {width:2.292vw;}
     .bag_icon svg {width:2.760vw;}
 }
-header .col-sm-3 #navSearch img, header .col-sm-3 #login img {
+header .col-sm-2 #navSearch img, header .col-sm-2 #login img {
     height: 1.004vw;
 }
-header .col-sm-3 #navSearch img {
+header .col-sm-2 #navSearch img {
     margin-right: 2vw;
 }
-header .col-sm-3 #login img {
+header .col-sm-2 #login img {
     margin-right: 1.5vw;
 }
 #myOverlay.open {
