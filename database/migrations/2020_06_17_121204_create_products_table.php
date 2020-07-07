@@ -28,11 +28,11 @@ class CreateProductsTable extends Migration
             $table->integer('edition');
             $table->integer('manufacturer_id')->nullable();
             $table->integer('region_id');
-            $table->integer('color_id');
-            $table->float('fortress');
-            $table->integer('year');
-            $table->string('volume');
-            $table->string('sugar_id');
+            $table->integer('color_id')->nullable();
+            $table->float('fortress')->nullable();
+            $table->integer('year')->nullable();
+            $table->float('volume')->nullable();
+            $table->string('sugar_id')->nullable();
             $table->integer('count');
             $table->string('image')->nullable();
             $table->string('slug')->unique();
