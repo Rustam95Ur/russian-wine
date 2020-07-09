@@ -7,7 +7,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <title>@yield('title', Voyager::setting('site.title'))</title>
     <meta name="description" content="@yield('description', Voyager::setting('site.description'))">
-    <meta name="keywords" content="@yield('keywords', Voyager::setting('site.keywords'))" />
+    <meta name="keywords" content="@yield('keywords', Voyager::setting('site.keywords'))"/>
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -23,7 +23,7 @@
     <!-- Theme Style -->
 {{--    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">--}}
 
-    <!-- Responsive -->
+<!-- Responsive -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
 
     <!-- Colors -->
@@ -86,12 +86,34 @@
 <script src="{{ asset('rev-slider/js/extensions/revolution.extension.parallax.min.js')  }}"></script>
 <script src="{{ asset('rev-slider/js/extensions/revolution.extension.slideanims.min.js')  }}"></script>
 <script src="{{ asset('rev-slider/js/extensions/revolution.extension.video.min.js')  }}"></script>
-<script type="text/javascript" >
-  jQuery(".nav-folderized h5").click(function(){
-	  jQuery(this).parent(".nav").toggleClass("open");
-  });
+<script type="text/javascript">
+    jQuery(".nav-folderized h5").click(function () {
+        jQuery(this).parent(".nav").toggleClass("open");
+    });
 
-  </script>
+</script>
 @stack('scripts')
+<script>
+    @php
+       $route = Request::route()->getName();
+    @endphp
+    @if($route == 'home' or $route == 'tastings' or $route == 'sets' )
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+        //>=, not <=
+        if (scroll <= 300) {
+            //clearHeader, not clearheader - caps H
+            $("#head_f").removeClass("darkHeader");
+        }
+        if (scroll >= 300) {
+            //clearHeader, not clearheader - caps H
+            $("#head_f").addClass("darkHeader");
+        }
+    });
+    @else
+    $('#head_f').addClass("darkHeader")
+    @endif
+</script>
+
 </body>
 </html>

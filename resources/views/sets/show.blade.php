@@ -62,7 +62,7 @@
                     <div class="description-set">
                         <h1>{{$set->title}}</h1>
                         <div class="nooverflow">
-                            <p>{{$set->description}}</p>
+                            <p>{!! $set->description!!}</p>
                             <div class="quantity_quickorder" id="sety-calc">
                                 <p>Количество сетов</p>
                                 <span id="qminus"><input type="button" id="decrease_quickorder"
@@ -136,7 +136,8 @@
                                 {{$wine->edition}} <sup>БУТЫЛОК</sup>
                             </div>
                             <div class="attributes graduswc">
-                                <img src="{{asset('image/gradus.png')}}">{{$wine->fortress}}%</div>
+                                <img src="{{asset('image/gradus.png')}}">{{$wine->fortress}}%
+                            </div>
                             <div class="attributes volumewc">{{$wine->volume}}</div>
                             <div class="attributes yearwc">{{$wine->year}}</div>
                         </div>

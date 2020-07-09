@@ -292,20 +292,5 @@
                 </div>
             </div>
         </section>
-        <!-- script for header toggleclass
-        $(window).scroll(function() {
-            var scroll = $(window).scrollTop();
 
-             //>=, not <=
-            if (scroll <= 500) {
-                //clearHeader, not clearheader - caps H
-                $("#head_f").removeClass("darkHeader");
-            }
-            if (scroll >= 500) {
-                //clearHeader, not clearheader - caps H
-                $("#head_f").addClass("darkHeader");
-            }
-        });
-      -->
-        <!-- /homepage1   -->
 @endsection

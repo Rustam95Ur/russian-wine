@@ -9,7 +9,7 @@ class SetController extends Controller
 {
     public function index()
     {
-        $sets = Set::where('status', '=', 'ACTIVE')->where('in_main', '=', 1)->get();
+        $sets = Set::where('status', '=', 'ACTIVE')->where('in_main', '=', 1)->orderBy('title', 'ASC')->get();
         return view('sets.index', [
             'sets' => $sets
         ]);

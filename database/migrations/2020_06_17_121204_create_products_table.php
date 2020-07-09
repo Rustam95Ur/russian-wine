@@ -36,8 +36,8 @@ class CreateProductsTable extends Migration
             $table->integer('count');
             $table->string('image')->nullable();
             $table->string('slug')->unique();
-            $table->text('meta_description');
-            $table->text('meta_keywords');
+            $table->text('meta_description')->nullable();
+            $table->text('meta_keywords')->nullable();
             $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');
             $table->timestamps();
         });
