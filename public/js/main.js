@@ -15,19 +15,6 @@
 *
 */
 
-$(window).scroll(function() {
-    var scroll = $(window).scrollTop();
-
-     //>=, not <=
-    if (scroll >= 500) {
-        //clearHeader, not clearheader - caps H
-        $("#head_f").addClass("darkHeader");
-    }
-    if (scroll <= 500) {
-        //clearHeader, not clearheader - caps H
-        $("#head_f").removeClass("darkHeader");
-    }
-}); //missing );
 
 if ($(window).width() < 991) {
     var swiper = new Swiper('#home_slider', {

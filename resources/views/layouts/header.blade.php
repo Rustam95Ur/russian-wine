@@ -1,4 +1,4 @@
-<header id="head_f" class="home_header">
+<header id="head_f" class="home_header darkHeader">
     <div class="container container-lg">
         <div class="row">
             <div class="col-sm-2">
