@@ -55,12 +55,18 @@
                                 <div class="dropdown-menu-custom">
                                     <div class="dropdown-inner">
                                         <ul class="list-unstyled">
-                                            <li><a href="{{route('regions')}}">Регионы виноделия</a></li>
-                                            <li><a href="#">Русские винодельни</a></li>
-                                            <li><a href="#">Микровинодельни</a></li>
-                                            <li><a href="{{route('winemakers')}}">{{trans('header.winemakers')}}</a>
+                                            <li>
+                                                <a href="{{route('regions')}}">{{trans('header.regions')}}</a>
                                             </li>
-                                            <li><a href="{{route('where_to_by')}}">{{trans('header.where_to_by')}}</a>
+                                            <li>
+                                                <a href="{{route('wineries')}}">{{trans('header.wineries')}}</a>
+                                            </li>
+                                            <li><a href="{{route('micro_winery')}}">{{trans('header.micro_winery')}}</a></li>
+                                            <li>
+                                                <a href="{{route('winemakers')}}">{{trans('header.winemakers')}}</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{route('where_to_by')}}">{{trans('header.where_to_by')}}</a>
                                             </li>
                                         </ul>
                                     </div>

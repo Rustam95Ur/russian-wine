@@ -7574,7 +7574,7 @@ max-height: 1.823vw;
 
 .wineries .heading-wrap {
     height: 22.708vw;
-    background: url(/image/wineries-bg.jpg);
+    background: url(/image/bg/wineries-bg.jpg);
     background-size: cover;
     padding-top: 5.1vw
 }
@@ -7644,7 +7644,7 @@ max-height: 1.823vw;
     }
     .wineries .heading-wrap {
         height: 83.333vw;
-        background-image: url(/image/wineries-bg-mob.jpg);
+        background-image: url(/image/bg/wineries-bg-mob.jpg);
         background-size: cover
     }
     .col-lg-12.moreshown .desc-container {

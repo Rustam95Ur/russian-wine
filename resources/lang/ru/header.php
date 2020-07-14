@@ -8,5 +8,8 @@ return [
         'winemakers'        => 'Русские виноделы',
         'personal-wine'     => 'Именное вино',
         'testing'           => 'Дегустации',
-        'where_to_by'       => 'Где купить'
+        'where_to_by'       => 'Где купить',
+        'regions'           => 'Регионы виноделия',
+        'wineries'          => 'Русские винодельни',
+        'micro_winery'      => 'Микровинодельни',
 ];

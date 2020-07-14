@@ -19,6 +19,10 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('', 'Home\IndexController@index')->name('home');
 Route::get('/wine-shop', 'Shop\IndexController@wine_list')->name('wine-shop');
 Route::get('/sets', 'Shop\SetController@index')->name('sets');
+
+Route::get('/wineries', 'Page\WineryController@index')->name('wineries');
+Route::get('/micro_winery', 'Page\WineryController@micro_winery')->name('micro_winery');
+Route::get('/winery/{slug}', 'Page\WineryController@show')->name('winery');
 Route::get('/set-{slug}', 'Shop\SetController@show')->name('set');
 Route::get('/subscription', 'Shop\SubscriptionController@index')->name('subscription');
 Route::get('/winemakers', 'Page\WinemakerController@index')->name('winemakers');
