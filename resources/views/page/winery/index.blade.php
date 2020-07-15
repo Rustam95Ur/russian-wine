@@ -68,9 +68,9 @@
             $('.special-tab li').click(function () {
                 $('.special-tab li').removeClass('active');
                 $(this).addClass('active');
-                var texttitle = $(this).text();
-                $('#region-name').text(texttitle);
-                var region = $(this).attr('data-region');
+                var region = $(this).attr('data-region'),
+                    text_title = $(this).text();
+                $('#region-name').text(text_title);
                 $('.wineries .container .container-lg > .column-win').removeClass('leftside-b rightside-b');
                 $('.wineries .container .container-lg').removeClass('active');
                 $('.wineries .container .container-lg[data-region=' + region + ']').addClass('active');

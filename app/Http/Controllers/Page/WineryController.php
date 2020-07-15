@@ -33,6 +33,14 @@ class WineryController extends Controller
         ]);
     }
 
+    public function show($slug)
+    {
+        $winery = Winery::where('slug', '=', $slug)->with('images', 'wines')->firstOrFail();
+        return view('page.winery.show', [
+            'winery' => $winery
+        ]);
+    }
+
     public function simple_page($slug)
     {
         $page = Page::where('slug', '=', $slug)->where('status', '=', 'ACTIVE')->firstOrFail();
