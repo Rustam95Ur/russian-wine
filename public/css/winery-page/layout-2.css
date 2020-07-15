@@ -1,0 +1,164 @@
+@media (min-width: 992px) {
+    .layout-2 .teruar_bg {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .layout-2 .teruar {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        top: 170px;
+        font-size: 90px;
+        padding-right: 3%;
+    }
+
+    .layout-2 .teruar_bg p {
+        margin: 0;
+        padding: 40px 25px 20px 0;
+        font-size: 18px;
+    }
+
+    .layout-2 .text_field .container .col-md-7 img {
+        position: absolute;
+        margin-top: -100px;
+        z-index: 10;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .layout-2 .text_ter_two {
+        font-size: 18px;
+        padding: 5px 65px 5px 100px;
+        text-align: center
+    }
+
+    .layout-2 .text_with_map {
+        text-align: left;
+        font-size: 18px;
+        padding: 50px 80px;
+    }
+
+    .layout-2 .vine_info {
+        padding-top: 0;
+        background: #fff;
+    }
+
+    .layout-2 .plod_title {
+        font-size: 16px !important;
+        color: #fff !important;
+        width: 100px;
+        padding-top: 15px !important;
+        padding-bottom: 15px;
+    }
+
+    .layout-2 .plod {
+        width: 100%;
+        text-align: center;
+    }
+
+    .layout-2 .vine_info p {
+        padding: 20% 5% 0 20%;
+        font-size: 18px;
+    }
+
+    .layout-2 .about_vinogradnik {
+        padding: 10% 26% 0 24%;
+        font-size: 18px;
+    }
+
+    .layout-2 .vinogradniki_title {
+        font-size: 90px;
+        padding-left: 0;
+    }
+
+    .layout-2 .posadki_vinogradnikov {
+        background-image: url(../../image/bg/wines_bg.jpg);
+        background-repeat: no-repeat;
+        position: relative;
+        color: #fff;
+        background-size: cover;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .layout-2 .posadki_vinogradnikov h2 {
+        color: #817f7f;
+        text-align: right;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 30px;
+        line-height: 130%;
+    }
+
+    .layout-2 .species_posadki .col-md-3 h6 {
+        font-size: 40px;
+        color: #da224d;
+        font-family: 'ProximaNova-Bold';
+    }
+
+    .layout-2 .posadki_vinogradnikov_below {
+        background-color: rgba(241, 241, 241, 1);
+    }
+    .layout-2 .posadki_vinogradnikov_below h4 {
+        font-size: 30px;
+        margin-bottom: 60px;
+    }
+    .layout-2 .posadki_vinogradnikov_below .first_text {
+        background: #fff;
+        margin-top: -50px;
+        padding: 50px 60px;
+        font-size: 18px;
+        background-image: url(../../image/bg/background_bokal.png);
+        background-size: auto 110%;
+        background-repeat: no-repeat;
+        background-position: 124% 35%;
+    }
+    .layout-2 .second_text {
+        padding: 5% 11% 5% 8%;
+        font-size: 18px;
+    }
+
+    .layout-2 .vinogradnik_title {
+        font-size: 130px;
+        color: #d6d6d6;
+        z-index: 2;
+        text-align: center;
+    }
+    .layout-2 .proizvoditelnost {
+        position: relative;
+        display: block;
+        width: 100%;
+        max-width: 200px;
+        padding: 18.5px 25px;
+        font-size: 15px;
+
+    }
+    .layout-2 .proizvoditelnost p {
+        font-family: 'ProximaNova-Bold';
+    }
+    .layout-2 .proizvoditelnost h2, #legrand .proizvoditelnost h3 {
+        margin: 0;
+    }
+    .layout-2 .proizvoditelnost h3   {
+        font-size: 21px !important;
+        color: white !important;
+    }
+    .layout-2 .proizvoditelnost h2   {
+        font-size: 35px;
+        margin-top: 20px;
+        margin-bottom: -10px;
+        color: white !important;
+    }
+    .layout-2  .vinodelnia .text_below_second {
+        font-size: 22px;
+        color: #000;
+        font-family: Lato-Light;
+        padding-top: 45px;
+    }
+    .layout-2 .vinodelnia {
+        background: rgba(241,241,241,1);
+        padding-bottom: 100px;
+    }
+}

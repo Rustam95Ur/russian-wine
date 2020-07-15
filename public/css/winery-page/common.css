@@ -1,0 +1,160 @@
+@media (min-width: 992px) {
+    .about_person_below .text_space_old {
+        padding: 140px 15% 125px;
+        text-align: center;
+    }
+
+    .teruar_bg p {
+        margin: 60px;
+    }
+
+    .text_with_map {
+        padding: 50px 100px;
+    }
+
+    .vinogradniki h2 {
+        font-size: 5em;
+    }
+    .teruar {
+        margin-top: -250px;
+    }
+
+}
+
+.text_space_old {
+    font: 30px ProximaNova-Bold;
+}
+
+.page_image {
+    width: 100%;
+    height: auto;
+}
+
+.teruar_text_block {
+    padding: 5% 8% 5% 10%;
+}
+
+.teruar_map {
+    margin-top: -70px;
+}
+
+#information-winery .swiper-button-next, #information-winery .swiper-button-prev {
+    position: absolute;
+    top: 50% !important;
+    width: 27px !important;
+    height: 44px !important;
+    margin-top: -22px;
+    z-index: 10;
+    cursor: pointer;
+    -moz-background-size: 27px 44px;
+    -webkit-background-size: 27px 44px;
+    background-size: 27px 44px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#information-winery .wines-slider .item-inner, #information-winery .swiper-slide .item-inner {
+    padding-bottom: 80px;
+}
+
+.teruar_bg {
+    background-color: #2D1F31;
+    z-index: 10;
+    padding: 150px 0 80px;
+    position: relative;
+}
+
+.teruar_bg p {
+    color: #fff;
+    line-height: 25px;
+}
+
+.teruar {
+    color: #d6d6d6;
+    z-index: 90;
+    font-family: 'ProximaNova-Bold';
+}
+
+.about_person {
+    margin-bottom: 150px;
+}
+
+.text_field {
+    text-align: justify;
+    padding: 70px 10px 40px;
+}
+
+.fluid_img {
+    margin: -45% 0 0 -25%;
+}
+
+.map_space {
+    padding: 70px 10px 40px;
+}
+
+.text_with_map {
+    text-align: center;
+    line-height: 25px;
+}
+
+.vine_info {
+    background-color: #2D1F31;
+    padding: 50px 0 10px;
+}
+
+.row-no-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.vinogradniki h2 {
+    color: #d6d6d6;
+    margin-bottom: -17px;
+    margin-top: 0;
+    padding-left: 17%;
+}
+
+.vinogradnik_title {
+    font-family: 'ProximaNova-Bold';
+    font-size: 80px;
+}
+
+.plod {
+    background-color: #DA224D;
+    width: 40%;
+    padding: 2% 10%;
+    color: #fff;
+}
+
+.wine_ul {
+    padding: 5% 10%;
+}
+
+.plod_title {
+    margin: 0 !important;
+}
+
+.about_vinogradnik_last {
+    line-height: 27px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.person_text {
+    text-align: justify;
+    padding-top: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 18px;
+    font-weight: 100;
+}
+.proizvoditelnost {
+    background-color: #DA224D;
+    color: #fff;
+    margin: 0;
+    padding: 70px 45px;
+    z-index: 9;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    font-family: 'ProximaNova-Bold';
+}

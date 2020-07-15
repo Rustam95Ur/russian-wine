@@ -1362,7 +1362,7 @@ header #form-language .language-select {
 }
 
 #information-winery #inf_winery {
-    background: #1A0F1F url(../image/wines_bg.jpg) no-repeat center top;
+    background: #1A0F1F url(/image/bg/wines_bg.jpg) no-repeat center top;
     padding-bottom: 80px;
     background-size: cover
 }
