@@ -1,0 +1,206 @@
+@media (min-width: 992px) {
+    .layout-3 .signature {
+        text-align: left;
+        position: unset !important;
+        bottom: 0;
+        font-size: 18px;
+        font-family: Lato;
+    }
+
+    .layout-3 .about_person .col-md-7 img {
+        position: absolute;
+        top: -10px;
+        width: 100%;
+        left: 15px;
+        right: 15px;
+    }
+
+    .layout-3 .person_img {
+        margin-top: -30px;
+    }
+
+    .layout-3 .person_text {
+        padding-left: 0;
+        padding-right: 4%;
+        text-align: left;
+        font-family: Lato;
+        font-weight: 400;
+    }
+
+    .layout-3 .descrip_two .person_text {
+        padding: 5% 7% 0 13%;
+    }
+
+    .layout-3 .person_text {
+        padding-left: 0;
+        padding-right: 4%;
+        text-align: left;
+        font-family: Lato;
+        font-weight: 400;
+    }
+
+    .layout-3 .text_field.text_about_below {
+        padding-top: 0;
+    }
+
+    .layout-3 .text_about_below {
+        font-size: 19px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        color: #23252b;
+    }
+
+    .layout-3 .text_field.text_about_below .col-md-12 {
+        padding: 65px 15%;
+        font-size: 22px;
+        font-family: Lato-Light;
+    }
+
+    .layout-3 .teruar2 {
+        height: 820px;
+    }
+
+    .layout-3 .teruar2 h1 {
+        margin-top: -27px;
+        text-align: left !important;
+    }
+
+    .layout-3 .desc_teruar2 {
+        padding: 50px 70px;
+        font-size: 18px;
+        font-family: Lato;
+        margin-top: 332px;
+        width: 45%;
+    }
+
+    .layout-3 .text_map {
+        font-size: 24px;
+        font-family: Lato-Light;
+        padding: 8% 2% 8% 10%;
+    }
+
+    .layout-3 .vinogradnik2 {
+        margin-top: 150px;
+    }
+
+    .layout-3 .vinogradnik2 h1 {
+        position: absolute;
+        left: 10px;
+        top: -5.1vw;
+        z-index: 3;
+    }
+
+    .layout-3 .vinogradnik2 p {
+        font-size: 24px;
+        font-family: Lato-Light;
+        padding: 15% 0 0 10%;
+    }
+
+    .layout-3 .krasni_kvadrat {
+        padding: 45px 30px;
+        bottom: 110px;
+    }
+
+    .layout-3 .krasni_kvadrat p {
+        font-size: 22px;
+        font-family: 'ProximaNova-Bold';
+        text-align: center;
+        padding: 0;
+    }
+
+    .layout-3 .krasni_kvadrat h3 p {
+        font-size: 30px;
+    }
+
+    .layout-3 .crazy_pic_two {
+        width: 38%;
+        position: absolute;
+        z-index: 2;
+    }
+
+    .layout-3 .two_pic_div .crazy_text {
+        margin-left: -30px;
+        margin-top: -30px;
+    }
+
+    .layout-3 .crazy_text {
+        font-size: 18px;
+        font-family: Lato;
+        padding: 5% 5% 0 2%;
+    }
+
+    .layout-3 .desc_table h3 {
+        font-size: 40px;
+        font-family: 'ProximaNova-Bold';
+        margin-bottom: 0;
+    }
+
+    .layout-3 .desc_table p {
+        font-size: 18px;
+        font-family: Lato;
+        padding-bottom: 0;
+    }
+
+    .layout-3 .desc_table_text {
+        margin-top: 50px;
+        margin-left: -40px;
+        padding-right: 10%;
+    }
+
+    .layout-3 .desc_table_text p {
+        font-size: 18px;
+    }
+
+    .layout-3 .desc_table p {
+        font-size: 18px;
+        font-family: Lato;
+        padding-bottom: 0;
+    }
+    .layout-3 .last_txt_vinogr {
+        font-size: 24px;
+        font-family: Lato-Light;
+        padding: 40px 10%;
+    }
+    .layout-3 .last_txt_vinogr .history {
+        line-height: 1.8;
+    }
+    .layout-3 .vinodelnia2 {
+        margin-top: 150px;
+    }
+    .layout-3 .vinodelnia2 .container {
+        position: relative;
+    }
+    .layout-3 .vinodelnia2 h1 {
+        font-size: 90px;
+        margin-bottom: -22px;
+        position: absolute;
+        top: -98px;
+    }
+
+    .layout-3 .vinodelnia_text {
+        font-size: 18px;
+        padding: 50px 76px;
+        width: 40%;
+    }
+    .layout-3 .vinodelnia_prelast_text {
+        padding: 81px 6% 0 5%;
+        font-size: 18px;
+    }
+    .layout-3 .vinodelnia_prelast_text p {
+        padding: 15px 0;
+    }
+    .layout-3 .last_desc {
+        margin-bottom: 150px;
+    }
+    .layout-3 .last_desc .col-md-4 {
+        padding: 30px 20px 30px 150px;
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    .layout-3 .last_desc .col-md-4 p {
+        padding: 15px 0;
+        line-height: 1.5;
+    }
+}
