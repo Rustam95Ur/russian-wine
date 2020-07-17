@@ -61,7 +61,6 @@
 <div class="teruar_bg">
     <div class="container">
         <h2 class="teruar">Терруар</h2>
-
         <div class="col-md-11 col-xs-12">
             @foreach($winery->images as $block)
                 @if ($block->numbering == 1 and $block->type_id == 3)

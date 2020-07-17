@@ -5948,9 +5948,6 @@ h2.price {
     #sikory_page .desc-elem {
         display: block!important
     }
-    .main_bg {
-        margin-top: 89px
-    }
 }
 
 @media (min-width: 1025px) {

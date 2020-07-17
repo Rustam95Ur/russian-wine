@@ -10,7 +10,7 @@
     <div id="information-winery" class="information-winery layout-{{$winery->layout_id}}">
         <div id="content" class="">
             <div id="main_page">
-                <div class="main_bg_mob"
+                <div class="main_bg"
                      style="background: url('{{Voyager::image($winery->header_image)}}'); background-size: cover">
                     <div class="container" style="position:relative;">
                         <div class="row mt-md mb-sm">
