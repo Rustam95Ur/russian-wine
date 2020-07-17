@@ -34,6 +34,9 @@ Route::get('/where-to-buy', 'Page\IndexController@where_to_by')->name('where_to_
 Route::get('/winemaking-regions', 'Page\RegionController@index')->name('regions');
 Route::get('/region-{slug}', 'Page\RegionController@show')->name('region');
 
+Route::get('/search', 'Home\SearchController@search')->name('search');
+
+
 Route::get('/{slug}', 'Page\IndexController@simple_page')->name('simple_page');
 
 
