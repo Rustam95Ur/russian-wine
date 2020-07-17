@@ -183,3 +183,7 @@ h1.pageHeading{
 .featured_cont:last-child {
     padding-bottom: 5vw;
 }
+.searchError {
+  padding: 15px; 
+  color:red
+}

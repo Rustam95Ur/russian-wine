@@ -144,7 +144,7 @@
 
                 $("#searchResult").html(res)
                 } else {
-                    return;
+                    $("#searchResult").html("<div class='col-md-12 searchError'>"+data.error+"</div>")
                 }
                 }
                 
