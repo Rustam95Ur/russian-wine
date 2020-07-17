@@ -135,10 +135,10 @@
             data:{'q':$value},
             success:function(data){
                 res = []
-                
+                console.log(location.hostname)
                 if (data.length > 0) {
                     for (var i = 0; i < 3; i++) {
-                    res[i] = "<ul><li><img id='search' src='{{ asset ('image/6.png') }}' class='xs-thumb'>"+data[i].title+ ' ' + data[i].production_feature.substring(1,40)+ '...' + "</li></ul>"
+                    res[i] = "<ul><li><img id='search' src='"+data[0].image+"' class='xs-thumb'>"+data[i].title+ ' ' + data[i].production_feature.substring(1,40)+ '...' + "</li></ul>"
                     
                 }
 
