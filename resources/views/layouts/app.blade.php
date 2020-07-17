@@ -86,6 +86,7 @@
 <script src="{{ asset('rev-slider/js/extensions/revolution.extension.parallax.min.js')  }}"></script>
 <script src="{{ asset('rev-slider/js/extensions/revolution.extension.slideanims.min.js')  }}"></script>
 <script src="{{ asset('rev-slider/js/extensions/revolution.extension.video.min.js')  }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script type="text/javascript">
     jQuery(".nav-folderized h5").click(function () {
         jQuery(this).parent(".nav").toggleClass("open");
@@ -113,6 +114,36 @@
     @else
     $('#head_f').addClass("darkHeader")
     @endif
+</script>
+
+
+<!-- Ajax search Нужно допилить -->
+<!-- Ниже пример  HTML который был -->
+
+<!-- <ul>
+    <li id="searchList"><img id="search" src="{{ asset ('image/6.png') }}" class="xs-thumb"></li>
+    <li id="searchList"><img id="search" src="{{ asset ('image/6.png') }}" class="xs-thumb"></li>
+    <li id="searchList"><img id="search" src="{{ asset ('image/6.png') }}" class="xs-thumb"></li>
+</ul> -->
+<script type="text/javascript">
+    $('#search').on('keyup',function(){
+        $value=$(this).val();
+        $.ajax({
+        type : 'get',
+        url : '{{URL::to('search')}}',
+        data:{'q':$value},
+        success:function(data){
+        res = []
+        for (var i = 0; i < 3; i++) {
+            res[i] = "<ul><li><img id='search' src='{{ asset ('image/6.png') }}' class='xs-thumb'>"+data[i].title+ ' ' + data[i].production_feature.substring(1,40)+ '...' + "</li></ul>"
+            
+        }
+
+        $("#searchResult").html(res)
+
+        }
+        });
+    })
 </script>
 
 </body>

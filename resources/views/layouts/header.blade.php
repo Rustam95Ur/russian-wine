@@ -161,22 +161,19 @@
         <a class="closebtn" onclick="$('#myOverlay').removeClass('open');" title="Close Overlay"><img
                 src="{{ asset ('image/plus.png') }}" style="transform: rotateZ(45deg); "></a>
         <div class="overlay-content">
-            <form action="#">
+            <form action="{{route('search')}}">
                 <img alt="search icon" src="{{ asset ('image/search.svg') }}" id="searchInputIcon">
-                <input type="text" placeholder="Поиск..." name="search">
+                <input type="text" placeholder="Поиск..." name="search" id="search">
             </form>
         </div>
-        <div class="overlay-results">
-            <ul>
-                <li><img src="{{ asset ('image/6.png') }}" class="xs-thumb"> Каберне Фран Сикоры, розовое сухое вино,
-                    урожая 2017, 0,75 л
-                </li>
-                <li>22</li>
-                <li>333</li>
-                <li>4444</li>
-            </ul>
+        <div class="overlay-results" >
+            <div id="searchResult">
+                
+            </div>
+            
             <button type="button" name="all Search  Results" class="allResults">Показать все результаты</button>
         </div>
     </div>
     <!-- ///////////////               End Search Input                    \\\\\\\\\\\\\\\\\\-->
 </header>
+
