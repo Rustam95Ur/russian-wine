@@ -127,22 +127,29 @@
 </ul> -->
 <script type="text/javascript">
     $('#search').on('keyup',function(){
-        $value=$(this).val();
-        $.ajax({
-        type : 'get',
-        url : '{{URL::to('search')}}',
-        data:{'q':$value},
-        success:function(data){
-        res = []
-        for (var i = 0; i < 3; i++) {
-            res[i] = "<ul><li><img id='search' src='{{ asset ('image/6.png') }}' class='xs-thumb'>"+data[i].title+ ' ' + data[i].production_feature.substring(1,40)+ '...' + "</li></ul>"
-            
-        }
+        if($(this).val().length >= 3){
+            $value=$(this).val();
+            $.ajax({
+            type : 'get',
+            url : '{{URL::to('search')}}',
+            data:{'q':$value},
+            success:function(data){
+                res = []
+                
+                if (data.length > 0) {
+                    for (var i = 0; i < 3; i++) {
+                    res[i] = "<ul><li><img id='search' src='{{ asset ('image/6.png') }}' class='xs-thumb'>"+data[i].title+ ' ' + data[i].production_feature.substring(1,40)+ '...' + "</li></ul>"
+                    
+                }
 
-        $("#searchResult").html(res)
-
-        }
-        });
+                $("#searchResult").html(res)
+                } else {
+                    return;
+                }
+                }
+                
+            });
+        }  
     })
 </script>
 
