@@ -12,9 +12,10 @@ class SearchController extends Controller
 {
 	public function search(Request $request)
 	{
-        $wines=Wine::where('title','LIKE','%'.$request->q."%")->where('status', '=', 'ACTIVE')->get();
+        $wines = Wine::where('title','LIKE','%'.$request->q."%")->where('status', '=', 'ACTIVE')->get();
 
-        return $wines;
+        return count($wines) ? $wines : ["error" => "По вашему запросу ничего не найдено"];
+ 
     }
 }
 ?>
