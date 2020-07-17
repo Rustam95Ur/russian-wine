@@ -12,7 +12,7 @@ class SearchController extends Controller
 {
 	public function search(Request $request)
 	{
-        $wines=Wine::where('title','LIKE','%'.$request->q."%")->get();
+        $wines=Wine::where('title','LIKE','%'.$request->q."%")->where('status', '=', 'ACTIVE')->get();
 
         return $wines;
     }
