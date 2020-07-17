@@ -4,6 +4,40 @@
         text-align: center;
     }
 
+    .vinogradniki_text_below {
+        margin-top: 100px;
+    }
+
+    .species_box .white, .species_box .red {
+        font-family: 'ProximaNova-Bold';
+    }
+
+    .species_box .white {
+        color: #cdc266;
+    }
+
+    .species_box h6 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .cvet_sorta p {
+        font-family: Lato-Light;
+    }
+
+    .species_box .white, .species_box .red {
+        font-family: 'ProximaNova-Bold';
+    }
+
+    .species_box .red {
+        color: #da224d;
+    }
+
+    .species_box h6 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
     .teruar_bg p {
         margin: 60px;
     }
@@ -29,6 +63,10 @@
 .page_image {
     width: 100%;
     height: auto;
+}
+
+.person_img {
+    margin-top: -60px;
 }
 
 .teruar_text_block {
@@ -281,4 +319,25 @@
     .crazy_pic_four {
         margin-top: -90px;
     }
+}
+
+
+.name_vinodelnia {
+    font-family: 'ProximaNova-Bold';
+    color: #d6d6d6;
+    margin: 0;
+    line-height: 38px;
+    z-index: 9;
+}
+.name_vinodelnia {
+    font-family: 'ProximaNova-Bold';
+    color: #d6d6d6;
+    margin: 0;
+    line-height: 38px;
+    z-index: 9;
+}
+
+.fluid_image {
+    margin-left: 0;
+    margin-top: -63px;
 }

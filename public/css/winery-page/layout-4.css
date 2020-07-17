@@ -1,0 +1,407 @@
+@media (min-width: 992px) {
+    .layout-4 .about_person {
+        background: #2D1F31;
+        margin-bottom: 0;
+    }
+
+    .layout-4 .about_person img {
+        margin-bottom: 15px;
+    }
+
+    .layout-4 #img_naming {
+        color: #6c5c72;
+        font-size: 20px;
+        font-family: 'ProximaNova-Bold';
+    }
+
+    .layout-4 .text_below_img, .layout-4 .about_person_below .about_text_first p {
+        font-family: Lato-Light;
+    }
+
+    .layout-4 .person_text {
+        background-color: #fff;
+        background-image: url(../../image/bg/about_bg.png);
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        font-size: 22px;
+        padding: 3% 4% 270px;
+        text-align: left;
+    }
+
+    .layout-4 .about_person .text_img p {
+        color: #fff;
+    }
+
+    .layout-4 .signature {
+        right: 0 !important;
+    }
+
+    .layout-4 .text_below_img {
+        padding: 50px 0;
+    }
+
+    .layout-4 .fluid_img.wine_image.image_one {
+        margin-top: -40px;
+        margin-left: -30px;
+        width: 105%;
+    }
+
+    .layout-4 .about_person_below .container img {
+        margin-bottom: -50px;
+        margin-top: -100px;
+    }
+
+    .layout-4 .col-md-5.about_text_first_2 {
+        padding: 50px 6% 0 0;
+    }
+
+    .layout-4 .sorta_vinograda .col-md-12 p, .layout-4 .col-md-5.about_text_first_2 {
+        padding-left: 0;
+        font-size: 22px;
+        font-family: Lato-Light;
+    }
+
+    .layout-4 .about_person_below .about_text_first p {
+        padding: 15% 7% 15% 15%;
+        font-size: 18px;
+    }
+
+    .layout-4 .sorta_vinograda .col-md-12 p, .layout-4 .col-md-5.about_text_first_2 {
+        padding-left: 0;
+        font-size: 22px;
+        font-family: Lato-Light;
+    }
+
+    .layout-4 .col-md-5.about_text_first_2 {
+        padding: 50px 6% 0 0;
+    }
+
+    .layout-4 .about_person_below p {
+        padding: 5%;
+    }
+
+    .layout-4 .about_person_below {
+        background: rgba(241, 241, 241, 1);
+        margin-bottom: 190px;
+    }
+
+    .layout-4 .teruar_bg {
+        padding: 0;
+        margin-top: 100px;
+        background: transparent;
+        margin-bottom: 170px;
+    }
+
+    .layout-4 h2.teruar {
+        margin: 0;
+        position: absolute;
+        top: -78px;
+        z-index: 2;
+        font-size: 90px;
+    }
+
+    .layout-4 .teruar_bg p {
+        margin: 60px 35px 60px 100px;
+    }
+
+
+}
+
+@media only screen and (min-width: 768px) {
+    .layout-4 .teruar_bg .col-md-8 p {
+        margin-top: 100px;
+    }
+}
+
+@media (min-width: 992px) {
+
+    .layout-4 .name_vinodelnia {
+        width: 100%;
+        text-align: right;
+        background: rgba(241, 241, 241, 1);
+        margin-top: 150px;
+        margin-bottom: 12px;
+        font-size: 200px;
+        padding: 20px 0 150px;
+    }
+
+    .layout-4 .text_vinogradnik {
+        padding: 7% 9% 7% 0;
+        font-family: Lato-Light;
+        font-size: 18px;
+    }
+
+    #layout-4 .vinogradniki_below img {
+        position: absolute;
+        z-index: 1;
+        margin-bottom: -200px;
+        margin-top: 100px;
+        left: 8%;
+    }
+
+    .layout-4 .vinogradniki_below p, #layout-4 .vinogradniki_below img {
+        width: 84%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .layout-4 .vinogradniki_below img {
+        margin-bottom: -200px;
+        margin-top: 100px;
+        left: 8%;
+        z-index: 1;
+    }
+
+    .layout-4 .species_box {
+        padding-top: 280px;
+        padding-bottom: 145px;
+        padding-left: 5%;
+    }
+
+    .layout-4 .vinogradniki_below img {
+        position: absolute;
+        z-index: 1;
+    }
+
+    .layout-4 .sorta_vinograda .title_box h5 {
+        color: #4d3c53;
+        width: 400px;
+        text-align: right;
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        font-size: 90px;
+        font-family: 'ProximaNova-Bold';
+    }
+
+    .layout-4 .sorta_vinograda .col-md-12 {
+        margin: 40px 5% 150px;
+    }
+
+    .layout-4 .sorta_vinograda .col-md-12 p, .layout-4 .col-md-5.about_text_first_2 {
+        padding-left: 0;
+        font-size: 22px;
+        font-family: Lato-Light;
+    }
+
+    .layout-4 .sorta_vinograda .title_box {
+        position: absolute;
+        background: rgba(45, 32, 50, 1);
+        color: #fff;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: auto auto;
+        height: 550px;
+        z-index: -1;
+    }
+
+    .layout-4 .vinogradniki_below {
+        background: rgba(241, 241, 241, 1);
+        position: relative;
+        padding-bottom: 300px;
+    }
+
+    .layout-4 .vinogradniki_text_below p {
+        text-align: center;
+        font-size: 24px;
+        font-family: Lato-Light;
+    }
+
+    .layout-4 .vinogradniki_below p, .layout-4 .vinogradniki_below img {
+        width: 84%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .layout-4 .teruar_bg p {
+        font-family: Lato-Light;
+    }
+
+    .layout-4 .vinogradniki {
+        margin-top: 100px;
+    }
+
+    .layout-4 .vinogradniki_bg {
+        position: relative;
+        height: 748px;
+        background-size: cover;
+    }
+
+    .layout-4 .vinogradniki_bg .col-md-offset-1 {
+        margin-left: 2.5%;
+    }
+
+    .layout-4 .vinogradniki h2 {
+        margin-top: -113px;
+        margin-bottom: -30px;
+        font-size: 130px;
+        padding-left: 0;
+        margin-left: -8px;
+    }
+
+    .layout-4 .vine_info {
+        margin-top: -27px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        text-align: center;
+    }
+
+    .layout-4 .plod {
+        width: 100%;
+    }
+
+    .layout-4 .vinogradniki .plod {
+        background: transparent;
+    }
+
+    .layout-4 .plod_desc {
+        font-size: 18px;
+        line-height: 1.8;
+    }
+
+    .layout-4 .plod_title {
+        padding-bottom: 0;
+        font-size: 30px;
+        color: #fff !important;
+    }
+
+    .layout-4 .vinogradniki_bg .vinograd_title {
+        font-family: 'ProximaNova-Bold';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        font-size: 33px;
+        padding: 10px 25px;
+        width: 50%;
+        background: rgba(255, 255, 255, 0.75);
+    }
+
+    .layout-4 .teruar_bg p {
+        color: #000;
+        font-size: 18px;
+    }
+
+    .layout-4 .teruar_bg .col-md-6 {
+        position: relative;
+    }
+
+    .layout-4 .teruar_bg .col-md-6 .abs_img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+
+    .layout-4 .terruar_text_2 {
+        padding-left: 5%;
+        padding-right: 0;
+        padding-bottom: 8%;
+    }
+
+    .layout-4 .teruar_bg p {
+        color: #000;
+        font-size: 18px;
+    }
+
+    .layout-4 .terruar_text_2 p, .layout-4 .terruar_text_3 p {
+        margin: 0;
+    }
+
+    .layout-4 .terruar_text_2 p {
+        font-family: Lato-Light;
+        line-height: 1.4;
+    }
+
+    .layout-4 .terruar_text_3 {
+        padding: 7% 40px;
+        font-size: 18px;
+        font-family: Lato;
+    }
+
+    .layout-4 .vinodelnia .vinodelnia_t_1 {
+        background: #2D1F31;
+        margin-top: -113px;
+        padding: 310px 45px 103px calc(17.23% + 40px);
+    }
+    .layout-4 .vinodelnia .vinodelnia_t_1 p {
+        color: #fff;
+        font-size: 18px;
+    }
+    .layout-4 .vinodelnia .col-md-10 p {
+        color: #000;
+        font-size: 18px;
+        padding: 10% 0;
+    }
+    .layout-4 .vinodelnia_below {
+        background: rgba(241,241,241,1);
+        margin-top: 5%;
+    }
+    .layout-4 .img_vin_below {
+        margin-bottom: 200px;
+        margin-top: -40px;
+    }
+    .layout-4 .img_vin_below_1 {
+        position: relative;
+    }
+    .layout-4 .img_vin_below_1 img {
+        position: absolute;
+        width: 108.666667%;
+        left: 0;
+        right: 8.666667%;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+    }
+    .layout-4 .img_vin_below_2 img {
+        margin: -8.666667% 0 0 -8.666667%;
+    }
+    .layout-4 .sector_2 {
+        margin-bottom: 300px;
+    }
+    .layout-4 .sector_2 .row {
+        position: relative;
+    }
+    .layout-4 .sector_2 img {
+        padding-left: 8.666667%;
+        padding-right: 8.666667%;
+    }
+
+    .layout-4 .text_last {
+        width: 485px;
+        position: absolute;
+        left: 43%;
+        top: -94px;
+    }
+    .layout-4 .text_last .heading_last {
+        background: rgba(255,255,255,0.7);
+        font-size: 30px;
+        padding: 15px 30px;
+        font-family: 'ProximaNova-Bold';
+    }
+    .layout-4 .text_last .body_last {
+        background: #fff;
+        font-size: 18px;
+        padding: 15px 30px;
+    }
+}
+
+.layout-4 #map {
+    height: 350px;
+    margin-top: -170px;
+}
+
+
+@media (max-width: 1919px) and (min-width: 1200px) {
+    .layout-4 .vinodelnia .vinodelnia_t_1 {
+        padding-top: 240px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .layout-4 .vinodelnia .vinodelnia_t_1 {
+        padding-bottom: 65px;
+    }
+}
+
