@@ -16831,3 +16831,8 @@ a.likeSlider {
     max-height: 3.7vw;
     padding: 0 1.251vw 0 0;
 }
+@media (max-width: 478px) {
+    .slide-inner div:first-child {
+        max-height: 210px!important;
+    }
+}

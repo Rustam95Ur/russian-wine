@@ -248,16 +248,16 @@
 
         <section class="swp" id="swineries">
             <div class="scol col-rs-8">
-                <h5><a href="/wineries">Русские винодельни</a></h5>
+                <h5><a href="{{route('wineries')}}">Русские винодельни</a></h5>
                 <p>За последние десятилетия в русском виноделии совершён качественный рывок. В России появились
                     винодельни мирового уровня.</p>
-                <a href="https://russianvine.ru/wineries"></a>
+                <a href="{{route('wineries')}}"></a>
             </div>
             <div class="scol col-rs-6">
-                <h5><a href="https://russianvine.ru/mikrovinodelni">Микровинодельни</a></h5>
+                <h5><a href="{{route('micro_winery')}}">Микровинодельни</a></h5>
                 <p>Новое и самое интересное в современном виноделии России. Небольшие фермерские хозяйства, а также
                     семейные винодельни. </p>
-                <a href="https://russianvine.ru/mikrovinodelni"></a>
+                <a href="{{route('micro_winery')}}"></a>
             </div>
         </section>
 
