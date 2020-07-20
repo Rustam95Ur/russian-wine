@@ -32,18 +32,18 @@
                         </a><a href="{{route('sets')}}" class="home_btn">Выбрать Сет</a>
 
                     </div>
-                    <div class="swiper-slide text-center"><a href="https://russianvine.ru/tasting/">
+                    <div class="swiper-slide text-center"><a href="{{route('tastings')}}">
                             <img alt="Club Bg" src="{{ asset ('image/background_club.png') }}">
                             <span>Дегустации</span>
                             <p>
                                 Обладая опытом проведения дегустаций различного уровня, берёмся за форматы любой
                                 сложности, как для профессионалов, так и для новичков в мире вина.
                             </p>
-                        </a><a href="https://tasting.russianvine.ru" class="home_btn">Записаться</a>
+                        </a><a href="{{route('tastings')}}" class="home_btn">Записаться</a>
 
                     </div>
                     <div class="swiper-slide text-center">
-                        <a href="/imennoe-vino">
+                        <a href="{{route('personal-wine')}}">
                             <img alt="Personal wine" src="{{ asset ('image/background_imennoe.png') }}">
                             <span>Именное вино</span>
                             <p>
@@ -51,7 +51,7 @@
                                 разливается в бутылки с Вашей именной этикеткой.
                             </p>
                         </a>
-                        <a class="home_btn" href="/imennoe-vino">Узнать больше</a>
+                        <a class="home_btn" href="{{route('personal-wine')}}">Узнать больше</a>
                     </div>
                 </div>
             </div>
@@ -144,9 +144,9 @@
                     </div>
                 </div>
                 <div class="col-md-4 bannerstitle">
-                    <a href="https://russianvine.ru/vino-set-dzitoev">
-                        <img src="{{ asset ('image/set-dzitoev-mesyasc.png') }}">
-                        <h6>сет месяца <span>Вина Дзитоева</span></h6>
+                    <a href="{{route('set', $main_set->slug)}}">
+                        <img alt="{{$main_set->title}}" src="{{ Voyager::image($main_set->home_image) }}">
+                        <h6>сет месяца <span>{{$main_set->title}}</span></h6>
                         <button>ЗАКАЗАТЬ СЕТ</button>
                     </a>
                 </div>

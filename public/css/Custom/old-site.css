@@ -12769,7 +12769,7 @@ form h2 {
     border: none;
     letter-spacing: 0.1vw;
     position: relative;
-    z-index: 20;
+    z-index: 1;
 }
 
 
@@ -13294,9 +13294,9 @@ label {
 
 #skidka {
     font-family: 'ProximaNova-Bold';
-    font-size: 3.385vw;
+    font-size: 1.385vw;
     float: right;
-    color: #6e6b77;
+    color: #da224d;
     margin-top: 0.5vw;
 }
 

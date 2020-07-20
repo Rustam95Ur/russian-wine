@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @push('styles')
     <link rel="stylesheet" type="text/css" href="{{asset('css/subscription.css')}}">
-    @endpush
+@endpush
 @section('content')
     <div id="product-category" class="container">
         <ul class="breadcrumb">
@@ -40,11 +40,14 @@
                                             Более того, при оформлении подписки Вы будете гарантированно получать вина,
                                             которые нельзя будет купить в винотеках.
                                         </p>
-                                        <a href="/avtohtonnyj-set-1">
-                                            <button id="podpiska" data-toggle="modal" data-target="#modal_podpiska">
-                                                оформить подписку
-                                            </button>
-                                        </a>
+                                        @foreach($sets as $set)
+                                            <a href="{{route('set', $set->slug)}}">
+                                                <button id="podpiska" data-toggle="modal" data-target="#modal_podpiska">
+                                                    оформить подписку
+                                                </button>
+                                            </a>
+                                            @break
+                                        @endforeach
                                     </div>
                                 </div>
                                 <div class="col-sp-13">
@@ -53,51 +56,23 @@
                                 <h2 id="sety-title">СЕТЫ</h2>
                             </div>
                             <div id="secondblock">
-                                <div class="col-sp-8">
-                                    <div class="podpiska-thumb">
-                                        <a href="gastronomicheskij-set-1"></a>
-                                        <img src="{{asset('image/page/subscription/set-gastro.jpg')}}">
-                                        <div class="desc-mask">
-                                            <h4>Гастрономические</h4>
-                                            <div class="description">
-
-                                                Хотите насладиться сочетанием лучших русских вин с гастрономией? Тогда
-                                                предлагаем попробовать шесть редких образцов от микровиноделен Долины
-                                                Дона и Долины Терека.
-                                                <img class="fordesc" src="{{asset('image/page/subscription/plus.png')}}">
+                                @foreach($sets as $set)
+                                    <div class="col-sp-8">
+                                        <div class="podpiska-thumb">
+                                            <a href="{{route('set', $set->slug)}}"></a>
+                                            <img alt="{{$set->title}}"
+                                                 src="{{Voyager::image($set->subscription_image)}}">
+                                            <div class="desc-mask">
+                                                <h4>{{$set->title}}</h4>
+                                                <div class="description">
+                                                    {!! $set->description !!}
+                                                    <img alt="icon_pluc" class="fordesc"
+                                                         src="{{asset('image/page/subscription/plus.png')}}">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-sp-8">
-                                    <div class="podpiska-thumb">
-                                        <img src="{{asset('image/page/subscription/set-avto.jpg')}}">
-                                        <a href="/avtohtonnyj-set-1"></a>
-                                        <div class="desc-mask">
-                                            <h4>Автохтонные</h4>
-                                            <div class="description">Уникальная серия вин. Это наши, русские,
-                                                аборигенные сорта винограда: Красностоп Золотовский, Сибирьковый,
-                                                Цимлянский Чёрный, которые произрастают только в России.
-                                                <img class="fordesc" src="{{asset('image/page/subscription/plus.png')}}">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sp-8">
-                                    <div class="podpiska-thumb">
-                                        <a href="rezerv-set-1"></a>
-                                        <img src="{{asset('image/page/subscription/set-rezervy.jpg')}}">
-
-                                        <div class="desc-mask">
-                                            <h4>Резервы</h4>
-                                            <div class="description">Подборка красных выдержанных вин от Константина
-                                                Дзитоева, Олега Репина, а также редкий образец - Ренессанс 2012 года.
-                                                Насыщенные и танинные, для уютного вечера или для ужина.
-                                                <img class="fordesc" src="{{asset('image/page/subscription/plus.png')}}">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                             <div id="thirdblock">
                                 <div class="col-sp-13">
@@ -112,26 +87,25 @@
                                             особо редких вин, специальные предложения и эксклюзивная скидка 20% на все
                                             вина, которые вы будете получать в течении года.
                                         </p>
-                                        <a href="/avtohtonnyj-set-12">
+                                        <a href="{{route('set', $sale_set->slug)}}">
                                             <button id="podpiska-god">Оформить годовую подписку</button>
                                         </a>
                                     </div>
                                 </div>
                                 <div class="col-sp-11">
-                                    <img src="{{asset('image/page/subscription/lastimg.jpg')}}">
-                                    <img src="{{asset('image/page/subscription/lastimg.jpg')}}" class="abs_img">
+                                    <img alt="subscription_last" src="{{asset('image/page/subscription/lastimg.jpg')}}">
+                                    <img alt="subscription_last" src="{{asset('image/page/subscription/lastimg.jpg')}}"
+                                         class="abs_img">
                                 </div>
                             </div>
                             <div id="pod_lastblock">
                                 <div class="col-sp-24">
-
-                                    <img class="bokal" src="{{asset('image/page/subscription/bokal.png')}}">
-
+                                    <img alt="bokal" class="bokal" src="{{asset('image/page/subscription/bokal.png')}}">
                                     <h2>-20%</h2>
                                 </div>&gt;
                                 <div class="col-sp-12">
                                     <a href="https://russianvine.ru">
-                                        <img src="{{asset('image/logo/logo-club.png')}}">
+                                        <img alt="logo_img" src="{{asset('image/logo/logo-club.png')}}">
                                     </a>
                                     <button id="question"
                                             onclick="document.getElementById('modal_sviaz').style.display = 'block';$('#blur_cont').attr('class','show');$('body').attr('class','nooverflow');">

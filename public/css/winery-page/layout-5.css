@@ -277,11 +277,13 @@
     }
 
     .layout-5 .terruar_below_two_text {
-        padding: 70px 40px 0;
+        padding: 70px 40px 40px;
         font-size: 18px;
-        background: url(../img/teruar_last_bg_gb.png);
-        background-size: cover;
-        background-position: center right
+        background: url(../../image/bg/teruar_last_bg_gb.png);
+        /* background-size: cover; */
+        background-position-x: right;
+        background-repeat: no-repeat;
+        background-size: 35%;
     }
 
     .layout-5 .vinodelnia .col-md-7 .col-md-12 img {

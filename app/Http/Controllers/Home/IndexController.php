@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Models\Set;
 use App\Models\Wine;
 use App\Models\Winemaker;
 
@@ -23,10 +24,12 @@ class IndexController extends Controller
             ->limit(10)
             ->get();
         $winemakers = Winemaker::where('status', '=', 'ACTIVE')->with('wines', 'region', 'winery')->get();
+        $home_set = Set::where('in_home', true)->first();
         return view('home.index', [
             'new_wines' => $new_wines,
             'popular_wines' => $popular_wines,
-            'winemakers' => $winemakers
+            'winemakers' => $winemakers,
+            'main_set'  => $home_set
         ]);
     }
 }

@@ -73,18 +73,15 @@
                                 <span id="qplus">
                                     <input type="button" id="increase_quickorder" value=""
                                            onclick="buttonplus();">
-                                    <img src="{{asset('image/white_plus.png')}}"></span>
+                                    <img alt="plus_image" src="{{asset('image/white_plus.png')}}"></span>
                             </div>
-
-
                             <span class="price">{{$set->price}} <span>о</span>
-  <div id="skidka">
-			</div>
-	</span>
+                               <div id="skidka">
+                                -{{ $set->sale }}%
+		                        </div>
+	                        </span>
                             <button id="podpisatsa" class="cartaddspec specmargbtn" data-id="918">в корзину</button>
                         </div>
-
-
                     </div>
                 </div>
             </div>
