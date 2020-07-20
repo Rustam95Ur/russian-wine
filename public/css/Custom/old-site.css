@@ -517,6 +517,9 @@ header #form-language .language-select {
 }
 
 @media (max-width: 767px) {
+    .slide-inner div:first-child {
+      max-height: 280px!important;
+    }
     .module-russkie-vinodelni .html-content img,
     .module-russkie-vinodely .html-content img,
     .module-russkie-vina .html-content img {
@@ -10587,7 +10590,7 @@ section#specials #specials-cont div.col-md-4 {
     bottom: 0;
     box-sizing: border-box;
     transition: 0.8s;
-    overflow: hidden;
+    display: none;
     pointer-events: all;
 }
 
@@ -10623,6 +10626,7 @@ section#specials #specials-cont div.col-md-4 {
 
 #cart-cont.open {
     left: 0vw;
+    display: block;
 }
 
 #cart-cont.open #close-mask {
@@ -16413,9 +16417,6 @@ input[type=number] {
 }
 @media (max-width: 991px) {
     .slide-inner div:first-child {
-      max-height: 234px;
-    }
-    .slide-inner div:first-child {
       max-height: 360px;
     }
     #logo img {
@@ -16726,6 +16727,15 @@ header .col-sm-2 #navSearch img {
 header .col-sm-2 #login img {
     margin-right: 1.5vw;
 }
+a.likeSlider img {
+    height: 4vw!important;
+}
+
+a.likeSlider {
+    position: absolute;
+    left: 4vw;
+    top: 4.8vw;
+}
 #myOverlay.open {
     display: block;
     position: absolute;
@@ -16736,10 +16746,11 @@ header .col-sm-2 #login img {
     background: white;
     z-index: 110;
     visibility: visible;
+    right: 0;
 }
 #myOverlay {
     width: 0;
-    right: 0;
+    right: 20%;
     left: unset;
     position: absolute;
     transition: .3s all ease-in-out;

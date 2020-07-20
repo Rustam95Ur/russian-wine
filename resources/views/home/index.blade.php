@@ -88,6 +88,9 @@
                                 <div class="swiper-slide">
                                     <div class="wine">
                                         <div class="image">
+                                            <a href="#" class="likeSlider">
+                                              <img src="{{ asset ('image/like.svg') }}" alt="like for this wine">
+                                            </a>
                                             <a href="#" class="preview">
                                                 <img src="{{ Voyager::image($wine->image) }}">
                                                 <span class="attributes"></span>

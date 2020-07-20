@@ -168,12 +168,11 @@
         </div>
         <div class="overlay-results" >
             <div id="searchResult">
-                
+
             </div>
-            
+
             <button type="button" name="all Search  Results" class="allResults">Показать все результаты</button>
         </div>
     </div>
     <!-- ///////////////               End Search Input                    \\\\\\\\\\\\\\\\\\-->
 </header>
-
