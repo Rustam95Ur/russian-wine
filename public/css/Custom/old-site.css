@@ -400,13 +400,11 @@ header #form-language .language-select {
 #set_vybor {
     color: rgba(218, 34, 77, 1)
 }
-
 @media (max-width: 478px) {
     #cart .dropdown-menu {
         width: 100%
     }
 }
-
 #cart .dropdown-menu table {
     margin-bottom: 10px
 }
@@ -556,6 +554,14 @@ header #form-language .language-select {
         border: none;
         border-radius: 0;
         color: #fff
+    }
+    a.likeSlider {
+        position: absolute;
+        left: 4vw;
+        top: 4.8vw;
+    }
+    a.likeSlider img{
+      display: block;
     }
 }
 
@@ -16327,7 +16333,7 @@ header ul li.active span:after {
     overflow: hidden;
     opacity: 0;
     transition: 0.3s;
-    margin-top: 21%;
+    margin-top: 16%;
 }
 .featured_cont .wine:hover .button_cont {
     opacity:1;
@@ -16718,6 +16724,11 @@ overflow: hidden;
     .youtube_icon svg {width:2.708vw;}
     .instagram_icon svg {width:2.292vw;}
     .bag_icon svg {width:2.760vw;}
+    a.likeSlider {
+        position: absolute;
+        left: 2.89vw;
+        top: 2.89vw;
+    }
 }
 header .col-sm-2 #navSearch img, header .col-sm-2 #login img {
     height: 1.004vw;
@@ -16728,15 +16739,18 @@ header .col-sm-2 #navSearch img {
 header .col-sm-2 #login img {
     margin-right: 1.5vw;
 }
+a.likeSlider{
+  opacity: 0;
+  transition: all .3s;
+}
 a.likeSlider img {
-    height: 4vw!important;
+    height: 17.5px!important;
+}
+.wine:hover a.likeSlider{
+  opacity: 1;
+  transition: all .3s;
 }
 
-a.likeSlider {
-    position: absolute;
-    left: 4vw;
-    top: 4.8vw;
-}
 #myOverlay.open {
     display: block;
     position: absolute;
@@ -16830,4 +16844,9 @@ a.likeSlider {
 .xs-thumb {
     max-height: 3.7vw;
     padding: 0 1.251vw 0 0;
+}
+@media (max-width: 478px) {
+    .slide-inner div:first-child {
+    max-height: 230px!important;
+}
 }
