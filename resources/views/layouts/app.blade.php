@@ -39,9 +39,9 @@
     <link href="{{asset('icon/favicon.png')}}" rel="apple-touch-icon-precomposed">
     <link href="{{asset('icon/favicon.png')}}" rel="shortcut icon">
     <!-- Slider Revolution CSS Files -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('rev-slider/css/settings.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('rev-slider/css/layers.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('rev-slider/css/navigation.css') }}">
+{{--    <link rel="stylesheet" type="text/css" href="{{ asset('rev-slider/css/settings.css') }}">--}}
+{{--    <link rel="stylesheet" type="text/css" href="{{ asset('rev-slider/css/layers.css') }}">--}}
+{{--    <link rel="stylesheet" type="text/css" href="{{ asset('rev-slider/css/navigation.css') }}">--}}
 
     <!-- Custom styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/Custom/custom.css') }}">
@@ -151,5 +151,6 @@
         }
     })
 </script>
+@include('layouts.modal')
 </body>
 </html>
