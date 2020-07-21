@@ -162,8 +162,6 @@
                         </script>
                     @endpush
                 </div>
-
-
                 <script>
                     var markers = [];
 

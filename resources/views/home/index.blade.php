@@ -206,7 +206,7 @@
                                 <div class="wine">
                                     <div class="image">
                                         <a href="#" class="preview">
-                                            <img src="{{ Voyager::image($wine->image) }}">
+                                            <img alt="{{$wine->title}}" src="{{ Voyager::image($wine->image) }}">
                                             <span class="attributes"></span>
                                         </a>
                                     </div>

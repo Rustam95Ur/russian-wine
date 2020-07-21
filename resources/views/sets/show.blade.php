@@ -77,7 +77,9 @@
                             </div>
                             <span class="price">{{$set->price}} <span>о</span>
                                <div id="skidka">
-                                -{{ $set->sale }}%
+                                   @if($set->sale)
+                                       -{{ $set->sale }}%
+                                   @endif
 		                        </div>
 	                        </span>
                             <button id="podpisatsa" class="cartaddspec specmargbtn" data-id="918">в корзину</button>
