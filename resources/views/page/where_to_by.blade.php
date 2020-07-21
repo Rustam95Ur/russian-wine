@@ -47,8 +47,7 @@
                     </div>
                 </div>
             </div>
-
-
+            @push('scripts')
             <script>
                 var markers = [];
 
@@ -261,15 +260,15 @@
                     (function () {
                         var marker = new google.maps.Marker({
                             position: {lat: 55.798257, lng: 37.481990},
-                            icon: '/catalog/view/theme/ruswine/image/map_marker_wine.png',
+                            icon: '{{asset('image/map_marker.png')}}',
                             map: map
                         });
                         var infowindow = new google.maps.InfoWindow({
                             content: '<div class="address">' +
                                 '<h2>Русское Вино (Salon del Vino)</h2>' +
-                                '<p><span class="icon-wrap"><img src="/catalog/view/theme/ruswine/image/address_marker.png" /></span> г. Москва, ул. Расплетина, д. 21</p>' +
-                                '<p><span class="icon-wrap"><img src="/catalog/view/theme/ruswine/image/address_phone.png" /></span> +7 915 457 60 81</p>' +
-                                '<p><span class="icon-wrap"><img src="/catalog/view/theme/ruswine/image/address_time.png" /></span> с 11:00 до 22:00</p>' +
+                                '<p><span class="icon-wrap"><img alt="address_icon" src="/image/address_marker.png" /></span> г. Москва, ул. Расплетина, д. 21</p>' +
+                                '<p><span class="icon-wrap"><img alt="phone_icon" src="/image/address_phone.png" /></span> +7 915 457 60 81</p>' +
+                                '<p><span class="icon-wrap"><img alt="time_icon" src="/image/address_time.png" /></span> с 11:00 до 22:00</p>' +
                                 '</div>'
                         });
                         markers.push(marker);
@@ -284,10 +283,10 @@
                         addresses.removeClass('selected');
                         $(this).addClass('selected');
                         if (activemarker) {
-                            activemarker.setIcon('/catalog/view/theme/ruswine/image/map_marker_wine.png');
+                            activemarker.setIcon('/image/map_marker_wine.png');
                         }
                         activemarker = markers[$(this).attr('data-index') - 1];
-                        activemarker.setIcon('/catalog/view/theme/ruswine/image/map_marker_wine_active.png');
+                        activemarker.setIcon('/image/map_marker_wine_active.png');
                         map.panTo(activemarker.getPosition());
                     });
                     // first active
@@ -316,8 +315,8 @@
                 }
             </script>
             <script async="" defer=""
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHQLIuJDYQmVKj24JJmBYzr46M2SJbQYU&amp;callback=initMap&amp;libraries=places&amp;language=ru"></script>
-
+                    src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_API_KEY')}}&amp;callback=initMap&amp;libraries=places&amp;language=ru"></script>
+            @endpush
         </div>
     </div>
 @endsection
