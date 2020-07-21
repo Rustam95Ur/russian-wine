@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', '')
+@section('title', 'Регионы Виноделия России')
 @section('description', '')
 @section('keywords', '')
 @section('content')

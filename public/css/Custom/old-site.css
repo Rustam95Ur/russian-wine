@@ -2063,7 +2063,8 @@ header #form-language .language-select {
 }
 
 #winemakers .winemaker .description ul {
-    margin-left: -20px
+    margin-left: 0;
+    list-style: none;
 }
 
 #winemakers .winemaker .description li {

@@ -60,9 +60,9 @@
 
 
 {{--<a id="scroll-top"><i class="fa fa-angle-right" aria-hidden="true"></i></a> <!-- /#scroll-top -->--}}
-
-<script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/rev-slider.js') }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+{{--<script src="{{ asset('js/jquery.min.js') }}"></script>--}}
+{{--<script src="{{ asset('js/rev-slider.js') }}"></script>--}}
 <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('js/jquery-countTo.js') }}"></script>
 <script src="{{ asset('js/jquery-waypoints.js') }}"></script>
@@ -72,21 +72,20 @@
 <script src="{{ asset('js/main.js') }}"></script>
 
 
-<!-- Slider -->
-<script src="{{ asset('rev-slider/js/jquery.themepunch.tools.min.js') }}"></script>
-<script src="{{ asset('rev-slider/js/jquery.themepunch.revolution.min.js') }}"></script>
-<script src="{{ asset('js/rev-slider.js') }}"></script>
-<!-- Load Extensions only on Local File Systems ! The following part can be removed on Server for On Demand Loading -->
-<script src="{{ asset('rev-slider/js/extensions/revolution.extension.actions.min.js')  }}"></script>
-<script src="{{ asset('rev-slider/js/extensions/revolution.extension.carousel.min.js')  }}"></script>
-<script src="{{ asset('rev-slider/js/extensions/revolution.extension.kenburn.min.js')  }}"></script>
-<script src="{{ asset('rev-slider/js/extensions/revolution.extension.layeranimation.min.js')  }}"></script>
-<script src="{{ asset('rev-slider/js/extensions/revolution.extension.migration.min.js')  }}"></script>
-<script src="{{ asset('rev-slider/js/extensions/revolution.extension.navigation.min.js')  }}"></script>
-<script src="{{ asset('rev-slider/js/extensions/revolution.extension.parallax.min.js')  }}"></script>
-<script src="{{ asset('rev-slider/js/extensions/revolution.extension.slideanims.min.js')  }}"></script>
-<script src="{{ asset('rev-slider/js/extensions/revolution.extension.video.min.js')  }}"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+{{--<!-- Slider -->--}}
+{{--<script src="{{ asset('rev-slider/js/jquery.themepunch.tools.min.js') }}"></script>--}}
+{{--<script src="{{ asset('rev-slider/js/jquery.themepunch.revolution.min.js') }}"></script>--}}
+{{--<script src="{{ asset('js/rev-slider.js') }}"></script>--}}
+{{--<!-- Load Extensions only on Local File Systems ! The following part can be removed on Server for On Demand Loading -->--}}
+{{--<script src="{{ asset('rev-slider/js/extensions/revolution.extension.actions.min.js')  }}"></script>--}}
+{{--<script src="{{ asset('rev-slider/js/extensions/revolution.extension.carousel.min.js')  }}"></script>--}}
+{{--<script src="{{ asset('rev-slider/js/extensions/revolution.extension.kenburn.min.js')  }}"></script>--}}
+{{--<script src="{{ asset('rev-slider/js/extensions/revolution.extension.layeranimation.min.js')  }}"></script>--}}
+{{--<script src="{{ asset('rev-slider/js/extensions/revolution.extension.migration.min.js')  }}"></script>--}}
+{{--<script src="{{ asset('rev-slider/js/extensions/revolution.extension.navigation.min.js')  }}"></script>--}}
+{{--<script src="{{ asset('rev-slider/js/extensions/revolution.extension.parallax.min.js')  }}"></script>--}}
+{{--<script src="{{ asset('rev-slider/js/extensions/revolution.extension.slideanims.min.js')  }}"></script>--}}
+{{--<script src="{{ asset('rev-slider/js/extensions/revolution.extension.video.min.js')  }}"></script>--}}
 <script type="text/javascript">
     jQuery(".nav-folderized h5").click(function () {
         jQuery(this).parent(".nav").toggleClass("open");
@@ -152,6 +151,5 @@
         }
     })
 </script>
-
 </body>
 </html>

@@ -3,7 +3,7 @@ var RevSlider = function() {
     "use strict";
     // Slider 1 ( Simple )
     var handleRevSliderLayout1 = function() {
-        var tpj=jQuery,         
+        var tpj=jQuery,
         revapi1;
         tpj(document).ready(function() {
             if(tpj("#rev-slider1").revolution == undefined){
@@ -103,7 +103,7 @@ var RevSlider = function() {
 
     // Slider 2 ( Simple )
     var handleRevSliderLayout2 = function() {
-        var tpj=jQuery,         
+        var tpj=jQuery,
         revapi2;
         tpj(document).ready(function() {
             if(tpj("#rev-slider1").revolution == undefined){
@@ -202,7 +202,7 @@ var RevSlider = function() {
     }
 
     var handleRevSliderLayout3 = function() {
-        var tpj=jQuery,         
+        var tpj=jQuery,
         revapi3;
         tpj(document).ready(function() {
             if(tpj("#rev-slider3").revolution == undefined){
@@ -301,7 +301,7 @@ var RevSlider = function() {
     }
 
     var handleRevSliderLayout4 = function() {
-        var tpj=jQuery,         
+        var tpj=jQuery,
         revapi4;
         tpj(document).ready(function() {
             if(tpj("#rev-slider4").revolution == undefined){
