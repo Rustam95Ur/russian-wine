@@ -302,6 +302,9 @@
         margin-bottom: -20px;
         z-index: 99;
     }
+    .teruar {
+        font-size: 8.5em;
+    }
 
     .crazy_pic_four {
         margin-left: 60px;
@@ -374,4 +377,7 @@
 .fluid_image {
     margin-left: 0;
     margin-top: -63px;
+}
+#area, .sort_line .col-md-3 h6, .sort_line .col-md-3 p, .proizvoditelnost {
+    font-family: 'ProximaNova-Bold';
 }
