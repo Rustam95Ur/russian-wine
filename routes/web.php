@@ -16,6 +16,8 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+Auth::routes();
+
 Route::get('', 'Home\IndexController@index')->name('home');
 Route::get('/wine-shop', 'Shop\IndexController@wine_list')->name('wine-shop');
 Route::get('/wine/{slug}', 'Shop\IndexController@wine_info')->name('wine');
@@ -37,10 +39,14 @@ Route::get('/region-{slug}', 'Page\RegionController@show')->name('region');
 
 Route::get('/search', 'Home\SearchController@search')->name('search');
 
+Route::get('/profile', 'Page\ProfileController@show')->name('profile');
+
+// Route::get('/profile', function () {
+//     // Only authenticated users may enter...
+// })->middleware('auth')->name('profile');
+
 
 Route::get('/{slug}', 'Page\IndexController@simple_page')->name('simple_page');
-
-
 
 
 

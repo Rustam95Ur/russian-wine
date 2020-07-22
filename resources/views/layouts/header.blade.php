@@ -83,9 +83,15 @@
                     </a>
                 </div>
                 <div id="login">
-                    <a href="#login_page">
+                    @if(Auth::guard('client')->check())
+                    <a href="{{route('profile')}}">
                         <img alt="login icon" src="{{ asset ('image/login.svg') }}">
                     </a>
+                    @else
+                    <a href="/login">
+                        <img alt="login icon" src="{{ asset ('image/login.svg') }}">
+                    </a>
+                    @endif
                 </div>
                 <div id="cart">
                     <a onclick="$('#cart-cont').addClass('open');$('body').addClass('nooverflow1');$('body').addClass('nooverflow');">
@@ -175,5 +181,6 @@
         </div>
     </div>
     <!-- ///////////////               End Search Input                    \\\\\\\\\\\\\\\\\\-->
+    
 </header>
 
