@@ -4292,21 +4292,21 @@ h2.price {
     th.hidden-lg {
         display: table-cell!important
     }
-    .container {
-        width: 1530px
-    }
+    /*.container {*/
+    /*    width: 1530px*/
+    /*}*/
 }
 
 @media (min-width:1920px) {
-    .container {
-        width: 1830px
-    }
+    /*.container {*/
+    /*    width: 1830px*/
+    /*}*/
 }
 
 @media (min-width:2560px) {
-    .container {
-        width: 2490px
-    }
+    /*.container {*/
+    /*    width: 2490px*/
+    /*}*/
 }
 
 .col-md-2,
