@@ -321,6 +321,27 @@
     .morskoi {
         padding: 10%;
     }
+    .jugs_bg {
+        background-color: #efefef;
+        height: 400px;
+    }
+    .jugs_text {
+        margin: 13% 59% 10% 8%;
+        line-height: 30px;
+    }
+    .jugs {
+        float: right;
+        padding-top: 80px;
+        margin-right: 115px;
+    }
+    .bottle_text {
+        padding: 60% 12% 0 16%;
+        font-size: 18px;
+    }
+    .factory_div {
+        background-color: #efefef;
+        margin-top: 100px;
+    }
 
     .grapes_text {
         padding: 15% 5% 10% 1%;

@@ -193,45 +193,70 @@
         @endforeach
     </div>
 </div>
-{{--<div class="vinodelnia_page_3">--}}
-{{--    <div class="container">--}}
-{{--        <div class="row row-no-padding">--}}
-{{--            <div class="col-md-4">--}}
-{{--                <h1 class="vinodelnia_title_3">Винодельня</h1>--}}
-{{--                <img src="/image/{{ description_fourth_image }}" class="page_image">--}}
-{{--            </div>--}}
-{{--            <div class="col-md-8">--}}
-{{--                <img src="/image/{{ description_fourth_image_two }}" class="page_image">--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
-{{--<div class="row row-no-padding no_marg_row">--}}
-{{--    <div class="col-md-7 col-xs-12 jugs_bg">--}}
-{{--        <div class="jugs_bg">--}}
-{{--            <img src="/image/{{ description_fourth_image_three }}" class="jugs">--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--    <div class="col-md-5 col-xs-12">--}}
-{{--        <div class="jugs_text">--}}
-{{--            {{ description_fourth }}--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
-{{--<div class="row  row-no-padding last_line">--}}
-{{--    <div class="col-md-offset-2 col-md-4 col-xs-12">--}}
-{{--        <img src="/image/{{ description_fourth_image_four }}">--}}
-{{--        <div class="bottle_text image_ab">--}}
-{{--            {{ description_fourth_two }}--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--    <div class="col-md-6 col-xs-12">--}}
-{{--        <div class="factory_div">--}}
-{{--            <img src="/image/{{ description_fourth_image_five }}" class="fact_pic">--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--    <div class="bottle_text mob_elem col-md-6">--}}
-{{--        {{ description_fourth_two }}--}}
-{{--    </div>--}}
-{{--</div>--}}
+<div class="vinodelnia_page_3">
+    <div class="container">
+        <div class="row row-no-padding">
+            <div class="col-md-4">
+                <h1 class="vinodelnia_title_3">Винодельня</h1>
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 1 and $block->type_id == 2)
+                        <img src="{{Voyager::image($block->image)}}" alt="image" class="page_image">
+                    @endif
+                @endforeach
+            </div>
+            <div class="col-md-8">
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 2 and $block->type_id == 2)
+                        <img src="{{Voyager::image($block->image)}}" alt="image" class="page_image">
+                    @endif
+                @endforeach
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row row-no-padding no_marg_row">
+    <div class="col-md-7 col-xs-12 jugs_bg">
+        <div class="jugs_bg">
+            @foreach($winery->images as $block)
+                @if ($block->numbering == 3 and $block->type_id == 2)
+                    <img src="{{Voyager::image($block->image)}}" alt="image" class="jugs">
+                @endif
+            @endforeach
+        </div>
+    </div>
+    <div class="col-md-5 col-xs-12">
+        <div class="jugs_text">
+            @foreach($winery->images as $block)
+                @if ($block->numbering == 3 and $block->type_id == 2)
+                    {!!$block->description!!}
+                @endif
+            @endforeach
+        </div>
+    </div>
+</div>
+<div class="row  row-no-padding last_line">
+    <div class="col-md-offset-2 col-md-4 col-xs-12">
+        @foreach($winery->images as $block)
+            @if ($block->numbering == 4 and $block->type_id == 2)
+                <img src="{{Voyager::image($block->image)}}" alt="image">
+            @endif
+        @endforeach
+        <div class="bottle_text image_ab">
+            @foreach($winery->images as $block)
+                @if ($block->numbering == 4 and $block->type_id == 2)
+                    {!!$block->description!!}
+                @endif
+            @endforeach
+        </div>
+    </div>
+    <div class="col-md-6 col-xs-12">
+        <div class="factory_div">
+            @foreach($winery->images as $block)
+                @if ($block->numbering == 5 and $block->type_id == 2)
+                    <img src="{{Voyager::image($block->image)}}" alt="image" class="fact_pic">
+                @endif
+            @endforeach
+        </div>
+    </div>
+</div>
 

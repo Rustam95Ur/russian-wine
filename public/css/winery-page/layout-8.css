@@ -18,8 +18,8 @@
 
     .layout-8 .vinodelnia_title_3 {
         position: absolute;
-        font-size: 130px;
-        color: #cbcbcb;
+        font-size: 130px !important;
+        color: #cbcbcb !important;
         font-family: 'ProximaNova-Bold';
         top: -135px;
         z-index: 9
