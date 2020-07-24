@@ -27,7 +27,7 @@
                                 <h1 class="mb-md">{{$winery->title}}</h1>
                             </div>
                         </div>
-                        <p class="signature" id="sikory">{{$winery->signature}}</p>
+                        <p class="signature">{{$winery->signature}}</p>
                     </div>
                 </div>
                 <!-- ABOUT -->

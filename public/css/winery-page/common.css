@@ -381,3 +381,11 @@
 #area, .sort_line .col-md-3 h6, .sort_line .col-md-3 p, .proizvoditelnost {
     font-family: 'ProximaNova-Bold';
 }
+
+.signature {
+    position: absolute;
+    font: 18px Lato;
+    color: #fff;
+    right: 17%;
+    bottom: 0;
+}
