@@ -1,0 +1,593 @@
+@media (min-width: 992px) {
+    .layout-11 .logo {
+        width: 27%
+    }
+
+    .layout-11 .main_bg {
+        height: 800px;
+        padding-top: 55px
+    }
+
+    .layout-11 .brand_title {
+        padding: 50px 0 20px
+    }
+
+    .layout-11 .signature {
+        padding: 0;
+        text-align: center;
+        font-size: 18px
+    }
+
+    .layout-11 .text_about_first {
+        font: 22px Lato-Light
+    }
+
+    .layout-11 .vinogradniki_center_text, .layout-11 .vinogradniki .second_block .col-md-5 .text-space {
+        font: 24px Lato-Light
+    }
+
+    .layout-11 .text_space_lato {
+        font: 18px Lato
+    }
+
+    .layout-11 .teruar_bg .first_block .col-md-offset-2 .naming, .layout-11 .text_space_old {
+        font: 26px ProximaNova-Bold
+    }
+
+    .layout-11 .name_vinodelnia {
+        font: 200px ProximaNova-Bold
+    }
+
+    .layout-11 .vinogradniki_title {
+        font: 90px ProximaNova-Bold
+    }
+
+    .layout-11 .teruar {
+        font: 130px ProximaNova-Bold;
+        position: absolute;
+        top: -124px;
+        margin-top: 0
+    }
+
+    .layout-11 .text_about_first {
+        padding: 60px 15%;
+        text-align: center
+    }
+
+    .layout-11 .about_person {
+        padding: 75px 0 0;
+        background: rgba(241, 241, 241, 1);
+        margin-bottom: 0
+    }
+
+    .layout-11 .person_img {
+        margin-top: 0
+    }
+
+    .layout-11 .person_text {
+        padding: 3% 0 0 9%;
+        text-align: left
+    }
+
+    .layout-11 .text_about_last {
+        padding: 75px 15%
+    }
+
+    .layout-11 .teruar_bg {
+        background: transparent;
+        padding-top: 100px
+    }
+
+    .layout-11 .teruar_bg .first_block .col-md-8 .abs_img {
+        position: absolute;
+        right: -30px;
+        top: 0;
+        z-index: 1;
+        width: 152%
+    }
+
+    .layout-11 .teruar_bg .first_block .col-md-offset-2 {
+        margin-top: 5%;
+        color: #23252b;
+        padding: 0 3% 0 4%
+    }
+
+    .layout-11 .teruar_bg .first_block .col-md-offset-2 p {
+        margin: 10px 0 0;
+        color: #23252b;
+        line-height: 1.8
+    }
+
+    .layout-11 .teruar_bg .first_block .background_uknown {
+        background-color: #2d2032;
+        padding-left: 45px;
+        background-image: url(../../image/bg/teruar_first_bg.png);
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: 70% 65%
+    }
+
+    .layout-11 .teruar_bg .first_block .background_uknown .text_space p {
+        margin: 100px 0 0;
+        line-height: 1.8
+    }
+
+    .layout-11 .teruar_bg .first_block .background_uknown img {
+        width: calc(100% + 15px)
+    }
+
+    .layout-11 .teruar_bg .first_block .background_uknown .text_space {
+        padding: 0 48% 15% 0
+    }
+
+    .layout-11 .teruar_bg .second_block {
+        background: rgba(241, 241, 241, 1)
+    }
+
+    .layout-11 .teruar_bg .second_block p {
+        margin: 0;
+        color: #23252b;
+        margin-bottom: 20px
+    }
+
+    .layout-11 .teruar_bg .second_block .text_space {
+        padding: 10% 5% 0 10%
+    }
+
+    .layout-11 .teruar_bg .first_block .col-md-offset-2 .naming {
+        padding-right: 25%
+    }
+
+    .layout-11 .text_map {
+        padding: 0 0 0 30px
+    }
+
+    .layout-11 .vinogradniki .container {
+        position: relative
+    }
+
+    .layout-11 .vinogradniki {
+        margin-top: 35px
+    }
+
+    .layout-11 #vinogradniki_title {
+        position: absolute;
+        right: 0;
+        top: -69px;
+        z-index: 1
+    }
+
+    .layout-11 .first_block .background_vin {
+        background: url(../../image/bg/vinogradniki_bg.png);
+        background-size: auto;
+        background-position: 0 center;
+        background-repeat: no-repeat
+    }
+
+    .layout-11 .first_block .col-md-offset-2.col-md-10 img {
+        margin-right: -15px;
+        margin-left: 15px
+    }
+
+    .layout-11 .vinogradniki .first_block .margin_block {
+        margin-top: -205px;
+        background: #2d2032;
+        color: #fff;
+        padding: 4% 5%
+    }
+
+    .layout-11 .vinogradniki .first_block .col-md-8 .text_space {
+        padding: 12% 0 5% 10%
+    }
+
+    .layout-11 .vinogradniki .first_block .vinogradniki_center_text {
+        padding: 5% 15%;
+        text-align: center
+    }
+
+    .layout-11 .vinogradniki .second_block .col-md-7 {
+        padding: 7% 7% 5% 0
+    }
+
+    .layout-11 .vinogradniki .second_block .area_text_space {
+        background: #2d2032;
+        margin-top: -400px;
+        color: #fff;
+        padding: 10% 7% 10% 3%
+    }
+
+    .layout-11 .vinogradniki .second_block .area_text_space ul {
+        list-style-type: none
+    }
+
+    .layout-11 .vinogradniki .second_block .area_text_space ul li span {
+        font: 35px ProximaNova-Bold
+    }
+
+    .layout-11 .vinogradniki .second_block .area_text_space ul li {
+        font: 18px Lato;
+        margin-bottom: 15px
+    }
+
+    .layout-11 .vinogradniki .second_block .col-md-5 .text_space {
+        font: 24px Lato-Light;
+        text-align: center;
+        padding-top: 15%
+    }
+
+    .layout-11 .text_space_old {
+        font-size: 26px !important;
+    }
+
+    .layout-11 .vinodelnia {
+        background: transparent
+    }
+
+    .layout-11 .vinodelnia .col-md-12 img {
+        width: calc(100% + 30px);
+        margin-left: -15px
+    }
+
+    .layout-11 .name_vinodelnia {
+        position: absolute;
+        top: 0;
+        color: #fff;
+        padding-left: calc(17% + 30px);
+        line-height: .8
+    }
+
+    .layout-11 .vinodelnia .background_grey {
+        background: rgba(241, 241, 241, 0.9);
+        color: #23252b;
+        margin-top: -400px;
+        padding: 3%;
+        padding-bottom: 4%
+    }
+
+    .layout-11 .vinodelnia .background_grey .text_space p {
+        margin-bottom: 20px
+    }
+
+    .layout-11 .vinodelnia .proizvodstvo {
+        margin-top: 45%
+    }
+
+    .layout-11 .vinodelnia .proizvodstvo p {
+        margin-bottom: 30px
+    }
+
+    .layout-11 .vinodelnia .col-md-5.col-xs-12.text_space_lato {
+        padding: 5% 6%
+    }
+
+    .layout-11 .vinodelnia .first_block .container-fluid .col-md-9.col-xs-12 {
+        background: #2d2032;
+        padding-bottom: 75px;
+        background-image: url(../../image/bg/vinodelnia_bg.png);
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: 15% 300%
+    }
+
+    .layout-11 .vinodelnia .first_block .container-fluid .col-md-9.col-xs-12 img {
+        float: right;
+        margin: -5% -5% 5% 0
+    }
+
+    .layout-11 .vinodelnia .first_block .container-fluid .col-md-9.col-xs-12 .text_space_2 {
+        margin-left: 25%;
+        text-align: right;
+        padding: 0 6% 0 0
+    }
+
+    .layout-11 .vinodelnia .first_block .container-fluid .col-md-9.col-xs-12 .text_space_2, .layout-11 .vinodelnia .first_block .container-fluid .col-md-9.col-xs-12 .text_space {
+        width: 37.5%;
+        float: left
+    }
+
+    .layout-11 .vinodelnia .first_block .container-fluid .col-md-9.col-xs-12 .text_space {
+        padding: 0 4.6%
+    }
+
+    .layout-11 .vinodelnia .first_block .container-fluid .col-md-9.col-xs-12 .text_space p {
+        line-height: 1.8
+    }
+
+    .layout-11 #map {
+        height: 300px
+    }
+
+    .layout-11 .vinodelnia_last_text {
+        color: #23252b;
+        padding: 10% 15%
+    }
+
+    .layout-11 .area_species {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 30px;
+        background-color: #DA224D;
+        color: #fff;
+        font: 30px ProximaNova-Bold;
+        width: 200px;
+        text-align: center;
+        padding: 15px 0
+    }
+
+    .layout-11 .area_species p {
+        line-height: 1.4
+    }
+}
+
+@media (max-width: 991px) {
+    .layout-11 .main_bg {
+        background-size: cover !important;
+        background-position: center center !important;
+        height: 150VW !important
+    }
+
+    .layout-11 .logo {
+        width: 52.7vw !important;
+        margin-top: 18vw
+    }
+
+    .layout-11 .brand_title {
+        padding: 0;
+        margin-bottom: 0;
+        margin-top: 14vw;
+        font-size: 12vw
+    }
+
+    .layout-11 .signature {
+        font-size: 4.16vw;
+        margin-top: 8.33vw;
+        text-align: center
+    }
+
+    .layout-11 p {
+        font-size: 4.1vw
+    }
+
+    .half_minus, .half_plus {
+        width: 100% !important;
+        padding-left: 15px;
+        padding-right: 15px
+    }
+
+    .layout-11 .text_about_first {
+        padding: 8.333vw
+    }
+
+    .layout-11 .about_person {
+        margin-bottom: 0
+    }
+
+    .layout-11 .about_person .col-md-5 {
+        background: #FFF;
+        overflow: hidden;
+        padding-right: 7.166667VW;
+        padding-left: 0
+    }
+
+    .layout-11 .person_text.text_space_lato {
+        background: rgba(241, 241, 241, 1);
+        padding: 8.333vw 7.166667VW
+    }
+
+    .layout-11 .text_about_last.text_space_lato {
+        padding: 8.333vw
+    }
+
+    .layout-11 .teruar_bg p {
+        color: #23252b
+    }
+
+    .layout-11 .teruar_bg .first_block .col-md-8 img, .layout-11 .first_block .background_uknown img {
+        width: 100vw;
+        margin-left: -15px
+    }
+
+    .layout-11 .teruar_bg .first_block .text_space_lato {
+        padding: 8.333vw 10px
+    }
+
+    .layout-11 .text_map {
+        display: none
+    }
+
+    .layout-11 .first_block .background_uknown {
+        background-color: #2d2032;
+        background-image: url(../../image/bg/teruar_first_bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 70% 65%;
+        margin-left: -15px;
+        margin-right: -15px;
+        width: 100vw
+    }
+
+    .layout-11 .first_block .background_uknown p {
+        color: #fff
+    }
+
+    .layout-11 .teruar_bg .second_block .mob-elem.flex_elem_row {
+        width: 100vw;
+        margin-left: -15px
+    }
+
+    .layout-11 .teruar_bg .second_block .mob-elem.flex_elem_row img {
+        width: calc(80vw - 2px);
+        margin-right: 2px
+    }
+
+    .layout-11 .vinogradniki {
+        position: relative
+    }
+
+    .layout-11 #vinogradniki_title {
+        font-size: 14.4vw;
+        padding: 0;
+        position: absolute;
+        top: -13vw;
+        z-index: 1;
+        left: 0;
+        width: 100vw;
+        text-align: center
+    }
+
+    .layout-11 .vinogradniki .col-md-offset-2.col-md-10 img {
+        height: 65vw;
+        width: auto;
+        margin-left: -15px
+    }
+
+    .layout-11 .vinogradniki .col-md-offset-2.col-md-10 {
+        overflow: hidden;
+        padding: 0 15px
+    }
+
+    .layout-11 .vinogradniki .area_species p {
+        font-size: 6vw;
+        padding-bottom: 0;
+        font-family: 'ProximaNova-Bold'
+    }
+
+    .layout-11 .vinogradniki .area_species {
+        position: absolute;
+        width: 100vw;
+        left: 5.6vw;
+        right: 0;
+        bottom: 0;
+        top: auto;
+        font-size: 4.1vw;
+        width: 88.8vw;
+        right: 5.6vw;
+        padding: 5px 0 7px;
+        background-color: #c51f3e;
+        color: #fff;
+        text-align: center
+    }
+
+    .layout-11 .vinogradniki .first_block .col-md-4 {
+        padding: 8.3333vw 20px 0
+    }
+
+    .layout-11 .vinogradniki .first_block .col-md-12 {
+        padding: 0 20px 8.3333vw
+    }
+
+    .layout-11 .vinogradniki .first_block .col-md-8 {
+        padding: 4vw 20px
+    }
+
+    .layout-11 .vinogradniki .second_block img {
+        width: 100vw;
+        margin-left: -15px
+    }
+
+    .layout-11 .vinogradniki .second_block .col-md-7 {
+        padding: 8.3333vw 20px
+    }
+
+    .layout-11 .vinogradniki .second_block .col-md-5 {
+        background: #2d2032;
+        width: 100vw;
+        margin-left: -15px
+    }
+
+    .layout-11 .vinogradniki .second_block .col-md-5 li span {
+        font-size: 5.5vw;
+        font-weight: 600;
+        font-family: 'ProximaNova-Bold'
+    }
+
+    .layout-11 .vinogradniki .second_block .col-md-5 ul {
+        padding: 8.3333vw 40px 0
+    }
+
+    .layout-11 .vinogradniki .second_block .col-md-5 li {
+        font-size: 4.7vw;
+        color: #fff;
+        margin-bottom: 3vw;
+        list-style-type: none
+    }
+
+    .layout-11 .vinogradniki .second_block .col-md-5 .text_space p {
+        color: #fff;
+        margin-bottom: 6.333vw;
+        text-align: center;
+        font-size: 5vw
+    }
+
+    .layout-11 img {
+        width: 100vw
+    }
+
+    .layout-11 .vinodelnia {
+        margin-top: 18.11vw;
+        background: transparent
+    }
+
+    .layout-11 .vinodelnia .name_vinodelnia {
+        position: absolute;
+        font-size: 17.4vw !important;
+        top: -10.9vw !important;
+        width: 100vw;
+        text-align: center;
+        color: #d6d6d6;
+        left: 0
+    }
+
+    .layout-11 .vinodelnia .first_block .col-md-12 img {
+        margin-left: -15px
+    }
+
+    .layout-11 .vinodelnia .first_block .background_grey {
+        color: #23252b;
+        padding: 8.3333vw 40px 8.333vw
+    }
+
+    .layout-11 .proizvodstvo.text_space_old {
+        padding: 8.3333vw 0 0
+    }
+
+    .layout-11 .proizvodstvo.text_space_old p {
+        font-size: 5.5vw;
+        text-align: left
+    }
+
+    .layout-11 .text_space_old p {
+        font: 5.5vw ProximaNova-Bold
+    }
+
+    .layout-11 .vinodelnia .first_block .col-md-5.text_space_lato {
+        color: #23252b;
+        padding: 8.3333vw 40px 8.333vw
+    }
+
+    .layout-11 .vinodelnia .first_block .col-md-5.text_space_lato br {
+        display: none
+    }
+
+    .layout-11 .vinodelnia .first_block .container-fluid .col-md-9.col-xs-12 {
+        background: #2d2032;
+        background-image: url(../../image/bg/vinodelnia_bg.png);
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: 15% 300%
+    }
+
+    .layout-11 .vinodelnia .first_block .container-fluid .col-md-9.col-xs-12 .text_space {
+        padding: 8.333vw 10px
+    }
+
+    .layout-11 .vinodelnia .first_block .container-fluid .col-md-9.col-xs-12 .text_space_2 {
+        padding: 8.333vw 10px 0
+    }
+
+    .layout-11 .vinodelnia_last_text.text_space_lato {
+        color: #23252b;
+        padding: 8.333vw 30px
+    }
+}
