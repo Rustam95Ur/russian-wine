@@ -302,6 +302,30 @@
         margin-bottom: -20px;
         z-index: 99;
     }
+    .lineika {
+        padding: 5% 20% 5% 1%;
+    }
+    .under_lineika {
+        padding: 2% 10% 1% 15%;
+    }
+    .lineika_div {
+        padding-top: 30px;
+    }
+    .grape4 {
+        margin-top: -27vw;
+    }
+    .grape4_text {
+        padding: 10%;
+    }
+
+    .morskoi {
+        padding: 10%;
+    }
+
+    .grapes_text {
+        padding: 15% 5% 10% 1%;
+    }
+
     .teruar {
         font-size: 8.5em;
     }
@@ -378,6 +402,7 @@
     margin-left: 0;
     margin-top: -63px;
 }
+
 #area, .sort_line .col-md-3 h6, .sort_line .col-md-3 p, .proizvoditelnost {
     font-family: 'ProximaNova-Bold';
 }
@@ -388,4 +413,78 @@
     color: #fff;
     right: 17%;
     bottom: 0;
+}
+
+@media (min-width: 1920px) {
+    .page_3_desc {
+        padding: 11% 25% 0 1%;
+    }
+}
+
+.page_3_desc {
+    color: #23252b;
+}
+
+.page_3_desc {
+    font-size: 16px;
+}
+.text_over_3 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #ffffffbf;
+    width: calc(60% + 7px);
+}
+.text_over_3 p {
+    color: #000;
+    padding: 7% 10%;
+    line-height: 25px;
+    font-size: 17px;
+}
+
+.morskoi {
+    line-height: 30px;
+    font-size: 17px;
+}
+
+.grapes_text {
+    line-height: 25px;
+    font-size: 17px;
+}
+.dvesti_ga {
+    background-color: #c51f3e;
+    position: absolute;
+    color: #fff;
+    width: 86.5%;
+    top: -27vw;
+    right: -35%;
+    text-align: center;
+    padding: 15px 0;
+    z-index: 9;
+    font-family: 'ProximaNova-Bold';
+}
+.vinodelnia_page_3, .vinogradniki_page_3 {
+    padding-top: 100px;
+}
+.vinogradniki_title_3 {
+    font-size: 4.5vw !important;
+    color: #cbcbcb !important;
+    font-family: 'ProximaNova-Bold';
+    z-index: 9;
+    position: absolute;
+}
+.grape4_text {
+    line-height: 30px;
+}
+@media (max-width: 991px) {
+    .mobile-block {
+        display: unset;
+    }
+    .about_person {
+        margin-bottom: 0;
+    }
+    .layout-8 #ter_cont {
+        position: unset !important;
+    }
+
 }

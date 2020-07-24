@@ -6588,3 +6588,6 @@ button.close {
 .text-black {
     color: black;
 }
+.d-none {
+    display: none;
+}
