@@ -199,3 +199,85 @@ h1.pageHeading{
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
 }
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 2000;
+    cursor: pointer;
+}
+
+#overlay1 {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 2000;
+    cursor: pointer;
+}
+
+.card-header {
+    font-size: 25px;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.auth {
+    font: 0.833vw 'ProximaNova-Bold';
+    display: flex;
+    margin-top: 1vw !important;
+    background-color: #DA224D !important;
+    background-image: none !important;
+    border-radius: 180px !important;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    border-color: #DA224D !important;
+    margin-bottom: 35px !important;
+}
+
+input{
+    border: none !important;
+    background: transparent;
+}
+
+.forgot{
+    color: gray;
+    margin-left: -285px;
+}
+
+.forgotdiv {
+    margin-top: 15px;
+}
+
+.regist{
+    color: gray;
+    margin-top: 35px !important;
+}
+
+.logincontainer {
+    margin: 250px;
+    margin-left: 450px;
+}
+
+.closeclick {
+    color: white;
+}
+
+.card-header {
+    margin-bottom: 50px;
+}
