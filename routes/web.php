@@ -41,6 +41,11 @@ Route::get('/search', 'Home\SearchController@search')->name('search');
 
 Route::get('/profile', 'Page\ProfileController@show')->name('profile');
 
+Route::get('/favorite', 'Page\ProfileController@favorite')->name('favorite');
+
+//подписки в ЛК
+Route::get('/sub-wines', 'Page\ProfileController@sub')->name('sub-wines');
+
 // Route::get('/profile', function () {
 //     // Only authenticated users may enter...
 // })->middleware('auth')->name('profile');

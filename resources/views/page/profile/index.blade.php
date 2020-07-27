@@ -15,7 +15,7 @@
       color: white;
 	}
 	.discount {
-		color:#DA224D; 
+		color:#DA224D;
 		margin-top:-10px
 	}
 	.additional {
@@ -38,12 +38,12 @@
 					<div class="row">
 						<div class="col-md-8 col-sm-8">
 							<ul>
-								<li class="rowlist"><a href="">Избранное</a></li>
-								<li class="rowlist"><a href="">Подписки</a></li>
+								<li class="rowlist"><a href="{{route('favorite')}}">Избранное</a></li>
+								<li class="rowlist"><a href="{{route('sub-wines')}}">Подписки</a></li>
 								<li class="rowlist"><a href="">Сеты</a></li>
 								<li class="rowlist"><a href="">Мои заказы</a></li>
 							</ul>
-							
+
 							<ul class="additional">
 								<li class="rowlist"><a href="">Спецпредложения</a></li>
 								<li class="rowlist"><a href="">Персональные данные</a></li>

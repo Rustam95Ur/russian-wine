@@ -278,6 +278,41 @@ input{
     color: white;
 }
 
+.favorite-button {
+    width: 250px;
+    text-transform: uppercase;
+    height: 40px;
+    border-radius: 50px;
+    color: white;
+    margin-top: 50px;
+    background-color: #DA224D !important;
+    border-color: #DA224D !important;
+}
+
+.tablinks {
+    border-radius: 50px;
+    background-color: inherit;
+    border: none;
+    color: black;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    border-color: #ccc;
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    border: none;
+}
+
 .card-header {
     margin-bottom: 50px;
+}
+
+.card {
+    margin-left: 130px;
+    width: 100%;
 }

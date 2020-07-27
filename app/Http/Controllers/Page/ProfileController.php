@@ -18,6 +18,16 @@ class ProfileController extends Controller
 		return view('page.profile.index');
 	}
 
+	public function favorite()
+    {
+        return view('page.profile.favorite');
+    }
+
+    public function sub()
+    {
+        return view('page.profile.sub-wines');
+    }
+
 	public function edit()
 	{
 
