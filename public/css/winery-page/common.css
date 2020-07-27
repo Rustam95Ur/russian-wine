@@ -509,3 +509,11 @@
     }
 
 }
+.background_purple {
+    background: #2d2032;
+}
+.text_s_s {
+    font: .9375vw Lato;
+    padding: 8% 8% 0;
+    text-align: left
+}

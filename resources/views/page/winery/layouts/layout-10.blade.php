@@ -1,17 +1,17 @@
 @foreach($winery->images as $block)
     @if ($block->numbering == 1 and $block->type_id == 0)
-<div class="about_person">
-    <div class="container">
-        <div class="row flex_elem">
-            <div class="col-md-4 col_2 col-xs-12">
-                <img src="{{Voyager::image($block->image)}}" alt="image" class="person_img abs_image">
-            </div>
-            <div class="col-md-8 col_1 col-xs-12 person_text">
-                {!!$block->description!!}
+        <div class="about_person">
+            <div class="container">
+                <div class="row flex_elem">
+                    <div class="col-md-4 col_2 col-xs-12">
+                        <img src="{{Voyager::image($block->image)}}" alt="image" class="person_img abs_image">
+                    </div>
+                    <div class="col-md-8 col_1 col-xs-12 person_text">
+                        {!!$block->description!!}
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
     @endif
 @endforeach
 <div class="about_person_below">
@@ -19,7 +19,7 @@
         <div class="col-md-offset-2 col-md-4 col-xs-12">
             @foreach($winery->images as $block)
                 @if ($block->numbering == 2 and $block->type_id == 0)
-                <img src="{{Voyager::image($block->image)}}" alt="image" class="person_img">
+                    <img src="{{Voyager::image($block->image)}}" alt="image" class="person_img">
                 @endif
             @endforeach
         </div>
