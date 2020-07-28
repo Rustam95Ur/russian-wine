@@ -35,14 +35,16 @@
     margin: 0 0 16px;
     padding: 8px 0;
   }
-
-.breadcrumb a{
-  color: #A3A3A3;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 30px;
-  letter-spacing: -0.01em;
+  .breadcrumb {
+    background-color: #fff!important;
+  }
+.breadcrumb a {
+    color: #A3A3A3;
+    font-style: normal;
+    font-weight: normal;
+    font-size: .833vw;
+    line-height: 1.5vw;
+    letter-spacing: -0.01em;
 }
 .breadcrumb i {
     font-size: 15px
@@ -66,60 +68,61 @@
 h1.pageHeading{
   font-weight: bold;
   font-size: 70px;
-  line-height: 60px;
+  line-height: 3.127vw;
   letter-spacing: -0.01em;
   margin-top: 16px;
 }
 .subHeader .pageDesc{
   font-weight: normal;
   font-size: 20px;
-  line-height: 30px;
+  line-height: 1.564vw;
   letter-spacing: -0.01em;
   padding-bottom: .834vw;
 }
-#searchin-form{
-  position:relative!important;
-}
-#search-main, .sorting select {
+#searchin-form {
+    position: relative !important;
+    border: 2px black solid;
     border-radius: 50px;
-    border: 2px solid black;
 }
+.sorting select {
+    border-radius: 50px;
+    border: 2px solid #827E7E;
+}
+select#inputState:focus{
+  border: 2px solid #000;
+  box-shadow: none;
+}
+
 .row.sortSearch {
     margin: 2.189vw;
     margin-right: -15px;
     margin-left: -15px;
 }
-элемент {
-
-}
 .shopSearch input {
-    padding: 0.563vw 1.688vw 0.563vw 1.302vw;
+    padding: 0.363vw 1.688vw 0.363vw 1.302vw;
     font: .833vw ProximaNova-Bold;
-    line-height: normal;
-    height: 2.95vw;
     width: 100%;
     outline: 0;
-    line-height: 35px;
+    line-height: 1.824vw;
     letter-spacing: -0.01em;
     color: #000000;
-
 }
 .sorting select {
   padding: 0.3215vw 1.175vw 0.3215vw 0.678vw  ;
   font: .833vw ProximaNova-Bold!important;
-  line-height: normal;
   height: 2.168vw;
   width: 8.807vw;
   outline: 0;
-  line-height: 20px;
+  line-height: 1vw;
   letter-spacing: -0.01em;
   color: #827E7E;
   float: right;
 }
 .searchIconBlack {
     filter: brightness(0);
-    padding: .95vw 1.043vw;
+    padding: 0.85vw 0.943vw;
     float: right;
+    height: 2.533vw;
 }
 #searchin-form a {
     position: absolute;
@@ -141,11 +144,8 @@ h1.pageHeading{
     top: 0.9vw;
 }
 .sorting select option{
-  font-family: ProximaNova-Bold;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 20px;
+  font: .833vw ProximaNova-Bold!important;
+  line-height: 1.824vw;
   display: flex;
   align-items: center;
   letter-spacing: -0.01em;
@@ -315,4 +315,109 @@ input{
 .card {
     margin-left: 130px;
     width: 100%;
+}
+/* Filters Style */
+
+.filtersMain {
+    margin: 1.303vw auto;
+}
+#favFilters label{
+  font-weight: bold;
+  font-family: proximanova-bold;
+}
+.form-check input, .form-check label {
+    font-size: 0.938vw;
+    font-family: ProximaNova-reg, Lato;
+    width: auto;
+    outline: 0;
+    line-height: 1.824vw;
+    letter-spacing: -0.01em;
+    color: #000000;
+    padding: 0;
+}
+.form-check label {
+    padding-left: .626vw;
+}
+.filterHeading {
+    font-size: .853vw;
+    text-transform: uppercase;
+    line-height: 2.085vw;
+    margin: 1.303vw 0 .261vw;
+}
+.filtersMain .panel.panel-default {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+.collapseBtn span {
+    font-size: .73vw;
+    padding: .209vw 0.5215vw .209vw 1.303vw;
+}
+.collapseBtn {
+    font: .833vw ProximaNova-Bold;
+    width: auto;
+    outline: 0;
+    line-height: 1.824vw;
+    letter-spacing: -0.01em;
+    color: #000000;
+    border-radius: 25px;
+    border: 2px solid #827E7E;
+    background: transparent;
+    color: #827E7E;
+}
+.collapseIcon {
+    padding-right: .5215vw;
+    width: 0.938vw;
+}
+.form-check .custom-control-input{
+  border: 1px solid #CCCCCC;
+  border-radius: 2px;
+}
+.filtersMain input[type="checkbox"]:checked + label::before {
+    content: "\f14a";
+    color: #da224d;
+}
+.filtersMain input[type="checkbox"]:checked + label::before {
+    content: "\f14a";
+    color: #da224d;
+    opacity: 1;
+}
+.filtersMain input[type="checkbox"] + label::before {
+    content: "\f096";
+    font-family: "FontAwesome";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    transition: all .3s ease;
+    opacity: .3;
+}
+.form-check label::before {
+    font-size: 1.3vw;
+    position: absolute;
+    left: 0.8vw;
+}
+.form-check input {
+    visibility: hidden;
+}
+
+/*  live filter search bar */
+#liveSearch-form input {
+    padding: 0.313vw 0;
+    font: 0.938vw ProximaNova-Bold;
+        line-height: normal;
+    line-height: normal;
+    width: 100%;
+    outline: 0;
+    line-height: 1.824vw;
+    letter-spacing: -0.01em;
+    color: #000000;
+}
+#liveSearch-form {
+    display: flex;
+    border-bottom: 2px solid #aaa;
+    margin-bottom: 0.9902vw;
 }
