@@ -36,6 +36,12 @@
         padding: 140px 15% 125px;
         text-align: center;
     }
+    .naming_medium {
+        font: 130px ProximaNova-Bold!important;
+    }
+    .naming_large {
+        font: 200px ProximaNova-Bold!important;
+    }
 
     .vinogradniki_text_below {
         margin-top: 100px;
