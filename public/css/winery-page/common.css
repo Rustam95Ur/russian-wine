@@ -507,6 +507,9 @@
     .mobile-block {
         display: unset;
     }
+    .flex_elem_row {
+        background: #fff
+    }
     .about_person {
         margin-bottom: 0;
     }

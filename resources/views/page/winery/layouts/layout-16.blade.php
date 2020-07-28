@@ -1,23 +1,31 @@
-<div class="about_person">
-    <div class="container">
-        <div class="row flex_elem">
-            <div class="col-md-4 col-xs-12">
-                <img src="image/{{ description_first_image }}" class="person_img">
-            </div>
-            <div class="col-md-8 col-xs-12 person_text text_s_s">
-                {{ description_first }}
-                <div class="text_mxl">
-                    {{ description_first_two }}
+@foreach($winery->images as $block)
+    @if ($block->numbering == 1 and $block->type_id == 0)
+        <div class="about_person">
+            <div class="container">
+                <div class="row flex_elem">
+                    <div class="col-md-4 col-xs-12">
+                        <img src="{{Voyager::image($block->image)}}" alt="image" class="person_img">
+                    </div>
+                    <div class="col-md-8 col-xs-12 person_text text_s_s">
+                        {!!$block->description!!}
+                        <div class="text_mxl">
+                            {!!$block->addition!!}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    @endif
+@endforeach
 <div class="about_person_below">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text_s_s">
-                {{ description_first_three }}
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 2 and $block->type_id == 0)
+                        {!!  $block->description !!}
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
@@ -27,10 +35,18 @@
         <h2 class="teruar naming_medium">Терруар</h2>
         <div class="row flex_elem_row">
             <div class="col-md-6 col-xs-12 row-no-padding">
-                <img src="image/{{ description_second_image }}" class="page_image">
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 1 and $block->type_id == 3)
+                        <img src="{{Voyager::image($block->image)}}" alt="image" class="page_image">
+                    @endif
+                @endforeach
             </div>
             <div class="col-md-6 col-xs-12 row-no-padding">
-                <img src="image/{{ description_second_image_two }}" class="page_image">
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 2 and $block->type_id == 3)
+                        <img src="{{Voyager::image($block->image)}}" alt="image" class="page_image">
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
@@ -38,7 +54,11 @@
         <div class="row">
             <div class="col-md-8 col-xs-12">
                 <div class="text_s_s">
-                    {{ description_second }}
+                    @foreach($winery->images as $block)
+                        @if ($block->numbering == 2 and $block->type_id == 3)
+                            {!!  $block->description !!}
+                        @endif
+                    @endforeach
                 </div>
             </div>
             <div class="col-md-4 col-xs-12">
@@ -50,20 +70,36 @@
     <div class="background_purple">
         <div class="container">
             <div class="col-md-5 col-xs-12 row-no-padding">
-                <img src="image/{{ description_second_image_three }}" class="page_image">
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 3 and $block->type_id == 3)
+                        <img src="{{Voyager::image($block->image)}}" alt="image" class="page_image">
+                    @endif
+                @endforeach
             </div>
             <div class="col-md-7 col-xs-12 text_s_s">
-                {{ description_second_two }}
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 3 and $block->type_id == 3)
+                        {!!  $block->description !!}
+                    @endif
+                @endforeach
             </div>
             <div class="col-md-offset-3 col-md-9 col-xs-12">
-                <img src="image/{{ description_second_image_four }}" class="page_image">
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 4 and $block->type_id == 3)
+                        <img src="{{Voyager::image($block->image)}}" alt="image" class="page_image">
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-md-offset-3 col-md-9 col-xs-12 text_s_s">
-                {{ description_second_three }}
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 4 and $block->type_id == 3)
+                        {!!  $block->description !!}
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
@@ -73,9 +109,19 @@
         <h2 class="vinogradniki_title naming_medium">Виноградники</h2>
         <div class="row">
             <div class="col-md-12 col-xs-12 row-no-padding">
-                <img src="image/{{ description_third_image }}" class="page_image">
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 1 and $block->type_id == 1)
+                        <img src="{{Voyager::image($block->image)}}" alt="image" class="page_image">
+                    @endif
+                @endforeach
                 <div id="space_area">
-                    <span>{{ description_area }}</span>
+                    <span>
+                        @foreach($winery->images as $block)
+                            @if ($block->numbering == 1 and $block->type_id == 1)
+                                {!!  $block->addition !!}
+                            @endif
+                        @endforeach
+                    </span>
                 </div>
             </div>
         </div>
@@ -84,42 +130,72 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5 col-xs-12 text_s_s">
-                    {{ description_third }}
+                    @foreach($winery->images as $block)
+                        @if ($block->numbering == 1 and $block->type_id == 1)
+                            {!!  $block->description !!}
+                        @endif
+                    @endforeach
                 </div>
                 <div class="col-md-7 col-xs-12 text_space_old">
-                    {{ description_third_two }}
-                    <div class="text_s_s">
-                        {{ description_third_three }}
-                    </div>
+                    @foreach($winery->images as $block)
+                        @if ($block->numbering == 2 and $block->type_id == 1)
+                            {!!  $block->addition !!}
+                        @endif
+                    @endforeach
                 </div>
             </div>
             <div class="row flex_elem">
                 <div class="col-md-4 col-xs-12 text_s_s">
-                    {{ description_third_four }}
+                    @foreach($winery->images as $block)
+                        @if ($block->numbering == 2 and $block->type_id == 1)
+                            {!!  $block->description !!}
+                        @endif
+                    @endforeach
                 </div>
                 <div class="col-md-8 col-xs-12" style="position:relative;">
-                    <img src="image/{{ description_third_image_two }}" class="abs_img page_image">
+                    @foreach($winery->images as $block)
+                        @if ($block->numbering == 2 and $block->type_id == 1)
+                            <img src="{{Voyager::image($block->image)}}" alt="image" class="abs_img page_image">
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
 </div>
 <div class="vinodelnia">
-    <div class="background_image" style="background-image: url(image/{{ description_fourth_image }})">
+    <div class="background_image" style="
+    @foreach($winery->images as $block)
+    @if ($block->numbering == 1 and $block->type_id == 2)
+        background-image: url({{Voyager::image($block->image)}})
+    @endif
+    @endforeach
+        ">
         <div class="container">
             <h2 class="name_vinodelnia naming_large">Винодельня</h2>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-xs-12">
-                    <div id="proizvoditelnost">
-                        <span>{{ description_proizvoditelnost }}</span>
-                        бутылок в год
+                    <div id="proizvoditelnost" class="text-white">
+                        @foreach($winery->images as $block)
+                            @if ($block->numbering == 2 and $block->type_id == 2)
+                                {!!  $block->addition !!}
+                            @endif
+                        @endforeach
                     </div>
-                    <img src="image/{{ description_fourth_image_two }}">
+                    @foreach($winery->images as $block)
+                        @if ($block->numbering == 2 and $block->type_id == 2)
+                            <img src="{{Voyager::image($block->image)}}" alt="image">
+                        @endif
+                    @endforeach
                 </div>
-                <div class="col-md-6 col-xs-12 text_s_s">
-                    {{ description_fourth }}
+                <div class="col-md-6 col-xs-12 text_s_s text-white">
+                    @foreach($winery->images as $block)
+                        @if ($block->numbering == 2 and $block->type_id == 2)
+                            {!!  $block->description !!}
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -127,40 +203,72 @@
     <div class="container">
         <div class="row flex_elem">
             <div class="col-md-5 col-xs-12 text_s_s">
-                {{ description_fourth_two }}
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 3 and $block->type_id == 2)
+                        {!!  $block->description !!}
+                    @endif
+                @endforeach
             </div>
             <div class="col-md-7 col-xs-12" style="position:relative;">
-                <img src="image/{{ description_fourth_image_three }}" class="abs_img">
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 3 and $block->type_id == 2)
+                        <img src="{{Voyager::image($block->image)}}" alt="image" class="abs_img">
+                    @endif
+                @endforeach
             </div>
         </div>
         <div class="row">
             <div class="col-md-7 col-xs-12" style="position:relative;">
-                <img src="image/{{ description_fourth_image_four }}" class="page_image">
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 4 and $block->type_id == 2)
+                        <img src="{{Voyager::image($block->image)}}" alt="image" class="page_image">
+                    @endif
+                @endforeach
             </div>
             <div class="col-md-5 col-xs-12 text_s_s margin_b">
-                {{ description_fourth_three }}
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 4 and $block->type_id == 2)
+                        {!!  $block->description !!}
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
     <div class="background_grey">
         <div class="container">
             <div class="col-md-12 col-xs-12 text_mxl">
-                {{ description_fourth_four }}
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 5 and $block->type_id == 2)
+                        {!!  $block->description !!}
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row flex_elem_row margin-imgs">
             <div class="col-md-6 col-xs-12">
-                <img src="image/{{ description_fourth_image_five }}" class="page_image">
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 5 and $block->type_id == 2)
+                        <img src="{{Voyager::image($block->image)}}" alt="image" class="page_image">
+                    @endif
+                @endforeach
             </div>
             <div class="col-md-6 col-xs-12">
-                <img src="image/{{ description_fourth_image_six }}" class="page_image">
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 6 and $block->type_id == 2)
+                        <img src="{{Voyager::image($block->image)}}" alt="image" class="page_image">
+                    @endif
+                @endforeach
             </div>
         </div>
         <div class="row">
             <div class="text_s_s col-md-12 col-xs-12">
-                {{ description_fourth_five }}
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 6 and $block->type_id == 2)
+                        {!!  $block->description !!}
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
