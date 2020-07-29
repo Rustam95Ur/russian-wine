@@ -49,5 +49,10 @@ class Wine extends Model
     {
         return $this->belongsTo('App\Models\Excerpt', 'excerpt_id', 'id');
     }
+
+    public function favorites()
+    {
+        return $this->hasMany('App\Models\Favorite');
+    }
 }
 
