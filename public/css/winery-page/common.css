@@ -526,3 +526,10 @@
     padding: 8% 8% 0;
     text-align: left
 }
+
+@media (min-width: 992px) {
+    .background_white_o {
+        background: rgba(255,255,255,0.8);
+    }
+}
+
