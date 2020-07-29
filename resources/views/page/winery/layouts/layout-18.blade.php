@@ -151,42 +151,42 @@
         </div>
     </div>
 </div>
-    <div class="vinodelnia">
-         <div class="container-fluid">
-             <div class="row">
-                 <h2 class="name_vinodelnia naming_medium">Винодельня</h2>
-                 @foreach($winery->images as $block)
-                     @if ($block->numbering == 1 and $block->type_id == 2)
-                         <img src="{{Voyager::image($block->image)}}" alt="image" class="page_image">
-                     @endif
-                 @endforeach
-             </div>
+<div class="vinodelnia">
+    <div class="container-fluid">
+        <div class="row">
+            <h2 class="name_vinodelnia naming_medium">Винодельня</h2>
+            @foreach($winery->images as $block)
+                @if ($block->numbering == 1 and $block->type_id == 2)
+                    <img src="{{Voyager::image($block->image)}}" alt="image" class="page_image">
+                @endif
+            @endforeach
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5 col-xs-12 margin_block background_white">
-                    @foreach($winery->images as $block)
-                        @if ($block->numbering == 1 and $block->type_id == 2)
-                            {!!$block->description!!}
-                        @endif
-                    @endforeach
-                </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-xs-12 margin_block background_white">
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 1 and $block->type_id == 2)
+                        {!!$block->description!!}
+                    @endif
+                @endforeach
             </div>
-            <div class="row margin-row">
-                <div class="col-md-offset-2 col-md-6 col-xs-12 margin_plus">
-                    @foreach($winery->images as $block)
-                        @if ($block->numbering == 2 and $block->type_id == 2)
-                            <img src="{{Voyager::image($block->image)}}" alt="image" class="page_image">
-                        @endif
-                    @endforeach
-                </div>
-                <div class="col-md-4 col-xs-12 text_s_s">
-                    @foreach($winery->images as $block)
-                        @if ($block->numbering == 2 and $block->type_id == 2)
-                            {!!$block->description!!}
-                        @endif
-                    @endforeach
-                </div>
+        </div>
+        <div class="row margin-row">
+            <div class="col-md-offset-2 col-md-6 col-xs-12 margin_plus">
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 2 and $block->type_id == 2)
+                        <img src="{{Voyager::image($block->image)}}" alt="image" class="page_image">
+                    @endif
+                @endforeach
+            </div>
+            <div class="col-md-4 col-xs-12 text_s_s">
+                @foreach($winery->images as $block)
+                    @if ($block->numbering == 2 and $block->type_id == 2)
+                        {!!$block->description!!}
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
+</div>
