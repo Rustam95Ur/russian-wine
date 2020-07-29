@@ -531,5 +531,8 @@
     .background_white_o {
         background: rgba(255,255,255,0.8);
     }
+    .background_white {
+        background: #fff
+    }
 }
 
