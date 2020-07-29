@@ -53,55 +53,11 @@
 <body class="@yield('body_class', '')">
 <div id="loading-overlay">
     <div class="loader"></div>
-    @if ($message = Session::get('success') or $message = Session::get('error') or $message = Session::get('warning') or $message = Session::get('info') or $errors->any())
-        <script>
-            (function ($) {
-                $(function () {
-                    $('#messageModal').modal('show');
-                    setTimeout(function () {
-                        $('#messageModal').modal('hide')
-                    }, 5000);
-                });
-            })(jQuery);
-        </script>
-    @endif
-
-<!-- Message Modal -->
-    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body text-center">
-                    @if ($message = Session::get('success'))
-                        <h6 class="text-center text-success">{!! $message !!}</h6>
-                    @endif
-                    @if ($message = Session::get('error'))
-                        <h6 class="text-center text-danger">{!! $message !!}</h6>
-                    @endif
-                    @if ($message = Session::get('warning'))
-                        <h6 class="text-center text-danger">{!! $message !!}</h6>
-                    @endif
-                    @if ($message = Session::get('info'))
-                        <h6 class="text-center text-danger">{!! $message !!}</h6>
-                    @endif
-                    @if ($errors->any())
-                        @foreach($errors->all() as $error)
-                            <ul class="questions">
-                                <li class="text-danger"><h6>{!! $error !!}</h6></li>
-                            </ul>
-                        @endforeach
-                    @endif
-                </div>
-            </div>
-        </div>
-    </div>
-</div> <!-- /.loading-overlay -->
+</div>
+ <!-- /.loading-overlay -->
 @include('layouts.header')
 @yield('content')
 @include('layouts.footer')
-
-
-
-
 
 
 
@@ -116,6 +72,85 @@
 <script src="{{ asset('js/jquery.easing.js') }}"></script>
 <script src="{{ asset('swiperJs/swiper.min.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
+
+
+<script>
+    (function ($) {
+        $.fn.floatLabels = function (options) {
+
+            // Settings
+            var self = this;
+            var settings = $.extend({}, options);
+
+
+            // Event Handlers
+            function registerEventHandlers() {
+                self.on('input keyup change', 'input, textarea', function () {
+                    actions.swapLabels(this);
+                });
+            }
+
+
+            // Actions
+            var actions = {
+                initialize: function() {
+                    self.each(function () {
+                        var $this = $(this);
+                        var $label = $this.children('label');
+                        var $field = $this.find('input,textarea').first();
+
+                        if ($this.children().first().is('label')) {
+                            $this.children().first().remove();
+                            $this.append($label);
+                        }
+
+                        var placeholderText = ($field.attr('placeholder') && $field.attr('placeholder') != $label.text()) ? $field.attr('placeholder') : $label.text();
+
+                        $label.data('placeholder-text', placeholderText);
+                        $label.data('original-text', $label.text());
+
+                        if ($field.val() == '') {
+                            $field.addClass('empty')
+                        }
+                    });
+                },
+                swapLabels: function (field) {
+                    var $field = $(field);
+                    var $label = $(field).siblings('label').first();
+                    var isEmpty = Boolean($field.val());
+
+                    if (isEmpty) {
+                        $field.removeClass('empty');
+                        $label.text($label.data('original-text'));
+                    }
+                    else {
+                        $field.addClass('empty');
+                        $label.text($label.data('placeholder-text'));
+                    }
+                }
+            }
+
+
+            // Initialization
+            function init() {
+                registerEventHandlers();
+
+                actions.initialize();
+                self.each(function () {
+                    actions.swapLabels($(this).find('input,textarea').first());
+                });
+            }
+            init();
+
+
+            return this;
+        };
+
+        $(function () {
+            $('.float-label-control').floatLabels();
+        });
+    })(jQuery);
+</script>
 
 
 {{--<!-- Slider -->--}}
@@ -197,6 +232,28 @@
         }
     })
 </script>
+
+
+<script>
+    setTimeout(function(){ //using setTimeout function
+        document.getElementById('success-message').style.display ='none'; //displaying the button again after 3000ms or 3 seconds
+    },3000);
+</script>
+
+
+
 @include('layouts.modal')
+@if ($message = Session::get('success') or $message = Session::get('error') or $message = Session::get('warning') or $message = Session::get('info') or $errors->any())
+    <script>
+        (function ($) {
+            $(function () {
+                $('#messageModal').modal('show');
+                setTimeout(function () {
+                    $('#messageModal').modal('hide')
+                }, 5000);
+            });
+        })(jQuery);
+    </script>
+@endif
 </body>
 </html>

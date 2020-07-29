@@ -46,7 +46,7 @@
 
                                 <ul class="additional">
                                     <li class="rowlist"><a href="">Спецпредложения</a></li>
-                                    <li class="rowlist"><a href="">Персональные данные</a></li>
+                                    <li class="rowlist"><a href="{{route('profile')}}">Персональные данные</a></li>
                                 </ul>
 
                                 <div class="logout">
@@ -77,8 +77,8 @@
                             <h3>В избраном пока ничего нет <br> но вы можете их добавить из винотеки</h3>
 
 
+                            <a href={{route('wine-shop')}}><button class="favorite-button">Перейти в Винотеку</button></a>
 
-                            <button class="favorite-button"><a  href="{{route('profile')}}"></a>Перейти в Винотеку</button>
                         </center>
                     </div>
                 </div>

@@ -46,7 +46,7 @@
 
                                 <ul class="additional">
                                     <li class="rowlist"><a href="">Спецпредложения</a></li>
-                                    <li class="rowlist"><a href="">Персональные данные</a></li>
+                                    <li class="rowlist"><a href="{{route('profile')}}">Персональные данные</a></li>
                                 </ul>
 
                                 <div class="logout">

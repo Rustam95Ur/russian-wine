@@ -251,7 +251,7 @@ select#inputState:focus{
 }
 
 input{
-    border: none !important;
+    border: none ;
     background: transparent;
 }
 
