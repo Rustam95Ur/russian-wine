@@ -234,6 +234,40 @@
 </script>
 
 
+{{--Работа с избранными--}}
+<script type="text/javascript">
+    $(function () {
+        $('.likeSlider').on('click', function () {
+            $.ajax({
+                url: '{{URL::to('fav')}}',
+                data: {
+                    'client_id' : 1,
+                    'wine_id': 1
+                },
+                type: 'get',
+                dataType : 'json'
+            });
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        $('.likeSlider123').on('click', function () {
+            $.ajax({
+                url: '{{URL::to('favdelete')}}',
+                data: {
+                    'client_id' : 1,
+                    'wine_id': 1
+                },
+                type: 'get',
+                dataType : 'json'
+            });
+        });
+    });
+</script>
+
+
 <script>
     setTimeout(function(){ //using setTimeout function
         document.getElementById('success-message').style.display ='none'; //displaying the button again after 3000ms or 3 seconds

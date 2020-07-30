@@ -38,4 +38,10 @@ class Client extends Authenticatable
         'password', 'remember_token',
     ];
 
+
+    public function favorites()
+    {
+        return $this->hasMany('App\Models\Favorite');
+    }
+
 }
