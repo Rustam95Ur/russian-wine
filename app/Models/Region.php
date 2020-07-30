@@ -23,6 +23,14 @@ class Region extends Model
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function sorts()
+    {
+        return $this->belongsToMany('App\Models\GrapeSort', 'region_grape_sort');
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function quote()

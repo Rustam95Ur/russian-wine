@@ -539,3 +539,7 @@
 .background_grey {
     background: rgba(241,241,241,1);
 }
+
+.column-win {
+    border-left: 1px solid #cbcbcb;
+}

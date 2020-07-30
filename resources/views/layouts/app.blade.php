@@ -268,11 +268,11 @@
 </script>
 
 
-<script>
-    setTimeout(function(){ //using setTimeout function
-        document.getElementById('success-message').style.display ='none'; //displaying the button again after 3000ms or 3 seconds
-    },3000);
-</script>
+{{--<script>--}}
+{{--    setTimeout(function(){ //using setTimeout function--}}
+{{--        document.getElementById('success-message').style.display ='none'; //displaying the button again after 3000ms or 3 seconds--}}
+{{--    },3000);--}}
+{{--</script>--}}
 
 
 

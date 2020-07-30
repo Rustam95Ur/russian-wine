@@ -4,7 +4,8 @@
 
 @media (min-width: 992px) {
     .layout-9 .logo {
-        width: 22%
+        width: 22%;
+        margin-top: 150px !important;
     }
 
     .layout-9 .main_bg {

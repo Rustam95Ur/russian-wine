@@ -13,10 +13,9 @@
                     <div class="col-xs-12">
                         <ul class="nav nav-pills">
                             @foreach($regions as $region)
-                                <li role="presentation" class="{{ $loop->first ? 'active' : '' }}">
+                                <li id="presentation-{{$region->id}}" class="active_li {{ $loop->first ? 'active' : '' }}">
                                     <a href="#pane-{{$region->id}}" data-target="#pane-{{$region->id}}"
-                                       data-toggle="tab"
-                                       onclick="window.location.hash = ''; location.href+=this.hash;">{{$region->title}}</a>
+                                       data-toggle="tab" class="active_link">{{$region->title}}</a>
                                 </li>
                             @endforeach
                         </ul>
@@ -36,7 +35,7 @@
                                     <h2>{{$region->title}}</h2>
                                     {!! $region->description !!}
                                     <p><a href="{{route('region', $region->slug)}}" class="btn-white">Подробнее о
-                                        регионе</a>
+                                            регионе</a>
                                     </p>
                                 </div>
                                 <div class="col-lg-6">
@@ -51,9 +50,9 @@
                                                         </div>
                                                         <div class="col-xs-9 wine-species-text">
                                                             <h4>Сорта винограда:</h4>
-                                                            {{--                                                            @foreach($region->sort as $sort)--}}
-                                                            {{--                                                                {{$sort->title}}@if(!$loop->last),@endif--}}
-                                                            {{--                                                            @endforeach--}}
+                                                            @foreach($region->sorts as $sort)
+                                                                {{$sort->title}}@if(!$loop->last),@endif
+                                                            @endforeach
                                                         </div>
                                                     </div>
                                                 </div>
@@ -79,18 +78,19 @@
                                     <div class="row auto-height">
                                         <!-- slide start -->
                                         @foreach($region->wineries as $wineries)
-                                        <div class="col-xs-6 col-sm-3 col-md-2 text-center image-border">
-                                            <div style="height: 260px;">
-                                                <a href="{{route('winery', $wineries->slug)}}"
-                                                   class="p-t-60 p-b-60">
+                                            <div class="col-xs-6 col-sm-3 col-md-2 text-center image-border">
+                                                <div style="height: 260px;">
+                                                    <a href="{{route('winery', $wineries->slug)}}"
+                                                       class="p-t-60 p-b-60">
                                                     <span class="middle-box">
-                                                        <img alt="{{$wineries->title}}" src="{{Voyager::image($wineries->logo_image)}}">
+                                                        <img alt="{{$wineries->title}}"
+                                                             src="{{Voyager::image($wineries->logo_image)}}">
                                                     </span>
-                                                </a>
+                                                    </a>
+                                                </div>
                                             </div>
-                                        </div>
                                     @endforeach
-                                        <!-- slide end -->
+                                    <!-- slide end -->
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
@@ -101,6 +101,7 @@
                     </div>
                 @endforeach
             </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
             <script>
                 var markers = [];
 
@@ -329,7 +330,7 @@
                     @foreach($regions as $region)
                     (function () {
                         var marker = new google.maps.Marker({
-                            region: 'Кубань',
+                            region: '{{$region->title}}',
                             position: {lat: {{$region->coordinate_lat}}, lng: {{$region->	coordinate_lon}}},
                             icon: '{{asset('image/map_marker.png')}}',
                             map: map
@@ -344,8 +345,15 @@
                 }
             </script>
             <script async="" defer=""
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHQLIuJDYQmVKj24JJmBYzr46M2SJbQYU&amp;callback=initMap&amp;language=ru"></script>
-
+                    src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_API_KEY')}}&amp;callback=initMap&amp;language=ru"></script>
+            <script>
+                $('.active_link').on('click', function () {
+                    var click_id =$(this).data("target");
+                    click_id = click_id.replace('#pane-', '')
+                    $('.active_li').removeClass('active');
+                    $('#presentation-'+ click_id).addClass('active');
+                })
+            </script>
         </div>
     </div>
 @endsection

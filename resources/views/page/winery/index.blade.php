@@ -2,6 +2,9 @@
 @section('title', 'Лучшие российские винодельни, купить русское вино')
 @section('description', '')
 @section('keywords', '')
+@push('styles')
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/winery-page/common.css') }}">
+@endpush
 @section('content')
     <div id="information-information" class="wineries">
         <div class="heading-wrap">
@@ -22,11 +25,11 @@
                     </div>
                     <h3 id="region-name">Кубань</h3>
                     @foreach($regions as $region)
-                        <div class="container container-lg p-t-60 p-b-50 {{ $loop->first ? 'active' : '' }}"
+                        <div class="container container-lg p-t-60 p-b-50 elements-gride {{ $loop->first ? 'active' : '' }}"
                              data-region="{{$region->id}}">
                             @foreach($region->wineries  as $winery)
                                 @if($winery_type == $winery->type_id)
-                                    <div class="column-win col-md-3 leftside-b">
+                                    <div class="column-win col-md-3 ">
                                         <!-- winery start -->
                                         <div class="winer-cont row m-b-10 p-t-30 p-b-30 ">
                                             <div class="col-xs-12">
@@ -74,6 +77,7 @@
                 $('.wineries .container .container-lg > .column-win').removeClass('leftside-b rightside-b');
                 $('.wineries .container .container-lg').removeClass('active');
                 $('.wineries .container .container-lg[data-region=' + region + ']').addClass('active');
+                masonry_grid()
             });
             if ($(window).width() < 992) {
                 html = '<div class="showmemore"><div class="showclick"></div></div>';
@@ -82,6 +86,19 @@
                     $(this).parent().parent().toggleClass('moreshown');
                 });
             }
+        </script>
+        <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+        <script>
+            function masonry_grid(){
+                $('.elements-gride').masonry({
+                    // options
+                    itemSelector: '.column-win',
+                    horizontalOrder: true
+                });
+            }
+            $( document ).ready(function() {
+                masonry_grid()
+            });
         </script>
     @endpush
 @endsection
