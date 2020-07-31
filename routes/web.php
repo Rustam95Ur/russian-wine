@@ -30,7 +30,7 @@ Route::get('/set-{slug}', 'Shop\SetController@show')->name('set');
 Route::get('/subscription', 'Shop\SubscriptionController@index')->name('subscription');
 Route::get('/winemakers', 'Page\WinemakerController@index')->name('winemakers');
 Route::get('/franchise', 'Page\FranchiseController@index')->name('franchise');
-Route::get('/personal-wine', 'Page\WinemakerController@personal_wine')->name('personal-wine');
+Route::get('/personal-wine', 'Shop\IndexController@personal_wine')->name('personal-wine');
 Route::get('/tastings', 'Shop\TastingsController@index')->name('tastings');
 Route::get('/wine-tour', 'Page\IndexController@tour')->name('wine-tour');
 Route::get('/where-to-buy', 'Page\IndexController@where_to_by')->name('where_to_by');

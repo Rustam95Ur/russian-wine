@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Shop;
 
 use App\Http\Controllers\Controller;
 use App\Models\Wine;
+use App\Models\Winemaker;
 
 class IndexController extends Controller
 {
@@ -17,6 +18,12 @@ class IndexController extends Controller
 //        $wine = Wine::where('slug', '=', $slug)->where('status', '=', 'ACTIVE')->firstOrFail();
         return view('shop.wine.show', [
 //            'wine' => $wine
+        ]);
+    }
+
+    public function personal_wine()
+    {
+        return view('shop.wine.personal', [
         ]);
     }
 

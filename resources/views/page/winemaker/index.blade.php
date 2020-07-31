@@ -15,16 +15,17 @@
             </div>
             @foreach($winemakers as $winemaker)
                 <div class="winemaker-details winemaker-details-{{$winemaker->id}}">
+                    <div class="close_block"></div>
                     <div class="float-right">
                         <div class="background-white">
                             <div class="container container-lg">
                                 <div class="row">
                                     <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
                                         <h1>{{$winemaker->full_name}}</h1>
-                                        <h2 id="in_par">
-                                            <p>{{isset($winemaker->winery) ? $winemaker->winery->title : ''}}</p> |
+                                        <div id="in_par" class="text-center">
+                                            <p>{{isset($winemaker->winery) ? $winemaker->winery->title : ''}}  |</p>
                                             <p>{{$winemaker->region->title}}</p>
-                                        </h2>
+                                        </div>
                                         <img src="{{Voyager::image($winemaker->modal_image)}}" alt="{{$winemaker->full_name}}"
                                              class="img-responsive">
                                         <div class="description">
@@ -37,6 +38,9 @@
                                                 <span class="icon-icon_arrow_right"></span>
                                             </a>
                                         </div>
+                                    </div>
+                                    <div class="col-xs-3 col-sm-3">
+                                        <div class="icon-icon_x text-right close-icon"></div>
                                     </div>
                                 </div>
                             </div>
@@ -84,6 +88,12 @@
                var id = $(this).data('target');
                $(id).show()
                $(id).addClass('product-preview')
+            })
+            $('.close-icon').on('click', function () {
+               $('.winemaker-details').hide()
+            })
+            $('.close_block').on('click', function () {
+                $('.winemaker-details').hide()
             })
         </script>
     @endpush

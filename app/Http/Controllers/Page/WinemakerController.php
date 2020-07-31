@@ -15,11 +15,5 @@ class WinemakerController extends Controller
         ]);
     }
 
-    public function personal_wine()
-    {
-        $winemakers = Winemaker::where('status', '=', 'ACTIVE')->get();
-        return view('page.winemaker.personal', [
-            'winemakers' => $winemakers
-        ]);
-    }
+
 }
