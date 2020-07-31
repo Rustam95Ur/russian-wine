@@ -58,8 +58,7 @@
 </div>
 
 
-
-<div id="overlay" >
+<div id="overlay">
     <div class="close">
         <p class="closeclick" onclick="off()">X</p>
     </div>
@@ -75,7 +74,10 @@
 
                             <div class="form-group row">
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email" autofocus>
+                                    <input id="email" type="email"
+                                           class="form-control @error('email') is-invalid @enderror" name="email"
+                                           value="{{ old('email') }}" required autocomplete="email" placeholder="Email"
+                                           autofocus>
 
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -87,7 +89,9 @@
 
                             <div class="form-group row">
                                 <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Пароль">
+                                    <input id="password" type="password"
+                                           class="form-control @error('password') is-invalid @enderror" name="password"
+                                           required autocomplete="current-password" placeholder="Пароль">
 
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -127,7 +131,7 @@
     </div>
 </div>
 
-<div id="overlay1" >
+<div id="overlay1">
     <div class="close">
         <p class="closeclick" onclick="offRegister()">X</p>
     </div>
@@ -143,7 +147,9 @@
 
                             <div class="form-group row">
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="first_name" required autocomplete="first_name" autofocus placeholder="Имя">
+                                    <input id="name" type="text"
+                                           class="form-control @error('name') is-invalid @enderror" name="first_name"
+                                           required autocomplete="first_name" autofocus placeholder="Имя">
 
                                     @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -155,7 +161,9 @@
 
                             <div class="form-group row">
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" required autocomplete="email" placeholder="Email">
+                                    <input id="email" type="email"
+                                           class="form-control @error('email') is-invalid @enderror" name="email"
+                                           required autocomplete="email" placeholder="Email">
 
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -167,7 +175,9 @@
 
                             <div class="form-group row">
                                 <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Придумайте пароль">
+                                    <input id="password" type="password"
+                                           class="form-control @error('password') is-invalid @enderror" name="password"
+                                           required autocomplete="new-password" placeholder="Придумайте пароль">
 
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -179,7 +189,9 @@
 
                             <div class="form-group row">
                                 <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Повторите пароль">
+                                    <input id="password-confirm" type="password" class="form-control"
+                                           name="password_confirmation" required autocomplete="new-password"
+                                           placeholder="Повторите пароль">
                                 </div>
                             </div>
 
@@ -235,4 +247,146 @@
         </div>
     </div>
 </div>
+@if(isset($home_tasting))
+<div id="degustacii_modal">
+    <div class="shadow_close" onclick="$('#degustacii_modal').css('display', 'none');$('body').removeClass('nooverflow');"></div>
+    <div class="degustacii_body">
+        <div class="icon_close" onclick="$('#degustacii_modal').css('display', 'none');$('body').removeClass('nooverflow');"></div>
+        <div>
+            <img alt="{{$home_tasting->title}}" class="degdescimg" src="{{Voyager::image($home_tasting->image)}}">
+            <span id="deg-title">{{$home_tasting->title}}</span>
+        </div>
+        <div class="degustacii_description">
+
+            <ul class="list-unstyled" id="deginfo">
+                <li>Дата: {{date('d M', strtotime($home_tasting->start_date))}}</li>
+                <li>Место: {{$home_tasting->place}}</li>
+                <li>Время: {{date('h:i', strtotime($home_tasting->start_date))}}</li>
+            </ul>
+            <p>
+                {{$home_tasting->description}}
+            </p>
+            <ul class="list-unstyled" id="bottle">
+                @foreach($home_tasting->wines as $wine)
+                    <li>
+                        <span>{{$loop->iteration}}</span>
+                        {{isset($wine->winery) ? $wine->winery->title : '' }} |
+                        {{$wine->title}} | {{$wine->year}} |
+                        {{isset($wine->region) ? $wine->region->title : '' }}
+                    </li>
+                @endforeach
+            </ul>
+            <a id="deg_order" onclick="$('.mfp-wrap').css('display', 'block');$('#degustacii_modal').css('display', 'none');">Заказать дегустацию</a>
+            <a href="{{route('tastings')}}" id="deg_other">Другие дегустации</a>
+        </div>
+    </div>
 </div>
+
+<div id="home-zakaz" class="mfp-wrap mfp-close-btn-in mfp-auto-cursor mfp-ready">
+    <div class="mfp-container mfp-ajax-holder mfp-s-ready">
+        <div class="shadow_close" onclick="$('.mfp-wrap').css('display', 'none');$('body').removeClass('nooverflow');"></div>
+        <div class="mfp-content">
+            <div id="popup-quickorder">
+
+                <div class="popup-heading">{{$home_tasting->title}}</div>
+                <div class="popup-center">
+                    <form id="fastorder_data" enctype="multipart/form-data" method="post">
+
+                        <div class="col-sm-12" id="prods_c">
+                            <div class="well well-sm products" style="margin-top:10px;">
+                                <div class="product">
+                                    <div class="row">
+                                        section#specials        <div class="col-xs-12 col-sm-7">
+                                            <div class="col-xs-6 quantity_quickorder quick-cell">
+                                                <div class="quick-cell-content pquantity">
+                                                    <div class="input-group popup-quantity">
+                                                        <span class="input-group-btn">
+                                                            <input class="btn btn-update-popup" type="button" id="decrease_quickorder" value="-" onclick="btnminus_quickorder('1');recalculateprice_quickorder();">
+                                                        </span>
+                                                        <input type="text" class="form-control input-sm qty_quickorder" name="quantity" id="htop_quickorder" size="2" value="1">
+                                                        <span class="input-group-btn">
+                                                            <input class="btn btn-update-popup" type="button" id="increase_quickorder" value="+" onclick="btnplus_quickorder();recalculateprice_quickorder();">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-6 text-center quick-cell">
+                                                <div class="quick-cell-content">
+
+                                                    <div class="price_fast"><span id="formated_price_quickorder" data-price="15000.0000">15000</span></div>
+                                                    <input type="hidden" id="price_tax_plus_options" name="price_tax" value="15000">
+                                                    <input type="hidden" id="price_no_tax_plus_options" name="price_no_tax" value="15000">
+                                                    <input id="total_form" type="hidden" value="15000" name="total_fast">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-sm-12 col-sm-12 form-group sections_block_rquaired">
+                            <div class="input-group margin-bottom-sm">
+                                <input id="contact-name" class="form-control contact-name" type="text" placeholder="Имя" value="" name="nameFF">
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="col-sm-12 col-sm-12 form-group sections_block_rquaired">
+                            <div class="input-group margin-bottom-sm">
+                                <input id="contact-phone" class="form-control contact-phone" type="text" placeholder="Телефон" value="" name="contactFF">
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-sm-12 col-sm-12 form-group sections_block_rquaired">
+                            <div class="input-group margin-bottom-sm">
+                                <input id="contact-email" class="form-control contact-email" type="text" placeholder="E-mail" value="" name="messageFF">
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-sm-12 form-group text-center"></div>
+                        <input type="hidden" id="callback_url" value="" name="url_site">
+                        <input type="hidden" id="this_prod_id" value="50" name="this_prod_id">
+
+
+                        <input class="btn btn-quickorder-one" type="submit" value="Заказать дегустацию">
+                    </form>
+                </div>
+                <div class="popup-footer">
+                    <style>
+                        #quickorder_btn .btn-quickorder {
+                            background-color: # !important;
+                            border-color: # !important;
+                        }
+
+                        #quickorder_btn .btn-quickorder:hover,
+                        #quickorder_btn .btn-quickorder:focus {
+                            background-color: # !important;
+                        }
+
+                    </style>
+
+                    <div class="terms">
+                        Нажимая кнопку вы даете согласие на обработку персональных данных в соответствии с <a>условиями Пользовательского соглашения</a>.
+                    </div>
+                </div>
+                <button title="Close (Esc)" type="button" class="mfp-close" onclick="$('.mfp-wrap').css('display', 'none');$('body').removeClass('nooverflow');">×</button>
+            </div>
+        </div>
+        <div class="mfp-preloader"><span><i style="font-size:50px;" class="fa fa-spinner fa-pulse"></i></span></div>
+    </div>
+</div>
+@endif

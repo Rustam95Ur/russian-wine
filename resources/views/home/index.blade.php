@@ -139,17 +139,17 @@
                 <div class="col-md-4 bannerstitle"
                      onclick="$('#degustacii_modal').css('display', 'block');$('body').addClass('nooverflow');">
                     <img src="{{ asset ('image/degustag-main.png') }}">
-                    <h6>дегустации <span>Органические вина</span></h6>
+                    <h6>дегустации <span>{{$home_tasting->title}}</span></h6>
                     <button>ЗАПИСАТЬСЯ</button>
                     <div id="bannerdate">
-                        <span>10</span>
-                        июня
+                        <span> {{date('d', strtotime($home_tasting->start_date))}}</span>
+                        {{date('M', strtotime($home_tasting->start_date))}}
                     </div>
                 </div>
                 <div class="col-md-4 bannerstitle">
-                    <a href="{{route('set', $main_set->slug)}}">
-                        <img alt="{{$main_set->title}}" src="{{ Voyager::image($main_set->home_image) }}">
-                        <h6>сет месяца <span>{{$main_set->title}}</span></h6>
+                    <a href="{{route('set', $home_set->slug)}}">
+                        <img alt="{{$home_set->title}}" src="{{ Voyager::image($home_set->home_image) }}">
+                        <h6>сет месяца <span>{{$home_set->title}}</span></h6>
                         <button>ЗАКАЗАТЬ СЕТ</button>
                     </a>
                 </div>
