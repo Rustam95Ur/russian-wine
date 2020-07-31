@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 /**
- * 
+ *
  */
 class ProfileController extends Controller
 {
@@ -23,6 +23,8 @@ class ProfileController extends Controller
 
 	public function favorite()
     {
+        $userSkills = Auth::user()->wines;
+        dd($userSkills);
         return view('page.profile.favorite');
     }
 

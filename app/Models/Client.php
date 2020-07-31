@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 /**
- * 
+ *
  */
 class Client extends Authenticatable
 {
@@ -38,10 +38,12 @@ class Client extends Authenticatable
         'password', 'remember_token',
     ];
 
-
-    public function favorites()
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function wines()
     {
-        return $this->hasMany('App\Models\Favorite');
+        return $this->belongsToMany('App\Models\Wine', 'client_wine');
     }
 
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июл 31 2020 г., 02:17
+-- Время создания: Июл 31 2020 г., 10:36
 -- Версия сервера: 5.7.25
 -- Версия PHP: 7.3.9
 
@@ -65,6 +65,35 @@ CREATE TABLE `clients` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `clients`
+--
+
+INSERT INTO `clients` (`id`, `first_name`, `last_name`, `phone`, `email`, `birth_date`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Rustam', NULL, NULL, 'rustam.95.ur@gmail.com', NULL, NULL, '$2y$10$JMr3IFzsT/paiFImHSimO.ujpyZPPqDDN0mtklR3RdOdzD.Z.6wVC', NULL, '2020-07-31 01:20:15', '2020-07-31 01:20:15');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `client_wine`
+--
+
+CREATE TABLE `client_wine` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `client_id` int(11) NOT NULL,
+  `wine_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `client_wine`
+--
+
+INSERT INTO `client_wine` (`id`, `client_id`, `wine_id`, `created_at`, `updated_at`) VALUES
+(1, 1, 50, NULL, NULL),
+(2, 1, 51, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -523,20 +552,6 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `favorite`
---
-
-CREATE TABLE `favorite` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `client_id` int(11) NOT NULL,
-  `wine_id` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Структура таблицы `grape_sorts`
 --
 
@@ -872,7 +887,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (62, '2020_07_20_160750_add_sale_sets_table', 26),
 (63, '2014_10_12_100000_create_password_resets_table', 27),
 (64, '2020_07_22_114549_create_client_model', 27),
-(65, '2020_07_29_190227_create_favorite_table', 28),
+(65, '2020_07_29_190227_create_client_wine_table', 28),
 (67, '2020_07_30_192906_create_region_grape_sort_table', 29);
 
 -- --------------------------------------------------------
@@ -3148,6 +3163,12 @@ ALTER TABLE `clients`
   ADD UNIQUE KEY `clients_email_unique` (`email`);
 
 --
+-- Индексы таблицы `client_wine`
+--
+ALTER TABLE `client_wine`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `colors`
 --
 ALTER TABLE `colors`
@@ -3190,12 +3211,6 @@ ALTER TABLE `excerpts`
 -- Индексы таблицы `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `favorite`
---
-ALTER TABLE `favorite`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -3372,7 +3387,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT для таблицы `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `client_wine`
+--
+ALTER TABLE `client_wine`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `colors`
@@ -3414,12 +3435,6 @@ ALTER TABLE `excerpts`
 -- AUTO_INCREMENT для таблицы `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT для таблицы `favorite`
---
-ALTER TABLE `favorite`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
