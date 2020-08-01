@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июл 31 2020 г., 10:36
+-- Время создания: Авг 01 2020 г., 13:58
 -- Версия сервера: 5.7.25
 -- Версия PHP: 7.3.9
 
@@ -71,7 +71,7 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `first_name`, `last_name`, `phone`, `email`, `birth_date`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Rustam', NULL, NULL, 'rustam.95.ur@gmail.com', NULL, NULL, '$2y$10$JMr3IFzsT/paiFImHSimO.ujpyZPPqDDN0mtklR3RdOdzD.Z.6wVC', NULL, '2020-07-31 01:20:15', '2020-07-31 01:20:15');
+(1, 'Rustam', NULL, NULL, 'client@client.com', NULL, NULL, '$2y$10$JMr3IFzsT/paiFImHSimO.ujpyZPPqDDN0mtklR3RdOdzD.Z.6wVC', NULL, '2020-07-31 01:20:15', '2020-07-31 01:20:15');
 
 -- --------------------------------------------------------
 
@@ -128,7 +128,6 @@ CREATE TABLE `comments` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `full_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` enum('ACTIVE','INACTIVE') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'ACTIVE',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -138,8 +137,10 @@ CREATE TABLE `comments` (
 -- Дамп данных таблицы `comments`
 --
 
-INSERT INTO `comments` (`id`, `full_name`, `body`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Евгений Филатов', 'Я шел абсолютно скептически настроенный, что у меня ничего не получится! Но у меня так замечательно получилось!!! Мне очень понравилось! Я получил эмоции, которые давно не испытывал в своей жизни. И самое главное, я впервые в жизни попробовал русское вино приличного качества. Это просто потрясающе! Спасибо вам огромное!', 'comments\\June2020\\Mltbd1cTjEgRgDMAhjjw.png', 'ACTIVE', '2020-06-21 06:31:54', '2020-06-21 06:31:54');
+INSERT INTO `comments` (`id`, `full_name`, `body`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Евгений Филатов', 'Я шел абсолютно скептически настроенный, что у меня ничего не получится! Но у меня так замечательно получилось!!! Мне очень понравилось! Я получил эмоции, которые давно не испытывал в своей жизни. И самое главное, я впервые в жизни попробовал русское вино приличного качества. Это просто потрясающе! Спасибо вам огромное!', 'ACTIVE', '2020-06-21 06:31:54', '2020-06-21 06:31:54'),
+(2, 'Компания друзей', 'Для нас провели слепую дегустацию - мы сравнивали русское вино и европейское. К нашему удивлению, три первых места заняло наше вино из Волгограда, Владикавказа и Кубани! Все вина очень высокого уровня. Нам понравилось)', 'ACTIVE', '2020-08-01 03:29:35', '2020-08-01 03:29:35'),
+(3, 'Компания Нордтекс', 'Дегустация по Русским Винам была яркой, интересной, вкусной! За два часа мы узнали, что у нас в стране есть шикарные вина. Высокий уровень дегустации, все было профессионально и увлекательно. Спасибо за такую организацию мероприятия!', 'ACTIVE', '2020-08-01 03:33:39', '2020-08-01 03:33:39');
 
 -- --------------------------------------------------------
 
@@ -351,7 +352,6 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (184, 22, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (185, 22, 'full_name', 'text', 'ФИО', 1, 1, 1, 1, 1, 1, '{}', 2),
 (186, 22, 'body', 'text_area', 'Текст', 1, 0, 1, 1, 1, 1, '{}', 3),
-(187, 22, 'image', 'image', 'Image', 1, 1, 1, 1, 1, 1, '{}', 4),
 (188, 22, 'status', 'select_dropdown', 'Статус', 1, 1, 1, 1, 1, 1, '{\"default\":\"ACTIVE\",\"options\":{\"ACTIVE\":\"\\u0430\\u043a\\u0442\\u0438\\u0432\\u043d\\u044b\\u0439\",\"INACTIVE\":\"\\u043d\\u0435\\u0430\\u043a\\u0442\\u0438\\u0432\\u043d\\u044b\\u0439\"}}', 5),
 (189, 22, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 1, '{}', 6),
 (190, 22, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7),
@@ -406,7 +406,25 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (244, 21, 'in_subscription', 'checkbox', 'На странице подписка', 1, 0, 1, 1, 1, 1, '{}', 16),
 (245, 21, 'subscription_image', 'image', 'Картинка для страницы подписка', 0, 0, 1, 1, 1, 1, '{}', 17),
 (246, 21, 'sale', 'number', 'Скидка', 0, 0, 1, 1, 1, 1, '{}', 20),
-(247, 10, 'region_belongstomany_grape_sort_relationship', 'relationship', 'Сорта винограда', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\GrapeSort\",\"table\":\"grape_sorts\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"region_grape_sort\",\"pivot\":\"1\",\"taggable\":\"0\"}', 23);
+(247, 10, 'region_belongstomany_grape_sort_relationship', 'relationship', 'Сорта винограда', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\GrapeSort\",\"table\":\"grape_sorts\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"region_grape_sort\",\"pivot\":\"1\",\"taggable\":\"0\"}', 23),
+(248, 27, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(249, 27, 'title', 'text', 'Название', 1, 1, 1, 1, 1, 1, '{}', 2),
+(250, 27, 'description', 'text_area', 'Описание', 1, 0, 1, 1, 1, 1, '{}', 3),
+(251, 27, 'image', 'image', 'Картинка', 1, 1, 1, 1, 1, 1, '{}', 4),
+(252, 27, 'user_count', 'number', 'Количество людей', 1, 1, 1, 1, 1, 1, '{}', 5),
+(253, 27, 'price', 'number', 'Цена', 1, 1, 1, 1, 1, 1, '{}', 6),
+(254, 27, 'time', 'number', 'Длительность', 1, 0, 1, 1, 1, 1, '{}', 7),
+(255, 27, 'place', 'text', 'Место', 1, 0, 1, 1, 1, 1, '{}', 8),
+(256, 27, 'start_date', 'timestamp', 'Дата начала', 1, 0, 1, 1, 1, 1, '{}', 9),
+(258, 27, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, '{}', 11),
+(259, 27, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 12),
+(260, 27, 'tasting_belongstomany_wine_relationship', 'relationship', 'Вина', 0, 0, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Wine\",\"table\":\"wines\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"tasting_wine\",\"pivot\":\"1\",\"taggable\":\"0\"}', 13),
+(261, 27, 'in_home', 'checkbox', 'На главной ?', 1, 0, 1, 1, 1, 1, '{}', 10),
+(262, 28, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(263, 28, 'title', 'text', 'Название', 1, 1, 1, 1, 1, 1, '{}', 2),
+(264, 28, 'image', 'image', 'Картинка', 1, 1, 1, 1, 1, 1, '{}', 3),
+(265, 28, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, '{}', 4),
+(266, 28, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 5);
 
 -- --------------------------------------------------------
 
@@ -453,10 +471,12 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (19, 'winemakers', 'winemakers', 'Винодел', 'Виноделы', NULL, 'App\\Models\\Winemaker', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-18 11:13:29', '2020-07-06 04:49:34'),
 (20, 'wineries', 'wineries', 'Винодельня', 'Винодельни', NULL, 'App\\Models\\Winery', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"title\",\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-20 04:23:20', '2020-07-14 10:57:51'),
 (21, 'sets', 'sets', 'Сет', 'Сеты', NULL, 'App\\Models\\Set', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"title\",\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-20 06:14:12', '2020-07-20 10:09:49'),
-(22, 'comments', 'comments', 'Комментарии', 'Комментарии', NULL, 'App\\Models\\Comment', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-06-21 06:30:19', '2020-06-21 06:30:19'),
+(22, 'comments', 'comments', 'Комментарии', 'Комментарии', NULL, 'App\\Models\\Comment', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-21 06:30:19', '2020-08-01 04:58:39'),
 (23, 'quotes', 'quotes', 'Цитата', 'Цитаты', NULL, 'App\\Models\\Quote', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-07-04 00:52:53', '2020-07-05 11:20:11'),
 (24, 'excerpts', 'excerpts', 'Выдержка', 'Выдержки', NULL, 'App\\Models\\Excerpt', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-07-04 14:06:32', '2020-07-04 14:10:03'),
-(25, 'winery_images', 'winery-images', 'Картинка для винодельни', 'Картинки для виноделен', NULL, 'App\\Models\\WineryImage', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-07-14 13:26:58', '2020-07-17 08:16:49');
+(25, 'winery_images', 'winery-images', 'Картинка для винодельни', 'Картинки для виноделен', NULL, 'App\\Models\\WineryImage', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-07-14 13:26:58', '2020-07-17 08:16:49'),
+(27, 'tastings', 'tastings', 'Дегустация', 'Дегустации', NULL, 'App\\Models\\Tasting', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-07-31 09:51:45', '2020-07-31 10:03:21'),
+(28, 'tasting_methods', 'tasting-methods', 'Метод работы (дегустации)', 'Методы работы (дегустации)', NULL, 'App\\Models\\TastingMethod', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-08-01 02:22:53', '2020-08-01 02:23:05');
 
 -- --------------------------------------------------------
 
@@ -811,7 +831,9 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (27, 1, 'Цитаты', '', '_self', NULL, NULL, 29, 7, '2020-07-04 00:52:53', '2020-07-30 16:44:48', 'voyager.quotes.index', NULL),
 (28, 1, 'Выдержки', '', '_self', NULL, NULL, 29, 6, '2020-07-04 14:06:32', '2020-07-30 16:44:48', 'voyager.excerpts.index', NULL),
 (29, 1, 'Атрибуты для вина', '', '_self', 'voyager-params', '#000000', NULL, 4, '2020-07-09 10:39:33', '2020-07-09 10:39:44', NULL, ''),
-(30, 1, 'Картинки для виноделен', '', '_self', NULL, NULL, 23, 4, '2020-07-14 13:26:58', '2020-07-30 16:44:40', 'voyager.winery-images.index', NULL);
+(30, 1, 'Картинки для виноделен', '', '_self', NULL, NULL, 23, 4, '2020-07-14 13:26:58', '2020-07-30 16:44:40', 'voyager.winery-images.index', NULL),
+(31, 1, 'Дегустации', '', '_self', NULL, NULL, NULL, 14, '2020-07-31 09:51:46', '2020-07-31 09:51:46', 'voyager.tastings.index', NULL),
+(32, 1, 'Методы работы (дегустации)', '', '_self', NULL, NULL, NULL, 15, '2020-08-01 02:22:53', '2020-08-01 02:22:53', 'voyager.tasting-methods.index', NULL);
 
 -- --------------------------------------------------------
 
@@ -888,7 +910,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (63, '2014_10_12_100000_create_password_resets_table', 27),
 (64, '2020_07_22_114549_create_client_model', 27),
 (65, '2020_07_29_190227_create_client_wine_table', 28),
-(67, '2020_07_30_192906_create_region_grape_sort_table', 29);
+(67, '2020_07_30_192906_create_region_grape_sort_table', 29),
+(69, '2020_07_31_152312_create_tastings_table', 30),
+(70, '2020_07_31_155635_create_tasting_wine_table', 31),
+(71, '2020_08_01_082032_create_tasting_methods_table', 32);
 
 -- --------------------------------------------------------
 
@@ -1062,7 +1087,17 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (109, 'read_winery_images', 'winery_images', '2020-07-14 13:26:58', '2020-07-14 13:26:58'),
 (110, 'edit_winery_images', 'winery_images', '2020-07-14 13:26:58', '2020-07-14 13:26:58'),
 (111, 'add_winery_images', 'winery_images', '2020-07-14 13:26:58', '2020-07-14 13:26:58'),
-(112, 'delete_winery_images', 'winery_images', '2020-07-14 13:26:58', '2020-07-14 13:26:58');
+(112, 'delete_winery_images', 'winery_images', '2020-07-14 13:26:58', '2020-07-14 13:26:58'),
+(113, 'browse_tastings', 'tastings', '2020-07-31 09:51:45', '2020-07-31 09:51:45'),
+(114, 'read_tastings', 'tastings', '2020-07-31 09:51:45', '2020-07-31 09:51:45'),
+(115, 'edit_tastings', 'tastings', '2020-07-31 09:51:45', '2020-07-31 09:51:45'),
+(116, 'add_tastings', 'tastings', '2020-07-31 09:51:45', '2020-07-31 09:51:45'),
+(117, 'delete_tastings', 'tastings', '2020-07-31 09:51:45', '2020-07-31 09:51:45'),
+(118, 'browse_tasting_methods', 'tasting_methods', '2020-08-01 02:22:53', '2020-08-01 02:22:53'),
+(119, 'read_tasting_methods', 'tasting_methods', '2020-08-01 02:22:53', '2020-08-01 02:22:53'),
+(120, 'edit_tasting_methods', 'tasting_methods', '2020-08-01 02:22:53', '2020-08-01 02:22:53'),
+(121, 'add_tasting_methods', 'tasting_methods', '2020-08-01 02:22:53', '2020-08-01 02:22:53'),
+(122, 'delete_tasting_methods', 'tasting_methods', '2020-08-01 02:22:53', '2020-08-01 02:22:53');
 
 -- --------------------------------------------------------
 
@@ -1190,7 +1225,17 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (109, 1),
 (110, 1),
 (111, 1),
-(112, 1);
+(112, 1),
+(113, 1),
+(114, 1),
+(115, 1),
+(116, 1),
+(117, 1),
+(118, 1),
+(119, 1),
+(120, 1),
+(121, 1),
+(122, 1);
 
 -- --------------------------------------------------------
 
@@ -1553,6 +1598,93 @@ INSERT INTO `sugars` (`id`, `title`, `created_at`, `updated_at`) VALUES
 (9, 'Полусухое', '2020-06-18 10:12:52', '2020-06-18 10:12:52'),
 (10, 'Сладкое', '2020-06-18 10:12:52', '2020-06-18 10:12:52'),
 (11, 'Экстра Брют', '2020-06-18 10:12:52', '2020-06-18 10:12:52');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `tastings`
+--
+
+CREATE TABLE `tastings` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_count` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `time` int(11) NOT NULL,
+  `place` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `start_date` datetime NOT NULL,
+  `in_home` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `tastings`
+--
+
+INSERT INTO `tastings` (`id`, `title`, `description`, `image`, `user_count`, `price`, `time`, `place`, `start_date`, `in_home`, `created_at`, `updated_at`) VALUES
+(1, 'Эксклюзив Персональная дегустация для двоих', 'Насладится сочетанием лучших русских вин с фермерскими сырами. Можно будет попробовать 6 редких образцов вин от микровиноделен из Крыма, Ростова, Владикавказа и Волгограда. К вину подадут дегустационный сет из 6 видов сыра от Российских фермеров', 'tastings\\July2020\\30U8kAlVckOHCDtOIrVN.jpg', 2, 15000, 90, 'Москва', '2020-07-31 21:55:00', 0, '2020-07-31 09:55:55', '2020-07-31 11:55:31'),
+(2, 'Резервы из коллекции', 'Уникальная дегустация резервных вин из коллекции, некоторые остались в единичном экземпляре.', 'tastings\\July2020\\wUXXqbwX8ac9qHiK6J6K.jpg', 2, 15000, 90, 'г. Москва, улица Расплетина 21', '2020-08-01 09:30:00', 1, '2020-07-31 11:55:25', '2020-07-31 11:55:25');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `tasting_methods`
+--
+
+CREATE TABLE `tasting_methods` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `tasting_methods`
+--
+
+INSERT INTO `tasting_methods` (`id`, `title`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'Проведём интересно персональную дегустацию для вашей компании', 'tasting-methods\\August2020\\rv4gHqoLBsomkUiIr2hO.png', '2020-08-01 02:25:06', '2020-08-01 02:25:06'),
+(2, 'У нас есть все необходимое: бокалы, декантеры, система охлаждени', 'tasting-methods\\August2020\\WhNU1gK7AgHV5B5wujNV.png', '2020-08-01 02:25:31', '2020-08-01 02:25:31'),
+(3, 'На дегустации вы попробуете вина, которые совершили качественный', 'tasting-methods\\August2020\\UWSnW29M5mRqCcJf3HLK.png', '2020-08-01 02:25:50', '2020-08-01 02:25:50'),
+(4, 'За два часа вы узнаете всё о лучших винах из Крыма, Кубани', 'tasting-methods\\August2020\\wwjBEWMaLJz3s1uUawi3.png', '2020-08-01 02:26:20', '2020-08-01 02:26:20'),
+(5, 'Вы узнаете всё о современном русском виноделии и терруарах', 'tasting-methods\\August2020\\VmxT8KKFkDC3MwjGYT8N.png', '2020-08-01 02:26:47', '2020-08-01 02:26:47');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `tasting_wine`
+--
+
+CREATE TABLE `tasting_wine` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `tasting_id` int(11) NOT NULL,
+  `wine_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `tasting_wine`
+--
+
+INSERT INTO `tasting_wine` (`id`, `tasting_id`, `wine_id`, `created_at`, `updated_at`) VALUES
+(1, 1, 50, NULL, NULL),
+(2, 1, 54, NULL, NULL),
+(3, 1, 58, NULL, NULL),
+(4, 1, 76, NULL, NULL),
+(5, 1, 79, NULL, NULL),
+(6, 1, 95, NULL, NULL),
+(7, 1, 104, NULL, NULL),
+(8, 2, 84, NULL, NULL),
+(9, 2, 86, NULL, NULL),
+(10, 2, 129, NULL, NULL),
+(11, 2, 271, NULL, NULL),
+(12, 2, 453, NULL, NULL),
+(13, 2, 752, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -3326,6 +3458,24 @@ ALTER TABLE `sugars`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `tastings`
+--
+ALTER TABLE `tastings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `tasting_methods`
+--
+ALTER TABLE `tasting_methods`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `tasting_wine`
+--
+ALTER TABLE `tasting_wine`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `translations`
 --
 ALTER TABLE `translations`
@@ -3405,7 +3555,7 @@ ALTER TABLE `colors`
 -- AUTO_INCREMENT для таблицы `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `countries`
@@ -3417,13 +3567,13 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT для таблицы `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=248;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=267;
 
 --
 -- AUTO_INCREMENT для таблицы `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT для таблицы `excerpts`
@@ -3459,13 +3609,13 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT для таблицы `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT для таблицы `pages`
@@ -3477,7 +3627,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT для таблицы `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 
 --
 -- AUTO_INCREMENT для таблицы `posts`
@@ -3526,6 +3676,24 @@ ALTER TABLE `settings`
 --
 ALTER TABLE `sugars`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT для таблицы `tastings`
+--
+ALTER TABLE `tastings`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `tasting_methods`
+--
+ALTER TABLE `tasting_methods`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT для таблицы `tasting_wine`
+--
+ALTER TABLE `tasting_wine`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT для таблицы `translations`
