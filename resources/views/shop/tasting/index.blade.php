@@ -4,7 +4,7 @@
 @endpush
 @section('content')
     <div id="tasting-page">
-        <div id="banner">
+        <section id="banner">
             <div class="container">
                 <div class="row">
                     <ul class="breadcrumb">
@@ -102,7 +102,7 @@
                     @endforeach
                 </div>
             </div>
-        </div>
+        </section>
         <section id="second_block">
             <div id="how_we_cont">
                 <div class="swiper-viewport" id="how_we">
@@ -130,78 +130,111 @@
                             @endforeach
                         </div>
                         <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-
                 </div>
-                <section id="fourth_block">
-{{--                    <img alt="image" id="talks_before" src="{{asset('image/page/testing/talks_before.png')}}">--}}
-                    <h5 id="block_title">О НАС ГОВОРЯТ</h5>
-                    <div class="swiper-container swiper-container-horizontal" id="testimonials">
-                        <div class="swiper-wrapper">
-                            @foreach($comments as $comment)
-                                <div class="swiper-slide">
-                                    <div class="swiper-inner">
-                                        <h5>{{$comment->full_name}}</h5>
-                                        <img alt="quotes_red_icon"
-                                             src="{{asset('image/quotes-red.png')}}">
-                                        <div class="testimonial">
-                                            {{$comment->body}}
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                        <!-- Add Pagination -->
-                        <div class="swiper-pagination"></div>
-                        <!-- Add Arrows -->
-{{--                        <div class="swiper-button-next"></div>--}}
-{{--                        <div class="swiper-button-prev"></div>--}}
-                    </div>
-                    <!-- Swiper JS -->
-                </section>
             </div>
         </section>
-        @push('scripts')
-            <script type="text/javascript">
-                var mySwipert = new Swiper('#carousel0', {
-                    slidesPerView: 'auto',
-                    loop: true,
-                    initialSlide: 4,
-                    centeredSlides: true,
-                    center: true,
-                    spaceBetween: 30,
-                    loopFillGroupWithBlank: true,
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    },
-                    breakpoints: {
-                        991: {
-                            spaceBetween: 0,
-                            centeredSlides: false,
-                            center: false,
-                            loopFillGroupWithBlank: false,
-                            slidesPerView: 2
-                        },
-
-                    },
-
-                });
-                var swiper = new Swiper('#testimonials', {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                    slidesPerGroup: 1,
-                    loop: true,
-                    loopFillGroupWithBlank: true,
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    },
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
-                });
-            </script>
-        @endpush
+        <section id="fourth_block">
+            {{--                    <img alt="image" id="talks_before" src="{{asset('image/page/testing/talks_before.png')}}">--}}
+            <h5 id="block_title">О НАС ГОВОРЯТ</h5>
+            <div class="swiper-container swiper-container-horizontal" id="testimonials">
+                <div class="swiper-wrapper">
+                    @foreach($comments as $comment)
+                        <div class="swiper-slide">
+                            <div class="swiper-inner">
+                                <h5>{{$comment->full_name}}</h5>
+                                <img alt="quotes_red_icon"
+                                     src="{{asset('image/quotes-red.png')}}">
+                                <div class="testimonial">
+                                    {{$comment->body}}
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+            </div>
+            <!-- Swiper JS -->
+        </section>
+        <section id="question">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                        <h2 class="text-center">Остались вопросы?</h2>
+                        <p class="text-center">Свяжитесь с нами по указанным данным или отправьте сообщение
+                    </div>
+                    <div class="col-md-12 col-md-offset-1">
+                        <div class="col-md-5">
+                            <form class="question_form">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" placeholder="Имя">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" placeholder="Телефон или email">
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Сообщение"></textarea>
+                                </div>
+                                <button type="submit" class="btn">Отправить</button>
+                            </form>
+                        </div>
+                        <div class="col-md-4 col-md-offset-1 contact_info">
+                            <div class="phone_block">
+                                <p>Телефон</p>
+                                <a href="tel:+7 (915) 457-60-81">+7 (915) 457-60-81</a>
+                            </div>
+                            <div class="email_block">
+                                <p>E-mail</p>
+                                <a href="mailto:info@russianvine.ru">info@russianvine.ru</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
+    @push('scripts')
+        <script type="text/javascript">
+            var mySwipert = new Swiper('#carousel0', {
+                slidesPerView: 'auto',
+                loop: true,
+                initialSlide: 4,
+                centeredSlides: true,
+                center: true,
+                spaceBetween: 30,
+                loopFillGroupWithBlank: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    991: {
+                        spaceBetween: 0,
+                        centeredSlides: false,
+                        center: false,
+                        loopFillGroupWithBlank: false,
+                        slidesPerView: 2
+                    },
+
+                },
+
+            });
+            var swiper = new Swiper('#testimonials', {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                slidesPerGroup: 1,
+                loop: true,
+                loopFillGroupWithBlank: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        </script>
+    @endpush
 @endsection
