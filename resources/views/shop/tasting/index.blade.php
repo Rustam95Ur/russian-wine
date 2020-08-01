@@ -59,7 +59,8 @@
                         <div class="col-md-4">
                             <div class="product_layout">
                                 <div class="image">
-                                    <a class="preview" href="#">
+                                    <a class="preview"
+                                       onclick="$('#tasting_modal-{{$tasting->id}}').css('display', 'block');$('body').addClass('nooverflow');">
                                         <img alt="{{$tasting->title}}" src="{{Voyager::image($tasting->image)}}"
                                              class="imp_prod">
                                     </a>
@@ -120,7 +121,7 @@
                                 <div class="swiper-slide text-center">
                                     <div class="inner_ban in139">
                                         <img src="{{Voyager::image($method->image)}}"
-                                             alt="Проведём интересно персональную дегустацию для вашей компании, м"
+                                             alt="{{$method->title}}"
                                              class="img-responsive">
                                         <div class="desc">
                                             {{$method->title}}
@@ -237,4 +238,43 @@
             });
         </script>
     @endpush
+    @foreach($tastings as $tasting)
+    <div id="tasting_modal-{{$tasting->id}}" class="tasting_modal">
+        <div class="shadow_close"
+             onclick="$('#tasting_modal-{{$tasting->id}}').css('display', 'none');$('body').removeClass('nooverflow');"></div>
+        <div class="tasting_body">
+            <div class="icon_close"
+                 onclick="$('#tasting_modal-{{$tasting->id}}').css('display', 'none');$('body').removeClass('nooverflow');"></div>
+            <h2>{{$tasting->title}}</h2>
+            <ul class="list-inline">
+                <li>
+                    {{$tasting->user_count}} человек
+                </li>
+                <li>
+                    {{$tasting->time}} минут
+                </li>
+                <li>
+                    {{count($tasting->wines)}} вин
+                </li>
+            </ul>
+            <p class="tasting_desc">{!! $tasting->description  !!}</p>
+            @foreach($tasting->wines as  $wine)
+                <img class="tasting_wine_image" src="{{Voyager::image($wine->image)}}" alt="{{$wine->title}}">
+            @endforeach
+            <ul class="tasting_wine_title_list">
+                @foreach($tasting->wines as $wine)
+                    <li>
+                        {{isset($wine->winery) ? $wine->winery->title : '' }} |
+                        {{$wine->title}} | {{$wine->year}} |
+                        {{isset($wine->region) ? $wine->region->title : '' }}
+                    </li>
+                @endforeach
+            </ul>
+            <hr>
+            <a class="tasting_price">{{$tasting->price}} ₽ / чел</a>
+            <a id="deg_order" onclick="$('.mfp-wrap').css('display', 'block');$('#degustacii_modal').css('display', 'none');">Заказать
+                дегустацию</a>
+        </div>
+    </div>
+    @endforeach
 @endsection

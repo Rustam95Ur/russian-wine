@@ -242,10 +242,8 @@
                 </div>
                 <div class="swiper-pagination feat-pagination1"></div>
                 <!-- Swiper JS -->
-
             </div>
         </section>
-
         <section class="swp" id="swineries">
             <div class="scol col-rs-8">
                 <h5><a href="{{route('wineries')}}">Русские винодельни</a></h5>
@@ -265,7 +263,7 @@
         <section id="swinemakers" class="">
             <div class="col-md-12">
                 <h4>Русские виноделы</h4>
-                <a href="/winemakers">Все виноделы</a>
+                <a href="{{route('winemakers')}}">Все виноделы</a>
                 <!-- 3rd slider here -->
                 <div class="swiper-container" id="winemakers_slider1">
                     <div class="swiper-wrapper" id="winemakers_slider">
