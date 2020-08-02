@@ -23,9 +23,8 @@ class ProfileController extends Controller
 
 	public function favorite()
     {
-        $userSkills = Auth::user()->wines;
-        dd($userSkills);
-        return view('page.profile.favorite');
+        $favorites = Auth::user()->wines;
+        return view('page.profile.favorite', ['favorites' => $favorites]);
     }
 
     public function sub()

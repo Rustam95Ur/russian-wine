@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
 use App\Models\Favorite;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,25 +19,17 @@ class FavoriteController extends Controller
     }
 
     // Только залогиненый пользователь можешь добавлять в избанные
-    public function add(Request $request)
+    public function addToFavorite(Request $request)
     {
-        $favoirte = new Favorite();
-
-        $favoirte->client_id = $request['client_id'];
-        $favoirte->wine_id = $request['wine_id'];
-
-        if ($favoirte->save()) {
-            // Думаю пока можно так
-            $request->session()->put('fav', true);
-            return view('shop.wine.list', [
-                'favorite' => true
-            ]);
-        }
+        DB::table('client_wine')->insert(
+            ['client_id' => Auth::user()->id, 'wine_id' => $request->wine_id]
+        );
     }
 
     //Удаляем из избранных
-    public function delete(Request $request)
+    public function deleteFromFavorite(Request $request)
     {
-        $favorite = Favorite::where('client_id', '=', $request->client_id)->where('wine_id', '=', $request->wine_id)->get();
+        DB::table('client_wine')->where('client_id', '=', Auth::user()->id)
+            ->where('wine_id', '=', $request->wine_id)->delete();
     }
 }

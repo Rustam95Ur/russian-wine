@@ -43,8 +43,8 @@ Route::get('/profile', 'Page\ProfileController@show')->name('profile');
 
 Route::post('/profile/update', 'Page\ProfileController@update')->name('profile-update');
 
-Route::get('/fav', 'Page\FavoriteController@add')->name('fav');
-Route::get('/favdelete', 'Page\FavoriteController@delete')->name('favdelete');
+Route::get('/fav', 'Page\FavoriteController@addToFavorite')->name('fav');
+Route::get('/favdelete', 'Page\FavoriteController@deleteFromFavorite')->name('favdelete');
 
 Route::get('/favorite', 'Page\ProfileController@favorite')->name('favorite');
 
