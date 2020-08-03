@@ -32,15 +32,18 @@ Route::get('/winemakers', 'Page\WinemakerController@index')->name('winemakers');
 Route::get('/franchise', 'Page\FranchiseController@index')->name('franchise');
 Route::get('/personal-wine', 'Shop\IndexController@personal_wine')->name('personal-wine');
 Route::get('/tastings', 'Shop\TastingsController@index')->name('tastings');
+Route::post('tasting/order', 'Shop\TastingsController@order')->name('tasting_order');
+
 Route::get('/wine-tour', 'Page\IndexController@tour')->name('wine-tour');
 Route::get('/where-to-buy', 'Page\IndexController@where_to_by')->name('where_to_by');
 Route::get('/winemaking-regions', 'Page\RegionController@index')->name('regions');
 Route::get('/region-{slug}', 'Page\RegionController@show')->name('region');
 
+Route::post('order/tour', 'Page\OrderController@tour_save')->name('tour_save');
+// Ajax action
 Route::get('/search', 'Home\SearchController@search')->name('search');
 
 Route::get('/profile', 'Page\ProfileController@show')->name('profile');
-
 Route::post('/profile/update', 'Page\ProfileController@update')->name('profile-update');
 
 Route::get('/fav', 'Page\FavoriteController@addToFavorite')->name('fav');
@@ -50,12 +53,6 @@ Route::get('/favorite', 'Page\ProfileController@favorite')->name('favorite');
 
 //подписки в ЛК
 Route::get('/sub-wines', 'Page\ProfileController@sub')->name('sub-wines');
-
-
-// Route::get('/profile', function () {
-//     // Only authenticated users may enter...
-// })->middleware('auth')->name('profile');
-
 
 Route::get('/{slug}', 'Page\IndexController@simple_page')->name('simple_page');
 

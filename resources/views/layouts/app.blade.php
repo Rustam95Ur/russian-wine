@@ -21,9 +21,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
 
     <!-- Theme Style -->
-{{--    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">--}}
-
-<!-- Responsive -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
 
     <!-- Colors -->
@@ -38,10 +35,6 @@
     <link href="{{asset('icon/favicon.png')}}" rel="apple-touch-icon-precomposed" sizes="48x48">
     <link href="{{asset('icon/favicon.png')}}" rel="apple-touch-icon-precomposed">
     <link href="{{asset('icon/favicon.png')}}" rel="shortcut icon">
-    <!-- Slider Revolution CSS Files -->
-{{--    <link rel="stylesheet" type="text/css" href="{{ asset('rev-slider/css/settings.css') }}">--}}
-{{--    <link rel="stylesheet" type="text/css" href="{{ asset('rev-slider/css/layers.css') }}">--}}
-{{--    <link rel="stylesheet" type="text/css" href="{{ asset('rev-slider/css/navigation.css') }}">--}}
 
     <!-- Custom styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/Custom/custom.css') }}">
@@ -64,7 +57,6 @@
 {{--<a id="scroll-top"><i class="fa fa-angle-right" aria-hidden="true"></i></a> <!-- /#scroll-top -->--}}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 {{--<script src="{{ asset('js/jquery.min.js') }}"></script>--}}
-{{--<script src="{{ asset('js/rev-slider.js') }}"></script>--}}
 <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('js/jquery-countTo.js') }}"></script>
 <script src="{{ asset('js/jquery-waypoints.js') }}"></script>
@@ -74,105 +66,90 @@
 <script src="{{ asset('js/main.js') }}"></script>
 
 
-<script>
-    (function ($) {
-        $.fn.floatLabels = function (options) {
+{{--<script>--}}
+{{--    (function ($) {--}}
+{{--        $.fn.floatLabels = function (options) {--}}
 
-            // Settings
-            var self = this;
-            var settings = $.extend({}, options);
-
-
-            // Event Handlers
-            function registerEventHandlers() {
-                self.on('input keyup change', 'input, textarea', function () {
-                    actions.swapLabels(this);
-                });
-            }
+{{--            // Settings--}}
+{{--            var self = this;--}}
+{{--            var settings = $.extend({}, options);--}}
 
 
-            // Actions
-            var actions = {
-                initialize: function() {
-                    self.each(function () {
-                        var $this = $(this);
-                        var $label = $this.children('label');
-                        var $field = $this.find('input,textarea').first();
-
-                        if ($this.children().first().is('label')) {
-                            $this.children().first().remove();
-                            $this.append($label);
-                        }
-
-                        var placeholderText = ($field.attr('placeholder') && $field.attr('placeholder') != $label.text()) ? $field.attr('placeholder') : $label.text();
-
-                        $label.data('placeholder-text', placeholderText);
-                        $label.data('original-text', $label.text());
-
-                        if ($field.val() == '') {
-                            $field.addClass('empty')
-                        }
-                    });
-                },
-                swapLabels: function (field) {
-                    var $field = $(field);
-                    var $label = $(field).siblings('label').first();
-                    var isEmpty = Boolean($field.val());
-
-                    if (isEmpty) {
-                        $field.removeClass('empty');
-                        $label.text($label.data('original-text'));
-                    }
-                    else {
-                        $field.addClass('empty');
-                        $label.text($label.data('placeholder-text'));
-                    }
-                }
-            }
+{{--            // Event Handlers--}}
+{{--            function registerEventHandlers() {--}}
+{{--                self.on('input keyup change', 'input, textarea', function () {--}}
+{{--                    actions.swapLabels(this);--}}
+{{--                });--}}
+{{--            }--}}
 
 
-            // Initialization
-            function init() {
-                registerEventHandlers();
+{{--            // Actions--}}
+{{--            var actions = {--}}
+{{--                initialize: function() {--}}
+{{--                    self.each(function () {--}}
+{{--                        var $this = $(this);--}}
+{{--                        var $label = $this.children('label');--}}
+{{--                        var $field = $this.find('input,textarea').first();--}}
 
-                actions.initialize();
-                self.each(function () {
-                    actions.swapLabels($(this).find('input,textarea').first());
-                });
-            }
-            init();
+{{--                        if ($this.children().first().is('label')) {--}}
+{{--                            $this.children().first().remove();--}}
+{{--                            $this.append($label);--}}
+{{--                        }--}}
+
+{{--                        var placeholderText = ($field.attr('placeholder') && $field.attr('placeholder') != $label.text()) ? $field.attr('placeholder') : $label.text();--}}
+
+{{--                        $label.data('placeholder-text', placeholderText);--}}
+{{--                        $label.data('original-text', $label.text());--}}
+
+{{--                        if ($field.val() == '') {--}}
+{{--                            $field.addClass('empty')--}}
+{{--                        }--}}
+{{--                    });--}}
+{{--                },--}}
+{{--                swapLabels: function (field) {--}}
+{{--                    var $field = $(field);--}}
+{{--                    var $label = $(field).siblings('label').first();--}}
+{{--                    var isEmpty = Boolean($field.val());--}}
+
+{{--                    if (isEmpty) {--}}
+{{--                        $field.removeClass('empty');--}}
+{{--                        $label.text($label.data('original-text'));--}}
+{{--                    }--}}
+{{--                    else {--}}
+{{--                        $field.addClass('empty');--}}
+{{--                        $label.text($label.data('placeholder-text'));--}}
+{{--                    }--}}
+{{--                }--}}
+{{--            }--}}
 
 
-            return this;
-        };
+{{--            // Initialization--}}
+{{--            function init() {--}}
+{{--                registerEventHandlers();--}}
 
-        $(function () {
-            $('.float-label-control').floatLabels();
-        });
-    })(jQuery);
-</script>
+{{--                actions.initialize();--}}
+{{--                self.each(function () {--}}
+{{--                    actions.swapLabels($(this).find('input,textarea').first());--}}
+{{--                });--}}
+{{--            }--}}
+{{--            init();--}}
 
 
-{{--<!-- Slider -->--}}
-{{--<script src="{{ asset('rev-slider/js/jquery.themepunch.tools.min.js') }}"></script>--}}
-{{--<script src="{{ asset('rev-slider/js/jquery.themepunch.revolution.min.js') }}"></script>--}}
-{{--<script src="{{ asset('js/rev-slider.js') }}"></script>--}}
-{{--<!-- Load Extensions only on Local File Systems ! The following part can be removed on Server for On Demand Loading -->--}}
-{{--<script src="{{ asset('rev-slider/js/extensions/revolution.extension.actions.min.js')  }}"></script>--}}
-{{--<script src="{{ asset('rev-slider/js/extensions/revolution.extension.carousel.min.js')  }}"></script>--}}
-{{--<script src="{{ asset('rev-slider/js/extensions/revolution.extension.kenburn.min.js')  }}"></script>--}}
-{{--<script src="{{ asset('rev-slider/js/extensions/revolution.extension.layeranimation.min.js')  }}"></script>--}}
-{{--<script src="{{ asset('rev-slider/js/extensions/revolution.extension.migration.min.js')  }}"></script>--}}
-{{--<script src="{{ asset('rev-slider/js/extensions/revolution.extension.navigation.min.js')  }}"></script>--}}
-{{--<script src="{{ asset('rev-slider/js/extensions/revolution.extension.parallax.min.js')  }}"></script>--}}
-{{--<script src="{{ asset('rev-slider/js/extensions/revolution.extension.slideanims.min.js')  }}"></script>--}}
-{{--<script src="{{ asset('rev-slider/js/extensions/revolution.extension.video.min.js')  }}"></script>--}}
-<script type="text/javascript">
-    jQuery(".nav-folderized h5").click(function () {
-        jQuery(this).parent(".nav").toggleClass("open");
-    });
+{{--            return this;--}}
+{{--        };--}}
 
-</script>
+{{--        $(function () {--}}
+{{--            $('.float-label-control').floatLabels();--}}
+{{--        });--}}
+{{--    })(jQuery);--}}
+{{--</script>--}}
+
+{{--<script type="text/javascript">--}}
+{{--    jQuery(".nav-folderized h5").click(function () {--}}
+{{--        jQuery(this).parent(".nav").toggleClass("open");--}}
+{{--    });--}}
+
+{{--</script>--}}
 @stack('scripts')
 <script>
     @php
@@ -199,12 +176,6 @@
 
 <!-- Ajax search Нужно допилить -->
 <!-- Ниже пример  HTML который был -->
-
-<!-- <ul>
-    <li id="searchList"><img id="search" src="{{ asset ('image/6.png') }}" class="xs-thumb"></li>
-    <li id="searchList"><img id="search" src="{{ asset ('image/6.png') }}" class="xs-thumb"></li>
-    <li id="searchList"><img id="search" src="{{ asset ('image/6.png') }}" class="xs-thumb"></li>
-</ul> -->
 <script type="text/javascript">
     $('#search').on('keyup',function(){
         if($(this).val().length >= 3){
@@ -292,9 +263,9 @@
     <script>
         (function ($) {
             $(function () {
-                $('#messageModal').modal('show');
+                $('#messageModal').removeClass('hide');
                 setTimeout(function () {
-                    $('#messageModal').modal('hide')
+                    $('#messageModal').addClass('hide')
                 }, 5000);
             });
         })(jQuery);

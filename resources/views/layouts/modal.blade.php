@@ -1,63 +1,3 @@
-<div id="policy" class="active activated">
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var policy = document.getElementById('policy');
-            var policy2cookie = document.cookie.match(new RegExp('(?:^|; )' +
-                'policy_confirm'.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') +
-                '=([^;]*)'));
-            if (!policy2cookie || policy2cookie[1] != 'Y') {
-                var policy_container = document.querySelector('div.policy__container');
-                if (policy_container) {
-                    if (!navigator.cookieEnabled) {
-                        policy_container.innerHTML = '<div class="policy__text"><p>' + privacy_text_nocookie + '</p></div>'
-                    } else {
-                        policy_container.innerHTML = '<div id="is18plus"><div class="is18plus-box"><div class="is18plus-content">' +
-                            '<img class="img-responsive" alt="18_pluc_img" src="/image/bg/18plus_bg.jpg" /><div>' +
-                            '<div class="circle">18+</div><p>Для доступа необходимо подтвердить совершеннолетний возраст. </p>' +
-                            '<a class="policy__confirm confirm btn-white" href="javascript:void(0)">Мне исполнилось 18 лет</a>' +
-                            '</div></div></div></div>';
-                    }
-                    setTimeout(function () {
-                        policy.appendChild(policy_container);
-                        policy.classList.add('active');
-                        setTimeout(function () {
-                            policy.classList.add('activated')
-                        }, 300);
-                        var policy_confirm = document.querySelector('.policy__confirm');
-                        if (policy_confirm) {
-                            policy_confirm.addEventListener('click', function () {
-                                policy.classList.remove('activated');
-                                setTimeout(function () {
-                                    policy.remove()
-                                }, 300);
-                                document.cookie = 'policy_confirm=Y; path=/'
-                            })
-                        }
-                    }, 100)
-                }
-            } else {
-                policy.remove()
-            }
-        })
-    </script>
-    <div class="policy__container">
-        <div id="is18plus">
-            <div class="is18plus-box">
-                <div class="is18plus-content"><img alt="18_pluc_img" class="img-responsive"
-                                                   src="{{asset('image/bg/18plus_bg.jpg')}}">
-                    <div>
-                        <div class="circle">18+</div>
-                        <p>Для доступа необходимо подтвердить совершеннолетний возраст. </p>
-                        <a class="policy__confirm confirm btn-white" href="javascript:void(0)">
-                            Мне исполнилось 18 лет</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <div id="overlay">
     <div class="close">
         <p class="closeclick" onclick="off()">X</p>
@@ -218,33 +158,32 @@
     </div>
 </div>
 
-
-<!-- Message Modal -->
-<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModal" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-body text-center">
-                @if ($message = Session::get('success'))
-                    <h6 class="text-center text-success">{!! $message !!}</h6>
-                @endif
-                @if ($message = Session::get('error'))
-                    <h6 class="text-center text-danger">{!! $message !!}</h6>
-                @endif
-                @if ($message = Session::get('warning'))
-                    <h6 class="text-center text-danger">{!! $message !!}</h6>
-                @endif
-                @if ($message = Session::get('info'))
-                    <h6 class="text-center text-danger">{!! $message !!}</h6>
-                @endif
-                @if ($errors->any())
-                    @foreach($errors->all() as $error)
-                        <ul class="questions">
-                            <li class="text-danger"><h6>{!! $error !!}</h6></li>
-                        </ul>
-                    @endforeach
-                @endif
-            </div>
-        </div>
+<div id="messageModal" class="message_modal hide">
+    <div class="shadow_close"
+         onclick="$('#messageModal').css('display', 'none');$('body').removeClass('nooverflow');"></div>
+    <div class="message_body">
+        <div class="icon_close"
+             onclick="$('#messageModal').css('display', 'none');$('body').removeClass('nooverflow');"></div>
+        <h2 class="text-center m-b-50">Сообщение</h2>
+        @if ($message = Session::get('success'))
+            <h3 class="text-center text-success">{!! $message !!}</h3>
+        @endif
+        @if ($message = Session::get('error'))
+            <h3 class="text-center text-danger">{!! $message !!}</h3>
+        @endif
+        @if ($message = Session::get('warning'))
+            <h3 class="text-center text-danger">{!! $message !!}</h6>
+        @endif
+        @if ($message = Session::get('info'))
+            <h3 class="text-center text-danger">{!! $message !!}</h3>
+        @endif
+        @if ($errors->any())
+            @foreach($errors->all() as $error)
+                <ul class="questions">
+                    <li class="text-danger"><h6>{!! $error !!}</h6></li>
+                </ul>
+            @endforeach
+        @endif
     </div>
 </div>
 @if(isset($home_tasting))
@@ -293,106 +232,31 @@
                 <div id="popup-quickorder">
                     <div class="popup-heading">{{$home_tasting->title}}</div>
                     <div class="popup-center">
-                        <form id="fastorder_data" enctype="multipart/form-data" method="post">
-                            <div class="col-sm-12" id="prods_c">
-                                <div class="well well-sm products" style="margin-top:10px;">
-                                    <div class="product">
-                                        <div class="row">
-                                            section#specials
-                                            <div class="col-xs-12 col-sm-7">
-                                                <div class="col-xs-6 quantity_quickorder quick-cell">
-                                                    <div class="quick-cell-content pquantity">
-                                                        <div class="input-group popup-quantity">
-                                                        <span class="input-group-btn">
-                                                            <input class="btn btn-update-popup" type="button"
-                                                                   id="decrease_quickorder" value="-"
-                                                                   onclick="btnminus_quickorder('1');recalculateprice_quickorder();">
-                                                        </span>
-                                                            <input type="text"
-                                                                   class="form-control input-sm qty_quickorder"
-                                                                   name="quantity" id="htop_quickorder" size="2"
-                                                                   value="1">
-                                                            <span class="input-group-btn">
-                                                            <input class="btn btn-update-popup" type="button"
-                                                                   id="increase_quickorder" value="+"
-                                                                   onclick="btnplus_quickorder();recalculateprice_quickorder();">
-                                                        </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-xs-6 text-center quick-cell">
-                                                    <div class="quick-cell-content">
-
-                                                        <div class="price_fast"><span id="formated_price_quickorder"
-                                                                                      data-price="15000.0000">15000</span>
-                                                        </div>
-                                                        <input type="hidden" id="price_tax_plus_options"
-                                                               name="price_tax" value="15000">
-                                                        <input type="hidden" id="price_no_tax_plus_options"
-                                                               name="price_no_tax" value="15000">
-                                                        <input id="total_form" type="hidden" value="15000"
-                                                               name="total_fast">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
+                        <form id="tasting_form" method="post" action={{route('tasting_order')}}>
+                            @csrf
                             <div class="col-sm-12 col-sm-12 form-group sections_block_rquaired">
                                 <div class="input-group margin-bottom-sm">
                                     <input id="contact-name" class="form-control contact-name" type="text"
-                                           placeholder="Имя" value="" name="nameFF">
-
+                                           placeholder="Имя" value="" name="name" required>
                                 </div>
-
                             </div>
-
-
                             <div class="col-sm-12 col-sm-12 form-group sections_block_rquaired">
                                 <div class="input-group margin-bottom-sm">
                                     <input id="contact-phone" class="form-control contact-phone" type="text"
-                                           placeholder="Телефон" value="" name="contactFF">
-
+                                           placeholder="Телефон" value="" name="phone" required>
                                 </div>
                             </div>
-
-
                             <div class="col-sm-12 col-sm-12 form-group sections_block_rquaired">
                                 <div class="input-group margin-bottom-sm">
-                                    <input id="contact-email" class="form-control contact-email" type="text"
-                                           placeholder="E-mail" value="" name="messageFF">
-
+                                    <input id="contact-email" class="form-control contact-email" type="email"
+                                           placeholder="E-mail" value="" name="email" required>
                                 </div>
                             </div>
-
-
-                            <div class="col-sm-12 form-group text-center"></div>
-                            <input type="hidden" id="callback_url" value="" name="url_site">
-                            <input type="hidden" id="this_prod_id" value="50" name="this_prod_id">
-
-
+                            <input type="hidden"  value="{{$home_tasting->id}}" name="tasting_id">
                             <input class="btn btn-quickorder-one" type="submit" value="Заказать дегустацию">
                         </form>
                     </div>
                     <div class="popup-footer">
-                        <style>
-                            #quickorder_btn .btn-quickorder {
-                                background-color: # !important;
-                                border-color: # !important;
-                            }
-
-                            #quickorder_btn .btn-quickorder:hover,
-                            #quickorder_btn .btn-quickorder:focus {
-                                background-color: # !important;
-                            }
-
-                        </style>
-
                         <div class="terms">
                             Нажимая кнопку вы даете согласие на обработку персональных данных в соответствии с <a>условиями
                                 Пользовательского соглашения</a>.
@@ -403,7 +267,64 @@
                     </button>
                 </div>
             </div>
-            <div class="mfp-preloader"><span><i style="font-size:50px;" class="fa fa-spinner fa-pulse"></i></span></div>
         </div>
     </div>
 @endif
+<div id="policy">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var policy = document.getElementById('policy');
+            var policy2cookie = document.cookie.match(new RegExp('(?:^|; )' +
+                'policy_confirm'.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') +
+                '=([^;]*)'));
+            if (!policy2cookie || policy2cookie[1] != 'Y') {
+                var policy_container = document.querySelector('div.policy__container');
+                if (policy_container) {
+                    if (!navigator.cookieEnabled) {
+                        policy_container.innerHTML = '<div class="policy__text"><p>' + privacy_text_nocookie + '</p></div>'
+                    } else {
+                        policy_container.innerHTML = '<div id="is18plus"><div class="is18plus-box"><div class="is18plus-content">' +
+                            '<img class="img-responsive" alt="18_pluc_img" src="/image/bg/18plus_bg.jpg" /><div>' +
+                            '<div class="circle">18+</div><p>Для доступа необходимо подтвердить совершеннолетний возраст. </p>' +
+                            '<a class="policy__confirm confirm btn-white" href="javascript:void(0)">Мне исполнилось 18 лет</a>' +
+                            '</div></div></div></div>';
+                    }
+                    setTimeout(function () {
+                        policy.appendChild(policy_container);
+                        policy.classList.add('active');
+                        setTimeout(function () {
+                            policy.classList.add('activated')
+                        }, 300);
+                        var policy_confirm = document.querySelector('.policy__confirm');
+                        if (policy_confirm) {
+                            policy_confirm.addEventListener('click', function () {
+                                policy.classList.remove('activated');
+                                setTimeout(function () {
+                                    policy.remove()
+                                }, 300);
+                                document.cookie = 'policy_confirm=Y; path=/'
+                            })
+                        }
+                    }, 100)
+                }
+            } else {
+                policy.remove()
+            }
+        })
+    </script>
+    <div class="policy__container">
+        <div id="is18plus">
+            <div class="is18plus-box">
+                <div class="is18plus-content">
+                    <img alt="18_pluc_img" class="img-responsive" src="{{asset('image/bg/18plus_bg.jpg')}}">
+                    <div>
+                        <div class="circle">18+</div>
+                        <p>Для доступа необходимо подтвердить совершеннолетний возраст. </p>
+                        <a class="policy__confirm confirm btn-white" href="javascript:void(0)">
+                            Мне исполнилось 18 лет</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
