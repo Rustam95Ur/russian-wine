@@ -192,7 +192,7 @@
 }
 
 @font-face {
-    font-family: 'latolight';
+    font-family: 'Lato-Light';
     src: url(lato-light-webfont.woff2) format("woff2"), url(lato-light-webfont.woff) format("woff");
     font-weight: 400;
     font-style: normal;

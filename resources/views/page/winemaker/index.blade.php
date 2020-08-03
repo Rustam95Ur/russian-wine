@@ -82,6 +82,17 @@
             </div>
         </div>
     </div>
+    <style type="text/css">
+      body {
+          background: #F5F5F5;
+      }
+      .description ul {
+          list-style: disc !important;
+      }
+      .description ul li {
+          margin-left: -20px;
+      }
+    </style>
     @push('scripts')
         <script>
             $('.preview').on('click', function () {

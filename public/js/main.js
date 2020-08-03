@@ -15,6 +15,52 @@
 *
 */
 
+if ($(window).width() > 992) {
+    var swiperH = new Swiper('fullscreenSlider.swiper-container-h', {
+        direction: 'vertical',
+        mousewheel: true,
+        speed: 550,
+        slidesPerView: 1,
+        pagination: {
+            el: '.swiper-pagination-h',
+            clickable: true,
+        },
+        keyboard: {
+            enabled: true,
+        },
+    });
+
+}
+var swiperV = new Swiper('#smolSlider.swiper-container-v', {
+    slidesPerView: 3,
+    centeredSlides: true,
+    mousewheel: true,
+    loopFillGroupWithBlank: true,
+    loop: true,
+    pagination: {
+        el: '.swiper-pagination-v',
+        clickable: true,
+        type: 'fraction',
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    keyboard: {
+        enabled: true,
+    },
+    breakpoints: {
+        991: {
+            slidesPerView: 'auto',
+            centeredSlides: false,
+            pagination: {
+                type: 'bullets',
+            },
+        },
+    }
+});
+
+
 
 if ($(window).width() < 991) {
     var swiper = new Swiper('#home_slider', {

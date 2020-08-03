@@ -145,7 +145,7 @@
                   </div>
         <!--  Collapse inner space end -->
                </div>
-               <button class="collapseBtn" name="button" data-toggle="collapse" href="#collapse1">
+               <button class="collapseBtn" name="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
                   <span>Посмотреть все</span>
                   <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
                </button>
@@ -212,7 +212,7 @@
                   </div>
         <!--  Collapse inner space end -->
                </div>
-               <button class="collapseBtn" name="button" data-toggle="collapse" href="#collapseWineType">
+               <button class="collapseBtn" name="button" data-toggle="collapse" data-target="#collapseWineType" aria-expanded="false" aria-controls="collapseWineType">
                   <span>Посмотреть все</span>
                   <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
                </button>
@@ -272,7 +272,7 @@
 
 <!--     wine winemaker filters                   -->
         <form id="shopWinemaker" class="filtersMain">
-          <h4 class="filterHeading">Регион</h4>
+          <h4 class="filterHeading">Винодельня</h4>
     <!--  filter live search  -->
             <div id="liveSearch-form">
   		       <input id="search-main" type="text" placeholder="Поиск...">
@@ -322,36 +322,36 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="shopWinemaker6">
                     <label class="form-check-label" for="shopWinemaker6">
-                      Нижная волга
+                      Нижная волга21
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="shopWinemaker7">
                     <label class="form-check-label" for="shopWinemaker7">
-                      Ставрополь
+                      Ставрополь21
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="shopWinemaker8">
                     <label class="form-check-label" for="shopWinemaker8">
-                      Игристое
+                      Игристое21
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="custom-control-input" type="checkbox" value="" id="shopWinemaker9">
                     <label class="form-check-label" for="shopWinemaker9">
-                      Не игристое
+                      Не игристое21
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="custom-control-input" type="checkbox" value="" id="shopWinemaker10">
                     <label class="form-check-label" for="shopWinemaker10">
-                      Фруктовое
+                      Фруктовое12
                     </label>
                   </div>
         <!--  Collapse inner space end -->
                </div>
-               <button class="collapseBtn" name="button" data-toggle="collapse" href="#collapseWinemakers">
+               <button class="collapseBtn" name="button" data-toggle="collapse" data-target="#collapseWinemakers" aria-expanded="false" aria-controls="collapseWinemakers">
                   <span>Посмотреть все</span>
                   <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
                </button>
@@ -360,8 +360,256 @@
         </form>
 <!--     wine winemaker filters end               -->
 
-      </div>
+<!--     grape family filter                     -->
+        <form id="shopWinefamily" class="filtersMain">
+          <h4 class="filterHeading">Винодельня</h4>
+        <!--  filter live search  -->
+            <div id="liveSearch-form">
+             <input id="search-main" type="text" placeholder="Поиск...">
+              <ul class="output" style="display:none;">
+              </ul>
+              <a type="submit" id="sfb" class="preview" value="">
+                <img src="{{ asset ('image/searchSort.svg') }}" alt="" class="liveSearchIcon">
+              </a>
+          </div>
+        <!--  filter live search end -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="shopWinefamily1">
+            <label class="form-check-label" for="shopWinefamily1">
+              Каберне Совиньон
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="shopWinefamily2">
+            <label class="form-check-label" for="shopWinefamily2">
+              Каберне Фран
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="shopWinefamily3">
+            <label class="form-check-label" for="shopWinefamily3">
+              Красностоп Золотовский
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="shopWinefamily4">
+            <label class="form-check-label" for="shopWinefamily4">
+              Пино Нуар
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="shopWinefamily5">
+            <label class="form-check-label" for="shopWinefamily5">
+              Шардоне
+            </label>
+          </div>
 
+          <!--   collapse other prices   -->
+          <div class="panel-group">
+             <div class="panel panel-default">
+               <div id="collapseWinefamily" class="panel-collapse collapse">
+        <!--  Collapse inner space   -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="shopWinefamily6">
+                    <label class="form-check-label" for="shopWinefamily6">
+                      Шардоне1
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="shopWinefamily7">
+                    <label class="form-check-label" for="shopWinefamily7">
+                      Шардоне2
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="shopWinefamily8">
+                    <label class="form-check-label" for="shopWinefamily8">
+                      Шардоне3
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="custom-control-input" type="checkbox" value="" id="shopWinefamily9">
+                    <label class="form-check-label" for="shopWinefamily9">
+                      Шардоне4
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="custom-control-input" type="checkbox" value="" id="shopWinefamily10">
+                    <label class="form-check-label" for="shopWinefamily10">
+                      Шардоне5
+                    </label>
+                  </div>
+        <!--  Collapse inner space end -->
+               </div>
+               <button class="collapseBtn" name="button" data-toggle="collapse" data-target="#collapseWinefamily" aria-expanded="false" aria-controls="collapseWinefamily">
+                  <span>Посмотреть все</span>
+                  <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
+               </button>
+             </div>
+          </div>
+        </form>
+
+<!--     grape family filter end                 -->
+
+<!--     wine year filters                        -->
+        <form id="shopWineAge" class="filtersMain">
+          <h4 class="filterHeading">Год</h4>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="shopWineAge1">
+            <label class="form-check-label" for="shopWineAge1">
+              2019
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="shopWineAge2">
+            <label class="form-check-label" for="shopWineAge2">
+              2018
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="shopWineAge3">
+            <label class="form-check-label" for="shopWineAge3">
+              2017
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="shopWineAge4">
+            <label class="form-check-label" for="shopWineAge4">
+              2016
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="shopWineAge5">
+            <label class="form-check-label" for="shopWineAge5">
+              2015
+            </label>
+          </div>
+          <!--   collapse other prices   -->
+          <div class="panel-group">
+             <div class="panel panel-default">
+               <div id="collapseWineAge" class="panel-collapse collapse">
+        <!--  Collapse inner space   -->
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="shopWineAge6">
+                  <label class="form-check-label" for="shopWineAge6">
+                    2014
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="shopWineAge7">
+                  <label class="form-check-label" for="shopWineAge7">
+                    2013
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="shopWineAge8">
+                  <label class="form-check-label" for="shopWineAge8">
+                    2012
+                  </label>
+                </div>
+        <!--  Collapse inner space end -->
+               </div>
+               <button class="collapseBtn" name="button" data-toggle="collapse" data-target="#collapseWineAge" aria-expanded="false" aria-controls="collapseWineAge">
+                  <span>Посмотреть все</span>
+                  <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
+               </button>
+             </div>
+          </div>
+        </form>
+<!--     wine grad filters end                    -->
+
+<!--     wine grad filters                        -->
+        <form id="shopWineGrad" class="filtersMain">
+          <h4 class="filterHeading">Крепость</h4>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="shopGrad1">
+            <label class="form-check-label" for="shopGrad1">
+              10%
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="shopGrad2">
+            <label class="form-check-label" for="shopGrad2">
+              10.5%
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="shopGrad3">
+            <label class="form-check-label" for="shopGrad3">
+              10.6%
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="shopGrad4">
+            <label class="form-check-label" for="shopGrad4">
+              11%
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="shopGrad5">
+            <label class="form-check-label" for="shopGrad5">
+              11.5%
+            </label>
+          </div>
+          <!--   collapse other prices   -->
+          <div class="panel-group">
+             <div class="panel panel-default">
+               <div id="collapseWineGrad" class="panel-collapse collapse">
+        <!--  Collapse inner space   -->
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="shopGrad6">
+                  <label class="form-check-label" for="shopGrad6">
+                    11.6%
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="shopGrad7">
+                  <label class="form-check-label" for="shopGrad7">
+                    12%
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="shopGrad8">
+                  <label class="form-check-label" for="shopGrad8">
+                    12.2%
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="shopGrad9">
+                  <label class="form-check-label" for="shopGrad9">
+                    12.3%
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="shopGrad10">
+                  <label class="form-check-label" for="shopGrad10">
+                    12.4%
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="shopGrad11">
+                  <label class="form-check-label" for="shopGrad11">
+                    12.5%
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="shopGrad12">
+                  <label class="form-check-label" for="shopGrad12">
+                    12.6  %
+                  </label>
+                </div>
+        <!--  Collapse inner space end -->
+               </div>
+               <button class="collapseBtn" name="button" data-toggle="collapse" data-target="#collapseWineGrad" aria-expanded="false" aria-controls="collapseWineGrad">
+                  <span>Посмотреть все</span>
+                  <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
+               </button>
+             </div>
+          </div>
+        </form>
+      </div>
+<!--     wine grad filters end                    -->
+<!--   shop content -->
       <div class="shopSearch col-md-9">
         <div class="row featured_cont">
             <div class="col-md-4">

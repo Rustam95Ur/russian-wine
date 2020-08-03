@@ -8,7 +8,7 @@
         <div class="row">
             <div id="content" class="col-sm-12">
                 <!-- Swiper -->
-                <div class="swiper-container swiper-container-h swiper-container-initialized swiper-container-vertical">
+                <div class="swiper-container swiper-container-h swiper-container-initialized swiper-container-vertical" id="fullscreenSlider">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide swiper-slide-active" id="slide-1">
                             <div class="swiper-slide swiper-slide-next" id="slide-2">
@@ -109,7 +109,7 @@
                                     </div>
                                     <div class="col-sss-8">
                                         <div
-                                            class="swiper-container swiper-container-v swiper-container-initialized swiper-container-horizontal">
+                                            class="swiper-container swiper-container-v swiper-container-initialized swiper-container-horizontal" id="smolSlider">
                                             <div class="swiper-wrapper"
                                                  style="transition-duration: 0ms; transform: translate3d(-1344px, 0px, 0px);">
                                                 <div
@@ -179,52 +179,6 @@
 
                         <!-- Initialize Swiper -->
                         @push('script')
-                            <script>
-                                if ($(window).width() > 992) {
-                                    var swiperH = new Swiper('.swiper-container-h', {
-                                        direction: 'vertical',
-                                        mousewheel: true,
-                                        speed: 550,
-                                        slidesPerView: 1,
-                                        pagination: {
-                                            el: '.swiper-pagination-h',
-                                            clickable: true,
-                                        },
-                                        keyboard: {
-                                            enabled: true,
-                                        },
-                                    });
-
-                                }
-                                var swiperV = new Swiper('.swiper-container-v', {
-                                    slidesPerView: 3,
-                                    centeredSlides: true,
-                                    mousewheel: true,
-                                    loopFillGroupWithBlank: true,
-                                    loop: true,
-                                    pagination: {
-                                        el: '.swiper-pagination-v',
-                                        clickable: true,
-                                        type: 'fraction',
-                                    },
-                                    navigation: {
-                                        nextEl: '.swiper-button-next',
-                                        prevEl: '.swiper-button-prev',
-                                    },
-                                    keyboard: {
-                                        enabled: true,
-                                    },
-                                    breakpoints: {
-                                        991: {
-                                            slidesPerView: 'auto',
-                                            centeredSlides: false,
-                                            pagination: {
-                                                type: 'bullets',
-                                            },
-                                        },
-                                    }
-                                });
-                            </script>
                             <script>
                                 if ($(window).width() < 991) {
                                     $('.imennoe .swiper-container-h > .swiper-wrapper').attr('class', '');
