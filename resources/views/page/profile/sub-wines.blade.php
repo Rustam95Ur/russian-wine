@@ -75,11 +75,11 @@
                     <div>
                         <div class="tab" style="margin-top: 30px">
                             <h1>Подписки</h1>
-                            <button class="tablinks" onclick="openSubWines(event, 'current')">Действующие</button>
+                            <button class="tablinks active" onclick="openSubWines(event, 'current')">Действующие</button>
                             <button class="tablinks" onclick="openSubWines(event, 'old')">Прошедшие</button>
                         </div>
 
-                        <div id="current" class="tabcontent">
+                        <div id="current" class="tabcontent active">
                             <div style="color: grey !important; margin: 100px;">
                                 <center>
                                     <h3>У вас нет действующих подписок</h3>

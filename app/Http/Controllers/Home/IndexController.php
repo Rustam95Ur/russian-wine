@@ -7,12 +7,15 @@ use App\Models\Set;
 use App\Models\Tasting;
 use App\Models\Wine;
 use App\Models\Winemaker;
+use DB;
+use Illuminate\Support\Facades\Auth;
 
 class IndexController extends Controller
 {
 
     public function index()
     {
+        $favorite = [];
         $popular_wines = Wine::where('status', '=', 'ACTIVE')
             ->where('featured', '=', 1)
             ->with('color', 'sugar', 'winery')
@@ -24,6 +27,17 @@ class IndexController extends Controller
             ->orderBy('id', 'DESC')
             ->limit(10)
             ->get();
+
+//        if (Auth::user()) {
+//            $favorited = DB::table('client_wine')
+//                ->join('wines', 'client_wine.wine_id', '=', 'wines.id')
+//                ->where('client_wine.client_id', '=', Auth::user()->id)->get();
+//        }
+//
+//        if (!empty($favorited)) {
+//            $favorite = $favorited;
+//        }
+
         $winemakers = Winemaker::where('status', '=', 'ACTIVE')->with('wines', 'region', 'winery')->get();
         $home_set = Set::where('in_home', true)->first();
         $home_tasting = Tasting::where('in_home', true)->first();
@@ -33,7 +47,7 @@ class IndexController extends Controller
             'winemakers' => $winemakers,
             'home_set'  => $home_set,
             'home_tasting'  => $home_tasting,
-
+            'favorite' => $favorite,
         ]);
     }
 }

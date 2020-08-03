@@ -46,8 +46,8 @@ Route::get('/search', 'Home\SearchController@search')->name('search');
 Route::get('/profile', 'Page\ProfileController@show')->name('profile');
 Route::post('/profile/update', 'Page\ProfileController@update')->name('profile-update');
 
-Route::get('/fav', 'Page\FavoriteController@addToFavorite')->name('fav');
-Route::get('/favdelete', 'Page\FavoriteController@deleteFromFavorite')->name('favdelete');
+Route::get('/add-to-favorite', 'Page\FavoriteController@addToFavorite')->name('add-to-favorite');
+Route::get('/delete-from-favorite', 'Page\FavoriteController@deleteFromFavorite')->name('delete-from-favorite');
 
 Route::get('/favorite', 'Page\ProfileController@favorite')->name('favorite');
 

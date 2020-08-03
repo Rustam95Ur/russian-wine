@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
-use App\Models\Favorite;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

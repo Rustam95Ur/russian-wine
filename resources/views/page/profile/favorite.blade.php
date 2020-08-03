@@ -1,48 +1,50 @@
 @extends('layouts.app')
 @section('content')
-    <style>
-        .rowlist{
-            margin-top: 10px;
-        }
-        ul{
-            list-style: none;
-            color:white;
-        }
-        .right {
-            text-align: right
-        }
-        .heading{
-            color: white;
-        }
-        .discount {
-            color:#DA224D;
-            margin-top:-10px
-        }
-        .additional {
-            margin-top: 20px;
-        }
-        .logout{
-            margin-top: 50px;
-        }
-        #cssTable {
-            margin-top: 30px;
-        }
-        #cssTable td
-        {
-            vertical-align: middle;
-        }
+    @push('styles')
+        <style>
+            .rowlist{
+                margin-top: 10px;
+            }
+            ul{
+                list-style: none;
+                color:white;
+            }
+            .right {
+                text-align: right
+            }
+            .heading{
+                color: white;
+            }
+            .discount {
+                color:#DA224D;
+                margin-top:-10px
+            }
+            .additional {
+                margin-top: 20px;
+            }
+            .logout{
+                margin-top: 50px;
+            }
+            #cssTable {
+                margin-top: 30px;
+            }
+            #cssTable td
+            {
+                vertical-align: middle;
+            }
 
-        .makeOrderButton {
-            width: 180px;
-            height: 40px;
-            background-color:#DA224D ;
-            color: white;
-            border-radius: 50px;
-        }
-        .deletefavorite {
-            border: none;
-        }
-    </style>
+            .makeOrderButton {
+                width: 180px;
+                height: 40px;
+                background-color:#DA224D ;
+                color: white;
+                border-radius: 50px;
+            }
+            .deletefavorite {
+                border: none;
+            }
+        </style>
+    @endpush
     <div id="franchise">
         <div id="content">
             <div class="row">
@@ -107,7 +109,7 @@
                                             </div>
                                         </td>
                                         <td>{{$favorite->price}}</td>
-                                        <form action="{{route('favdelete')}}" method="GET">
+                                        <form action="{{route('delete-from-favorite')}}" method="GET">
                                             <td><button type="submit" class="deletefavorite"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
                                         </form>
                                         

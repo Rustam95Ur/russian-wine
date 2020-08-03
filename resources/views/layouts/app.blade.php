@@ -66,90 +66,6 @@
 <script src="{{ asset('js/main.js') }}"></script>
 
 
-{{--<script>--}}
-{{--    (function ($) {--}}
-{{--        $.fn.floatLabels = function (options) {--}}
-
-{{--            // Settings--}}
-{{--            var self = this;--}}
-{{--            var settings = $.extend({}, options);--}}
-
-
-{{--            // Event Handlers--}}
-{{--            function registerEventHandlers() {--}}
-{{--                self.on('input keyup change', 'input, textarea', function () {--}}
-{{--                    actions.swapLabels(this);--}}
-{{--                });--}}
-{{--            }--}}
-
-
-{{--            // Actions--}}
-{{--            var actions = {--}}
-{{--                initialize: function() {--}}
-{{--                    self.each(function () {--}}
-{{--                        var $this = $(this);--}}
-{{--                        var $label = $this.children('label');--}}
-{{--                        var $field = $this.find('input,textarea').first();--}}
-
-{{--                        if ($this.children().first().is('label')) {--}}
-{{--                            $this.children().first().remove();--}}
-{{--                            $this.append($label);--}}
-{{--                        }--}}
-
-{{--                        var placeholderText = ($field.attr('placeholder') && $field.attr('placeholder') != $label.text()) ? $field.attr('placeholder') : $label.text();--}}
-
-{{--                        $label.data('placeholder-text', placeholderText);--}}
-{{--                        $label.data('original-text', $label.text());--}}
-
-{{--                        if ($field.val() == '') {--}}
-{{--                            $field.addClass('empty')--}}
-{{--                        }--}}
-{{--                    });--}}
-{{--                },--}}
-{{--                swapLabels: function (field) {--}}
-{{--                    var $field = $(field);--}}
-{{--                    var $label = $(field).siblings('label').first();--}}
-{{--                    var isEmpty = Boolean($field.val());--}}
-
-{{--                    if (isEmpty) {--}}
-{{--                        $field.removeClass('empty');--}}
-{{--                        $label.text($label.data('original-text'));--}}
-{{--                    }--}}
-{{--                    else {--}}
-{{--                        $field.addClass('empty');--}}
-{{--                        $label.text($label.data('placeholder-text'));--}}
-{{--                    }--}}
-{{--                }--}}
-{{--            }--}}
-
-
-{{--            // Initialization--}}
-{{--            function init() {--}}
-{{--                registerEventHandlers();--}}
-
-{{--                actions.initialize();--}}
-{{--                self.each(function () {--}}
-{{--                    actions.swapLabels($(this).find('input,textarea').first());--}}
-{{--                });--}}
-{{--            }--}}
-{{--            init();--}}
-
-
-{{--            return this;--}}
-{{--        };--}}
-
-{{--        $(function () {--}}
-{{--            $('.float-label-control').floatLabels();--}}
-{{--        });--}}
-{{--    })(jQuery);--}}
-{{--</script>--}}
-
-{{--<script type="text/javascript">--}}
-{{--    jQuery(".nav-folderized h5").click(function () {--}}
-{{--        jQuery(this).parent(".nav").toggleClass("open");--}}
-{{--    });--}}
-
-{{--</script>--}}
 @stack('scripts')
 <script>
     @php
@@ -216,21 +132,20 @@
 </script>
 
 
-{{--Работа с избранными--}}
 <script type="text/javascript">
-    $(function () {
-        $('.likeSlider').on('click', function () {
-            $.ajax({
-                url: '{{URL::to('fav')}}',
-                data: {
-                    'client_id' : 1,
-                    'wine_id': 1
-                },
-                type: 'get',
-                dataType : 'json'
+        $(function () {
+            $('.likeSlider').on('click', function () {
+                wineId = $('#favorite_wine_id').val()
+                $.ajax({
+                    url: '{{URL::to('add-to-favorite')}}',
+                    data: {
+                        'wine_id': wineId
+                    },
+                    type: 'get',
+                    dataType: 'json'
+                });
             });
         });
-    });
 </script>
 
 <script type="text/javascript">
@@ -260,6 +175,14 @@
         $('.auth_register_modal').addClass('hide')
     }
 </script>
+
+{{--<script>--}}
+    {{--setTimeout(function(){ //using setTimeout function--}}
+        {{--document.getElementById('success-message').style.display ='none'; //displaying the button again after 3000ms or 3 seconds--}}
+    {{--},3000);--}}
+{{--</script>--}}
+
+
 
 @include('layouts.modal')
 @if ($message = Session::get('success') or $message = Session::get('error') or $message = Session::get('warning') or $message = Session::get('info') or $errors->any())
