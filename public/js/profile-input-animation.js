@@ -13,7 +13,6 @@
             });
         }
 
-
         // Actions
         var actions = {
             initialize: function() {
@@ -73,7 +72,6 @@
         $('.float-label-control').floatLabels();
     });
 })(jQuery);
-
 
 jQuery(".nav-folderized h5").click(function () {
     jQuery(this).parent(".nav").toggleClass("open");

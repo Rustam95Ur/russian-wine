@@ -110,4 +110,5 @@
     @push('scripts')
         <script src="{{ asset('js/profile-input-animation.js') }}"></script>
     @endpush
+
 @endsection
