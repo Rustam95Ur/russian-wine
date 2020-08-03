@@ -235,19 +235,17 @@ select#inputState:focus{
     margin-bottom: 20px;
 }
 
-.auth {
-    font: 0.833vw 'ProximaNova-Bold';
-    display: flex;
-    margin-top: 1vw !important;
-    background-color: #DA224D !important;
-    background-image: none !important;
-    border-radius: 180px !important;
-    letter-spacing: 1.6px;
-    text-transform: uppercase;
-    color: white;
+.login_container .btn-danger {
+    background: #da224d;
+    font: .833vw ProximaNova-Bold;
+    text-align: center;
+    letter-spacing: .1vw;
+    border-radius: 15vw;
     border: none;
-    border-color: #DA224D !important;
-    margin-bottom: 35px !important;
+    padding: 18px 40px;
+    color: #fff;
+    margin-top: 0 !important;
+    float: left;
 }
 
 input{
@@ -257,7 +255,6 @@ input{
 
 .forgot{
     color: gray;
-    margin-left: -285px;
 }
 
 .forgotdiv {
@@ -269,9 +266,12 @@ input{
     margin-top: 35px !important;
 }
 
-.logincontainer {
-    margin: 250px;
-    margin-left: 450px;
+.login_container {
+    /*margin: 250px;*/
+    /*margin-left: 450px;*/
+}
+.auth_modal {
+    margin-top: 250px;
 }
 
 .closeclick {
@@ -313,8 +313,8 @@ input{
 }
 
 .card {
-    margin-left: 130px;
-    width: 100%;
+    /*margin-left: 130px;*/
+    /*width: 100%;*/
 }
 /* Filters Style */
 
@@ -453,4 +453,25 @@ input{
     overflow: scroll;
     z-index: 253;
     padding: 20px;
+}
+
+.auth_modal h2 {
+    font-size: 50px;
+    color: white;
+}
+.auth_modal .form-control {
+    margin: 1.041vw 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    color: #ffffff;
+    padding-left: 0;
+    border-radius: 0;
+    outline: 0 !important;
+    box-shadow: none;
+    display: block;
+    float: none;
+}
+.auth_modal .form-control {
+    font-size: 18px !important;
 }

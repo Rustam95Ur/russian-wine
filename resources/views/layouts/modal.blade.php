@@ -1,52 +1,51 @@
 <div id="overlay">
-    <div class="close">
-        <p class="closeclick" onclick="off()">X</p>
-    </div>
-    <div class="container logincontainer">
+    <div class="container login_container auth_modal">
+        <div class="close">
+            <p class="closeclick" onclick="off()">
+                <img alt="close_icon" src="{{asset('image/closeicon.png')}}">
+            </p>
+        </div>
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-4 col-md-offset-4 text-center">
                 <div class="card">
-                    <div class="card-header">Авторизация</div>
-
+                    <div class="card-header">
+                        <h2>Авторизация</h2>
+                    </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
-
                             <div class="form-group row">
-                                <div class="col-md-6">
-                                    <input id="email" type="email"
-                                           class="form-control @error('email') is-invalid @enderror" name="email"
-                                           value="{{ old('email') }}" required autocomplete="email" placeholder="Email"
-                                           autofocus>
+                                <input type="email"
+                                       class="form-control @error('email') is-invalid @enderror" name="email"
+                                       value="{{ old('email') }}" required autocomplete="email" placeholder="Email"
+                                       autofocus>
 
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                    @enderror
-                                </div>
+                                @enderror
                             </div>
-
                             <div class="form-group row">
-                                <div class="col-md-6">
-                                    <input id="password" type="password"
-                                           class="form-control @error('password') is-invalid @enderror" name="password"
-                                           required autocomplete="current-password" placeholder="Пароль">
+                                <input id="password" type="password"
+                                       class="form-control @error('password') is-invalid @enderror" name="password"
+                                       required autocomplete="current-password" placeholder="Пароль">
 
-                                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                    @enderror
-                                </div>
+                                @enderror
                             </div>
-
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn auth" id="enter">
+                            <div class="col-md-6">
+                                <div class="form-group row mb-0">
+                                    <button type="submit" class="btn btn-danger" id="enter">
                                         Войти
                                     </button>
+
                                 </div>
+                            </div>
+                            <div class="col-md-6 text-light">
                                 <div class="forgotdiv">
                                     @if (Route::has('password.request'))
                                         <a class="forgot" href="#">
@@ -55,13 +54,10 @@
                                     @endif
                                 </div>
                             </div>
-
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8">
-                                    <a class="regist" onclick="onRegister()">
-                                        Зарегистрироваться
-                                    </a>
-                                </div>
+                            <div class="col-md-12 mt-xs">
+                                <a class="regist" onclick="onRegister()">
+                                    Зарегистрироваться
+                                </a>
                             </div>
                         </form>
                     </div>
@@ -75,7 +71,7 @@
     <div class="close">
         <p class="closeclick" onclick="offRegister()">X</p>
     </div>
-    <div class="container logincontainer">
+    <div class="container login_container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -101,7 +97,7 @@
 
                             <div class="form-group row">
                                 <div class="col-md-6">
-                                    <input id="email" type="email"
+                                    <input type="email"
                                            class="form-control @error('email') is-invalid @enderror" name="email"
                                            required autocomplete="email" placeholder="Email">
 
@@ -115,7 +111,7 @@
 
                             <div class="form-group row">
                                 <div class="col-md-6">
-                                    <input id="password" type="password"
+                                    <input type="password"
                                            class="form-control @error('password') is-invalid @enderror" name="password"
                                            required autocomplete="new-password" placeholder="Придумайте пароль">
 
@@ -173,15 +169,15 @@
         @endif
         @if ($message = Session::get('warning'))
             <h3 class="text-center text-danger">{!! $message !!}</h6>
-        @endif
-        @if ($message = Session::get('info'))
-            <h3 class="text-center text-danger">{!! $message !!}</h3>
-        @endif
-        @if ($errors->any())
-            @foreach($errors->all() as $error)
-                <ul class="questions">
-                    <li class="text-danger"><h6>{!! $error !!}</h6></li>
-                </ul>
+                @endif
+                @if ($message = Session::get('info'))
+                    <h3 class="text-center text-danger">{!! $message !!}</h3>
+                @endif
+                @if ($errors->any())
+                    @foreach($errors->all() as $error)
+                        <ul class="questions">
+                            <li class="text-danger"><h6>{!! $error !!}</h6></li>
+                        </ul>
             @endforeach
         @endif
     </div>
@@ -252,7 +248,7 @@
                                            placeholder="E-mail" value="" name="email" required>
                                 </div>
                             </div>
-                            <input type="hidden"  value="{{$home_tasting->id}}" name="tasting_id">
+                            <input type="hidden" value="{{$home_tasting->id}}" name="tasting_id">
                             <input class="btn btn-quickorder-one" type="submit" value="Заказать дегустацию">
                         </form>
                     </div>
