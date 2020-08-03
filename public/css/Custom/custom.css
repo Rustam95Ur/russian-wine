@@ -200,9 +200,8 @@ select#inputState:focus{
     background: rgba(0, 0, 0, 0.5);
 }
 
-#overlay {
+.auth_register_modal {
     position: fixed;
-    display: none;
     width: 100%;
     height: 100%;
     top: 0;
@@ -269,6 +268,12 @@ input{
 .login_container {
     /*margin: 250px;*/
     /*margin-left: 450px;*/
+}
+#register_modal .auth_modal {
+    margin-top: 150px;
+}
+#register_modal .login_container .btn-danger {
+    float: none;
 }
 .auth_modal {
     margin-top: 250px;

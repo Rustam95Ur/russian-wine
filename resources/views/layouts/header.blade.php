@@ -88,7 +88,7 @@
                         <img alt="login icon" src="{{ asset ('image/login.svg') }}">
                     </a>
                     @else
-                    <a onclick="on()">
+                    <a onclick="login_modal()">
                         <img alt="login icon" src="{{ asset ('image/login.svg') }}">
                     </a>
                     @endif
@@ -162,7 +162,6 @@
             </div>
         </div>
     </div>
-    <!-- ///////////////                Search Input                       \\\\\\\\\\\\\\\\\\-->
     <div id="myOverlay" class="overlay">
         <a class="closebtn" onclick="$('#myOverlay').removeClass('open');" title="Close Overlay"><img
                 src="{{ asset ('image/plus.png') }}" style="transform: rotateZ(45deg); "></a>
@@ -174,36 +173,10 @@
         </div>
         <div class="overlay-results" >
             <div id="searchResult">
-
             </div>
-
             <button type="button" name="all Search  Results" class="allResults">Показать все результаты</button>
         </div>
     </div>
-    <!-- ///////////////               End Search Input                    \\\\\\\\\\\\\\\\\\-->
 
-
-
-
-    <script>
-        function on() {
-            document.getElementById("overlay").style.display = "block";
-            document.getElementById("overlay1").style.display = "none";
-        }
-
-        function off() {
-            document.getElementById("overlay").style.display = "none";
-        }
-
-        function onRegister() {
-            document.getElementById("overlay").style.display = "none";
-            document.getElementById("overlay1").style.display = "block";
-        }
-
-        function offRegister() {
-            document.getElementById("overlay1").style.display = "none";
-        }
-    </script>
-    
 </header>
 

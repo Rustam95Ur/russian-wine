@@ -249,14 +249,17 @@
     });
 </script>
 
-
-{{--<script>--}}
-{{--    setTimeout(function(){ //using setTimeout function--}}
-{{--        document.getElementById('success-message').style.display ='none'; //displaying the button again after 3000ms or 3 seconds--}}
-{{--    },3000);--}}
-{{--</script>--}}
-
-
+<script>
+    function login_modal() {
+        $('#login_modal').removeClass('hide')
+    }
+    function register_modal() {
+        $('#login_modal').removeClass('hide')
+    }
+    function close_modal() {
+        $('.auth_register_modal').addClass('hide')
+    }
+</script>
 
 @include('layouts.modal')
 @if ($message = Session::get('success') or $message = Session::get('error') or $message = Session::get('warning') or $message = Session::get('info') or $errors->any())

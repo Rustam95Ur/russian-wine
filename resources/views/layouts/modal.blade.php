@@ -1,7 +1,7 @@
-<div id="overlay">
+<div id="login_modal" class="auth_register_modal hide">
     <div class="container login_container auth_modal">
         <div class="close">
-            <p class="closeclick" onclick="off()">
+            <p class="closeclick" onclick="close_modal()">
                 <img alt="close_icon" src="{{asset('image/closeicon.png')}}">
             </p>
         </div>
@@ -37,25 +37,24 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-5">
                                 <div class="form-group row mb-0">
                                     <button type="submit" class="btn btn-danger" id="enter">
                                         Войти
                                     </button>
-
                                 </div>
                             </div>
-                            <div class="col-md-6 text-light">
+                            <div class="col-md-7 text-light">
                                 <div class="forgotdiv">
                                     @if (Route::has('password.request'))
                                         <a class="forgot" href="#">
-                                            Забыли пароль?
+                                            Забыли пароль ?
                                         </a>
                                     @endif
                                 </div>
                             </div>
                             <div class="col-md-12 mt-xs">
-                                <a class="regist" onclick="onRegister()">
+                                <a class="regist" onclick="register_modal()">
                                     Зарегистрироваться
                                 </a>
                             </div>
@@ -66,85 +65,67 @@
         </div>
     </div>
 </div>
-
-<div id="overlay1">
+<div id="register_modal" class="auth_register_modal hide">
     <div class="close">
-        <p class="closeclick" onclick="offRegister()">X</p>
+        <p class="closeclick" onclick="close_modal()">
+            <img alt="close_icon" src="{{asset('image/closeicon.png')}}">
+        </p>
     </div>
-    <div class="container login_container">
+    <div class="container login_container auth_modal">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-4 col-md-offset-4 text-center">
                 <div class="card">
-                    <div class="card-header">Регистрация</div>
-
+                    <div class="card-header">
+                        <h2>Регистрация</h2>
+                    </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
-
                             <div class="form-group row">
-                                <div class="col-md-6">
-                                    <input id="name" type="text"
-                                           class="form-control @error('name') is-invalid @enderror" name="first_name"
-                                           required autocomplete="first_name" autofocus placeholder="Имя">
-
-                                    @error('name')
-                                    <span class="invalid-feedback" role="alert">
+                                <input id="name" type="text"
+                                       class="form-control @error('name') is-invalid @enderror" name="first_name"
+                                       required autocomplete="first_name" autofocus placeholder="Имя">
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                    @enderror
-                                </div>
+                                @enderror
                             </div>
-
                             <div class="form-group row">
-                                <div class="col-md-6">
-                                    <input type="email"
-                                           class="form-control @error('email') is-invalid @enderror" name="email"
-                                           required autocomplete="email" placeholder="Email">
-
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                                <input type="email"
+                                       class="form-control @error('email') is-invalid @enderror" name="email"
+                                       required autocomplete="email" placeholder="Email">
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                    @enderror
-                                </div>
+                                @enderror
                             </div>
-
                             <div class="form-group row">
-                                <div class="col-md-6">
-                                    <input type="password"
-                                           class="form-control @error('password') is-invalid @enderror" name="password"
-                                           required autocomplete="new-password" placeholder="Придумайте пароль">
+                                <input type="password"
+                                       class="form-control @error('password') is-invalid @enderror" name="password"
+                                       required autocomplete="new-password" placeholder="Придумайте пароль">
 
-                                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                    @enderror
-                                </div>
+                                @enderror
                             </div>
-
                             <div class="form-group row">
-                                <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control"
-                                           name="password_confirmation" required autocomplete="new-password"
-                                           placeholder="Повторите пароль">
-                                </div>
+                                <input id="password-confirm" type="password" class="form-control"
+                                       name="password_confirmation" required autocomplete="new-password"
+                                       placeholder="Повторите пароль">
                             </div>
-
-                            <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary auth">
-                                        Зарегистрироваться
-                                    </button>
-                                </div>
+                            <div class="form-group row mb-0 text-center">
+                                <button type="submit" class="btn btn-danger auth">
+                                    Зарегистрироваться
+                                </button>
                             </div>
-
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8">
-                                    <a class="regist" onclick="on()">
-                                        у меня уже есть аккаунт
-                                    </a>
-                                </div>
+                            <div class="form-group row mb-0 mt-xs">
+                                <a class="regist" onclick="login_modal()">
+                                    У меня уже есть аккаунт
+                                </a>
                             </div>
                         </form>
                     </div>
