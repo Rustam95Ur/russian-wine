@@ -13462,9 +13462,6 @@ header.other img {
     right: 0;
 }
 
-#modal_sviaz.winery-modal {
-    background: url(/image/sviaz_bg1.jpg);
-}
 
 #modal_sviaz input {
     background: transparent;
@@ -15076,11 +15073,6 @@ select:-internal-autofill-selected {
     padding: 0;
 }
 
-#information-winerywc .swiper-button-prev,
-#information-winerywc .swiper-button-next {
-    width: 1.667vw !important;
-    height: 0.677vw !important;
-}
 
 header ul li.active span {
     position: Relative;

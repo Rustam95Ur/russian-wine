@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('body_class', 'overflow-hidden')
 @section('content')
     <style>
         #nmenu {
@@ -152,10 +153,10 @@
                                     <div class="swiper-wrapper">
                                         @foreach($wineries as $winery)
                                             <div class="swiper-slide">
-                                                <a class="preview" href="{{route('winery', $winery->slug)}}">
+                                                <div class="preview" onclick="preview({{$winery->id}})">
                                                     <img src="{{Voyager::image($winery->nominal_image)}}" alt="image">
                                                     <span>{{$winery->title}}</span>
-                                                </a>
+                                                </div>
                                             </div>
                                         @endforeach
                                     </div>
@@ -226,78 +227,26 @@
                         // }
                     });
                 </script>
+                <script>
+                    $( document ).ready(function() {
+                        $('.information-winerywc').hide()
+                    });
+                    function preview(id) {
+                        $('.winery-modal-'+ id).show()
+                        $('.imennoe').hide()
+                        $('.close_click').removeClass('hidden')
+                    }
+                    function close_winery_modal()
+                    {
+                       $('.information-winerywc').hide()
+                       $('.imennoe').show()
+                       $('.close_click').addClass('hidden')
+                    }
+                </script>
             </div>
         </div>
     </div>
     @push('script')
-        <script>
-            // product preview
-            $(document).ready(function () {
-                $('.preview').click(function () {
-                    $(this).toggleClass('gotitclass');
-                    var myEm = $(this).attr('data-region');
-                    //alert(myEm);
-                    $('.wineries_cont a.' + myEm).click();
-
-                });
-                var openPreview = function (data) {
-                    $('body').append('<div id="product-preview"></div>');
-                    $('body').addClass('nooverflow');
-                    $('.imennoe').addClass('noevent');
-
-
-                    $('#product-preview').html(data);
-                    var width = $('#product-preview > *:eq(0)').width();
-                    var close = $('<div class="icon-icon_x"></div>');
-                    close.on('click', closePreview);
-                    var closefield = $('#close-mask');
-                    closefield.on('click', closePreview);
-                    $('#product-preview').append(close);
-                    $('#product-preview').css({left: width}).animate({left: 0});
-                    // $('html, body').animate({
-                    // 	scrollTop: $("#product-preview").offset().top
-                    // }, 500);
-                    var product_preview_wrap = $('#product-preview');
-                    product_preview_wrap.on('click', function (e) {
-                        if (e.target == product_preview_wrap[0]) {
-                            closePreview.call(this);
-                        }
-                    });
-                    $('#product-preview').on('scroll.preview', function () {
-                        if ($(this).scrollTop() > 800) {
-                            $('#product-preview .showcase').addClass('scrolled');
-                        } else {
-                            $('#product-preview .showcase').removeClass('scrolled');
-                        }
-                    });
-                };
-
-                var closePreview = function () {
-                    $(this).off('click');
-                    $('body').removeClass('nooverflow');
-                    $('.imennoe').removeClass('noevent');
-                    var product_preview_wrap = $('#product-preview');
-
-                    product_preview_wrap.fadeOut(400, function () {
-                        product_preview_wrap.remove();
-                    });
-                    $('#product-preview').off('scroll.preview');
-                    $('html, body').animate({scrollTop: $(document).height()}, 0);
-                };
-
-                $('a.preview').click(function (e) {
-                    e.preventDefault();
-                    var href = $(this).attr('href');
-                    href += (href.indexOf('?') == -1 ? '?' : '&') + 'nowrap=1';
-                    $.get(href, function (data) {
-                        openPreview(data);
-                    }).error(function (err) {
-                        // error in ajax
-                    });
-                });
-            });
-
-        </script>
         <script>
             if ($(window).width() < 991) {
                 $('.imennoe .swiper-container-h > .swiper-wrapper').attr('class', '');
@@ -344,4 +293,68 @@
             }
         </script>
     @endpush
+    @foreach($wineries as $winery)
+        <div id="information-winerywc" class="information-winerywc winery-modal-{{$winery->id}}">
+                <p class="close_click hidden" onclick="close_winery_modal()">
+                    <img alt="close_icon" src="{{asset('image/closeicon.png')}}">
+                </p>
+            <div class="col-ss-6">
+                <div class="swiper-container swiper-container-winery">
+                    <div class="swiper-wrapper">
+                        @foreach($winery->images as $block)
+                            @if ($block->type_id == 4)
+                                <div class="swiper-slide"><img alt="image" src="{{Voyager::image($block->image)}}"/></div>
+                            @endif
+                        @endforeach
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+            <div class="col-ss-6">
+                <h1 class="forwc">{{$winery->title}}</h1>
+                <div class="winery-rt">
+                    <h6>{{$winery->region->title}}</h6>
+                    {!! $winery->description  !!}
+                </div>
+                <button id="imennoe" onclick="document.getElementById('modal_sviaz').style.display = 'block';">хочу
+                    именное вино
+                </button>
+            </div>
+
+            <script>
+                var swiper = new Swiper('.swiper-container-winery', {
+                    loop: true,
+                    slidesPerView: 1,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        type: 'fraction',
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                });
+                    $(".swiper-pagination-fraction").html("<span class='swiper-pagination-current'>1</span>" +
+                        "<span class='swiper-pagination-total'>5</span>");
+            </script>
+        </div>
+    @endforeach
+    <div class="modal winery-modal" id="modal_sviaz" style="display:none;">
+        <button class="winery-close" type="button" class="close"
+                onclick="document.getElementById('modal_sviaz').style.display = 'none';">
+        </button>
+        <form method="post" action="{{route('personal-wine-order')}}">
+            @csrf
+            <h2 id="form-title-feedback">Оставить заявку</h2>
+            <input  type="text"  name="name" placeholder="Имя" required="required">
+            <input  type="text" name="contact" placeholder="Телефон или e-mail"
+                    required="required" onclick="$(this).removeClass('wrong');$(this).attr('placeholder', 'Телефон или e-mail');">
+            <input  type="text" id="text1" name="message" placeholder="Сообщение">
+            <button type="submit" id="feedsend" value="Отправить">Хочу именное вино</button>
+        </form>
+    </div>
 @endsection
