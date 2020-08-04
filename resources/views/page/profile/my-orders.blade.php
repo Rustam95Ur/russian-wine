@@ -2,54 +2,18 @@
 @section('content')
 
     @push('styles')
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/profile-personal-info-form.css') }}">
         <style>
-            .rowlist{
-                margin-top: 10px;
-            }
-            ul{
-                list-style: none;
-                color:white;
-            }
-            .right {
-                text-align: right
-            }
-            .heading{
-                color: white;
-            }
-            .discount {
-                color:#DA224D;
-                margin-top:-10px
-            }
-            .additional {
-                margin-top: 20px;
-            }
-            .logout{
-                margin-top: 50px;
-            }
-            #cssTable {
-                margin-top: 30px;
-            }
-            #cssTable td
-            {
-                vertical-align: middle;
-            }
-
-            .makeOrderButton {
-                width: 180px;
-                height: 40px;
-                background-color:#DA224D ;
-                color: white;
-                border-radius: 50px;
-            }
-            .deletefavorite {
+            .show-details {
                 border: none;
             }
         </style>
     @endpush
+
     <div id="franchise">
         <div id="content">
             <div class="row">
-                <div class="col-md-4" style="background-color: rgb(44, 32, 48)">
+                <div class="col-md-4" style="background-color: rgb(44, 32, 48); height: 700px;">
                     <div class="userData" style="margin: 15%;">
                         <h3 style="color: white">{{Auth::user()->first_name}}</h3>
 
@@ -93,57 +57,57 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    @if (isset($favorites[0]))
+                    <div style="margin: 50px;">
                         <div style="margin: 30px;">
-                            <h1>Избранное</h1>
-                            <table class="table" id="cssTable">
-                            @foreach($favorites as $favorite)
-                                    <input type="hidden" id="deleteFavorite" value="{{$favorite->id}}">
+                            <h1>Мои заказы</h1>
+                            <table class="table" id="cssTable" style="margin-top: 30px;">
                                     <tbody>
                                     <tr>
-                                        <td><input type="checkbox" name="prog"></td>
-                                        <td><img src="{{ asset ('image/1OLwTAcYZZn9L9hwUju2.png') }}" width="30px" height="100px" alt=""></td>
+                                        <td><b>Заказ 1</b></td>
+                                        <td>20.01.2020</td>
+                                        <td>10 000 Р</td>
                                         <td>
-                                            {{$favorite->title}}
-
-                                            <div style="margin-top: 8px;">
-                                                <span>{{$favorite->color->title}} </span> | <span>{{$favorite->sugar->title}} </span> | <span>{{$favorite->year}}</span>
-                                            </div>
+                                            <button type="submit" class="show-details">
+                                                <i class="fa fa-align-justify" aria-hidden="true"></i>
+                                            </button>
                                         </td>
-                                        <td>{{$favorite->price}}</td>
-                                            <td><button type="submit" class="deletefavorite"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><b>Заказ 2</b></td>
+                                        <td>20.01.2020</td>
+                                        <td>10 000 Р</td>
+                                        <td>
+                                            <button type="submit" class="show-details">
+                                                <i class="fa fa-align-justify" aria-hidden="true"></i>
+                                            </button>
+                                        </td>
+
+
+                                    </tr>
+                                    <tr>
+                                        <td><b>Заказ 3</b></td>
+                                        <td>20.01.2020</td>
+                                        <td>10 000 Р</td>
+                                        <td>
+                                            <button type="submit" class="show-details">
+                                                <i class="fa fa-align-justify" aria-hidden="true"></i>
+                                            </button>
+                                        </td>
+
                                     </tr>
                                     </tbody>
-                            @endforeach
+
                             </table>
-                            <input class="makeOrderButton" type="submit" id="submit_prog" value='Сделать заказ' />
                         </div>
-                    @else
-                    <div style="color: grey !important; margin: 160px;">
-                        <center>
-                            <h3>В избраном пока ничего нет <br> но вы можете их добавить из винотеки</h3>
 
-                            <a href={{route('wine-shop')}}><button class="favorite-button">Перейти в Винотеку</button></a>
-
-                        </center>
                     </div>
-
-                    @endif
                 </div>
             </div>
         </div>
     </div>
+    </div>
 
-    @push('scripts')
-        <script>
-            $(document).ready(function() {
 
-                var $submit = $("#submit_prog").hide(),
-                    $cbs = $('input[name="prog"]').click(function() {
-                        $submit.toggle( $cbs.is(":checked") );
-                    });
 
-            });
-        </script>
-    @endpush
 @endsection

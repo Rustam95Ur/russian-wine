@@ -32,6 +32,17 @@ class ProfileController extends Controller
         return view('page.profile.sub-wines');
     }
 
+    public function myOrders()
+    {
+        return view('page.profile.my-orders');
+    }
+
+    public function mySets()
+    {
+        return view('page.profile.my-sets');
+    }
+
+
 	public function update(Request $request)
 	{
 	    $client = Auth::user();

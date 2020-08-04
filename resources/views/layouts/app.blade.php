@@ -118,22 +118,12 @@
     })
 </script>
 
-<script>
-    $(document).ready(function() {
-
-        var $submit = $("#submit_prog").hide(),
-            $cbs = $('input[name="prog"]').click(function() {
-                $submit.toggle( $cbs.is(":checked") );
-            });
-
-    });
-</script>
-
 
 <script type="text/javascript">
         $(function () {
             $('.likeSlider').on('click', function () {
-                wineId = $('#favorite_wine_id').val()
+                wineId = $(this).attr('id')
+                console.log(wineId)
                 $.ajax({
                     url: '{{URL::to('add-to-favorite')}}',
                     data: {
@@ -148,12 +138,29 @@
 
 <script type="text/javascript">
     $(function () {
-        $('.likeSlider123').on('click', function () {
+        $('.unlike').on('click', function () {
+            wineId = $(this).attr('id')
+            console.log(wineId)
             $.ajax({
-                url: '{{URL::to('favdelete')}}',
+                url: '{{URL::to('delete-from-favorite')}}',
                 data: {
-                    'client_id' : 1,
-                    'wine_id': 1
+                    'wine_id': wineId
+                },
+                type: 'get',
+                dataType: 'json'
+            });
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        $('.deletefavorite').on('click', function () {
+            wineId = $('#deleteFavorite').val()
+            $.ajax({
+                url: '{{URL::to('delete-from-favorite')}}',
+                data: {
+                    'wine_id': wineId
                 },
                 type: 'get',
                 dataType : 'json'
@@ -161,6 +168,8 @@
         });
     });
 </script>
+
+
 
 <script>
     function login_modal() {

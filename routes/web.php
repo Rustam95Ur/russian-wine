@@ -54,6 +54,8 @@ Route::get('/add-to-favorite', 'Page\FavoriteController@addToFavorite')->name('a
 Route::get('/delete-from-favorite', 'Page\FavoriteController@deleteFromFavorite')->name('delete-from-favorite');
 
 Route::get('/favorite', 'Page\ProfileController@favorite')->name('favorite');
+Route::get('/my-orders', 'Page\ProfileController@myOrders')->name('my-orders');
+Route::get('/my-sets', 'Page\ProfileController@mySets')->name('my-sets');
 
 //подписки в ЛК
 Route::get('/sub-wines', 'Page\ProfileController@sub')->name('sub-wines');

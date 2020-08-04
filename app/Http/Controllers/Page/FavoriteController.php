@@ -23,6 +23,7 @@ class FavoriteController extends Controller
         DB::table('client_wine')->insert(
             ['client_id' => Auth::user()->id, 'wine_id' => $request->wine_id]
         );
+
     }
 
     //Удаляем из избранных

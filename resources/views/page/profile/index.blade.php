@@ -41,7 +41,7 @@
 								<li class="rowlist"><a href="{{route('favorite')}}">Избранное</a></li>
 								<li class="rowlist"><a href="{{route('sub-wines')}}">Подписки</a></li>
 								<li class="rowlist"><a href="">Сеты</a></li>
-								<li class="rowlist"><a href="">Мои заказы</a></li>
+								<li class="rowlist"><a href="{{route('my-orders')}}">Мои заказы</a></li>
 							</ul>
 
 							<ul class="additional">

@@ -12,6 +12,7 @@
     background: #fff;
 }
 
+
 #menu.navbar-right li:hover .dropdown-menu-custom {
     display: block;
 }

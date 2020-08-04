@@ -1,30 +1,47 @@
 @extends('layouts.app')
 @section('content')
-    <style>
-        .rowlist{
-            margin-top: 10px;
-        }
-        ul{
-            list-style: none;
-            color:white;
-        }
-        .right {
-            text-align: right
-        }
-        .heading{
-            color: white;
-        }
-        .discount {
-            color:#DA224D;
-            margin-top:-10px
-        }
-        .additional {
-            margin-top: 20px;
-        }
-        .logout{
-            margin-top: 50px;
-        }
-    </style>
+
+    @push('styles')
+        <style>
+            .rowlist{
+                margin-top: 10px;
+            }
+            ul{
+                list-style: none;
+                color:white;
+            }
+            .heading{
+                color: white;
+            }
+            .discount {
+                color:#DA224D;
+                margin-top:-10px
+            }
+            .additional {
+                margin-top: 20px;
+            }
+            .logout{
+                margin-top: 50px;
+            }
+            #cssTable {
+                margin-top: 30px;
+            }
+            #cssTable td
+            {
+                vertical-align: middle;
+            }
+
+            .reorder {
+                font-size: 15px;
+                width: 180px;
+                height: 40px;
+                background-color:#DA224D ;
+                color: white;
+                border-radius: 50px;
+            }
+
+        </style>
+    @endpush
     <div id="franchise">
         <div id="content">
             <div class="row">
@@ -40,7 +57,7 @@
                                 <ul>
                                     <li class="rowlist"><a href="{{route('favorite')}}">Избранное</a></li>
                                     <li class="rowlist"><a href="{{route('sub-wines')}}">Подписки</a></li>
-                                    <li class="rowlist"><a href="">Сеты</a></li>
+                                    <li class="rowlist"><a href="{{route('my-sets')}}">Сеты</a></li>
                                     <li class="rowlist"><a href="{{route('my-orders')}}">Мои заказы</a></li>
                                 </ul>
 
@@ -72,52 +89,24 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <div>
-                        <div class="tab" style="margin-top: 30px">
-                            <h1>Подписки</h1>
-                            <button class="tablinks active" onclick="openSubWines(event, 'current')">Действующие</button>
-                            <button class="tablinks" onclick="openSubWines(event, 'old')">Прошедшие</button>
-                        </div>
+                    <div style="margin: 30px;">
+                        <h1>Сеты</h1>
+                        <table class="table" id="cssTable">
+                                <tbody>
+                                <tr>
+                                    <td><img src="{{ asset ('image/1OLwTAcYZZn9L9hwUju2.png') }}" width="30px" height="100px" alt=""></td>
+                                    <td>Название товара</td>
+                                    <td>1000 Р</td>
+                                    <form action="" method="GET">
+                                        <td><input class="reorder" type="submit" id="submit_prog" value='Повторить заказ' /></td>
+                                    </form>
 
-                        <div id="current" class="tabcontent active">
-                            <div style="color: grey !important; margin: 100px;">
-                                <center>
-                                    <h3>У вас нет действующих подписок</h3>
-
-
-
-                                    <button class="favorite-button"><a  href="{{route('profile')}}"></a>Оформить подписку</button>
-                                </center>
-                            </div>
-                        </div>
-
-                        <div id="old" class="tabcontent">
-                            <div style="color: grey !important; margin: 100px;">
-                                <center>
-                                    <h3>Здесь ничего нет</h3>
-                                </center>
-                            </div>
-                        </div>
+                                </tr>
+                                </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <script>
-        function openSubWines(evt, subTime) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(subTime).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-    </script>
 @endsection

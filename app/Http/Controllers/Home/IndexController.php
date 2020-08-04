@@ -15,6 +15,7 @@ class IndexController extends Controller
 
     public function index()
     {
+        $clientd = Auth::guard('client')->user()->id;
         $favorite = [];
         $popular_wines = Wine::where('status', '=', 'ACTIVE')
             ->where('featured', '=', 1)
@@ -28,15 +29,21 @@ class IndexController extends Controller
             ->limit(10)
             ->get();
 
-//        if (Auth::user()) {
-//            $favorited = DB::table('client_wine')
-//                ->join('wines', 'client_wine.wine_id', '=', 'wines.id')
-//                ->where('client_wine.client_id', '=', Auth::user()->id)->get();
-//        }
-//
-//        if (!empty($favorited)) {
-//            $favorite = $favorited;
-//        }
+
+        if (null !== $clientd) {
+            $favorited = DB::table('client_wine')
+                ->join('wines', 'client_wine.wine_id', '=', 'wines.id')
+                ->where('client_wine.client_id', '=', $clientd)->get();
+        }
+
+
+        if (!empty($favorited)) {
+            $ids = [];
+
+            foreach ($favorited as $item) {
+                $ids[] = $item->wine_id;
+            }
+        }
 
         $winemakers = Winemaker::where('status', '=', 'ACTIVE')->with('wines', 'region', 'winery')->get();
         $home_set = Set::where('in_home', true)->first();
@@ -47,7 +54,7 @@ class IndexController extends Controller
             'winemakers' => $winemakers,
             'home_set'  => $home_set,
             'home_tasting'  => $home_tasting,
-            'favorite' => $favorite,
+            'favorite' => $ids,
         ]);
     }
 }

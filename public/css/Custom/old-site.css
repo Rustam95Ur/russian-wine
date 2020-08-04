@@ -576,6 +576,19 @@ header #form-language .language-select {
 
     a.likeSlider img {
         display: block;
+
+    }
+
+    p.likeSlider {
+         z-index: 1000;
+         position: absolute;
+         left: 4vw;
+         top: 4.8vw;
+     }
+
+    p.likeSlider img {
+        z-index: 10000;
+        display: block;
     }
 }
 
@@ -18119,6 +18132,13 @@ section#content_top, section#specials, section#content_bottom, section#swineries
         left: 2.89vw;
         top: 2.89vw;
     }
+
+    p.likeSlider {
+        z-index: 1000;
+        position: absolute;
+        left: 2.89vw;
+        top: 2.89vw;
+    }
 }
 
 header .col-sm-2 #navSearch img, header .col-sm-2 #login img {
@@ -18146,6 +18166,22 @@ a.likeSlider img {
     opacity: 1;
     transition: all .3s;
 }
+
+p.likeSlider {
+    opacity: 0;
+    transition: all .3s;
+}
+
+p.likeSlider img {
+    z-index: 10000;
+    height: 17.5px !important;
+}
+
+.wine:hover p.likeSlider {
+    opacity: 1;
+    transition: all .3s;
+}
+
 
 #myOverlay.open {
     display: block;
