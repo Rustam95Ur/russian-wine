@@ -15,8 +15,6 @@ class IndexController extends Controller
 
     public function index()
     {
-        $clientd = Auth::guard('client')->user()->id;
-        $favorite = [];
         $popular_wines = Wine::where('status', '=', 'ACTIVE')
             ->where('featured', '=', 1)
             ->with('color', 'sugar', 'winery')
@@ -30,16 +28,16 @@ class IndexController extends Controller
             ->get();
 
 
-        if (null !== $clientd) {
+        if (Auth::guard('client')->user()) {
+            $clientd = Auth::guard('client')->user()->id;
             $favorited = DB::table('client_wine')
                 ->join('wines', 'client_wine.wine_id', '=', 'wines.id')
                 ->where('client_wine.client_id', '=', $clientd)->get();
         }
 
+        $ids = [];
 
         if (!empty($favorited)) {
-            $ids = [];
-
             foreach ($favorited as $item) {
                 $ids[] = $item->wine_id;
             }
