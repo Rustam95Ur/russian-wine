@@ -25,7 +25,8 @@ class CreateWineriesTable extends Migration
             $table->string('meta_title')->nullable();
             $table->integer('type_id');
             $table->integer('layout_id');
-            $table->integer('subscribe_status')->default(1);
+            $table->integer('is_nominal')->default(0);
+            $table->string('nominal_image')->nullable();
             $table->string('slug');
             $table->string('coordinate_lat');
             $table->string('coordinate_lon');

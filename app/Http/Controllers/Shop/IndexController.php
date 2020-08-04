@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Shop;
 use App\Http\Controllers\Controller;
 use App\Models\Wine;
 use App\Models\Winemaker;
+use App\Models\Winery;
 
 class IndexController extends Controller
 {
@@ -23,7 +24,9 @@ class IndexController extends Controller
 
     public function personal_wine()
     {
+        $wineries = Winery::where('is_nominal', '=', 1)->get();
         return view('shop.wine.personal', [
+            'wineries' => $wineries
         ]);
     }
 

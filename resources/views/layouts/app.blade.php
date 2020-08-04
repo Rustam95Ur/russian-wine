@@ -3,8 +3,6 @@
 <head>
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
-    <!--[if IE]>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <title>@yield('title', Voyager::setting('site.title'))</title>
     <meta name="description" content="@yield('description', Voyager::setting('site.description'))">
     <meta name="keywords" content="@yield('keywords', Voyager::setting('site.keywords'))"/>
@@ -166,22 +164,17 @@
 
 <script>
     function login_modal() {
+        $('.auth_register_modal').addClass('hide')
         $('#login_modal').removeClass('hide')
     }
     function register_modal() {
-        $('#login_modal').removeClass('hide')
+        $('.auth_register_modal').addClass('hide')
+        $('#register_modal').removeClass('hide')
     }
     function close_modal() {
         $('.auth_register_modal').addClass('hide')
     }
 </script>
-
-{{--<script>--}}
-    {{--setTimeout(function(){ //using setTimeout function--}}
-        {{--document.getElementById('success-message').style.display ='none'; //displaying the button again after 3000ms or 3 seconds--}}
-    {{--},3000);--}}
-{{--</script>--}}
-
 
 
 @include('layouts.modal')
