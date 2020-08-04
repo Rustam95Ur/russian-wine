@@ -8,6 +8,7 @@ use TCG\Voyager\Traits\Translatable;
 class Wine extends Model
 {
     use Translatable;
+
     protected $translatable = ['title'];
 
     /**
@@ -53,10 +54,19 @@ class Wine extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
+    public function manufacture()
+    {
+        return $this->belongsTo('App\Models\Manufacturer', 'manufacturer_id', 'id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function excerpt()
     {
         return $this->belongsTo('App\Models\Excerpt', 'excerpt_id', 'id');
     }
+
 
     public function favorites()
     {
