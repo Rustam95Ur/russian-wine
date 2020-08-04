@@ -3,17 +3,37 @@
 namespace App\Http\Controllers\Shop;
 
 use App\Http\Controllers\Controller;
+use App\Models\Color;
+use App\Models\GrapeSort;
+use App\Models\Region;
 use App\Models\Wine;
 use App\Models\Winemaker;
 use App\Models\Winery;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\Sugar;
 
 class IndexController extends Controller
 {
+
     public function wine_list()
     {
-        return view('shop.wine.list');
+        $wineries = Winery::where('status', '=', 'ACTIVE')->get();
+        $colors = Color::all();
+        $regions = Region::all();
+        $sugars = Sugar::all();
+        $sorts = GrapeSort::all();
+        $wines = Wine::where('status', '=', 'ACTIVE')
+            ->with('color', 'sugar', 'winery')
+            ->paginate(40);
+        return view('shop.wine.list', [
+            'wines' => $wines,
+            'colors' => $colors,
+            'regions' => $regions,
+            'sugars' => $sugars,
+            'wineries' => $wineries,
+            'sorts' => $sorts
+        ]);
     }
 
     public function wine_info($slug)
