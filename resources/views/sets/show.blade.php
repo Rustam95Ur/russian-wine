@@ -2,41 +2,9 @@
 @section('title', $set->seo_title)
 @section('description', $set->meta_description)
 @section('keywords', $set->meta_keywords)
-@section('body_class', 'set-page')
+@section('body_class', 'set-page footer-hide')
 @section('content')
     <div id="desktop-product">
-        @push('scripts')
-            <script>
-                $(".image-set a").click(function () {
-                    var bottle = $(this).attr('data-bottle');
-                    $('#bottle-container').addClass('show');
-                    $('.bottle_info').removeClass('active');
-                    var activeid = '#bottle' + bottle;
-                    $(activeid).addClass('active');
-                    var liactive = $('.otherbottles li[data-bottle=' + bottle + ']');
-                    $(liactive).addClass('active');
-                });
-
-            </script>
-            <script>
-                $('body').addClass('other-page');
-            </script>
-            <script>
-
-                $(function () {
-                    $("#slider-range-min").slider({
-                        range: "min",
-                        value: 1,
-                        min: 1,
-                        max: 4,
-                        slide: function (event, ui) {
-                            $("#amount").val(ui.value);
-                        }
-                    });
-                    $("#amount").val($("#slider-range-min").slider("value"));
-                });
-            </script>
-        @endpush
         <div class="other-page" id="other-page">
             <div class="product-page">
                 <div id="spec-cont" class="col-sp-15">
@@ -103,10 +71,10 @@
         <div id="bottle">
             <div class="close"
                  onclick="$('#bottle-container').removeClass('show'); $('#other-page').removeClass('nooverflow');$('body').removeClass('nooverflow');$('body').addClass('other-page');$('body').attr('style', '');$('#desktop-product').removeClass('nooverflow');">
-                <img alt="close_img" src="{{asset('image/close.png')}}"></div>
+                <img alt="close_img" src="{{asset('image/closeicon.png')}}"></div>
             <ul class="otherbottles">
                 @foreach($set->wines as $wine)
-                    <li data-bottle="{{$wine->id}}">
+                    <li class="bottle_list" data-bottle="{{$wine->id}}">
                         <img alt="{{$wine->id}}" src="{{Voyager::image($wine->image)}}">
                     </li>
                 @endforeach
@@ -146,23 +114,82 @@
                         <h2 id="bottle-main-title">{{$wine->title}}</h2>
                         <div class="description-1">
                             <span>Особенности производства</span>
-                            <p>{{$wine->production_feature}}</p>
+                            {!!  $wine->production_feature!!}
                         </div>
                         <div class="description-2">
                             <span>Дегустационные характеристики</span>
-                            <p>{{$wine->feature}}</p>
+                            {!! $wine->feature!!}
                         </div>
                         <div class="description-3">
                             <span>Гастрономическое сочетание</span>
-                            <p>{{$wine->combination}}</p>
+                            {!! $wine->combination!!}
                         </div>
                         <div class="description-4">
                             <span>Подача</span>
-                            <p>{{$wine->innings}}</p>
+                            {!! $wine->innings!!}
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
     </div>
+    @push('scripts')
+        <script type="text/javascript"><!--
+            function buttonplus(){
+                document.getElementById("htop_quickorder1").value++;
+                var q = document.getElementById("htop_quickorder1").value;
+                var s = 7000 * q;
+                $('.price').html(s + ' <span>о</span>');
+                var asd = $('#htop_quickorder1').attr('data-quantity');
+                $('#htop_quickorder1').attr('data-quantity', ++asd);
+            }
+            function buttonminus(){
+                document.getElementById("htop_quickorder1").value--;
+                var q = document.getElementById("htop_quickorder1").value;
+                var s = 7000 * q;
+                $('.price').html(s + ' <span>о</span>');
+                var asd = $('#htop_quickorder1').attr('data-quantity');
+                $('#htop_quickorder1').attr('data-quantity', asd - 1);
+            }
+            //--></script>
+        <script>
+            $(".image-set a").click(function () {
+                var bottle = $(this).attr('data-bottle');
+                $('#bottle-container').addClass('show');
+                $('.bottle_info').removeClass('active');
+                var activeid = '#bottle' + bottle;
+                $(activeid).addClass('active');
+                var liactive = $('.otherbottles li[data-bottle=' + bottle + ']');
+                $(liactive).addClass('active');
+            });
+            $(".bottle_list").click(function () {
+                var bottle = $(this).attr('data-bottle');
+                $('#bottle-container').addClass('show');
+                $('.bottle_list').removeClass('active');
+                var activeid = '#bottle' + bottle;
+                $(activeid).addClass('active');
+                var liactive = $('.otherbottles li[data-bottle=' + bottle + ']');
+                $(liactive).addClass('active');
+            });
+
+        </script>
+        <script>
+            $('body').addClass('other-page');
+        </script>
+        <script>
+            // $(function () {
+            //     $("#slider-range-min").slider({
+            //         range: "min",
+            //         value: 1,
+            //         min: 1,
+            //         max: 4,
+            //         slide: function (event, ui) {
+            //             $("#amount").val(ui.value);
+            //         }
+            //     });
+            //     $("#amount").val($("#slider-range-min").slider("value"));
+            // });
+        </script>
+    @endpush
+
 @endsection

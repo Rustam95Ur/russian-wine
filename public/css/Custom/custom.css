@@ -565,3 +565,9 @@ input {
     margin-left: auto;
     margin-right: auto;
 }
+.vyderzhkawc p {
+    text-transform: uppercase;
+}
+.footer-hide footer {
+    display: none;
+}

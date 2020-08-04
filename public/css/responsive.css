@@ -27,7 +27,7 @@
 	}
 	/*footer-style1*/
 	header.style1 .logo {
-	    margin-left: 0; 
+	    margin-left: 0;
 	}
 	header.style1 .search {
 	    margin-right: 0;
@@ -56,7 +56,7 @@
 	}
 }
 
-@media only screen and (min-width: 1200px) and (max-width: 1365px) { 
+@media only screen and (min-width: 1200px) and (max-width: 1365px) {
    .main-blog-right .sidebar .sidebar-inner .widget-categories .thumb-new-banner .banner-content {
 	    top: 29%;
 	    left: 18%;
@@ -177,12 +177,12 @@
 	}
 	.flat-our-history .info-history,
 	.flat-our-history .info-history-right {
-	    padding: 0; 
+	    padding: 0;
 	}
 	.flat-our-history .info-history {
-	    margin-right: 0; 
+	    margin-right: 0;
 	}
-	.flat-team .owl-prev, 
+	.flat-team .owl-prev,
     .flat-team .owl-next {
     	display: none;
 	}
@@ -194,7 +194,7 @@
 	/*shop-fullwish-list*/
 	.main-shop-fullwidth .container .post .post-content .post-main {
     margin-top: 6px;
-	    padding-right: 0; 
+	    padding-right: 0;
 	}
 	/*shop-right-slider-list*/
 	.main-shop-right .container .col-lg-9 {
@@ -203,7 +203,7 @@
 	}
 	.main-shop-right .container .col-lg-3 {
 	    width: 31%;
-	    float: right; 
+	    float: right;
 	}
 	/*shop-order-tracking*/
 	.flat-order-tracking .text-order {
@@ -223,7 +223,7 @@
 	    left: 27%;
 	}
 	.main-shop-detail .content-wrap .heart {
-	    float: none; 
+	    float: none;
 	    padding: 9px 15px 10px;
 	}
 	.main-shop-detail .woocommerce-tabs {
@@ -244,7 +244,7 @@
 	}
 	/*footer-style1*/
 	header.style1 .logo {
-	    margin-left: 0; 
+	    margin-left: 0;
 	}
 	header.style1 .search {
 	    margin-right: 0;
@@ -416,11 +416,11 @@
 	    float: right;
 	    top: 30%;
 	    right: 15px;
-	    
+
 	}
 
-	header.style2 .mobile-button:before, 
-	header.style2 .mobile-button:after, 
+	header.style2 .mobile-button:before,
+	header.style2 .mobile-button:after,
 	header.style2 .mobile-button span {
 		background-color: #fff;
 	}
@@ -505,7 +505,7 @@
     .main-blog-details .sidebar .widget-categories img {
     	display: none;
     }
-    
+
     /* main-blog-right */
 
     .main-blog-right .sidebar {
@@ -516,7 +516,7 @@
 	    padding-right: 0;
 	}
 	.main-blog-right .sidebar .sidebar-inner .widget-categories .thumb-new-categories {
-	    margin-top: 0; 
+	    margin-top: 0;
 	}
     .main-blog-right .sidebar .sidebar-inner .widget-categories .thumb-new-categories img {
 	    display: none;
@@ -621,7 +621,7 @@
 	   background-repeat: no-repeat;
 	}
 	.flat-new-latest.style2 .post-right {
-	   margin-left: 0; 
+	   margin-left: 0;
 	   margin-top: 60px;
 	}
 	.flat-top-products .owl-next {
@@ -645,14 +645,14 @@
 	/* homepage-3*/
 	.flat-deal-of-the-week.style3 p {
 	    margin-top: 0;
-	    padding: 0; 
+	    padding: 0;
 	}
     .flat-new-latest.style3 .col-lg-4 img {
 	    margin-top: 30px;
 	    text-align: center;
 	}
 	.flat-new-latest.style3 .content-post .post-title {
-	    padding-right: 0px; 
+	    padding-right: 0px;
 	}
 	.flat-new-latest.style3 .content-post .post-title {
 	    margin-top: 2px;
@@ -696,15 +696,15 @@
 	}
 	.flat-benefil .benefil-inner .text-wrap {
 	    display: inline-block;
-	    margin-top: 0; 
+	    margin-top: 0;
 	}
 	/*event*/
 	.main-event .featured-post {
-	     float: none; 
-	     margin-right: 0; 
+	     float: none;
+	     margin-right: 0;
 	}
 	.main-event .content-post {
-	    overflow: unset; 
+	    overflow: unset;
 	    width: 100%;
 	    margin-top: 30px;
 	}
@@ -718,7 +718,7 @@
 		text-align: center;
 	}
 	.main-event .blog-pagination {
-	    float: none; 
+	    float: none;
 	    text-align: center;
 	    display: block;
 	}
@@ -731,11 +731,11 @@
 	    text-align: center;
 	}
 	.flat-our-website .flat-counter {
-	    margin-top: 0; 
+	    margin-top: 0;
 	}
 	.flat-our-website .flat-counter ul li {
 	    margin: 15px 21px 0 0;
-	    float: none; 
+	    float: none;
 	    width: 28%;
 	}
 	.main-wish-list .flat-cart .woocommerce-tabs {
@@ -751,7 +751,7 @@
 	    width: 100%;
 	}
 	.main-shop-right .container .col-lg-3 {
-	    width: 100%; 
+	    width: 100%;
 	}
     .main-shop-right .sidebar-inner {
     	margin-top: 50px;
@@ -851,8 +851,8 @@
 		margin-top: 30px;
 	}
 	.flat-cart .estimate .title-select {
-	    float: none; 
-	    display: block; 
+	    float: none;
+	    display: block;
 	    min-width: 180px;
 	}
 	.flat-cart .check-out {
@@ -929,7 +929,7 @@
 	}
 	.main-shop-fullwidth .container .post .post-content {
 	    width: 100%;
-	    float: none; 
+	    float: none;
 	    text-align: center;
 	}
 	/*shop-right-slidebar-grid*/
@@ -1010,9 +1010,9 @@
 	.flat-filter .filter-date,
 	.flat-filter .filter-location,
 	.flat-filter .filter-keywork {
-	    float: none; 
+	    float: none;
 	    display: block;
-	    margin-left: 37px; 
+	    margin-left: 37px;
 	    position: relative;
 	    margin: 0 20px;
 	}
@@ -1205,8 +1205,8 @@
 	    left: auto;
 	}
 
-	.flat-divider.padding-top-224px, 
-	.flat-divider.padding-top-238px, 
+	.flat-divider.padding-top-224px,
+	.flat-divider.padding-top-238px,
 	.flat-divider.padding-top-223px {
 	    height: 30px;
 	}
@@ -1314,11 +1314,11 @@
 	/*blog-column-2*/
 	.main-blog-grid .post .featured-post {
 		margin-right: 10px;
-	    margin-top: 0; 
+	    margin-top: 0;
 	}
 	.main-blog-grid .post .content-post .post-title {
 		margin-top: 0;
-	    padding-right: 0; 
+	    padding-right: 0;
 	}
 	.main-blog-grid .post .content-post .post-meta {
 	    margin-top: 0;
@@ -1391,7 +1391,7 @@
     .main-blog-right .main-title {
     	display: inline-block;
     	margin-top: 30px;
-    } 
+    }
     .main-blog-right .sidebar .sidebar-inner .widget-categories .thumb-new-banner .banner-content {
 	    left: 28%;
 	}
@@ -1426,7 +1426,7 @@
 	.main-blog-details .relatest .wrap {
 	    float: none;
 	    width: 100%;
-	    text-align: center;	
+	    text-align: center;
 	}
 
 	/*blog-fullwidth*/
@@ -1456,12 +1456,12 @@
 	    display: inline-block;
 	}
 	.flat-top-products .products-image img {
-	    margin-left: 0; 
+	    margin-left: 0;
 	    margin-top: 0;
 	}
 	.products-menu {
-	    margin-top: 0; 
-	    margin-left: 0; 
+	    margin-top: 0;
+	    margin-left: 0;
 	}
 	.flat-top-products .owl-prev {
 	    left: 0;
@@ -1470,10 +1470,10 @@
 	    background-size: cover;
 	}
 	.flat-new-latest.style2 .featured-post {
-	     float: none; 
-	     display: block; 
-	     margin-right: 0; 
-	     margin-top: 0; 
+	     float: none;
+	     display: block;
+	     margin-right: 0;
+	     margin-top: 0;
 	}
 	.flat-new-latest.style2 .featured-post img {
 		width: 100%;
@@ -1488,7 +1488,7 @@
 		text-align: center;
 	}
 	.top-bar.style4 .top-bar-hotline {
-	    float: none; 
+	    float: none;
 	}
 	.top-bar.style4 .top-bar-user {
 	    float: none;
@@ -1534,7 +1534,7 @@
 	/*shop-fullwish-list*/
 	.filter-shop span,
 	.filter-shop span.filter-right  {
-        display: none;	
+        display: none;
 	}
 	/*shop-right-slidebar-list*/
 	.main-shop-right .sidebar .sidebar-inner .widget-filter .thumb-new-banner .banner-content {
@@ -1599,7 +1599,7 @@
 	    font-size: 11px;
 	}
 	.main-shop-cart .flat-cart .btn-continue {
-	    float: none; 
+	    float: none;
 	    display: block;
 	}
 	.main-shop-cart .flat-cart .cart-btn .outline.ol-accent {
@@ -1659,7 +1659,7 @@
 	    color: #a6a6a6;
 	}
 	.main-blog-right article.post-list .content-post .content-main .submit {
-	     margin-bottom: 0px; 
+	     margin-bottom: 0px;
 	     padding-top: 0px;
 	}
 	.flat-row .post-wrap.v2 {
@@ -1684,7 +1684,7 @@
     	left: 20%;
     }
 }
-@media (max-width: 320px) {	
+@media (max-width: 320px) {
 	/* .main-blog-grid */
 	.main-blog-grid .post {
 		float: left;
@@ -1742,7 +1742,7 @@
 	    left: 0;
 	}
     .main-homepage-2 .flat-carousel {
-	    position: relative; 
+	    position: relative;
 	    padding: 46px 20px;
 	    top: 0;
 	    right: 0;
@@ -1760,17 +1760,17 @@
 	    display: none;
 	}
 	.slide .top-bar-logo {
-	    margin-left: 0; 
+	    margin-left: 0;
 	}
 	/*homepage-3*/
 	.flat-new-latest.style3 .content-post .post-title {
-	    padding-right: 15px; 
+	    padding-right: 15px;
 	}
 	.flat-new-latest.style3 .content-post {
 	    left: 20px;
 	}
 	/*homepage-4*/
-	
+
 	/*homepage-5*/
 	.flat-our-product .product .product-item .new {
 	    left: 15%;
@@ -1824,5 +1824,19 @@
 	.flat-cart ul.tabs li a {
 	    font-size: 9px;
 	}
-}   
+}
 
+@media (max-width: 991px) {
+    .set-page {
+    background-size: 100% auto;
+    background-image: url(/image/bg/background_top_mob.jpg) !important;
+    background-repeat: no-repeat;
+    background-position: top center;
+    }
+   .set-page .image-set img {
+       height: 50%;
+    }
+   .set-page #spec-cont {
+       height: 70.056vw;
+   }
+}
