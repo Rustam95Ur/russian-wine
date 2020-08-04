@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use TCG\Voyager\Traits\Translatable;
+use App\Filters\QueryFilter;
+use Illuminate\Database\Eloquent\Builder;
 
 class Wine extends Model
 {
@@ -67,10 +69,9 @@ class Wine extends Model
         return $this->belongsTo('App\Models\Excerpt', 'excerpt_id', 'id');
     }
 
-
-    public function favorites()
+    public function scopeFilter(Builder $builder, QueryFilter $filters)
     {
-        return $this->hasMany('App\Models\Favorite');
+        return $filters->apply($builder);
     }
 }
 

@@ -12,253 +12,226 @@
         </div>
         <div class="row sortSearch">
             <div class="shopSearch col-md-3">
-                <form id="searchin-form">
-                    <input id="search-main" type="text" placeholder="Поиск по каталогу">
-                    <ul class="output" style="display:none;">
-                    </ul>
-                    <a type="submit" id="sfb" class="preview" value="">
-                        <img src="{{ asset ('image/searchSort.svg') }}" alt="" class="searchIconBlack">
-                    </a>
+                <form id="searching-form" method="get">
+                    <input id="search-main" type="text" name="title" placeholder="Поиск по каталогу">
+                    <img src="{{ asset ('image/searchSort.svg') }}" alt="" class="search-icon searchIconBlack">
                 </form>
+                <button type="submit" class="btn btn-danger search-btn" form="searching-form" style="display: none">
+                    Применить
+                </button>
             </div>
             <div class="sorting col-md-3">
-                <form id="sort-form">
-                    <select id="inputState" class="form-control">
-                        <option selected>по умолчанию</option>
-                        <option>сначала дешевле</option>
-                        <option>сначала дороже</option>
-                    </select>
-                    <img src="{{ asset ('image/chevron.svg') }}" alt="" class="iconSort">
-                </form>
+                <select id="inputState" class="form-control" form="searching-form">
+                    <option selected>по умолчанию</option>
+                    <option>сначала дешевле</option>
+                    <option>сначала дороже</option>
+                </select>
+                <img src="{{ asset ('image/chevron.svg') }}" alt="" class="iconSort">
             </div>
         </div>
         <div class="row sortSearch">
-            <div class="shopSearch col-md-3">
+            <div class="shopSearch filtersMain  col-md-3">
                 <!--     fav filters (four bold filters)      -->
-                <form id="favFilters" class="filtersMain">
+                @foreach($classes as $class)
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="favSort1">
-                        <label class="form-check-label" for="favSort1">
-                            Без диоксида серы
+                        <input class="form-check-input" form="searching-form" name="wine_class" type="checkbox"
+                               value="{{$class->id}}"
+                               id="classSort{{$class->id}}">
+                        <label class="form-check-label" for="classSort{{$class->id}}">
+                            {{$class->title}}
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="favSort2">
-                        <label class="form-check-label" for="favSort2">
-                            Оранжевые вина
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="favSort3">
-                        <label class="form-check-label" for="favSort3">
-                            Автохтоны
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="favSort4">
-                        <label class="form-check-label" for="favSort4">
-                            Пет Нат
-                        </label>
-                    </div>
-                </form>
-                <!--     fav filters end                      -->
+                @endforeach
+            <!--     fav filters end                      -->
 
                 <!--     wine color filters                   -->
-                <form id="colFilters" class="filtersMain">
-                    <h4 class="filterHeading">Цвет</h4>
-                    @foreach($colors as $color)
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="{{$color->id}}" name="color"
-                                   id="wineColor{{$color->id}}">
-                            <label class="form-check-label" for="wineColor{{$color->id}}">
-                                {{$color->title}}
-                            </label>
-                        </div>
-                    @endforeach
-                </form>
-                <form id="priceFilters" class="filtersMain">
-                    <h4 class="filterHeading">Цена</h4>
+                <h4 class="filterHeading">Цвет</h4>
+                @foreach($colors as $color)
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="winePrice1">
-                        <label class="form-check-label" for="winePrice1">
-                            До 1000
+                        <input class="form-check-input" type="checkbox" form="searching-form" value="{{$color->id}}"
+                               name="color" id="wineColor{{$color->id}}">
+                        <label class="form-check-label" for="wineColor{{$color->id}}">
+                            {{$color->title}}
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="winePrice2">
-                        <label class="form-check-label" for="winePrice2">
-                            1000 - 1500
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="winePrice3">
-                        <label class="form-check-label" for="winePrice3">
-                            1500 - 3000
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="winePrice4">
-                        <label class="form-check-label" for="winePrice4">
-                            3000 - 5000
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="winePrice5">
-                        <label class="form-check-label" for="winePrice5">
-                            5000 - 10000
-                        </label>
-                    </div>
-                    <!--   collapse other prices   -->
-                    <div class="panel-group">
-                        <div class="panel panel-default">
-                            <div id="collapse1" class="panel-collapse collapse">
-                                <!--  Collapse inner space   -->
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="winePrice6">
-                                    <label class="form-check-label" for="winePrice6">
-                                        10000 - 15000
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="custom-control-input" type="checkbox" value="" id="winePrice7">
-                                    <label class="form-check-label" for="winePrice7">
-                                        15000 - 30000
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="custom-control-input" type="checkbox" value="" id="winePrice8">
-                                    <label class="form-check-label" for="winePrice8">
-                                        30000 - 50000
-                                    </label>
-                                </div>
-                                <!--  Collapse inner space end -->
+                @endforeach
+                <h4 class="filterHeading">Цена</h4>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="winePrice1">
+                    <label class="form-check-label" for="winePrice1">
+                        До 1000
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="winePrice2">
+                    <label class="form-check-label" for="winePrice2">
+                        1000 - 1500
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="winePrice3">
+                    <label class="form-check-label" for="winePrice3">
+                        1500 - 3000
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="winePrice4">
+                    <label class="form-check-label" for="winePrice4">
+                        3000 - 5000
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="winePrice5">
+                    <label class="form-check-label" for="winePrice5">
+                        5000 - 10000
+                    </label>
+                </div>
+                <!--   collapse other prices   -->
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div id="collapse1" class="panel-collapse collapse">
+                            <!--  Collapse inner space   -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="winePrice6">
+                                <label class="form-check-label" for="winePrice6">
+                                    10000 - 15000
+                                </label>
                             </div>
-                            <button class="collapseBtn" name="button" data-toggle="collapse" data-target="#collapse1"
-                                    aria-expanded="false" aria-controls="collapse1">
-                                <span>Посмотреть все</span>
-                                <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
-                            </button>
+                            <div class="form-check">
+                                <input class="custom-control-input" type="checkbox" value="" id="winePrice7">
+                                <label class="form-check-label" for="winePrice7">
+                                    15000 - 30000
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="custom-control-input" type="checkbox" value="" id="winePrice8">
+                                <label class="form-check-label" for="winePrice8">
+                                    30000 - 50000
+                                </label>
+                            </div>
+                            <!--  Collapse inner space end -->
                         </div>
+                        <button class="collapseBtn" name="button" data-toggle="collapse" data-target="#collapse1"
+                                aria-expanded="false" aria-controls="collapse1">
+                            <span>Посмотреть все</span>
+                            <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
+                        </button>
                     </div>
-                </form>
+                </div>
                 <!--     wine price filters end               -->
 
                 <!--     wine type filters                   -->
-                <form id="wineTypeFilters" class="filtersMain">
-                    <h4 class="filterHeading">Тип Вина</h4>
-                    @foreach($sugars as $sugar)
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="{{$sugar->id}}"
-                                   id="wineType{{$sugar->id}}">
-                            <label class="form-check-label" for="wineType{{$sugar->id}}">
-                                {{$sugar->title}}
-                            </label>
-                        </div>
+                <h4 class="filterHeading">Тип Вина</h4>
+                @foreach($sugars as $sugar)
+                    <div class="form-check">
+                        <input class="form-check-input" form="searching-form" name="sugar" type="checkbox"
+                               value="{{$sugar->id}}" id="wineType{{$sugar->id}}">
+                        <label class="form-check-label" for="wineType{{$sugar->id}}">
+                            {{$sugar->title}}
+                        </label>
+                    </div>
                     @if($loop->index == 5)
                         @break
                     @endif
                 @endforeach
-                <!--   collapse other prices   -->
-                    <div class="panel-group">
-                        <div class="panel panel-default">
-                            <div id="collapseWineType" class="panel-collapse collapse">
-                                <!--  Collapse inner space   -->
-                                @foreach($sugars as $sugar)
-                                    @if($loop->index > 5)
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="{{$sugar->id}}"
-                                                   id="wineType{{$sugar->id}}">
-                                            <label class="form-check-label" for="wineType{{$sugar->id}}">
-                                                {{$sugar->title}}
-                                            </label>
-                                        </div>
-                                @endif
-                            @endforeach
-                            <!--  Collapse inner space end -->
-                            </div>
-                            <button class="collapseBtn" name="button" data-toggle="collapse"
-                                    data-target="#collapseWineType" aria-expanded="false"
-                                    aria-controls="collapseWineType">
-                                <span>Посмотреть все</span>
-                                <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
-                            </button>
+            <!--   collapse other prices   -->
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div id="collapseWineType" class="panel-collapse collapse">
+                            <!--  Collapse inner space   -->
+                            @foreach($sugars as $sugar)
+                                @if($loop->index > 5)
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="sugar" form="searching-form"
+                                               type="checkbox"
+                                               value="{{$sugar->id}}"
+                                               id="wineType{{$sugar->id}}">
+                                        <label class="form-check-label" for="wineType{{$sugar->id}}">
+                                            {{$sugar->title}}
+                                        </label>
+                                    </div>
+                            @endif
+                        @endforeach
+                        <!--  Collapse inner space end -->
                         </div>
+                        <button class="collapseBtn" name="button" data-toggle="collapse"
+                                data-target="#collapseWineType" aria-expanded="false"
+                                aria-controls="collapseWineType">
+                            <span>Посмотреть все</span>
+                            <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
+                        </button>
                     </div>
-                </form>
+                </div>
                 <!--     wine type filters end               -->
 
 
                 <!--     wine regions filters                   -->
-                <form id="wineRegion" class="filtersMain">
-                    <h4 class="filterHeading">Регион</h4>
-                    @foreach($regions as $region)
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="{{$region->id}}"
-                                   id="wineRegion{{$region->id}}">
-                            <label class="form-check-label" for="wineRegion{{$region->id}}">
-                                {{$region->title}}
-                            </label>
-                        </div>
-                    @endforeach
-                </form>
-                <!--     wine regions filters end               -->
+                <h4 class="filterHeading">Регион</h4>
+                @foreach($regions as $region)
+                    <div class="form-check">
+                        <input class="form-check-input" form="searching-form" type="checkbox" value="{{$region->id}}"
+                              name="region" id="wineRegion{{$region->id}}">
+                        <label class="form-check-label" for="wineRegion{{$region->id}}">
+                            {{$region->title}}
+                        </label>
+                    </div>
+                @endforeach
+            <!--     wine regions filters end               -->
 
                 <!--     wine winemaker filters                   -->
-                <form id="shopWinemaker" class="filtersMain">
-                    <h4 class="filterHeading">Винодельня</h4>
-                    <!--  filter live search  -->
-                    <div id="liveSearch-form">
-                        <input id="search-main" type="text" placeholder="Поиск...">
-                        <ul class="output" style="display:none;">
-                        </ul>
-                        <a type="submit" id="sfb" class="preview">
-                            <img src="{{ asset ('image/searchSort.svg') }}" alt="" class="liveSearchIcon">
-                        </a>
+                <h4 class="filterHeading">Винодельня</h4>
+                <!--  filter live search  -->
+                <div id="liveSearch-form">
+                    <input id="search-main" type="text" placeholder="Поиск...">
+                    <ul class="output" style="display:none;">
+                    </ul>
+                    <a type="submit" id="sfb" class="preview">
+                        <img src="{{ asset ('image/searchSort.svg') }}" alt="" class="liveSearchIcon">
+                    </a>
+                </div>
+                <!--  filter live search end -->
+                @foreach($wineries as $winery)
+                    <div class="form-check">
+                        <input class="form-check-input" form="searching-form" type="checkbox" value="{{$winery->id}}"
+                               name="winery" id="shopWinemaker{{$winery->id}}">
+                        <label class="form-check-label" for="shopWinemaker{{$winery->id}}">
+                            {{$winery->title}}
+                        </label>
                     </div>
-                    <!--  filter live search end -->
-                    @foreach($wineries as $winery)
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="{{$winery->id}}"
-                                   id="shopWinemaker{{$winery->id}}">
-                            <label class="form-check-label" for="shopWinemaker{{$winery->id}}">
-                                {{$winery->title}}
-                            </label>
+                @if($loop->index == 5)
+                    @break
+                @endif
+            @endforeach
+            <!--   collapse other prices   -->
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div id="collapseWinemakers" class="panel-collapse collapse">
+                            <!--  Collapse inner space   -->
+                            @foreach($wineries as $winery)
+                                @if($loop->index > 5)
+                                    <div class="form-check">
+                                        <input class="form-check-input" form="searching-form" type="checkbox"
+                                               value="{{$winery->id}}" id="shopWinemaker{{$winery->id}}" name="winery">
+                                        <label class="form-check-label" for="shopWinemaker{{$winery->id}}">
+                                            {{$winery->title}}
+                                        </label>
+                                    </div>
+                            @endif
+                        @endforeach
+                        <!--  Collapse inner space end -->
                         </div>
-                    @if($loop->index == 5)
-                        @break
-                    @endif
-                @endforeach
-                <!--   collapse other prices   -->
-                    <div class="panel-group">
-                        <div class="panel panel-default">
-                            <div id="collapseWinemakers" class="panel-collapse collapse">
-                                <!--  Collapse inner space   -->
-                                @foreach($wineries as $winery)
-                                    @if($loop->index > 5)
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="{{$winery->id}}"
-                                                   id="shopWinemaker{{$winery->id}}">
-                                            <label class="form-check-label" for="shopWinemaker{{$winery->id}}">
-                                                {{$winery->title}}
-                                            </label>
-                                        </div>
-                                @endif
-                            @endforeach
-                            <!--  Collapse inner space end -->
-                            </div>
-                            <button class="collapseBtn" name="button" data-toggle="collapse"
-                                    data-target="#collapseWinemakers" aria-expanded="false"
-                                    aria-controls="collapseWinemakers">
-                                <span>Посмотреть все</span>
-                                <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
-                            </button>
-                        </div>
+                        <button class="collapseBtn" name="button" data-toggle="collapse"
+                                data-target="#collapseWinemakers" aria-expanded="false"
+                                aria-controls="collapseWinemakers">
+                            <span>Посмотреть все</span>
+                            <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
+                        </button>
                     </div>
-                </form>
+                </div>
                 <!--     wine winemaker filters end               -->
 
                 <!--     grape family filter                     -->
-                <form id="shopWinefamily" class="filtersMain">
+                <form name="filter_form" method="get" class="filtersMain">
                     <h4 class="filterHeading">Сорт винограда</h4>
                     <!--  filter live search  -->
                     <div id="liveSearch-form">
@@ -272,8 +245,8 @@
                     <!--  filter live search end -->
                     @foreach($sorts as $sort)
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="{{$sort->id}}"
-                                   id="shopWineSort{{$sort->id}}">
+                            <input class="form-check-input" type="checkbox" form="searching-form" value="{{$sort->id}}"
+                                   name="sort" id="shopWineSort{{$sort->id}}">
                             <label class="form-check-label" for="shopWineSort{{$sort->id}}">
                                 {{$sort->title}}
                             </label>
@@ -290,8 +263,8 @@
                                 @foreach($sorts as $sort)
                                     @if($loop->index > 5)
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="{{$sort->id}}"
-                                                   id="shopWineSort{{$sort->id}}">
+                                            <input class="form-check-input" form="searching-form" type="checkbox"
+                                                   name="sort" value="{{$sort->id}}" id="shopWineSort{{$sort->id}}">
                                             <label class="form-check-label" for="shopWineSort{{$sort->id}}">
                                                 {{$sort->title}}
                                             </label>
@@ -313,7 +286,7 @@
                 <!--     grape family filter end                 -->
 
                 <!--     wine year filters                        -->
-                <form id="shopWineAge" class="filtersMain">
+                <form name="filter_form" method="get" class="filtersMain">
                     <h4 class="filterHeading">Год</h4>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="shopWineAge1">
@@ -382,7 +355,7 @@
                 <!--     wine grad filters end                    -->
 
                 <!--     wine grad filters                        -->
-                <form id="shopWineGrad" class="filtersMain">
+                <form name="filter_form" method="get" class="filtersMain">
                     <h4 class="filterHeading">Крепость</h4>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="shopGrad1">
@@ -525,4 +498,15 @@
             </div>
         </div>
     </div>
+    @push('scripts')
+        <script>
+            $('#search-main').on('keyup', function () {
+                $('.search-btn').show()
+            })
+            $(".form-check-input").change(function () {
+                $('.search-btn').show()
+            });
+        </script>
+
+    @endpush
 @endsection

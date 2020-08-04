@@ -7,32 +7,35 @@ use App\Models\Color;
 use App\Models\GrapeSort;
 use App\Models\Region;
 use App\Models\Wine;
+use App\Models\WineClass;
 use App\Models\Winemaker;
 use App\Models\Winery;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Sugar;
+use App\Filters\WineFilter;
 
 class IndexController extends Controller
 {
 
-    public function wine_list()
+    public function wine_list(WineFilter $filters)
     {
         $wineries = Winery::where('status', '=', 'ACTIVE')->get();
         $colors = Color::all();
         $regions = Region::all();
         $sugars = Sugar::all();
         $sorts = GrapeSort::all();
-        $wines = Wine::where('status', '=', 'ACTIVE')
-            ->with('color', 'sugar', 'winery')
-            ->paginate(40);
+        $classes = WineClass::all();
+        $wines = Wine::where('status', '=', 'ACTIVE')->filter($filters)->with('color', 'sugar', 'winery')
+            ->paginate(39);;
         return view('shop.wine.list', [
             'wines' => $wines,
             'colors' => $colors,
             'regions' => $regions,
             'sugars' => $sugars,
             'wineries' => $wineries,
-            'sorts' => $sorts
+            'sorts' => $sorts,
+            'classes' => $classes,
         ]);
     }
 

@@ -91,7 +91,7 @@ h1.pageHeading {
     padding-bottom: .834vw;
 }
 
-#searchin-form {
+#searching-form {
     position: relative !important;
     border: 2px black solid;
     border-radius: 50px;
@@ -142,7 +142,7 @@ select#inputState:focus {
     height: 2.533vw;
 }
 
-#searchin-form a {
+#searching-form .search-icon {
     position: absolute;
     top: 0;
     right: 0;
@@ -571,4 +571,19 @@ input {
 }
 .footer-hide footer {
     display: none;
+}
+.search-btn {
+    position: fixed;
+    right: 71%;
+    font-size: .677vw;
+    text-align: center;
+    line-height: 1.604vw;
+    text-transform: uppercase;
+    border-radius: 50px !important;
+    background: #da224d;
+    width: 10.416vw;
+    color: #fff;
+    border: none;
+    z-index: 50;
+    background-image:none !important;
 }
