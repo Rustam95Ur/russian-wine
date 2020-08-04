@@ -149,15 +149,15 @@
             <h3 class="text-center text-danger">{!! $message !!}</h3>
         @endif
         @if ($message = Session::get('warning'))
-            <h3 class="text-center text-danger">{!! $message !!}</h6>
+            <h3 class="text-center text-danger">{!! $message !!}</h3>
                 @endif
                 @if ($message = Session::get('info'))
                     <h3 class="text-center text-danger">{!! $message !!}</h3>
                 @endif
                 @if ($errors->any())
                     @foreach($errors->all() as $error)
-                        <ul class="questions">
-                            <li class="text-danger"><h6>{!! $error !!}</h6></li>
+                        <ul class="questions text-center">
+                            <li class="text-danger"><h3>{!! $error !!}</h3></li>
                         </ul>
             @endforeach
         @endif

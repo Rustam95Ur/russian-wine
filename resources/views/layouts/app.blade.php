@@ -192,9 +192,9 @@
         (function ($) {
             $(function () {
                 $('#messageModal').removeClass('hide');
-                setTimeout(function () {
-                    $('#messageModal').addClass('hide')
-                }, 5000);
+                // setTimeout(function () {
+                //     $('#messageModal').addClass('hide')
+                // }, 5000);
             });
         })(jQuery);
     </script>
