@@ -21,7 +21,7 @@ class WineFilter extends QueryFilter
      */
     public function wine_class($id)
     {
-        return $this->builder->where('class_id', $id);
+        return $this->builder->whereIn('class_id', $id);
     }
 
     /**
@@ -30,7 +30,7 @@ class WineFilter extends QueryFilter
      */
     public function color($id)
     {
-        return $this->builder->where('color_id', $id);
+        return $this->builder->whereIn('color_id', $id);
     }
 
     /**
@@ -39,7 +39,7 @@ class WineFilter extends QueryFilter
      */
     public function sugar($id)
     {
-        return $this->builder->where('sugar_id', $id);
+        return $this->builder->whereIn('sugar_id', $id);
     }
 
     /**
@@ -48,7 +48,7 @@ class WineFilter extends QueryFilter
      */
     public function region($id)
     {
-        return $this->builder->where('region_id', $id);
+        return $this->builder->whereIn('region_id', $id);
     }
 
     /**
@@ -57,7 +57,7 @@ class WineFilter extends QueryFilter
      */
     public function winery($id)
     {
-        return $this->builder->where('winery_id', $id);
+        return $this->builder->whereIn('winery_id', $id);
     }
 
     /**
@@ -66,11 +66,54 @@ class WineFilter extends QueryFilter
      */
     public function sort($id)
     {
-        return $this->builder->where('grape_sort_id', $id);
+        return $this->builder->whereIn('grape_sort_id', $id);
 
     }
-    public function price($order = 'asc')
+
+    /**
+     * @param $prices
+     * @return mixed
+     */
+    public function price($prices)
+    {
+        $ranges = [];
+        foreach ($prices as $price) {
+            $min_max = explode('-', $price);
+            $min_val = ['price', '>=', (int)$min_max[0]];
+            $max_val = ['price', '<', (int)$min_max[1]];
+            array_push($ranges, [$min_val, $max_val]);
+
+        }
+        return $this->builder->where(function ($query) use ($ranges) {
+            foreach ($ranges as $value) {
+                $query->orWhere($value);
+            }
+        });
+
+    }
+
+    /**
+     * @param $value
+     * @return mixed
+     */
+    public function year($value)
+    {
+        return $this->builder->whereIn('year', $value);
+    }
+
+    /**
+     * @param $value
+     * @return mixed
+     */
+    public function fortress($value)
+    {
+        return $this->builder->whereIn('fortress', $value);
+    }
+
+    public function price_sort($order = 'asc')
     {
         return $this->builder->orderBy('price', $order);
+
     }
+
 }

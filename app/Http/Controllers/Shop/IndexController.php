@@ -26,8 +26,11 @@ class IndexController extends Controller
         $sugars = Sugar::all();
         $sorts = GrapeSort::all();
         $classes = WineClass::all();
+        $years = Wine::select('year')->where('year', '!=', null)->groupBy('year')->orderBy('year', 'DESC')->get();
+        $fortresses = Wine::select('fortress')->where('fortress', '!=', null)->groupBy('fortress')->orderBy('fortress', 'DESC')->get();
         $wines = Wine::where('status', '=', 'ACTIVE')->filter($filters)->with('color', 'sugar', 'winery')
-            ->paginate(39);;
+            ->paginate(39);
+        $filters = request()->input();
         return view('shop.wine.list', [
             'wines' => $wines,
             'colors' => $colors,
@@ -36,6 +39,9 @@ class IndexController extends Controller
             'wineries' => $wineries,
             'sorts' => $sorts,
             'classes' => $classes,
+            'years' => $years,
+            'fortresses' => $fortresses,
+            'filters' => $filters
         ]);
     }
 
