@@ -177,7 +177,7 @@
                             <!--  Collapse inner space end -->
                         </div>
                         <button class="collapseBtn" name="button" data-toggle="collapse" data-target="#collapse1"
-                                aria-expanded="false" aria-controls="collapse1">
+                                aria-expanded="false" aria-controls="collapse1" type="button">
                             <span>Посмотреть все</span>
                             <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
                         </button>
@@ -225,7 +225,7 @@
                         </div>
                         <button class="collapseBtn" name="button" data-toggle="collapse"
                                 data-target="#collapseWineType" aria-expanded="false"
-                                aria-controls="collapseWineType">
+                                aria-controls="collapseWineType" type="button">
                             <span>Посмотреть все</span>
                             <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
                         </button>
@@ -300,7 +300,7 @@
                         </div>
                         <button class="collapseBtn" id="btnCollapse-winery" name="button" data-toggle="collapse"
                                 data-target="#collapse-winery" aria-expanded="false"
-                                aria-controls="collapse-winery">
+                                aria-controls="collapse-winery" type="button">
                             <span>Посмотреть все</span>
                             <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
                         </button>
