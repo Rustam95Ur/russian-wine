@@ -22,8 +22,13 @@
                 </button>
             </div>
             <div class="sorting col-md-3">
-                <select id="inputState" name="price_sort" class="form-control" form="searching-form">
-                    <option selected disabled>по умолчанию</option>
+                <select id="inputState" name="price_sort" class="form-control custom-select sources"
+                        form="searching-form"
+                        @if(array_key_exists('price_sort', $filters))
+                        placeholder="{{$filters['price_sort'] == 'asc' ? 'сначала дешевле' : ' сначала дороже'}}">
+                        @else
+                        placeholder="по умолчанию">
+                    @endif
                     @if(array_key_exists('price_sort', $filters))
                         <option value="asc" {{$filters['price_sort'] == 'asc' ? 'selected' : ''}}>
                             сначала дешевле
@@ -524,6 +529,47 @@
             $("select[name='price_sort']").change(function () {
                 $('#searching-form').closest('form').submit();
             });
+
+
+            $(".custom-select").each(function () {
+                var classes = $(this).attr("class"),
+                    id = $(this).attr("id"),
+                    name = $(this).attr("name");
+                var template = '<div class="' + classes + '">';
+                template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
+                template += '<div class="custom-options">';
+                $(this).find("option").each(function () {
+                    if ($(this).attr("value")) {
+                        template += '<span class="custom-option" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
+                    }
+                });
+                template += '</div></div>';
+
+                $(this).wrap('<div class="custom-select-wrapper"></div>');
+                $(this).hide();
+                $(this).after(template);
+            });
+            $(".custom-option:first-of-type").hover(function () {
+                $(this).parents(".custom-options").addClass("option-hover");
+            }, function () {
+                $(this).parents(".custom-options").removeClass("option-hover");
+            });
+            $(".custom-select-trigger").on("click", function () {
+                $('html').one('click', function () {
+                    $(".custom-select").removeClass("opened");
+                });
+                $(this).parents(".custom-select").toggleClass("opened");
+                event.stopPropagation();
+            });
+            $(".custom-option").on("click", function () {
+                $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
+                $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
+                $(this).addClass("selection");
+                $(this).parents(".custom-select").removeClass("opened");
+                $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
+                $('#searching-form').closest('form').submit();
+            });
+
         </script>
 
     @endpush
