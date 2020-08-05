@@ -357,7 +357,7 @@
                             </div>
                             <button class="collapseBtn" id="btnCollapse-sort" name="button" data-toggle="collapse"
                                     data-target="#collapse-sort" aria-expanded="false"
-                                    aria-controls="collapse-sort">
+                                    aria-controls="collapse-sort" type="button">
                                 <span>Посмотреть все</span>
                                 <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
                             </button>
@@ -409,7 +409,7 @@
                             </div>
                             <button class="collapseBtn" name="button" data-toggle="collapse"
                                     data-target="#collapseWineAge" aria-expanded="false"
-                                    aria-controls="collapseWineAge">
+                                    aria-controls="collapseWineAge" type="button">
                                 <span>Посмотреть все</span>
                                 <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
                             </button>
@@ -460,7 +460,7 @@
                             </div>
                             <button class="collapseBtn" name="button" data-toggle="collapse"
                                     data-target="#collapseWineGrad" aria-expanded="false"
-                                    aria-controls="collapseWineGrad">
+                                    aria-controls="collapseWineGrad" type="button">
                                 <span>Посмотреть все</span>
                                 <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
                             </button>
