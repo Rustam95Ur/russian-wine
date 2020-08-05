@@ -474,6 +474,7 @@ input {
     display: flex;
     border-bottom: 2px solid #aaa;
     margin-bottom: 0.9902vw;
+    width: 70%;
 }
 
 .btn-danger {

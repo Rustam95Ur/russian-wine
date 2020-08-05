@@ -26,7 +26,7 @@
                         form="searching-form"
                         @if(array_key_exists('price_sort', $filters))
                         placeholder="{{$filters['price_sort'] == 'asc' ? 'сначала дешевле' : ' сначала дороже'}}">
-                        @else
+                    @else
                         placeholder="по умолчанию">
                     @endif
                     @if(array_key_exists('price_sort', $filters))
@@ -58,24 +58,24 @@
                         <label class="form-check-label" for="classSort{{$class->id}}">
                             {{$class->title}}
                         </label>
-
+                        <!-- tooltip -->
+                        <img class="tippyTooltip" data-template="tooltip-{{$class->id}}" src="{{ asset ('image/tooltip.svg') }}" alt="">
+                        <!--end tooltip -->
+                        <!-- template for tooltip  -->
+                        <div style="display: none;">
+                            <div id="tooltip-{{$class->id}}">
+                                <h4>{{$class->title}}</h4>
+                                <p>{{$class->description}}</p>
+                            </div>
+                        </div>
+                        <!-- end template for tooltip  -->
                     </div>
                 @endforeach
             <!--     fav filters end                      -->
 
                 <!--     wine color filters                   -->
                 <h4 class="filterHeading">Цвет</h4>
-                  <!-- tooltip -->
-                  <img class="tippyTooltip" data-template="one" src="{{ asset ('image/tooltip.svg') }}" alt="">
-                  <!--end tooltip -->
-                  <!-- template for tooltip  -->
-                  <div style="display: none;">
-                    <div id="one">
-                      <h4>Пет Нат</h4>
-                      <p>Пет Нат это модный тренд в игристых винах. Первое и единственное брожение происходит в закрытой бутылке. Отличается от традиционных игристых, лёгкостью и питкостью.</p>
-                    </div>
-                  </div>
-                  <!-- end template for tooltip  -->
+
                 @foreach($colors as $color)
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" form="searching-form" value="{{$color->id}}"
@@ -254,22 +254,21 @@
                 <h4 class="filterHeading">Винодельня</h4>
                 <!--  filter live search  -->
                 <div id="liveSearch-form">
-                    <input id="search-main" type="text" placeholder="Поиск...">
-                    <ul class="output" style="display:none;">
-                    </ul>
+                    <input id="search-main-winery" onkeyup="search('winery')" type="text" placeholder="Поиск...">
                     <a type="submit" id="sfb" class="preview">
                         <img src="{{ asset ('image/searchSort.svg') }}" alt="" class="liveSearchIcon">
                     </a>
                 </div>
                 <!--  filter live search end -->
+
                 @foreach($wineries as $winery)
-                    <div class="form-check">
+                    <div class="form-check" id="form-winery-{{$winery->id}}">
                         <input class="form-check-input" form="searching-form" type="checkbox" value="{{$winery->id}}"
-                               name="winery[]" id="shopWinemaker{{$winery->id}}"
+                               name="winery[]" id="shop-winery{{$winery->id}}"
                                @if(array_key_exists('winery', $filters) and in_array($winery->id, $filters['winery']))
                                checked
                             @endif>
-                        <label class="form-check-label" for="shopWinemaker{{$winery->id}}">
+                        <label class="form-check-label" for="shop-winery{{$winery->id}}">
                             {{$winery->title}}
                         </label>
                     </div>
@@ -280,18 +279,18 @@
             <!--   collapse other prices   -->
                 <div class="panel-group">
                     <div class="panel panel-default">
-                        <div id="collapseWinemakers" class="panel-collapse collapse">
+                        <div id="collapse-winery" class="panel-collapse collapse">
                             <!--  Collapse inner space   -->
                             @foreach($wineries as $winery)
                                 @if($loop->index > 5)
-                                    <div class="form-check">
+                                    <div class="form-check" id="form-winery-{{$winery->id}}">
                                         <input class="form-check-input" form="searching-form" type="checkbox"
-                                               value="{{$winery->id}}" id="shopWinemaker{{$winery->id}}"
+                                               value="{{$winery->id}}" id="shop-winery{{$winery->id}}"
                                                name="winery[]"
                                                @if(array_key_exists('winery', $filters) and in_array($winery->id, $filters['winery']))
                                                checked
                                             @endif>
-                                        <label class="form-check-label" for="shopWinemaker{{$winery->id}}">
+                                        <label class="form-check-label" for="shop-winery{{$winery->id}}">
                                             {{$winery->title}}
                                         </label>
                                     </div>
@@ -299,9 +298,9 @@
                         @endforeach
                         <!--  Collapse inner space end -->
                         </div>
-                        <button class="collapseBtn" name="button" data-toggle="collapse"
-                                data-target="#collapseWinemakers" aria-expanded="false"
-                                aria-controls="collapseWinemakers">
+                        <button class="collapseBtn" id="btnCollapse-winery" name="button" data-toggle="collapse"
+                                data-target="#collapse-winery" aria-expanded="false"
+                                aria-controls="collapse-winery">
                             <span>Посмотреть все</span>
                             <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
                         </button>
@@ -314,22 +313,20 @@
                     <h4 class="filterHeading">Сорт винограда</h4>
                     <!--  filter live search  -->
                     <div id="liveSearch-form">
-                        <input id="search-main" type="text" placeholder="Поиск...">
-                        <ul class="output" style="display:none;">
-                        </ul>
-                        <a type="submit" id="sfb" class="preview" value="">
+                        <input id="search-main-sort" onkeyup="search('sort')" type="text" placeholder="Поиск...">
+                        <a type="submit" id="sfb" class="preview">
                             <img src="{{ asset ('image/searchSort.svg') }}" alt="" class="liveSearchIcon">
                         </a>
                     </div>
                     <!--  filter live search end -->
                     @foreach($sorts as $sort)
-                        <div class="form-check">
+                        <div class="form-check" id="form-sort-{{$sort->id}}">
                             <input class="form-check-input" type="checkbox" form="searching-form" value="{{$sort->id}}"
-                                   name="sort[]" id="shopWineSort{{$sort->id}}"
+                                   name="sort[]" id="shop-sort{{$sort->id}}"
                                    @if(array_key_exists('sort', $filters) and in_array($sort->id, $filters['sort']))
                                    checked
                                 @endif>
-                            <label class="form-check-label" for="shopWineSort{{$sort->id}}">
+                            <label class="form-check-label" for="shop-sort{{$sort->id}}">
                                 {{$sort->title}}
                             </label>
                         </div>
@@ -340,17 +337,17 @@
                 <!--   collapse other prices   -->
                     <div class="panel-group">
                         <div class="panel panel-default">
-                            <div id="collapseWineFamily" class="panel-collapse collapse">
+                            <div id="collapse-sort" class="panel-collapse collapse">
                                 <!--  Collapse inner space   -->
                                 @foreach($sorts as $sort)
                                     @if($loop->index > 5)
-                                        <div class="form-check">
+                                        <div class="form-check" id="form-sort-{{$sort->id}}">
                                             <input class="form-check-input" form="searching-form" type="checkbox"
-                                                   name="sort[]" value="{{$sort->id}}" id="shopWineSort{{$sort->id}}"
+                                                   name="sort[]" value="{{$sort->id}}" id="shop-sort{{$sort->id}}"
                                                    @if(array_key_exists('sort', $filters) and in_array($sort->id, $filters['sort']))
                                                    checked
                                                 @endif>
-                                            <label class="form-check-label" for="shopWineSort{{$sort->id}}">
+                                            <label class="form-check-label" for="shop-sort{{$sort->id}}">
                                                 {{$sort->title}}
                                             </label>
                                         </div>
@@ -358,9 +355,9 @@
                             @endforeach
                             <!--  Collapse inner space end -->
                             </div>
-                            <button class="collapseBtn" name="button" data-toggle="collapse"
-                                    data-target="#collapseWineFamil" aria-expanded="false"
-                                    aria-controls="collapseWineFamily">
+                            <button class="collapseBtn" id="btnCollapse-sort" name="button" data-toggle="collapse"
+                                    data-target="#collapse-sort" aria-expanded="false"
+                                    aria-controls="collapse-sort">
                                 <span>Посмотреть все</span>
                                 <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
                             </button>
@@ -555,7 +552,6 @@
                     }
                 });
                 template += '</div></div>';
-
                 $(this).wrap('<div class="custom-select-wrapper"></div>');
                 $(this).hide();
                 $(this).after(template);
@@ -581,6 +577,28 @@
                 $('#searching-form').closest('form').submit();
             });
 
+
+            function search(type) {
+                var search_input, filter, inputs, label_text, i;
+                search_input = document.getElementById("search-main-" + type);
+                filter = search_input.value.toUpperCase();
+                inputs = $('input[name="' + type + '[]"]').map((i, el) => $(el).val()).get();
+                for (i = 0; i < inputs.length; i++) {
+                    label_text = $("label[for='shop-" + type + inputs[i] + "']").text()
+                    if (label_text.toUpperCase().indexOf(filter) > -1) {
+                        $("#form-" + type + "-" + inputs[i]).show()
+                    } else {
+                        $("#form-" + type + "-" + inputs[i]).hide()
+                    }
+                }
+                if (filter.length === 0) {
+                    $('#collapse-' + type).removeClass('show')
+                    $('#btnCollapse-' + type).show()
+                } else {
+                    $('#collapse-' + type).addClass('show')
+                    $('#btnCollapse-' + type).hide()
+                }
+            }
         </script>
 
     @endpush
