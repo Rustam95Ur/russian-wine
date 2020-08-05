@@ -686,3 +686,34 @@ input {
 .custom-option.selection {
     background: #f9f9f9;
 }
+.tippyTooltip {
+    width: 25px;
+    float: right;
+}
+.tippy-box {
+    position: relative;
+    background-color: #fff;
+    color: #000;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+    outline: 0;
+    transition-property: transform,visibility,opacity;
+    box-shadow: 0px 0px 3.3px 0px rgba(0, 0, 0, 0.2);
+    min-width: 26.227vw;
+}
+.tippy-content p {
+  font: 0.747vw 'ProximaNova-Reg', sans-serif;
+  letter-spacing: -.01em;
+  line-height: 0.934vw;
+  padding: 0;
+}
+.tippy-content h4 {
+  font-family: 'ProximaNova-Bold';
+  font-size: 0.934vw;
+  line-height: 1.634vw;
+  margin: 0;
+}
+.tippy-content {
+  padding: 0.934vw;
+}

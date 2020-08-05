@@ -29,6 +29,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.css') }}">
 
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/>
     <!-- Favicon and touch icons  -->
     <link href="{{asset('icon/favicon.png')}}" rel="apple-touch-icon-precomposed" sizes="48x48">
     <link href="{{asset('icon/favicon.png')}}" rel="apple-touch-icon-precomposed">
@@ -55,6 +56,8 @@
 {{--<a id="scroll-top"><i class="fa fa-angle-right" aria-hidden="true"></i></a> <!-- /#scroll-top -->--}}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 {{--<script src="{{ asset('js/jquery.min.js') }}"></script>--}}
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
 <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('js/jquery-countTo.js') }}"></script>
 <script src="{{ asset('js/jquery-waypoints.js') }}"></script>

@@ -65,6 +65,17 @@
 
                 <!--     wine color filters                   -->
                 <h4 class="filterHeading">Цвет</h4>
+                  <!-- tooltip -->
+                  <img class="tippyTooltip" data-template="one" src="{{ asset ('image/tooltip.svg') }}" alt="">
+                  <!--end tooltip -->
+                  <!-- template for tooltip  -->
+                  <div style="display: none;">
+                    <div id="one">
+                      <h4>Пет Нат</h4>
+                      <p>Пет Нат это модный тренд в игристых винах. Первое и единственное брожение происходит в закрытой бутылке. Отличается от традиционных игристых, лёгкостью и питкостью.</p>
+                    </div>
+                  </div>
+                  <!-- end template for tooltip  -->
                 @foreach($colors as $color)
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" form="searching-form" value="{{$color->id}}"
