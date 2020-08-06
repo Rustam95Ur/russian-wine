@@ -30,7 +30,16 @@
     margin-top: 6.45vw;
     padding: 0 4.167vw;
 }
-
+.shopContent .featured_cont .swiper-slide:hover {
+    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
+    margin-top: -1vw;
+    margin-bottom: 2vw;
+}
+.shopContent .featured_cont .swiper-slide {
+    padding-bottom: 1.865vw !important;
+    margin-bottom: 1vw;
+    transition: all .3s ease;
+}
 .subHeader {
     text-align: center;
     border-bottom: 2px solid black;
@@ -114,7 +123,7 @@ select#inputState:focus {
 }
 
 .shopSearch input {
-    padding: 0.363vw 1.688vw 0.363vw 1.302vw;
+    padding: 0 1.688vw 0.363vw 1.302vw;
     font: .833vw ProximaNova-Bold;
     width: 100%;
     outline: 0;
@@ -122,7 +131,9 @@ select#inputState:focus {
     letter-spacing: -0.01em;
     color: #000000;
 }
-
+.featured_cont .swiper-slide .meta span {
+    cursor: pointer;
+}
 .sorting select {
     padding: 0.3215vw 1.175vw 0.3215vw 0.678vw;
     font: .833vw ProximaNova-Bold !important;
@@ -377,9 +388,6 @@ input {
     padding: 0;
 }
 
-.form-check label {
-    padding-left: .626vw;
-}
 
 .filterHeading {
     font-size: .853vw;
@@ -436,21 +444,17 @@ input {
 .filtersMain input[type="checkbox"] + label::before {
     content: "\f096";
     font-family: "FontAwesome";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
+    display: inline-grid;
     transition: all .3s ease;
     opacity: .3;
-}
-
-.form-check label::before {
     font-size: 1.3vw;
-    position: absolute;
-    left: 0.8vw;
+    position: relative;
+    left: -.6vw;
+    top: .1vw;
 }
 
 .form-check input {
@@ -469,7 +473,11 @@ input {
     letter-spacing: -0.01em;
     color: #000000;
 }
-
+.liveSearchIcon {
+    height: 1vw;
+    margin-top: 0.8vw;
+    margin-right: 0.5vw;
+}
 #liveSearch-form {
     display: flex;
     border-bottom: 2px solid #aaa;
