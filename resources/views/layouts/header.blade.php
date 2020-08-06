@@ -61,7 +61,8 @@
                                             <li>
                                                 <a href="{{route('wineries')}}">{{trans('header.wineries')}}</a>
                                             </li>
-                                            <li><a href="{{route('micro_winery')}}">{{trans('header.micro_winery')}}</a></li>
+                                            <li><a href="{{route('micro_winery')}}">{{trans('header.micro_winery')}}</a>
+                                            </li>
                                             <li>
                                                 <a href="{{route('winemakers')}}">{{trans('header.winemakers')}}</a>
                                             </li>
@@ -84,13 +85,13 @@
                 </div>
                 <div id="login">
                     @if(Auth::guard('client')->check())
-                    <a href="{{route('profile')}}">
-                        <img alt="login icon" src="{{ asset ('image/login.svg') }}">
-                    </a>
+                        <a href="{{route('profile')}}">
+                            <img alt="login icon" src="{{ asset ('image/login.svg') }}">
+                        </a>
                     @else
-                    <a onclick="login_modal()">
-                        <img alt="login icon" src="{{ asset ('image/login.svg') }}">
-                    </a>
+                        <a onclick="login_modal()">
+                            <img alt="login icon" src="{{ asset ('image/login.svg') }}">
+                        </a>
                     @endif
                 </div>
                 <div id="cart">
@@ -103,62 +104,128 @@
                     <div>
                         <button id="close-cart"
                                 onclick="$('#cart-cont').removeClass('open');$('body').removeClass('nooverflow1');$('body').removeClass('nooverflow');"></button>
-                        <div id="close-mask" class="empty-cart"></div>
-                        <div id="cart-cart" class="empty-cart">
+                        <div id="close-mask" class="{{($countCart == 0 ? 'empty-cart' : '')}}"></div>
+                        <div id="cart-cart" class="{{($countCart == 0 ? 'empty-cart' : '')}}">
                             <div class="newcart" id="for_the_scroll">
                                 <div id="newcart">
                                     <div class="cart-content">
-                                        <div id="empty_cart">
+                                        <div id="empty_cart" style="display: {{($countCart == 0 ? 'block' : 'none')}}">
                                             <h2>
                                                 Ваша корзина ещё пуста
                                             </h2>
                                             <img alt="cart-icon" src="{{ asset ('image/empty.jpg') }}">
-                                            <button onclick="window.location.href=' hyperlink ';">Выбрать вино</button>
-                                            <div style="display:none;" id="simplecheckout_cart_total">0</div>
+                                            <button onclick="window.location.href=' {{route('wine-shop')}} ';">
+                                                Выбрать вино
+                                            </button>
                                         </div>
                                     </div>
+                                    <div style="display: {{($countCart == 0 ? 'none' : 'block')}};">
+                                        <div class="cart-cart">
+                                            <h3>Корзина</h3>
+                                            <div class="cart-block" id="simplecheckout_cart">
+                                                <div class="table-responsive" id="for-cart">
+                                                    <table class="ul-cart" id="cart_table">
+                                                        <colgroup>
+                                                            <col class="image">
+                                                            <col class="name">
+                                                            <col class="quantity">
+                                                            <col class="total">
+                                                            <col class="remove">
+                                                        </colgroup>
+                                                        <tbody id="product_buy">
+                                                        @foreach($cart_wines as $wine)
+                                                            <tr id="tr-{{$wine['wine_id']}}">
+                                                                <td class="image">
+                                                                    <a>
+                                                                        <img src="{{$wine['image']}}"
+                                                                             alt="{{$wine['title']}}"
+                                                                             title="{{$wine['title']}}"
+                                                                             style="width: 40%">
+                                                                    </a>
+                                                                </td>
+                                                                <td class="name">
+                                                                    <a>{{$wine['title']}}</a>
+                                                                    {{$wine['price']}} <span>п</span>
+                                                                    <div class="options">
+                                                                    </div>
+                                                                </td>
+                                                                <td class="quantity">
+                                                                    <div class="input-group btn-block"
+                                                                         style="max-width: 200px;">
+                                                        <span class="input-group-btn cheight">
+                                                            <button class="btn btn-primary"
+                                                                    onclick="decreaseQty({{$wine['wine_id']}})"
+                                                                    data-toggle="tooltip" type="submit"
+                                                                    data-original-title="" title="">
+                                                                <i class="fa fa-minus"></i>
+                                                            </button>
+                                                        </span>
+                                                                        <input class="form-control cheight"
+                                                                               data-price="{{$wine['price']}} "
+                                                                               type="text"
+                                                                               data-onchange="changeProductQuantity"
+                                                                               name="quantity[{{$wine['wine_id']}}]"
+                                                                               value="1" size="1">
+                                                                        <span class="input-group-btn cheight">
+                                                            <button class="btn btn-primary"
+                                                                    onclick="increaseQty({{$wine['wine_id']}});"
+                                                                    data-toggle="tooltip" type="submit"
+                                                                    data-original-title="" title="">
+                                                                <i class="fa fa-plus"></i>
+                                                            </button>
+
+                                                        </span>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="total"><b>{{$wine['price']}}</b>
+                                                                    <span>о</span></td>
+                                                                <td class="remove">
+                                                                    <button class="btn btn-danger"
+                                                                            onclick="cart_remove({{$wine['wine_id']}}, 0);"
+                                                                            title="Удалить">
+                                                                        <i class="fa fa-times-circle"></i>
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div id="itog">
+                                                    <div class="row">
+                                                        <div class="col-md-4 first_cl">
+                                                            <span>Позиций (<span id="count-prods">{{$countWine}}</span>) </span>
+                                                            <div class=" simplecheckout-cart-total"
+                                                                 id="total_sub_total">
+                                                                    <span class="simplecheckout-cart-total-value">Итого <span
+                                                                            id="total_price">{{$total_sum}}</span> р. </span>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4 second_cl">
+                                                            <button id="oformlenie">
+                                                                <a href="{{route('wine-shop')}}">Оформить заявку</a>
+                                                            </button>
+                                                        </div>
+                                                        <div class="col-md-4 third_cl">
+                                                            <p>Пожалуйста
+                                                                <a href="{{route('wine-shop')}}"
+                                                                   style="color: #23252b;text-decoration:underline;"
+                                                                   id="link_wine">добавьте</a>
+                                                                товары в корзину
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                @push('scripts')
-                    <script>
-                        $('#close-mask').click(function () {
-                            $('#cart-cont').removeClass('open');
-                            $('body').removeClass('nooverflow1');
-                            $('body').removeClass('nooverflow');
-                        });
-
-                        function recountTotal() {
-                            var sum = 0;
-                            $('#product_buy .total b').each(function () {
-                                sum = sum + parseInt($(this).text());
-                            })
-                            $('#total_price').text(sum);
-                        };
-
-                        function increaseQty(productid) {
-                            $('input[name="quantity[' + productid + ']"]').val(parseInt($('input[name="quantity[' + productid + ']"]').val()) + 1);
-                            cart.addmini(productid, 1);
-                            var prodsum = parseInt($('input[name="quantity[' + productid + ']"]').val()) * parseInt($('input[name="quantity[' + productid + ']"]').attr('data-price'));
-                            $('input[name="quantity[' + productid + ']"]').parent().parent().siblings('.total').html('<b>' + prodsum + '</b><span>о</span>');
-                            recountTotal();
-                        };
-
-                        function decreaseQty(productid) {
-                            $('input[name="quantity[' + productid + ']"]').val(parseInt($('input[name="quantity[' + productid + ']"]').val()) - 1);
-                            cart.addmini(productid, -1);
-                            if (parseInt($('input[name="quantity[' + productid + ']"]').val()) > 0) {
-                                var prodsum = parseInt($('input[name="quantity[' + productid + ']"]').val()) * parseInt($('input[name="quantity[' + productid + ']"]').attr('data-price'));
-                                $('input[name="quantity[' + productid + ']"]').parent().parent().siblings('.total').html('<b>' + prodsum + '</b><span>о</span>');
-                            } else {
-                                $('#cart-cart > .newcart').load('index.php?route=common/cart/info #newcart');
-                            }
-                            recountTotal();
-                        };
-                    </script>
-                @endpush
             </div>
         </div>
     </div>
@@ -171,12 +238,11 @@
                 <input type="text" placeholder="Поиск..." name="search" id="search">
             </form>
         </div>
-        <div class="overlay-results" >
+        <div class="overlay-results">
             <div id="searchResult">
             </div>
             <button type="button" name="all Search  Results" class="allResults">Показать все результаты</button>
         </div>
     </div>
-
 </header>
 

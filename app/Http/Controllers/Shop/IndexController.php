@@ -97,11 +97,11 @@ class IndexController extends Controller
         if ($qty > $countItem) {
             return \Response::json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
         }
-        $item = ['product_id' => $wine_id, 'qty' => $qty];
+        $item = ['wine_id' => $wine_id, 'qty' => $qty];
         $sessionItems = Session::get('cart');
         $results = [];
         if ($sessionItems and count($sessionItems) > 0) {
-            $status = array_search($wine_id, array_column($sessionItems, 'product_id'));
+            $status = array_search($wine_id, array_column($sessionItems, 'wine_id'));
             if ($status === false) {
                 array_push($sessionItems, $item);
                 Session::forget('cart');
@@ -110,12 +110,12 @@ class IndexController extends Controller
                 }
             } else {
                 for ($i = 0; $i < count($sessionItems); $i++) {
-                    $sum = ($sessionItems[$i]['product_id'] == $wine_id) ? $sessionItems[$i]['qty'] + $qty : $sessionItems[$i]['qty'];
+                    $sum = ($sessionItems[$i]['wine_id'] == $wine_id) ? $sessionItems[$i]['qty'] + $qty : $sessionItems[$i]['qty'];
                     if ($sum > $countItem) {
                         return \Response::json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
                     }
                     $newArray = [
-                        'product_id' => $sessionItems[$i]['product_id'],
+                        'wine_id' => $sessionItems[$i]['wine_id'],
                         'qty' => $sum,
                     ];
                     $results[$i] = $newArray;
@@ -140,7 +140,7 @@ class IndexController extends Controller
         }
         $sessionItems = Session::get('cart');
         if ($sessionItems) {
-            $itemIndex = array_search($wine_id, array_column($sessionItems, 'product_id'));
+            $itemIndex = array_search($wine_id, array_column($sessionItems, 'wine_id'));
             if ($itemIndex !== false) {
                 Session::forget('cart');
                 if ($qty == 0) {
@@ -148,9 +148,9 @@ class IndexController extends Controller
                 } else {
                     $results = [];
                     for ($i = 0; $i < count($sessionItems); $i++) {
-                        $newQty = ($sessionItems[$i]['product_id'] == $wine_id) ? $qty : $sessionItems[$i]['qty'];
+                        $newQty = ($sessionItems[$i]['wine_id'] == $wine_id) ? $qty : $sessionItems[$i]['qty'];
                         $newArray = [
-                            'product_id' => $sessionItems[$i]['product_id'],
+                            'wine_id' => $sessionItems[$i]['wine_id'],
                             'qty' => $newQty
                         ];
                         $results[$i] = $newArray;

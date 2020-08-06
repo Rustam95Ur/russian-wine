@@ -18,8 +18,7 @@ function collapse_click(type) {
     $("#collapse-" + type).on("show.bs.collapse", function () {
         $('#btnCollapse-' + type).html('<span>Закрыть</span>' +
             '<img src="/image/arrow-up.svg" alt="" class="collapseIcon">'
-    )
-        ;
+    );
     });
 }
 

@@ -511,7 +511,7 @@
                                                        value="1">
                                                 <span class="qua_plus"></span>
                                             </div>
-                                            <button id="button-carts"
+                                            <button id="button-carts" class="cart-btn-{{$wine->id}}"
                                                     onclick="cart_add('{{$wine->id}}', 1);">
                                                 <span>В корзину</span></button>
                                         </div>

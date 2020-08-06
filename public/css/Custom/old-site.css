@@ -11625,11 +11625,11 @@ section#specials #specials-cont div.col-md-4 {
 }
 
 #cart-cart .quantity .fa-minus {
-    background-image: url(/image/minuscart.png);
+    background-image: url(/image/minus.png);
 }
 
 #cart-cart .quantity .fa-plus {
-    background-image: url(/image/pluscart.png);
+    background-image: url(/image/plus.png);
 }
 
 #cart-cart .quantity .fa-minus:before,
@@ -11677,6 +11677,7 @@ section#specials #specials-cont div.col-md-4 {
     background-size: contain;
     border: none;
     box-shadow: none;
+    margin-top: 0;
 }
 
 #itog .row {
