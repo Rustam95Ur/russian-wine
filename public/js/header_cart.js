@@ -1,3 +1,10 @@
+$(document).ready(function () {
+    decreaseQty()
+    increaseQty()
+    cart_remove()
+    cart_remove_one()
+})
+
 $('#close-mask').click(function () {
     $('#cart-cont').removeClass('open');
     $('body').removeClass('nooverflow1');
@@ -22,14 +29,9 @@ function count_wines() {
     $('#count-prods').text(total);
 }
 
-$(document).ready(function () {
-    decreaseQty()
-    increaseQty()
-    cart_remove()
-})
-
 function decreaseQty() {
     $('.decreaseQty').on('click', function () {
+        cart_remove_one()
         var product_id = $(this).attr('id').replace('decrease-', ''),
             input_val = $('input[name="quantity[' + product_id + ']"]').val()
         if (input_val > 1) {
@@ -47,18 +49,18 @@ function decreaseQty() {
 
 function increaseQty() {
     $('.increaseQty').on('click', function () {
-        var product_id = $(this).attr('id').replace('increase-', '');
-        console.log(product_id)
+        var product_id = $(this).attr('id').replace('increase-', ''),
+            input_val = parseInt($('input[name="quantity[' + product_id + ']"]').val()) + 1;
+        cart_add(product_id, 1)
         $('input[name="quantity[' + product_id + ']"]').val(parseInt($('input[name="quantity[' + product_id + ']"]').val()) + 1);
         var prodsum = parseInt($('input[name="quantity[' + product_id + ']"]').val()) * parseInt($('input[name="quantity[' + product_id + ']"]').attr('data-price'));
         $('input[name="quantity[' + product_id + ']"]').parent().parent().siblings('.total').html('<b>' + prodsum + '</b><span>о</span>');
         recountTotal();
-
     })
 
 }
-function cart_remove()
-{
+
+function cart_remove() {
     $('.cart_remove').on('click', function () {
         var wine_id = $(this).attr('id').replace('cart-wine-remove-', '');
         $.ajax({
@@ -70,6 +72,22 @@ function cart_remove()
                 countItem();
             },
         });
+    })
+}
+
+function cart_remove_one() {
+    $('.decreaseQty').on('click', function () {
+        var wine_id = $(this).attr('id').replace('decrease-', ''),
+            qtn = $('input[name="quantity[' + wine_id + ']"]').val()
+        $.ajax({
+            url: '/cart/remove/' + wine_id + '/' + qtn,
+            success: function (data) {
+                recountTotal();
+                count_wines();
+                countItem();
+            },
+        });
+
     })
 }
 
@@ -88,8 +106,8 @@ function cart_table_update() {
                         "<div class='input-group btn-block' style='max-width: 200px;'><span class='input-group-btn cheight'>\n" +
                         "<button class='btn btn-primary decreaseQty' id='decrease-" + value['wine_id'] + "' data-toggle='tooltip' " +
                         "type='submit' data-original-title='' title=''><i class='fa fa-minus'></i></button></span>\n" +
-                        "<input class='form-control cheight' data-price='" + value['price'] +  "' type='text' data-onchange='changeProductQuantity' " +
-                        "name='quantity[" + value['wine_id'] + "]' value='" + value['count'] +  "' size='1'>\n" +
+                        "<input class='form-control cheight' data-price='" + value['price'] + "' type='text' data-onchange='changeProductQuantity' " +
+                        "name='quantity[" + value['wine_id'] + "]' value='" + value['count'] + "' size='1'>\n" +
                         "<span class='input-group-btn cheight'><button class='btn btn-primary increaseQty' id='increase-" + value['wine_id'] + "' " +
                         "data-toggle='tooltip' type='submit' data-original-title='' title=''><i class='fa fa-plus'></i>\n" +
                         "</button></span></div></td><td class='total'><b>" + value['total'] + "</b>\n" +
@@ -98,7 +116,7 @@ function cart_table_update() {
                         "</button></td></tr>")
                 })
                 $('#total_price').text(data.total_sum);
-                $('#count-prods').text(data.total_sum);
+                $('#count-prods').text(data.count_wine);
                 decreaseQty()
                 increaseQty()
                 cart_remove()

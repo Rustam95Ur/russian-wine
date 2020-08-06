@@ -29,19 +29,14 @@ class IndexController extends Controller
             ->limit(10)
             ->get();
 
-
+        $favorite_wine_id = [];
         if (Auth::guard('client')->user()) {
-            $clientd = Auth::guard('client')->user()->id;
-            $favorited = DB::table('client_wine')
+            $client_id = Auth::guard('client')->user()->id;
+            $favorite_wines = DB::table('client_wine')
                 ->join('wines', 'client_wine.wine_id', '=', 'wines.id')
-                ->where('client_wine.client_id', '=', $clientd)->get();
-        }
-
-        $ids = [];
-
-        if (!empty($favorited)) {
-            foreach ($favorited as $item) {
-                $ids[] = $item->wine_id;
+                ->where('client_wine.client_id', '=', $client_id)->get();
+            foreach ($favorite_wines as $wine) {
+                $favorite_wine_id[] = $wine->wine_id;
             }
         }
 
@@ -54,7 +49,7 @@ class IndexController extends Controller
             'winemakers' => $winemakers,
             'home_set'  => $home_set,
             'home_tasting'  => $home_tasting,
-            'favorite' => $ids,
+            'favorite' => $favorite_wine_id,
         ]);
     }
 }

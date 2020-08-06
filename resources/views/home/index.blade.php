@@ -206,12 +206,21 @@
                             <div class="swiper-slide">
                                 <div class="wine">
                                     <div class="image">
-                                        <a href="#" class="preview">
+                                        @if(in_array($wine->id, $favorite))
+                                            <p class="deletefavorite" id="{{$wine->id}}">
+                                                <i class="fa fa-heart fa-5x" aria-hidden="true"></i>
+                                            </p>
+                                        @else
+                                            <p class="likeSlider" id="{{$wine->id}}">
+                                                <img src="{{ asset ('image/like.svg') }}" alt="like for this wine">
+                                            </p>
+                                        @endif
+                                        <a href="{{route('wine', $wine->slug)}}" class="preview">
                                             <img alt="{{$wine->title}}" src="{{ Voyager::image($wine->image) }}">
                                             <span class="attributes"></span>
                                         </a>
                                     </div>
-                                    <h2><a href="#" class="preview">{{$wine->title}}</a></h2>
+                                    <h2><a href="{{route('wine', $wine->slug)}}" class="preview">{{$wine->title}}</a></h2>
                                     <p>{{isset($wine->winery) ? $wine->winery->title : ''}}</p>
                                     <div class="meta">
                                         <span
@@ -222,7 +231,7 @@
                                             class="sep"> | </span>
                                         <span class="year"> {{$wine->year}}</span>
                                         <div class="price-vinoteka">
-                                            <a href="#" class="preview">{{$wine->price}} <span>п</span></a>
+                                            <a href="{{route('wine', $wine->slug)}}" class="preview">{{$wine->price}} <span>п</span></a>
                                         </div>
                                         <div class="button_cont">
                                             <div class="prod_quantity">
