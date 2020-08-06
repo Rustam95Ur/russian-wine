@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Sugar;
 use App\Filters\WineFilter;
+use Session;
 
 class IndexController extends Controller
 {
@@ -64,6 +65,10 @@ class IndexController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function personal_wine_order(Request $request)
     {
         $saveRequest = new Order();
@@ -78,6 +83,108 @@ class IndexController extends Controller
         $saveRequest->message = $request['message'];
         $saveRequest->save();
         return redirect()->back()->with('success', trans('order.success.nominal'));
+    }
+
+    /**
+     * @param int $wine_id
+     * @param int $qty
+     * @return mixed
+     */
+    protected function add_to_cart(int $wine_id, int $qty)
+    {
+        $checkProduct = Wine::where('id', '=', $wine_id)->firstOrFail();
+        $countItem = $checkProduct->count;
+        if ($qty > $countItem) {
+            return \Response::json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+        }
+        $item = ['product_id' => $wine_id, 'qty' => $qty];
+        $sessionItems = Session::get('cart');
+        $results = [];
+        if ($sessionItems and count($sessionItems) > 0) {
+            $status = array_search($wine_id, array_column($sessionItems, 'product_id'));
+            if ($status === false) {
+                array_push($sessionItems, $item);
+                Session::forget('cart');
+                foreach ($sessionItems as $result) {
+                    Session::push('cart', $result);
+                }
+            } else {
+                for ($i = 0; $i < count($sessionItems); $i++) {
+                    $sum = ($sessionItems[$i]['product_id'] == $wine_id) ? $sessionItems[$i]['qty'] + $qty : $sessionItems[$i]['qty'];
+                    if ($sum > $countItem) {
+                        return \Response::json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+                    }
+                    $newArray = [
+                        'product_id' => $sessionItems[$i]['product_id'],
+                        'qty' => $sum,
+                    ];
+                    $results[$i] = $newArray;
+                }
+                Session::forget('cart');
+                foreach ($results as $result) {
+                    Session::push('cart', $result);
+                }
+            }
+        } else {
+            Session::push('cart', $item);
+        }
+        return \Response::json(['success' => trans('shop.success.add-cart')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+    }
+
+    protected function remove_to_cart(int $wine_id, int $qty = 0)
+    {
+        $checkProduct = Wine::where('id', '=', $wine_id)->firstOrFail();
+        $countItem = $checkProduct->count;
+        if ($qty > $countItem) {
+            return \Response::json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+        }
+        $sessionItems = Session::get('cart');
+        if ($sessionItems) {
+            $itemIndex = array_search($wine_id, array_column($sessionItems, 'product_id'));
+            if ($itemIndex !== false) {
+                Session::forget('cart');
+                if ($qty == 0) {
+                    unset($sessionItems[$itemIndex]);
+                } else {
+                    $results = [];
+                    for ($i = 0; $i < count($sessionItems); $i++) {
+                        $newQty = ($sessionItems[$i]['product_id'] == $wine_id) ? $qty : $sessionItems[$i]['qty'];
+                        $newArray = [
+                            'product_id' => $sessionItems[$i]['product_id'],
+                            'qty' => $newQty
+                        ];
+                        $results[$i] = $newArray;
+                    }
+                    foreach ($results as $result) {
+                        Session::push('cart', $result);
+                    }
+                    return \Response::json(['success' => trans('shop.success.remove-cart')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+                }
+                if ($sessionItems) {
+                    foreach ($sessionItems as $item) {
+                        Session::push('cart', $item);
+                    }
+                }
+            }
+            return \Response::json(['success' => trans('shop.success.remove-cart')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+        } else {
+            return \Response::json(['success' => trans('shop.success.no-cart')], 404, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+        }
+    }
+
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function count_cart()
+    {
+        $count = 0;
+        $countCartItems = Session::get('cart');
+        if ($countCartItems != false ) {
+            foreach ($countCartItems as $item) {
+                $count += $item['qty'];
+            }
+        }
+        return \Response::json([ 'count' => $count], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE );
     }
 
 }

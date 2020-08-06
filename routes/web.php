@@ -46,6 +46,9 @@ Route::get('/region-{slug}', 'Page\RegionController@show')->name('region');
 Route::post('order/tour', 'Page\OrderController@tour_save')->name('tour_save');
 // Ajax action
 Route::get('/search', 'Home\SearchController@search')->name('search');
+Route::get('/cart/add/{wine_id}/{qty}', 'Shop\IndexController@add_to_cart');
+Route::get('/cart/remove/{wine_id}/{qty}', 'Shop\IndexController@remove_to_cart');
+Route::get('/cart/count', 'Shop\IndexController@count_cart');
 
 Route::get('/profile', 'Page\ProfileController@show')->name('profile');
 Route::post('/profile/update', 'Page\ProfileController@update')->name('profile-update');

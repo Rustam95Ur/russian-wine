@@ -61,14 +61,6 @@
             <div class="swiper-button-next "></div>
             <div class="swiper-button-prev"></div>
         </div>
-        <div id="mouse_img"><a href="#first_block"><img src="">
-                <div id="chevrons">
-                    <div class="chevron"></div>
-                    <div class="chevron"></div>
-                    <div class="chevron"></div>
-                </div>
-            </a>
-        </div>
     </div>
     <!-- /.flat-slider -->
     <div class="main-homepage-1">
@@ -94,22 +86,24 @@
                                                     <i class="fa fa-heart fa-5x" aria-hidden="true"></i>
                                                 </p>
                                             @else
-                                                <p class="likeSlider"  id="{{$wine->id}}">
+                                                <p class="likeSlider" id="{{$wine->id}}">
                                                     <img src="{{ asset ('image/like.svg') }}" alt="like for this wine">
                                                 </p>
                                             @endif
-                                            <a href="#" class="preview">
-                                                <img src="{{ Voyager::image($wine->image) }}">
+                                            <a href="{{route('wine', $wine->slug)}}" class="preview">
+                                                <img alt="{{$wine->title}}" src="{{ Voyager::image($wine->image) }}">
                                                 <span class="attributes"></span>
                                             </a>
                                         </div>
-                                        <h2><a href="#" class="preview">{{$wine->title}}</a></h2>
+                                        <h2><a href="{{route('wine', $wine->slug)}}"
+                                               class="preview">{{$wine->title}}</a></h2>
 
                                         <p>{{isset($wine->winery) ? $wine->winery->title : ''}}</p>
                                         <div class="meta">
                                             <span class="color">{{$wine->color->title}} </span><span
                                                 class="sep"> | </span>
-                                            <span class="hardness">{{isset($wine->sugar) ? $wine->sugar->title : ''}} </span><span
+                                            <span
+                                                class="hardness">{{isset($wine->sugar) ? $wine->sugar->title : ''}} </span><span
                                                 class="sep"> | </span>
                                             <span class="year"> {{$wine->year}}</span>
                                             <div class="price-vinoteka">
@@ -122,8 +116,8 @@
                                                            value="1">
                                                     <span class="qua_plus"></span>
                                                 </div>
-                                                <button id="button-carts"
-                                                        onclick="cart.add('{{$wine->id}}'); $(this).addClass('active');">
+                                                <button id="button-carts" class="cart-btn-{{$wine->id}}"
+                                                        onclick="cart_add('{{$wine->id}}', 1);">
                                                     <span>В корзину</span></button>
                                             </div>
                                         </div>
@@ -171,7 +165,7 @@
                                   fill="#DA224D"></path>
                         </svg>
                         Смотрите все о русском вине на нашем youtube-канале <span>«Негоциант»</span>
-                      </li>
+                    </li>
                     <li class="inst_icon">
                         <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -220,9 +214,11 @@
                                     <h2><a href="#" class="preview">{{$wine->title}}</a></h2>
                                     <p>{{isset($wine->winery) ? $wine->winery->title : ''}}</p>
                                     <div class="meta">
-                                        <span class="color">{{isset($wine->color) ? $wine->color->title : '' }} </span><span
+                                        <span
+                                            class="color">{{isset($wine->color) ? $wine->color->title : '' }} </span><span
                                             class="sep"> | </span>
-                                        <span class="hardness">{{isset($wine->sugar) ? $wine->sugar->title : ''}} </span><span
+                                        <span
+                                            class="hardness">{{isset($wine->sugar) ? $wine->sugar->title : ''}} </span><span
                                             class="sep"> | </span>
                                         <span class="year"> {{$wine->year}}</span>
                                         <div class="price-vinoteka">
@@ -236,7 +232,7 @@
                                                 <span class="qua_plus"></span>
                                             </div>
                                             <button id="button-carts"
-                                                    onclick="cart.add('{{$wine->id}}'); $(this).addClass('active');">
+                                                    onclick="cart_add('{{$wine->id}}', 1);">
                                                 <span>В корзину</span></button>
                                         </div>
                                     </div>
@@ -300,4 +296,7 @@
                 </div>
             </div>
         </section>
+        @push('scripts')
+            <script src="{{ asset('js/cart.js') }}"></script>
+    @endpush
 @endsection

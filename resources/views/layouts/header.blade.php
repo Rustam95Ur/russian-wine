@@ -96,7 +96,7 @@
                 <div id="cart">
                     <a onclick="$('#cart-cont').addClass('open');$('body').addClass('nooverflow1');$('body').addClass('nooverflow');">
                         <img alt="cart icon" src="{{ asset ('image/cart.png') }}">
-                        <b>0</b>
+                        <b id="cartCount">{{$countCart}}</b>
                     </a>
                 </div>
                 <div id="cart-cont">
