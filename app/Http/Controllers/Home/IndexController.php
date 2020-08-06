@@ -17,12 +17,14 @@ class IndexController extends Controller
     {
         $popular_wines = Wine::where('status', '=', 'ACTIVE')
             ->where('featured', '=', 1)
+            ->where('price', '>', 0)
             ->with('color', 'sugar', 'winery')
             ->orderBy('id', 'DESC')
             ->limit(10)
             ->get();
         $new_wines = Wine::where('status', '=', 'ACTIVE')
             ->with('color', 'sugar', 'winery')
+            ->where('price', '>', 0)
             ->orderBy('id', 'DESC')
             ->limit(10)
             ->get();

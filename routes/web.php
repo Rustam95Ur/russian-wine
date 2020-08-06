@@ -49,6 +49,7 @@ Route::get('/search', 'Home\SearchController@search')->name('search');
 Route::get('/cart/add/{wine_id}/{qty}', 'Shop\IndexController@add_to_cart');
 Route::get('/cart/remove/{wine_id}/{qty}', 'Shop\IndexController@remove_to_cart');
 Route::get('/cart/count', 'Shop\IndexController@count_cart');
+    Route::get('/cart/get-wines', 'Shop\IndexController@get_car_wines');
 
 Route::get('/profile', 'Page\ProfileController@show')->name('profile');
 Route::post('/profile/update', 'Page\ProfileController@update')->name('profile-update');

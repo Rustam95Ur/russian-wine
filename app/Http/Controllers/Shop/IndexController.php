@@ -17,6 +17,7 @@ use App\Filters\WineFilter;
 use Session;
 use Illuminate\Support\Facades\Auth;
 use DB;
+use TCG\Voyager\Facades\Voyager;
 
 class IndexController extends Controller
 {
@@ -31,7 +32,7 @@ class IndexController extends Controller
         $classes = WineClass::all();
         $years = Wine::select('year')->where('year', '!=', null)->groupBy('year')->orderBy('year', 'DESC')->get();
         $fortresses = Wine::select('fortress')->where('fortress', '!=', null)->groupBy('fortress')->orderBy('fortress', 'DESC')->get();
-        $wines = Wine::where('status', '=', 'ACTIVE')->filter($filters)->with('color', 'sugar', 'winery')
+        $wines = Wine::where('status', '=', 'ACTIVE')->where('price', '>', 0)->filter($filters)->with('color', 'sugar', 'winery')
             ->paginate(39);
         $filters = request()->input();
 
@@ -198,12 +199,47 @@ class IndexController extends Controller
     {
         $count = 0;
         $countCartItems = Session::get('cart');
-        if ($countCartItems != false ) {
+        if ($countCartItems != false) {
             foreach ($countCartItems as $item) {
                 $count += $item['qty'];
             }
         }
-        return \Response::json([ 'count' => $count], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE );
+        return \Response::json(['count' => $count], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }
+
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function get_car_wines()
+    {
+        $total_sum = 0;
+        $countWine = 0;
+        $cart_wines = [];
+        $countCartItems = Session::get('cart');
+        if ($countCartItems != false) {
+            foreach ($countCartItems as $item) {
+                $wine = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['wine_id'])->first();
+                if ($wine) {
+                    $wine_array = [
+                        'count' => $item['qty'],
+                        'wine_id' => $wine->id,
+                        'title' => $wine->title,
+                        'price' => $wine->price,
+                        'image' => Voyager::image($wine->image),
+                        'total' => (int) $wine->price * $item['qty']
+                    ];
+                    array_push($cart_wines, $wine_array);
+                    $total_sum += (int) $wine->price * $item['qty'];
+                    $countWine += 1;
+                }
+            }
+        }
+        $wines = ['wines'=> $cart_wines];
+        $count_wine_array = ['count_wine' => $countWine];
+        $total_sums = ['total_sum' => $total_sum];
+        $result = array_merge($wines, $count_wine_array, $total_sums);
+        return \Response::json($result, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+    }
+
 
 }

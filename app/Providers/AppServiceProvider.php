@@ -41,13 +41,15 @@ class AppServiceProvider extends ServiceProvider
                     $wine = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['wine_id'])->first();
                     if ($wine) {
                         $wine_array = [
+                            'count' => $item['qty'],
                             'wine_id' => $wine->id,
                             'title' => $wine->title,
                             'price' => $wine->price,
                             'image' => Voyager::image($wine->image),
+                            'total' => (int) $wine->price * $item['qty']
                         ];
                         array_push($cart_wines, $wine_array);
-                        $total_sum += $wine->price;
+                        $total_sum += (int) $wine->price * $item['qty'];
                         $countWine += 1;
                     }
                 }

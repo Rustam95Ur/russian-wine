@@ -104,12 +104,13 @@
                     <div>
                         <button id="close-cart"
                                 onclick="$('#cart-cont').removeClass('open');$('body').removeClass('nooverflow1');$('body').removeClass('nooverflow');"></button>
-                        <div id="close-mask" class="{{($countCart == 0 ? 'empty-cart' : '')}}"></div>
-                        <div id="cart-cart" class="{{($countCart == 0 ? 'empty-cart' : '')}}">
+                        <div id="close-mask" class="empty_cart_block {{($countCart == 0 ? 'empty-cart' : '')}}"></div>
+                        <div id="cart-cart" class="empty_cart_block {{($countCart == 0 ? 'empty-cart' : '')}}">
                             <div class="newcart" id="for_the_scroll">
                                 <div id="newcart">
                                     <div class="cart-content">
-                                        <div id="empty_cart" style="display: {{($countCart == 0 ? 'block' : 'none')}}">
+                                        <div class="empty_cart" id="empty_cart"
+                                             style="display: {{($countCart == 0 ? 'block' : 'none')}}">
                                             <h2>
                                                 Ваша корзина ещё пуста
                                             </h2>
@@ -119,7 +120,8 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div style="display: {{($countCart == 0 ? 'none' : 'block')}};">
+                                    <div class="not_empty_cart"
+                                         style="display: {{($countCart == 0 ? 'none' : 'block')}};">
                                         <div class="cart-cart">
                                             <h3>Корзина</h3>
                                             <div class="cart-block" id="simplecheckout_cart">
@@ -153,8 +155,8 @@
                                                                     <div class="input-group btn-block"
                                                                          style="max-width: 200px;">
                                                         <span class="input-group-btn cheight">
-                                                            <button class="btn btn-primary"
-                                                                    onclick="decreaseQty({{$wine['wine_id']}})"
+                                                            <button class="btn btn-primary decreaseQty"
+                                                                    id="decrease-{{$wine['wine_id']}}"
                                                                     data-toggle="tooltip" type="submit"
                                                                     data-original-title="" title="">
                                                                 <i class="fa fa-minus"></i>
@@ -165,10 +167,10 @@
                                                                                type="text"
                                                                                data-onchange="changeProductQuantity"
                                                                                name="quantity[{{$wine['wine_id']}}]"
-                                                                               value="1" size="1">
+                                                                               value="{{$wine['count']}}" size="1">
                                                                         <span class="input-group-btn cheight">
-                                                            <button class="btn btn-primary"
-                                                                    onclick="increaseQty({{$wine['wine_id']}});"
+                                                            <button class="btn btn-primary increaseQty"
+                                                                    id="increase-{{$wine['wine_id']}}"
                                                                     data-toggle="tooltip" type="submit"
                                                                     data-original-title="" title="">
                                                                 <i class="fa fa-plus"></i>
@@ -177,11 +179,11 @@
                                                         </span>
                                                                     </div>
                                                                 </td>
-                                                                <td class="total"><b>{{$wine['price']}}</b>
+                                                                <td class="total"><b>{{$wine['total']}}</b>
                                                                     <span>о</span></td>
                                                                 <td class="remove">
-                                                                    <button class="btn btn-danger"
-                                                                            onclick="cart_remove({{$wine['wine_id']}}, 0);"
+                                                                    <button class="btn btn-danger cart_remove"
+                                                                            id="cart-wine-remove-{{$wine['wine_id']}}"
                                                                             title="Удалить">
                                                                         <i class="fa fa-times-circle"></i>
                                                                     </button>
@@ -220,7 +222,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
