@@ -33,7 +33,7 @@
 .shopContent .featured_cont .swiper-slide:hover {
     box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
     margin-top: -1vw;
-    margin-bottom: 1.9vw;
+    margin-bottom: 2vw;
 }
 .shopContent .featured_cont .swiper-slide {
     padding-bottom: 1.865vw !important;

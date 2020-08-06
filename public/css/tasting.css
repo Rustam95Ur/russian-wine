@@ -2335,35 +2335,22 @@
     background: url(/image/bg/tasting-question-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 4.69vw;
-    padding-top: 6.775vw;
 }
-
-#tasting-page #question .messageBox {
-    padding: 0;
-}
-
-#question .onBoxText {
-    position: absolute;
-    top: 0;
-    margin-top: 5.264vw;
-}
-
 #tasting-page #question h2 {
     font-style: normal;
     font-weight: bold;
     font-size: 50px;
     line-height: 60px;
+    margin-top: 100px;
     color: white;
 }
 
 #tasting-page #question p {
-    font: 1.043vw "ProximaNova-Light";
+    font-size: 20px;
     font-weight: normal;
-    line-height: 1.772vw;
+    line-height: 34px;
     color: white;
     margin-top: 10px;
-    letter-spacing: -.01em;
 }
 
 #tasting-page .question_form {
@@ -2399,7 +2386,7 @@
 
 
 #tasting-page .contact_info {
-    margin-top: 9.4845vw;
+    margin-top: 50px;
 }
 #tasting-page .contact_info p {
     font-weight: bold;
@@ -2491,3 +2478,4 @@
     text-transform: uppercase;
     letter-spacing: .1vw;
 }
+
