@@ -543,6 +543,7 @@ input {
 #information-winerywc .winery-rt h6 {
     color: white;
 }
+
 #information-winerywc .swiper-button-prev, #information-winerywc .swiper-button-next {
     filter: brightness(0) invert(1);
 }
@@ -552,6 +553,7 @@ input {
     width: 1.667vw !important;
 
 }
+
 #modal_sviaz.winery-modal {
     background: url(/image/bg/sviaz_bg1.jpg);
 }
@@ -563,16 +565,20 @@ input {
     right: 2%;
     top: 15%;
 }
+
 #modal_sviaz #feedsend, #podpisatsa, .done .content-cont a, #imennoe {
     margin-left: auto;
     margin-right: auto;
 }
+
 .vyderzhkawc p {
     text-transform: uppercase;
 }
+
 .footer-hide footer {
     display: none;
 }
+
 .search-btn {
     position: fixed;
     right: 71%;
@@ -586,9 +592,8 @@ input {
     color: #fff;
     border: none;
     z-index: 50;
-    background-image:none !important;
+    background-image: none !important;
 }
-
 
 
 .custom-select {
@@ -610,8 +615,10 @@ input {
     position: absolute;
     display: block;
     content: '';
-    width: 10px; height: 10px;
-    top: 50%; right: 25px;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    right: 25px;
     margin-top: -3px;
     border-bottom: 1px solid #fff;
     border-right: 1px solid #fff;
@@ -619,20 +626,24 @@ input {
     transition: all .4s ease-in-out;
     transform-origin: 50% 0;
 }
+
 .custom-select.opened .custom-select-trigger:after {
     margin-top: 3px;
     transform: rotate(-135deg) translateY(-50%);
 }
+
 .custom-options {
     position: absolute;
     display: block;
-    top: 100%; left: 0; right: 0;
+    top: 100%;
+    left: 0;
+    right: 0;
     min-width: 100%;
     margin: 15px 0;
     border: 1px solid #00000038;
     border-radius: 0;
     box-sizing: border-box;
-    box-shadow: 0 2px 1px rgba(0,0,0,.07);
+    box-shadow: 0 2px 1px rgba(0, 0, 0, .07);
     background: #fff;
     transition: all .4s ease-in-out;
 
@@ -641,6 +652,7 @@ input {
     pointer-events: none;
     transform: translateY(-15px);
 }
+
 .custom-select.opened .custom-options {
     opacity: 1;
     visibility: visible;
@@ -648,12 +660,15 @@ input {
     transform: translateY(0);
     z-index: 20;
 }
+
 .custom-options:before {
     position: absolute;
     display: block;
     content: '';
-    bottom: 100%; right: 25px;
-    width: 7px; height: 7px;
+    bottom: 100%;
+    right: 25px;
+    width: 7px;
+    height: 7px;
     margin-bottom: -4px;
     border-top: 1px solid #b5b5b5;
     border-left: 1px solid #b5b5b5;
@@ -661,9 +676,11 @@ input {
     transform: rotate(45deg);
     transition: all .4s ease-in-out;
 }
+
 .option-hover:before {
     background: #f9f9f9;
 }
+
 .custom-option {
     position: relative;
     display: block;
@@ -679,18 +696,22 @@ input {
 .custom-option:first-of-type {
     border-radius: 4px 4px 0 0;
 }
+
 .custom-option:last-of-type {
     border-bottom: 0;
     border-radius: 0 0 4px 4px;
 }
+
 .custom-option:hover,
 .custom-option.selection {
     background: #f9f9f9;
 }
+
 .tippyTooltip {
     width: 25px;
     float: right;
 }
+
 .tippy-box {
     position: relative;
     background-color: #fff;
@@ -699,22 +720,31 @@ input {
     font-size: 14px;
     line-height: 1.4;
     outline: 0;
-    transition-property: transform,visibility,opacity;
+    transition-property: transform, visibility, opacity;
     box-shadow: 0px 0px 3.3px 0px rgba(0, 0, 0, 0.2);
     min-width: 26.227vw;
 }
+
 .tippy-content p {
-  font: 0.747vw 'ProximaNova-Reg', sans-serif;
-  letter-spacing: -.01em;
-  line-height: 0.934vw;
-  padding: 0;
+    font: 0.747vw 'ProximaNova-Reg', sans-serif;
+    letter-spacing: -.01em;
+    line-height: 0.934vw;
+    padding: 0;
 }
+
 .tippy-content h4 {
-  font-family: 'ProximaNova-Bold';
-  font-size: 0.934vw;
-  line-height: 1.634vw;
-  margin: 0;
+    font-family: 'ProximaNova-Bold';
+    font-size: 0.934vw;
+    line-height: 1.634vw;
+    margin: 0;
 }
+
 .tippy-content {
-  padding: 0.934vw;
+    padding: 0.934vw;
+}
+
+.pagination > .disabled > span, .pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus, .pagination > .disabled > a,
+.pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+    border: none;
 }

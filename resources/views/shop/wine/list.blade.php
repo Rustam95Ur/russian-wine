@@ -59,7 +59,8 @@
                             {{$class->title}}
                         </label>
                         <!-- tooltip -->
-                        <img class="tippyTooltip" data-template="tooltip-{{$class->id}}" src="{{ asset ('image/tooltip.svg') }}" alt="">
+                        <img class="tippyTooltip" data-template="tooltip-{{$class->id}}"
+                             src="{{ asset ('image/tooltip.svg') }}" alt="">
                         <!--end tooltip -->
                         <!-- template for tooltip  -->
                         <div style="display: none;">
@@ -142,7 +143,7 @@
                 <!--   collapse other prices   -->
                 <div class="panel-group">
                     <div class="panel panel-default">
-                        <div id="collapse1" class="panel-collapse collapse">
+                        <div id="collapse-price" class="panel-collapse collapse">
                             <!--  Collapse inner space   -->
                             <div class="form-check">
                                 <input class="form-check-input" form="searching-form" name="price[]" type="checkbox"
@@ -176,8 +177,10 @@
                             </div>
                             <!--  Collapse inner space end -->
                         </div>
-                        <button class="collapseBtn" name="button" data-toggle="collapse" data-target="#collapse1"
-                                aria-expanded="false" aria-controls="collapse1" type="button">
+                        <button class="collapseBtn" id="btnCollapse-price" name="button" data-toggle="collapse"
+                                data-target="#collapse-price"
+                                aria-expanded="false" onclick="collapse_click('price')" aria-controls="collapse-price"
+                                type="button">
                             <span>Посмотреть все</span>
                             <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
                         </button>
@@ -205,7 +208,7 @@
             <!--   collapse other prices   -->
                 <div class="panel-group">
                     <div class="panel panel-default">
-                        <div id="collapseWineType" class="panel-collapse collapse">
+                        <div id="collapse-sugar" class="panel-collapse collapse">
                             <!--  Collapse inner space   -->
                             @foreach($sugars as $sugar)
                                 @if($loop->index > 5)
@@ -223,9 +226,10 @@
                         @endforeach
                         <!--  Collapse inner space end -->
                         </div>
-                        <button class="collapseBtn" name="button" data-toggle="collapse"
-                                data-target="#collapseWineType" aria-expanded="false"
-                                aria-controls="collapseWineType" type="button">
+                        <button class="collapseBtn" id="btnCollapse-sugar" onclick="collapse_click('sugar')"
+                                name="button" data-toggle="collapse"
+                                data-target="#collapse-sugar" aria-expanded="false"
+                                aria-controls="collapse-sugar" type="button">
                             <span>Посмотреть все</span>
                             <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
                         </button>
@@ -299,7 +303,7 @@
                         <!--  Collapse inner space end -->
                         </div>
                         <button class="collapseBtn" id="btnCollapse-winery" name="button" data-toggle="collapse"
-                                data-target="#collapse-winery" aria-expanded="false"
+                                data-target="#collapse-winery" onclick="collapse_click('winery')" aria-expanded="false"
                                 aria-controls="collapse-winery" type="button">
                             <span>Посмотреть все</span>
                             <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
@@ -356,7 +360,7 @@
                             <!--  Collapse inner space end -->
                             </div>
                             <button class="collapseBtn" id="btnCollapse-sort" name="button" data-toggle="collapse"
-                                    data-target="#collapse-sort" aria-expanded="false"
+                                    data-target="#collapse-sort" onclick="collapse_click('sort')" aria-expanded="false"
                                     aria-controls="collapse-sort" type="button">
                                 <span>Посмотреть все</span>
                                 <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
@@ -388,7 +392,7 @@
                 <!--   collapse other prices   -->
                     <div class="panel-group">
                         <div class="panel panel-default">
-                            <div id="collapseWineAge" class="panel-collapse collapse">
+                            <div id="collapse-year" class="panel-collapse collapse">
                                 <!--  Collapse inner space   -->
                                 @foreach($years as $year)
                                     @if($loop->index > 5)
@@ -407,9 +411,10 @@
                             @endforeach
                             <!--  Collapse inner space end -->
                             </div>
-                            <button class="collapseBtn" name="button" data-toggle="collapse"
-                                    data-target="#collapseWineAge" aria-expanded="false"
-                                    aria-controls="collapseWineAge" type="button">
+                            <button class="collapseBtn" id="btnCollapse-year" onclick="collapse_click('year')"
+                                    name="button" data-toggle="collapse"
+                                    data-target="#collapse-year" aria-expanded="false"
+                                    aria-controls="collapse-year" type="button">
                                 <span>Посмотреть все</span>
                                 <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
                             </button>
@@ -439,7 +444,7 @@
                 <!--   collapse other prices   -->
                     <div class="panel-group">
                         <div class="panel panel-default">
-                            <div id="collapseWineGrad" class="panel-collapse collapse">
+                            <div id="collapse-fortress" class="panel-collapse collapse">
                                 <!--  Collapse inner space   -->
                                 @foreach($fortresses as $fortress)
                                     @if($loop->index > 5)
@@ -458,9 +463,10 @@
                             @endforeach
                             <!--  Collapse inner space end -->
                             </div>
-                            <button class="collapseBtn" name="button" data-toggle="collapse"
-                                    data-target="#collapseWineGrad" aria-expanded="false"
-                                    aria-controls="collapseWineGrad" type="button">
+                                <button class="collapseBtn" id="btnCollapse-fortress" onclick="collapse_click('fortress')"
+                                    name="button" data-toggle="collapse"
+                                    data-target="#collapse-fortress" aria-expanded="false"
+                                    aria-controls="collapse-fortress" type="button">
                                 <span>Посмотреть все</span>
                                 <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
                             </button>
@@ -537,6 +543,17 @@
             $("select[name='price_sort']").change(function () {
                 $('#searching-form').closest('form').submit();
             });
+
+            function collapse_click(type) {
+                $("#collapse-" + type).on("hide.bs.collapse", function () {
+                    $('#btnCollapse-' + type).html('<span>Посмотреть все</span>' +
+                        '<img src="{{ asset('image/arrow-down.svg') }}" alt="" class="collapseIcon">');
+                });
+                $("#collapse-" + type).on("show.bs.collapse", function () {
+                    $('#btnCollapse-' + type).html('<span>Закрыть</span>' +
+                        '<img src="{{ asset('image/arrow-up.svg') }}" alt="" class="collapseIcon">');
+                });
+            }
 
 
             $(".custom-select").each(function () {
