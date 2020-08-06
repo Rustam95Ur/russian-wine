@@ -1,0 +1,146 @@
+#franchise .heading-wrap {
+    min-height: 800px;
+    background: url(/image/bg/franchise_header_bg.jpg) no-repeat top center;
+    background-size: cover;
+    color: #fff;
+}
+
+#franchise .title-shop {
+    font-size: 10.416vw;
+    letter-spacing: 1.25vw;
+    color: #e5e5e530;
+    white-space: nowrap;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 0 0 1.875vw;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    margin-top: 150px;
+}
+
+#franchise .header-image-box {
+    background: white;
+}
+
+#franchise .header-image-box p {
+    color: black;
+    font-size: 18px;
+    text-transform: none;
+    font-weight: 100;
+    padding: 20px 0 20px;
+}
+
+#franchise .header-image-box .text-block {
+    padding: 20px;
+    min-height: 250px;
+}
+
+#franchise .header-image-box .text-block h2 {
+    min-height: 60px;
+}
+
+#franchise .header-image-box img {
+    height: 300px;
+}
+
+#franchise section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    float: none;
+
+}
+
+#franchise .searching {
+    text-align: left;
+}
+
+#franchise .searching-result p {
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding-bottom: 0;
+}
+
+#franchise .searching-result h4 {
+    font-size: 70px;
+    font-weight: 900;
+    color: #da224d;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+#franchise .searching-result h4 b {
+    font-size: 30px;
+    top: -25px;
+    position: relative;
+}
+
+#franchise .get-partner-block {
+    margin-top: -70px;
+    padding: 30px 30px 0;
+    height: auto;
+}
+
+#franchise .get-partner-block h3 {
+    color: white;
+    font-size: 37px;
+    margin-top: 0;
+    margin-left: 100px;
+}
+
+#franchise .get-partner-result-block {
+    border: 1px solid #ffffff;
+    padding: 30px 30px 30px 0;
+    margin-top: 30px;
+    height: 150px;
+}
+
+#franchise .get-partner-result-block h4 {
+    color: white;
+    padding-left: 30px;
+    border-left: 2px solid red;
+    font-size: 20px;
+}
+#franchise .partner-result-container {
+    padding: 50px;
+}
+#franchise .partner-requirement {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid grey;
+    padding-bottom: 20px;
+}
+#franchise .requirement {
+    margin-top: 50px;
+}
+
+#franchise .requirement-right-box {
+    border-left: 2px solid grey;
+    padding: 50px;
+}
+#franchise .requirement-right-box h2 {
+    font-size: 30px;
+    margin-bottom: 60px;
+}
+
+#franchise .requirement-right-box p {
+    font-weight: 100;
+    margin-top: 35px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+#franchise .contact h2{
+    margin-top: 150px;
+    text-align: left;
+}
+#franchise .contact {
+    padding-left: 40px;
+}
+#franchise .bg-gray {
+    background: #dddddd;
+}
+#franchise .contact-block {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

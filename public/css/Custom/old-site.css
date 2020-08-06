@@ -3978,14 +3978,14 @@ footer .footer-contact {
     box-shadow: inset 0 1000px 0 rgba(0, 0, 0, 0.1)
 }
 
-.btn-danger {
-    color: #fff;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    background-color: #da4f49;
-    background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
-    background-repeat: repeat-x;
-    border-color: #bd362f #bd362f #802420
-}
+/*.btn-danger {*/
+/*    color: #fff;*/
+/*    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);*/
+/*    background-color: #da4f49;*/
+/*    background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);*/
+/*    background-repeat: repeat-x;*/
+/*    border-color: #bd362f #bd362f #802420*/
+/*}*/
 
 .btn-danger:hover,
 .btn-danger:active,

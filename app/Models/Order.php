@@ -9,4 +9,5 @@ class Order extends Model
     const TYPE_TASTING = 1;
     const TYPE_TOUR = 2;
     const TYPE_NOMINAL_WINE = 3;
+    const TYPE_FRANCHISE = 4;
 }
