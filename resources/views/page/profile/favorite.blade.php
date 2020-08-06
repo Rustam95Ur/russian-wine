@@ -56,7 +56,6 @@
                             <h1>Избранное</h1>
                             <table class="table" id="cssTable">
                             @foreach($favorites as $favorite)
-                                    <input type="hidden" id="deleteFavorite" value="{{$favorite->id}}">
                                     <tbody>
                                     <tr>
                                         <td><input type="checkbox" name="prog"></td>
@@ -69,7 +68,7 @@
                                             </div>
                                         </td>
                                         <td>{{$favorite->price}}</td>
-                                            <td><button type="submit" class="deletefavorite"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                                            <td><button type="submit" class="deletefavorite" id="{{$favorite->id}}"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
                                     </tr>
                                     </tbody>
                             @endforeach

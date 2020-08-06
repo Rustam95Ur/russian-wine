@@ -125,47 +125,42 @@
         $(function () {
             $('.likeSlider').on('click', function () {
                 wineId = $(this).attr('id')
-                console.log(wineId)
                 $.ajax({
                     url: '{{URL::to('add-to-favorite')}}',
                     data: {
                         'wine_id': wineId
                     },
                     type: 'get',
-                    dataType: 'json'
+                    dataType: 'json',
+
+                    error: function (response) {
+                        //$('.errorMessage').html(response.responseJSON.message);
+                        if (response.status == 401) {
+                            // Display Modal
+                            $('#login_modal').removeClass('hide')
+                        }
+                    }
                 });
             });
         });
 </script>
 
-<script type="text/javascript">
-    $(function () {
-        $('.unlike').on('click', function () {
-            wineId = $(this).attr('id')
-            console.log(wineId)
-            $.ajax({
-                url: '{{URL::to('delete-from-favorite')}}',
-                data: {
-                    'wine_id': wineId
-                },
-                type: 'get',
-                dataType: 'json'
-            });
-        });
-    });
-</script>
+
 
 <script type="text/javascript">
     $(function () {
         $('.deletefavorite').on('click', function () {
-            wineId = $('#deleteFavorite').val()
+            wineId = $(this).attr('id')
             $.ajax({
                 url: '{{URL::to('delete-from-favorite')}}',
                 data: {
                     'wine_id': wineId
                 },
                 type: 'get',
-                dataType : 'json'
+                dataType : 'json',
+                success: function(data) {
+                    location.reload();
+                },
             });
         });
     });

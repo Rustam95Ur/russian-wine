@@ -15,6 +15,8 @@ use App\Models\Order;
 use App\Models\Sugar;
 use App\Filters\WineFilter;
 use Session;
+use Illuminate\Support\Facades\Auth;
+use DB;
 
 class IndexController extends Controller
 {
@@ -32,6 +34,22 @@ class IndexController extends Controller
         $wines = Wine::where('status', '=', 'ACTIVE')->filter($filters)->with('color', 'sugar', 'winery')
             ->paginate(39);
         $filters = request()->input();
+
+        if (Auth::guard('client')->user()) {
+            $clientd = Auth::guard('client')->user()->id;
+            $favorited = DB::table('client_wine')
+                ->join('wines', 'client_wine.wine_id', '=', 'wines.id')
+                ->where('client_wine.client_id', '=', $clientd)->get();
+        }
+
+        $favoriteIds = [];
+
+        if (!empty($favorited)) {
+            foreach ($favorited as $item) {
+                $favoriteIds[] = $item->wine_id;
+            }
+        }
+
         return view('shop.wine.list', [
             'wines' => $wines,
             'colors' => $colors,
@@ -42,7 +60,8 @@ class IndexController extends Controller
             'classes' => $classes,
             'years' => $years,
             'fortresses' => $fortresses,
-            'filters' => $filters
+            'filters' => $filters,
+            'favorite' => $favoriteIds
         ]);
     }
 

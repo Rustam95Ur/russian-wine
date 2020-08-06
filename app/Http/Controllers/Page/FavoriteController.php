@@ -15,12 +15,18 @@ class FavoriteController extends Controller
     // Только залогиненый пользователь можешь добавлять в избанные
     public function addToFavorite(Request $request)
     {
-        if (Auth::user() === null) {
-            return redirect()->route('home')->with('error', 'Только авторизованные пользователи могут добавлять в избранные');
+        $user = Auth::guard('client')->user();
+
+        if ($user == null) {
+            return response(['message' =>'Только авторизованные пользователи могут добавлять в избранные'], 401);
+//            return [
+//                'status' => 401,
+//                'message' => 'Только авторизованные пользователи могут добавлять в избранные'
+//            ];
         }
 
         DB::table('client_wine')->insert(
-            ['client_id' => Auth::user()->id, 'wine_id' => $request->wine_id]
+            ['client_id' => $user->id, 'wine_id' => $request->wine_id]
         );
 
     }
@@ -28,7 +34,9 @@ class FavoriteController extends Controller
     //Удаляем из избранных
     public function deleteFromFavorite(Request $request)
     {
-        DB::table('client_wine')->where('client_id', '=', Auth::user()->id)
+        $user = Auth::guard('client')->user();
+
+        DB::table('client_wine')->where('client_id', '=', $user->id)
             ->where('wine_id', '=', $request->wine_id)->delete();
     }
 }

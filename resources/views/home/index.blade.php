@@ -82,7 +82,7 @@
                                     <div class="wine">
                                         <div class="image">
                                             @if(in_array($wine->id, $favorite))
-                                                <p class="unlike" id="{{$wine->id}}">
+                                                <p class="deletefavorite" id="{{$wine->id}}">
                                                     <i class="fa fa-heart fa-5x" aria-hidden="true"></i>
                                                 </p>
                                             @else

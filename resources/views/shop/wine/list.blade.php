@@ -483,9 +483,15 @@
                             <div class="swiper-slide">
                                 <div class="wine">
                                     <div class="image">
-                                        <a href="#" class="likeSlider">
-                                            <img src="{{ asset ('image/like.svg') }}" alt="like for this wine">
-                                        </a>
+                                        @if(in_array($wine->id, $favorite))
+                                            <p class="deletefavorite" id="{{$wine->id}}">
+                                                <i class="fa fa-heart fa-5x" aria-hidden="true"></i>
+                                            </p>
+                                        @else
+                                            <p class="likeSlider"  id="{{$wine->id}}">
+                                                <img src="{{ asset ('image/like.svg') }}" alt="like for this wine">
+                                            </p>
+                                        @endif
                                         <a href="{{route('wine', $wine->slug)}}" class="preview">
                                             <img src="{{Voyager::image($wine->image)}}">
                                             <span class="attributes"></span>
