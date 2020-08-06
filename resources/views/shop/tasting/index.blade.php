@@ -161,12 +161,12 @@
         <section id="question">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-md-offset-4">
+                    <div class="col-md-4 col-md-offset-4 onBoxText">
                         <h2 class="text-center">Остались вопросы?</h2>
-                        <p class="text-center">Свяжитесь с нами по указанным данным или отправьте сообщение
+                        <p class="text-center">Свяжитесь с нами по указанным данным<br>или отправьте сообщение
                     </div>
                     <div class="col-md-12 col-md-offset-1">
-                        <div class="col-md-5">
+                        <div class="col-md-4 col-md-offset-2 messageBox">
                             <form class="question_form">
                                 <div class="form-group">
                                     <input class="form-control" type="text" placeholder="Имя">
@@ -180,7 +180,7 @@
                                 <button type="submit" class="btn">Отправить</button>
                             </form>
                         </div>
-                        <div class="col-md-4 col-md-offset-1 contact_info">
+                        <div class="col-md-2 col-md-offset-1 contact_info">
                             <div class="phone_block">
                                 <p>Телефон</p>
                                 <a href="tel:+7 (915) 457-60-81">+7 (915) 457-60-81</a>
