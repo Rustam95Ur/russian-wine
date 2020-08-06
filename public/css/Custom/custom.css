@@ -1,3 +1,6 @@
+@import url("../../fonts/Proxima\ Nova/stylesheet.css");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
 #menu.navbar-right .dropdown-menu-custom {
     left: 0;
     right: auto;
@@ -758,4 +761,193 @@ input {
 .pagination > .disabled > span:focus, .pagination > .disabled > a,
 .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
     border: none;
+}
+/*           Single product page             */
+
+.single_product_Container {
+    width: 82.335vw;
+    margin: 0 auto;
+    margin-top: 6.306vw;
+}
+
+.pageControl {
+    font: 0.782vw "ProximaNova-bold";
+        line-height: normal;
+    line-height: 1.564vw;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #AFAFAF;
+    margin-left: -4.169vw;
+}
+
+.col-md-6.decsRightSide {
+    padding-left: 8.338vw;
+}
+
+.breadcrumb > li:nth-child(1) {
+    padding-left: 0;
+}
+
+#product-product.product-temp1 h1, #product-product h1 {
+    font-size: 2.606vw;
+    text-align: left;
+    line-height: 3.127vw;
+    margin-top: 0.626vw;
+    margin-bottom: 0;
+}
+#product-product.product-temp1 .social {
+    text-align: left;
+    position: absolute;
+    top: 3.8vw;
+    right: -4vw;
+    z-index: 3;
+}
+#product-product.product-temp1 .social .one-social {
+    background: #EBEBEB;
+    color: #979797;
+    width: 55px;
+    height: 55px;
+    padding-top: 16px;
+    text-align: center;
+    display: table;
+    clear: both;
+    margin: 0 0 2px;
+    font-size: 21px
+}
+
+#product-product.product-temp1 .social .one-social:hover,
+#product-product.product-temp1 .social .one-social:focus {
+    color: #D9224D
+}
+
+#product-product.product-temp1 .region,
+#product-product .region {
+    font: 1.564vw "ProximaNova-Bold";
+    text-align: left;
+    line-height: 1.824vw;
+    letter-spacing: -0.01em;
+    color: #A7A7A7;
+    margin-top: 0;
+    margin-bottom: 3.3355vw;
+}
+
+#product-product h4.wineSubtype {
+    font-weight: bold;
+    font-size: 1.303vw;
+    line-height: 1.564vw;
+    color: #000;
+    margin-top: 1.5rem;
+    margin-bottom: .8rem;
+}
+
+#product-product .btn.btn-secondary::before {
+    content: '';
+    width: .626vw;
+    height: .626vw;
+    background: #C4C4C4;
+    position: absolute;
+    border-radius: 50%;
+    left: .73vw;
+    top: .782vw;
+}
+
+#product-product .btn.btn-secondary:last-child {
+    margin-right: 0;
+}
+
+#product-product .btn.btn-secondary, .btn.btn-secondary.active {
+    border-radius: 25px !important;
+    margin-right: 0.938vw;
+    font-weight: bold;
+    font-size: 0.938vw;
+    line-height: 1.824vw;
+    color: #000 !important;
+    background: transparent !important;
+    padding: .261vw .886vw .261vw 1.824vw;
+}
+
+#product-product .btn.active.btn-secondary::before {
+    background:  #DA224D;
+}
+
+#product-product .btn-secondary:not(:disabled):not(.disabled).active:focus, .btn-secondary:not(:disabled):not(.disabled):active:focus, .show > .btn-secondary.dropdown-toggle:focus {
+    box-shadow: 0 0 .2rem 0 rgba(0, 0, 0, 0.25)!important;
+}
+
+#product-product .btn-secondary.focus, .btn-secondary:focus {
+    box-shadow: 0 0 .2rem 0 rgba(0, 0, 0, 0.25)!important;
+}
+
+#product-product .decsRightSide label {
+    display: inline-flex;
+}
+
+#product-product .decsRightSide .btn-secondary p {
+    margin: 0;
+    padding: 0;
+}
+
+.priceDefice {
+    content: '';
+    width: 10px;
+    display: block;
+    height: 2px;
+    background: #000;
+    position: relative;
+    top: 0.8vw;
+    margin: 0 6px;
+}
+
+.row.bigDesc {
+    margin: 0;
+        margin-top: 0px;
+    margin-top: 8.2rem;
+}
+
+.companyLogo {
+    width: 8.338vw;
+    margin-top: -1rem;
+    float: right;
+}
+
+.companyTitle {
+    font-weight: bold;
+    font-size: 2.085vw;
+    line-height: 2.345vw;
+    letter-spacing: -0.01em;
+    color: #000;
+    margin-bottom: 1.251vw;
+}
+
+.companyDesc p {
+    font-size: 1.147vw;
+    line-height: 1.772vw;
+    letter-spacing: -0.01em;
+    color: #000;
+}
+
+.description h4 {
+    font-size: 1.564vw;
+    line-height: 2.085vw;
+    color: #A8A8A8;
+    letter-spacing: -.02rem;
+    padding: .1rem;
+}
+
+.description p {
+    font-size: 1.147vw;
+    line-height: 1.772vw;
+    letter-spacing: -0.01em;
+    color: #000000;
+    padding: .261vw 0;
+    margin-bottom: 2.085vw;
+}
+.btn.btn-secondary.toCompany::before {
+    display: none;
+}
+.btn.btn-secondary.toCompany {
+    padding: 0.365vw 1.564vw !important;
+    margin-top: 0.5215vw;
+    border-radius: 50px !important;
+    letter-spacing: -0.01em;
 }

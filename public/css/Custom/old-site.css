@@ -2848,15 +2848,6 @@ header #form-language .language-select {
     padding: 10px
 }
 
-#product-product.product-temp1 h1,
-#product-product h1 {
-    font-size: 55px;
-    text-align: center;
-    padding-top: 40px;
-    padding-bottom: 0;
-    margin-top: 0;
-    margin-bottom: 0
-}
 
 #product-product.product-temp1 h2,
 #product-product h2 {
@@ -2864,14 +2855,7 @@ header #form-language .language-select {
     font-size: 35px
 }
 
-#product-product.product-temp1 .region,
-#product-product .region {
-    font-family: "ProximaNova-Bold";
-    font-size: 35px;
-    text-align: center;
-    color: #D6D6D6;
-    padding-top: 25px
-}
+
 
 #product-product.product-temp1 .showcase,
 #product-product .showcase {
@@ -3190,31 +3174,6 @@ header #form-language .language-select {
     color: #da224d
 }
 
-#product-product.product-temp1 .social {
-    text-align: left;
-    position: absolute;
-    top: 250px;
-    left: 44px;
-    z-index: 3
-}
-
-#product-product.product-temp1 .social .one-social {
-    background: #EBEBEB;
-    color: #979797;
-    width: 55px;
-    height: 55px;
-    padding-top: 16px;
-    text-align: center;
-    display: table;
-    clear: both;
-    margin: 0 0 2px;
-    font-size: 21px
-}
-
-#product-product.product-temp1 .social .one-social:hover,
-#product-product.product-temp1 .social .one-social:focus {
-    color: #D9224D
-}
 
 @media (max-width: 991px) {
     #product-product.product-temp1 .year-dashes {
@@ -3245,14 +3204,6 @@ header #form-language .language-select {
         padding-right: 150px
     }
 
-    #product-product.product-temp1 h1 {
-        font-size: 60px;
-        color: #23252b;
-    }
-
-    #product-product.product-temp1 .region {
-        font-size: 28px
-    }
 
     #product-product.product-temp1 .year {
         font-size: 110px
@@ -3268,27 +3219,10 @@ header #form-language .language-select {
 }
 
 @media (max-width: 767px) {
-    #product-product.product-temp1 h1 {
-        font-size: 7.8125vw
-    }
 
-    #product-product.product-temp1 .region {
-        font-size: 3.9vw
-    }
 
     #product-product.product-temp1 .year {
         font-size: 16.927vw
-    }
-
-    #product-product.product-temp1 .social {
-        position: static;
-        text-align: center;
-        margin-bottom: 30px
-    }
-
-    #product-product.product-temp1 .social .one-social {
-        display: inline-block;
-        margin: 0 1px
     }
 
     #product-product.product-temp1 .showcase {
@@ -7389,12 +7323,6 @@ h2.price {
         margin-bottom: 25px
     }
 
-    #product-product.product-temp1 .social {
-        padding-top: 30px;
-        margin-top: 25px;
-        border-top: 1px solid #d8d6d9;
-        margin-bottom: -30px
-    }
 
     #product-product.product-temp1 .manufacturer {
         margin-bottom: 45px
