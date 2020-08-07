@@ -55,19 +55,19 @@ Route::get('/checkout', 'Shop\IndexController@checkout')->name('checkout');
 Route::post('/checkout/order', 'Shop\IndexController@checkout_order')->name('checkout_order');
 Route::get('/checkout/success', 'Shop\IndexController@checkout_success')->name('checkout_success');
 
-Route::get('/profile', 'Page\ProfileController@show')->name('profile');
-Route::post('/profile/update', 'Page\ProfileController@update')->name('profile-update');
+Route::get('/profile', 'Profile\IndexController@show')->name('profile');
+Route::post('/profile/update', 'Profile\IndexController@update')->name('profile-update');
 
 
 Route::get('/add-to-favorite', 'Page\FavoriteController@addToFavorite')->name('add-to-favorite');
 Route::get('/delete-from-favorite', 'Page\FavoriteController@deleteFromFavorite')->name('delete-from-favorite');
 
-Route::get('/favorite', 'Page\ProfileController@favorite')->name('favorite');
-Route::get('/my-orders', 'Page\ProfileController@myOrders')->name('my-orders');
-Route::get('/my-sets', 'Page\ProfileController@mySets')->name('my-sets');
+Route::get('/favorite', 'Profile\IndexController@favorite')->name('favorite');
+Route::get('/my-orders', 'Profile\IndexController@myOrders')->name('my-orders');
+Route::get('/my-sets', 'Profile\IndexController@mySets')->name('my-sets');
 
 //подписки в ЛК
-Route::get('/sub-wines', 'Page\ProfileController@sub')->name('sub-wines');
+Route::get('/sub-wines', 'Profile\IndexController@sub')->name('sub-wines');
 
 Route::get('/{slug}', 'Page\IndexController@simple_page')->name('simple_page');
 

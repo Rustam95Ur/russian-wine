@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Page;
+namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 /**
  *
  */
-class ProfileController extends Controller
+class IndexController extends Controller
 {
     public function __construct()
     {
@@ -18,28 +18,28 @@ class ProfileController extends Controller
     }
 	public function show()
 	{
-		return view('page.profile.myprofile');
+		return view('profile.myprofile');
 	}
 
 	public function favorite()
     {
         $favorites = Auth::user()->wines;
-        return view('page.profile.favorite', ['favorites' => $favorites]);
+        return view('profile.favorite', ['favorites' => $favorites]);
     }
 
     public function sub()
     {
-        return view('page.profile.sub-wines');
+        return view('profile.sub-wines');
     }
 
     public function myOrders()
     {
-        return view('page.profile.my-orders');
+        return view('profile.my-orders');
     }
 
     public function mySets()
     {
-        return view('page.profile.my-sets');
+        return view('profile.my-sets');
     }
 
 
@@ -60,7 +60,7 @@ class ProfileController extends Controller
 
         $client->save();
 
-        return view('page.profile.myprofile', [
+        return view('profile.myprofile', [
             'success'  => "Данные успешно обновлены!"
         ]);
 	}

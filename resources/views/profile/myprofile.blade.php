@@ -8,7 +8,7 @@
     <div id="franchise">
         <div id="content">
             <div class="row">
-                @include('page.profile.layouts.left-side-menu')
+                @include('profile.layouts.left-side-menu')
                 <div class="col-md-8">
                     <div style="color: grey !important; margin: 50px;">
                         <h1>Персональные данные</h1>
