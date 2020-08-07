@@ -18,7 +18,7 @@ class IndexController extends Controller
     }
 	public function show()
 	{
-		return view('profile.myprofile');
+		return view('profile.show');
 	}
 
 	public function favorite()
