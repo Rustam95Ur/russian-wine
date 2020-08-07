@@ -43,13 +43,17 @@ Route::get('/where-to-buy', 'Page\IndexController@where_to_by')->name('where_to_
 Route::get('/winemaking-regions', 'Page\RegionController@index')->name('regions');
 Route::get('/region-{slug}', 'Page\RegionController@show')->name('region');
 
-Route::post('order/tour', 'Page\OrderController@tour_save')->name('tour_save');
+Route::post('tour/order', 'Page\OrderController@tour_save')->name('tour_order');
 // Ajax action
 Route::get('/search', 'Home\SearchController@search')->name('search');
 Route::get('/cart/add/{wine_id}/{qty}', 'Shop\IndexController@add_to_cart');
 Route::get('/cart/remove/{wine_id}/{qty}', 'Shop\IndexController@remove_to_cart');
 Route::get('/cart/count', 'Shop\IndexController@count_cart');
-    Route::get('/cart/get-wines', 'Shop\IndexController@get_car_wines');
+Route::get('/cart/get-wines', 'Shop\IndexController@get_car_wines');
+
+Route::get('/checkout', 'Shop\IndexController@checkout')->name('checkout');
+Route::post('/checkout/order', 'Shop\IndexController@checkout_order')->name('checkout_order');
+Route::get('/checkout/success', 'Shop\IndexController@checkout_success')->name('checkout_success');
 
 Route::get('/profile', 'Page\ProfileController@show')->name('profile');
 Route::post('/profile/update', 'Page\ProfileController@update')->name('profile-update');

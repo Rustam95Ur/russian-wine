@@ -205,9 +205,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 second_cl">
-                                                            <button id="oformlenie">
-                                                                <a href="{{route('wine-shop')}}">Оформить заявку</a>
-                                                            </button>
+                                                                <a id="oformlenie" class="btn-danger" href="{{route('checkout')}}">Оформить заявку</a>
                                                         </div>
                                                         <div class="col-md-4 third_cl">
                                                             <p>Пожалуйста

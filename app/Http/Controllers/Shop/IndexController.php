@@ -36,18 +36,15 @@ class IndexController extends Controller
             ->paginate(39);
         $filters = request()->input();
 
+        $favorite_id_list = [];
+
         if (Auth::guard('client')->user()) {
-            $clientd = Auth::guard('client')->user()->id;
-            $favorited = DB::table('client_wine')
+            $client_id = Auth::guard('client')->user()->id;
+            $favorites = DB::table('client_wine')
                 ->join('wines', 'client_wine.wine_id', '=', 'wines.id')
-                ->where('client_wine.client_id', '=', $clientd)->get();
-        }
-
-        $favoriteIds = [];
-
-        if (!empty($favorited)) {
-            foreach ($favorited as $item) {
-                $favoriteIds[] = $item->wine_id;
+                ->where('client_wine.client_id', '=', $client_id)->get();
+            foreach ($favorites as $item) {
+                $favorite_id_list[] = $item->wine_id;
             }
         }
 
@@ -62,7 +59,7 @@ class IndexController extends Controller
             'years' => $years,
             'fortresses' => $fortresses,
             'filters' => $filters,
-            'favorite' => $favoriteIds
+            'favorite' => $favorite_id_list
         ]);
     }
 
@@ -226,20 +223,79 @@ class IndexController extends Controller
                         'title' => $wine->title,
                         'price' => $wine->price,
                         'image' => Voyager::image($wine->image),
-                        'total' => (int) $wine->price * $item['qty']
+                        'total' => (int)$wine->price * $item['qty']
                     ];
                     array_push($cart_wines, $wine_array);
-                    $total_sum += (int) $wine->price * $item['qty'];
+                    $total_sum += (int)$wine->price * $item['qty'];
                     $countWine += 1;
                 }
             }
         }
-        $wines = ['wines'=> $cart_wines];
+        $wines = ['wines' => $cart_wines];
         $count_wine_array = ['count_wine' => $countWine];
         $total_sums = ['total_sum' => $total_sum];
         $result = array_merge($wines, $count_wine_array, $total_sums);
         return \Response::json($result, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function checkout()
+    {
+        $countCartItems = Session::get('cart');
+        if ($countCartItems != false) {
+            $total_sum = 0;
+            foreach ($countCartItems as $item) {
+                $wine = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['wine_id'])->first();
+                if ($wine) {
+                    $total_sum += (int)$wine->price * $item['qty'];
+                }
+            }
+            if ($total_sum == 0) {
+                return redirect()->back();
+            } else {
+                return view('shop.checkout.index', [
+                    'total_price' => $total_sum
+                ]);
+            }
+        } else {
+            return redirect()->back();
+        }
+    }
 
+    public function checkout_order(Request $request)
+    {
+        $cart_session = Session::get('cart');
+        if ($cart_session != false) {
+            $cart_info = '';
+            $total_sum = 0;
+
+            foreach ($cart_session as $item) {
+                $wine = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['wine_id'])->first();
+                if ($wine) {
+                    $total_sum += (int)$wine->price * $item['qty'];
+                    $cart_info .='Название: '. $wine->title. '. Количество: '. $item['qty'] . ' штук <br> ';
+                }
+            }
+            $cart_info .= 'Общая сумма: ' . $total_sum;
+            $saveRequest = new Order();
+            $saveRequest->name = $request['name'];
+            $saveRequest->phone = $request['phone'];
+            $saveRequest->email = $request['email'];
+            $saveRequest->type = Order::TYPE_WINE;
+            $saveRequest->message = $cart_info;
+            $saveRequest->request = json_encode($cart_session);
+            $saveRequest->save();
+            Session::forget('cart');
+            return redirect()->route('checkout_success');
+        } else {
+            return redirect()->back();
+        }
+    }
+
+    public function checkout_success()
+    {
+        return view('shop.checkout.success');
+    }
 }

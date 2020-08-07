@@ -29,7 +29,7 @@
                         <p>Заказать тур вы можете <br>
                             по телефону: <a href="tel:+7 (915) 457-60-81" class="text-danger">+7 (915) 457-60-81</a><br>
                             или через онлайн форму</p>
-                        <form method="post" class="form-common" action="{{route('tour_save')}}">
+                        <form method="post" class="form-common" action="{{route('tour_order')}}">
                             @csrf
                             <div class="">
                                 <input name="name" required class="form-control" type="text" placeholder="Имя">
@@ -171,7 +171,7 @@
                         <div class="col-xs-12 col-md-offset-1 col-md-10">
                             <div class="order">
                                 <h2>Заказать тур</h2>
-                                <form method="post" class="form-common" action="{{route('tour_save')}}">
+                                <form method="post" class="form-common" action="{{route('tour_order')}}">
                                     @csrf
                                     <div class="">
                                         <input name="name"  required class="form-control" type="text"

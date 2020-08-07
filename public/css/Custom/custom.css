@@ -951,3 +951,9 @@ input {
     border-radius: 50px !important;
     letter-spacing: -0.01em;
 }
+#checkoutpage {
+    background-image: url(/image/bg/checkout_bg.png);
+}
+#common-success {
+    background-image: url(/image/bg/checkout_bg.png);
+}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Авг 05 2020 г., 21:40
+-- Время создания: Авг 07 2020 г., 11:42
 -- Версия сервера: 5.7.25
 -- Версия PHP: 7.3.9
 
@@ -71,7 +71,7 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `first_name`, `last_name`, `phone`, `email`, `birth_date`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Rustam', NULL, NULL, 'client@client.com', NULL, NULL, '$2y$10$JMr3IFzsT/paiFImHSimO.ujpyZPPqDDN0mtklR3RdOdzD.Z.6wVC', NULL, '2020-07-31 01:20:15', '2020-07-31 01:20:15');
+(3, 'Rustam', NULL, NULL, 'client@client.com', NULL, NULL, '$2y$10$JMr3IFzsT/paiFImHSimO.ujpyZPPqDDN0mtklR3RdOdzD.Z.6wVC', NULL, '2020-07-31 01:20:15', '2020-07-31 01:20:15');
 
 -- --------------------------------------------------------
 
@@ -424,13 +424,13 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (264, 28, 'image', 'image', 'Картинка', 1, 1, 1, 1, 1, 1, '{}', 3),
 (265, 28, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, '{}', 4),
 (266, 28, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 5),
-(267, 29, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(267, 29, 'id', 'text', 'Id', 1, 1, 0, 0, 0, 0, '{}', 1),
 (268, 29, 'name', 'text', 'Имя', 1, 1, 1, 1, 1, 1, '{}', 2),
 (269, 29, 'email', 'text', 'Email', 0, 1, 1, 1, 1, 1, '{}', 3),
 (270, 29, 'phone', 'text', 'Телефон', 0, 1, 1, 1, 1, 1, '{}', 4),
-(271, 29, 'type', 'text', 'Type', 1, 0, 1, 1, 1, 1, '{\"options\":{\"1\":\"\\u0414\\u0435\\u0433\\u0443\\u0441\\u0442\\u0430\\u0446\\u0438\\u044f\",\"2\":\"\\u0412\\u0438\\u043d\\u043d\\u044b\\u0439 \\u0442\\u0443\\u0440\"}}', 5),
+(271, 29, 'type', 'select_dropdown', 'Тип заявки', 1, 1, 1, 1, 1, 1, '{\"options\":{\"1\":\"\\u0414\\u0435\\u0433\\u0443\\u0441\\u0442\\u0430\\u0446\\u0438\\u044f\",\"2\":\"\\u0412\\u0438\\u043d\\u043d\\u044b\\u0439 \\u0442\\u0443\\u0440\",\"3\":\"\\u0418\\u043c\\u0435\\u043d\\u043d\\u043e\\u0435 \\u0432\\u0438\\u043d\\u043e\",\"4\":\"\\u0424\\u0440\\u0430\\u043d\\u0448\\u0438\\u0437\\u0430\",\"5\":\"\\u0412\\u0438\\u043d\\u0430\"}}', 5),
 (272, 29, 'request', 'text', 'Запрос', 0, 0, 0, 0, 0, 0, '{}', 6),
-(273, 29, 'message', 'text', 'Сообщение', 0, 0, 1, 1, 1, 1, '{}', 7),
+(273, 29, 'message', 'rich_text_box', 'Сообщение', 0, 0, 1, 1, 1, 1, '{}', 7),
 (274, 29, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 1, '{}', 8),
 (275, 29, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 9),
 (276, 20, 'is_nominal', 'checkbox', 'Именное  ', 1, 1, 1, 1, 1, 1, '{}', 13),
@@ -491,10 +491,10 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (22, 'comments', 'comments', 'Комментарии', 'Комментарии', NULL, 'App\\Models\\Comment', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-06-21 06:30:19', '2020-08-01 04:58:39'),
 (23, 'quotes', 'quotes', 'Цитата', 'Цитаты', NULL, 'App\\Models\\Quote', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-07-04 00:52:53', '2020-07-05 11:20:11'),
 (24, 'excerpts', 'excerpts', 'Выдержка', 'Выдержки', NULL, 'App\\Models\\Excerpt', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-07-04 14:06:32', '2020-07-04 14:10:03'),
-(25, 'winery_images', 'winery-images', 'Картинка для винодельни', 'Картинки для виноделен', NULL, 'App\\Models\\WineryImage', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-07-14 13:26:58', '2020-08-04 02:12:22'),
+(25, 'winery_images', 'winery-images', 'Картинка для винодельни', 'Картинки для виноделен', NULL, 'App\\Models\\WineryImage', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-07-14 13:26:58', '2020-08-07 02:25:47'),
 (27, 'tastings', 'tastings', 'Дегустация', 'Дегустации', NULL, 'App\\Models\\Tasting', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-07-31 09:51:45', '2020-07-31 10:03:21'),
 (28, 'tasting_methods', 'tasting-methods', 'Метод работы (дегустации)', 'Методы работы (дегустации)', NULL, 'App\\Models\\TastingMethod', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-08-01 02:22:53', '2020-08-01 02:23:05'),
-(29, 'orders', 'orders', 'Заявка', 'Заявка', NULL, 'App\\Models\\Order', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-08-03 10:47:07', '2020-08-03 10:48:44'),
+(29, 'orders', 'orders', 'Заявка', 'Заявка', NULL, 'App\\Models\\Order', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-08-03 10:47:07', '2020-08-07 02:38:40'),
 (30, 'wine_classes', 'wine-classes', 'Класс вина', 'Классы вина', NULL, 'App\\Models\\WineClass', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-08-04 08:17:29', '2020-08-04 08:17:29');
 
 -- --------------------------------------------------------
@@ -822,19 +822,19 @@ CREATE TABLE `menu_items` (
 
 INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
 (1, 1, 'Панель управления', '', '_self', 'voyager-boat', NULL, NULL, 1, '2020-06-17 09:43:44', '2020-06-17 09:43:44', 'voyager.dashboard', NULL),
-(2, 1, 'Медиа', '', '_self', 'voyager-images', NULL, NULL, 8, '2020-06-17 09:43:44', '2020-08-03 10:45:40', 'voyager.media.index', NULL),
+(2, 1, 'Медиа', '', '_self', 'voyager-images', NULL, NULL, 9, '2020-06-17 09:43:44', '2020-08-07 02:38:11', 'voyager.media.index', NULL),
 (3, 1, 'Пользователи', '', '_self', 'voyager-person', NULL, NULL, 3, '2020-06-17 09:43:45', '2020-06-17 09:43:45', 'voyager.users.index', NULL),
 (4, 1, 'Роли', '', '_self', 'voyager-lock', NULL, NULL, 2, '2020-06-17 09:43:45', '2020-06-17 09:43:45', 'voyager.roles.index', NULL),
-(5, 1, 'Инструменты', '', '_self', 'voyager-tools', NULL, NULL, 12, '2020-06-17 09:43:45', '2020-08-03 10:45:40', NULL, NULL),
+(5, 1, 'Инструменты', '', '_self', 'voyager-tools', NULL, NULL, 13, '2020-06-17 09:43:45', '2020-08-07 02:38:11', NULL, NULL),
 (6, 1, 'Конструктор Меню', '', '_self', 'voyager-list', NULL, 5, 1, '2020-06-17 09:43:45', '2020-06-18 12:37:38', 'voyager.menus.index', NULL),
 (7, 1, 'База данных', '', '_self', 'voyager-data', NULL, 5, 2, '2020-06-17 09:43:45', '2020-06-18 12:37:38', 'voyager.database.index', NULL),
 (8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 3, '2020-06-17 09:43:45', '2020-06-18 12:37:38', 'voyager.compass.index', NULL),
 (9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 4, '2020-06-17 09:43:45', '2020-06-18 12:37:38', 'voyager.bread.index', NULL),
-(10, 1, 'Настройки', '', '_self', 'voyager-settings', NULL, NULL, 14, '2020-06-17 09:43:45', '2020-08-03 10:45:40', 'voyager.settings.index', NULL),
-(11, 1, 'Категории', '', '_self', 'voyager-categories', NULL, NULL, 11, '2020-06-17 09:43:45', '2020-08-03 10:45:40', 'voyager.categories.index', NULL),
-(12, 1, 'Статьи', '', '_self', 'voyager-news', NULL, NULL, 9, '2020-06-17 09:43:45', '2020-08-03 10:45:40', 'voyager.posts.index', NULL),
-(13, 1, 'Страницы', '', '_self', 'voyager-file-text', NULL, NULL, 10, '2020-06-17 09:43:45', '2020-08-03 10:45:40', 'voyager.pages.index', NULL),
-(14, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, NULL, 13, '2020-06-17 09:43:45', '2020-08-03 10:45:40', 'voyager.hooks', NULL),
+(10, 1, 'Настройки', '', '_self', 'voyager-settings', NULL, NULL, 15, '2020-06-17 09:43:45', '2020-08-07 02:38:11', 'voyager.settings.index', NULL),
+(11, 1, 'Категории', '', '_self', 'voyager-categories', NULL, NULL, 12, '2020-06-17 09:43:45', '2020-08-07 02:38:11', 'voyager.categories.index', NULL),
+(12, 1, 'Статьи', '', '_self', 'voyager-news', NULL, NULL, 10, '2020-06-17 09:43:45', '2020-08-07 02:38:11', 'voyager.posts.index', NULL),
+(13, 1, 'Страницы', '', '_self', 'voyager-file-text', NULL, NULL, 11, '2020-06-17 09:43:45', '2020-08-07 02:38:11', 'voyager.pages.index', NULL),
+(14, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, NULL, 14, '2020-06-17 09:43:45', '2020-08-07 02:38:11', 'voyager.hooks', NULL),
 (15, 1, 'Вина', '', '_self', NULL, '#000000', 23, 1, '2020-06-17 09:47:26', '2020-06-18 12:38:02', 'voyager.wines.index', 'null'),
 (16, 1, 'Регионы', '', '_self', NULL, NULL, 29, 1, '2020-06-18 08:29:12', '2020-07-09 10:39:47', 'voyager.regions.index', NULL),
 (17, 1, 'Страны', '', '_self', NULL, NULL, 29, 2, '2020-06-18 08:30:07', '2020-07-09 10:39:50', 'voyager.countries.index', NULL),
@@ -846,7 +846,7 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (23, 1, 'Каталог', '', '_self', 'voyager-folder', '#000000', NULL, 5, '2020-06-18 12:37:32', '2020-07-09 10:39:44', NULL, ''),
 (24, 1, 'Винодельни', '', '_self', NULL, NULL, 23, 3, '2020-06-20 04:23:20', '2020-07-09 10:40:25', 'voyager.wineries.index', NULL),
 (25, 1, 'Сеты', '', '_self', NULL, NULL, 23, 5, '2020-06-20 06:14:12', '2020-07-30 16:44:40', 'voyager.sets.index', NULL),
-(26, 1, 'Комментарии', '', '_self', 'voyager-bubble', '#000000', NULL, 7, '2020-06-21 06:30:19', '2020-08-03 10:45:40', 'voyager.comments.index', 'null'),
+(26, 1, 'Комментарии', '', '_self', 'voyager-bubble', '#000000', NULL, 8, '2020-06-21 06:30:19', '2020-08-07 02:38:11', 'voyager.comments.index', 'null'),
 (27, 1, 'Цитаты', '', '_self', NULL, NULL, 29, 7, '2020-07-04 00:52:53', '2020-07-30 16:44:48', 'voyager.quotes.index', NULL),
 (28, 1, 'Выдержки', '', '_self', NULL, NULL, 29, 6, '2020-07-04 14:06:32', '2020-07-30 16:44:48', 'voyager.excerpts.index', NULL),
 (29, 1, 'Атрибуты для вина', '', '_self', 'voyager-params', '#000000', NULL, 4, '2020-07-09 10:39:33', '2020-07-09 10:39:44', NULL, ''),
@@ -854,8 +854,9 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (31, 1, 'Спискок', '', '_self', NULL, '#000000', 34, 1, '2020-07-31 09:51:46', '2020-08-03 10:44:33', 'voyager.tastings.index', 'null'),
 (32, 1, 'Методы работы', '', '_self', NULL, '#000000', 34, 2, '2020-08-01 02:22:53', '2020-08-03 10:44:46', 'voyager.tasting-methods.index', 'null'),
 (34, 1, 'Дегустации', '', '_self', 'voyager-rum', '#000000', NULL, 6, '2020-08-03 10:44:25', '2020-08-03 10:45:40', NULL, ''),
-(35, 1, 'Заявка', '', '_self', NULL, NULL, NULL, 15, '2020-08-03 10:47:07', '2020-08-03 10:47:07', 'voyager.orders.index', NULL),
-(36, 1, 'Классы вина', '', '_self', NULL, NULL, NULL, 16, '2020-08-04 08:17:30', '2020-08-04 08:17:30', 'voyager.wine-classes.index', NULL);
+(35, 1, 'Список заявок', '', '_self', NULL, '#000000', 37, 1, '2020-08-03 10:47:07', '2020-08-07 02:38:03', 'voyager.orders.index', 'null'),
+(36, 1, 'Классы вина', '', '_self', NULL, NULL, NULL, 16, '2020-08-04 08:17:30', '2020-08-07 02:38:11', 'voyager.wine-classes.index', NULL),
+(37, 1, 'Заявки', '', '_self', 'voyager-dollar', '#000000', NULL, 7, '2020-08-07 02:37:55', '2020-08-07 02:38:11', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -963,7 +964,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `name`, `email`, `phone`, `type`, `request`, `message`, `created_at`, `updated_at`) VALUES
-(4, 'Рустам', 'rustam.95.ur@gmail.com', NULL, 3, NULL, 'rustamdaw', '2020-08-04 04:35:01', '2020-08-04 04:35:01');
+(4, 'Рустам', 'rustam.95.ur@gmail.com', NULL, 3, NULL, 'rustamdaw', '2020-08-04 04:35:01', '2020-08-04 04:35:01'),
+(6, 'Рустам', 'rustam.95.ur@gmail', '8777563866', 5, '[{\"wine_id\":54,\"qty\":1},{\"wine_id\":58,\"qty\":3}]', 'Название: Рислинг. Количество: 1 штук <br> Название: Каберне Семейный Резерв. Количество: 3 штук <br> Общая сумма: 7000', '2020-08-07 02:30:10', '2020-08-07 02:30:10');
 
 -- --------------------------------------------------------
 
@@ -3672,7 +3674,7 @@ ALTER TABLE `clients`
 -- AUTO_INCREMENT для таблицы `client_wine`
 --
 ALTER TABLE `client_wine`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT для таблицы `colors`
@@ -3738,7 +3740,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT для таблицы `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT для таблицы `migrations`
@@ -3750,7 +3752,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `pages`
