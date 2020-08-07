@@ -56,7 +56,7 @@
                             @endif
                         >
                         <label class="form-check-label" for="classSort{{$class->id}}">
-                            {{$class->title}}
+                            <b>{{$class->title}}</b>
                         </label>
                         <!-- tooltip -->
                         <img class="tippyTooltip" data-template="tooltip-{{$class->id}}"

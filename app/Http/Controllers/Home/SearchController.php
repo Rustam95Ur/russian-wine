@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
@@ -12,10 +12,9 @@ class SearchController extends Controller
 {
 	public function search(Request $request)
 	{
-        $wines = Wine::where('title','LIKE','%'.$request->q."%")->where('status', '=', 'ACTIVE')->get();
-
+        $wines = Wine::where('title','LIKE','%'.$request->title."%")->where('status', '=', 'ACTIVE')->limit(3)->get();
         return count($wines) ? $wines : ["error" => "По вашему запросу ничего не найдено"];
- 
+
     }
 }
 ?>

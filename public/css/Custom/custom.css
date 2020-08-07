@@ -973,3 +973,20 @@ input {
     left: 0;
     right: 0;
 }
+
+
+#myOverlay .overlay-content .overlay-form input {
+    border: none;
+    height: 100%;
+    width: 100%;
+    padding-left: 4.15vw;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 70px;
+    color: #000000;
+}
+
+#myOverlay .overlay-content .overlay-form {
+    height: inherit;
+}

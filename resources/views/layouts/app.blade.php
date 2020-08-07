@@ -46,7 +46,7 @@
 <div id="loading-overlay">
     <div class="loader"></div>
 </div>
- <!-- /.loading-overlay -->
+<!-- /.loading-overlay -->
 @include('layouts.header')
 @yield('content')
 @include('layouts.footer')
@@ -71,7 +71,7 @@
 @stack('scripts')
 <script>
     @php
-       $route = Request::route()->getName();
+        $route = Request::route()->getName();
     @endphp
     @if($route == 'home' or $route == 'tastings' or $route == 'sets' )
     $(window).scroll(function () {
@@ -95,24 +95,25 @@
 <!-- Ajax search Нужно допилить -->
 <!-- Ниже пример  HTML который был -->
 <script type="text/javascript">
-    $('#search').on('keyup',function(){
-        if($(this).val().length >= 3){
-            $value=$(this).val();
+    $('#search').on('keyup', function () {
+        if ($(this).val().length >= 3) {
+            var value = $(this).val();
+            $(".allResults").attr("href", "{{route('wine-shop')}}?title=" + value)
             $.ajax({
-            type : 'get',
-            url : '{{URL::to('search')}}',
-            data:{'q':$value},
-            success:function(data){
-                res = []
-               if (data.length > 0) {
-                    for (var i = 0; i < 3; i++) {
-                    res[i] = "<ul><li><img id='search' src='/storage/"+data[0].image+"' class='xs-thumb'>"+data[i].title+ ' ' + data[i].production_feature.substring(1,40)+ '...' + "</li></ul>"
-
-                }
-                $("#searchResult").html(res)
-                } else {
-                    $("#searchResult").html("<div class='col-md-12 searchError'>"+data.error+"</div>")
-                }
+                type: 'get',
+                url: '{{URL::to('search')}}',
+                data: {'title': value},
+                success: function (data) {
+                    var res = []
+                    if (data.length > 0) {
+                        for (var i = 0; i < 3; i++) {
+                            var wine_desc = ((data[i].production_feature.substring(1, 40)).replace('p>', '')).replace('</p>', '')
+                            res[i] = "<ul><li><img id='search' src='/storage/" + data[i].image + "' class='xs-thumb'>" + data[i].title + ' ' +  wine_desc + '...' + "</li></ul>"
+                        }
+                        $("#searchResult").html(res)
+                    } else {
+                        $("#searchResult").html("<div class='col-md-12 searchError'>" + data.error + "</div>")
+                    }
                 }
 
             });
@@ -122,29 +123,28 @@
 
 
 <script type="text/javascript">
-        $(function () {
-            $('.likeSlider').on('click', function () {
-                wineId = $(this).attr('id')
-                $.ajax({
-                    url: '{{URL::to('add-to-favorite')}}',
-                    data: {
-                        'wine_id': wineId
-                    },
-                    type: 'get',
-                    dataType: 'json',
+    $(function () {
+        $('.likeSlider').on('click', function () {
+            wineId = $(this).attr('id')
+            $.ajax({
+                url: '{{URL::to('add-to-favorite')}}',
+                data: {
+                    'wine_id': wineId
+                },
+                type: 'get',
+                dataType: 'json',
 
-                    error: function (response) {
-                        //$('.errorMessage').html(response.responseJSON.message);
-                        if (response.status == 401) {
-                            // Display Modal
-                            $('#login_modal').removeClass('hide')
-                        }
+                error: function (response) {
+                    //$('.errorMessage').html(response.responseJSON.message);
+                    if (response.status == 401) {
+                        // Display Modal
+                        $('#login_modal').removeClass('hide')
                     }
-                });
+                }
             });
         });
+    });
 </script>
-
 
 
 <script type="text/javascript">
@@ -157,8 +157,8 @@
                     'wine_id': wineId
                 },
                 type: 'get',
-                dataType : 'json',
-                success: function(data) {
+                dataType: 'json',
+                success: function (data) {
                     location.reload();
                 },
             });
@@ -167,16 +167,17 @@
 </script>
 
 
-
 <script>
     function login_modal() {
         $('.auth_register_modal').addClass('hide')
         $('#login_modal').removeClass('hide')
     }
+
     function register_modal() {
         $('.auth_register_modal').addClass('hide')
         $('#register_modal').removeClass('hide')
     }
+
     function close_modal() {
         $('.auth_register_modal').addClass('hide')
     }

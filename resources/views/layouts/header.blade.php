@@ -236,15 +236,15 @@
            title="Close Overlay"><img
                 src="{{ asset ('image/plus.png') }}" style="transform: rotateZ(45deg); "></a>
         <div class="overlay-content">
-            <form action="{{route('search')}}">
+            <div class="overlay-form">
                 <img alt="search icon" src="{{ asset ('image/search.svg') }}" id="searchInputIcon">
                 <input type="text" placeholder="Поиск..." name="search" id="search">
-            </form>
+            </div>
         </div>
         <div class="overlay-results">
             <div id="searchResult">
             </div>
-            <button type="button" name="all Search  Results" class="allResults">Показать все результаты</button>
+            <a href="{{route('wine-shop')}}"  class="allResults">Показать все результаты</a>
         </div>
     </div>
 </header>
