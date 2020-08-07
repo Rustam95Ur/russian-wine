@@ -5,8 +5,10 @@
             <div class="col-sm-2">
                 <div id="logo">
                     <a href="{{route('home')}}">
-                        <img src="{{ Voyager::image(setting('site.logo'))}}" title="{{Voyager::setting('site.title')}}"
+                        <img src="{{ Voyager::image(setting('site.logo'))}}" id="white-logo" title="{{Voyager::setting('site.title')}}"
                              alt="{{Voyager::setting('site.title')}}" class="img-responsive">
+                        <img src="{{asset('image/logo/logo-black.png')}}" id="black-logo" title="{{Voyager::setting('site.title')}}"
+                             alt="{{Voyager::setting('site.title')}}" class="img-responsive" style="display: none">
                     </a>
                 </div>
             </div>
@@ -79,7 +81,8 @@
             </div>
             <div class="col-md-2 col-sm-2">
                 <div id="navSearch">
-                    <a onclick="$('#myOverlay').addClass('open', 1000);" id="searchStart">
+                    <a onclick="$('#myOverlay').addClass('open', 1000); $('#white-logo').hide(); $('#black-logo').show()"
+                       id="searchStart">
                         <img alt="search icon" src="{{ asset ('image/search.svg') }}">
                     </a>
                 </div>
@@ -229,7 +232,8 @@
         </div>
     </div>
     <div id="myOverlay" class="overlay">
-        <a class="closebtn" onclick="$('#myOverlay').removeClass('open');" title="Close Overlay"><img
+        <a class="closebtn" onclick="$('#myOverlay').removeClass('open'); $('#black-logo').hide(); $('#white-logo').show()"
+           title="Close Overlay"><img
                 src="{{ asset ('image/plus.png') }}" style="transform: rotateZ(45deg); "></a>
         <div class="overlay-content">
             <form action="{{route('search')}}">
