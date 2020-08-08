@@ -37,14 +37,11 @@ class IndexController extends Controller
         $filters = request()->input();
 
         $favorite_id_list = [];
-
         if (Auth::guard('client')->user()) {
-            $client_id = Auth::guard('client')->user()->id;
-            $favorites = DB::table('client_wine')
-                ->join('wines', 'client_wine.wine_id', '=', 'wines.id')
-                ->where('client_wine.client_id', '=', $client_id)->get();
-            foreach ($favorites as $item) {
-                $favorite_id_list[] = $item->wine_id;
+            $client = Auth::guard('client')->user();
+            $favorite_wines = $client->wines()->get();
+            foreach ($favorite_wines as $wine) {
+                $favorite_id_list[] = $wine->id;
             }
         }
 

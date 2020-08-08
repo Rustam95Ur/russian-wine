@@ -7,3 +7,21 @@
 #profile .profile-form {
     margin-top: 30px;
 }
+#profile .delete_favorite {
+    border: none;
+    background: none;
+}
+#profile span.currency{
+    font-family: 'RUBSN';
+    font-weight: bold;
+}
+#profile .favorite_block {
+    margin: 30px;
+}
+#profile .favorite_block table {
+    margin-top: 30px;
+}
+
+#profile .favorite_block table td {
+    vertical-align: middle;
+}

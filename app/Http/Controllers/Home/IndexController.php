@@ -7,7 +7,6 @@ use App\Models\Set;
 use App\Models\Tasting;
 use App\Models\Wine;
 use App\Models\Winemaker;
-use DB;
 use Illuminate\Support\Facades\Auth;
 
 class IndexController extends Controller

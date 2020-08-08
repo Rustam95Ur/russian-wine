@@ -2,46 +2,29 @@
 @push('styles')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
 @endpush
+@section('body_class', 'footer-hide')
 @section('content')
-    @push('styles')
-        <style>
-            /*#cssTable {*/
-            /*    margin-top: 30px;*/
-            /*}*/
-            /*#cssTable td*/
-            /*{*/
-            /*    vertical-align: middle;*/
-            /*}*/
-
-            /*.makeOrderButton {*/
-            /*    width: 180px;*/
-            /*    height: 40px;*/
-            /*    background-color:#DA224D ;*/
-            /*    color: white;*/
-            /*    border-radius: 50px;*/
-            /*}*/
-            /*.deletefavorite {*/
-            /*    border: none;*/
-            /*}*/
-        </style>
-    @endpush
     <div id="profile">
         <div id="content">
             <div class="row">
                 @include('profile.layouts.left-side-menu')
                 <div class="col-md-8">
                     @if (isset($favorites[0]))
-                        <div style="margin: 30px;">
+                        <div class="favorite_block">
                             <h1>Избранное</h1>
-                            <table class="table" id="cssTable">
+                            <table class="table" id="favorite_table">
                                 @foreach($favorites as $favorite)
                                     <tbody>
-                                    <tr>
-                                        <td><input type="checkbox" name="prog"></td>
-                                        <td><img src="{{ asset ('image/1OLwTAcYZZn9L9hwUju2.png') }}" width="30px"
-                                                 height="100px" alt=""></td>
+                                    <tr id="fav-tr-{{$favorite->id}}">
                                         <td>
-                                            {{$favorite->title}}
+                                            <input type="checkbox" form="favorite_order" name="wine">
+                                        </td>
+                                        <td>
+                                            <img src="{{ asset ('image/1OLwTAcYZZn9L9hwUju2.png') }}" width="30px"
+                                                 height="100px" alt="">'
+                                        </td>
+                                        <td>
+                                            <b>{{$favorite->title}}</b>
 
                                             <div style="margin-top: 8px;">
                                                 <span>{{$favorite->color->title}} </span> |
@@ -49,16 +32,23 @@
                                                 <span>{{$favorite->year}}</span>
                                             </div>
                                         </td>
-                                        <td>{{$favorite->price}}</td>
                                         <td>
-                                            <button type="submit" class="deletefavorite" id="{{$favorite->id}}"><i
+                                        <td>
+                                            <b>{{$favorite->price}}</b>
+                                            <span class="currency">о</span>
+                                        </td>
+                                        <td>
+                                            <button type="submit" class="delete_favorite" id="{{$favorite->id}}"><i
                                                     class="fa fa-trash" aria-hidden="true"></i></button>
                                         </td>
                                     </tr>
                                     </tbody>
                                 @endforeach
                             </table>
-                            <input class="btn-danger" type="submit" id="submit_prog" value='Сделать заказ'/>
+                            <form method="post" id="favorite_order" action="{{route('favorite-order')}}">
+                                @csrf
+                                <input class="btn-danger" type="submit" id="form-send-btn" value='Сделать заказ' style="display: none">
+                            </form>
                         </div>
                     @else
                         <div class="mt-lg text-center">
@@ -75,14 +65,16 @@
     </div>
     @push('scripts')
         <script>
-            $(document).ready(function () {
-
-                var $submit = $("#submit_prog").hide(),
-                    $cbs = $('input[name="prog"]').click(function () {
-                        $submit.toggle($cbs.is(":checked"));
-                    });
-
+            $('input[name="wine"]').on('click', function () {
+                var checkbox_len = $('input[name="wine"]').filter(':checked').length;
+                if (checkbox_len > 0) {
+                    $('#form-send-btn').show();
+                } else  {
+                    $('#form-send-btn').hide();
+                }
             });
+
         </script>
+        <script src="{{ asset('js/favorite.js') }}"></script>
     @endpush
 @endsection

@@ -37,6 +37,7 @@ $(function () {
             success: function (data) {
                 $('.like-' + wine_id).show()
                 $('.unlike-' + wine_id).hide()
+                $('#fav-tr-' + wine_id).remove()
             },
         });
     });
