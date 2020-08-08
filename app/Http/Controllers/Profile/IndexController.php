@@ -71,18 +71,22 @@ class IndexController extends Controller
 {
     $data = $this->menu_item_count();
     $orders = Order::where('email', '=', Auth::user()->email)->get();
-    $productIds = [];
-
-    foreach ($orders as $key => $order) {
-        $request = json_decode($order->request);
-        $productIds[] = $request[$key]->product_id;
+    $order_list = [];
+    foreach ($orders as $key => $value) {
+        $total_price = 0;
+        $request = json_decode($value->request);
+        $order['id']  = $value->id;
+        $order['date_created']  = date($value->created_at);
+        foreach ($request as $item) {
+            if($item->type == 'set') {
+                $total_price += $item->price;
+            }
+        }
+        $order['total_price'] = $total_price;
+        array_push($order_list, $order);
     }
-
-    $wines = DB::table('wines')->whereIn('id', $productIds)->get();
-
-    $data['orders'] = $wines;
-
-    return view('profile.my-orders', $data);
+    $data['orders'] = $order_list;
+    return view('profile.orders', $data);
 }
 
     public function sets()
@@ -117,7 +121,20 @@ class IndexController extends Controller
     {
         $favorites_wines = Auth::user()->wines()->count();
         $menu = ['favorite_count' => $favorites_wines];
-//        $menu[''];
+        $orders = Order::where('email', '=', Auth::user()->email)->get();
+        $count_sets = 0;
+        foreach ($orders as $order) {
+            if ($order->type == Order::TYPE_CART) {
+                $request = json_decode($order->request);
+                foreach ($request as $item) {
+                    if($item->type == 'set') {
+                        $count_sets += $item->qty;
+                    }
+                }
+            }
+        }
+        $menu['order_count'] = count($orders);
+        $menu['set_count'] = $count_sets;
         return $menu;
     }
 }

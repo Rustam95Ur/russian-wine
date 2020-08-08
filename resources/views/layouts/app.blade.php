@@ -61,13 +61,10 @@
     @if($route == 'home' or $route == 'tastings' or $route == 'sets' )
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
-        //>=, not <=
         if (scroll <= 300) {
-            //clearHeader, not clearheader - caps H
             $("#head_f").removeClass("darkHeader");
         }
         if (scroll >= 300) {
-            //clearHeader, not clearheader - caps H
             $("#head_f").addClass("darkHeader");
         }
     });

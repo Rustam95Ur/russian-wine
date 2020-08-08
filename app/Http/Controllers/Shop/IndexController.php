@@ -117,7 +117,7 @@ class IndexController extends Controller
         if ($qty > $countItem) {
             return \Response::json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
         }
-        $item = ['product_id' => $product_id, 'qty' => $qty, 'type' => $type];
+        $item = ['product_id' => $product_id, 'qty' => $qty, 'type' => $type, 'price' => $checkProduct->price];
         $sessionItems = Session::get('cart');
         $results = [];
         if ($sessionItems and count($sessionItems) > 0) {
@@ -139,7 +139,8 @@ class IndexController extends Controller
                     $newArray = [
                         'product_id' => $sessionItems[$i]['product_id'],
                         'qty' => $sum,
-                        'type' => $sessionItems[$i]['type']
+                        'type' => $sessionItems[$i]['type'],
+                        'price' => $checkProduct->price,
                     ];
                     $results[$i] = $newArray;
                 }
@@ -192,6 +193,7 @@ class IndexController extends Controller
                             'product_id' => $sessionItems[$i]['product_id'],
                             'qty' => $newQty,
                             'type' => $sessionItems[$i]['type'],
+                            'price' => $checkProduct->price,
                         ];
                         $results[$i] = $newArray;
                     }

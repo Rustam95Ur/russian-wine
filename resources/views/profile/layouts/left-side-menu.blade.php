@@ -36,8 +36,8 @@
                 <ul class="count-list text-right">
                     <li>{{$favorite_count}}</li>
                     <li>2</li>
-                    <li>5</li>
-                    <li>15</li>
+                    <li>{{$set_count}}</li>
+                    <li>{{$order_count}}</li>
                 </ul>
             </div>
         </div>
