@@ -42,18 +42,25 @@ class IndexController extends Controller
     {
         $cart_info = '';
         $total_sum = 0;
+        $wine_info_array = [];
         foreach ($request->wines as $wine) {
             $wine = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $wine)->first();
             if ($wine) {
                 $total_sum += (int)$wine->price;
                 $cart_info .= 'Название: <b>' . $wine->title . '</b>' . '. </b>Количество: <b>' . 1 . '</b> штук <br>  ';
             }
+            $wine_info['product_id'] = $wine->id;
+            $wine_info['qty'] = 1;
+            $wine_info['type'] = 'wine';
+            $wine_info['price'] = $wine->price;
+            array_push($wine_info_array, $wine_info);
         }
         $cart_info .= 'Общая сумма: <b>' . $total_sum . '</b>';
         $saveRequest = new Order();
         $saveRequest->name = Auth::user()->first_name;
         $saveRequest->phone = Auth::user()->phone;
         $saveRequest->email = Auth::user()->email;
+        $saveRequest->request = json_encode($wine_info_array);
         $saveRequest->type = Order::TYPE_FAVORITE;
         $saveRequest->message = $cart_info;
         $saveRequest->save();
@@ -81,9 +88,7 @@ class IndexController extends Controller
             $order['id'] = $value->id;
             $order['date_created'] = date($value->created_at);
             foreach ($request as $item) {
-                if ($item->type == 'set') {
-                    $total_price += $item->price * $item->qty;
-                }
+                $total_price += $item->price * $item->qty;
             }
             $order['total_price'] = $total_price;
             array_push($order_list, $order);

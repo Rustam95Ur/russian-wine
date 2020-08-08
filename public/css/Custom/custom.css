@@ -979,3 +979,6 @@ input {
 #myOverlay .overlay-content .overlay-form {
     height: inherit;
 }
+.subscription p {
+    color: white;
+}

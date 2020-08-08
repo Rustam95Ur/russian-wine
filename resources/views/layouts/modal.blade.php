@@ -134,7 +134,6 @@
         </div>
     </div>
 </div>
-
 <div id="messageModal" class="message_modal hide">
     <div class="shadow_close"
          onclick="$('#messageModal').css('display', 'none');$('body').removeClass('nooverflow');"></div>
@@ -305,3 +304,4 @@
         </div>
     </div>
 </div>
+

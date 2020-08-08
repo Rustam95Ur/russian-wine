@@ -51,7 +51,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sp-13">
-                                    <img class="image_s_s" src="{{asset('image/page/subscription/first_img.png')}}">
+                                    <img alt="" class="image_s_s" src="{{asset('image/page/subscription/first_img.png')}}">
                                 </div>
                                 <h2 id="sety-title">СЕТЫ</h2>
                             </div>
@@ -64,7 +64,7 @@
                                                  src="{{Voyager::image($set->subscription_image)}}">
                                             <div class="desc-mask">
                                                 <h4>{{$set->title}}</h4>
-                                                <div class="description">
+                                                <div class="description subscription">
                                                     {!! $set->description !!}
                                                     <img alt="icon_pluc" class="fordesc"
                                                          src="{{asset('image/page/subscription/plus.png')}}">
