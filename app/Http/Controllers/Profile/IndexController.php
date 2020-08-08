@@ -100,6 +100,30 @@ class IndexController extends Controller
     public function sub()
     {
         $data = $this->menu_item_count();
+
+        $orders = Order::where('email', '=', Auth::user()->email)->get();
+        $set_id_array = [];
+        foreach ($orders as $key => $order) {
+            $requests = json_decode($order->request);
+            foreach ($requests as $request) {
+                $requestType = $request->type;
+                if ($requestType === 'set') {
+                    $set_id_array[] = $request->product_id;
+                }
+            }
+        }
+        $sets = Set::whereIn('id', $set_id_array)->get();
+        $subscriptions = [];
+
+        foreach ($sets as $set) {
+            if ($set->in_subscription) {
+                $subscriptions[] = $set;
+            }
+        }
+
+        $data['subscriptions'] = $subscriptions;
+
+
         return view('profile.sub-wines', $data);
     }
 
