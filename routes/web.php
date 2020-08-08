@@ -64,6 +64,8 @@ Route::get('/profile/delete-from-favorite', 'Page\FavoriteController@deleteFromF
 
 Route::get('/profile/favorite', 'Profile\IndexController@favorite')->name('profile-favorite');
 Route::post('/profile/favorite/order', 'Profile\IndexController@favorite_order')->name('profile-favorite-order');
+Route::post('/profile/set/order', 'Profile\IndexController@set_order')->name('profile-set-order');
+
 
 Route::get('/profile/orders', 'Profile\IndexController@orders')->name('profile-orders');
 Route::get('/profile/sets', 'Profile\IndexController@sets')->name('profile-sets');

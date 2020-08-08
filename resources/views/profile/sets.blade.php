@@ -15,6 +15,7 @@
                         <table class="table text-center" id="sets_table">
                             <tbody>
                             @foreach($sets as $set)
+
                                 <tr>
                                     <td width="20%">
                                         <img src="{{Voyager::image($set->image)}}"
@@ -26,9 +27,10 @@
                                         <span class="currency">о</span><b></b>
                                     </td>
                                         <td>
-                                            <form action="" method="post">
-                                            <input class="btn-danger" type="submit" id="submit_prog"
-                                                   value='Повторить заказ'/>
+                                            <form method="post" action="{{route('profile-set-order')}}">
+                                                <input type="hidden" value="{{$set->id}}" name="sets[]">
+                                                @csrf
+                                                <input class="btn-danger" type="submit" id="form-send-btn" value='Повторить заказ'>
                                             </form>
                                         </td>
                                 </tr>

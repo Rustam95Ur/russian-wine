@@ -68,6 +68,35 @@ class IndexController extends Controller
 
     }
 
+    public function set_order(Request $request)
+    {
+        $cart_info = '';
+        $total_sum = 0;
+        $wine_info_array = [];
+        foreach ($request->sets as $set) {
+            $set = Set::select('title', 'price', 'image', 'id')->where('id', '=', $set)->first();
+            if ($set) {
+                $total_sum += (int)$set->price;
+                $cart_info .= 'Название: <b>' . $set->title . '</b>' . '. </b>Количество: <b>' . 1 . '</b> штук <br>  ';
+            }
+            $wine_info['product_id'] = $set->id;
+            $wine_info['qty'] = 1;
+            $wine_info['type'] = 'set';
+            $wine_info['price'] = $set->price;
+            array_push($wine_info_array, $wine_info);
+        }
+        $cart_info .= 'Общая сумма: <b>' . $total_sum . '</b>';
+        $saveRequest = new Order();
+        $saveRequest->name = Auth::user()->first_name;
+        $saveRequest->phone = Auth::user()->phone;
+        $saveRequest->email = Auth::user()->email;
+        $saveRequest->request = json_encode($wine_info_array);
+        $saveRequest->type = Order::TYPE_FAVORITE;
+        $saveRequest->message = $cart_info;
+        $saveRequest->save();
+        return redirect()->back()->with('success', 'Заявка успешно отправлена');
+    }
+
     public function sub()
     {
         $data = $this->menu_item_count();
