@@ -521,9 +521,9 @@ input {
     margin-left: auto;
     margin-right: auto;
     background: #fff;
-    overflow: scroll;
     z-index: 253;
     padding: 20px;
+    overflow: hidden;
 }
 
 .auth_modal h2 {

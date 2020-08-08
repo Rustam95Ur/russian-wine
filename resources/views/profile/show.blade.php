@@ -1,19 +1,20 @@
 @extends('layouts.app')
 @push('styles')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/profile-personal-info-form.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
 @endpush
 @section('body_class', 'footer-hide')
 @section('content')
-    <div id="franchise">
+    <div id="profile">
         <div id="content">
             <div class="row">
                 @include('profile.layouts.left-side-menu')
                 <div class="col-md-8">
-                    <div style="color: grey !important; margin: 50px;">
+                    <div class="bg-gray profile-info">
                         <h1>Персональные данные</h1>
-                        <div class="row" style="margin-top: 30px">
+                        <div class="row profile-form">
                             <form role="form" method="POST" id="profile_form" action="{{route('profile-update')}}">
-                                <div class="col-sm-5">
+                                <div class="col-md-5">
                                     @csrf
                                     <div class="form-group float-label-control">
                                         <label for="first_name">Имя</label>
@@ -32,7 +33,7 @@
                                     </div>
                                     <div class="form-group float-label-control">
                                         <label for="phone">Телефон</label>
-                                        <input id="phone" type="text" class="form-control prof" name="phone"
+                                        <input id="phone" type="number" class="form-control prof" name="phone"
                                                placeholder="Телефон" value="{{Auth::user()->phone}}">
                                     </div>
                                     <div class="form-group float-label-control">
@@ -42,12 +43,11 @@
                                                value="{{Auth::user()->birth_date}}">
                                     </div>
                                     <div class="form-group float-label-control">
-                                        <button type="submit" class="saveProfile">Сохранить</button>
+                                        <button type="submit" class="btn-danger">Сохранить</button>
                                     </div>
                                 </div>
                             </form>
-
-                            <div class="col-sm-5" style="margin-left: 80px;">
+                            <div class="col-md-5 col-md-offset-1">
                                 <h3 class="changePass">Изменить пароль</h3>
                                 <div class="form-group float-label-control">
                                     <label for="old_password">Старый пароль</label>
@@ -66,14 +66,7 @@
             </div>
         </div>
     </div>
-
     @push('scripts')
         <script src="{{ asset('js/profile-input-animation.js') }}"></script>
-        <script>
-            setTimeout(function () {
-                $('#success-message').addClass('hide')
-            }, 5000);
-        </script>
     @endpush
-
 @endsection

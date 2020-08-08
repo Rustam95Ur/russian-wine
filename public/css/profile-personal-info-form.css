@@ -94,11 +94,3 @@ ul{
     100% { top: 3em; opacity: 1; }
 }
 
-.saveProfile {
-    text-transform: uppercase;
-    color: white;
-    width: 200px;
-    height: 50px;
-    border-radius: 30px;
-    background-color: #DA224D;
-}

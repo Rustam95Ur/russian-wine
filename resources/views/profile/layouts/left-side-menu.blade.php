@@ -1,7 +1,7 @@
 @push('styles')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/left-side.css') }}">
 @endpush
-<div class="col-md-4 background-dark-purple" id="left-side-block">
+<div class="col-md-4 background-dark-purple full-height" id="left-side-block">
     <div class="userData">
         <h2 class="text-white">{{Auth::user()->last_name}} {{Auth::user()->first_name}}</h2>
         <h3 class="heading">Скидка</h3>
