@@ -56,3 +56,75 @@
 #profile #sets_table {
     border-bottom: 1px solid;
 }
+
+
+#order-show {
+    z-index: 100;
+    position: fixed;
+    left: 100vw;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    transition: 0.8s;
+    display: none;
+    pointer-events: all;
+}
+
+#order-show.open {
+    left: 0vw;
+    display: block;
+}
+#order-show.open #close-mask {
+    transform: scale(1);
+    border-radius: 0;
+}
+#order-show #cart-cart.empty-cart {
+    width: 27.9vw;
+}
+#order-show #close-mask.empty-cart {
+    width: 71.1vw;
+}
+#order-show #cart-cart {
+    padding: 0;
+}
+#order-show #close-cart, #closecheck {
+    background: url(/image/closeicon.png);
+ }
+
+#order-show #order_info {
+    padding: 40px;
+}
+#order-show #order_info h3 {
+    font-size: 25px;
+}
+#order-show #order_info h4 {
+    font-size: 25px;
+    margin-top: 30px;
+    color: white;
+}
+#order-show #order_info h4 span.currency, .order-product-list span.currency {
+    font-family: 'RUBSN';
+    font-weight: bold;
+}
+#order-show #order_info p {
+    color: grey;
+}
+#order-show #order_info h3, p {
+    padding: 0;
+    margin: 0;
+}
+
+#order-show .order-product-list  img.wine {
+    width: 30%;
+}
+#order-show .order-product-list  img.set {
+    width: 70%;
+}
+#order-show .order-product-list .order-product {
+    margin-top: 20px ;
+    margin-bottom: 20px ;
+}
+#order-show .order-product-list .product-info {
+    margin-top: 10px;
+}

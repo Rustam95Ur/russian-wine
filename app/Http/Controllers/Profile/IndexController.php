@@ -10,6 +10,7 @@ use App\Models\Wine;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use TCG\Voyager\Facades\Voyager;
 
 class IndexController extends Controller
 {
@@ -91,7 +92,7 @@ class IndexController extends Controller
         $saveRequest->phone = Auth::user()->phone;
         $saveRequest->email = Auth::user()->email;
         $saveRequest->request = json_encode($wine_info_array);
-        $saveRequest->type = Order::TYPE_FAVORITE;
+        $saveRequest->type = Order::TYPE_CART;
         $saveRequest->message = $cart_info;
         $saveRequest->save();
         return redirect()->back()->with('success', 'Заявка успешно отправлена');
@@ -123,7 +124,6 @@ class IndexController extends Controller
 
         $data['subscriptions'] = $subscriptions;
 
-
         return view('profile.sub-wines', $data);
     }
 
@@ -148,6 +148,37 @@ class IndexController extends Controller
         }
         $data['orders'] = $order_list;
         return view('profile.orders', $data);
+    }
+
+    public function order(int $order_id)
+    {
+        $order = Order::where('email', '=', Auth::user()->email)->where('id', $order_id)->first();
+        $request = json_decode($order->request);
+        $product_list = [];
+        $total_price = 0;
+        foreach ($request as $item) {
+            if ($item->type == 'set') {
+                $product = Set::where('id', '=', $item->product_id)->first();
+            } elseif ($item->type == 'wine') {
+                $product = Wine::where('id', '=', $item->product_id)->first();
+            }
+            if ($product) {
+                $item_order['title'] = $product->title;
+                $item_order['image'] = Voyager::image($product->image);
+                $item_order['class'] = $item->type;
+                $item_order['price'] = $product->price;
+                $item_order['sugar'] = isset($product->sugar) ? $product->sugar->title : '';
+                $item_order['color'] = isset($product->color) ? $product->color->title : '';
+                $item_order['year'] = isset($product->year) ? $product->year : '';
+                array_push($product_list, $item_order);
+            }
+            $total_price += $item->price * $item->qty;
+        }
+        $wines = ['products' => $product_list];
+        $count_wine_array = ['date_created' => date($order->created_at)];
+        $total_sums = ['total_sum' => $total_price];
+        $result = array_merge($wines, $count_wine_array, $total_sums);
+        return \Response::json($result, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }
 
     /**

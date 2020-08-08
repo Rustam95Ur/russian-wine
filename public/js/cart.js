@@ -3,9 +3,11 @@ function cart_add(wine_id, qtn, type) {
     $.ajax({
         url: '/cart/add/'+  type + '/' + wine_id + '/' + qtn ,
         success: function (data) {
-            countItem();
-            cart_table_update()
         },
+        complete: function () {
+            cart_table_update()
+            countItem();
+        }
     });
 }
 

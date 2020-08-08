@@ -68,6 +68,7 @@ Route::post('/profile/set/order', 'Profile\IndexController@set_order')->name('pr
 
 
 Route::get('/profile/orders', 'Profile\IndexController@orders')->name('profile-orders');
+Route::get('/profile/order/{order_id}', 'Profile\IndexController@order');
 Route::get('/profile/sets', 'Profile\IndexController@sets')->name('profile-sets');
 
 //подписки в ЛК
