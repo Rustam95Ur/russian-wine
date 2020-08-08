@@ -34,7 +34,7 @@
             </div>
             <div class="col-md-4 col-sm-4">
                 <ul class="count-list text-right">
-                    <li>0</li>
+                    <li>{{$favorite_count}}</li>
                     <li>2</li>
                     <li>5</li>
                     <li>15</li>

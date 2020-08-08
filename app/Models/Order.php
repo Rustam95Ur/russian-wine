@@ -11,4 +11,5 @@ class Order extends Model
     const TYPE_NOMINAL_WINE = 3;
     const TYPE_FRANCHISE = 4;
     const TYPE_CART = 5;
+    const TYPE_FAVORITE = 6;
 }

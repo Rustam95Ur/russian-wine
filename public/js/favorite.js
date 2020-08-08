@@ -26,7 +26,7 @@ $(function () {
 
 $(function () {
     $('.delete_favorite').on('click', function () {
-        var wine_id = $(this).attr('id')
+        var wine_id = $(this).attr('id');
         $.ajax({
             url: 'delete-from-favorite',
             data: {
@@ -38,7 +38,23 @@ $(function () {
                 $('.like-' + wine_id).show()
                 $('.unlike-' + wine_id).hide()
                 $('#fav-tr-' + wine_id).remove()
+                var rowCount = $('#favorite_table tr').length;
+                if(rowCount === 0 ) {
+                    $('.favorite_block').hide();
+                    $('#favorite_zero').show();
+
+                }
             },
         });
+
     });
+});
+
+$('input[name="wines[]"]').on('click', function () {
+    var checkbox_len = $('input[name="wines[]"]').filter(':checked').length;
+    if (checkbox_len > 0) {
+        $('#form-send-btn').show();
+    } else  {
+        $('#form-send-btn').hide();
+    }
 });

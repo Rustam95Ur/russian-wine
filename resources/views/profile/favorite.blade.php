@@ -9,15 +9,14 @@
             <div class="row">
                 @include('profile.layouts.left-side-menu')
                 <div class="col-md-8">
-                    @if (isset($favorites[0]))
-                        <div class="favorite_block">
+                        <div class="favorite_block" style="display: {{(count($favorites) > 0 ) ? '' : 'none'}}">
                             <h1>Избранное</h1>
                             <table class="table" id="favorite_table">
                                 @foreach($favorites as $favorite)
                                     <tbody>
                                     <tr id="fav-tr-{{$favorite->id}}">
                                         <td>
-                                            <input type="checkbox" form="favorite_order" name="wine">
+                                            <input type="checkbox" form="favorite_order" value="{{$favorite->id}}" name="wines[]">
                                         </td>
                                         <td>
                                             <img src="{{ asset ('image/1OLwTAcYZZn9L9hwUju2.png') }}" width="30px"
@@ -50,31 +49,17 @@
                                 <input class="btn-danger" type="submit" id="form-send-btn" value='Сделать заказ' style="display: none">
                             </form>
                         </div>
-                    @else
-                        <div class="mt-lg text-center">
+                        <div class="mt-lg text-center" id="favorite_zero" style="display: {{(count($favorites) > 0 ) ? 'none' : ''}}">
                             <h3>В избраном пока ничего нет <br> но вы можете их добавить из винотеки</h3>
                             <a href={{route('wine-shop')}}>
                                 <button class="btn-danger">Перейти в Винотеку</button>
                             </a>
                         </div>
-
-                    @endif
                 </div>
             </div>
         </div>
     </div>
     @push('scripts')
-        <script>
-            $('input[name="wine"]').on('click', function () {
-                var checkbox_len = $('input[name="wine"]').filter(':checked').length;
-                if (checkbox_len > 0) {
-                    $('#form-send-btn').show();
-                } else  {
-                    $('#form-send-btn').hide();
-                }
-            });
-
-        </script>
         <script src="{{ asset('js/favorite.js') }}"></script>
     @endpush
 @endsection
