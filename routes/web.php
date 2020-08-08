@@ -62,11 +62,11 @@ Route::post('/profile/update', 'Profile\IndexController@update')->name('profile-
 Route::get('/add-to-favorite', 'Page\FavoriteController@addToFavorite')->name('add-to-favorite');
 Route::get('/delete-from-favorite', 'Page\FavoriteController@deleteFromFavorite')->name('delete-from-favorite');
 
-Route::get('/favorite', 'Profile\IndexController@favorite')->name('favorite');
-Route::post('/favorite/order', 'Profile\IndexController@favorite_order')->name('favorite-order');
+Route::get('/profile/favorite', 'Profile\IndexController@favorite')->name('profile-favorite');
+Route::post('/profile/favorite/order', 'Profile\IndexController@favorite_order')->name('profile-favorite-order');
 
-Route::get('/my-orders', 'Profile\IndexController@myOrders')->name('my-orders');
-Route::get('/my-sets', 'Profile\IndexController@mySets')->name('my-sets');
+Route::get('/profile/orders', 'Profile\IndexController@orders')->name('profile-orders');
+Route::get('/profile/sets', 'Profile\IndexController@sets')->name('profile-sets');
 
 //подписки в ЛК
 Route::get('/sub-wines', 'Profile\IndexController@sub')->name('sub-wines');

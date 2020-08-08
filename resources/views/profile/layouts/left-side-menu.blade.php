@@ -9,14 +9,14 @@
         <div class="row">
             <div class="col-md-8 col-sm-8">
                 <ul class="menu_list">
-                    <li><a class="{{(\Request::route()->getName() == 'favorite') ? 'active' : ''}}"
-                           href="{{route('favorite')}}">Избранное</a></li>
+                    <li><a class="{{(\Request::route()->getName() == 'profile-favorite') ? 'active' : ''}}"
+                           href="{{route('profile-favorite')}}">Избранное</a></li>
                     <li><a class="{{(\Request::route()->getName() == 'sub-wines') ? 'active' : ''}}"
                            href="{{route('sub-wines')}}">Подписки</a></li>
-                    <li><a class="{{(\Request::route()->getName() == 'my-sets') ? 'active' : ''}}"
-                           href="{{route('my-sets')}}">Сеты</a></li>
-                    <li><a class="{{(\Request::route()->getName() == 'my-orders') ? 'active' : ''}}"
-                           href="{{route('my-orders')}}">Мои заказы</a></li>
+                    <li><a class="{{(\Request::route()->getName() == 'profile-sets') ? 'active' : ''}}"
+                           href="{{route('profile-sets')}}">Сеты</a></li>
+                    <li><a class="{{(\Request::route()->getName() == 'profile-orders') ? 'active' : ''}}"
+                           href="{{route('profile-orders')}}">Мои заказы</a></li>
                 </ul>
                 <ul class="additional">
                     <li><a href="">Спецпредложения</a></li>

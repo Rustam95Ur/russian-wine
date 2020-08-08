@@ -44,7 +44,7 @@
                                     </tbody>
                                 @endforeach
                             </table>
-                            <form method="post" id="favorite_order" action="{{route('favorite-order')}}">
+                            <form method="post" id="favorite_order" action="{{route('profile-favorite-order')}}">
                                 @csrf
                                 <input class="btn-danger" type="submit" id="form-send-btn" value='Сделать заказ' style="display: none">
                             </form>

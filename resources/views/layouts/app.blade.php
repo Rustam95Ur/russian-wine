@@ -91,7 +91,7 @@
                     if (data.length > 0) {
                         for (var i = 0; i < 3; i++) {
                             var wine_desc = ((data[i].production_feature.substring(1, 40)).replace('p>', '')).replace('</p>', '')
-                            res[i] = "<ul><li><img id='search' src='/storage/" + data[i].image + "' class='xs-thumb'>" + data[i].title + ' ' +  wine_desc + '...' + "</li></ul>"
+                            res[i] = "<ul><li><a class='text-danger' href='/wine/" + data[i].slug + "'><img id='search' src='/storage/" + data[i].image + "' class='xs-thumb'>" + data[i].title + ' ' + wine_desc + '...' + "</a></li></ul>"
                         }
                         $("#searchResult").html(res)
                     } else {

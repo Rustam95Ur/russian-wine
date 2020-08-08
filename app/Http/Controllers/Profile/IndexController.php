@@ -66,13 +66,13 @@ class IndexController extends Controller
         return view('profile.sub-wines', $data);
     }
 
-    public function myOrders()
+    public function orders()
     {
         $data = $this->menu_item_count();
         return view('profile.my-orders', $data);
     }
 
-    public function mySets()
+    public function sets()
     {
         $data = $this->menu_item_count();
         return view('profile.my-sets', $data);
@@ -104,6 +104,7 @@ class IndexController extends Controller
     {
         $favorites_wines = Auth::user()->wines()->count();
         $menu = ['favorite_count' => $favorites_wines];
+//        $menu[''];
         return $menu;
     }
 }
