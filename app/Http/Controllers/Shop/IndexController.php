@@ -307,8 +307,12 @@ class IndexController extends Controller
 
             foreach ($cart_session as $item) {
                 if ($item['type'] == 'set') {
-                    $product = Set::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
-                    $product_type = 'Сеты';
+                    $product = Set::select('title', 'price', 'image', 'id', 'in_subscription')->where('id', '=', $item['product_id'])->first();
+                    if ($product->in_subscription) {
+                        $product_type = 'Подписка на сеты';
+                    } else {
+                        $product_type = 'Сеты';
+                    }
 
                 } elseif ($item['type'] == 'wine') {
                     $product = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
