@@ -2,7 +2,7 @@ $(function () {
     $('.add_to_favorite').on('click', function () {
         var wine_id = $(this).attr('id')
         $.ajax({
-            url: 'add-to-favorite',
+            url: '/profile/add-to-favorite',
             data: {
                 'wine_id': wine_id
             },
@@ -28,7 +28,7 @@ $(function () {
     $('.delete_favorite').on('click', function () {
         var wine_id = $(this).attr('id');
         $.ajax({
-            url: 'delete-from-favorite',
+            url: '/profile/delete-from-favorite',
             data: {
                 'wine_id': wine_id
             },

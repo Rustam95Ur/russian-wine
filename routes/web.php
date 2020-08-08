@@ -59,8 +59,8 @@ Route::get('/profile', 'Profile\IndexController@show')->name('profile');
 Route::post('/profile/update', 'Profile\IndexController@update')->name('profile-update');
 
 
-Route::get('/add-to-favorite', 'Page\FavoriteController@addToFavorite')->name('add-to-favorite');
-Route::get('/delete-from-favorite', 'Page\FavoriteController@deleteFromFavorite')->name('delete-from-favorite');
+Route::get('/profile/add-to-favorite', 'Page\FavoriteController@addToFavorite')->name('add-to-favorite');
+Route::get('/profile/delete-from-favorite', 'Page\FavoriteController@deleteFromFavorite')->name('delete-from-favorite');
 
 Route::get('/profile/favorite', 'Profile\IndexController@favorite')->name('profile-favorite');
 Route::post('/profile/favorite/order', 'Profile\IndexController@favorite_order')->name('profile-favorite-order');

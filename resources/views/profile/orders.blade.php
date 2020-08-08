@@ -8,10 +8,11 @@
         <div id="content">
             <div class="row">
                 @include('profile.layouts.left-side-menu')
-                @if(count($orders) > 0)
-                    <div class="col-md-8">
-                        <div class="order-table-block">
-                            <h1>Мои заказы</h1>
+                <div class="col-md-8">
+                    <div class="order-table-block">
+                        <h1>Мои заказы</h1>
+                        @if(count($orders) > 0)
+
                             <table class="table" id="order_table">
                                 <tbody>
                                 @foreach($orders as $order)
@@ -31,9 +32,10 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                        </div>
+                        @endif
                     </div>
-                @else
+                </div>
+                @if(count($orders) == 0)
                     <div class="mt-lg text-center">
                         <h3>Вы не сделали ни одного заказа</h3>
                         <a href={{route('wine-shop')}}>

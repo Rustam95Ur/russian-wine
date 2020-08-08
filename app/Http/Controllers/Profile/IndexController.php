@@ -43,10 +43,10 @@ class IndexController extends Controller
         $cart_info = '';
         $total_sum = 0;
         foreach ($request->wines as $wine) {
-                $wine = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $wine)->first();
+            $wine = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $wine)->first();
             if ($wine) {
                 $total_sum += (int)$wine->price;
-                $cart_info .= 'Название: <b>' . $wine->title . '</b>'. '. </b>Количество: <b>' . 1 . '</b> штук <br>  ';
+                $cart_info .= 'Название: <b>' . $wine->title . '</b>' . '. </b>Количество: <b>' . 1 . '</b> штук <br>  ';
             }
         }
         $cart_info .= 'Общая сумма: <b>' . $total_sum . '</b>';
@@ -67,51 +67,52 @@ class IndexController extends Controller
         return view('profile.sub-wines', $data);
     }
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function orders()
-{
-    $data = $this->menu_item_count();
-    $orders = Order::where('email', '=', Auth::user()->email)->get();
-    $order_list = [];
-    foreach ($orders as $key => $value) {
-        $total_price = 0;
-        $request = json_decode($value->request);
-        $order['id']  = $value->id;
-        $order['date_created']  = date($value->created_at);
-        foreach ($request as $item) {
-            if($item->type == 'set') {
-                $total_price += $item->price;
-            }
-        }
-        $order['total_price'] = $total_price;
-        array_push($order_list, $order);
-    }
-    $data['orders'] = $order_list;
-    return view('profile.orders', $data);
-}
-
-    public function sets()
     {
-        $data   = $this->menu_item_count();
+        $data = $this->menu_item_count();
         $orders = Order::where('email', '=', Auth::user()->email)->get();
-        $setIds = [];
-
-        foreach ($orders as $key => $order) {
-            $requests = json_decode($order->request);
-
-            foreach ($requests as $request) {
-                $requestType = $request->type;
-
-                if ($requestType === 'set') {
-                    $setIds[] = $request->product_id;
+        $order_list = [];
+        foreach ($orders as $key => $value) {
+            $total_price = 0;
+            $request = json_decode($value->request);
+            $order['id'] = $value->id;
+            $order['date_created'] = date($value->created_at);
+            foreach ($request as $item) {
+                if ($item->type == 'set') {
+                    $total_price += $item->price * $item->qty;
                 }
             }
-
+            $order['total_price'] = $total_price;
+            array_push($order_list, $order);
         }
+        $data['orders'] = $order_list;
+        return view('profile.orders', $data);
+    }
 
-        $sets         = Set::whereIn('id', $setIds)->get();
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function sets()
+    {
+        $data = $this->menu_item_count();
+        $orders = Order::where('email', '=', Auth::user()->email)->get();
+        $set_id_array = [];
+        foreach ($orders as $key => $order) {
+            $requests = json_decode($order->request);
+            foreach ($requests as $request) {
+                $requestType = $request->type;
+                if ($requestType === 'set') {
+                    $set_id_array[] = $request->product_id;
+                }
+            }
+        }
+        $sets = Set::whereIn('id', $set_id_array)->get();
         $data['sets'] = $sets;
 
-        return view('profile.my-sets', $data);
+        return view('profile.sets', $data);
     }
 
 
@@ -146,7 +147,7 @@ class IndexController extends Controller
             if ($order->type == Order::TYPE_CART) {
                 $request = json_decode($order->request);
                 foreach ($request as $item) {
-                    if($item->type == 'set') {
+                    if ($item->type == 'set') {
                         $count_sets += $item->qty;
                     }
                 }
