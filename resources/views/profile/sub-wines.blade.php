@@ -44,14 +44,11 @@
                             <button class="tablinks" onclick="openSubWines(event, 'old')">Прошедшие</button>
                         </div>
 
-                        <div id="current" class="tabcontent active">
+                        <div id="current" class="tabcontent" style="display: block">
                             @if(empty($subscriptions))
                                 <div style="color: grey !important; margin: 100px;">
                                     <center>
                                         <h3>У вас нет действующих подписок</h3>
-
-
-
                                         <button class="btn-danger"><a class="subscription" href="{{route('subscription')}}">Оформить подписку</a></button>
                                     </center>
                                 </div>
