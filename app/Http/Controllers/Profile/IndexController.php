@@ -14,15 +14,23 @@ class IndexController extends Controller
         $this->middleware('auth:client');
     }
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show()
     {
         return view('profile.show');
     }
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function favorite()
     {
         $favorites = Auth::user()->wines;
-        return view('profile.favorite', ['favorites' => $favorites]);
+        return view('profile.favorite', [
+            'favorites' => $favorites
+        ]);
     }
 
     public function sub()

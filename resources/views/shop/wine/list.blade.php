@@ -483,17 +483,16 @@
                             <div class="swiper-slide">
                                 <div class="wine">
                                     <div class="image">
-                                        @if(in_array($wine->id, $favorite))
-                                            <p class="deletefavorite" id="{{$wine->id}}">
-                                                <i class="fa fa-heart fa-5x" aria-hidden="true"></i>
-                                            </p>
-                                        @else
-                                            <p class="likeSlider"  id="{{$wine->id}}">
-                                                <img src="{{ asset ('image/like.svg') }}" alt="like for this wine">
-                                            </p>
-                                        @endif
+                                        <p class="delete_favorite likeSlider unlike-{{$wine->id}}"  id="{{$wine->id}}"
+                                           style="display: {{in_array($wine->id, $favorite) ? '' : 'none'}}">
+                                            <img src="{{ asset ('image/un_like.svg') }}" alt="unlike for this wine">
+                                        </p>
+                                        <p class="add_to_favorite likeSlider like-{{$wine->id}}" id="{{$wine->id}}"
+                                           style="display: {{in_array($wine->id, $favorite) ? 'none' : ''}}">
+                                            <img src="{{ asset ('image/like.svg') }}" alt="like for this wine">
+                                        </p>
                                         <a href="{{route('wine', $wine->slug)}}" class="preview">
-                                            <img src="{{Voyager::image($wine->image)}}">
+                                            <img alt="{{$wine->title}}" src="{{ Voyager::image($wine->image) }}">
                                             <span class="attributes"></span>
                                         </a>
                                     </div>
@@ -539,7 +538,10 @@
         </div>
     </div>
     @push('scripts')
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
         <script src="{{ asset('js/cart.js') }}"></script>
         <script src="{{asset('js/wine-shop-filter.js')}}"></script>
+        <script src="{{ asset('js/favorite.js') }}"></script>
     @endpush
 @endsection

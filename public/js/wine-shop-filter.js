@@ -1,3 +1,23 @@
+/*  POPOVER JS*/
+
+tippy('.tippyTooltip', {
+    content(reference) {
+        const id = reference.getAttribute('data-template');
+        const template = document.getElementById(id);
+        return template.innerHTML;
+    },
+    allowHTML: true,
+    trigger: 'click',
+    allowHTML: true,
+    theme: 'light-border',
+    interactive: true,
+    hideOnClick: true,
+    maxWidth: 'none',
+    offset: [0, 10],
+    placement: 'right',
+});
+/*  POPOVER JS END*/
+
 $('#search-main').on('keyup', function () {
     $('.search-btn').show()
 })

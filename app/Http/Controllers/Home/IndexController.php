@@ -31,15 +31,12 @@ class IndexController extends Controller
 
         $favorite_wine_id = [];
         if (Auth::guard('client')->user()) {
-            $client_id = Auth::guard('client')->user()->id;
-            $favorite_wines = DB::table('client_wine')
-                ->join('wines', 'client_wine.wine_id', '=', 'wines.id')
-                ->where('client_wine.client_id', '=', $client_id)->get();
+            $client = Auth::guard('client')->user();
+            $favorite_wines = $client->wines()->get();
             foreach ($favorite_wines as $wine) {
-                $favorite_wine_id[] = $wine->wine_id;
+                $favorite_wine_id[] = $wine->id;
             }
         }
-
         $winemakers = Winemaker::where('status', '=', 'ACTIVE')->with('wines', 'region', 'winery')->get();
         $home_set = Set::where('in_home', true)->first();
         $home_tasting = Tasting::where('in_home', true)->first();

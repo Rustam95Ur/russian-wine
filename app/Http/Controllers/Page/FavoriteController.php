@@ -6,37 +6,53 @@ use App\Http\Controllers\Controller;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Wine;
 
-/**
- *
- */
+
 class FavoriteController extends Controller
 {
-    // Только залогиненый пользователь можешь добавлять в избанные
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     */
     public function addToFavorite(Request $request)
     {
         $user = Auth::guard('client')->user();
-
         if ($user == null) {
-            return response(['message' =>'Только авторизованные пользователи могут добавлять в избранные'], 401);
-//            return [
-//                'status' => 401,
-//                'message' => 'Только авторизованные пользователи могут добавлять в избранные'
-//            ];
+            return response(['message' => 'Только авторизованные пользователи могут добавлять в избранные'], 401);
+        }
+        $wine = Wine::where('id', '=', $request->wine_id)->first();
+        if ($wine) {
+            if (! $user->wines->contains($wine->id)) {
+                $user->wines()->save($wine);
+            }
+            return response(['message'=> 'Товар добавлен в избранное'], 201);
+        } else {
+            return response(['message' => 'Данное вино не существует'], 404);
         }
 
-        DB::table('client_wine')->insert(
-            ['client_id' => $user->id, 'wine_id' => $request->wine_id]
-        );
 
     }
 
-    //Удаляем из избранных
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     */
     public function deleteFromFavorite(Request $request)
     {
         $user = Auth::guard('client')->user();
+        if ($user == null) {
+            return response(['message' => 'Только авторизованные пользователи могут добавлять в избранные'], 401);
+        }
+        $wine = Wine::where('id', '=', $request->wine_id)->first();
+        if ($wine) {
+            if ($user->wines->contains($wine->id)) {
+                $user->wines()->detach($wine);
+            }
+            return response(['message'=> 'Товар удален из избранного'], 201);
+        } else {
+            return response(['message' => 'Данное вино не существует'], 404);
+        }
 
-        DB::table('client_wine')->where('client_id', '=', $user->id)
-            ->where('wine_id', '=', $request->wine_id)->delete();
     }
 }
