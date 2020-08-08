@@ -91,7 +91,26 @@ class IndexController extends Controller
 
     public function sets()
     {
-        $data = $this->menu_item_count();
+        $data   = $this->menu_item_count();
+        $orders = Order::where('email', '=', Auth::user()->email)->get();
+        $setIds = [];
+
+        foreach ($orders as $key => $order) {
+            $requests = json_decode($order->request);
+
+            foreach ($requests as $request) {
+                $requestType = $request->type;
+
+                if ($requestType === 'set') {
+                    $setIds[] = $request->product_id;
+                }
+            }
+
+        }
+
+        $sets         = Set::whereIn('id', $setIds)->get();
+        $data['sets'] = $sets;
+
         return view('profile.my-sets', $data);
     }
 

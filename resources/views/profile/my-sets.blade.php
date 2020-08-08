@@ -52,15 +52,17 @@
                         <h1>Сеты</h1>
                         <table class="table" id="cssTable">
                                 <tbody>
+                                @foreach($sets as $set)
                                 <tr>
-                                    <td><img src="{{ asset ('image/1OLwTAcYZZn9L9hwUju2.png') }}" width="30px" height="100px" alt=""></td>
-                                    <td>Название товара</td>
-                                    <td>1000 Р</td>
+                                    <td><img src="{{$set->image}}" width="30px" height="100px" alt=""></td>
+                                    <td>{{$set->title}}</td>
+                                    <td>{{$set->price}}</td>
                                     <form action="" method="GET">
                                         <td><input class="reorder" type="submit" id="submit_prog" value='Повторить заказ' /></td>
                                     </form>
 
                                 </tr>
+                                @endforeach
                                 </tbody>
                         </table>
                     </div>
