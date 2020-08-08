@@ -1,9 +1,8 @@
 @extends('layouts.app')
 @push('styles')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/profile-personal-info-form.css') }}">
-{{--    <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">--}}
-
 @endpush
+@section('body_class', 'footer-hide')
 @section('content')
     <div id="franchise">
         <div id="content">
@@ -45,10 +44,6 @@
                                     <div class="form-group float-label-control">
                                         <button type="submit" class="saveProfile">Сохранить</button>
                                     </div>
-
-                                    <div class="form-group float-label-control" id="success-message">
-                                        {{$success ?? ''}}
-                                    </div>
                                 </div>
                             </form>
 
@@ -74,6 +69,11 @@
 
     @push('scripts')
         <script src="{{ asset('js/profile-input-animation.js') }}"></script>
+        <script>
+            setTimeout(function () {
+                $('#success-message').addClass('hide')
+            }, 5000);
+        </script>
     @endpush
 
 @endsection

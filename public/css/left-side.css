@@ -1,0 +1,38 @@
+#left-side-block  .userData{
+    margin: 15%;
+}
+#left-side-block .menu_list li, .additional li, .count-list li {
+    margin-top: 10px;
+    font-size: 18px;
+}
+#left-side-block .additional a.active, .menu_list a.active {
+    color: #DA224D;
+}
+#left-side-block .btn-link {
+    color: white;
+    padding: 0;
+}
+#left-side-block ul{
+    list-style: none;
+    color:white;
+}
+.right {
+    text-align: right
+}
+.heading{
+    color: white;
+}
+.discount {
+    color:#DA224D;
+    margin-top:-10px;
+    font-size: 33px !important;
+    font-weight: bold;
+}
+.additional {
+    margin-top: 20px;
+}
+.logout{
+    margin-top: 50px;
+}
+
+
