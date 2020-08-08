@@ -4,23 +4,27 @@
 @endpush
 @section('body_class', 'footer-hide')
 @section('content')
-    <div id="franchise">
+    <div id="profile">
         <div id="content">
             <div class="row">
                 @include('profile.layouts.left-side-menu')
                 <div class="col-md-8">
-                    <div style="margin: 30px;">
+                    <div class="sets-block" >
                         <h1>Сеты</h1>
-                        <table class="table" id="cssTable">
+                        @if(count($sets) > 0)
+                        <table class="table text-center" id="sets_table">
                             <tbody>
                             @foreach($sets as $set)
                                 <tr>
-                                    <td>
+                                    <td width="20%">
                                         <img src="{{Voyager::image($set->image)}}"
                                              alt="{{$set->title}}">
                                     </td>
-                                    <td>{{$set->title}}</td>
-                                    <td>{{$set->price}}</td>
+                                    <td class="text-center"><b>{{$set->title}}</b></td>
+                                    <td class="text-center">
+                                        <b>{{$set->price}}</b>
+                                        <span class="currency">о</span><b></b>
+                                    </td>
                                         <td>
                                             <form action="" method="post">
                                             <input class="btn-danger" type="submit" id="submit_prog"
@@ -31,6 +35,14 @@
                             @endforeach
                             </tbody>
                         </table>
+                        @else
+                            <div class="mt-lg text-center">
+                                <h3>Вы не заказали ни одного сета</h3>
+                                <a href={{route('wine-shop')}}>
+                                    <button class="btn-danger">Перейти в Винотеку</button>
+                                </a>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>

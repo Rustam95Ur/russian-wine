@@ -35,11 +35,24 @@
 #profile .order-table-block {
     margin: 50px;
 }
-#profile .order-table-block #order_table  {
+
+#profile .order-table-block #order_table {
     margin-top: 30px;
 }
 
 #profile .order-table-block #order_table .show-details {
     border: none;
     background: none;
+}
+
+#profile .sets-block {
+    margin: 30px;
+}
+
+#profile #sets_table .text-center {
+    padding-top: 70px;
+}
+
+#profile #sets_table {
+    border-bottom: 1px solid;
 }
