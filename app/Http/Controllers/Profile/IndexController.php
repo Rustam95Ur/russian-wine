@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Profile;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Set;
+use DB;
 use App\Models\Wine;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -67,10 +68,22 @@ class IndexController extends Controller
     }
 
     public function orders()
-    {
-        $data = $this->menu_item_count();
-        return view('profile.my-orders', $data);
+{
+    $data = $this->menu_item_count();
+    $orders = Order::where('email', '=', Auth::user()->email)->get();
+    $productIds = [];
+
+    foreach ($orders as $key => $order) {
+        $request = json_decode($order->request);
+        $productIds[] = $request[$key]->product_id;
     }
+
+    $wines = DB::table('wines')->whereIn('id', $productIds)->get();
+
+    $data['orders'] = $wines;
+
+    return view('profile.my-orders', $data);
+}
 
     public function sets()
     {
