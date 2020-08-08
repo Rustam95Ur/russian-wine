@@ -50,8 +50,9 @@ function decreaseQty() {
 function increaseQty() {
     $('.increaseQty').on('click', function () {
         var product_id = $(this).attr('id').replace('increase-', ''),
-            input_val = parseInt($('input[name="quantity[' + product_id + ']"]').val()) + 1;
-        cart_add(product_id, 1)
+            input_val = parseInt($('input[name="quantity[' + product_id + ']"]').val()) + 1,
+            type = $('#type-'+product_id).val();
+        cart_add(product_id, 1, type)
         $('input[name="quantity[' + product_id + ']"]').val(parseInt($('input[name="quantity[' + product_id + ']"]').val()) + 1);
         var prodsum = parseInt($('input[name="quantity[' + product_id + ']"]').val()) * parseInt($('input[name="quantity[' + product_id + ']"]').attr('data-price'));
         $('input[name="quantity[' + product_id + ']"]').parent().parent().siblings('.total').html('<b>' + prodsum + '</b><span>о</span>');
@@ -62,11 +63,12 @@ function increaseQty() {
 
 function cart_remove() {
     $('.cart_remove').on('click', function () {
-        var wine_id = $(this).attr('id').replace('cart-wine-remove-', '');
+        var product_id = $(this).attr('id').replace('cart-wine-remove-', ''),
+            type = $('#type-'+product_id).val()
         $.ajax({
-            url: '/cart/remove/' + wine_id + '/' + 0,
+            url: '/cart/remove/'+ type  + '/' + product_id + '/' + 0,
             success: function (data) {
-                $('#tr-' + wine_id).remove()
+                $('#tr-' + product_id).remove()
                 recountTotal();
                 count_wines();
                 countItem();
@@ -77,10 +79,11 @@ function cart_remove() {
 
 function cart_remove_one() {
     $('.decreaseQty').on('click', function () {
-        var wine_id = $(this).attr('id').replace('decrease-', ''),
-            qtn = $('input[name="quantity[' + wine_id + ']"]').val()
+        var product_id = $(this).attr('id').replace('decrease-', ''),
+            qtn = $('input[name="quantity[' + product_id + ']"]').val(),
+            type = $('#type-'+product_id).val()
         $.ajax({
-            url: '/cart/remove/' + wine_id + '/' + qtn,
+            url: '/cart/remove/' + type + '/' + product_id + '/' + qtn,
             success: function (data) {
                 recountTotal();
                 count_wines();
@@ -98,25 +101,25 @@ function cart_table_update() {
             url: '/cart/get-wines',
             success: function (data) {
                 document.getElementById("product_buy").innerHTML = "";
-                $.each(data.wines, function (key, value) {
-                    $("#product_buy").append("<tr id='tr-" + value['wine_id'] + "'><td class='image'>\n" +
+                $.each(data.products, function (key, value) {
+                    $("#product_buy").append("<tr id='tr-" + value['product_id'] + "'><td class='image'>\n" +
                         "<a><img src='" + value['image'] + "' alt='" + value['title'] + "' title='" + value['title'] + "' " +
-                        "style='width: 40%'></a></td><td class='name'><a>" + value['title'] + "</a>" + value['price'] +
+                        "style='width: 50%'></a></td><td class='name'><a>" + value['title'] + "</a>" + value['price'] +
                         "<span>п</span><div class='options'></div></td><td class='quantity'>" +
                         "<div class='input-group btn-block' style='max-width: 200px;'><span class='input-group-btn cheight'>\n" +
-                        "<button class='btn btn-primary decreaseQty' id='decrease-" + value['wine_id'] + "' data-toggle='tooltip' " +
+                        "<button class='btn btn-primary decreaseQty' id='decrease-" + value['product_id'] + "' data-toggle='tooltip' " +
                         "type='submit' data-original-title='' title=''><i class='fa fa-minus'></i></button></span>\n" +
                         "<input class='form-control cheight' data-price='" + value['price'] + "' type='text' data-onchange='changeProductQuantity' " +
-                        "name='quantity[" + value['wine_id'] + "]' value='" + value['count'] + "' size='1'>\n" +
-                        "<span class='input-group-btn cheight'><button class='btn btn-primary increaseQty' id='increase-" + value['wine_id'] + "' " +
+                        "name='quantity[" + value['product_id'] + "]' value='" + value['count'] + "' size='1'>\n" +
+                        "<span class='input-group-btn cheight'><button class='btn btn-primary increaseQty' id='increase-" + value['product_id'] + "' " +
                         "data-toggle='tooltip' type='submit' data-original-title='' title=''><i class='fa fa-plus'></i>\n" +
                         "</button></span></div></td><td class='total'><b>" + value['total'] + "</b>\n" +
                         "<span>о</span></td><td class='remove'><button class='btn btn-danger cart_remove' " +
-                        "id='cart-wine-remove-" + value['wine_id'] + "' title='Удалить'><i class='fa fa-times-circle'></i>\n" +
-                        "</button></td></tr>")
+                        "id='cart-wine-remove-" + value['product_id'] + "' title='Удалить'><i class='fa fa-times-circle'></i>\n" +
+                        "</button><input type='hidden' name='type' id='type-'"+ value['product_id'] +"></td></tr>")
                 })
                 $('#total_price').text(data.total_sum);
-                $('#count-prods').text(data.count_wine);
+                $('#count-prods').text(data.count_products);
                 decreaseQty()
                 increaseQty()
                 cart_remove()

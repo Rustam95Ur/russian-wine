@@ -1,7 +1,7 @@
-function cart_add(wine_id, qtn) {
+function cart_add(wine_id, qtn, type) {
     $('.cart-btn-' + wine_id).addClass('active');
     $.ajax({
-        url: '/cart/add/' + wine_id + '/' + qtn,
+        url: '/cart/add/'+  type + '/' + wine_id + '/' + qtn ,
         success: function (data) {
             countItem();
             cart_table_update()

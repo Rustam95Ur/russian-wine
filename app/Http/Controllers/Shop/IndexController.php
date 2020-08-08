@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Color;
 use App\Models\GrapeSort;
 use App\Models\Region;
+use App\Models\Set;
 use App\Models\Wine;
 use App\Models\WineClass;
 use App\Models\Winemaker;
@@ -100,23 +101,29 @@ class IndexController extends Controller
     }
 
     /**
-     * @param int $wine_id
+     * @param int $product_id
      * @param int $qty
+     * @param string $type
      * @return mixed
      */
-    protected function add_to_cart(int $wine_id, int $qty)
+    protected function add_to_cart(string $type, int $product_id, int $qty)
     {
-        $checkProduct = Wine::where('id', '=', $wine_id)->firstOrFail();
+        if ($type == 'wine') {
+            $checkProduct = Wine::where('id', '=', $product_id)->firstOrFail();
+        } elseif ($type == 'set') {
+            $checkProduct = Set::where('id', '=', $product_id)->firstOrFail();
+        }
         $countItem = $checkProduct->count;
         if ($qty > $countItem) {
             return \Response::json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
         }
-        $item = ['wine_id' => $wine_id, 'qty' => $qty];
+        $item = ['product_id' => $product_id, 'qty' => $qty, 'type' => $type];
         $sessionItems = Session::get('cart');
         $results = [];
         if ($sessionItems and count($sessionItems) > 0) {
-            $status = array_search($wine_id, array_column($sessionItems, 'wine_id'));
-            if ($status === false) {
+            $status = array_search($product_id, array_column($sessionItems, 'product_id'));
+            $status_type = array_search($type, array_column($sessionItems, 'type'));
+            if ($status === false or $status_type === false) {
                 array_push($sessionItems, $item);
                 Session::forget('cart');
                 foreach ($sessionItems as $result) {
@@ -124,13 +131,15 @@ class IndexController extends Controller
                 }
             } else {
                 for ($i = 0; $i < count($sessionItems); $i++) {
-                    $sum = ($sessionItems[$i]['wine_id'] == $wine_id) ? $sessionItems[$i]['qty'] + $qty : $sessionItems[$i]['qty'];
+                    $sum = ($sessionItems[$i]['product_id'] == $product_id and $sessionItems[$i]['type'] == $type) ? $sessionItems[$i]['qty'] + $qty : $sessionItems[$i]['qty'];
+
                     if ($sum > $countItem) {
                         return \Response::json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
                     }
                     $newArray = [
-                        'wine_id' => $sessionItems[$i]['wine_id'],
+                        'product_id' => $sessionItems[$i]['product_id'],
                         'qty' => $sum,
+                        'type' => $sessionItems[$i]['type']
                     ];
                     $results[$i] = $newArray;
                 }
@@ -145,27 +154,44 @@ class IndexController extends Controller
         return \Response::json(['success' => trans('shop.success.add-cart')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }
 
-    protected function remove_to_cart(int $wine_id, int $qty = 0)
+    /**
+     * @param string $type
+     * @param int $product_id
+     * @param int $qty
+     * @return mixed
+     */
+    protected function remove_to_cart(string $type, int $product_id, int $qty = 0)
     {
-        $checkProduct = Wine::where('id', '=', $wine_id)->firstOrFail();
+        if ($type == 'wine') {
+            $checkProduct = Wine::where('id', '=', $product_id)->firstOrFail();
+        } elseif ($type == 'set') {
+            $checkProduct = Set::where('id', '=', $product_id)->firstOrFail();
+        }
         $countItem = $checkProduct->count;
         if ($qty > $countItem) {
             return \Response::json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
         }
         $sessionItems = Session::get('cart');
+
         if ($sessionItems) {
-            $itemIndex = array_search($wine_id, array_column($sessionItems, 'wine_id'));
-            if ($itemIndex !== false) {
+            $itemIndex = array_search($product_id, array_column($sessionItems, 'product_id'));
+            $typeIndex = array_search($type, array_column($sessionItems, 'type'));
+            if ($itemIndex !== false and $typeIndex !== false) {
                 Session::forget('cart');
                 if ($qty == 0) {
-                    unset($sessionItems[$itemIndex]);
+                    foreach ($sessionItems as $key => $item) {
+                        if ($item['product_id'] == $product_id and $item['type'] == $type) {
+                            unset($sessionItems[$key]);
+                        }
+                    }
                 } else {
                     $results = [];
                     for ($i = 0; $i < count($sessionItems); $i++) {
-                        $newQty = ($sessionItems[$i]['wine_id'] == $wine_id) ? $qty : $sessionItems[$i]['qty'];
+                        $newQty = ($sessionItems[$i]['product_id'] == $product_id) ? $qty : $sessionItems[$i]['qty'];
                         $newArray = [
-                            'wine_id' => $sessionItems[$i]['wine_id'],
-                            'qty' => $newQty
+                            'product_id' => $sessionItems[$i]['product_id'],
+                            'qty' => $newQty,
+                            'type' => $sessionItems[$i]['type'],
                         ];
                         $results[$i] = $newArray;
                     }
@@ -207,29 +233,34 @@ class IndexController extends Controller
     protected function get_car_wines()
     {
         $total_sum = 0;
-        $countWine = 0;
-        $cart_wines = [];
+        $countProduct = 0;
+        $cart_products = [];
         $countCartItems = Session::get('cart');
         if ($countCartItems != false) {
             foreach ($countCartItems as $item) {
-                $wine = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['wine_id'])->first();
-                if ($wine) {
-                    $wine_array = [
+                if ($item['type'] == 'wine') {
+                    $product = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
+                } elseif ($item['type'] == 'set') {
+                    $product = Set::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
+                }
+                if ($product) {
+                    $product_array = [
                         'count' => $item['qty'],
-                        'wine_id' => $wine->id,
-                        'title' => $wine->title,
-                        'price' => $wine->price,
-                        'image' => Voyager::image($wine->image),
-                        'total' => (int)$wine->price * $item['qty']
+                        'type' => $item['type'],
+                        'product_id' => $product->id,
+                        'title' => $product->title,
+                        'price' => $product->price,
+                        'image' => Voyager::image($product->image),
+                        'total' => (int)$product->price * $item['qty']
                     ];
-                    array_push($cart_wines, $wine_array);
-                    $total_sum += (int)$wine->price * $item['qty'];
-                    $countWine += 1;
+                    array_push($cart_products, $product_array);
+                    $total_sum += (int)$product->price * $item['qty'];
+                    $countProduct += 1;
                 }
             }
         }
-        $wines = ['wines' => $cart_wines];
-        $count_wine_array = ['count_wine' => $countWine];
+        $wines = ['products' => $cart_products];
+        $count_wine_array = ['count_products' => $countProduct];
         $total_sums = ['total_sum' => $total_sum];
         $result = array_merge($wines, $count_wine_array, $total_sums);
         return \Response::json($result, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
@@ -244,9 +275,13 @@ class IndexController extends Controller
         if ($countCartItems != false) {
             $total_sum = 0;
             foreach ($countCartItems as $item) {
-                $wine = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['wine_id'])->first();
-                if ($wine) {
-                    $total_sum += (int)$wine->price * $item['qty'];
+                if ($item['type'] == 'set') {
+                    $product = Set::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
+                } elseif ($item['type'] == 'wine') {
+                    $product = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
+                }
+                if ($product) {
+                    $total_sum += (int)$product->price * $item['qty'];
                 }
             }
             if ($total_sum == 0) {
@@ -269,18 +304,26 @@ class IndexController extends Controller
             $total_sum = 0;
 
             foreach ($cart_session as $item) {
-                $wine = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['wine_id'])->first();
-                if ($wine) {
-                    $total_sum += (int)$wine->price * $item['qty'];
-                    $cart_info .='Название: '. $wine->title. '. Количество: '. $item['qty'] . ' штук <br> ';
+                if ($item['type'] == 'set') {
+                    $product = Set::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
+                    $product_type = 'Сеты';
+
+                } elseif ($item['type'] == 'wine') {
+                    $product = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
+                    $product_type = 'Вино';
+
+                }
+                if ($product) {
+                    $total_sum += (int)$product->price * $item['qty'];
+                    $cart_info .= 'Название: <b>' . $product->title . '</b> Тип продуката: <b>' . $product_type . '. </b>Количество: <b>' . $item['qty'] . '</b> штук <br>  ';
                 }
             }
-            $cart_info .= 'Общая сумма: ' . $total_sum;
+            $cart_info .= 'Общая сумма: <b>' . $total_sum . '</b>';
             $saveRequest = new Order();
             $saveRequest->name = $request['name'];
             $saveRequest->phone = $request['phone'];
             $saveRequest->email = $request['email'];
-            $saveRequest->type = Order::TYPE_WINE;
+            $saveRequest->type = Order::TYPE_CART;
             $saveRequest->message = $cart_info;
             $saveRequest->request = json_encode($cart_session);
             $saveRequest->save();

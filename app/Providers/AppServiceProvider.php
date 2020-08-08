@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Set;
 use App\Models\Wine;
 use Illuminate\Support\ServiceProvider;
 use Carbon\Carbon;
@@ -38,18 +39,23 @@ class AppServiceProvider extends ServiceProvider
             if ($countCartItems != false) {
                 foreach ($countCartItems as $item) {
                     $count += $item['qty'];
-                    $wine = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['wine_id'])->first();
-                    if ($wine) {
+                    if ($item['type'] == 'set') {
+                        $product = Set::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
+                    } elseif ($item['type'] == 'wine') {
+                        $product = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
+                    }
+                    if ($product) {
                         $wine_array = [
                             'count' => $item['qty'],
-                            'wine_id' => $wine->id,
-                            'title' => $wine->title,
-                            'price' => $wine->price,
-                            'image' => Voyager::image($wine->image),
-                            'total' => (int) $wine->price * $item['qty']
+                            'type' => $item['type'],
+                            'product_id' => $product->id,
+                            'title' => $product->title,
+                            'price' => $product->price,
+                            'image' => Voyager::image($product->image),
+                            'total' => (int)$product->price * $item['qty']
                         ];
                         array_push($cart_wines, $wine_array);
-                        $total_sum += (int) $wine->price * $item['qty'];
+                        $total_sum += (int)$product->price * $item['qty'];
                         $countWine += 1;
                     }
                 }

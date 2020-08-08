@@ -2,7 +2,7 @@
 @section('title', $set->seo_title)
 @section('description', $set->meta_description)
 @section('keywords', $set->meta_keywords)
-@section('body_class', 'set-page footer-hide')
+@section('body_class', 'set-page footer-hide other-page')
 @section('content')
     <div id="desktop-product">
         <div class="other-page" id="other-page">
@@ -50,7 +50,7 @@
                                    @endif
 		                        </div>
 	                        </span>
-                            <button id="podpisatsa" class="cartaddspec specmargbtn" data-id="918">в корзину</button>
+                            <button  class="add-cart btn-danger" onclick="cart_add('{{$set->id}}', 1, 'set');">в корзину</button>
                         </div>
                     </div>
                 </div>
@@ -173,23 +173,7 @@
             });
 
         </script>
-        <script>
-            $('body').addClass('other-page');
-        </script>
-        <script>
-            // $(function () {
-            //     $("#slider-range-min").slider({
-            //         range: "min",
-            //         value: 1,
-            //         min: 1,
-            //         max: 4,
-            //         slide: function (event, ui) {
-            //             $("#amount").val(ui.value);
-            //         }
-            //     });
-            //     $("#amount").val($("#slider-range-min").slider("value"));
-            // });
-        </script>
+        <script src="{{ asset('js/cart.js') }}"></script>
     @endpush
 
 @endsection

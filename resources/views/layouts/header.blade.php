@@ -139,13 +139,13 @@
                                                         </colgroup>
                                                         <tbody id="product_buy">
                                                         @foreach($cart_wines as $wine)
-                                                            <tr id="tr-{{$wine['wine_id']}}">
+                                                            <tr id="tr-{{$wine['product_id']}}">
                                                                 <td class="image">
                                                                     <a>
                                                                         <img src="{{$wine['image']}}"
                                                                              alt="{{$wine['title']}}"
                                                                              title="{{$wine['title']}}"
-                                                                             style="width: 40%">
+                                                                             style="width: 50%">
                                                                     </a>
                                                                 </td>
                                                                 <td class="name">
@@ -159,7 +159,7 @@
                                                                          style="max-width: 200px;">
                                                         <span class="input-group-btn cheight">
                                                             <button class="btn btn-primary decreaseQty"
-                                                                    id="decrease-{{$wine['wine_id']}}"
+                                                                    id="decrease-{{$wine['product_id']}}"
                                                                     data-toggle="tooltip" type="submit"
                                                                     data-original-title="" title="">
                                                                 <i class="fa fa-minus"></i>
@@ -169,11 +169,11 @@
                                                                                data-price="{{$wine['price']}} "
                                                                                type="text"
                                                                                data-onchange="changeProductQuantity"
-                                                                               name="quantity[{{$wine['wine_id']}}]"
+                                                                               name="quantity[{{$wine['product_id']}}]"
                                                                                value="{{$wine['count']}}" size="1">
                                                                         <span class="input-group-btn cheight">
                                                             <button class="btn btn-primary increaseQty"
-                                                                    id="increase-{{$wine['wine_id']}}"
+                                                                    id="increase-{{$wine['product_id']}}"
                                                                     data-toggle="tooltip" type="submit"
                                                                     data-original-title="" title="">
                                                                 <i class="fa fa-plus"></i>
@@ -186,10 +186,12 @@
                                                                     <span>о</span></td>
                                                                 <td class="remove">
                                                                     <button class="btn btn-danger cart_remove"
-                                                                            id="cart-wine-remove-{{$wine['wine_id']}}"
+                                                                            id="cart-wine-remove-{{$wine['product_id']}}"
                                                                             title="Удалить">
                                                                         <i class="fa fa-times-circle"></i>
                                                                     </button>
+                                                                    <input type="hidden" value="{{$wine['type']}}"
+                                                                        name="type" id="type-{{$wine['product_id']}}">
                                                                 </td>
                                                             </tr>
                                                         @endforeach
@@ -233,8 +235,9 @@
     </div>
     <div id="myOverlay" class="overlay">
         <a class="closebtn" onclick="$('#myOverlay').removeClass('open'); $('#black-logo').hide(); $('#white-logo').show()"
-           title="Close Overlay"><img
-                src="{{ asset ('image/plus.png') }}" style="transform: rotateZ(45deg); "></a>
+           title="Close Overlay">
+            <img src="{{ asset ('image/plus.png') }}" style="transform: rotateZ(45deg); ">
+        </a>
         <div class="overlay-content">
             <div class="overlay-form">
                 <img alt="search icon" src="{{ asset ('image/search.svg') }}" id="searchInputIcon">
