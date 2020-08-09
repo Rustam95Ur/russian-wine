@@ -116,7 +116,7 @@ function cart_table_update() {
                         "</button></span></div></td><td class='total'><b>" + value['total'] + "</b>\n" +
                         "<span>о</span></td><td class='remove'><button class='btn btn-danger cart_remove' " +
                         "id='cart-wine-remove-" + value['product_id'] + "' title='Удалить'><i class='fa fa-times-circle'></i>\n" +
-                        "</button><input type='hidden' name='type' id='type-'"+ value['product_id'] +"></td></tr>")
+                        "</button><input type='hidden' name='type' value='"+ value['type'] + "' id='type-"+ value['product_id'] +"'></td></tr>")
                 })
                 $('#total_price').text(data.total_sum);
                 $('#count-prods').text(data.count_products);

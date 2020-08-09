@@ -3082,7 +3082,8 @@ header #form-language .language-select {
     padding-right: 250px;
     max-width: 400px;
     margin-left: auto;
-    text-align: right
+    text-align: right;
+    margin-bottom: 20px;
 }
 
 #product-product.product-temp1 .amount .iblock {

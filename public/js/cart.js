@@ -1,10 +1,10 @@
 function cart_add(wine_id, qtn, type) {
-    $('.cart-btn-' + wine_id).addClass('active');
     $.ajax({
         url: '/cart/add/'+  type + '/' + wine_id + '/' + qtn ,
         success: function (data) {
         },
         complete: function () {
+            $('.cart-btn-' + wine_id).addClass('active');
             cart_table_update()
             countItem();
         }

@@ -997,7 +997,7 @@ input {
 
 .priceContainer .button_cont button#button-carts {
     padding: 0.417vw 1.563vw 0.417vw 3.125vw;
-    width: 9.063vw;
+    width: auto;
     font: 0.677vw 'ProximaNova-Bold';
     color: #fff;
     text-transform: uppercase;
@@ -1010,3 +1010,4 @@ input {
     transform: scale(1);
     border-radius: 25px;
 }
+

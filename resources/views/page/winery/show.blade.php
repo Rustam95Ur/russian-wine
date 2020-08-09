@@ -53,7 +53,7 @@
                                                     <div class="no_pad_no_act">
                                                         <div class="image">
                                                             <div class="wine">
-                                                                <a href="#"
+                                                                <a href="{{route('wine', $wine->slug)}}"
                                                                    class="preview">
                                                                     <img alt="{{$wine->title}}" class="img-responsive"
                                                                          src="{{Voyager::image($wine->image)}}">
@@ -65,7 +65,7 @@
                                                 <div class="col-xs-12 col-sm-6 col-sm-offset-1 wine-description">
                                                     <div class="wine">
                                                         <h3>
-                                                            <a href="#"
+                                                            <a href="{{route('wine', $wine->slug)}}"
                                                                class="preview">
                                                                 {{$wine->title}}
                                                             </a>
