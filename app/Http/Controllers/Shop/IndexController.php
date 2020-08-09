@@ -297,8 +297,10 @@ class IndexController extends Controller
             if ($total_sum == 0) {
                 return redirect()->back();
             } else {
+                $form_url = route('checkout_order');
                 return view('shop.checkout.index', [
-                    'total_price' => $total_sum
+                    'total_price' => $total_sum,
+                    'form_url' => $form_url,
                 ]);
             }
         } else {

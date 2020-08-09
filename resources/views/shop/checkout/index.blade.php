@@ -12,27 +12,34 @@
                                 <div class="checkout-block" id="checkout_customer">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <form method="post" id="order_checkout" action="{{route('checkout_order')}}">
+                                            <form method="post" id="order_checkout" action="{{$form_url}}">
                                                 @csrf
                                                 <fieldset id="account">
                                                     <div class="form-group required">
                                                         <label class="control-label"
                                                                for="input-payment-name">Имя</label>
-                                                        <input type="text" required name="name" value="" placeholder="Имя"
+                                                        <input type="text" required name="name" value=""
+                                                               placeholder="Имя"
                                                                id="input-payment-name" class="form-control">
                                                     </div>
                                                     <div class="form-group required">
                                                         <label class="control-label"
                                                                for="input-payment-email">E-Mail</label>
-                                                        <input type="email" required name="email" value="" placeholder="E-Mail"
+                                                        <input type="email" required name="email" value=""
+                                                               placeholder="E-Mail"
                                                                id="input-payment-email" class="form-control">
                                                     </div>
                                                     <div class="form-group required">
                                                         <label class="control-label"
                                                                for="input-payment-phone">Телефон</label>
-                                                        <input type="text" required name="phone" value="" placeholder="Телефон"
+                                                        <input type="text" required name="phone" value=""
+                                                               placeholder="Телефон"
                                                                id="input-payment-phone" class="form-control">
                                                     </div>
+                                                    @if(isset($input_hidden))
+                                                        <input type="hidden" name="checkout_id"
+                                                               value="{{$input_hidden}}">
+                                                    @endif
                                                 </fieldset>
                                             </form>
                                         </div>
@@ -43,8 +50,9 @@
                                 <div id="totalsum">Сумма к оплате<span>{{$total_price}}<i>о</i></span></div>
                                 <div class="button-block buttons" id="buttons">
                                     <div class="button-left">
-                                        <input type="submit" form="order_checkout" value="Оставить заявку" id="button-confirm"
-                                              class="btn btn-primary">
+                                        <input type="submit" form="order_checkout" value="Оставить заявку"
+                                               id="button-confirm"
+                                               class="btn btn-primary">
 
                                     </div>
                                     <span id="agreement_checkbox">

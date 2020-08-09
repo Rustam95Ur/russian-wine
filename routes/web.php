@@ -36,6 +36,7 @@ Route::get('/personal-wine', 'Shop\IndexController@personal_wine')->name('person
 Route::post('personal-wine/order', 'Shop\IndexController@personal_wine_order')->name('personal-wine-order');
 
 Route::get('/tastings', 'Shop\TastingsController@index')->name('tastings');
+Route::post('/tastings/checkout', 'Shop\TastingsController@checkout')->name('tasting_checkout');
 Route::post('tasting/order', 'Shop\TastingsController@order')->name('tasting_order');
 
 Route::get('/wine-tour', 'Page\IndexController@tour')->name('wine-tour');
@@ -43,7 +44,7 @@ Route::get('/where-to-buy', 'Page\IndexController@where_to_by')->name('where_to_
 Route::get('/winemaking-regions', 'Page\RegionController@index')->name('regions');
 Route::get('/region-{slug}', 'Page\RegionController@show')->name('region');
 
-Route::post('tour/order', 'Page\OrderController@tour_save')->name('tour_order');
+Route::post('/tour/order', 'Page\OrderController@tour_save')->name('tour_order');
 // Ajax action
 Route::get('/search', 'Home\SearchController@search')->name('search');
 Route::get('/cart/add/{type}/{product_id}/{qty}', 'Shop\IndexController@add_to_cart');

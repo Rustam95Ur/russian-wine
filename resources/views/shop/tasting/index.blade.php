@@ -94,9 +94,13 @@
                                     <div class="price ">
                                         {{$tasting->price}} <span class="rub_p">ш</span>/чел.<p></p>
                                     </div>
-                                    <div class="button_order" onclick="fastorder_open(882);" title="">
-                                        Заказать
-                                    </div>
+                                    <form method="post" action="{{route('tasting_checkout')}}">
+                                        @csrf
+                                        <input type="hidden" name="tasting" value="{{$tasting->id}}">
+                                        <div class="button_order" onclick=" $(this).closest('form').submit();" title="">
+                                            Заказать
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -272,8 +276,12 @@
             </ul>
             <hr>
             <a class="tasting_price">{{$tasting->price}} ₽ / чел</a>
-            <a id="deg_order" onclick="$('.mfp-wrap').css('display', 'block');$('#degustacii_modal').css('display', 'none');">Заказать
-                дегустацию</a>
+            <form method="post" action="{{route('tasting_checkout')}}">
+                @csrf
+                <input type="hidden" name="tasting" value="{{$tasting->id}}">
+                <a id="deg_order" onclick="$(this).closest('form').submit();">Заказать
+                    дегустацию</a>
+            </form>
         </div>
     </div>
     @endforeach
