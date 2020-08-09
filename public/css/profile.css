@@ -128,3 +128,14 @@
 #order-show .order-product-list .product-info {
     margin-top: 10px;
 }
+
+#profile .subscription-block {
+    margin: 30px;
+}
+#profile .delivery_images {
+    margin-top: 20px;
+    /*margin-bottom: -35px;*/
+}
+#profile .delivery_images img {
+    margin-left: 10px;
+}

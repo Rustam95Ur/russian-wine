@@ -333,7 +333,7 @@ input {
     color: white;
 }
 
-.tablinks {
+.tab_links {
     border-radius: 50px;
     background-color: inherit;
     border: none;
@@ -344,6 +344,7 @@ input {
 .tab button.active {
     border-color: #ccc;
     background-color: #ccc;
+    padding: 5px 10px;
 }
 
 /* Style the tab content */

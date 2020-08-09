@@ -38,13 +38,15 @@ $(function () {
                 $('.like-' + wine_id).show()
                 $('.unlike-' + wine_id).hide()
                 $('#fav-tr-' + wine_id).remove()
+            }, complete: function () {
                 var rowCount = $('#favorite_table tr').length;
                 if(rowCount === 0 ) {
                     $('.favorite_block').hide();
                     $('#favorite_zero').show();
 
                 }
-            },
+                $('#favorite_count').text(rowCount);
+            }
         });
 
     });

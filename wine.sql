@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Авг 09 2020 г., 14:04
+-- Время создания: Авг 09 2020 г., 19:10
 -- Версия сервера: 5.7.25
 -- Версия PHP: 7.3.9
 
@@ -76,6 +76,52 @@ INSERT INTO `clients` (`id`, `first_name`, `last_name`, `phone`, `email`, `birth
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `client_subscriptions`
+--
+
+CREATE TABLE `client_subscriptions` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `client_id` int(11) NOT NULL,
+  `set_id` int(11) NOT NULL,
+  `status` enum('ACTIVE','INACTIVE') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'ACTIVE',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `client_subscriptions`
+--
+
+INSERT INTO `client_subscriptions` (`id`, `client_id`, `set_id`, `status`, `created_at`, `updated_at`) VALUES
+(1, 3, 814, 'INACTIVE', '2020-08-09 08:38:43', '2020-08-09 10:02:32'),
+(2, 3, 817, 'ACTIVE', '2020-08-09 10:00:58', '2020-08-09 10:00:58');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `client_subscription_statuses`
+--
+
+CREATE TABLE `client_subscription_statuses` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `client_subscription_id` int(11) NOT NULL,
+  `month` date NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `client_subscription_statuses`
+--
+
+INSERT INTO `client_subscription_statuses` (`id`, `client_subscription_id`, `month`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, '2020-09-01', 1, '2020-08-09 09:28:40', '2020-08-09 09:28:40'),
+(2, 1, '2020-10-02', 0, '2020-08-09 09:35:10', '2020-08-09 09:46:51');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `client_wine`
 --
 
@@ -86,13 +132,6 @@ CREATE TABLE `client_wine` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Дамп данных таблицы `client_wine`
---
-
-INSERT INTO `client_wine` (`id`, `client_id`, `wine_id`, `created_at`, `updated_at`) VALUES
-(68, 3, 51, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -441,7 +480,22 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (282, 30, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 5),
 (283, 9, 'wine_belongsto_wine_class_relationship', 'relationship', 'Класс', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\WineClass\",\"table\":\"wine_classes\",\"type\":\"belongsTo\",\"column\":\"class_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 35),
 (284, 9, 'class_id', 'text', 'Class Id', 0, 1, 1, 1, 1, 1, '{}', 31),
-(285, 24, 'type', 'select_dropdown', 'Тип иконки', 0, 1, 1, 1, 1, 1, '{\"defalt\":\"1\",\"options\":{\"0\":\"\\u041f\\u043e \\u0443\\u043c\\u043e\\u043b\\u0447\\u0430\\u043d\\u0438\\u044e\",\"1\":\"\\u0428\\u0430\\u043c\\u043f\\u0430\\u043d\\u0441\\u043a\\u043e\\u0435\",\"2\":\"\\u0411\\u043e\\u0447\\u043a\\u0430\"}}', 5);
+(285, 24, 'type', 'select_dropdown', 'Тип иконки', 0, 1, 1, 1, 1, 1, '{\"defalt\":\"1\",\"options\":{\"0\":\"\\u041f\\u043e \\u0443\\u043c\\u043e\\u043b\\u0447\\u0430\\u043d\\u0438\\u044e\",\"1\":\"\\u0428\\u0430\\u043c\\u043f\\u0430\\u043d\\u0441\\u043a\\u043e\\u0435\",\"2\":\"\\u0411\\u043e\\u0447\\u043a\\u0430\"}}', 5),
+(286, 31, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(287, 31, 'client_id', 'text', 'Клиент', 1, 1, 1, 1, 1, 1, '{}', 4),
+(288, 31, 'set_id', 'text', 'Сет', 1, 1, 1, 1, 1, 1, '{}', 5),
+(289, 31, 'status', 'select_dropdown', 'Статус', 1, 1, 1, 1, 1, 1, '{\"default\":\"ACTIVE\",\"options\":{\"ACTIVE\":\"\\u0430\\u043a\\u0442\\u0438\\u0432\\u043d\\u044b\\u0439\",\"INACTIVE\":\"\\u043d\\u0435\\u0430\\u043a\\u0442\\u0438\\u0432\\u043d\\u044b\\u0439\"}}', 6),
+(290, 31, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, '{}', 7),
+(291, 31, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8),
+(292, 31, 'client_subscription_belongsto_client_relationship', 'relationship', 'Клиент', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Client\",\"table\":\"clients\",\"type\":\"belongsTo\",\"column\":\"client_id\",\"key\":\"id\",\"label\":\"first_name\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 2),
+(293, 31, 'client_subscription_belongsto_set_relationship', 'relationship', 'Сет', 0, 1, 1, 1, 1, 1, '{\"scope\":\"subscription\",\"model\":\"App\\\\Models\\\\Set\",\"table\":\"sets\",\"type\":\"belongsTo\",\"column\":\"set_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 3),
+(294, 35, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(295, 35, 'client_subscription_id', 'text', 'Client Subscription Id', 1, 1, 1, 1, 1, 1, '{}', 3),
+(296, 35, 'month', 'date', 'Месяц', 1, 1, 1, 1, 1, 1, '{}', 4),
+(297, 35, 'status', 'select_dropdown', 'Доставлено', 1, 1, 1, 1, 1, 1, '{\"options\":{\"0\":\"\\u041d\\u0435 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u043e\",\"1\":\"\\u0414\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u043e\"}}', 5),
+(298, 35, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 1, '{}', 6),
+(299, 35, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7),
+(300, 35, 'client_subscription_status_hasone_client_subscription_relationship', 'relationship', 'Номер подписки', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\ClientSubscription\",\"table\":\"client_subscriptions\",\"type\":\"belongsTo\",\"column\":\"client_subscription_id\",\"key\":\"id\",\"label\":\"id\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 2);
 
 -- --------------------------------------------------------
 
@@ -495,7 +549,10 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (27, 'tastings', 'tastings', 'Дегустация', 'Дегустации', NULL, 'App\\Models\\Tasting', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-07-31 09:51:45', '2020-07-31 10:03:21'),
 (28, 'tasting_methods', 'tasting-methods', 'Метод работы (дегустации)', 'Методы работы (дегустации)', NULL, 'App\\Models\\TastingMethod', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-08-01 02:22:53', '2020-08-01 02:23:05'),
 (29, 'orders', 'orders', 'Заявка', 'Заявка', NULL, 'App\\Models\\Order', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-08-03 10:47:07', '2020-08-08 11:23:56'),
-(30, 'wine_classes', 'wine-classes', 'Класс вина', 'Классы вина', NULL, 'App\\Models\\WineClass', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-08-04 08:17:29', '2020-08-04 08:17:29');
+(30, 'wine_classes', 'wine-classes', 'Класс вина', 'Классы вина', NULL, 'App\\Models\\WineClass', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-08-04 08:17:29', '2020-08-04 08:17:29'),
+(31, 'client_subscriptions', 'client-subscriptions', 'Подписка клиента', 'Подписки клиента', NULL, 'App\\Models\\ClientSubscription', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-08-09 08:33:12', '2020-08-09 08:39:48'),
+(33, 'client_subscription_status', 'client-subscription-status', 'Месячный сет для подписки', 'Месячный сет для подпискок', NULL, 'App\\Models\\ClientSubscriptionStatus', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-08-09 09:20:34', '2020-08-09 09:21:36'),
+(35, 'client_subscription_statuses', 'client-subscription-statuses', 'Статус доставки сета', 'Статусы доставки сета', NULL, 'App\\Models\\ClientSubscriptionStatus', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-08-09 09:24:56', '2020-08-09 09:30:07');
 
 -- --------------------------------------------------------
 
@@ -823,19 +880,19 @@ CREATE TABLE `menu_items` (
 
 INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
 (1, 1, 'Панель управления', '', '_self', 'voyager-boat', NULL, NULL, 1, '2020-06-17 09:43:44', '2020-06-17 09:43:44', 'voyager.dashboard', NULL),
-(2, 1, 'Медиа', '', '_self', 'voyager-images', NULL, NULL, 9, '2020-06-17 09:43:44', '2020-08-07 02:38:11', 'voyager.media.index', NULL),
+(2, 1, 'Медиа', '', '_self', 'voyager-images', NULL, NULL, 10, '2020-06-17 09:43:44', '2020-08-09 10:00:35', 'voyager.media.index', NULL),
 (3, 1, 'Пользователи', '', '_self', 'voyager-person', NULL, NULL, 3, '2020-06-17 09:43:45', '2020-06-17 09:43:45', 'voyager.users.index', NULL),
 (4, 1, 'Роли', '', '_self', 'voyager-lock', NULL, NULL, 2, '2020-06-17 09:43:45', '2020-06-17 09:43:45', 'voyager.roles.index', NULL),
-(5, 1, 'Инструменты', '', '_self', 'voyager-tools', NULL, NULL, 13, '2020-06-17 09:43:45', '2020-08-07 02:38:11', NULL, NULL),
+(5, 1, 'Инструменты', '', '_self', 'voyager-tools', NULL, NULL, 14, '2020-06-17 09:43:45', '2020-08-09 10:00:35', NULL, NULL),
 (6, 1, 'Конструктор Меню', '', '_self', 'voyager-list', NULL, 5, 1, '2020-06-17 09:43:45', '2020-06-18 12:37:38', 'voyager.menus.index', NULL),
 (7, 1, 'База данных', '', '_self', 'voyager-data', NULL, 5, 2, '2020-06-17 09:43:45', '2020-06-18 12:37:38', 'voyager.database.index', NULL),
 (8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 3, '2020-06-17 09:43:45', '2020-06-18 12:37:38', 'voyager.compass.index', NULL),
 (9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 4, '2020-06-17 09:43:45', '2020-06-18 12:37:38', 'voyager.bread.index', NULL),
-(10, 1, 'Настройки', '', '_self', 'voyager-settings', NULL, NULL, 15, '2020-06-17 09:43:45', '2020-08-07 02:38:11', 'voyager.settings.index', NULL),
-(11, 1, 'Категории', '', '_self', 'voyager-categories', NULL, NULL, 12, '2020-06-17 09:43:45', '2020-08-07 02:38:11', 'voyager.categories.index', NULL),
-(12, 1, 'Статьи', '', '_self', 'voyager-news', NULL, NULL, 10, '2020-06-17 09:43:45', '2020-08-07 02:38:11', 'voyager.posts.index', NULL),
-(13, 1, 'Страницы', '', '_self', 'voyager-file-text', NULL, NULL, 11, '2020-06-17 09:43:45', '2020-08-07 02:38:11', 'voyager.pages.index', NULL),
-(14, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, NULL, 14, '2020-06-17 09:43:45', '2020-08-07 02:38:11', 'voyager.hooks', NULL),
+(10, 1, 'Настройки', '', '_self', 'voyager-settings', NULL, NULL, 16, '2020-06-17 09:43:45', '2020-08-09 10:00:35', 'voyager.settings.index', NULL),
+(11, 1, 'Категории', '', '_self', 'voyager-categories', NULL, NULL, 13, '2020-06-17 09:43:45', '2020-08-09 10:00:35', 'voyager.categories.index', NULL),
+(12, 1, 'Статьи', '', '_self', 'voyager-news', NULL, NULL, 11, '2020-06-17 09:43:45', '2020-08-09 10:00:35', 'voyager.posts.index', NULL),
+(13, 1, 'Страницы', '', '_self', 'voyager-file-text', NULL, NULL, 12, '2020-06-17 09:43:45', '2020-08-09 10:00:35', 'voyager.pages.index', NULL),
+(14, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, NULL, 15, '2020-06-17 09:43:45', '2020-08-09 10:00:35', 'voyager.hooks', NULL),
 (15, 1, 'Вина', '', '_self', NULL, '#000000', 23, 1, '2020-06-17 09:47:26', '2020-06-18 12:38:02', 'voyager.wines.index', 'null'),
 (16, 1, 'Регионы', '', '_self', NULL, NULL, 29, 1, '2020-06-18 08:29:12', '2020-07-09 10:39:47', 'voyager.regions.index', NULL),
 (17, 1, 'Страны', '', '_self', NULL, NULL, 29, 2, '2020-06-18 08:30:07', '2020-07-09 10:39:50', 'voyager.countries.index', NULL),
@@ -847,7 +904,7 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (23, 1, 'Каталог', '', '_self', 'voyager-folder', '#000000', NULL, 5, '2020-06-18 12:37:32', '2020-07-09 10:39:44', NULL, ''),
 (24, 1, 'Винодельни', '', '_self', NULL, NULL, 23, 3, '2020-06-20 04:23:20', '2020-07-09 10:40:25', 'voyager.wineries.index', NULL),
 (25, 1, 'Сеты', '', '_self', NULL, NULL, 23, 5, '2020-06-20 06:14:12', '2020-07-30 16:44:40', 'voyager.sets.index', NULL),
-(26, 1, 'Комментарии', '', '_self', 'voyager-bubble', '#000000', NULL, 8, '2020-06-21 06:30:19', '2020-08-07 02:38:11', 'voyager.comments.index', 'null'),
+(26, 1, 'Комментарии', '', '_self', 'voyager-bubble', '#000000', NULL, 9, '2020-06-21 06:30:19', '2020-08-09 10:00:35', 'voyager.comments.index', 'null'),
 (27, 1, 'Цитаты', '', '_self', NULL, NULL, 29, 7, '2020-07-04 00:52:53', '2020-07-30 16:44:48', 'voyager.quotes.index', NULL),
 (28, 1, 'Выдержки', '', '_self', NULL, NULL, 29, 6, '2020-07-04 14:06:32', '2020-07-30 16:44:48', 'voyager.excerpts.index', NULL),
 (29, 1, 'Атрибуты для вина', '', '_self', 'voyager-params', '#000000', NULL, 4, '2020-07-09 10:39:33', '2020-07-09 10:39:44', NULL, ''),
@@ -856,8 +913,11 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (32, 1, 'Методы работы', '', '_self', NULL, '#000000', 34, 2, '2020-08-01 02:22:53', '2020-08-03 10:44:46', 'voyager.tasting-methods.index', 'null'),
 (34, 1, 'Дегустации', '', '_self', 'voyager-rum', '#000000', NULL, 6, '2020-08-03 10:44:25', '2020-08-03 10:45:40', NULL, ''),
 (35, 1, 'Список заявок', '', '_self', NULL, '#000000', 37, 1, '2020-08-03 10:47:07', '2020-08-07 02:38:03', 'voyager.orders.index', 'null'),
-(36, 1, 'Классы вина', '', '_self', NULL, NULL, NULL, 16, '2020-08-04 08:17:30', '2020-08-07 02:38:11', 'voyager.wine-classes.index', NULL),
-(37, 1, 'Заявки', '', '_self', 'voyager-dollar', '#000000', NULL, 7, '2020-08-07 02:37:55', '2020-08-07 02:38:11', NULL, '');
+(36, 1, 'Классы вина', '', '_self', NULL, NULL, NULL, 17, '2020-08-04 08:17:30', '2020-08-09 10:00:35', 'voyager.wine-classes.index', NULL),
+(37, 1, 'Заявки', '', '_self', 'voyager-dollar', '#000000', NULL, 7, '2020-08-07 02:37:55', '2020-08-07 02:38:11', NULL, ''),
+(38, 1, 'Подписки клиента', '', '_self', NULL, NULL, 41, 2, '2020-08-09 08:33:12', '2020-08-09 10:00:25', 'voyager.client-subscriptions.index', NULL),
+(40, 1, 'Статусы доставки сета', '', '_self', NULL, NULL, 41, 1, '2020-08-09 09:24:56', '2020-08-09 10:00:22', 'voyager.client-subscription-statuses.index', NULL),
+(41, 1, 'Подписки', '', '_self', 'voyager-gift', '#000000', NULL, 8, '2020-08-09 10:00:17', '2020-08-09 10:00:35', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -942,7 +1002,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (74, '2020_08_04_141410_add_class_to_wines', 34),
 (75, '2020_08_04_141531_create_wine_classes_table', 35),
 (77, '2020_08_08_201909_add_duration_sets_table', 36),
-(78, '2020_08_09_102028_add_type_for_excerpt_table', 37);
+(78, '2020_08_09_102028_add_type_for_excerpt_table', 37),
+(79, '2020_08_09_140607_create_client_subscriptions_table', 38),
+(81, '2020_08_09_142831_create_client_subscription_statuses_table', 39);
 
 -- --------------------------------------------------------
 
@@ -971,7 +1033,7 @@ INSERT INTO `orders` (`id`, `name`, `email`, `phone`, `type`, `request`, `messag
 (6, 'Рустам', 'rustam.95.ur@gmail', '8777563866', 5, '[{\"wine_id\":54,\"qty\":1},{\"wine_id\":58,\"qty\":3}]', 'Название: Рислинг. Количество: 1 штук <br> Название: Каберне Семейный Резерв. Количество: 3 штук <br> Общая сумма: 7000', '2020-08-07 02:30:10', '2020-08-07 02:30:10'),
 (8, 'Рустам', 'client@client.com', 'password', 5, '[{\"product_id\":918,\"qty\":2,\"type\":\"set\", \"price\":1250 }]', '<p>Название: <b>Белый РАШ</b> Тип продуката: <b>Сеты</b>. Количество: <b>1</b> штук <br />Общая сумма: <b>4950</b></p>', '2020-08-08 08:43:06', '2020-08-08 08:45:36'),
 (9, 'Иван', 'client@client.coms', '877777777777', 6, NULL, 'Название: <b>Шардоне</b>. </b>Количество: <b>1</b> штук <br>  Название: <b>Рислинг Семейный Резерв</b>. </b>Количество: <b>1</b> штук <br>  Общая сумма: <b>3200</b>', '2020-08-08 11:22:58', '2020-08-08 11:22:58'),
-(11, 'Иван', 'client@client.com', '877777777777', 6, '[{\"product_id\":51,\"qty\":1,\"type\":\"wine\",\"price\":1950}]', 'Название: <b>Рислинг Семейный Резерв</b>. </b>Количество: <b>1</b> штук <br>  Общая сумма: <b>1950</b>', '2020-08-08 14:09:09', '2020-08-08 14:09:09'),
+(11, 'Иван', 'client@client.com', '877777777777', 6, NULL, 'Название: <b>Рислинг Семейный Резерв</b>. </b>Количество: <b>1</b> штук <br>  Общая сумма: <b>1950</b>', '2020-08-08 14:09:09', '2020-08-08 14:09:09'),
 (12, 'Рустам', 'client@client.com', '877777777', 5, '[{\"product_id\":814,\"qty\":1,\"type\":\"set\",\"price\":14500}]', 'Название: <b>Автохтонные вина</b> Тип продуката: <b>Подписка на сеты. </b>Количество: <b>1</b> штук <br>  Общая сумма: <b>14500</b>', '2020-08-08 14:32:43', '2020-08-08 14:32:43');
 
 -- --------------------------------------------------------
@@ -1166,7 +1228,22 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (129, 'read_wine_classes', 'wine_classes', '2020-08-04 08:17:29', '2020-08-04 08:17:29'),
 (130, 'edit_wine_classes', 'wine_classes', '2020-08-04 08:17:29', '2020-08-04 08:17:29'),
 (131, 'add_wine_classes', 'wine_classes', '2020-08-04 08:17:29', '2020-08-04 08:17:29'),
-(132, 'delete_wine_classes', 'wine_classes', '2020-08-04 08:17:29', '2020-08-04 08:17:29');
+(132, 'delete_wine_classes', 'wine_classes', '2020-08-04 08:17:29', '2020-08-04 08:17:29'),
+(133, 'browse_client_subscriptions', 'client_subscriptions', '2020-08-09 08:33:12', '2020-08-09 08:33:12'),
+(134, 'read_client_subscriptions', 'client_subscriptions', '2020-08-09 08:33:12', '2020-08-09 08:33:12'),
+(135, 'edit_client_subscriptions', 'client_subscriptions', '2020-08-09 08:33:12', '2020-08-09 08:33:12'),
+(136, 'add_client_subscriptions', 'client_subscriptions', '2020-08-09 08:33:12', '2020-08-09 08:33:12'),
+(137, 'delete_client_subscriptions', 'client_subscriptions', '2020-08-09 08:33:12', '2020-08-09 08:33:12'),
+(138, 'browse_client_subscription_status', 'client_subscription_status', '2020-08-09 09:20:34', '2020-08-09 09:20:34'),
+(139, 'read_client_subscription_status', 'client_subscription_status', '2020-08-09 09:20:34', '2020-08-09 09:20:34'),
+(140, 'edit_client_subscription_status', 'client_subscription_status', '2020-08-09 09:20:34', '2020-08-09 09:20:34'),
+(141, 'add_client_subscription_status', 'client_subscription_status', '2020-08-09 09:20:34', '2020-08-09 09:20:34'),
+(142, 'delete_client_subscription_status', 'client_subscription_status', '2020-08-09 09:20:34', '2020-08-09 09:20:34'),
+(143, 'browse_client_subscription_statuses', 'client_subscription_statuses', '2020-08-09 09:24:56', '2020-08-09 09:24:56'),
+(144, 'read_client_subscription_statuses', 'client_subscription_statuses', '2020-08-09 09:24:56', '2020-08-09 09:24:56'),
+(145, 'edit_client_subscription_statuses', 'client_subscription_statuses', '2020-08-09 09:24:56', '2020-08-09 09:24:56'),
+(146, 'add_client_subscription_statuses', 'client_subscription_statuses', '2020-08-09 09:24:56', '2020-08-09 09:24:56'),
+(147, 'delete_client_subscription_statuses', 'client_subscription_statuses', '2020-08-09 09:24:56', '2020-08-09 09:24:56');
 
 -- --------------------------------------------------------
 
@@ -1314,7 +1391,22 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (129, 1),
 (130, 1),
 (131, 1),
-(132, 1);
+(132, 1),
+(133, 1),
+(134, 1),
+(135, 1),
+(136, 1),
+(137, 1),
+(138, 1),
+(139, 1),
+(140, 1),
+(141, 1),
+(142, 1),
+(143, 1),
+(144, 1),
+(145, 1),
+(146, 1),
+(147, 1);
 
 -- --------------------------------------------------------
 
@@ -1562,14 +1654,14 @@ CREATE TABLE `sets` (
 --
 
 INSERT INTO `sets` (`id`, `title`, `description`, `model`, `price`, `image`, `slug`, `count`, `prev_set_id`, `next_set_id`, `meta_description`, `meta_keywords`, `status`, `created_at`, `updated_at`, `in_main`, `meta_title`, `in_home`, `home_image`, `in_subscription`, `subscription_image`, `sale`, `duration`) VALUES
-(814, 'Автохтонные вина', '<p>Уникальный сет. Это наши, русские, аборигенные сорта винограда: Красностоп Золотовский, Сибирьковый, Цимлянский Черный, который произрастают только в России</p>', 'Автохтонный сет', 14500, 'sets/June2020/wineclub/avtohtonniy.jpg', 'avtohtonnyj-set-1', '17', 817, 822, NULL, NULL, 'ACTIVE', NULL, '2020-07-20 09:20:30', 0, 'Винный сет из автохтонных вин, красностоп, сибирьковый', 0, NULL, 1, 'sets\\July2020\\gpPjX6bc01SEdVqeRqYw.jpg', NULL, NULL),
+(814, 'Автохтонные вина', '<p>Уникальный сет. Это наши, русские, аборигенные сорта винограда: Красностоп Золотовский, Сибирьковый, Цимлянский Черный, который произрастают только в России</p>', 'Автохтонный сет', 14500, 'sets/June2020/wineclub/avtohtonniy.jpg', 'avtohtonnyj-set-1', '17', 817, 822, NULL, NULL, 'ACTIVE', NULL, '2020-07-20 09:20:30', 0, 'Винный сет из автохтонных вин, красностоп, сибирьковый', 0, NULL, 1, 'sets\\July2020\\gpPjX6bc01SEdVqeRqYw.jpg', NULL, 3),
 (815, 'Автохтонные вина ', '<p>\r\n  Уникальный сет. Это наши, русские, аборигенные сорта винограда: Красностоп Золотовский, Сибирьковый, Цимлянский Черный, который произрастают только в России\r\n</p>', 'Автохтонный сет', 87000, 'sets/June2020/wineclub/avtohtonniy.jpg', 'avtohton-set-6', '99', NULL, NULL, '', '', 'ACTIVE', NULL, NULL, 0, 'Винный сет из автохтонных вин, красностоп, цимлянский чёрный', 0, NULL, 0, NULL, NULL, NULL),
 (816, 'Автохтонные вина', '<p>Уникальный сет. Это наши, русские, аборигенные сорта винограда: Красностоп Золотовский, Сибирьковый, Цимлянский Черный, который произрастают только в России</p>', 'Автохтонный сет', 139200, 'sets/June2020/wineclub/avtohtonniy.jpg', 'avtohtonnyj-set-12', '81', 853, 821, NULL, NULL, 'ACTIVE', NULL, '2020-07-20 10:10:53', 0, 'Годовая винная подписка из автохтонных вин, красностоп', 0, NULL, 0, NULL, 20, NULL),
-(817, 'Гастрономические вина', '<p>Хотите насладиться сочетанием лучших русских вин с гастрономией? Тогда предлагаем попробовать шесть редких образцов от микровиноделен Долины Дона и Долины Терека.</p>', 'Гастрономический сет', 12500, 'sets/June2020/wineclub/set-gasyro-05.19/Gastro_ALL.jpg', 'gastronomicheskij-set-1', '79', 822, 814, 'Винные сеты с подпиской на вино. Дзитоев ркацители, Дзитоев мерло, Вина Арпачина саперави, цимлянский чёрный Вина Арпачина и брют Дзитоев входят в подписку на вино.', NULL, 'ACTIVE', NULL, '2020-07-20 09:16:11', 0, 'Подписка на вино. Подписка на гастрономические вина - Дзитоев, Вина Арпачина', 0, NULL, 1, 'sets\\July2020\\lKIi3rg04xgn1pUCfXai.jpg', NULL, NULL),
+(817, 'Гастрономические вина', '<p>Хотите насладиться сочетанием лучших русских вин с гастрономией? Тогда предлагаем попробовать шесть редких образцов от микровиноделен Долины Дона и Долины Терека.</p>', 'Гастрономический сет', 12500, 'sets/June2020/wineclub/set-gasyro-05.19/Gastro_ALL.jpg', 'gastronomicheskij-set-1', '79', 822, 814, 'Винные сеты с подпиской на вино. Дзитоев ркацители, Дзитоев мерло, Вина Арпачина саперави, цимлянский чёрный Вина Арпачина и брют Дзитоев входят в подписку на вино.', NULL, 'ACTIVE', NULL, '2020-07-20 09:16:11', 0, 'Подписка на вино. Подписка на гастрономические вина - Дзитоев, Вина Арпачина', 0, NULL, 1, 'sets\\July2020\\lKIi3rg04xgn1pUCfXai.jpg', NULL, 3),
 (819, 'Гастрономические вина', '<p>\r\n  Хотите насладиться сочетанием лучших русских вин с гастрономией? Тогда предлагаем попробовать шесть редких образцов от микровиноделен Долины Дона и Долины Терека.   \r\n</p>', 'Гастрономический сет', 37500, 'sets/June2020/wineclub/set-gasyro-05.19/Gastro_ALL.jpg', 'gastronomicheskij-set-3', '90', NULL, NULL, 'Вина Дзитоева и Вина Арпачина в подписке на вино. Гастрономические вина в подписке на вино. Брют Дзитоева, цимлянский чёрный Вина Арпачина, мерло Дзитоев и саперави Вина Арпачина. ', '', 'ACTIVE', NULL, NULL, 0, 'Подписка на вино из гастрономических вин Дзитоева и Вина Арпачина', 0, NULL, 0, NULL, NULL, NULL),
 (820, 'Гастрономические вина', '<p>\r\n  Хотите насладиться сочетанием лучших русских вин с гастрономией? Тогда предлагаем попробовать шесть редких образцов от микровиноделен Долины Дона и Долины Терека.   \r\n</p>', 'Гастрономический сет', 75000, 'sets/June2020/wineclub/set-gasyro-05.19/Gastro_ALL.jpg', 'gastronomicheskij-set-6', '100', NULL, NULL, '', '', 'ACTIVE', NULL, NULL, 0, 'Гастрономический', 0, NULL, 0, NULL, NULL, NULL),
 (821, 'Резервы', '<p>Подборка красных выдержанных от Константина Дзитоева, Олега Репина, а также редкий образец - Ренессанс 2012 года. Насыщенные и танинные, для уютного вечера. </p>', 'Резервы', 187200, 'sets/June2020/wineclub/set-rezerv-05.19/Reserve_ALL.jpg', 'rezerv-set-12', '95', 816, 853, '', '', 'ACTIVE', NULL, NULL, 0, 'Резервы', 0, NULL, 0, NULL, NULL, NULL),
-(822, 'Резервы', '<p>Подборка красных выдержанных от Константина Дзитоева, Олега Репина, а также редкий образец - Ренессанс 2012 года. Насыщенные и танинные, для уютного вечера.</p>', 'Резервы', 19500, 'sets/June2020/wineclub/set-rezerv-05.19/Reserve_ALL.jpg', 'rezerv-set-1', '94', 814, 817, NULL, NULL, 'ACTIVE', NULL, '2020-07-20 09:21:08', 0, 'Резервы', 0, NULL, 1, 'sets\\July2020\\D6iEfdBB3JUQ7vz5uvbp.jpg', NULL, NULL),
+(822, 'Резервы', '<p>Подборка красных выдержанных от Константина Дзитоева, Олега Репина, а также редкий образец - Ренессанс 2012 года. Насыщенные и танинные, для уютного вечера.</p>', 'Резервы', 19500, 'sets/June2020/wineclub/set-rezerv-05.19/Reserve_ALL.jpg', 'rezerv-set-1', '94', 814, 817, NULL, NULL, 'ACTIVE', NULL, '2020-07-20 09:21:08', 0, 'Резервы', 0, NULL, 1, 'sets\\July2020\\D6iEfdBB3JUQ7vz5uvbp.jpg', NULL, 3),
 (823, 'Резервы', '<p>Подборка красных выдержанных от Константина Дзитоева, Олега Репина, а также редкий образец - Ренессанс 2012 года. Насыщенные и танинные, для уютного вечера. </p>', 'Резервы', 58500, 'sets/June2020/wineclub/set-rezerv-05.19/Reserve_ALL.jpg', 'rezerv-set-3', '100', NULL, NULL, '', '', 'ACTIVE', NULL, NULL, 0, 'Резервы', 0, NULL, 0, NULL, NULL, NULL),
 (824, 'Резервы', '<p>Подборка красных выдержанных от Константина Дзитоева, Олега Репина, а также редкий образец - Ренессанс 2012 года. Насыщенные и танинные, для уютного вечера. </p>', 'Резервы', 117000, 'sets/June2020/wineclub/set-rezerv-05.19/Reserve_ALL.jpg', 'rezerv-set-6', '100', NULL, NULL, '', '', 'ACTIVE', NULL, NULL, 0, 'Резервы', 0, NULL, 0, NULL, NULL, NULL),
 (825, 'Красные резервы', '<p>Лучшее красное 2015 года - Ренессанс 2012 года. Терруарный Каберне 2015 от Репина. И подборка великолепных гранд резервов от Дзитоева. Все вина выдержанные и требуют особого отношения к ним. Пробовать их нужно не спеша и декантировать.</p>', 'Сеты', 19500, 'sets/June2020/wineclub/sety/krasnye-rezerv.png', 'krasnye-rezervy', '99', 832, 834, 'Лучшие красные вина собраны в винный сет. Ренессанс 2012, каберне совиньон Олег Репин и подборка гранд резервов от Дзитоева. Винный сет выдержанных вин требуют особого отношения. Все вина винного сета нужно декантировать.', '', 'ACTIVE', NULL, NULL, 1, 'Винный сет из красных вин резервных, Ренессанс 2012, 60/40 Дзитоев, Репин каберне совиньон ', 0, NULL, 0, NULL, NULL, NULL),
@@ -3422,6 +3514,18 @@ ALTER TABLE `clients`
   ADD UNIQUE KEY `clients_email_unique` (`email`);
 
 --
+-- Индексы таблицы `client_subscriptions`
+--
+ALTER TABLE `client_subscriptions`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `client_subscription_statuses`
+--
+ALTER TABLE `client_subscription_statuses`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `client_wine`
 --
 ALTER TABLE `client_wine`
@@ -3679,10 +3783,22 @@ ALTER TABLE `clients`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT для таблицы `client_subscriptions`
+--
+ALTER TABLE `client_subscriptions`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `client_subscription_statuses`
+--
+ALTER TABLE `client_subscription_statuses`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT для таблицы `client_wine`
 --
 ALTER TABLE `client_wine`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT для таблицы `colors`
@@ -3706,13 +3822,13 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT для таблицы `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=286;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=301;
 
 --
 -- AUTO_INCREMENT для таблицы `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT для таблицы `excerpts`
@@ -3748,13 +3864,13 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT для таблицы `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT для таблицы `orders`
@@ -3772,7 +3888,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT для таблицы `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
 
 --
 -- AUTO_INCREMENT для таблицы `posts`

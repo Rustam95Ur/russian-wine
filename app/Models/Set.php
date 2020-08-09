@@ -23,4 +23,9 @@ class Set extends Model
     {
         return $this->belongsTo('App\Models\Set', 'prev_set_id', 'id');
     }
+
+    public function scopeSubscription($query)
+    {
+        return $query->where('in_subscription', 1);
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
+use App\Models\ClientSubscription;
 use App\Models\Order;
 use App\Models\Set;
 use DB;
@@ -39,6 +40,10 @@ class IndexController extends Controller
         return view('profile.favorite', $data);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function favorite_order(Request $request)
     {
         $cart_info = '';
@@ -69,6 +74,10 @@ class IndexController extends Controller
 
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function set_order(Request $request)
     {
         $cart_info = '';
@@ -98,35 +107,30 @@ class IndexController extends Controller
         return redirect()->back()->with('success', 'Заявка успешно отправлена');
     }
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function subscription()
     {
         $data = $this->menu_item_count();
-
-        $orders = Order::where('email', '=', Auth::user()->email)->get();
-        $set_id_array = [];
-        foreach ($orders as $key => $order) {
-            $requests = json_decode($order->request);
-            if ($requests) {
-                foreach ($requests as $request) {
-                    $requestType = $request->type;
-                    if ($requestType === 'set') {
-                        $set_id_array[] = $request->product_id;
-                    }
-                }
+        $subscriptions = ClientSubscription::where('client_id', Auth::user()->id)->with('set', 'delivery')->get();
+        $active_count = 0;
+        $inactive_count = 0;
+        foreach ($subscriptions as $subscription)
+        {
+            if($subscription->status == 'ACTIVE') {
+                $active_count +=1;
+            }
+            else {
+                $inactive_count +=1;
             }
         }
-        $sets = Set::whereIn('id', $set_id_array)->get();
-        $subscriptions = [];
-
-        foreach ($sets as $set) {
-            if ($set->in_subscription) {
-                $subscriptions[] = $set;
-            }
-        }
-
         $data['subscriptions'] = $subscriptions;
+        $data['active_count'] = $active_count;
+        $data['inactive_count'] = $inactive_count;
 
-        return view('profile.sub-wines', $data);
+        ;
+        return view('profile.subscription', $data);
     }
 
     /**
@@ -240,6 +244,7 @@ class IndexController extends Controller
         $favorites_wines = Auth::user()->wines()->count();
         $menu = ['favorite_count' => $favorites_wines];
         $orders = Order::where('email', '=', Auth::user()->email)->get();
+        $subscriptions = ClientSubscription::where('client_id', Auth::user()->id)->count();
         $count_sets = 0;
         foreach ($orders as $order) {
             if ($order->type == Order::TYPE_CART) {
@@ -253,6 +258,7 @@ class IndexController extends Controller
         }
         $menu['order_count'] = count($orders);
         $menu['set_count'] = $count_sets;
+        $menu['subscription_count'] = $subscriptions;
         return $menu;
     }
 }
