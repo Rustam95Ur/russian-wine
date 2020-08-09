@@ -72,7 +72,7 @@ Route::get('/profile/order/{order_id}', 'Profile\IndexController@order');
 Route::get('/profile/sets', 'Profile\IndexController@sets')->name('profile-sets');
 
 //подписки в ЛК
-Route::get('/sub-wines', 'Profile\IndexController@sub')->name('sub-wines');
+Route::get('/profile/subscription', 'Profile\IndexController@subscription')->name('profile-subscription');
 
 Route::get('/{slug}', 'Page\IndexController@simple_page')->name('simple_page');
 

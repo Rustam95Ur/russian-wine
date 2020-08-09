@@ -98,7 +98,7 @@ class IndexController extends Controller
         return redirect()->back()->with('success', 'Заявка успешно отправлена');
     }
 
-    public function sub()
+    public function subscription()
     {
         $data = $this->menu_item_count();
 
@@ -106,10 +106,12 @@ class IndexController extends Controller
         $set_id_array = [];
         foreach ($orders as $key => $order) {
             $requests = json_decode($order->request);
-            foreach ($requests as $request) {
-                $requestType = $request->type;
-                if ($requestType === 'set') {
-                    $set_id_array[] = $request->product_id;
+            if ($requests) {
+                foreach ($requests as $request) {
+                    $requestType = $request->type;
+                    if ($requestType === 'set') {
+                        $set_id_array[] = $request->product_id;
+                    }
                 }
             }
         }
@@ -133,15 +135,17 @@ class IndexController extends Controller
     public function orders()
     {
         $data = $this->menu_item_count();
-        $orders = Order::where('email', '=', Auth::user()->email)->get();
+        $orders = Order::where('email', '=', Auth::user()->email)->where('type', '=', Order::TYPE_CART)->where('request', '!=', null)->get();
         $order_list = [];
         foreach ($orders as $key => $value) {
             $total_price = 0;
             $request = json_decode($value->request);
             $order['id'] = $value->id;
             $order['date_created'] = date($value->created_at);
-            foreach ($request as $item) {
-                $total_price += $item->price * $item->qty;
+            if ($request) {
+                foreach ($request as $item) {
+                    $total_price += $item->price * $item->qty;
+                }
             }
             $order['total_price'] = $total_price;
             array_push($order_list, $order);
@@ -152,27 +156,29 @@ class IndexController extends Controller
 
     public function order(int $order_id)
     {
-        $order = Order::where('email', '=', Auth::user()->email)->where('id', $order_id)->first();
+        $order = Order::where('email', '=', Auth::user()->email)->where('request', '!=', null)->where('id', $order_id)->firstOrFail();
         $request = json_decode($order->request);
         $product_list = [];
         $total_price = 0;
-        foreach ($request as $item) {
-            if ($item->type == 'set') {
-                $product = Set::where('id', '=', $item->product_id)->first();
-            } elseif ($item->type == 'wine') {
-                $product = Wine::where('id', '=', $item->product_id)->first();
+        if ($request) {
+            foreach ($request as $item) {
+                if ($item->type == 'set') {
+                    $product = Set::where('id', '=', $item->product_id)->first();
+                } elseif ($item->type == 'wine') {
+                    $product = Wine::where('id', '=', $item->product_id)->first();
+                }
+                if ($product) {
+                    $item_order['title'] = $product->title;
+                    $item_order['image'] = Voyager::image($product->image);
+                    $item_order['class'] = $item->type;
+                    $item_order['price'] = $product->price;
+                    $item_order['sugar'] = isset($product->sugar) ? $product->sugar->title : '';
+                    $item_order['color'] = isset($product->color) ? $product->color->title : '';
+                    $item_order['year'] = isset($product->year) ? $product->year : '';
+                    array_push($product_list, $item_order);
+                }
+                $total_price += $item->price * $item->qty;
             }
-            if ($product) {
-                $item_order['title'] = $product->title;
-                $item_order['image'] = Voyager::image($product->image);
-                $item_order['class'] = $item->type;
-                $item_order['price'] = $product->price;
-                $item_order['sugar'] = isset($product->sugar) ? $product->sugar->title : '';
-                $item_order['color'] = isset($product->color) ? $product->color->title : '';
-                $item_order['year'] = isset($product->year) ? $product->year : '';
-                array_push($product_list, $item_order);
-            }
-            $total_price += $item->price * $item->qty;
         }
         $wines = ['products' => $product_list];
         $count_wine_array = ['date_created' => date($order->created_at)];
@@ -191,12 +197,15 @@ class IndexController extends Controller
         $set_id_array = [];
         foreach ($orders as $key => $order) {
             $requests = json_decode($order->request);
-            foreach ($requests as $request) {
-                $requestType = $request->type;
-                if ($requestType === 'set') {
-                    $set_id_array[] = $request->product_id;
+            if ($requests) {
+                foreach ($requests as $request) {
+                    $requestType = $request->type;
+                    if ($requestType === 'set') {
+                        $set_id_array[] = $request->product_id;
+                    }
                 }
             }
+
         }
         $sets = Set::whereIn('id', $set_id_array)->get();
         $data['sets'] = $sets;

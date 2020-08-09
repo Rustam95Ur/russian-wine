@@ -11,8 +11,8 @@
                 <ul class="menu_list">
                     <li><a class="{{(\Request::route()->getName() == 'profile-favorite') ? 'active' : ''}}"
                            href="{{route('profile-favorite')}}">Избранное</a></li>
-                    <li><a class="{{(\Request::route()->getName() == 'sub-wines') ? 'active' : ''}}"
-                           href="{{route('sub-wines')}}">Подписки</a></li>
+                    <li><a class="{{(\Request::route()->getName() == 'profile-subscription') ? 'active' : ''}}"
+                           href="{{route('profile-subscription')}}">Подписки</a></li>
                     <li><a class="{{(\Request::route()->getName() == 'profile-sets') ? 'active' : ''}}"
                            href="{{route('profile-sets')}}">Сеты</a></li>
                     <li><a class="{{(\Request::route()->getName() == 'profile-orders') ? 'active' : ''}}"
