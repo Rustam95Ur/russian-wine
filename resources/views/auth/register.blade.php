@@ -74,4 +74,12 @@
         </div>
     </div>
 </div>
+@push('scripts')
+    <script>
+        $( document ).ready(function() {
+            window.history.back();
+        });
+    </script>
+
+@endpush
 @endsection

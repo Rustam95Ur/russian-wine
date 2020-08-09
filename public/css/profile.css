@@ -90,6 +90,7 @@
 }
 #order-show #close-cart, #closecheck {
     background: url(/image/closeicon.png);
+    background-repeat: no-repeat;
  }
 
 #order-show #order_info {
