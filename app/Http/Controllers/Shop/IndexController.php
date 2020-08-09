@@ -64,7 +64,12 @@ class IndexController extends Controller
     public function wine_info($slug)
     {
         $wine = Wine::where('slug', '=', $slug)->where('status', '=', 'ACTIVE')->firstOrFail();
-        $wines = Wine::where('winery_id', '=', $wine->winery->id)->get();
+        if(isset($wine->winery)) {
+            $wines = Wine::where('winery_id', '=', $wine->winery->id)->where('price', '>', 0)->get();
+        } else {
+            $wines = Wine::where('price', '>', 0)->limit(20)->get();
+        }
+
         return view('shop.wine.show', [
             'wine' => $wine,
             'wines' => $wines,

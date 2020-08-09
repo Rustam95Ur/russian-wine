@@ -46,8 +46,11 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-6 col-xs-offset-6 col-md-6 col-md-offset-6 col-lg-6">
-                                            <div class="type"><img src="{{Voyager::image($wine->color->image)}}"
-                                                                   alt=""> {{$wine->color->title}}
+                                            <div class="type">
+                                                @if(isset($wine->color))
+                                                    <img src="{{Voyager::image($wine->color->image)}}"
+                                                         alt=""> {{$wine->color->title}}
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -62,16 +65,18 @@
                                         <div
                                             class="col-xs-6 col-xs-offset-6 col-md-6 col-md-offset-6 col-lg-6 col-lg-offset-6">
                                             <div class="aging">
-                                              <span
-                                                  class="iblock">Выдержка<br><span>{{$wine->excerpt->title}}</span>
+                                                @if(isset($wine->excerpt))
+                                                    <span
+                                                        class="iblock">Выдержка<br><span>{{$wine->excerpt->title}}</span>
                                                   @if($wine->excerpt->type == 1)
-                                                      <span class="icon-icon_champagne"></span>
-                                                  @elseif($wine->excerpt->type == 2)
-                                                      <span class="icon-icon_barrel"></span>
-                                                  @else
-                                                      <span class=""></span>
-                                                  @endif
+                                                            <span class="icon-icon_champagne"></span>
+                                                        @elseif($wine->excerpt->type == 2)
+                                                            <span class="icon-icon_barrel"></span>
+                                                        @else
+                                                            <span class=""></span>
+                                                        @endif
                                               </span>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -116,20 +121,28 @@
                                     class="icon-icon_instagram"></span></a>
                         </div>
                         <h1>{{$wine->title}}</h1>
-                        <h2 class="region">{{$wine->region->title}}</h2>
+                        @if(isset($wine->region))
+                            <h2 class="region">{{$wine->region->title}}</h2>
+                        @endif
                         <div class="col-12">
-                            {{--                                    <h4 class="wineSubtype">Винтаж</h4>--}}
-                            {{--                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">--}}
-                            {{--                                          <label class="btn btn-secondary active">--}}
-                            {{--                                            <input type="radio" name="options" id="option1" checked=""> <p>2017 г. </p><i class="priceDefice"></i> <p>1 500 р.</p>--}}
-                            {{--                                          </label>--}}
-                            {{--                                          <label class="btn btn-secondary">--}}
-                            {{--                                            <input type="radio" name="options" id="option1"> <p>2017 г. </p><i class="priceDefice"></i> <p>1 500 р.</p>--}}
-                            {{--                                          </label>--}}
-                            {{--                                          <label class="btn btn-secondary">--}}
-                            {{--                                            <input type="radio" name="options" id="option1"> <p>2017 г. </p><i class="priceDefice"></i> <p>1 500 р.</p>--}}
-                            {{--                                          </label>--}}
-                            {{--                                    </div>--}}
+                            <h4 class="wineSubtype">Винтаж</h4>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-secondary active">
+                                    <input type="radio" name="options" id="option1" checked="">
+                                    <p>2017 г. </p><i class="priceDefice"></i>
+                                    <p>1 500 р.</p>
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="options" id="option1">
+                                    <p>2017 г. </p><i class="priceDefice"></i>
+                                    <p>1 500 р.</p>
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="options" id="option1">
+                                    <p>2017 г. </p><i class="priceDefice"></i>
+                                    <p>1 500 р.</p>
+                                </label>
+                            </div>
                         </div>
                         <div id="product">
                             <div id="price" class="form-group">
