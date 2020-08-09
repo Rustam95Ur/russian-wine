@@ -982,3 +982,31 @@ input {
 .subscription p {
     color: white;
 }
+
+.priceContainer .button_cont {
+    width: auto;
+    height: 5.573vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #D2D2D2;
+    opacity: 1;
+    transition: 0.3s;
+    margin-top: 2vw;
+}
+
+.priceContainer .button_cont button#button-carts {
+    padding: 0.417vw 1.563vw 0.417vw 3.125vw;
+    width: 9.063vw;
+    font: 0.677vw 'ProximaNova-Bold';
+    color: #fff;
+    text-transform: uppercase;
+    background-position: 1.563vw 0.538vw;
+    background-size: 1.042vw 1.302vw;
+    position: relative;
+    float: right;
+    top: 0;
+    right: 0;
+    transform: scale(1);
+    border-radius: 25px;
+}
