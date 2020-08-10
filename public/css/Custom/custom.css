@@ -1187,9 +1187,13 @@ span.currency {
   }
 
   #product-product.product-temp1 .image img {
-      width: 8.5em;
+      width: 4.5em;
       margin-top: 0;
   }
+    #product-product.product-temp1 h2, #product-product h2 {
+        font-size: 20px;
+    }
+
 
   .single_product_Container {
         width: 100%;
@@ -1309,7 +1313,7 @@ span.currency {
 
   #product-product.product-temp1 .showcase {
     min-height: unset;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
   }
 
   #product-product.product-temp1 .species, #product-product .species {
