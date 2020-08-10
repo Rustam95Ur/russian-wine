@@ -792,18 +792,6 @@ input {
     right: -4vw;
     z-index: 3;
 }
-#product-product.product-temp1 .social .one-social {
-    background: #EBEBEB;
-    color: #979797;
-    width: 55px;
-    height: 55px;
-    padding-top: 16px;
-    text-align: center;
-    display: table;
-    clear: both;
-    margin: 0 0 2px;
-    font-size: 21px
-}
 
 #product-product.product-temp1 .social .one-social:hover,
 #product-product.product-temp1 .social .one-social:focus {
@@ -847,13 +835,36 @@ input {
 
 #product-product .btn.btn-secondary, .btn.btn-secondary.active {
     border-radius: 25px !important;
-    margin-right: 0.938vw;
+    margin-right: 0.5215vw;
     font-weight: bold;
     font-size: 0.938vw;
     line-height: 1.824vw;
     color: #000 !important;
     background: transparent !important;
     padding: .261vw .886vw .261vw 1.824vw;
+    margin-bottom: 0.5215vw;
+}
+
+#priceBlock .price-vinoteka {
+    transition: .3s;
+    text-align: center;
+    margin: 1.043vw auto;
+}
+
+#priceBlock .price-vinoteka a {
+    color: #23252b;
+    font: 2.085vw 'ProximaNova-Bold';
+        line-height: normal;
+    line-height: 2.606vw;
+}
+
+#priceBlock .button_cont .col-md-6 {
+    background: #F0F0F0;
+    border-radius: 10px 0px 0px 10px;
+}
+
+span.currency {
+    background: none !important;
 }
 
 #product-product .btn.active.btn-secondary::before {
@@ -986,14 +997,23 @@ input {
 
 .priceContainer .button_cont {
     width: auto;
-    height: 5.573vw;
+    height: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid #D2D2D2;
+    justify-content: flex-start;
+    border-top: 0;
     opacity: 1;
     transition: 0.3s;
     margin-top: 2vw;
+}
+
+.prod_quantity.col-md-cstm {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0.55vw 1.23vw;
+    background: #E7E7E7;
+    border-radius: 0px 10px 10px 0px;
 }
 
 .priceContainer .button_cont button#button-carts {
@@ -1010,5 +1030,372 @@ input {
     right: 0;
     transform: scale(1);
     border-radius: 25px;
+    margin-bottom: 1.303vw;
 }
 
+.prod_quantity.col-md-cstm span:last-child {
+    background: url('/image/minus.png') top left no-repeat!important;
+}
+
+.prod_quantity.col-md-cstm span:first-child {
+    background: url('/image/plus.png') top left no-repeat!important;
+}
+
+.prod_quantity.col-md-cstm span {
+    transform: scale(0.56);
+}
+
+.prod_quantity.col-md-cstm input {
+    width: 1.658vw!important;
+    border: none;
+    text-align: center;
+    font-size: 1.042vw!important;
+    height: 4.51vw!important;
+}
+
+#product-product.product-temp1 .manufacturer, #product-product .manufacturer {
+    height: 1.512vw;
+    line-height: 1.512vw;
+    text-align: left;
+    border-bottom: none;
+    padding-left: 8vw;
+    padding-right: 0;
+    margin-left: auto;
+    font-size: 0.834vw;
+}
+
+#product-product.product-temp1 .manufacturer .iblock, #product-product .manufacturer .iblock {
+    text-align: left;
+    border-bottom: 1px solid #E1E1E1;
+}
+
+#product-product.product-temp1 .type, #product-product .type {
+    text-align: left;
+    margin-top: 4.69vw;
+    padding-left: 0;
+    border-bottom: 1px solid #E1E1E1;
+    line-height: 1.512vw;
+    font-size: 0.834vw;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+#product-product.product-temp1 .aging, #product-product .aging {
+    text-align: right;
+    padding-left: 8vw;
+    line-height: 1.512vw;
+    border-bottom: none;
+    font-size: 0.834vw;
+    height: 1.512vw;
+    margin-top: 1.043vw;
+}
+
+#product-product.product-temp1 .aging .iblock, #product-product .aging .iblock{
+    border-bottom: 1px solid #E1E1E1;
+}
+
+#product-product.product-temp1 .alcohol, #product-product .alcohol {
+    margin-top: 4.169vw;
+    color: #DEDDDF;
+    font-size: 3.127vw;
+    font-weight: 900;
+    text-align: right;
+    white-space: nowrap;
+    padding-left: 0.5em;
+}
+
+#product-product.product-temp1 .amount {
+    border-bottom: none;
+    font-size: 0.834vw;
+    height: 1.512vw;
+    margin-top: 3.127vw;
+        line-height: 1.512vw;
+    padding-left: 8vw;
+    max-width: 400px;
+    margin-left: auto;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+#product-product.product-temp1 .amount .iblock {
+    text-align: left;
+    border-bottom: 1px solid #E1E1E1;
+}
+
+#product-product.product-temp1 .species, #product-product .species {
+    margin-top: 3.388vw;
+    text-align: right;
+    padding-right: 12vw;
+    border-bottom: none;
+    font-size: 0.834vw;
+    height: 1.512vw;
+    line-height: 1.512vw;
+    position: relative;
+    margin-left: auto;
+}
+
+#product-product.product-temp1 .species .iblock, #product-product .species .iblock {
+    border-bottom: 1px solid #E1E1E1;
+}
+
+#product-product.product-temp1 .species img {
+    position: absolute;
+    top: 3vw;
+}
+
+#product-product.product-temp1 .volume {
+    margin-top: 120px;
+    font-size: 3.127vw;
+    font-weight: 900;
+    text-align: left;
+    padding-left: 8vw;
+    color: #DEDDDF;
+}
+
+.decsRightSide .social .one-social {
+    color: #979797;
+    background: transparent;
+    width: 55px;
+    height: 55px;
+    padding-top: 16px;
+    text-align: center;
+    display: table;
+    clear: both;
+    margin: 0 0 2px;
+    font-size: 21px;
+}
+
+.desktopHidden {
+    text-align: center;
+    color: #222 !important;
+    display: none;
+}
+
+@media(max-width:768px)  {
+  .col-md-6.decsRightSide, .row.secondDesc, #product-product #content_bottom, #product-product .toShop{
+    display: none;
+  }
+
+  #product-product.product-temp1 .col-xs-offset-6, #product-product.product-temp1 .col-xs-6 {
+    padding-left: 20px;
+    float: left;
+  }
+
+  #product-product.product-temp1 .image img {
+      width: 8.5em;
+      margin-top: 0;
+  }
+
+  .single_product_Container {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 0;
+  }
+
+  .single_product_Container .col-md-12{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #product-product.product-temp1 .back, #product-product .back {
+      position: absolute;
+      z-index: 1;
+      padding-top: 20px;
+      padding-bottom: 50px;
+      overflow: hidden;
+      top: 8vw;
+      width: 100%;
+  }
+
+  .desktopHidden {
+    display: block;
+  }
+
+  #product-product.product-temp1 .manufacturer, #product-product .manufacturer {
+      height: 2em;
+      line-height: 2.5em;
+      text-align: left;
+      border-bottom: none;
+      padding-right: 0;
+      margin-left: auto;
+      font-size: 10px;
+      float: right;
+  }
+
+  #product-product.product-temp1 .iblock, #product-product.product-temp1 .iblock span, #product-product.product-temp1 .type {
+      font-size: 13px !important;
+  }
+
+    #product-product.product-temp1 .type, #product-product .type {
+      text-align: left;
+      height: 2em;
+      line-height: 2.5em;
+      text-align: left;
+      border-bottom: none;
+      padding-right: 0;
+      margin-left: auto;
+      font-size: 10px;
+      padding-left: 0;
+      border-bottom: 1px solid #E1E1E1;
+      font-weight: 900;
+      text-transform: uppercase;
+      float: left;
+  }
+
+  #product-product.product-temp1 .row .col-xs-6 img {
+      position: absolute;
+      top: 0;
+      left: -3em;
+  }
+
+  #product-product.product-temp1 .alcohol, #product-product .alcohol {
+    width: 50%;
+    float: left;
+  }
+
+  #product-product.product-temp1 .aging, #product-product .aging {
+      text-align: right;
+      line-height: 8em;
+      border-bottom: none;
+      height: 2em;
+      margin-top: 0em;
+      float: right;
+      width: 40%;
+      margin-top: -7em;
+  }
+
+  #product-product.product-temp1 .aging .iblock span, #product-product .aging .iblock span {
+    font-size: 18px;
+    font-weight: 900;
+    display: inline-block;
+    line-height: 1.5em;
+    text-transform: uppercase;
+  }
+
+  #product-product.product-temp1 .amount {
+    border-bottom: none;
+    height: 2em;
+    margin-top: 12em;
+    line-height: 6em;
+    padding-left: 0vw;
+    margin-left: auto;
+    text-align: left;
+}
+
+  #product-product.product-temp1 .row .col-xs-6 .species img {
+    position: absolute;
+    top: 4em;
+    left: 1em;
+  }
+
+  #product-product.product-temp1 .iblock span, #product-product .iblock span {
+    font-size: 18px;
+    font-weight: 900;
+    display: inline-block;
+    line-height: 2em;
+    text-transform: uppercase;
+    font-size: 12px !important;
+  }
+
+  #product-product.product-temp1 .row .col-xs-6 .alcohol img {
+    left: 0px!important;
+    top: -10px!important;
+  }
+
+  #product-product.product-temp1 .showcase {
+    min-height: unset;
+    margin-bottom: 50px;
+  }
+
+  #product-product.product-temp1 .species, #product-product .species {
+      margin-top: 2em;
+      text-align: right;
+      padding-right: 0;
+      border-bottom: none;
+      height: 2em;
+      line-height: 2em;
+      position: relative;
+      margin-left: 0;
+      float: right;
+  }
+
+  #product-product .prod_quantity {
+    display: block;
+  }
+
+  #product-product .button_cont span {
+      width: 40px;
+      height: 40px;
+      margin: 5px;
+  }
+
+  #product-product.button_cont {
+    position: relative;
+    width: auto;
+    top: -40px;
+    left: 2.083vw;
+    right: 2.083vw;
+    opacity: 1;
+    border-top: none;
+    overflow: visible;
+    float: left;
+    width: 100%;
+  }
+
+  #product-product .button_cont button#button-carts span {
+      display: block;
+      font-size: 15px;
+      width: 100%;
+      line-height: 250%;
+      font-family: "ProximaNova", sans-serif;
+      font-weight: 600;
+  }
+
+  #product-product .button_cont .prod_quantity input {
+      width: 70px;
+      background: transparent;
+          background-size: auto;
+      background-size: auto;
+      border: none;
+      text-align: center;
+      font-size: 40px;
+  }
+
+  #product-product #button-carts {
+    outline: 0;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  #product-product .button_cont button#button-carts {
+      width: 45%;
+      transition: .3s;
+      height: 40px;
+      background-color: #ea2b58;
+      border: none;
+      border-radius: 25px;
+      position: absolute;
+      bottom: 5px;
+      top: auto;
+      right: 10px;
+      background-size: 3.611vw auto;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .button_cont.desktopHidden {
+      position: fixed;
+      bottom: 0;
+      top: unset;
+      height: 50px;
+      left: 0;
+      padding-left: 5px;
+      z-index: 9999999;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+  }
+
+}

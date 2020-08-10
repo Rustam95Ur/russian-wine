@@ -26,10 +26,10 @@
     <link href="{{asset('icon/favicon.png')}}" rel="apple-touch-icon-precomposed" sizes="48x48">
     <link href="{{asset('icon/favicon.png')}}" rel="apple-touch-icon-precomposed">
     <link href="{{asset('icon/favicon.png')}}" rel="shortcut icon">
-    <!-- Custom styles -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/Custom/custom.css') }}">
     <!-- Old style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/Custom/old-site.css') }}">
+    <!-- Custom styles -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/Custom/custom.css') }}">
     @stack('styles')
 </head>
 <body class="@yield('body_class', '')">
