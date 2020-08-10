@@ -1032,7 +1032,12 @@ span.currency {
     border-radius: 25px;
     margin-bottom: 1.303vw;
 }
-
+.priceContainer .button_cont button#button-carts.active {
+    background: #261F30;
+    text-align: center;
+    padding: 10px 20px;
+    width: 9.063vw;
+}
 .prod_quantity.col-md-cstm span:last-child {
     background: url('/image/minus.png') top left no-repeat!important;
 }

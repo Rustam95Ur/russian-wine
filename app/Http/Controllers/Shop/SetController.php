@@ -21,8 +21,10 @@ class SetController extends Controller
             ->where('slug', '=', $slug)
             ->with('wines', 'nextSet', 'prevSet')
             ->firstOrFail();
+        $wine_count = count($set->wines);
         return view('sets.show', [
-            'set' => $set
+            'set' => $set,
+            'wine_count' => $wine_count
         ]);
     }
 }

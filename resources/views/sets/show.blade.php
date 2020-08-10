@@ -10,11 +10,50 @@
                 <div id="spec-cont" class="col-sp-15">
                     <div class="inner-image">
                         <div class="image-set">
-                            @foreach($set->wines as $wine)
-                                <a data-bottle="{{$wine->id}}">
-                                    <img alt="{{$wine->title}}" src="{{Voyager::image($wine->image)}}">
-                                </a>
-                            @endforeach
+                            @switch($wine_count)
+                                @case(1)
+                                @for ($i = 0; $i < 6; $i++)
+                                    <a data-bottle="{{$set->wines[0]->id}}">
+                                        <img alt="{{$set->wines[0]->title}}" src="{{Voyager::image($set->wines[0]->image)}}">
+                                    </a>
+                                @endfor
+                                @break
+                                @case(2)
+                                @for ($i = 0; $i < 3; $i++)
+                                    <a data-bottle="{{$set->wines[0]->id}}">
+                                        <img alt="{{$set->wines[0]->title}}" src="{{Voyager::image($set->wines[0]->image)}}">
+                                    </a>
+                                    <a data-bottle="{{$set->wines[1]->id}}">
+                                        <img alt="{{$set->wines[1]->title}}" src="{{Voyager::image($set->wines[1]->image)}}">
+                                    </a>
+                                @endfor
+                                @break
+                                @case(3)
+                                @for ($i = 0; $i < 2; $i++)
+                                    <a data-bottle="{{$set->wines[0]->id}}">
+                                        <img alt="{{$set->wines[0]->title}}" src="{{Voyager::image($set->wines[0]->image)}}">
+                                    </a>
+                                    <a data-bottle="{{$set->wines[1]->id}}">
+                                        <img alt="{{$set->wines[1]->title}}" src="{{Voyager::image($set->wines[1]->image)}}">
+                                    </a>
+                                    <a data-bottle="{{$set->wines[2]->id}}">
+                                        <img alt="{{$set->wines[2]->title}}" src="{{Voyager::image($set->wines[2]->image)}}">
+                                    </a>
+                                @endfor
+                                @break
+                                @default
+                                @foreach($set->wines as $wine)
+                                    <a data-bottle="{{$wine->id}}">
+                                        <img alt="{{$wine->title}}" src="{{Voyager::image($wine->image)}}">
+                                    </a>
+                                @endforeach
+                                @break
+                            @endswitch
+{{--                            @foreach($set->wines as $wine)--}}
+{{--                                <a data-bottle="{{$wine->id}}">--}}
+{{--                                    <img alt="{{$wine->title}}" src="{{Voyager::image($wine->image)}}">--}}
+{{--                                </a>--}}
+{{--                            @endforeach--}}
                         </div>
                     </div>
                     <a class="other-product"
@@ -91,8 +130,8 @@
                             </div>
                             <div class="attributes vyderzhkawc">
                                 <span>Выдержка</span>
-                                <img alt="excerpt_image" src="{{asset('image/vyderjka.png')}}">
-                                <p>{{isset($wine->excerpt) ? $wine->excerpt->title : ''}}<br></p>
+                                    <img alt="excerpt_image" src="{{asset('image/vyderjka.png')}}">
+                                    <p>{{isset($wine->excerpt) ? $wine->excerpt->title : ''}}<br></p>
                             </div>
                             <div class="attributes sort-vinogradawc">
                                 <span>Сорт винограда</span>
@@ -163,9 +202,11 @@
                 $(liactive).addClass('active');
             });
             $(".bottle_list").click(function () {
+
                 var bottle = $(this).attr('data-bottle');
                 $('#bottle-container').addClass('show');
                 $('.bottle_list').removeClass('active');
+                $('.bottle_info').removeClass('active');
                 var activeid = '#bottle' + bottle;
                 $(activeid).addClass('active');
                 var liactive = $('.otherbottles li[data-bottle=' + bottle + ']');
