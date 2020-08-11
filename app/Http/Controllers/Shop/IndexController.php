@@ -69,10 +69,20 @@ class IndexController extends Controller
         } else {
             $wines = Wine::where('price', '>', 0)->limit(20)->get();
         }
-
+        $is_favorite = false;
+        if (Auth::guard('client')->user()) {
+            $client = Auth::guard('client')->user();
+            $favorite_wines = $client->wines()->get();
+            foreach ($favorite_wines as $favorite_wine) {
+                if ($favorite_wine->id == $wine->id){
+                    $is_favorite = true;
+                }
+            }
+        }
         return view('shop.wine.show', [
             'wine' => $wine,
             'wines' => $wines,
+            'is_favorite' => $is_favorite,
 
         ]);
     }
