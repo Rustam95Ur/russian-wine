@@ -3,6 +3,7 @@ $(document).ready(function () {
     increaseQty()
     cart_remove()
     cart_remove_one()
+
 })
 
 $('#close-mask').click(function () {
@@ -10,6 +11,25 @@ $('#close-mask').click(function () {
     $('body').removeClass('nooverflow1');
     $('body').removeClass('nooverflow');
 });
+
+function countItem() {
+    $.ajax({
+        type: "GET",
+        url: '/cart/count',
+        success: function (data) {
+            $('#cartCount').html(data.count);
+            if (data.count > 0) {
+                $('.empty_cart_block').removeClass('empty-cart');
+                $('.not_empty_cart').show();
+                $('.empty_cart').hide();
+            } else if (data.count === 0) {
+                $('.not_empty_cart').hide();
+                $('.empty_cart').show();
+            }
+        },
+    });
+}
+
 
 function recountTotal() {
     var sum = 0;

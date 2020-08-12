@@ -43,6 +43,13 @@
 
 {{--<a id="scroll-top"><i class="fa fa-angle-right" aria-hidden="true"></i></a> <!-- /#scroll-top -->--}}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="{{ asset('js/header_cart.js') }}"></script>
+<script>
+    $(document).ready(function () {
+        countItem();
+        cart_table_update();
+    });
+</script>
 <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('js/jquery-countTo.js') }}"></script>
 <script src="{{ asset('js/jquery-waypoints.js') }}"></script>
@@ -50,7 +57,6 @@
 <script src="{{ asset('js/jquery.easing.js') }}"></script>
 <script src="{{ asset('swiperJs/swiper.min.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
-<script src="{{ asset('js/header_cart.js') }}"></script>
 
 
 @stack('scripts')

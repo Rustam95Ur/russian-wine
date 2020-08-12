@@ -8708,9 +8708,7 @@ h2.price {
         background-color: #da224d
     }
 
-    .wine:hover #button-carts.active {
-        background-color: #4fb32b
-    }
+
 
     #vinotheque .wine .image .attributes {
         position: absolute;
@@ -18172,11 +18170,6 @@ p.likeSlider img {
 
 #myOverlay .overlay-results {
     padding: 2.241vw 0 1.564vw;
-}
-
-.overlay-results li:hover {
-    background: #da224d;
-    color: white;
 }
 
 .overlay-results ul li {

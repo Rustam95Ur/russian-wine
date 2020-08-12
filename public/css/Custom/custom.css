@@ -1408,3 +1408,7 @@ span.currency {
   }
 
 }
+
+.wine:hover #button-carts.active {
+    background-color: #261F30
+}
