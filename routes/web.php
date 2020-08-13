@@ -21,6 +21,7 @@ Auth::routes();
 Route::get('', 'Home\IndexController@index')->name('home');
 Route::get('/wine-shop', 'Shop\IndexController@wine_list')->name('wine-shop');
 Route::get('/wine/{slug}', 'Shop\IndexController@wine_info')->name('wine');
+Route::get('/wine/bread/{slug}', 'Shop\IndexController@wine_bread')->name('wine-bread');
 Route::get('/sets', 'Shop\SetController@index')->name('sets');
 
 Route::get('/wineries', 'Page\WineryController@index')->name('wineries');
@@ -37,7 +38,7 @@ Route::post('personal-wine/order', 'Shop\IndexController@personal_wine_order')->
 
 Route::get('/tastings', 'Shop\TastingsController@index')->name('tastings');
 Route::post('/tastings/checkout', 'Shop\TastingsController@checkout')->name('tasting_checkout');
-Route::post('tasting/order', 'Shop\TastingsController@order')->name('tasting_order');
+Route::post('/tasting/order', 'Shop\TastingsController@order')->name('tasting_order');
 
 Route::get('/wine-tour', 'Page\IndexController@tour')->name('wine-tour');
 Route::get('/where-to-buy', 'Page\IndexController@where_to_by')->name('where_to_by');

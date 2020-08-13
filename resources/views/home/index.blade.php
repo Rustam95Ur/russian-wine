@@ -107,7 +107,7 @@
                                                 class="sep"> | </span>
                                             <span class="year"> {{$wine->year}}</span>
                                             <div class="price-vinoteka">
-                                                <a href="#" class="preview">{{$wine->price}} <span>п</span></a>
+                                                <a href="{{route('wine', $wine->slug)}}" class="preview">{{$wine->price}} <span>п</span></a>
                                             </div>
                                             <div class="button_cont">
                                                 <div class="prod_quantity">

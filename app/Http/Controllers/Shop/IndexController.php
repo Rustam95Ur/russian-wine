@@ -22,7 +22,10 @@ use TCG\Voyager\Facades\Voyager;
 
 class IndexController extends Controller
 {
-
+    /**
+     * @param WineFilter $filters
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function wine_list(WineFilter $filters)
     {
         $wineries = Winery::where('status', '=', 'ACTIVE')->get();
@@ -62,7 +65,11 @@ class IndexController extends Controller
         ]);
     }
 
-    public function wine_info($slug)
+    /**
+     * @param $slug
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function wine_bread($slug)
     {
         $filters = json_decode(Cookie::get('filters'));
         $bread_crumbs = [];
@@ -144,6 +151,32 @@ class IndexController extends Controller
             'is_favorite' => $is_favorite,
             'bread_crumbs' => $bread_crumbs,
 
+        ]);
+    }
+
+
+    public function wine_info($slug)
+    {
+        $wine = Wine::where('slug', '=', $slug)->where('status', '=', 'ACTIVE')->firstOrFail();
+        if (isset($wine->winery)) {
+            $wines = Wine::where('winery_id', '=', $wine->winery->id)->where('price', '>', 0)->get();
+        } else {
+            $wines = Wine::where('price', '>', 0)->limit(20)->get();
+        }
+        $is_favorite = false;
+        if (Auth::guard('client')->user()) {
+            $client = Auth::guard('client')->user();
+            $favorite_wines = $client->wines()->get();
+            foreach ($favorite_wines as $favorite_wine) {
+                if ($favorite_wine->id == $wine->id) {
+                    $is_favorite = true;
+                }
+            }
+        }
+        return view('shop.wine.show', [
+            'wine' => $wine,
+            'wines' => $wines,
+            'is_favorite' => $is_favorite,
         ]);
     }
 

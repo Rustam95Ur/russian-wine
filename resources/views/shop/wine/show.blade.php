@@ -124,16 +124,22 @@
                             <ul class="breadcrumb">
                                 <li><a href="{{route('home')}}">Главная</a></li>
                                 <li><a href="{{route('wine-shop')}}">Вино</a></li>
-                                @foreach($bread_crumbs as $bread_crumb)
-                                    <li><a href="{{route('wine-shop')}}?{{$bread_crumb['type']}}={{$bread_crumb['id']}}">{{$bread_crumb['title']}}</a></li>
-                                @endforeach
+                                @if(isset($bread_crumbs))
+                                    @foreach($bread_crumbs as $bread_crumb)
+                                        <li>
+                                            <a href="{{route('wine-shop')}}?{{$bread_crumb['type']}}={{$bread_crumb['id']}}">{{$bread_crumb['title']}}</a>
+                                        </li>
+                                    @endforeach
+                                @endif
                             </ul>
                         </div>
                         <div class="social">
-                            <a class="add_to_favorite one-social like-{{$wine->id}}" id="{{$wine->id}}" style="display: {{($is_favorite) ? 'none' : 'block'}}">
-                              <img src="{{asset('image/like_wine.svg')}}">
+                            <a class="add_to_favorite one-social like-{{$wine->id}}" id="{{$wine->id}}"
+                               style="display: {{($is_favorite) ? 'none' : 'block'}}">
+                                <img src="{{asset('image/like_wine.svg')}}">
                             </a>
-                            <a class="delete_favorite one-social unlike-{{$wine->id}}"  id="{{$wine->id}}" style="display: {{($is_favorite) ? 'block' : 'none'}}">
+                            <a class="delete_favorite one-social unlike-{{$wine->id}}" id="{{$wine->id}}"
+                               style="display: {{($is_favorite) ? 'block' : 'none'}}">
                                 <img src="{{asset('image/unlike_wine.svg')}}">
                             </a>
                             <a href="#" class="one-social">
