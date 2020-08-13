@@ -34,7 +34,7 @@ class IndexController extends Controller
         $years = Wine::select('year')->where('year', '!=', null)->groupBy('year')->orderBy('year', 'DESC')->get();
         $fortresses = Wine::select('fortress')->where('fortress', '!=', null)->groupBy('fortress')->orderBy('fortress', 'DESC')->get();
         $wines = Wine::where('status', '=', 'ACTIVE')->where('price', '>', 0)->filter($filters)->with('color', 'sugar', 'winery')
-            ->paginate(39);
+            ->paginate(30);
         $filters = request()->input();
 
         $favorite_id_list = [];

@@ -19,10 +19,10 @@ tippy('.tippyTooltip', {
 /*  POPOVER JS END*/
 
 $('#search-main').on('keyup', function () {
-    $('.search-btn').show()
+    $('#searching-form').closest('form').submit();
 })
 $(".form-check-input").change(function () {
-    $('.search-btn').show()
+    $('#searching-form').closest('form').submit();
 });
 $("select[name='price_sort']").change(function () {
     $('#searching-form').closest('form').submit();

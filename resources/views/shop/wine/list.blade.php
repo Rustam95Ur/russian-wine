@@ -17,9 +17,6 @@
                            value="{{array_key_exists('title', $filters) ? $filters['title'] : ''}}">
                     <img src="{{ asset ('image/searchSort.svg') }}" alt="" class="search-icon searchIconBlack">
                 </form>
-                <button type="submit" class="btn btn-danger search-btn" form="searching-form" style="display: none">
-                    Применить
-                </button>
             </div>
             <div class="sorting col-md-3">
                 <select id="inputState" name="price_sort" class="form-control custom-select sources"

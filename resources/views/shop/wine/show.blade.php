@@ -124,6 +124,10 @@
                             <ul class="breadcrumb">
                                 <li><a href="{{route('home')}}">Главная</a></li>
                                 <li><a href="{{route('wine-shop')}}">Вино</a></li>
+                                <li><a href="{{route('wine-shop')}}?color[]={{$wine->color->id}}">{{$wine->color->title}}</a></li>
+                                <li><a href="{{route('wine-shop')}}?sugar[]={{$wine->sugar->id}}">{{$wine->sugar->title}}</a></li>
+                                <li><a href="{{route('wine-shop')}}?region[]={{$wine->region->id}}">{{$wine->region->title}}</a></li>
+
                             </ul>
                         </div>
                         <div class="social">
@@ -220,7 +224,7 @@
                             </div>
                             <div class="col-md-6">
                                 @if(isset($wine->winery))
-                                    <a href="{{route('wine-shop')}}?winery={{$wine->winery->id}}"><h3>Другие вина
+                                    <a href="{{route('wine-shop')}}?winery[]={{$wine->winery->id}}"><h3>Другие вина
                                             винодельни</h3></a>
                                 @else
                                     <a href="#"><h3>Другие вина винодельни</h3></a>
