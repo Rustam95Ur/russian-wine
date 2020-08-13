@@ -40,14 +40,6 @@ class IndexController extends Controller
         $wines = Wine::where('status', '=', 'ACTIVE')->where('price', '>', 0)->filter($filters)->with('color', 'sugar', 'winery')
             ->paginate(30);
 
-        if (count($wines) == 0) {
-            $wineries = Winery::where('status', '=', 'ACTIVE')->filter($filters)->get();
-
-            foreach ($wineries as $winery) {
-                $wines = Wine::where('winery_id', '=', $winery->id)->where('status', '=', 'ACTIVE')->limit(33)->paginate(33);
-            }
-        }
-
         $filters = request()->input();
         $cookei_filter = json_encode($filters);
         Cookie::queue('filters', $cookei_filter, 60);

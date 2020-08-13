@@ -34,9 +34,4 @@ class Winery extends Model
     {
         return $this->belongsTo('App\Models\Region', 'region_id', 'id');
     }
-
-    public function scopeFilter(Builder $builder, QueryFilter $filters)
-    {
-        return $filters->apply($builder);
-    }
 }

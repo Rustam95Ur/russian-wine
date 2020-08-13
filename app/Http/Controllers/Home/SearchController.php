@@ -18,15 +18,23 @@ class SearchController extends Controller
 
         if (count($wines) == 0) {
             $wineries = Winery::where('title','LIKE','%'.$request->title."%")
-                ->where('status', '=', 'ACTIVE')->get();
+                ->where('status', '=', 'ACTIVE')->with('wines')->get();
+
+            $wines_array = [];
 
             foreach ($wineries as $winery) {
-                $wines = Wine::where('winery_id', '=', $winery->id)->limit(3)->get();
+                foreach ($winery->wines as $wine_data) {
+                    $wines_array[] = $wine_data;
+                }
+
             }
+
+            $wines = $wines_array;
+
+
         }
 
         return count($wines) ? $wines : ["error" => "По вашему запросу ничего не найдено"];
-
     }
 }
 ?>
