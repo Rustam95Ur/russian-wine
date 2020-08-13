@@ -52,6 +52,8 @@
                 var order_id = $(this).attr('id');
                 order_id = order_id.replace('order-', '')
 
+                $('input[name="orders"]').val(order_id)
+
                 $.ajax({
                     url: '/profile/order/' + order_id,
                     success: function (data) {
@@ -107,6 +109,12 @@
 
                         </div>
                     </div>
+                    <form method="POST">
+                        <input type="hidden" value="" name="orders" id="ordersModal">
+                        <div style="margin-top: 30px; bottom: 0">
+                            <button type="submit" id="reorder" class="btn-danger" style="width: 300px !important;">Повторить заказ</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

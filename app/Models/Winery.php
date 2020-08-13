@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Filters\QueryFilter;
+use Illuminate\Database\Eloquent\Builder;
 
 class Winery extends Model
 {
@@ -31,5 +33,10 @@ class Winery extends Model
     public function region()
     {
         return $this->belongsTo('App\Models\Region', 'region_id', 'id');
+    }
+
+    public function scopeFilter(Builder $builder, QueryFilter $filters)
+    {
+        return $filters->apply($builder);
     }
 }
