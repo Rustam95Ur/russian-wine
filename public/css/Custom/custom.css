@@ -1,11 +1,15 @@
 @import url("../../fonts/Proxima\ Nova/stylesheet.css");
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 
+html{
+  font-size: 10px
+}
+
 #menu.navbar-right .dropdown-menu-custom {
     left: 0;
     right: auto;
     border-radius: 0;
-    padding: 15px !important;
+    padding: 1.5rem !important;
     margin-left: 0 !important;
     position: absolute;
     display: none;
@@ -14,7 +18,6 @@
     margin-top: 0px;
     background: #fff;
 }
-
 
 #menu.navbar-right li:hover .dropdown-menu-custom {
     display: block;
@@ -30,20 +33,20 @@
 }
 
 .shopContent {
-    margin-top: 6.45vw;
-    padding: 0 4.167vw;
+    margin-top: 12rem;
+    padding: 0px 7.9rem;
 }
 .shopContent .featured_cont .swiper-slide:hover {
-    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
-    margin-top: -1vw;
-    margin-bottom: 1.9vw;
+    box-shadow: 0px .4rem 5rem rgba(0, 0, 0, 0.1);
+    margin-top: -1.7rem;
+    margin-bottom: 3.6rem;
 }
 .shopContent .col-md-4:nth-child(3n) > .swiper-slide:hover {
-    margin-bottom: 2vw;
+    margin-bottom: 3.9rem;
 }
 .shopContent .featured_cont .swiper-slide {
-    padding-bottom: 1.865vw !important;
-    margin-bottom: 1vw;
+    padding-bottom: 3.6rem !important;
+    margin-bottom: 1.9rem;
     transition: all .3s ease;
 }
 .subHeader {
@@ -52,8 +55,8 @@
 }
 
 .breadcrumb {
-    margin: 0 0 16px;
-    padding: 8px 0;
+    margin: 0 0 1.6rem;
+    padding: .8rem 0;
 }
 
 .breadcrumb {
@@ -64,21 +67,21 @@
     color: #A3A3A3;
     font-style: normal;
     font-weight: normal;
-    font-size: .833vw;
-    line-height: 1.5vw;
+    font-size: 1.6rem;
+    line-height: 3rem;
     letter-spacing: -0.01em;
 }
 
 .breadcrumb i {
-    font-size: 15px
+    font-size: 1.5rem;
 }
 
 .breadcrumb > li {
     text-shadow: 0 1px 0 #FFF;
-    padding: 0 20px;
+    padding: 0 2rem;
     position: relative;
     white-space: nowrap;
-    border-right: 1px solid #a3a3a3
+    border-right: 1px solid #a3a3a3;
 }
 
 .breadcrumb > li + li:before {
@@ -92,18 +95,18 @@
 
 h1.pageHeading {
     font-weight: bold;
-    font-size: 70px;
-    line-height: 3.127vw;
+    font-size: 7rem;
+    line-height: 3.6rem;
     letter-spacing: -0.01em;
-    margin-top: 16px;
+    margin-top: 1.6rem;
 }
 
 .subHeader .pageDesc {
     font-weight: normal;
-    font-size: 20px;
-    line-height: 1.564vw;
+    font-size: 2rem;
+    line-height: 3rem;
     letter-spacing: -0.01em;
-    padding-bottom: .834vw;
+    padding-bottom: 1.6rem;
 }
 
 #searching-form {
@@ -123,17 +126,18 @@ select#inputState:focus {
 }
 
 .row.sortSearch {
-    margin: 2.189vw;
+    margin: 4.2rem;
     margin-right: -15px;
     margin-left: -15px;
 }
 
 .shopSearch input {
-    padding: 0 1.688vw 0.363vw 1.302vw;
-    font: .833vw ProximaNova-Bold;
+    padding: .7rem 3.2rem .7rem 2.5rem;
+    font: 1.6rem ProximaNova-Bold;
+        line-height: normal;
     width: 100%;
     outline: 0;
-    line-height: 1.824vw;
+    line-height: 3.5rem;
     letter-spacing: -0.01em;
     color: #000000;
 }
@@ -141,22 +145,24 @@ select#inputState:focus {
     cursor: pointer;
 }
 .sorting select {
-    padding: 0.3215vw 1.175vw 0.3215vw 0.678vw;
-    font: .833vw ProximaNova-Bold !important;
-    height: 2.168vw;
-    width: 9.807vw;
+    padding: .8rem 3.8rem .8rem 2rem;
+    font: 1.6rem ProximaNova-Bold;
+    line-height: normal;
+    height: auto;
+    width: auto;
     outline: 0;
-    line-height: 1vw;
+    line-height: 2rem;
     letter-spacing: -0.01em;
     color: #827E7E;
     float: right;
+    border-radius: 25px;
 }
 
 .searchIconBlack {
     filter: brightness(0);
-    padding: 0.85vw 0.943vw;
+    padding: 1.6rem 1.8rem;
     float: right;
-    height: 2.533vw;
+    height: 5rem;
 }
 
 #searching-form .search-icon {
@@ -176,15 +182,9 @@ select#inputState:focus {
     /* no standardized syntax available, no ie-friendly solution available */
 }
 
-.iconSort {
-    position: absolute;
-    right: 2vw;
-    top: 0.9vw;
-}
-
 .sorting select option {
-    font: .833vw ProximaNova-Bold !important;
-    line-height: 1.824vw;
+    font: 1.6rem ProximaNova-Bold;
+    line-height: 2rem;
     display: flex;
     align-items: center;
     letter-spacing: -0.01em;
@@ -193,7 +193,7 @@ select#inputState:focus {
 
 .select-items div, .select-selected {
     color: #ffffff;
-    padding: 8px 16px;
+    padding: .8rem 1.6rem;
     border: 1px solid transparent;
     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
     cursor: pointer;
@@ -222,15 +222,15 @@ select#inputState:focus {
 }
 
 .slide-inner div:first-child {
-    max-height: 18.76vw;
+    max-height: 35rem;
 }
 
-.featured_cont:last-child {
-    padding-bottom: 5vw;
+.main-homepage-1 .featured_cont:last-child {
+    padding-bottom: 10rem;
 }
 
 .searchError {
-    padding: 15px;
+    padding: 1.5rem;
     color: red
 }
 
@@ -275,20 +275,20 @@ select#inputState:focus {
 }
 
 .card-header {
-    font-size: 25px;
+    font-size: 2.5rem;
     color: white;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .login_container .btn-danger {
     background: #da224d;
-    font: .833vw ProximaNova-Bold;
+    font: 1.6rem ProximaNova-Bold;
     text-align: center;
-    letter-spacing: .1vw;
-    border-radius: 15vw;
+    letter-spacing: -.01em;
+    border-radius: 50px;
     border: none;
-    padding: 18px 40px;
+    padding: 1.3rem 4rem;
     color: #fff;
     margin-top: 0 !important;
     float: left;
@@ -304,12 +304,12 @@ input {
 }
 
 .forgotdiv {
-    margin-top: 15px;
+    margin-top: 1.5rem;
 }
 
 .regist {
     color: gray;
-    margin-top: 35px !important;
+    margin-top: 3.5rem !important;
 }
 
 .login_container {
@@ -318,7 +318,7 @@ input {
 }
 
 #register_modal .auth_modal {
-    margin-top: 150px;
+    margin-top: 15rem;
 }
 
 #register_modal .login_container .btn-danger {
@@ -326,7 +326,7 @@ input {
 }
 
 .auth_modal {
-    margin-top: 250px;
+    margin-top: 25rem;
 }
 
 .closeclick {
@@ -344,7 +344,7 @@ input {
 .tab button.active {
     border-color: #ccc;
     background-color: #ccc;
-    padding: 5px 10px;
+    padding: .5rem 1rem;
 }
 
 /* Style the tab content */
@@ -354,7 +354,7 @@ input {
 }
 
 .card-header {
-    margin-bottom: 50px;
+    margin-bottom: 5rem;
 }
 
 .card {
@@ -365,7 +365,7 @@ input {
 /* Filters Style */
 
 .filtersMain {
-    margin: 1.303vw auto;
+    margin: 2.5rem auto;
 }
 
 #favFilters label {
@@ -374,22 +374,21 @@ input {
 }
 
 .form-check input, .form-check label {
-    font-size: 0.938vw;
+    font-size: 1.8rem;
     font-family: ProximaNova-reg, Lato;
     width: auto;
     outline: 0;
-    line-height: 1.824vw;
+    line-height: 3.5rem;
     letter-spacing: -0.01em;
     color: #000000;
     padding: 0;
 }
 
-
 .filterHeading {
-    font-size: .853vw;
+    font-size: 1.7rem;
     text-transform: uppercase;
-    line-height: 2.085vw;
-    margin: 1.303vw 0 .261vw;
+    line-height: 2.5rem;
+    margin: 2.5rem 0 .5rem;
 }
 
 .filtersMain .panel.panel-default {
@@ -399,15 +398,15 @@ input {
 }
 
 .collapseBtn span {
-    font-size: .73vw;
-    padding: .209vw 0.5215vw .209vw 1.303vw;
+    font-size: 1.4rem;
+    padding: .4rem 1rem .4rem 2.5rem;
 }
 
 .collapseBtn {
-    font: .833vw ProximaNova-Bold;
+    font: 1.6rem ProximaNova-Bold;
     width: auto;
     outline: 0;
-    line-height: 1.824vw;
+    line-height: 3.5rem;
     letter-spacing: -0.01em;
     color: #000000;
     border-radius: 25px;
@@ -417,8 +416,8 @@ input {
 }
 
 .collapseIcon {
-    padding-right: .5215vw;
-    width: 0.938vw;
+    padding-right: 1rem;
+    width: 2rem;
 }
 
 .form-check .custom-control-input {
@@ -447,10 +446,10 @@ input {
     display: inline-grid;
     transition: all .3s ease;
     opacity: .3;
-    font-size: 1.3vw;
+    font-size: 2.5rem;
     position: relative;
-    left: -.6vw;
-    top: .1vw;
+    left: -1.5rem;
+    top: 0.3rem;
 }
 
 .form-check input {
@@ -459,42 +458,46 @@ input {
 
 /*  live filter search bar */
 #liveSearch-form input {
-    padding: 0.313vw 0;
-    font: 0.938vw ProximaNova-Bold;
+    padding: .6rem 0;
+    font: 1.8rem ProximaNova-Bold;
     line-height: normal;
     line-height: normal;
     width: 100%;
     outline: 0;
-    line-height: 1.824vw;
+    line-height: 3.5rem;
     letter-spacing: -0.01em;
     color: #000000;
 }
+
 .liveSearchIcon {
-    height: 1vw;
-    margin-top: 0.8vw;
-    margin-right: 0.5vw;
+    height: 2rem;
+    margin-top: 1.6rem;
+    margin-right: 1rem;
 }
+
 #liveSearch-form {
     display: flex;
     border-bottom: 2px solid #aaa;
-    margin-bottom: 0.9902vw;
+    margin-bottom: 2rem;
     width: 70%;
 }
 
 .btn-danger {
-    display: inline-block;
     background: #da224d;
-    border: none;
+    font: 1.6rem ProximaNova-Bold;
+    text-align: center;
+    letter-spacing: -.01em;
     border-radius: 50px;
-    padding: 18px 40px;
-    height: auto;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 900;
+    border: none;
+    padding: 1.3rem 4rem;
     color: #fff;
-    margin-top: 40px;
-    letter-spacing: 1px;
-    transition: .2s all linear
+    margin-top: 4rem;
+    float: left;
+    display: inline-block;
+    text-transform: uppercase;
+    transition: .2s all linear;
+    display: inline-block;
+    height: auto;
 }
 
 .message_modal {
@@ -517,7 +520,7 @@ input {
 }
 
 .auth_modal h2 {
-    font-size: 50px;
+    font-size: 5rem;
     color: white;
 }
 
@@ -603,21 +606,27 @@ input {
 .custom-select {
     position: relative;
     display: inline-block;
-    padding: 0.3215vw 1.175vw 0.3215vw 0.678vw;
-    font: .833vw ProximaNova-Bold !important;
+    padding: .8rem 3.8rem .8rem 2rem;
+    font: 1.6rem ProximaNova-Bold;
     height: auto;
-    width: 12.807vw;
+    width: auto;
     outline: 0;
-    line-height: 1vw;
+    line-height: 2rem;
     letter-spacing: -0.01em;
-    color: #000000;
+    color: #827E7E;
     float: right;
-    border-radius: 20px;
+    border-radius: 25px;
 }
 
-.custom-select-trigger:after {
+.iconSort {
     position: absolute;
-    display: block;
+    right: 3.5rem;
+    top: 1.6rem;
+}
+
+.custom-select-trigger::after {
+    position: unset;
+    display: none;
     content: '';
     width: 10px;
     height: 10px;
@@ -640,9 +649,8 @@ input {
     position: absolute;
     display: block;
     top: 100%;
-    left: 0;
-    right: 0;
-    min-width: 100%;
+    left: -2.2%;
+    min-width: 105%;
     margin: 15px 0;
     border: 1px solid #00000038;
     border-radius: 0;
@@ -650,7 +658,6 @@ input {
     box-shadow: 0 2px 1px rgba(0, 0, 0, .07);
     background: #fff;
     transition: all .4s ease-in-out;
-
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -665,12 +672,12 @@ input {
     z-index: 20;
 }
 
-.custom-options:before {
+.custom-options::before {
     position: absolute;
     display: block;
     content: '';
     bottom: 100%;
-    right: 25px;
+    right: 49%;
     width: 7px;
     height: 7px;
     margin-bottom: -4px;
@@ -695,15 +702,22 @@ input {
     line-height: 20px;
     cursor: pointer;
     transition: all .4s ease-in-out;
+    white-space: nowrap;
 }
 
 .custom-option:first-of-type {
     border-radius: 4px 4px 0 0;
+    padding-bottom: 0;
+}
+
+.custom-option:nth-child(2n) {
+    padding-top: 2rem !important;
 }
 
 .custom-option:last-of-type {
     border-bottom: 0;
     border-radius: 0 0 4px 4px;
+    padding-top: 0;
 }
 
 .custom-option:hover,
@@ -1176,6 +1190,14 @@ span.currency {
     display: none;
 }
 
+.wine:hover #button-carts.active {
+    background-color: #261F30
+}
+
+      /*                 Mobile styles                */
+
+                  /*       768px        */
+
 @media(max-width:768px)  {
   .col-md-6.decsRightSide, .row.secondDesc, #product-product #content_bottom, #product-product .toShop{
     display: none;
@@ -1407,8 +1429,21 @@ span.currency {
       backdrop-filter: blur(10px);
   }
 
-}
-
-.wine:hover #button-carts.active {
-    background-color: #261F30
+  .breadcrumb{
+    display: none;
+  }
+  h1.pageHeading {
+    font-weight: bold;
+    font-size: 4rem;
+    line-height: 1.2em;
+    letter-spacing: -0.01em;
+    margin-top: 0;
+  }
+  .subHeader .pageDesc {
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: 1.5em;
+    letter-spacing: -0.01em;
+    padding-bottom: 1rem;
+  }
 }

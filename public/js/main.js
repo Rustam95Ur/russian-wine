@@ -14,7 +14,42 @@
 * headerFixed();
 *
 */
+/*.shopSearch .button_cont {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #D2D2D2;
+    overflow: hidden;
+    transition: 0.3s;
+    margin: 4rem auto -3rem;
+    height: 10rem;
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}*/  //reminder for me don't touch
+  // Add smooth scrolling to all links
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+      // Store hash
+      var hash = this.hash;
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 500, function(){
 
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
 if ($(window).width() > 992) {
     var swiperH = new Swiper('fullscreenSlider.swiper-container-h', {
         direction: 'vertical',

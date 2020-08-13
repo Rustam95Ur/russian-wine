@@ -40,11 +40,11 @@
                     </div>
                 </div>
                 <div id="button_link">
-                    <a id="set_vybor" href="#set_block">Выбрать сет</a>
+                    <a id="set_vybor" href="#sets_anchor">Выбрать сет</a>
                     <a id="how_we" href="#how_we_cont">Как мы это делаем</a>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12" id="sets_anchor">
                         <h5 class="title_prox_bold">
                             Дегустационные сеты
                         </h5>

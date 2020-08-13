@@ -1,4 +1,4 @@
-@import url("../../fonts/Proxima\ Nova/stylesheet.css");
+@import url("../../fonts/Proxima \ Nova/stylesheet.css");
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 [class^="icon-"],
 [class*=" icon-"] {
@@ -13314,6 +13314,7 @@ nav ul > li:hover #inda-club {
     box-sizing: border-box;
     padding: 1.645833VW 4.166666666666666VW 3.6458333333333335VW;
     background: #fff;
+    min-height: 39.7vw;
 }
 
 .image-set a {
