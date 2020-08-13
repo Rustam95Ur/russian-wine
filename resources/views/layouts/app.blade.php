@@ -84,21 +84,22 @@
     $('#search').on('keyup', function () {
         if ($(this).val().length >= 3) {
             var value = $(this).val();
-            $(".allResults").attr("href", "{{route('wine-shop')}}?title=" + value)
             $.ajax({
                 type: 'get',
                 url: '{{URL::to('search')}}',
                 data: {'title': value},
                 success: function (data) {
-                    var res = []
-                    if (data.length > 0) {
+                    var res = [],
+                        wines = data.wines;
+                    if (wines.length > 0) {
                         for (var i = 0; i < 3; i++) {
-                            var wine_desc = ((data[i].production_feature.substring(1, 40)).replace('p>', '')).replace('</p>', '')
-                            res[i] = "<ul><li><a class='text-danger' href='/wine/" + data[i].slug + "'><img id='search' src='/storage/" + data[i].image + "' class='xs-thumb'>" + data[i].title + ' ' + wine_desc + '...' + "</a></li></ul>"
+                            var wine_desc = ((wines[i].production_feature.substring(1, 40)).replace('p>', '')).replace('</p>', '')
+                            res[i] = "<ul><li><a class='text-danger' href='/wine/" + wines[i].slug + "'><img id='search' src='/storage/" + wines[i].image + "' class='xs-thumb'>" + wines[i].title + ' ' + wine_desc + '...' + "</a></li></ul>"
                         }
                         $("#searchResult").html(res)
+                        $(".allResults").attr("href", "{{route('wine-shop')}}?" + data.link)
                     } else {
-                        $("#searchResult").html("<div class='col-md-12 searchError'>" + data.error + "</div>")
+                        $("#searchResult").html("<div class='col-md-12 searchError'>По вашему запросу ничего не найдено</div>")
                     }
                 }
 
