@@ -9,7 +9,6 @@ use App\Models\Region;
 use App\Models\Set;
 use App\Models\Wine;
 use App\Models\WineClass;
-use App\Models\Winemaker;
 use App\Models\Winery;
 use Illuminate\Http\Request;
 use App\Models\Order;
@@ -50,6 +49,13 @@ class IndexController extends Controller
             foreach ($favorite_wines as $wine) {
                 $favorite_id_list[] = $wine->id;
             }
+        }
+        if (\request()->ajax()) {
+            return view('shop.wine.wine-list', [
+                'wines' => $wines,
+                'filters' => $filters,
+                'favorite' => $favorite_id_list
+            ]);
         }
 
         return view('shop.wine.list', [
@@ -156,7 +162,10 @@ class IndexController extends Controller
         ]);
     }
 
-
+    /**
+     * @param $slug
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function wine_info($slug)
     {
         $wine = Wine::where('slug', '=', $slug)->where('status', '=', 'ACTIVE')->firstOrFail();
@@ -413,6 +422,10 @@ class IndexController extends Controller
         }
     }
 
+    /***
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function checkout_order(Request $request)
     {
         $cart_session = Session::get('cart');
@@ -455,11 +468,21 @@ class IndexController extends Controller
         }
     }
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function checkout_success()
     {
         return view('shop.checkout.success');
     }
 
+    /**
+     * @param $model_name
+     * @param $type
+     * @param $array_value
+     * @param $bread_crumbs
+     * @return mixed
+     */
     protected function set_array_with_model($model_name, $type, $array_value, $bread_crumbs)
     {
         $values = $model_name::whereIn('id', $array_value)->get();
@@ -470,6 +493,12 @@ class IndexController extends Controller
         return $bread_crumbs;
     }
 
+    /**
+     * @param $array_value
+     * @param $type
+     * @param $bread_crumbs
+     * @return mixed
+     */
     protected function set_simple_array($array_value, $type, $bread_crumbs)
     {
         foreach ($array_value as $value) {

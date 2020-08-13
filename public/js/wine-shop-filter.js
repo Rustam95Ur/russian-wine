@@ -6,7 +6,6 @@ tippy('.tippyTooltip', {
         const template = document.getElementById(id);
         return template.innerHTML;
     },
-    allowHTML: true,
     trigger: 'click',
     allowHTML: true,
     theme: 'light-border',
@@ -16,29 +15,74 @@ tippy('.tippyTooltip', {
     offset: [0, 10],
     placement: 'right',
 });
+
+$(window).on('hashchange', function () {
+    if (window.location.hash) {
+        var page = window.location.hash.replace('#', '');
+        if (page == Number.NaN || page <= 0) {
+            return false;
+        } else {
+            wine_filter_search(page);
+        }
+    }
+});
 /*  POPOVER JS END*/
 
+$(document).ready(function () {
+    $(document).on('click', '.pagination a', function (event) {
+        event.preventDefault();
+
+        $('li').removeClass('active');
+        $(this).parent('li').addClass('active');
+
+        var page = $(this).attr('href').split('page=')[1];
+        var filter = $('#searching-form').serialize()
+        wine_filter_search(filter, page)
+    });
+
+});
+
+function wine_filter_search(filter, page = 1) {
+    $.ajax(
+        {
+            url: '?' + filter + '&page=' + page,
+            type: "get",
+            datatype: "html"
+        }).done(function (data) {
+        $("#wine_list_block").empty().html(data);
+        // location.hash = page;
+    }).error(function (jqXHR, ajaxOptions, thrownError) {
+        console.log(jqXHR)
+        console.log(ajaxOptions)
+        console.log(thrownError)
+    });
+}
+
+
 $('#search-main').on('keyup', function () {
-    $('#searching-form').closest('form').submit();
+    var filter = $('#searching-form').serialize()
+    wine_filter_search(filter)
 })
 $(".form-check-input").change(function () {
-    $('#searching-form').closest('form').submit();
+    var filter = $('#searching-form').serialize()
+    wine_filter_search(filter)
 });
 $("select[name='price_sort']").change(function () {
-    $('#searching-form').closest('form').submit();
+    var filter = $('#searching-form').serialize()
+    wine_filter_search(filter)
 });
 
 function collapse_click(type) {
     $("#collapse-" + type).on("hide.bs.collapse", function () {
         $('#btnCollapse-' + type).html('<span>Посмотреть все</span>' +
             '<img src="/image/arrow-down.svg" alt="" class="collapseIcon">'
-    )
+        )
         ;
     });
     $("#collapse-" + type).on("show.bs.collapse", function () {
         $('#btnCollapse-' + type).html('<span>Закрыть</span>' +
             '<img src="/image/arrow-up.svg" alt="" class="collapseIcon">'
-    );
+        );
     });
 }
 
@@ -78,7 +122,8 @@ $(".custom-option").on("click", function () {
     $(this).addClass("selection");
     $(this).parents(".custom-select").removeClass("opened");
     $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
-    $('#searching-form').closest('form').submit();
+    var filter = $('#searching-form').serialize()
+    wine_filter_search(filter)
 });
 
 
