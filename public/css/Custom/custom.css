@@ -78,7 +78,7 @@ html{
 
 .breadcrumb > li {
     text-shadow: 0 1px 0 #FFF;
-    padding: 0 2rem;
+    padding: 0 1rem;
     position: relative;
     white-space: nowrap;
     border-right: 1px solid #a3a3a3;

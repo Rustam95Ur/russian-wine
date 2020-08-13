@@ -124,10 +124,9 @@
                             <ul class="breadcrumb">
                                 <li><a href="{{route('home')}}">Главная</a></li>
                                 <li><a href="{{route('wine-shop')}}">Вино</a></li>
-                                <li><a href="{{route('wine-shop')}}?color[]={{$wine->color->id}}">{{$wine->color->title}}</a></li>
-                                <li><a href="{{route('wine-shop')}}?sugar[]={{$wine->sugar->id}}">{{$wine->sugar->title}}</a></li>
-                                <li><a href="{{route('wine-shop')}}?region[]={{$wine->region->id}}">{{$wine->region->title}}</a></li>
-
+                                @foreach($bread_crumbs as $bread_crumb)
+                                    <li><a href="{{route('wine-shop')}}?{{$bread_crumb['type']}}={{$bread_crumb['id']}}">{{$bread_crumb['title']}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="social">

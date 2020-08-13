@@ -16,8 +16,8 @@ use App\Models\Order;
 use App\Models\Sugar;
 use App\Filters\WineFilter;
 use Session;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Auth;
-use DB;
 use TCG\Voyager\Facades\Voyager;
 
 class IndexController extends Controller
@@ -36,7 +36,8 @@ class IndexController extends Controller
         $wines = Wine::where('status', '=', 'ACTIVE')->where('price', '>', 0)->filter($filters)->with('color', 'sugar', 'winery')
             ->paginate(30);
         $filters = request()->input();
-
+        $cookei_filter = json_encode($filters);
+        Cookie::queue('filters', $cookei_filter, 60);
         $favorite_id_list = [];
         if (Auth::guard('client')->user()) {
             $client = Auth::guard('client')->user();
@@ -63,8 +64,66 @@ class IndexController extends Controller
 
     public function wine_info($slug)
     {
+        $filters = json_decode(Cookie::get('filters'));
+        $bread_crumbs = [];
+        foreach ($filters as $key => $values) {
+            switch ($key) {
+                case 'title';
+                    if (($values)) {
+                        $wine_title = ['title' => $values, 'type' => 'title', 'id' => $values, ''];
+                        array_push($bread_crumbs, $wine_title);
+                    }
+                    break;
+                case 'color';
+                    if (($values)) {
+                        $bread_crumbs = $this->set_array_with_model(new Color(), 'color[]', $values, $bread_crumbs);
+                    }
+                    break;
+                case 'sugar';
+                    if (($values)) {
+                        $bread_crumbs = $this->set_array_with_model(new Sugar(), 'sugar[]', $values, $bread_crumbs);
+                    }
+                    break;
+                case 'winery';
+                    if (($values)) {
+                        $bread_crumbs = $this->set_array_with_model(new Winery(), 'winery[]', $values, $bread_crumbs);
+                    }
+                    break;
+                case 'sort';
+                    if (($values)) {
+                        $bread_crumbs = $this->set_array_with_model(new GrapeSort(), 'sort[]', $values, $bread_crumbs);
+                    }
+                    break;
+                case 'region';
+                    if (($values)) {
+                        $bread_crumbs = $this->set_array_with_model(new Region(), 'region[]', $values, $bread_crumbs);
+                    }
+                    break;
+                case 'year';
+                    if (($values)) {
+                        $bread_crumbs = $this->set_simple_array($values, 'year[]', $bread_crumbs);
+                    }
+                    break;
+                case 'wine_class';
+                    if (($values)) {
+                        $bread_crumbs = $this->set_array_with_model(new WineClass(), 'wine_class[]', $values, $bread_crumbs);
+                    }
+                    break;
+
+                case 'price';
+                    if (($values)) {
+                        $bread_crumbs = $this->set_simple_array($values, 'price[]', $bread_crumbs);
+                    }
+                    break;
+                case 'fortress';
+                    if (($values)) {
+                        $bread_crumbs = $this->set_simple_array($values, 'fortress[]', $bread_crumbs);
+                    }
+                    break;
+            }
+        }
         $wine = Wine::where('slug', '=', $slug)->where('status', '=', 'ACTIVE')->firstOrFail();
-        if(isset($wine->winery)) {
+        if (isset($wine->winery)) {
             $wines = Wine::where('winery_id', '=', $wine->winery->id)->where('price', '>', 0)->get();
         } else {
             $wines = Wine::where('price', '>', 0)->limit(20)->get();
@@ -74,7 +133,7 @@ class IndexController extends Controller
             $client = Auth::guard('client')->user();
             $favorite_wines = $client->wines()->get();
             foreach ($favorite_wines as $favorite_wine) {
-                if ($favorite_wine->id == $wine->id){
+                if ($favorite_wine->id == $wine->id) {
                     $is_favorite = true;
                 }
             }
@@ -83,6 +142,7 @@ class IndexController extends Controller
             'wine' => $wine,
             'wines' => $wines,
             'is_favorite' => $is_favorite,
+            'bread_crumbs' => $bread_crumbs,
 
         ]);
     }
@@ -363,5 +423,24 @@ class IndexController extends Controller
     public function checkout_success()
     {
         return view('shop.checkout.success');
+    }
+
+    protected function set_array_with_model($model_name, $type, $array_value, $bread_crumbs)
+    {
+        $values = $model_name::whereIn('id', $array_value)->get();
+        foreach ($values as $value) {
+            $value_info = ['title' => $value->title, 'type' => $type, 'id' => $value->id];
+            array_push($bread_crumbs, $value_info);
+        }
+        return $bread_crumbs;
+    }
+
+    protected function set_simple_array($array_value, $type, $bread_crumbs)
+    {
+        foreach ($array_value as $value) {
+            $value_info = ['title' => $value, 'type' => $type, 'id' => $value];
+            array_push($bread_crumbs, $value_info);
+        }
+        return $bread_crumbs;
     }
 }
