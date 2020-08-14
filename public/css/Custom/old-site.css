@@ -580,7 +580,7 @@ header #form-language .language-select {
     }
 
     p.likeSlider {
-         z-index: 1000;
+         z-index: 10;
          position: absolute;
          left: 4vw;
          top: 4.8vw;

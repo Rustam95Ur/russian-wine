@@ -1,7 +1,7 @@
 <div class="shopSearch col-md-9">
     <div class="row featured_cont">
         @foreach($wines as $wine)
-            <div class="col-md-4">
+            <div class="col-md-4 col-xs-6">
                 <div class="swiper-slide">
                     <div class="wine">
                         <div class="image">
@@ -52,7 +52,7 @@
                 <h2>По вашему фильтру ничего не найдено</h2>
             </div>
         @endif
-        <div class="col-md-12 mt-lg">
+        <div class="col-md-12 xol-xs-12 mt-lg">
             {{$wines->appends(request()->input())->links()}}
         </div>
     </div>

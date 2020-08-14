@@ -198,7 +198,14 @@ select#inputState:focus {
     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
     cursor: pointer;
 }
-
+.sortingTitle {
+    font-size: 1.8rem;
+    line-height: 3.6rem;
+    letter-spacing: -0.01em;
+    color: #726C6C;
+    float: right;
+    padding-right: 1rem;
+}
 /* Style items (options): */
 .select-items {
     position: absolute;
@@ -726,7 +733,7 @@ input {
 }
 
 .tippyTooltip {
-    width: 1.303vw;
+    width: 2.5rem;
     float: right;
 }
 
@@ -1446,4 +1453,457 @@ span.currency {
     letter-spacing: -0.01em;
     padding-bottom: 1rem;
   }
+}
+
+
+/*             Mobile style max-width 320px                        */
+
+@media (max-width: 481px) {
+  .shopContent {
+      margin-top: 1rem;
+      padding: 0px 2rem;
+  }
+  .subHeader {
+    text-align: left;
+    margin: 0;
+    border: none;
+  }
+  h1.pageHeading {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 1.3333em;
+    letter-spacing: -0.01em;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  .mobileFilters {
+      display: flex;
+      align-items: center;
+  }
+  .sorting.col-md-3 {
+      float: unset;
+  }
+  .sortSearch .col-xs-6, .sortSearch .col-xs-12 {
+    padding: 0;
+  }
+  .row.sortSearch .col-xs-6:first-child {
+    border-right: 1px solid;
+  }
+  .row.sortSearch {
+  	border: 1px solid #000;
+  	border-left: 0;
+  	border-right: 0;
+  	margin: 3rem -2rem;
+  }
+  .sortingIconsMobile {
+      filter: brightness(0);
+      padding: 1rem 0.5rem 1rem 3rem;
+      float: unset;
+      height: 3.6rem;
+  }
+  .filtersIconsMobile {
+    filter: brightness(0);
+    padding: 1rem .7rem 1rem 5rem;
+    float: unset;
+    height: 3.8rem;
+  }
+  .mobileFiltersText {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: ProximaNova-bold;
+    color: #000!important;
+  }
+  .sortingTitle {
+    font-size: 1.7rem;
+    line-height: 3.6rem;
+    letter-spacing: -0.01em;
+    color: #726C6C !important;
+    float: left;
+    padding-right: 1rem;
+  }
+  .mobileHidden{
+    display: none;
+  }
+  .desktopHidden{
+    display: block;
+  }
+  .sortOverlayHeader img {
+    padding: 1.5rem 1.2rem 1.5rem 2.1rem;
+    height: 4.4rem;
+  }
+
+  .sortingOverlay a {
+    color: #000;
+    font-family: ProximaNova-bold;
+  }
+  .sortingOverlay a:hover {
+    color: #000;
+  }
+  .sortOverlayBody ul li {
+      font-size: 16px;
+      line-height: 20px;
+      display: flex;
+      align-items: center;
+      letter-spacing: -0.01em;
+      font-family: ProximaNova-bold;
+      color: #000 !important;
+      margin: 2.7rem 2rem;
+  }
+  .OtherFilters ul li.SubOverlayItem {
+    margin-left: 0rem !important;
+    border-bottom: 1px solid #CACACA;
+    margin-right: 0.5rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+  .OtherFilters ul li.SubOverlayItem:first-child {
+      margin-top: 1rem;
+  }
+  .sortOverlayBody ul li:first-child {
+    margin-top: 2rem;
+  }
+
+  .sortOverlayBtn{
+    background: #da224d;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 25px;
+    border: none;
+    color: #fff;
+    padding: 1.5rem 3rem;
+    line-height: 2.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 1.2rem auto;
+  }
+  .sortOverlayBtn:hover{
+    color: #fff;
+  }
+  .sortOverlayFooter {
+      border-top: 1px solid;
+      text-align: center;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      position: fixed;
+      background: #fff;
+  }
+  .sortSuboverlayFooter {
+      border-top: 1px solid;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+  }
+  #sortMobi.open {
+    left: 0%;
+  }
+  #sortMobi {
+      position: absolute;
+      background: #fff;
+      z-index: 121;
+      height: 100%;
+      top: 0;
+      transition: all .3s ease;
+      width: 100%;
+      left: 100%;
+  }
+  .sortingMobile.open {
+    left: 0%;
+  }
+  .sortingMobile {
+      position: fixed;
+      background: #fff;
+      z-index: 121;
+      height: 100%;
+      top: 0;
+      transition: all .3s ease;
+      width: 100%;
+      left: 100%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+  }
+  .SubOverlay.open {
+    left: 0%;
+  }
+  .SubOverlay {
+      position: fixed;
+      background: #fff;
+      z-index: 121;
+      height: 86%;
+      top: 0;
+      transition: all .3s ease;
+      width: 100%;
+      left: 100%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+  }
+  .sortingMobile input[type="checkbox"]:checked + label::before {
+      content: "\f14a";
+      color: #da224d;
+      opacity: 1;
+  }
+  .SubOverlay input[type="checkbox"] + label::before {
+    left: -0.5rem!important;
+    top: 0.3rem;
+    margin-left: 1rem;
+  }
+  .SubOverlay input[type="checkbox"]:checked + label::before {
+      content: "\f14a";
+      color: #da224d;
+      opacity: 1;
+  }
+  .sortingMobile .sortOverlayFooter{
+    left: 100%;
+    transition: all .3s ease;
+  }
+  .sortingMobile .sortSuboverlayFooter{
+    left: 100%;
+    transition: all .3s ease;
+  }
+  .sortingMobile .form-check input, .sortingMobile .form-check label {
+      font-size: 1.5rem;
+      font-family: ProximaNova-reg, sans-serif;
+      width: auto;
+      outline: 0;
+      line-height: 3.5rem;
+      letter-spacing: -0.01em;
+      color: #000000;
+      padding: 0;
+      margin-left: -.5rem;
+  }
+  .sortingMobile input[type="checkbox"] + label::before {
+
+      content: "\f096";
+      font-family: "FontAwesome";
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      display: inline-grid;
+      transition: all .3s ease;
+      opacity: .3;
+      font-size: 2.5rem;
+      position: relative;
+      left: -.5rem;
+      top: 0.3rem;
+    }
+  .sortOverlayHeader h3 {
+    font-size: 2rem;
+    line-height: 4rem;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: #000000;
+    margin: 0;
+    margin-bottom: 2.6rem;
+    margin-left: -4rem;
+  }
+  .sortOverlayClear {
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    align-items: center;
+    letter-spacing: -0.01em;
+    color: #7E7E7E !important;
+    font-family: ProximaNova-Reg, sans-serif !important;
+    float: left;
+    margin: 1.5rem -5rem 1.5rem 4.5rem;
+  }
+  .sortOverlayClose {
+    padding: 0 !important;
+    height: 1.8rem !important;
+    float: right;
+    margin: 1.4rem 0.5rem;
+  }
+  .tippyTooltip {
+    width: 1.5rem;
+    float: right;
+    margin: 1rem 0.6rem;
+}
+  .tippy-content {
+    padding: 2rem 1rem;
+  }
+  .tippy-content p {
+    font: 1.2rem 'ProximaNova-Reg', sans-serif;
+        line-height: normal;
+    letter-spacing: -.01em;
+    line-height: 2rem;
+    padding: 0;
+  }
+  [data-tippy-root] {
+    max-width: calc(90% - 20px);
+  }
+  .tippy-content h4 {
+    font-family: 'ProximaNova-Bold';
+    font-size: 1.6rem;
+    line-height: 2rem;
+    margin: 0;
+  }
+  .OtherFilters ul li.SubOverlayItem {
+      margin-left: 0rem !important;
+      border-bottom: 1px solid #CACACA;
+      margin-right: 0.5rem;
+  }
+
+  .OtherFilters ul li.SubOverlayItem a {
+      font-size: 13px;
+      line-height: 40px;
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      width: 100%;
+  }
+  .search-icon.overlayListIcon {
+    transform: rotate(-90deg);
+    right: 2.2rem;
+    position: absolute;
+  }
+
+  /* for each Overlay/Suboverlay needs a separate css */
+  #sortMobi.open .sortOverlayFooter{
+    left: 0;
+  }
+  #filtMobi.open .sortOverlayFooter{
+    left: 0;
+  }
+  #filtMobiColor.open .sortSuboverlayFooter{
+    left: 0;
+  }
+  /* shop styles  */
+  .featured_cont .col-md-4 {
+      padding: 0px;
+      border-right: 1px;
+  }
+  .featured_cont .col-md-4:nth-child(2n) {
+    border-right: 0;
+  }
+  .shopContent .featured_cont .swiper-slide {
+    padding-bottom: 3.6rem !important;
+    margin-bottom: 1.9rem;
+    transition: all .3s ease;
+  }
+  .shopContent .featured_cont .swiper-slide:hover {
+    box-shadow: none !important;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .shopContent .col-md-4:nth-child(3n) > .swiper-slide:hover{
+    box-shadow: none !important;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .shopContent .featured_cont .swiper-slide {
+    padding-bottom: 3.6rem !important;
+    margin-bottom: 0;
+    transition: all .3s ease;
+  }
+  .wine:hover .image img {
+    transform: none!important;
+  }
+  p.likeSlider {
+    opacity: 1;
+  }
+  .featured_cont .swiper-slide .price-vinoteka a {
+    font: 1.8rem 'ProximaNova-Bold';
+        line-height: normal;
+    line-height: 4rem;
+  }
+  .featured_cont .swiper-slide .meta .price-vinoteka span {
+    font: 1.8rem 'RUBSN' !important;
+    font-style: normal;
+    text-transform: none;
+  }
+  .shopSearch .button_cont {
+    width: 100%;
+    height: 2rem;
+    overflow: visible;
+    transition: 0.3s;
+    bottom: 0;
+    position: relative;
+    margin: 0 auto;
+    top: -1rem;
+    border: 0;
+    display: block;
+    left: 0rem;
+  }
+  .filtersMain{
+    display: none;
+  }
+  .SubOverlay #liveSearch-form {
+    display: flex;
+    border-bottom: 2px solid #aaa;
+    margin-bottom: 2rem;
+    width: calc(100% - 4rem);
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  .filtersSubOverlay {
+      padding-bottom: 8rem;
+  }
+  .SubOverlay .form-check input, .SubOverlay .form-check label {
+    font-size: 1.5rem;
+    font-family: ProximaNova-reg, sans-serif;
+    width: auto;
+    outline: 0;
+    line-height: 3.5rem;
+    letter-spacing: -0.01em;
+    color: #000000;
+    padding: 0;
+    margin-left: 0;
+  }
+  .SubOverlay .panel {
+    margin-bottom: 0;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .SubOverlay .collapseBtn {
+    font: 1.6rem ProximaNova-Reg, sans-serif;
+    width: 100%;
+    border-radius: 0;
+    border: 0;
+    background: transparent;
+    line-height: 3.5rem;
+    letter-spacing: -0.01em;
+    color: #DA224D;
+    margin: 0 auto;
+}
+  .SubOverlay .collapseIcon {
+    padding-right: 1rem;
+    width: 2rem;
+    display: none;
+  }
+  .SubOverlay .collapseBtn {
+    font: 1.6rem ProximaNova-Reg, sans-serif;
+        line-height: normal;
+    width: 100%;
+    border-radius: 0;
+    border: 0;
+    background: transparent;
+    line-height: 3.5rem;
+    letter-spacing: -0.01em;
+    color: #DA224D;
+    margin: 0 auto;
+    position: relative;
+    bottom: -180%;
+  }
+}
+@media(min-width: 960px) {
+  .mobileHidden{
+    display: block;
+  }
+
+}
+.hideMe {
+    display: none!important;
+}
+.showME{
+  display: block!important;
 }
