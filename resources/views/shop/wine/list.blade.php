@@ -500,7 +500,7 @@
         <div class="sortingOverlay">
             <div class="sortOverlayHeader">
                 <div class="sortHeader">
-                    <a class="sortOverlayClear">
+                    <a class="sortOverlayClear"  onclick="clear_filter()">
                         Очистить фильтр
                     </a>
                     <img onclick="$('#filtMobi').removeClass('open');$('.shopContent').removeClass('hideMe');"
@@ -1044,13 +1044,25 @@
             </div>
             <div class="sortOverlayBody">
                 <ul>
-                    <li><a href="#">по умолчанию</a></li>
-                    <li><a href="#">сначала дешевле</a></li>
-                    <li><a href="#">сначала дороже</a></li>
+                    <li>
+                        <input type="radio" class="form-check-input" form="searching-form" name="price_sort" id="price-asc" value="asc">
+                        <label class="form-check-label" for="price-asc" style="color: black; font-size: 15px">
+                            сначала дешевле
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" class="form-check-input" form="searching-form" name="price_sort" id="price-desc" value="desc">
+                        <label class="form-check-label" for="price-des" style="color: black; font-size: 15px">
+                            сначала дороже
+                        </label>
+                    </li>
                 </ul>
             </div>
             <div class="sortOverlayFooter">
-                <button class="sortOverlayBtn">Применить</button>
+                <button class="sortOverlayBtn"
+                        onclick="$('#sortMobi').removeClass('open');$('.shopContent').removeClass('hideMe');">
+                    Применить
+                </button>
             </div>
         </div>
     </div>

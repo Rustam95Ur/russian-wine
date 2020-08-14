@@ -57,7 +57,13 @@ function wine_filter_search(filter, page = 1) {
         console.log(thrownError)
     });
 }
-
+function clear_filter()
+{
+    $("input[type=checkbox]").prop('checked', false)
+    var filter = $('#searching-form').serialize()
+    wine_filter_search(filter, '')
+    $("input[name=title]").val('')
+}
 
 $('#search-main').on('keyup', function () {
     var filter = $('#searching-form').serialize()
