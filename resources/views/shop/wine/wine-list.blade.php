@@ -48,7 +48,7 @@
             </div>
         @endforeach
         @if(count($wines) == 0 and $filters)
-            <div class="col-md-8 col-md-offset-1">
+            <div class="text-center">
                 <h2>По вашему фильтру ничего не найдено</h2>
             </div>
         @endif

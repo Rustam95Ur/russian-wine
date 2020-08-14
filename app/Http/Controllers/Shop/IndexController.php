@@ -28,12 +28,12 @@ class IndexController extends Controller
     public function wine_list(WineFilter $filters)
     {
 
-        $wineries = Winery::where('status', '=', 'ACTIVE')->get();
-        $colors = Color::all();
-        $regions = Region::all();
-        $sugars = Sugar::all();
-        $sorts = GrapeSort::all();
-        $classes = WineClass::all();
+        $wineries = Winery::where('status', '=', 'ACTIVE')->orderBy('title', 'ASC')->get();
+        $colors = Color::orderBy('title', 'ASC')->get();
+        $regions = Region::orderBy('title', 'ASC')->get();
+        $sugars = Sugar::orderBy('title', 'ASC')->get();
+        $sorts = GrapeSort::orderBy('title', 'ASC')->get();
+        $classes = WineClass::orderBy('title', 'ASC')->get();
         $years = Wine::select('year')->where('year', '!=', null)->groupBy('year')->orderBy('year', 'DESC')->get();
         $fortresses = Wine::select('fortress')->where('fortress', '!=', null)->groupBy('fortress')->orderBy('fortress', 'DESC')->get();
         $wines = Wine::where('status', '=', 'ACTIVE')->where('price', '>', 0)->filter($filters)->with('color', 'sugar', 'winery')

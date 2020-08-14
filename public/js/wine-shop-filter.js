@@ -131,7 +131,8 @@ function search(type) {
     var search_input, filter, inputs, label_text, i;
     search_input = document.getElementById("search-main-" + type);
     filter = search_input.value.toUpperCase();
-    inputs = $('input[name="' + type + '[]"]').map((i, el) => $(el).val()).get();
+    var input_type = type.replace('-mob', '')
+    inputs = $('input[name="' + input_type + '[]"]').map((i, el) => $(el).val()).get();
     for (i = 0; i < inputs.length; i++) {
         label_text = $("label[for='shop-" + type + inputs[i] + "']").text()
         if (label_text.toUpperCase().indexOf(filter) > -1) {
