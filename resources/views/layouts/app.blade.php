@@ -57,8 +57,6 @@
 <script src="{{ asset('js/jquery.easing.js') }}"></script>
 <script src="{{ asset('swiperJs/swiper.min.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
-
-
 @stack('scripts')
 <script>
     @php

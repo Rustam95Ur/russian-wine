@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Авг 09 2020 г., 20:37
+-- Время создания: Авг 14 2020 г., 21:46
 -- Версия сервера: 5.7.25
 -- Версия PHP: 7.3.9
 
@@ -133,6 +133,13 @@ CREATE TABLE `client_wine` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Дамп данных таблицы `client_wine`
+--
+
+INSERT INTO `client_wine` (`id`, `client_id`, `wine_id`, `created_at`, `updated_at`) VALUES
+(76, 3, 513, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -179,6 +186,32 @@ INSERT INTO `comments` (`id`, `full_name`, `body`, `status`, `created_at`, `upda
 (1, 'Евгений Филатов', 'Я шел абсолютно скептически настроенный, что у меня ничего не получится! Но у меня так замечательно получилось!!! Мне очень понравилось! Я получил эмоции, которые давно не испытывал в своей жизни. И самое главное, я впервые в жизни попробовал русское вино приличного качества. Это просто потрясающе! Спасибо вам огромное!', 'ACTIVE', '2020-06-21 06:31:54', '2020-06-21 06:31:54'),
 (2, 'Компания друзей', 'Для нас провели слепую дегустацию - мы сравнивали русское вино и европейское. К нашему удивлению, три первых места заняло наше вино из Волгограда, Владикавказа и Кубани! Все вина очень высокого уровня. Нам понравилось)', 'ACTIVE', '2020-08-01 03:29:35', '2020-08-01 03:29:35'),
 (3, 'Компания Нордтекс', 'Дегустация по Русским Винам была яркой, интересной, вкусной! За два часа мы узнали, что у нас в стране есть шикарные вина. Высокий уровень дегустации, все было профессионально и увлекательно. Спасибо за такую организацию мероприятия!', 'ACTIVE', '2020-08-01 03:33:39', '2020-08-01 03:33:39');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `schedule` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `coordinate_lat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `coordinate_lon` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `title`, `address`, `phone`, `schedule`, `coordinate_lat`, `coordinate_lon`, `created_at`, `updated_at`) VALUES
+(1, 'Русское Вино (Salon del Vino)', 'г. Москва, ул. Расплетина, д. 21', '+7 915 457 60 81', 'с 11:00 до 22:00', '55.8410561', '46.8521622', '2020-08-14 12:00:06', '2020-08-14 12:00:06'),
+(2, 'Новая точка', 'Москва', '+7 777 777 77 77', 'с 9:00 до 18:00', '55.603344', '37.491709', '2020-08-14 12:24:20', '2020-08-14 12:43:43');
 
 -- --------------------------------------------------------
 
@@ -495,7 +528,16 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (297, 35, 'status', 'select_dropdown', 'Доставлено', 1, 1, 1, 1, 1, 1, '{\"options\":{\"0\":\"\\u041d\\u0435 \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u043e\",\"1\":\"\\u0414\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u043e\"}}', 5),
 (298, 35, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 1, '{}', 6),
 (299, 35, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7),
-(300, 35, 'client_subscription_status_hasone_client_subscription_relationship', 'relationship', 'Номер подписки', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\ClientSubscription\",\"table\":\"client_subscriptions\",\"type\":\"belongsTo\",\"column\":\"client_subscription_id\",\"key\":\"id\",\"label\":\"id\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 2);
+(300, 35, 'client_subscription_status_hasone_client_subscription_relationship', 'relationship', 'Номер подписки', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\ClientSubscription\",\"table\":\"client_subscriptions\",\"type\":\"belongsTo\",\"column\":\"client_subscription_id\",\"key\":\"id\",\"label\":\"id\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 2),
+(301, 36, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(302, 36, 'title', 'text', 'Название', 1, 1, 1, 1, 1, 1, '{}', 2),
+(303, 36, 'address', 'text', 'Адрес', 1, 1, 1, 1, 1, 1, '{}', 3),
+(304, 36, 'phone', 'text', 'Номер телефон', 1, 1, 1, 1, 1, 1, '{}', 4),
+(305, 36, 'schedule', 'text', 'График работы', 1, 0, 1, 1, 1, 1, '{}', 5),
+(306, 36, 'coordinate_lat', 'text', 'Широта', 1, 0, 1, 1, 1, 1, '{}', 6),
+(307, 36, 'coordinate_lon', 'text', 'Долгота', 1, 0, 1, 1, 1, 1, '{}', 7),
+(308, 36, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, '{}', 8),
+(309, 36, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 9);
 
 -- --------------------------------------------------------
 
@@ -552,7 +594,8 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (30, 'wine_classes', 'wine-classes', 'Класс вина', 'Классы вина', NULL, 'App\\Models\\WineClass', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-08-04 08:17:29', '2020-08-04 08:17:29'),
 (31, 'client_subscriptions', 'client-subscriptions', 'Подписка клиента', 'Подписки клиента', NULL, 'App\\Models\\ClientSubscription', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-08-09 08:33:12', '2020-08-09 08:39:48'),
 (33, 'client_subscription_status', 'client-subscription-status', 'Месячный сет для подписки', 'Месячный сет для подпискок', NULL, 'App\\Models\\ClientSubscriptionStatus', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-08-09 09:20:34', '2020-08-09 09:21:36'),
-(35, 'client_subscription_statuses', 'client-subscription-statuses', 'Статус доставки сета', 'Статусы доставки сета', NULL, 'App\\Models\\ClientSubscriptionStatus', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-08-09 09:24:56', '2020-08-09 09:30:07');
+(35, 'client_subscription_statuses', 'client-subscription-statuses', 'Статус доставки сета', 'Статусы доставки сета', NULL, 'App\\Models\\ClientSubscriptionStatus', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-08-09 09:24:56', '2020-08-09 09:30:07'),
+(36, 'contacts', 'contacts', 'Контакт', 'Контакт', NULL, 'App\\Models\\Contact', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-08-14 11:58:55', '2020-08-14 11:58:55');
 
 -- --------------------------------------------------------
 
@@ -917,7 +960,8 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (37, 1, 'Заявки', '', '_self', 'voyager-dollar', '#000000', NULL, 7, '2020-08-07 02:37:55', '2020-08-07 02:38:11', NULL, ''),
 (38, 1, 'Подписки клиента', '', '_self', NULL, NULL, 41, 2, '2020-08-09 08:33:12', '2020-08-09 10:00:25', 'voyager.client-subscriptions.index', NULL),
 (40, 1, 'Статусы доставки сета', '', '_self', NULL, NULL, 41, 1, '2020-08-09 09:24:56', '2020-08-09 10:00:22', 'voyager.client-subscription-statuses.index', NULL),
-(41, 1, 'Подписки', '', '_self', 'voyager-gift', '#000000', NULL, 8, '2020-08-09 10:00:17', '2020-08-09 10:00:35', NULL, '');
+(41, 1, 'Подписки', '', '_self', 'voyager-gift', '#000000', NULL, 8, '2020-08-09 10:00:17', '2020-08-09 10:00:35', NULL, ''),
+(42, 1, 'Контакт', '', '_self', NULL, NULL, NULL, 18, '2020-08-14 11:58:56', '2020-08-14 11:58:56', 'voyager.contacts.index', NULL);
 
 -- --------------------------------------------------------
 
@@ -1004,7 +1048,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (77, '2020_08_08_201909_add_duration_sets_table', 36),
 (78, '2020_08_09_102028_add_type_for_excerpt_table', 37),
 (79, '2020_08_09_140607_create_client_subscriptions_table', 38),
-(81, '2020_08_09_142831_create_client_subscription_statuses_table', 39);
+(81, '2020_08_09_142831_create_client_subscription_statuses_table', 39),
+(82, '2020_08_14_175221_create_contacts_table', 40);
 
 -- --------------------------------------------------------
 
@@ -1034,7 +1079,8 @@ INSERT INTO `orders` (`id`, `name`, `email`, `phone`, `type`, `request`, `messag
 (8, 'Рустам', 'client@client.com', 'password', 5, '[{\"product_id\":918,\"qty\":2,\"type\":\"set\", \"price\":1250 }]', '<p>Название: <b>Белый РАШ</b> Тип продуката: <b>Сеты</b>. Количество: <b>1</b> штук <br />Общая сумма: <b>4950</b></p>', '2020-08-08 08:43:06', '2020-08-08 08:45:36'),
 (9, 'Иван', 'client@client.coms', '877777777777', 6, NULL, 'Название: <b>Шардоне</b>. </b>Количество: <b>1</b> штук <br>  Название: <b>Рислинг Семейный Резерв</b>. </b>Количество: <b>1</b> штук <br>  Общая сумма: <b>3200</b>', '2020-08-08 11:22:58', '2020-08-08 11:22:58'),
 (11, 'Иван', 'client@client.com', '877777777777', 6, NULL, 'Название: <b>Рислинг Семейный Резерв</b>. </b>Количество: <b>1</b> штук <br>  Общая сумма: <b>1950</b>', '2020-08-08 14:09:09', '2020-08-08 14:09:09'),
-(12, 'Рустам', 'client@client.com', '877777777', 5, '[{\"product_id\":814,\"qty\":1,\"type\":\"set\",\"price\":14500}]', 'Название: <b>Автохтонные вина</b> Тип продуката: <b>Подписка на сеты. </b>Количество: <b>1</b> штук <br>  Общая сумма: <b>14500</b>', '2020-08-08 14:32:43', '2020-08-08 14:32:43');
+(12, 'Рустам', 'client@client.com', '877777777', 5, '[{\"product_id\":814,\"qty\":1,\"type\":\"set\",\"price\":14500}]', 'Название: <b>Автохтонные вина</b> Тип продуката: <b>Подписка на сеты. </b>Количество: <b>1</b> штук <br>  Общая сумма: <b>14500</b>', '2020-08-08 14:32:43', '2020-08-08 14:32:43'),
+(13, 'Рустам', 'rustam.95.ur@gmail.com', 'passorawdaw', 1, '{\"tasting_id\":1,\"title\":\"\\u042d\\u043a\\u0441\\u043a\\u043b\\u044e\\u0437\\u0438\\u0432 \\u041f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u043b\\u044c\\u043d\\u0430\\u044f \\u0434\\u0435\\u0433\\u0443\\u0441\\u0442\\u0430\\u0446\\u0438\\u044f \\u0434\\u043b\\u044f \\u0434\\u0432\\u043e\\u0438\\u0445\",\"price\":15000,\"qty\":1}', 'Название: <b>Эксклюзив Персональная дегустация для двоих</b> Цена: <b>15000', '2020-08-09 12:38:33', '2020-08-09 12:38:33');
 
 -- --------------------------------------------------------
 
@@ -1243,7 +1289,12 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (144, 'read_client_subscription_statuses', 'client_subscription_statuses', '2020-08-09 09:24:56', '2020-08-09 09:24:56'),
 (145, 'edit_client_subscription_statuses', 'client_subscription_statuses', '2020-08-09 09:24:56', '2020-08-09 09:24:56'),
 (146, 'add_client_subscription_statuses', 'client_subscription_statuses', '2020-08-09 09:24:56', '2020-08-09 09:24:56'),
-(147, 'delete_client_subscription_statuses', 'client_subscription_statuses', '2020-08-09 09:24:56', '2020-08-09 09:24:56');
+(147, 'delete_client_subscription_statuses', 'client_subscription_statuses', '2020-08-09 09:24:56', '2020-08-09 09:24:56'),
+(148, 'browse_contacts', 'contacts', '2020-08-14 11:58:56', '2020-08-14 11:58:56'),
+(149, 'read_contacts', 'contacts', '2020-08-14 11:58:56', '2020-08-14 11:58:56'),
+(150, 'edit_contacts', 'contacts', '2020-08-14 11:58:56', '2020-08-14 11:58:56'),
+(151, 'add_contacts', 'contacts', '2020-08-14 11:58:56', '2020-08-14 11:58:56'),
+(152, 'delete_contacts', 'contacts', '2020-08-14 11:58:56', '2020-08-14 11:58:56');
 
 -- --------------------------------------------------------
 
@@ -1406,7 +1457,12 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (144, 1),
 (145, 1),
 (146, 1),
-(147, 1);
+(147, 1),
+(148, 1),
+(149, 1),
+(150, 1),
+(151, 1),
+(152, 1);
 
 -- --------------------------------------------------------
 
@@ -3544,6 +3600,12 @@ ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `countries`
 --
 ALTER TABLE `countries`
@@ -3798,7 +3860,7 @@ ALTER TABLE `client_subscription_statuses`
 -- AUTO_INCREMENT для таблицы `client_wine`
 --
 ALTER TABLE `client_wine`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT для таблицы `colors`
@@ -3813,6 +3875,12 @@ ALTER TABLE `comments`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT для таблицы `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT для таблицы `countries`
 --
 ALTER TABLE `countries`
@@ -3822,13 +3890,13 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT для таблицы `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=301;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=310;
 
 --
 -- AUTO_INCREMENT для таблицы `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT для таблицы `excerpts`
@@ -3864,19 +3932,19 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT для таблицы `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT для таблицы `pages`
@@ -3888,7 +3956,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT для таблицы `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
 
 --
 -- AUTO_INCREMENT для таблицы `posts`
