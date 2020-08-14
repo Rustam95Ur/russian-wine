@@ -132,7 +132,7 @@ body {
     font-size: 16px;
     line-height: 20px;
     width: 100%;
-    background: #F5F5F5
+    background: #Fff
 }
 
 h1,
@@ -12351,7 +12351,7 @@ section#specials #specials-cont div.col-md-4 {
     width: 100%;
 }
 
-#home_slid center {
+#home_slid .video-slider {
     position: absolute;
     width: 100%;
     display: flex;
@@ -12811,7 +12811,7 @@ nav ul > li:hover #inda-club {
         width: 81.333vw;
     }
 
-    #home_slid center {
+    #home_slid .video-slider {
         display: none;
     }
 

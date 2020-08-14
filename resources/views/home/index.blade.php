@@ -3,11 +3,11 @@
 
     <!-- SLIDER -->
     <div id="home_slid">
-        <center>
+        <div class="text-center video-slider">
             <video autoplay="" muted="" loop="" id="myVideo">
                 <source src="{{ asset ('video/wineclub.mp4') }}" type="video/mp4">
             </video>
-        </center>
+        </div>
         <div class="swiper-viewport">
             <div id="home_slider" class="swiper-container">
                 <div class="swiper-wrapper">
@@ -303,11 +303,15 @@
                             <div class="swiper-slide">
                                 <div class="slide-inner">
                                     <div>
-                                        <a href="#">
+                                        <a href="{{route('winemakers')}}?id={{$winemaker->id}}">
                                             <img alt="{{$winemaker->seo_title}}"
                                                  src="{{ Voyager::image($winemaker->image) }}"></a>
                                     </div>
-                                    <h6><a href="#">{{$winemaker->full_name}}</a></h6>
+                                    <h6>
+                                        <a href="{{route('winemakers')}}?id={{$winemaker->id}}">
+                                            {{$winemaker->full_name}}
+                                        </a>
+                                    </h6>
                                     <ul>
 
                                         <li>

@@ -23,10 +23,20 @@
                                     <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
                                         <h1>{{$winemaker->full_name}}</h1>
                                         <div id="in_par" class="text-center">
-                                            <p>{{isset($winemaker->winery) ? $winemaker->winery->title : ''}}  |</p>
-                                            <p>{{$winemaker->region->title}}</p>
+                                            <p>
+                                                @if(isset($winemaker->winery))
+                                                    <a href="{{route('winery', $winemaker->winery->slug)}}">
+                                                        {{$winemaker->winery->title}}
+                                                    </a>  |
+                                                @endif
+                                            </p>
+                                            <p><a href="{{route('region', $winemaker->region->slug)}}">
+                                                    {{$winemaker->region->title}}
+                                                </a>
+                                            </p>
                                         </div>
-                                        <img src="{{Voyager::image($winemaker->modal_image)}}" alt="{{$winemaker->full_name}}"
+                                        <img src="{{Voyager::image($winemaker->modal_image)}}"
+                                             alt="{{$winemaker->full_name}}"
                                              class="img-responsive">
                                         <div class="description">
                                             {!!  $winemaker->description !!}
@@ -63,12 +73,26 @@
                                     <div class="description">
                                         <ul>
                                             <li>
-                                                <p>{{isset($winemaker->winery) ? $winemaker->winery->title  : '' }}</p>
+                                                <p>
+                                                    @if(isset($winemaker->winery))
+                                                        <a class="text-black"
+                                                           href="{{route('winery', $winemaker->winery->slug)}}">
+                                                            {{$winemaker->winery->title}}
+                                                        </a>
+                                                    @endif
+                                                </p>
                                             </li>
-                                            <li><p>{{$winemaker->region->title}}</p></li>
+                                            <li>
+                                                <p><a class="text-black"
+                                                      href="{{route('region', $winemaker->region->slug)}}">
+                                                        {{$winemaker->region->title}}
+                                                    </a></p></li>
                                             <li><p>Вина:
                                                     @foreach($winemaker->wines as $wine)
-                                                        {{$wine->title}}@if(!$loop->last),@endif
+                                                        <a class="text-black"
+                                                           href="{{route('wine', $wine->slug)}}"> {{$wine->title}}</a>
+                                                        @if(!$loop->last)
+                                                            ,@endif
                                                     @endforeach
                                                 </p>
                                             </li>
@@ -83,25 +107,34 @@
         </div>
     </div>
     <style type="text/css">
-      body {
-          background: #F5F5F5;
-      }
-      .description ul {
-          list-style: disc !important;
-      }
-      .description ul li {
-          margin-left: -20px;
-      }
+        body {
+            background: #F5F5F5;
+        }
+
+        .description ul {
+            list-style: disc !important;
+        }
+
+        .description ul li {
+            margin-left: -20px;
+        }
     </style>
     @push('scripts')
         <script>
+            $(document).ready(function () {
+                let searchParams = new URLSearchParams(window.location.search)
+                let id = searchParams.get('id')
+                $('.winemaker-details-' + id).show()
+                $('.winemaker-details-' + id).addClass('product-preview')
+
+            });
             $('.preview').on('click', function () {
-               var id = $(this).data('target');
-               $(id).show()
-               $(id).addClass('product-preview')
+                var id = $(this).data('target');
+                $(id).show()
+                $(id).addClass('product-preview')
             })
             $('.close-icon').on('click', function () {
-               $('.winemaker-details').hide()
+                $('.winemaker-details').hide()
             })
             $('.close_block').on('click', function () {
                 $('.winemaker-details').hide()

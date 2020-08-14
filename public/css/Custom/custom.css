@@ -2005,3 +2005,7 @@ span.currency {
     height: calc(70vh - 50px);
     position: relative;
 }
+
+.winemaker-details #in_par p a {
+    color: #D6D6D6;
+}
