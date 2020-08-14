@@ -2,10 +2,6 @@
 @section('body_class', 'overflow-hidden')
 @section('content')
     <style>
-        #nmenu {
-            position: fixed;
-        }
-
         .swiper-container {
             width: 100%;
             height: 100vh;
@@ -41,7 +37,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" id="slide-1">
                             <div id="first-slide-d">
-                                <h6 class="slide-ht" class="slide-ht">Именное <br/>вино</h6>
+                                <h6 class="slide-ht">Именное <br/>вино</h6>
                                 <div class="slide-tl">
                                     <p>
                                         Наверное, каждый из нас мечтал<br/>
@@ -216,15 +212,15 @@
                         keyboard: {
                             enabled: true,
                         },
-                        // breakpoints: {
-                        //     991: {
-                        //         slidesPerView: 'auto',
-                        //         centeredSlides: false,
-                        //         pagination: {
-                        //             type: 'bullets',
-                        //         },
-                        //     },
-                        // }
+                        breakpoints: {
+                            991: {
+                                slidesPerView: 'auto',
+                                centeredSlides: false,
+                                pagination: {
+                                    type: 'bullets',
+                                },
+                            },
+                        }
                     });
                 </script>
                 <script>

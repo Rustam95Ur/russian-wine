@@ -2000,3 +2000,8 @@ span.currency {
 .showME {
     display: block !important;
 }
+
+.winery-info-height {
+    height: calc(70vh - 50px);
+    position: relative;
+}

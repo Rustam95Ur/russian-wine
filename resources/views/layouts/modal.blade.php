@@ -246,7 +246,7 @@
         </div>
     </div>
 @endif
-<div id="policy">
+<div id="policy" style="display: none">
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var policy = document.getElementById('policy');
@@ -256,6 +256,7 @@
             if (!policy2cookie || policy2cookie[1] != 'Y') {
                 var policy_container = document.querySelector('div.policy__container');
                 if (policy_container) {
+                    $('#policy').show();
                     if (!navigator.cookieEnabled) {
                         policy_container.innerHTML = '<div class="policy__text"><p>' + privacy_text_nocookie + '</p></div>'
                     } else {

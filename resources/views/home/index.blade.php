@@ -98,7 +98,12 @@
                                         <h2><a href="{{route('wine', $wine->slug)}}"
                                                class="preview">{{$wine->title}}</a></h2>
 
-                                        <p>{{isset($wine->winery) ? $wine->winery->title : ''}}</p>
+                                        <p>@if(isset($wine->winery))
+                                                {{$wine->winery->title}}
+                                            @else
+                                                {{$wine->manufacture->title}}
+                                            @endif
+                                        </p>
                                         <div class="meta">
                                             <span class="color">{{$wine->color->title}} </span><span
                                                 class="sep"> | </span>
@@ -107,7 +112,8 @@
                                                 class="sep"> | </span>
                                             <span class="year"> {{$wine->year}}</span>
                                             <div class="price-vinoteka">
-                                                <a href="{{route('wine', $wine->slug)}}" class="preview">{{$wine->price}} <span>п</span></a>
+                                                <a href="{{route('wine', $wine->slug)}}"
+                                                   class="preview">{{$wine->price}} <span>п</span></a>
                                             </div>
                                             <div class="button_cont">
                                                 <div class="prod_quantity">
@@ -229,7 +235,12 @@
                                     </div>
                                     <h2><a href="{{route('wine', $wine->slug)}}" class="preview">{{$wine->title}}</a>
                                     </h2>
-                                    <p>{{isset($wine->winery) ? $wine->winery->title : ''}}</p>
+                                    <p>@if(isset($wine->winery))
+                                            {{$wine->winery->title}}
+                                        @else
+                                            {{$wine->manufacture->title}}
+                                        @endif
+                                    </p>
                                     <div class="meta">
                                         <span
                                             class="color">{{isset($wine->color) ? $wine->color->title : '' }} </span><span
@@ -299,13 +310,22 @@
                                     <h6><a href="#">{{$winemaker->full_name}}</a></h6>
                                     <ul>
 
-                                        <li><p>{{isset($wine->winery) ? $wine->winery->title : ''}}</p></li>
-                                        <li><p>{{ isset($winemaker->region) ? $winemaker->region->title : ''}}</p></li>
+                                        <li>
+                                            @if($wine->winery)
+                                                <p><a class="text-black" href="{{route('winery', $wine->winery->slug)}}">{{$wine->winery->title}}</a> </p>
+                                            @endif
+                                        </li>
+                                        <li>
+                                            @if($wine->region)
+                                                <p><a class="text-black" href="{{route('region', $wine->region->slug)}}">{{$wine->region->title}}</a> </p>
+                                            @endif
                                         <li><p>Вина:
                                                 @foreach($winemaker->wines as $wine)
-                                                    {{$wine->title}}@if(!$loop->last),@endif
+                                                    <a class="text-black" href="{{route('wine', $wine->slug)}}"> {{$wine->title}}</a>
+                                                    @if(!$loop->last),@endif
                                                 @endforeach
-                                            </p></li>
+                                            </p>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

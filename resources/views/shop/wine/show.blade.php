@@ -214,7 +214,7 @@
                         </div>
                         <div class="row bigDesc">
                             <div class="col-md-6">
-                                <a href="#">
+                                <a href="#description-info">
                                     <h3>Характеристики
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
@@ -238,8 +238,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row secondDesc">
-                    <div class="col-md-6 description">
+                <div class="row secondDesc" >
+                    <div class="col-md-6 description" id="description-info">
                         <h4>Особенности производства</h4>
                         {!! $wine->production_feature !!}
                         <h4>Дегустационные характеристики</h4>
