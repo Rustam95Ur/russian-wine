@@ -55,7 +55,9 @@
 <script src="{{ asset('js/jquery-waypoints.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/jquery.easing.js') }}"></script>
-<script src="{{ asset('swiperJs/swiper.min.js') }}"></script>
+<!-- <script src="{{ asset('swiperJs/swiper.min.js') }}"></script> -->
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="{{ asset('js/main.js') }}"></script>
 @stack('scripts')
 <script>

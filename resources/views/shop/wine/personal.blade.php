@@ -194,6 +194,14 @@
                             },
                         });
                     }
+                    if ($(window).width() < 992) 
+                      {
+                          $('#information-informationwc').addClass('.overflow-auto');
+                      });
+                      if ($(window).width() > 992)
+                        {
+                            $('#information-informationwc').removeClass('.overflow-auto');
+                        });
                     var swiperV = new Swiper('.swiper-container-v', {
                         slidesPerView: 3,
                         centeredSlides: true,
@@ -239,55 +247,56 @@
                        $('.close_click').addClass('hidden')
                     }
                 </script>
+                <script>
+                    if ($(window).width() < 991) {
+                        $('.imennoe .swiper-container-h > .swiper-wrapper').attr('class', '');
+
+                        var section = $('#slide-6');
+                        var sectin = $('#slide-6 .col-sss-4').height();
+                        var speche = $(section).height() - sectin;
+
+                        var sectionTop = section.offset().top + $(window).height() - $('header').height();
+                        var sectionTop1 = section.offset().top + $(window).height() + $('header').height();
+                        var section1 = $('.swiper-pagination.swiper-pagination-v');
+                        var sectionTop2 = section1.offset().top;
+                        $('.imennoe #slide-1 .slide-tl p:first-child').html('Наверное, каждый из нас мечтал<br> о личном шато в окружении<br> собственных виноградников<br> на берегу лазурного моря.<br>');
+                        $('#slide-1').append('<img src="/image/catalog/wineclub/mouse.png" id="mob-mouse" />');
+                        var setion = $('#slide-5');
+                        var setionTop = setion.offset().top;
+                        $(window).bind('scroll', function () {
+                            var windowTop = $(window).scrollTop() + $(window).height();
+
+                            if (windowTop > sectionTop) {
+                                $('#slide-6 .col-sss-4').addClass('fixxed');
+                                $(section).attr('style', 'height:' + $(section).height() + 'px;padding-top:' + sectin + 'px;');
+                            }
+                            if (windowTop < sectionTop1) {
+                                $('#slide-6 .col-sss-4').removeClass('fixxed')
+                                $(section).attr('style', 'height: auto;');
+                            }
+                            if (windowTop > sectionTop2) {
+                                $('#slide-6 .col-sss-4').addClass('tothetop');
+                            }
+                            if (windowTop < sectionTop2) {
+                                $('#slide-6 .col-sss-4').removeClass('tothetop');
+
+                            }
+                            if (windowTop > setionTop) {
+                                $('#slide-5').addClass('showbg');
+
+                            }
+                            if (windowTop < setionTop) {
+                                $('#slide-5').removeClass('showbg');
+
+                            }
+                        });
+                    }
+                </script>
             </div>
         </div>
     </div>
-    @push('script')
-        <script>
-            if ($(window).width() < 991) {
-                $('.imennoe .swiper-container-h > .swiper-wrapper').attr('class', '');
+    @push('scripts')
 
-                var section = $('#slide-6');
-                var sectin = $('#slide-6 .col-sss-4').height();
-                var speche = $(section).height() - sectin;
-
-                var sectionTop = section.offset().top + $(window).height() - $('header').height();
-                var sectionTop1 = section.offset().top + $(window).height() + $('header').height();
-                var section1 = $('.swiper-pagination.swiper-pagination-v');
-                var sectionTop2 = section1.offset().top;
-                $('.imennoe #slide-1 .slide-tl p:first-child').html('Наверное, каждый из нас мечтал<br> о личном шато в окружении<br> собственных виноградников<br> на берегу лазурного моря.<br>');
-                $('#slide-1').append('<img src="/image/catalog/wineclub/mouse.png" id="mob-mouse" />');
-                var setion = $('#slide-5');
-                var setionTop = setion.offset().top;
-                $(window).bind('scroll', function () {
-                    var windowTop = $(window).scrollTop() + $(window).height();
-
-                    if (windowTop > sectionTop) {
-                        $('#slide-6 .col-sss-4').addClass('fixxed');
-                        $(section).attr('style', 'height:' + $(section).height() + 'px;padding-top:' + sectin + 'px;');
-                    }
-                    if (windowTop < sectionTop1) {
-                        $('#slide-6 .col-sss-4').removeClass('fixxed')
-                        $(section).attr('style', 'height: auto;');
-                    }
-                    if (windowTop > sectionTop2) {
-                        $('#slide-6 .col-sss-4').addClass('tothetop');
-                    }
-                    if (windowTop < sectionTop2) {
-                        $('#slide-6 .col-sss-4').removeClass('tothetop');
-
-                    }
-                    if (windowTop > setionTop) {
-                        $('#slide-5').addClass('showbg');
-
-                    }
-                    if (windowTop < setionTop) {
-                        $('#slide-5').removeClass('showbg');
-
-                    }
-                });
-            }
-        </script>
     @endpush
     @foreach($wineries as $winery)
         <div id="information-winerywc" class="information-winerywc winery-modal-{{$winery->id}}">

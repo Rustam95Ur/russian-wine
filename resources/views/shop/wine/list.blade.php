@@ -969,7 +969,6 @@
                             </div>
                             <div class="sortOverlayBody">
                                 <!--     wine grad filters                        -->
-                                <form name="filter_form" method="get" class="filtersMain">
                                     <h4 class="filterHeading">Крепость</h4>
                                     @foreach($fortresses as $fortress)
                                         <div class="form-check">
