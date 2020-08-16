@@ -52,7 +52,7 @@
                 <h2>По вашему фильтру ничего не найдено</h2>
             </div>
         @endif
-        <div class="col-md-12 xol-xs-12 mt-lg">
+        <div class="col-md-12 col-xs-12 mt-lg text-center">
             {{$wines->appends(request()->input())->links()}}
         </div>
     </div>

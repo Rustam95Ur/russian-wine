@@ -1227,7 +1227,9 @@ span.currency {
     .col-md-6.decsRightSide, .row.secondDesc, #product-product #content_bottom, #product-product .toShop {
         display: none;
     }
-
+    .wine #button-carts.active {
+        background-color: #261F30
+    }
     #product-product.product-temp1 .col-xs-offset-6, #product-product.product-temp1 .col-xs-6 {
         padding-left: 20px;
         float: left;

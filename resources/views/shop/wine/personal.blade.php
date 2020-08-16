@@ -194,14 +194,16 @@
                             },
                         });
                     }
-                    if ($(window).width() < 992) 
+                    if ($(window).width() < 992)
                       {
-                          $('#information-informationwc').addClass('.overflow-auto');
-                      });
+                          $('body').addClass('overflow-auto');
+                          $('body').removeClass('overflow-hidden');
+                      };
                       if ($(window).width() > 992)
-                        {
-                            $('#information-informationwc').removeClass('.overflow-auto');
-                        });
+                      {
+                          $('body').addClass('overflow-hidden');
+                          $('body').removeClass('overflow-auto');
+                      };
                     var swiperV = new Swiper('.swiper-container-v', {
                         slidesPerView: 3,
                         centeredSlides: true,
@@ -260,7 +262,7 @@
                         var section1 = $('.swiper-pagination.swiper-pagination-v');
                         var sectionTop2 = section1.offset().top;
                         $('.imennoe #slide-1 .slide-tl p:first-child').html('Наверное, каждый из нас мечтал<br> о личном шато в окружении<br> собственных виноградников<br> на берегу лазурного моря.<br>');
-                        $('#slide-1').append('<img src="/image/catalog/wineclub/mouse.png" id="mob-mouse" />');
+                        $('#slide-1').append('<img src="{{asset('image/mouse-personal.png')}}   " id="mob-mouse" />');
                         var setion = $('#slide-5');
                         var setionTop = setion.offset().top;
                         $(window).bind('scroll', function () {

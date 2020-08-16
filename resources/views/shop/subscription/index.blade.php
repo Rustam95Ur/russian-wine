@@ -4,13 +4,8 @@
 @endpush
 @section('content')
     <div id="product-category" class="container">
-        <ul class="breadcrumb">
-            <li><a href="https://russianvine.ru/index.php?route=common/home"><i class="fa fa-home"></i></a></li>
-            <li><a href="https://russianvine.ru/podpiska/">Подписка</a></li>
-        </ul>
         <div class="row">
             <div id="content" class="col-sm-12">
-                <h2>Подписка</h2>
                 <div class="row">
                     <div class="col-sm-10">
                         <div id="blur_cont">
