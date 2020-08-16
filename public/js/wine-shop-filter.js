@@ -57,8 +57,8 @@ function wine_filter_search(filter, page = 1) {
         console.log(thrownError)
     });
 }
-function clear_filter()
-{
+
+function clear_filter() {
     $("input[type=checkbox]").prop('checked', false)
     var filter = $('#searching-form').serialize()
     wine_filter_search(filter, '')
@@ -80,17 +80,42 @@ $("select[name='price_sort']").change(function () {
 
 function collapse_click(type) {
     $("#collapse-" + type).on("hide.bs.collapse", function () {
+        $('.no-letter-' + type).show();
+
         $('#btnCollapse-' + type).html('<span>Посмотреть все</span>' +
             '<img src="/image/arrow-down.svg" alt="" class="collapseIcon">'
-        )
-        ;
+        );
     });
     $("#collapse-" + type).on("show.bs.collapse", function () {
+        $('.no-letter-' + type).hide();
         $('#btnCollapse-' + type).html('<span>Закрыть</span>' +
             '<img src="/image/arrow-up.svg" alt="" class="collapseIcon">'
         );
+
     });
 }
+
+$('.no_letter').on('click', function () {
+    var id = $(this).attr('id');
+    if ($('input[id="' + id + '"]').is(':checked')) {
+        id = id.replace('mob', 'letter');
+        $('input[id="' + id + '"]').prop('checked', true)
+    } else {
+        id = id.replace('mob', 'letter');
+        $('input[id="' + id + '"]').prop('checked', false)
+    }
+
+})
+$('.letter_collapse').on('click', function () {
+    var id = $(this).attr('id');
+    if ($('input[id="' + id + '"]').is(':checked')) {
+        id = id.replace('letter', 'mob');
+        $('input[id="' + id + '"]').prop('checked', true)
+    } else {
+        id = id.replace('letter', 'mob');
+        $('input[id="' + id + '"]').prop('checked', false)
+    }
+})
 
 
 $(".custom-select").each(function () {

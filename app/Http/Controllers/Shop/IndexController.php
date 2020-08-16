@@ -28,11 +28,18 @@ class IndexController extends Controller
     public function wine_list(WineFilter $filters)
     {
 
-        $wineries = Winery::where('status', '=', 'ACTIVE')->orderBy('title', 'ASC')->get();
+        $wineries = Winery::where('status', '=', 'ACTIVE')->orderBy('title', 'ASC')
+            ->get();
+        $mobile_wineries = $wineries->groupBy(function($item) {
+            return mb_substr($item->title, 0, 1);
+        });
         $colors = Color::orderBy('title', 'ASC')->get();
         $regions = Region::orderBy('title', 'ASC')->get();
         $sugars = Sugar::orderBy('title', 'ASC')->get();
         $sorts = GrapeSort::orderBy('title', 'ASC')->get();
+        $mobile_sorts = $sorts->groupBy(function ($item) {
+            return mb_substr($item->title, 0, 1);
+        });
         $classes = WineClass::orderBy('title', 'ASC')->get();
         $years = Wine::select('year')->where('year', '!=', null)->groupBy('year')->orderBy('year', 'DESC')->get();
         $fortresses = Wine::select('fortress')->where('fortress', '!=', null)->groupBy('fortress')->orderBy('fortress', 'DESC')->get();
@@ -64,6 +71,8 @@ class IndexController extends Controller
             'regions' => $regions,
             'sugars' => $sugars,
             'wineries' => $wineries,
+            'mobile_wineries' => $mobile_wineries,
+            'mobile_sorts' => $mobile_sorts,
             'sorts' => $sorts,
             'classes' => $classes,
             'years' => $years,

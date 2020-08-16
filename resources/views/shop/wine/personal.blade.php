@@ -187,35 +187,49 @@
                                     enabled: true,
                                 },
                             });
-                        }
-                        var swiperV = new Swiper('.swiper-container-v', {
-                            slidesPerView: 3,
-                            centeredSlides: true,
-                            mousewheel: true,
-                            loopFillGroupWithBlank: true,
-                            loop: true,
-                            pagination: {
-                                el: '.swiper-pagination-v',
-                                clickable: true,
-                                type: 'fraction',
-                            },
-                            navigation: {
-                                nextEl: '.swiper-button-next',
-                                prevEl: '.swiper-button-prev',
-                            },
-                            keyboard: {
-                                enabled: true,
-                            },
-                            breakpoints: {
-                                991: {
-                                    slidesPerView: 'auto',
-                                    centeredSlides: false,
-                                    pagination: {
-                                        type: 'bullets',
-                                    },
+                            var swiperV = new Swiper('.swiper-container-v', {
+                                slidesPerView: 3,
+                                centeredSlides: true,
+                                mousewheel: true,
+                                loopFillGroupWithBlank: true,
+                                loop: true,
+                                pagination: {
+                                    el: '.swiper-pagination-v',
+                                    clickable: true,
+                                    type: 'fraction',
                                 },
-                            }
-                        });
+                                navigation: {
+                                    nextEl: '.swiper-button-next',
+                                    prevEl: '.swiper-button-prev',
+                                },
+                                keyboard: {
+                                    enabled: true,
+                                },
+
+                            });
+                        } else {
+                            var swiperMobileV = new Swiper('.swiper-container-v', {
+                                slidesPerView: 1,
+                                centeredSlides: false,
+                                mousewheel: false,
+                                loopFillGroupWithBlank: true,
+                                loop: true,
+                                pagination: {
+                                    el: '.swiper-pagination-v',
+                                    clickable: true,
+                                    type: 'bullets',
+                                },
+                                navigation: {
+                                    nextEl: '.swiper-button-next',
+                                    prevEl: '.swiper-button-prev',
+                                },
+                                keyboard: {
+                                    enabled: true,
+                                },
+
+                            });
+                        }
+
                         if ($(window).width() < 992) {
                             $('body').addClass('overflow-auto');
                             $('body').removeClass('overflow-hidden');
@@ -268,7 +282,6 @@
                                 }
                                 if (windowTop < sectionTop1) {
                                     $('#slide-6 .col-sss-4').removeClass('fixxed')
-                                    $(section).attr('style', 'height: auto;');
                                 }
                                 if (windowTop > sectionTop2) {
                                     $('#slide-6 .col-sss-4').addClass('tothetop');
@@ -340,7 +353,7 @@
                             prevEl: '.swiper-button-prev',
                         },
                     });
-                    $(".swiper-pagination-fraction").html("<span class='swiper-pagination-current'>1</span>" +
+                    $(".swiper-container-winery .swiper-pagination-fraction").html("<span class='swiper-pagination-current'>1</span>" +
                         "<span class='swiper-pagination-total'>5</span>");
                 </script>
             @endpush

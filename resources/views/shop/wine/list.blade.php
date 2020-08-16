@@ -214,9 +214,7 @@
                             {{$sugar->title}}
                         </label>
                     </div>
-                    @if($loop->index == 5)
-                        @break
-                    @endif
+                    @break($loop->index == 5)
                 @endforeach
             <!--   collapse other prices   -->
                 <div class="panel-group">
@@ -289,9 +287,7 @@
                             {{$winery->title}}
                         </label>
                     </div>
-                @if($loop->index == 5)
-                    @break
-                @endif
+                @break($loop->index == 5)
             @endforeach
             <!--   collapse other prices   -->
                 <div class="panel-group">
@@ -348,9 +344,7 @@
                                 {{$sort->title}}
                             </label>
                         </div>
-                    @if($loop->index == 5)
-                        @break
-                    @endif
+                    @break($loop->index == 5)
                 @endforeach
                 <!--   collapse other prices   -->
                     <div class="panel-group">
@@ -399,9 +393,7 @@
                                 {{$year->year}}
                             </label>
                         </div>
-                    @if($loop->index == 5)
-                        @break
-                    @endif
+                    @break($loop->index == 5)
                 @endforeach
                 <!--   collapse other prices   -->
                     <div class="panel-group">
@@ -451,9 +443,7 @@
                                 {{$fortress->fortress}}%
                             </label>
                         </div>
-                    @if($loop->index == 5)
-                        @break
-                    @endif
+                    @break($loop->index == 5)
                 @endforeach
                 <!--   collapse other prices   -->
                     <div class="panel-group">
@@ -500,11 +490,11 @@
         <div class="sortingOverlay">
             <div class="sortOverlayHeader">
                 <div class="sortHeader">
-                    <a class="sortOverlayClear"  onclick="clear_filter()">
+                    <a class="sortOverlayClear" onclick="clear_filter()">
                         Очистить фильтр
                     </a>
                     <img onclick="$('#filtMobi').removeClass('open');$('.shopContent').removeClass('hideMe');"
-                            src="{{ asset ('image/closecart.png') }}" alt="Close Overlay" class="sortOverlayClose">
+                         src="{{ asset ('image/closecart.png') }}" alt="Close Overlay" class="sortOverlayClose">
                 </div>
             </div>
             <div class="sortOverlayBody">
@@ -734,7 +724,7 @@
                         <div id="filtMobiWinery" class="SubOverlay">
                             <div class="sortOverlayHeader">
                                 <a href="#" class="sortOverlayBack" onclick="$('#filtMobiWinery').removeClass('open');"><img
-                                        src="{{ asset ('image/ArrowLeft.svg') }}" alt="Go back">Регион</a>
+                                        src="{{ asset ('image/ArrowLeft.svg') }}" alt="Go back">Винодельня</a>
                             </div>
                             <div class="sortOverlayBody">
                                 <!--     wine winemaker filters                   -->
@@ -748,45 +738,53 @@
                                     </a>
                                 </div>
                                 <!--  filter live search end -->
-
-                                @foreach($wineries as $winery)
-                                    <div class="form-check" id="form-winery-mob-{{$winery->id}}">
-                                        <input class="form-check-input" form="searching-form" type="checkbox"
-                                               value="{{$winery->id}}"
-                                               name="winery[]" id="shop-winery-mob{{$winery->id}}"
-                                               @if(array_key_exists('winery', $filters) and in_array($winery->id, $filters['winery']))
-                                               checked
-                                            @endif>
-                                        <label class="form-check-label" for="shop-winery-mob{{$winery->id}}">
-                                            {{$winery->title}}
-                                        </label>
-                                    </div>
-                                @if($loop->index == 5)
-                                    @break
-                                @endif
+                                @php $winery_counter = 0; @endphp
+                                @foreach($mobile_wineries as $letter => $letterCities)
+                                    @break($winery_counter > 5)
+                                    @foreach($letterCities as $winery)
+                                        <div class="form-check no-letter-winery-overlay"
+                                             id="form-winery-mob-{{$winery->id}}">
+                                            <input class="form-check-input no_letter" form="searching-form"
+                                                   type="checkbox"
+                                                   value="{{$winery->id}}"
+                                                   id="shop-winery-mob{{$winery->id}}"
+                                                   name="winery[]"
+                                                   @if(array_key_exists('winery', $filters) and in_array($winery->id, $filters['winery']))
+                                                   checked
+                                                @endif>
+                                            <label class="form-check-label" for="shop-winery-mob{{$winery->id}}">
+                                                {{$winery->title}}
+                                            </label>
+                                        </div>
+                                    @break($winery_counter > 5)
+                                    @php $winery_counter += 1; @endphp
+                                @endforeach
                             @endforeach
                             <!--   collapse other prices   -->
                                 <div class="panel-group">
                                     <div class="panel panel-default">
                                         <div id="collapse-winery-overlay" class="panel-collapse collapse">
                                             <!--  Collapse inner space   -->
-                                            @foreach($wineries as $winery)
-                                                @if($loop->index > 5)
-                                                    <div class="form-check" id="form-winery-mob-{{$winery->id}}">
-                                                        <input class="form-check-input" form="searching-form"
+                                            @foreach($mobile_wineries as $letter => $letterCities)
+                                                <h4 class="letter-title">{{$letter}}</h4>
+                                                @foreach($letterCities as $winery)
+                                                    <div class="form-check"
+                                                         id="form-winery-mob-{{$winery->id}}">
+                                                        <input class="form-check-input letter_collapse"
+                                                               form="searching-form"
                                                                type="checkbox"
                                                                value="{{$winery->id}}"
-                                                               id="shop-winery-mob{{$winery->id}}"
+                                                               id="shop-winery-letter{{$winery->id}}"
                                                                name="winery[]"
                                                                @if(array_key_exists('winery', $filters) and in_array($winery->id, $filters['winery']))
                                                                checked
                                                             @endif>
                                                         <label class="form-check-label"
-                                                               for="shop-winery-mob{{$winery->id}}">
+                                                               for="shop-winery-letter{{$winery->id}}">
                                                             {{$winery->title}}
                                                         </label>
                                                     </div>
-                                            @endif
+                                            @endforeach
                                         @endforeach
                                         <!--  Collapse inner space end -->
                                         </div>
@@ -796,7 +794,8 @@
                                                 onclick="collapse_click('winery-overlay')" aria-expanded="false"
                                                 aria-controls="collapse-winery-overlay" type="button">
                                             <span>Посмотреть все</span>
-                                            <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
+                                            <img src="{{ asset ('image/arrow-down.svg') }}" alt=""
+                                                 class="collapseIcon">
                                         </button>
                                     </div>
                                 </div>
@@ -829,43 +828,47 @@
                                         </a>
                                     </div>
                                     <!--  filter live search end -->
-                                    @foreach($sorts as $sort)
-                                        <div class="form-check" id="form-sort-mob-{{$sort->id}}">
-                                            <input class="form-check-input" type="checkbox" form="searching-form"
-                                                   value="{{$sort->id}}"
-                                                   name="sort[]" id="shop-sort-mob{{$sort->id}}"
-                                                   @if(array_key_exists('sort', $filters) and in_array($sort->id, $filters['sort']))
-                                                   checked
-                                                @endif>
-                                            <label class="form-check-label" for="shop-sort-mob{{$sort->id}}">
-                                                {{$sort->title}}
-                                            </label>
-                                        </div>
-                                    @if($loop->index == 5)
-                                        @break
-                                    @endif
+                                    @php $sort_counter = 0; @endphp
+                                    @foreach($mobile_sorts as $letter => $letterCities)
+                                        @break($sort_counter > 5)
+                                        @foreach($letterCities as $sort)
+                                            <div class="form-check no-letter-sort-overlay" id="form-sort-mob-{{$sort->id}}">
+                                                <input class="form-check-input no_letter" type="checkbox" form="searching-form"
+                                                       value="{{$sort->id}}"
+                                                       name="sort[]" id="shop-sort-mob{{$sort->id}}"
+                                                       @if(array_key_exists('sort', $filters) and in_array($sort->id, $filters['sort']))
+                                                       checked
+                                                    @endif>
+                                                <label class="form-check-label" for="shop-sort-mob{{$sort->id}}">
+                                                    {{$sort->title}}
+                                                </label>
+                                            </div>
+                                        @break($sort_counter > 5)
+                                        @php $sort_counter += 1; @endphp
+                                    @endforeach
                                 @endforeach
                                 <!--   collapse other prices   -->
                                     <div class="panel-group">
                                         <div class="panel panel-default">
                                             <div id="collapse-sort-overlay" class="panel-collapse collapse">
                                                 <!--  Collapse inner space   -->
-                                                @foreach($sorts as $sort)
-                                                    @if($loop->index > 5)
+                                                @foreach($mobile_sorts as $letter => $letterCities)
+                                                    <h4 class="letter-title">{{$letter}}</h4>
+                                                @foreach($letterCities as $sort)
                                                         <div class="form-check" id="form-sort-mob-{{$sort->id}}">
-                                                            <input class="form-check-input" form="searching-form"
+                                                            <input class="form-check-input letter_collapse" form="searching-form"
                                                                    type="checkbox"
                                                                    name="sort[]" value="{{$sort->id}}"
-                                                                   id="shop-sort-mob{{$sort->id}}"
+                                                                   id="shop-sort-letter{{$sort->id}}"
                                                                    @if(array_key_exists('sort', $filters) and in_array($sort->id, $filters['sort']))
                                                                    checked
                                                                 @endif>
                                                             <label class="form-check-label"
-                                                                   for="shop-sort-mob{{$sort->id}}">
+                                                                   for="shop-sort-letter{{$sort->id}}">
                                                                 {{$sort->title}}
                                                             </label>
                                                         </div>
-                                                @endif
+                                                @endforeach
                                             @endforeach
                                             <!--  Collapse inner space end -->
                                             </div>
@@ -969,58 +972,58 @@
                             </div>
                             <div class="sortOverlayBody">
                                 <!--     wine grad filters                        -->
-                                    <h4 class="filterHeading">Крепость</h4>
-                                    @foreach($fortresses as $fortress)
-                                        <div class="form-check">
-                                            <input class="form-check-input" form="searching-form" name="fortress[]"
-                                                   type="checkbox"
-                                                   value="{{$fortress->fortress}}" id="shopGradMob{{$loop->iteration}}"
-                                                   @if(array_key_exists('fortress', $filters) and in_array($fortress->fortress, $filters['fortress']))
-                                                   checked
-                                                @endif>
-                                            <label class="form-check-label" for="shopGradMob{{$loop->iteration}}">
-                                                {{$fortress->fortress}}%
-                                            </label>
-                                        </div>
-                                    @if($loop->index == 5)
-                                        @break
-                                    @endif
-                                @endforeach
-                                <!--   collapse other prices   -->
-                                    <div class="panel-group">
-                                        <div class="panel panel-default">
-                                            <div id="collapse-fortress-overlay" class="panel-collapse collapse">
-                                                <!--  Collapse inner space   -->
-                                                @foreach($fortresses as $fortress)
-                                                    @if($loop->index > 5)
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" form="searching-form"
-                                                                   name="fortress[]"
-                                                                   type="checkbox" value="{{$fortress->fortress}}"
-                                                                   id="shopGradMob{{$loop->iteration}}"
-                                                                   @if(array_key_exists('fortress', $filters) and in_array($fortress->fortress, $filters['fortress']))
-                                                                   checked
-                                                                @endif>
-                                                            <label class="form-check-label"
-                                                                   for="shopGradMob{{$loop->iteration}}">
-                                                                {{$fortress->fortress}}%
-                                                            </label>
-                                                        </div>
-                                                @endif
-                                            @endforeach
-                                            <!--  Collapse inner space end -->
-                                            </div>
-                                            <button class="collapseBtn" id="btnCollapse-fortress-overlay"
-                                                    onclick="collapse_click('fortress-overlay')"
-                                                    name="button" data-toggle="collapse"
-                                                    data-target="#collapse-fortress" aria-expanded="false"
-                                                    aria-controls="collapse-fortress" type="button">
-                                                <span>Посмотреть все</span>
-                                                <img src="{{ asset ('image/arrow-down.svg') }}" alt=""
-                                                     class="collapseIcon">
-                                            </button>
-                                        </div>
+                                <h4 class="filterHeading">Крепость</h4>
+                                @foreach($fortresses as $fortress)
+                                    <div class="form-check">
+                                        <input class="form-check-input" form="searching-form" name="fortress[]"
+                                               type="checkbox"
+                                               value="{{$fortress->fortress}}" id="shopGradMob{{$loop->iteration}}"
+                                               @if(array_key_exists('fortress', $filters) and in_array($fortress->fortress, $filters['fortress']))
+                                               checked
+                                            @endif>
+                                        <label class="form-check-label" for="shopGradMob{{$loop->iteration}}">
+                                            {{$fortress->fortress}}%
+                                        </label>
                                     </div>
+                                @if($loop->index == 5)
+                                    @break
+                                @endif
+                            @endforeach
+                            <!--   collapse other prices   -->
+                                <div class="panel-group">
+                                    <div class="panel panel-default">
+                                        <div id="collapse-fortress-overlay" class="panel-collapse collapse">
+                                            <!--  Collapse inner space   -->
+                                            @foreach($fortresses as $fortress)
+                                                @if($loop->index > 5)
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" form="searching-form"
+                                                               name="fortress[]"
+                                                               type="checkbox" value="{{$fortress->fortress}}"
+                                                               id="shopGradMob{{$loop->iteration}}"
+                                                               @if(array_key_exists('fortress', $filters) and in_array($fortress->fortress, $filters['fortress']))
+                                                               checked
+                                                            @endif>
+                                                        <label class="form-check-label"
+                                                               for="shopGradMob{{$loop->iteration}}">
+                                                            {{$fortress->fortress}}%
+                                                        </label>
+                                                    </div>
+                                            @endif
+                                        @endforeach
+                                        <!--  Collapse inner space end -->
+                                        </div>
+                                        <button class="collapseBtn" id="btnCollapse-fortress-overlay"
+                                                onclick="collapse_click('fortress-overlay')"
+                                                name="button" data-toggle="collapse"
+                                                data-target="#collapse-fortress" aria-expanded="false"
+                                                aria-controls="collapse-fortress" type="button">
+                                            <span>Посмотреть все</span>
+                                            <img src="{{ asset ('image/arrow-down.svg') }}" alt=""
+                                                 class="collapseIcon">
+                                        </button>
+                                    </div>
+                                </div>
                                 </form>
                             </div>
                             <!--     wine grad filters end                    -->
@@ -1030,7 +1033,9 @@
             </div>
             <div class="sortOverlayFooter">
                 <button class="sortOverlayBtn"
-                onclick="$('#filtMobi').removeClass('open');$('.shopContent').removeClass('hideMe');$('.SubOverlay').removeClass('open');">Показать</button>
+                        onclick="$('#filtMobi').removeClass('open');$('.shopContent').removeClass('hideMe');$('.SubOverlay').removeClass('open');">
+                    Показать
+                </button>
             </div>
         </div>
     </div>
@@ -1044,13 +1049,15 @@
             <div class="sortOverlayBody">
                 <ul>
                     <li>
-                        <input type="radio" class="form-check-input" form="searching-form" name="price_sort" id="price-asc" value="asc">
+                        <input type="radio" class="form-check-input" form="searching-form" name="price_sort"
+                               id="price-asc" value="asc">
                         <label class="form-check-label" for="price-asc" style="color: black; font-size: 15px">
                             сначала дешевле
                         </label>
                     </li>
                     <li>
-                        <input type="radio" class="form-check-input" form="searching-form" name="price_sort" id="price-desc" value="desc">
+                        <input type="radio" class="form-check-input" form="searching-form" name="price_sort"
+                               id="price-desc" value="desc">
                         <label class="form-check-label" for="price-des" style="color: black; font-size: 15px">
                             сначала дороже
                         </label>
