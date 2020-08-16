@@ -1,4 +1,4 @@
-    var swiperV = new Swiper('#smolSlider.swiper-container-v', {
+      var swiperV = new Swiper('#smolSlider.swiper-container-v', {
         slidesPerView: 3,
         centeredSlides: true,
         mousewheel: true,

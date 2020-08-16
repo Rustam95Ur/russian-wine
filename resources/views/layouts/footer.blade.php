@@ -2,8 +2,8 @@
     <div class="container container-lg">
         <div class="row ">
             <div class="ftr__list nav col-sm-3 col-md-4 col-lg-3 col-lg-push-3">
-                <h5>Клиентам <i class="fa fa-chevron-down"></i></h5>
-                <ul class="list-unstyled">
+                <h5 onclick="$('#footer1').toggleClass('footerUl');">Клиентам <i class="fa fa-chevron-down"></i></h5>
+                <ul class="list-unstyled" id="footer1">
                     <li><a href="{{route('wine-shop')}}">{{trans('header.wine')}}</a></li>
                     <li><a href="{{route('sets')}}">{{trans('footer.sets')}}</a></li>
                     <li><a href="{{route('subscription')}}">{{trans('header.subscription')}}</a></li>
@@ -12,8 +12,8 @@
                 </ul>
             </div>
             <div class="ftr__list nav col-sm-3 col-md-4 col-lg-3 col-lg-push-3">
-                <h5>Информация <i class="fa fa-chevron-down"></i></h5>
-                <ul class="list-unstyled">
+                <h5 onclick="$('#footer2').toggleClass('footerUl');">Информация <i class="fa fa-chevron-down"></i></h5>
+                <ul class="list-unstyled" id="footer2">
                     <li><a href="/winemaking-regions">Регионы виноделия</a></li>
                     <li><a href="/wineries">Винодельни</a></li>
                     <li><a href="/winemakers">Виноделы</a></li>
@@ -22,8 +22,8 @@
                 </ul>
             </div>
             <div class="ftr__list nav col-sm-3 col-md-3 col-lg-2 col-lg-push-3">
-                <h5>Партнерам <i class="fa fa-chevron-down"></i></h5>
-                <ul class="list-unstyled">
+                <h5 onclick="$('#footer3').toggleClass('footerUl');">Партнерам <i class="fa fa-chevron-down"></i></h5>
+                <ul class="list-unstyled" id="footer3">
                     <li><a href="{{route('simple_page','distributors')}}">{{trans('footer.distributors')}}</a></li>
                     <li><a href="{{route('franchise')}}">{{trans('header.franchise')}}</a></li>
                     <li><a href="{{route('wine-tour')}}">{{trans('footer.tour')}}</a></li>

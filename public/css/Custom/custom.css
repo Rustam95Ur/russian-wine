@@ -1988,6 +1988,15 @@ span.currency {
     }
 }
 
+@media (max-width:991px) {
+  .footerUl {
+    max-height: 20rem !important;
+  }
+  #wine_list_block .swiper-slide p {
+    min-height: calc(1.5rem * 2);
+} 
+}
+
 @media (min-width: 960px) {
     .mobileHidden {
         display: block;
