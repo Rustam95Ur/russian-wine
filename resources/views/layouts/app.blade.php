@@ -13,7 +13,7 @@
     <!-- Swiper.js  -->
     <link rel="stylesheet" type="text/css" href="{{ asset('swiperJs/swiper.min.css') }}">
     <!-- Bootstrap  -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap/bootstrap.css') }}">
     <!-- Theme Style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
     <!-- Colors -->
@@ -50,11 +50,11 @@
         cart_table_update();
     });
 </script>
-<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('js/jquery-countTo.js') }}"></script>
+<script src="{{ asset('js/owl-carousel/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('js/jquery/jquery-countTo.js') }}"></script>
 <script src="{{ asset('js/jquery-waypoints.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/jquery.easing.js') }}"></script>
+<script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/jquery/jquery.easing.js') }}"></script>
 <!-- <script src="{{ asset('swiperJs/swiper.min.js') }}"></script> -->
 <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
