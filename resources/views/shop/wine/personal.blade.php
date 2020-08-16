@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('body_class', 'overflow-hidden')
+@section('body_class', 'overflow-hidden footer-hide')
 @section('content')
     <style>
         .swiper-container {
@@ -171,146 +171,141 @@
                 <!-- Swiper JS -->
 
                 <!-- Initialize Swiper -->
-                <script
-                    src="https://code.jquery.com/jquery-2.2.4.js"
-                    integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-                    crossorigin="anonymous"></script>
-                <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-                <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-                <script>
-                    if ($(window).width() > 992) {
-                        var swiperH = new Swiper('.swiper-container-h', {
-                            direction: 'vertical',
+                @push('scripts')
+                    <script>
+                        if ($(window).width() > 992) {
+                            var swiperH = new Swiper('.swiper-container-h', {
+                                direction: 'vertical',
+                                mousewheel: true,
+                                speed: 550,
+                                slidesPerView: 1,
+                                pagination: {
+                                    el: '.swiper-pagination-h',
+                                    clickable: true,
+                                },
+                                keyboard: {
+                                    enabled: true,
+                                },
+                            });
+                        }
+                        var swiperV = new Swiper('.swiper-container-v', {
+                            slidesPerView: 3,
+                            centeredSlides: true,
                             mousewheel: true,
-                            speed: 550,
-                            slidesPerView: 1,
+                            loopFillGroupWithBlank: true,
+                            loop: true,
                             pagination: {
-                                el: '.swiper-pagination-h',
+                                el: '.swiper-pagination-v',
                                 clickable: true,
+                                type: 'fraction',
+                            },
+                            navigation: {
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
                             },
                             keyboard: {
                                 enabled: true,
                             },
-                        });
-                    }
-                    if ($(window).width() < 992)
-                      {
-                          $('body').addClass('overflow-auto');
-                          $('body').removeClass('overflow-hidden');
-                      };
-                      if ($(window).width() > 992)
-                      {
-                          $('body').addClass('overflow-hidden');
-                          $('body').removeClass('overflow-auto');
-                      };
-                    var swiperV = new Swiper('.swiper-container-v', {
-                        slidesPerView: 3,
-                        centeredSlides: true,
-                        mousewheel: true,
-                        loopFillGroupWithBlank: true,
-                        loop: true,
-                        pagination: {
-                            el: '.swiper-pagination-v',
-                            clickable: true,
-                            type: 'fraction',
-                        },
-                        navigation: {
-                            nextEl: '.swiper-button-next',
-                            prevEl: '.swiper-button-prev',
-                        },
-                        keyboard: {
-                            enabled: true,
-                        },
-                        breakpoints: {
-                            991: {
-                                slidesPerView: 'auto',
-                                centeredSlides: false,
-                                pagination: {
-                                    type: 'bullets',
+                            breakpoints: {
+                                991: {
+                                    slidesPerView: 'auto',
+                                    centeredSlides: false,
+                                    pagination: {
+                                        type: 'bullets',
+                                    },
                                 },
-                            },
-                        }
-                    });
-                </script>
-                <script>
-                    $( document ).ready(function() {
-                        $('.information-winerywc').hide()
-                    });
-                    function preview(id) {
-                        $('.winery-modal-'+ id).show()
-                        $('.imennoe').hide()
-                        $('.close_click').removeClass('hidden')
-                    }
-                    function close_winery_modal()
-                    {
-                       $('.information-winerywc').hide()
-                       $('.imennoe').show()
-                       $('.close_click').addClass('hidden')
-                    }
-                </script>
-                <script>
-                    if ($(window).width() < 991) {
-                        $('.imennoe .swiper-container-h > .swiper-wrapper').attr('class', '');
-
-                        var section = $('#slide-6');
-                        var sectin = $('#slide-6 .col-sss-4').height();
-                        var speche = $(section).height() - sectin;
-
-                        var sectionTop = section.offset().top + $(window).height() - $('header').height();
-                        var sectionTop1 = section.offset().top + $(window).height() + $('header').height();
-                        var section1 = $('.swiper-pagination.swiper-pagination-v');
-                        var sectionTop2 = section1.offset().top;
-                        $('.imennoe #slide-1 .slide-tl p:first-child').html('Наверное, каждый из нас мечтал<br> о личном шато в окружении<br> собственных виноградников<br> на берегу лазурного моря.<br>');
-                        $('#slide-1').append('<img src="{{asset('image/mouse-personal.png')}}   " id="mob-mouse" />');
-                        var setion = $('#slide-5');
-                        var setionTop = setion.offset().top;
-                        $(window).bind('scroll', function () {
-                            var windowTop = $(window).scrollTop() + $(window).height();
-
-                            if (windowTop > sectionTop) {
-                                $('#slide-6 .col-sss-4').addClass('fixxed');
-                                $(section).attr('style', 'height:' + $(section).height() + 'px;padding-top:' + sectin + 'px;');
-                            }
-                            if (windowTop < sectionTop1) {
-                                $('#slide-6 .col-sss-4').removeClass('fixxed')
-                                $(section).attr('style', 'height: auto;');
-                            }
-                            if (windowTop > sectionTop2) {
-                                $('#slide-6 .col-sss-4').addClass('tothetop');
-                            }
-                            if (windowTop < sectionTop2) {
-                                $('#slide-6 .col-sss-4').removeClass('tothetop');
-
-                            }
-                            if (windowTop > setionTop) {
-                                $('#slide-5').addClass('showbg');
-
-                            }
-                            if (windowTop < setionTop) {
-                                $('#slide-5').removeClass('showbg');
-
                             }
                         });
-                    }
-                </script>
+                        if ($(window).width() < 992) {
+                            $('body').addClass('overflow-auto');
+                            $('body').removeClass('overflow-hidden');
+                        }
+                        if ($(window).width() > 992) {
+                            $('body').addClass('overflow-hidden');
+                            $('body').removeClass('overflow-auto');
+                        }
+
+                    </script>
+                    <script>
+                        $(document).ready(function () {
+                            $('.information-winerywc').hide()
+                        });
+
+                        function preview(id) {
+                            $('.winery-modal-' + id).show()
+                            $('.imennoe').hide()
+                            $('.close_click').removeClass('hidden')
+                        }
+
+                        function close_winery_modal() {
+                            $('.information-winerywc').hide()
+                            $('.imennoe').show()
+                            $('.close_click').addClass('hidden')
+                        }
+                    </script>
+                    <script>
+                        if ($(window).width() < 991) {
+                            $('.imennoe .swiper-container-h > .swiper-wrapper').attr('class', '');
+
+                            var section = $('#slide-6');
+                            var sectin = $('#slide-6 .col-sss-4').height();
+                            var speche = $(section).height() - sectin;
+
+                            var sectionTop = section.offset().top + $(window).height() - $('header').height();
+                            var sectionTop1 = section.offset().top + $(window).height() + $('header').height();
+                            var section1 = $('.swiper-pagination.swiper-pagination-v');
+                            var sectionTop2 = section1.offset().top;
+                            $('.imennoe #slide-1 .slide-tl p:first-child').html('Наверное, каждый из нас мечтал<br> о личном шато в окружении<br> собственных виноградников<br> на берегу лазурного моря.<br>');
+                            $('#slide-1').append('<img src="{{asset('image/mouse-personal.png')}}   " id="mob-mouse" />');
+                            var setion = $('#slide-5');
+                            var setionTop = setion.offset().top;
+                            $(window).bind('scroll', function () {
+                                var windowTop = $(window).scrollTop() + $(window).height();
+
+                                if (windowTop > sectionTop) {
+                                    $('#slide-6 .col-sss-4').addClass('fixxed');
+                                    $(section).attr('style', 'height:' + $(section).height() + 'px;padding-top:' + sectin + 'px;');
+                                }
+                                if (windowTop < sectionTop1) {
+                                    $('#slide-6 .col-sss-4').removeClass('fixxed')
+                                    $(section).attr('style', 'height: auto;');
+                                }
+                                if (windowTop > sectionTop2) {
+                                    $('#slide-6 .col-sss-4').addClass('tothetop');
+                                }
+                                if (windowTop < sectionTop2) {
+                                    $('#slide-6 .col-sss-4').removeClass('tothetop');
+
+                                }
+                                if (windowTop > setionTop) {
+                                    $('#slide-5').addClass('showbg');
+
+                                }
+                                if (windowTop < setionTop) {
+                                    $('#slide-5').removeClass('showbg');
+
+                                }
+                            });
+                        }
+                    </script>
+                @endpush
+
             </div>
         </div>
     </div>
-    @push('scripts')
 
-    @endpush
     @foreach($wineries as $winery)
         <div id="information-winerywc" class="information-winerywc winery-modal-{{$winery->id}}">
-                <p class="close_click hidden" onclick="close_winery_modal()">
-                    <img alt="close_icon" src="{{asset('image/closeicon.png')}}">
-                </p>
+            <p class="close_click hidden" onclick="close_winery_modal()">
+                <img alt="close_icon" src="{{asset('image/closeicon.png')}}">
+            </p>
             <div class="col-ss-6">
                 <div class="swiper-container swiper-container-winery">
                     <div class="swiper-wrapper">
                         @foreach($winery->images as $block)
                             @if ($block->type_id == 4)
-                                <div class="swiper-slide"><img alt="image" src="{{Voyager::image($block->image)}}"/></div>
+                                <div class="swiper-slide"><img alt="image" src="{{Voyager::image($block->image)}}"/>
+                                </div>
                             @endif
                         @endforeach
                     </div>
@@ -331,23 +326,24 @@
                     именное вино
                 </button>
             </div>
-
-            <script>
-                var swiper = new Swiper('.swiper-container-winery', {
-                    loop: true,
-                    slidesPerView: 1,
-                    pagination: {
-                        el: '.swiper-pagination',
-                        type: 'fraction',
-                    },
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
-                });
+            @push('scripts')
+                <script>
+                    var swiper = new Swiper('.swiper-container-winery', {
+                        loop: true,
+                        slidesPerView: 1,
+                        pagination: {
+                            el: '.swiper-pagination',
+                            type: 'fraction',
+                        },
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                    });
                     $(".swiper-pagination-fraction").html("<span class='swiper-pagination-current'>1</span>" +
                         "<span class='swiper-pagination-total'>5</span>");
-            </script>
+                </script>
+            @endpush
         </div>
     @endforeach
     <div class="modal winery-modal" id="modal_sviaz" style="display:none;">
@@ -357,10 +353,11 @@
         <form method="post" action="{{route('personal-wine-order')}}">
             @csrf
             <h2 id="form-title-feedback">Оставить заявку</h2>
-            <input  type="text"  name="name" placeholder="Имя" required="required">
-            <input  type="text" name="contact" placeholder="Телефон или e-mail"
-                    required="required" onclick="$(this).removeClass('wrong');$(this).attr('placeholder', 'Телефон или e-mail');">
-            <input  type="text" id="text1" name="message" placeholder="Сообщение">
+            <input type="text" name="name" placeholder="Имя" required="required">
+            <input type="text" name="contact" placeholder="Телефон или e-mail"
+                   required="required"
+                   onclick="$(this).removeClass('wrong');$(this).attr('placeholder', 'Телефон или e-mail');">
+            <input type="text" id="text1" name="message" placeholder="Сообщение">
             <button type="submit" id="feedsend" value="Отправить">Хочу именное вино</button>
         </form>
     </div>
