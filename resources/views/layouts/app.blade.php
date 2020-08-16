@@ -52,7 +52,7 @@
 </script>
 <script src="{{ asset('js/owl-carousel/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('js/jquery/jquery-countTo.js') }}"></script>
-<script src="{{ asset('js/jquery-waypoints.js') }}"></script>
+<script src="{{ asset('js/jquery/jquery-waypoints.js') }}"></script>
 <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/jquery/jquery.easing.js') }}"></script>
 <!-- <script src="{{ asset('swiperJs/swiper.min.js') }}"></script> -->
