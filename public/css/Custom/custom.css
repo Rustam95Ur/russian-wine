@@ -1994,7 +1994,10 @@ span.currency {
   }
   #wine_list_block .swiper-slide p {
     min-height: calc(1.5rem * 2);
-} 
+  }
+  .shopContent .featured_cont .swiper-slide {
+    min-height: 340px;
+  }  
 }
 
 @media (min-width: 960px) {
