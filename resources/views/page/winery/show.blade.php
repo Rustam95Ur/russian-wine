@@ -11,7 +11,7 @@
         <div id="content" class="">
             <div id="main_page">
                 <div class="main_bg"
-                     style="background: url('{{Voyager::image($winery->header_image)}}'); background-size: cover">
+                     style="    background: url('{{Voyager::image($winery->header_image)}}'); background-size: cover">
                     <div class="container" style="position:relative;">
                         <div class="row mt-md mb-sm">
                             <div class="col-xs-8 col-xs-offset-2">
@@ -101,7 +101,8 @@
                                                                 <b>Содержание сахара:</b>
                                                             </div>
                                                             <div class="col-xs-4 col-sm-6">
-                                                                {{$wine->sugar->title}}
+
+                                                                {{isset($wine->sugar) ? $wine->sugar->title : ''}}
                                                             </div>
                                                         </div>
                                                         <div class="row">
@@ -168,7 +169,7 @@
                     function initMap() {
                         var map = new google.maps.Map(document.getElementById('map'), {
                             zoom: 6,
-                            center: {lat: 47.332458, lng: 41.831956},
+                            center: {lat: {{$winery->coordinate_lat}}, lng: {{$winery->coordinate_lon}}},
                             styles: [
                                 {
                                     "featureType": "all",
@@ -381,9 +382,7 @@
                         })();
                     }
                 </script>
-                <script async="" defer=""
-                        src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_API_KEY')}}&amp;callback=initMap&amp;language=ru"></script>
-            </div>
+             </div>
         </div>
     </div>
 @endsection

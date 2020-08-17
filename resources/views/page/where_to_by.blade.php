@@ -317,8 +317,6 @@
                         });
                     }
                 </script>
-                <script async="" defer=""
-                        src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_API_KEY')}}&amp;callback=initMap&amp;libraries=places&amp;language=ru"></script>
             @endpush
         </div>
     </div>

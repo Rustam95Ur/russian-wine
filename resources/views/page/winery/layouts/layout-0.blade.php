@@ -93,6 +93,8 @@
 @endforeach
 
 <div class="background-white vinodeln_mob">
+    @foreach($winery->images as $block)
+        @if ($block->numbering == 1 and $block->type_id == 2)
     <div class="container container-lg">
         <div class="row">
             <div class="col-md-5">
@@ -102,6 +104,8 @@
             </div>
         </div>
     </div>
+        @endif
+    @endforeach
     <div class="container container-lg">
         @foreach($winery->images as $block)
             @if ($block->numbering == 1 and $block->type_id == 2)

@@ -344,9 +344,7 @@
                     showActiveMarkers("Кубань");
                 }
             </script>
-            <script async="" defer=""
-                    src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_API_KEY')}}&amp;callback=initMap&amp;language=ru"></script>
-            <script>
+           <script>
                 $('.active_link').on('click', function () {
                     var click_id =$(this).data("target");
                     click_id = click_id.replace('#pane-', '')

@@ -11,11 +11,9 @@ class WineryController extends Controller
     public function index()
     {
         $regions = Region::with('wineries')->get();
-        $type = Winery::WINE_TYPE;
         $page_title = 'Русские Винодельни';
         return view('page.winery.index', [
             'regions' => $regions,
-            'winery_type' => $type,
             'page_title' => $page_title
         ]);
     }
