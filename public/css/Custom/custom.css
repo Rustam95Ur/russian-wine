@@ -1997,7 +1997,7 @@ span.currency {
   }
   .shopContent .featured_cont .swiper-slide {
     min-height: 340px;
-  }  
+  }
 }
 
 @media (min-width: 960px) {
@@ -2022,4 +2022,11 @@ span.currency {
 
 .winemaker-details #in_par p a {
     color: #D6D6D6;
+}
+#sety-calc + .price {
+    display: block;
+    margin-top: 6vw;
+    color: #Fff;
+    float: right;
+    font: 3.155vw 'ProximaNova-Light';
 }

@@ -14,30 +14,36 @@
                                 @case(1)
                                 @for ($i = 0; $i < 6; $i++)
                                     <a data-bottle="{{$set->wines[0]->id}}">
-                                        <img alt="{{$set->wines[0]->title}}" src="{{Voyager::image($set->wines[0]->image)}}">
+                                        <img alt="{{$set->wines[0]->title}}"
+                                             src="{{Voyager::image($set->wines[0]->image)}}">
                                     </a>
                                 @endfor
                                 @break
                                 @case(2)
                                 @for ($i = 0; $i < 3; $i++)
                                     <a data-bottle="{{$set->wines[0]->id}}">
-                                        <img alt="{{$set->wines[0]->title}}" src="{{Voyager::image($set->wines[0]->image)}}">
+                                        <img alt="{{$set->wines[0]->title}}"
+                                             src="{{Voyager::image($set->wines[0]->image)}}">
                                     </a>
                                     <a data-bottle="{{$set->wines[1]->id}}">
-                                        <img alt="{{$set->wines[1]->title}}" src="{{Voyager::image($set->wines[1]->image)}}">
+                                        <img alt="{{$set->wines[1]->title}}"
+                                             src="{{Voyager::image($set->wines[1]->image)}}">
                                     </a>
                                 @endfor
                                 @break
                                 @case(3)
                                 @for ($i = 0; $i < 2; $i++)
                                     <a data-bottle="{{$set->wines[0]->id}}">
-                                        <img alt="{{$set->wines[0]->title}}" src="{{Voyager::image($set->wines[0]->image)}}">
+                                        <img alt="{{$set->wines[0]->title}}"
+                                             src="{{Voyager::image($set->wines[0]->image)}}">
                                     </a>
                                     <a data-bottle="{{$set->wines[1]->id}}">
-                                        <img alt="{{$set->wines[1]->title}}" src="{{Voyager::image($set->wines[1]->image)}}">
+                                        <img alt="{{$set->wines[1]->title}}"
+                                             src="{{Voyager::image($set->wines[1]->image)}}">
                                     </a>
                                     <a data-bottle="{{$set->wines[2]->id}}">
-                                        <img alt="{{$set->wines[2]->title}}" src="{{Voyager::image($set->wines[2]->image)}}">
+                                        <img alt="{{$set->wines[2]->title}}"
+                                             src="{{Voyager::image($set->wines[2]->image)}}">
                                     </a>
                                 @endfor
                                 @break
@@ -49,11 +55,11 @@
                                 @endforeach
                                 @break
                             @endswitch
-{{--                            @foreach($set->wines as $wine)--}}
-{{--                                <a data-bottle="{{$wine->id}}">--}}
-{{--                                    <img alt="{{$wine->title}}" src="{{Voyager::image($wine->image)}}">--}}
-{{--                                </a>--}}
-{{--                            @endforeach--}}
+                            {{--                            @foreach($set->wines as $wine)--}}
+                            {{--                                <a data-bottle="{{$wine->id}}">--}}
+                            {{--                                    <img alt="{{$wine->title}}" src="{{Voyager::image($wine->image)}}">--}}
+                            {{--                                </a>--}}
+                            {{--                            @endforeach--}}
                         </div>
                     </div>
                     <a class="other-product"
@@ -73,13 +79,13 @@
                             <div class="quantity_quickorder" id="sety-calc">
                                 <p>Количество сетов</p>
                                 <span id="qminus"><input type="button" id="decrease_quickorder"
-                                                         onclick="buttonminus();">
+                                                         onclick="button_minus();">
                                     <img alt="minus_image" src="{{asset('image/white_minus.png')}}"></span>
                                 <input type="text" data-quantity="1" class="qty_quickorder" name="quantity"
                                        id="htop_quickorder1" size="2" value="1">
                                 <span id="qplus">
                                     <input type="button" id="increase_quickorder" value=""
-                                           onclick="buttonplus();">
+                                           onclick="button_plus();">
                                     <img alt="plus_image" src="{{asset('image/white_plus.png')}}"></span>
                             </div>
                             <span class="price">{{$set->price}} <span>о</span>
@@ -89,22 +95,24 @@
                                    @endif
 		                        </div>
 	                        </span>
-                            <button  class="add-cart btn-danger" onclick="cart_add('{{$set->id}}', 1, 'set');">в корзину</button>
+                            <button class="add-cart btn-danger" onclick="cart_add('{{$set->id}}', 1, 'set');">в
+                                корзину
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="mobile-instructions">
-                Нажмите на бутылку,<br>Чтобы почитать о вине
-            </div>
+            {{--            <div id="mobile-instructions">--}}
+            {{--                Нажмите на бутылку,<br>Чтобы почитать о вине--}}
+            {{--            </div>--}}
         </div>
-        <div id="mobile-price">
-  <span class="price" id="calculatingprice">{{$set->price}} <span>о</span>
-  <div id="skidka">
-			</div>
-	</span>
-            <button id="podpisatsa" onclick="fastorder_open(918);">Подписаться</button>
-        </div>
+        {{--        <div id="mobile-price">--}}
+        {{--  <span class="price" id="calculatingprice">{{$set->price}} <span>о</span>--}}
+        {{--  <div id="skidka">--}}
+        {{--			</div>--}}
+        {{--	</span>--}}
+        {{--            <button id="podpisatsa" onclick="fastorder_open({{$set->id}});">Подписаться</button>--}}
+        {{--        </div>--}}
     </div>
     <div id="bottle-container">
         <div id="bottle">
@@ -130,8 +138,8 @@
                             </div>
                             <div class="attributes vyderzhkawc">
                                 <span>Выдержка</span>
-                                    <img alt="excerpt_image" src="{{asset('image/vyderjka.png')}}">
-                                    <p>{{isset($wine->excerpt) ? $wine->excerpt->title : ''}}<br></p>
+                                <img alt="excerpt_image" src="{{asset('image/vyderjka.png')}}">
+                                <p>{{isset($wine->excerpt) ? $wine->excerpt->title : ''}}<br></p>
                             </div>
                             <div class="attributes sort-vinogradawc">
                                 <span>Сорт винограда</span>
@@ -173,23 +181,32 @@
         </div>
     </div>
     @push('scripts')
+
         <script type="text/javascript"><!--
-            function buttonplus(){
+            function button_plus() {
                 document.getElementById("htop_quickorder1").value++;
-                var q = document.getElementById("htop_quickorder1").value;
-                var s = 7000 * q;
-                $('.price').html(s + ' <span>о</span>');
+                var count = document.getElementById("htop_quickorder1").value;
+                var total = {{$set->price}} * count;
+                $('.price').html(total + ' <span>о</span> <div id="skidka">-{{$set->sale}}%</div>');
                 var asd = $('#htop_quickorder1').attr('data-quantity');
                 $('#htop_quickorder1').attr('data-quantity', ++asd);
             }
-            function buttonminus(){
-                document.getElementById("htop_quickorder1").value--;
-                var q = document.getElementById("htop_quickorder1").value;
-                var s = 7000 * q;
-                $('.price').html(s + ' <span>о</span>');
-                var asd = $('#htop_quickorder1').attr('data-quantity');
-                $('#htop_quickorder1').attr('data-quantity', asd - 1);
+
+            function button_minus() {
+                var button_val = $('#htop_quickorder1').val();
+                if (button_val > 1) {
+                    document.getElementById("htop_quickorder1").value--;
+                    var count = document.getElementById("htop_quickorder1").value;
+                    if (count > 0) {
+                        var total = {{$set->price}} * count;
+                        $('.price').html(total + ' <span>о</span>');
+                        var asd = $('#htop_quickorder1').attr('data-quantity');
+                        $('#htop_quickorder1').attr('data-quantity', asd - 1);
+                    }
+                }
+
             }
+
             //--></script>
         <script>
             $(".image-set a").click(function () {
