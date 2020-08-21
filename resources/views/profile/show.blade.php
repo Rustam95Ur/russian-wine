@@ -51,12 +51,12 @@
                                 <h3 class="changePass">Изменить пароль</h3>
                                 <div class="form-group float-label-control">
                                     <label for="old_password">Старый пароль</label>
-                                    <input id="old_password" form="profile_form" type="password" name="oldpassword prof"
+                                    <input id="old_password" form="profile_form" type="password" name="oldpassword"
                                            class="form-control" placeholder="Старый пароль">
                                 </div>
                                 <div class="form-group float-label-control">
                                     <label for="new_password">Новый пароль</label>
-                                    <input form="profile_form" id="new_password" type="password" name="newpassword prof"
+                                    <input form="profile_form" id="new_password" type="password" name="newpassword"
                                            class="form-control" placeholder="Новый пароль">
                                 </div>
                             </div>

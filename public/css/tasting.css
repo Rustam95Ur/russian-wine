@@ -900,6 +900,7 @@
     max-width: 555px;
         width: 100%;
     padding: 20px;
+    height: 310px;
 }
 #tasting-page #testimonials .swiper-slide {
     box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.1);

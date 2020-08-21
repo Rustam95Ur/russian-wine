@@ -229,6 +229,9 @@ class IndexController extends Controller
         $client->birth_date = $request['birth_date'];
 
         if ($request['newpassword'] !== null && $request['oldpassword'] !== null) {
+            if (!Hash::check($request['oldpassword'],$client->password)) {
+                return redirect()->route('profile')->with('error', 'Старый пароль введен не верно');
+            }
             $newPass = Hash::make($request['newpassword']);
             $client->password = $newPass;
         }
