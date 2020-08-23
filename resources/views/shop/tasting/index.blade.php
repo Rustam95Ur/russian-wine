@@ -213,16 +213,16 @@
                     el: '.swiper-pagination',
                     clickable: true,
                 },
-                breakpoints: {
-                    991: {
-                        spaceBetween: 0,
-                        centeredSlides: false,
-                        center: false,
-                        loopFillGroupWithBlank: false,
-                        slidesPerView: 2
-                    },
-
-                },
+                // breakpoints: {
+                //     991: {
+                //         spaceBetween: 0,
+                //         centeredSlides: false,
+                //         center: false,
+                //         loopFillGroupWithBlank: false,
+                //         slidesPerView: 2
+                //     },
+                //
+                // },
 
             });
             var swiper = new Swiper('#testimonials', {

@@ -898,13 +898,15 @@
 #tasting-page #testimonials .swiper-inner,
 #tasting-page .slider-1 .swiper-inner {
     max-width: 555px;
-        width: 100%;
+    width: 100%;
     padding: 20px;
     height: 310px;
 }
+
 #tasting-page #testimonials .swiper-slide {
     box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.1);
 }
+
 #tasting-page .slider-1 .swiper-inner img {
     margin-left: auto;
     margin-right: auto;
@@ -2236,9 +2238,11 @@
 #tasting-page .thumbnails .image-additional {
     margin: 0;
 }
+
 #tasting-page #fourth_block {
     margin-top: 150px;
 }
+
 #tasting-page #fourth_block h5 {
     color: #23252b;
 }
@@ -2337,6 +2341,7 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 #tasting-page #question h2 {
     font-style: normal;
     font-weight: bold;
@@ -2358,6 +2363,7 @@
     border: 3px solid #FFFFFF;
     padding: 80px;
 }
+
 #tasting-page .question_form .form-control {
     margin-top: 60px;
     background: transparent;
@@ -2369,6 +2375,7 @@
     box-shadow: none;
     border-radius: unset;
 }
+
 #tasting-page .question_form .btn {
     background: #ea2b58;
     font: 14px 'ProximaNova-Bold';
@@ -2389,6 +2396,7 @@
 #tasting-page .contact_info {
     margin-top: 50px;
 }
+
 #tasting-page .contact_info p {
     font-weight: bold;
     font-size: 14px;
@@ -2407,6 +2415,7 @@
 #tasting-page .contact_info .phone_block {
     margin-bottom: 25px;
 }
+
 .tasting_modal {
     display: none;
     position: fixed;
@@ -2417,6 +2426,7 @@
     z-index: 251;
     pointer-events: all;
 }
+
 .tasting_modal .tasting_body {
     position: absolute;
     width: 52.667vw;
@@ -2431,17 +2441,21 @@
     z-index: 253;
     padding: 80px;
 }
+
 .tasting_modal .tasting_body .list-inline {
     margin-top: 20px;
 }
+
 .tasting_modal .tasting_body .list-unstyled li {
     border-right: 1px solid;
     padding-left: 0.941vw;
     padding-right: 0.941vw;
 }
+
 .tasting_modal .tasting_body .list-unstyled li:last-child {
     border-right: none;
 }
+
 .tasting_modal .tasting_body .tasting_desc {
     margin-top: 30px;
     font-weight: normal;
@@ -2450,12 +2464,14 @@
 }
 
 .tasting_modal .tasting_wine_image {
-    width: 13%;
-    height: auto;
+    /*width: 13%;*/
+    height: 32rem;
 }
+
 .tasting_modal .tasting_wine_title_list {
     margin-top: 20px;
 }
+
 .tasting_modal .tasting_wine_title_list li {
     font-size: 22px;
     line-height: 40px;
@@ -2468,6 +2484,7 @@
     color: #0d0d0d;
     width: 46.25%;
 }
+
 .tasting_modal a {
     width: 46.25%;
     height: 3.125vw;
@@ -2479,4 +2496,3 @@
     text-transform: uppercase;
     letter-spacing: .1vw;
 }
-
