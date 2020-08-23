@@ -141,16 +141,16 @@
         <div class="icon_close"
              onclick="$('#messageModal').css('display', 'none');$('body').removeClass('nooverflow');"></div>
         <h2 class="text-center m-b-50">Сообщение</h2>
-        @if ($message = Session::get('success'))
+        @if ($message = session()->get('success'))
             <h3 class="text-center text-success">{!! $message !!}</h3>
         @endif
-        @if ($message = Session::get('error'))
+        @if ($message = session()->get('error'))
             <h3 class="text-center text-danger">{!! $message !!}</h3>
         @endif
-        @if ($message = Session::get('warning'))
+        @if ($message = session()->get('warning'))
             <h3 class="text-center text-danger">{!! $message !!}</h3>
                 @endif
-                @if ($message = Session::get('info'))
+                @if ($message = session()->get('info'))
                     <h3 class="text-center text-danger">{!! $message !!}</h3>
                 @endif
                 @if ($errors->any())

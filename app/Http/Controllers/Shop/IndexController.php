@@ -14,10 +14,10 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Sugar;
 use App\Filters\WineFilter;
-use Session;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Auth;
 use TCG\Voyager\Facades\Voyager;
+use App\Http\Controllers\Mail\IndexController as SendMail;
 
 class IndexController extends Controller
 {
@@ -246,26 +246,26 @@ class IndexController extends Controller
         }
         $countItem = $checkProduct->count;
         if ($qty > $countItem) {
-            return \Response::json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+            return response()->json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
         }
         $item = ['product_id' => $product_id, 'qty' => $qty, 'type' => $type, 'price' => $checkProduct->price];
-        $sessionItems = Session::get('cart');
+        $sessionItems = session()->get('cart');
         $results = [];
         if ($sessionItems and count($sessionItems) > 0) {
             $status = array_search($product_id, array_column($sessionItems, 'product_id'));
             $status_type = array_search($type, array_column($sessionItems, 'type'));
             if ($status === false or $status_type === false) {
                 array_push($sessionItems, $item);
-                Session::forget('cart');
+                session()->forget('cart');
                 foreach ($sessionItems as $result) {
-                    Session::push('cart', $result);
+                    session()->push('cart', $result);
                 }
             } else {
                 for ($i = 0; $i < count($sessionItems); $i++) {
                     $sum = ($sessionItems[$i]['product_id'] == $product_id and $sessionItems[$i]['type'] == $type) ? $sessionItems[$i]['qty'] + $qty : $sessionItems[$i]['qty'];
 
                     if ($sum > $countItem) {
-                        return \Response::json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+                        return response()->json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
                     }
                     $newArray = [
                         'product_id' => $sessionItems[$i]['product_id'],
@@ -275,15 +275,15 @@ class IndexController extends Controller
                     ];
                     $results[$i] = $newArray;
                 }
-                Session::forget('cart');
+                session()->forget('cart');
                 foreach ($results as $result) {
-                    Session::push('cart', $result);
+                    session()->push('cart', $result);
                 }
             }
         } else {
-            Session::push('cart', $item);
+            session()->push('cart', $item);
         }
-        return \Response::json(['success' => trans('shop.success.add-cart')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+        return response()->json(['success' => trans('shop.success.add-cart')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }
 
     /**
@@ -301,15 +301,15 @@ class IndexController extends Controller
         }
         $countItem = $checkProduct->count;
         if ($qty > $countItem) {
-            return \Response::json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+            return response()->json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
         }
-        $sessionItems = Session::get('cart');
+        $sessionItems = session()->get('cart');
 
         if ($sessionItems) {
             $itemIndex = array_search($product_id, array_column($sessionItems, 'product_id'));
             $typeIndex = array_search($type, array_column($sessionItems, 'type'));
             if ($itemIndex !== false and $typeIndex !== false) {
-                Session::forget('cart');
+                session()->forget('cart');
                 if ($qty == 0) {
                     foreach ($sessionItems as $key => $item) {
                         if ($item['product_id'] == $product_id and $item['type'] == $type) {
@@ -329,19 +329,19 @@ class IndexController extends Controller
                         $results[$i] = $newArray;
                     }
                     foreach ($results as $result) {
-                        Session::push('cart', $result);
+                        session()->push('cart', $result);
                     }
-                    return \Response::json(['success' => trans('shop.success.remove-cart')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+                    return response()->json(['success' => trans('shop.success.remove-cart')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
                 }
                 if ($sessionItems) {
                     foreach ($sessionItems as $item) {
-                        Session::push('cart', $item);
+                        session()->push('cart', $item);
                     }
                 }
             }
-            return \Response::json(['success' => trans('shop.success.remove-cart')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+            return response()->json(['success' => trans('shop.success.remove-cart')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
         } else {
-            return \Response::json(['success' => trans('shop.success.no-cart')], 404, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+            return response()->json(['success' => trans('shop.success.no-cart')], 404, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
         }
     }
 
@@ -351,13 +351,13 @@ class IndexController extends Controller
     protected function count_cart()
     {
         $count = 0;
-        $countCartItems = Session::get('cart');
+        $countCartItems = session()->get('cart');
         if ($countCartItems != false) {
             foreach ($countCartItems as $item) {
                 $count += $item['qty'];
             }
         }
-        return \Response::json(['count' => $count], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+        return response()->json(['count' => $count], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }
 
     /**
@@ -368,7 +368,7 @@ class IndexController extends Controller
         $total_sum = 0;
         $countProduct = 0;
         $cart_products = [];
-        $countCartItems = Session::get('cart');
+        $countCartItems = session()->get('cart');
         if ($countCartItems != false) {
             foreach ($countCartItems as $item) {
                 if ($item['type'] == 'wine') {
@@ -396,7 +396,7 @@ class IndexController extends Controller
         $count_wine_array = ['count_products' => $countProduct];
         $total_sums = ['total_sum' => $total_sum];
         $result = array_merge($wines, $count_wine_array, $total_sums);
-        return \Response::json($result, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+        return response()->json($result, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }
 
     /**
@@ -404,7 +404,7 @@ class IndexController extends Controller
      */
     public function checkout()
     {
-        $countCartItems = Session::get('cart');
+        $countCartItems = session()->get('cart');
         if ($countCartItems != false) {
             $total_sum = 0;
             foreach ($countCartItems as $item) {
@@ -437,7 +437,7 @@ class IndexController extends Controller
      */
     public function checkout_order(Request $request)
     {
-        $cart_session = Session::get('cart');
+        $cart_session = session()->get('cart');
         if ($cart_session != false) {
             $cart_info = '';
             $total_sum = 0;
@@ -470,7 +470,10 @@ class IndexController extends Controller
             $saveRequest->message = $cart_info;
             $saveRequest->request = json_encode($cart_session);
             $saveRequest->save();
-            Session::forget('cart');
+            session()->forget('cart');
+            $request['message'] = $cart_info;
+            SendMail::order($request);
+
             return redirect()->route('checkout_success');
         } else {
             return redirect()->back();

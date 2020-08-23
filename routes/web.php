@@ -41,11 +41,12 @@ Route::post('/tastings/checkout', 'Shop\TastingsController@checkout')->name('tas
 Route::post('/tasting/order', 'Shop\TastingsController@order')->name('tasting_order');
 
 Route::get('/wine-tour', 'Page\IndexController@tour')->name('wine-tour');
+Route::post('/wine-tour/save', 'Page\IndexController@tour_save')->name('tour_order');
+
 Route::get('/where-to-buy', 'Page\IndexController@where_to_by')->name('where_to_by');
 Route::get('/winemaking-regions', 'Page\RegionController@index')->name('regions');
 Route::get('/region-{slug}', 'Page\RegionController@show')->name('region');
 
-Route::post('/tour/order', 'Page\OrderController@tour_save')->name('tour_order');
 // Ajax action
 Route::get('/search', 'Home\SearchController@search')->name('search');
 Route::get('/cart/add/{type}/{product_id}/{qty}', 'Shop\IndexController@add_to_cart');

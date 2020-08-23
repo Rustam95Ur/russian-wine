@@ -4,14 +4,37 @@ namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
+use App\Models\Order;
 use App\Models\Page;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Mail\IndexController as SendMail;
+
 
 class IndexController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function tour()
     {
         return view('page.tour');
     }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function tour_save(Request $request)
+    {
+        $saveRequest = new Order();
+        $saveRequest->name = $request['name'];
+        $saveRequest->phone = $request['phone'];
+        $saveRequest->type = Order::TYPE_TOUR;
+        $saveRequest->save();
+        SendMail::tour($request);
+        return redirect()->back()->with('success', trans('order.success.tour'));
+    }
+
 
     /**
      * @param $slug

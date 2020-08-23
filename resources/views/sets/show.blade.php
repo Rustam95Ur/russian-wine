@@ -186,8 +186,14 @@
             function button_plus() {
                 document.getElementById("htop_quickorder1").value++;
                 var count = document.getElementById("htop_quickorder1").value;
-                var total = {{$set->price}} * count;
+                var total = {{$set->price}} *
+                count;
+                @if($set->sale)
                 $('.price').html(total + ' <span>о</span> <div id="skidka">-{{$set->sale}}%</div>');
+                @else
+                $('.price').html(total + ' <span>о</span>');
+                @endif
+
                 var asd = $('#htop_quickorder1').attr('data-quantity');
                 $('#htop_quickorder1').attr('data-quantity', ++asd);
             }
@@ -198,8 +204,13 @@
                     document.getElementById("htop_quickorder1").value--;
                     var count = document.getElementById("htop_quickorder1").value;
                     if (count > 0) {
-                        var total = {{$set->price}} * count;
-                        $('.price').html(total + ' <span>о</span><div id="skidka">-{{$set->sale}}%</div>');
+                        var total = {{$set->price}} *
+                        count;
+                        @if($set->sale)
+                        $('.price').html(total + ' <span>о</span> <div id="skidka">-{{$set->sale}}%</div>');
+                        @else
+                        $('.price').html(total + ' <span>о</span>');
+                        @endif
                         var asd = $('#htop_quickorder1').attr('data-quantity');
                         $('#htop_quickorder1').attr('data-quantity', asd - 1);
                     }

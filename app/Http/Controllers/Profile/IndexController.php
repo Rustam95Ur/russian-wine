@@ -188,7 +188,7 @@ class IndexController extends Controller
         $count_wine_array = ['date_created' => date($order->created_at)];
         $total_sums = ['total_sum' => $total_price];
         $result = array_merge($wines, $count_wine_array, $total_sums);
-        return \Response::json($result, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+        return response()->json($result, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }
 
     /**
