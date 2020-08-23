@@ -2485,14 +2485,13 @@
     width: 46.25%;
 }
 
-.tasting_modal a {
-    width: 46.25%;
-    height: 3.125vw;
-    display: block;
-    float: left;
-    font: .833vw ProximaNova-Bold;
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-    letter-spacing: .1vw;
+.tasting_modal #deg_order {
+    margin: 0;
+}
+.tasting_modal .list-inline li {
+    border-right: 1px solid;
+}
+
+.tasting_modal .list-inline li:last-child {
+    border-right: 0;
 }

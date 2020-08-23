@@ -8383,7 +8383,7 @@ h2.price {
         width: 18.542vw;
         float: left;
         text-align: center;
-        font: .729vw ProximaNova-Xbold;
+        font: .729vw ProximaNova-Bold;
         letter-spacing: .1vw;
         padding-top: .1vw
     }
@@ -8610,7 +8610,7 @@ h2.price {
 
     #winery-filter .region_check {
         padding-left: 2.813vw;
-        font: 13px ProximaNova-Xbold;
+        font: 13px ProximaNova-Bold;
         text-transform: uppercase;
         display: block;
         width: 100%;
@@ -8885,7 +8885,7 @@ h2.price {
         z-index: 100;
         border-radius: 0;
         background: #ea2b58;
-        font: 3.889vw ProximaNova-Xbold;
+        font: 3.889vw ProximaNova-Bold;
         text-transform: uppercase;
         letter-spacing: .4vw;
         border: none
@@ -8898,7 +8898,7 @@ h2.price {
         padding-left: 22.083vw;
         display: flex;
         align-items: center;
-        font: 3.889vw ProximaNova-Xbold;
+        font: 3.889vw ProximaNova-Bold;
         height: 15.556vw;
         border-bottom: 1px solid #23252b;
         text-transform: uppercase;
@@ -8971,7 +8971,7 @@ h2.price {
     #product-search .selected-title,
     .options .option,
     .region_check {
-        font: 3.611vw ProximaNova-Xbold;
+        font: 3.611vw ProximaNova-Bold;
         text-transform: uppercase;
         display: block;
         float: left;
@@ -9049,7 +9049,7 @@ h2.price {
     .region-apply a {
         letter-spacing: .5vw;
         width: 100%;
-        font: 3.889vw ProximaNova-Xbold;
+        font: 3.889vw ProximaNova-Bold;
         line-height: 16.667vw;
         top: 0;
         right: 0
@@ -9141,7 +9141,7 @@ h2.price {
         letter-spacing: .1vw;
         width: 50%;
         height: 16.667vw;
-        font: 3.889vw ProximaNova-Xbold;
+        font: 3.889vw ProximaNova-Bold;
         text-transform: uppercase;
         position: absolute;
         display: flex;
@@ -11762,7 +11762,7 @@ section#specials #specials-cont div.col-md-4 {
     margin: 2.865vw 0 0;
     background: #ea2b58;
     border-radius: 15vw;
-    font: 0.938vw 'ProximaNova-Xbold';
+    font: 0.938vw 'ProximaNova-Bold';
     text-transform: uppercase;
     text-align: center;
     border: none;
@@ -12283,7 +12283,7 @@ section#specials #specials-cont div.col-md-4 {
         margin: 0 auto 0;
         background: #ea2b58;
         border-radius: 15vw;
-        font: 15px 'ProximaNova-Xbold';
+        font: 15px 'ProximaNova-Bold';
         text-transform: uppercase;
         text-align: center;
     }
@@ -12716,7 +12716,7 @@ h1.forwc {
     background: #ea2b58;
     color: #fff;
     text-align: center;
-    font-family: "ProximaNova-Xbold";
+    font-family: "ProximaNova-Bold";
     text-transform: uppercase;
     font-size: 0.8333vw;
     line-height: 3.385vw;
@@ -13252,7 +13252,7 @@ nav ul > li:hover #inda-club {
     font-size: 0.8333333333333334VW;
     text-transform: uppercase;
     color: #fff;
-    font-family: 'ProximaNova-Xbold';
+    font-family: 'ProximaNova-Bold';
     border: 1.5px solid #fff;
 }
 
@@ -13681,7 +13681,7 @@ form h2 {
 #podpiska {
     width: 20.833vw;
     height: 3.50625VW;
-    font: 1.041VW 'ProximaNova-Xbold';
+    font: 1.041VW 'ProximaNova-Bold';
     text-transform: uppercase;
     background: #ea2b58;
     color: #fff;
@@ -13694,7 +13694,7 @@ form h2 {
 #podpiska-god {
     width: 25.547vw;
     height: 3.9vw;
-    font: 0.9375VW 'ProximaNova-Xbold';
+    font: 0.9375VW 'ProximaNova-Bold';
     text-transform: uppercase;
     background: #ea2b58;
     color: #fff;
@@ -14128,7 +14128,7 @@ label {
 .btn.btn-quickorder-one {
     margin-bottom: 2.864vw;
     margin-top: 1.9vw;
-    font: 0.9375VW 'ProximaNova-Xbold';
+    font: 0.9375VW 'ProximaNova-Bold';
     letter-spacing: 0.2vw;
     text-transform: uppercase;
     background: #ea2b58;
@@ -15185,7 +15185,7 @@ header ul li.active span:after {
 .mobile #blur_cont #firstblock .text_s_s a #podpiska {
     width: 100%;
     height: 15.278vw;
-    font: 3.889vw ProximaNova-Xbold;
+    font: 3.889vw ProximaNova-Bold;
     text-transform: uppercase;
     letter-spacing: 0.556vw;
     margin: 0;
@@ -15284,7 +15284,7 @@ header ul li.active span:after {
 .mobile #podpiska-god {
     width: 100%;
     height: 16.667vw;
-    font: 3.889vw ProximaNova-Xbold;
+    font: 3.889vw ProximaNova-Bold;
     letter-spacing: 0.3vw;
 }
 
@@ -15309,7 +15309,7 @@ header ul li.active span:after {
     margin-left: auto;
     margin-right: auto;
     height: 15.278vw;
-    font: 3.611vw ProximaNova-Xbold;
+    font: 3.611vw ProximaNova-Bold;
     letter-spacing: 0.3vw;
     margin-top: 7.778vw;
     margin-bottom: 10vw;
@@ -15698,7 +15698,7 @@ header ul li.active span:after {
         width: 44.444vw;
         height: 12.500vw;
         float: right;
-        font: 3.611vw ProximaNova-Xbold;
+        font: 3.611vw ProximaNova-Bold;
         text-transform: uppercase;
         letter-spacing: 0.5vw;
         margin-top: 0 !important;
@@ -16287,7 +16287,7 @@ header ul li.active span:after {
 #sety-footer .left-side button {
     height: 3.193vw;
     width: 12.500vw;
-    font: 0.833vw ProximaNova-Xbold;
+    font: 0.833vw ProximaNova-Bold;
     text-align: center;
     background: transparent;
     border: 2px solid #fff;

@@ -243,46 +243,50 @@
         </script>
     @endpush
     @foreach($tastings as $tasting)
-    <div id="tasting_modal-{{$tasting->id}}" class="tasting_modal">
-        <div class="shadow_close"
-             onclick="$('#tasting_modal-{{$tasting->id}}').css('display', 'none');$('body').removeClass('nooverflow');"></div>
-        <div class="tasting_body">
-            <div class="icon_close"
+        <div id="tasting_modal-{{$tasting->id}}" class="tasting_modal">
+            <div class="shadow_close"
                  onclick="$('#tasting_modal-{{$tasting->id}}').css('display', 'none');$('body').removeClass('nooverflow');"></div>
-            <h2>{{$tasting->title}}</h2>
-            <ul class="list-inline">
-                <li>
-                    {{$tasting->user_count}} человек
-                </li>
-                <li>
-                    {{$tasting->time}} минут
-                </li>
-                <li>
-                    {{count($tasting->wines)}} вин
-                </li>
-            </ul>
-            <p class="tasting_desc">{!! $tasting->description  !!}</p>
-            @foreach($tasting->wines as  $wine)
-                <img class="tasting_wine_image" src="{{Voyager::image($wine->image)}}" alt="{{$wine->title}}">
-            @endforeach
-            <ul class="tasting_wine_title_list">
-                @foreach($tasting->wines as $wine)
+            <div class="tasting_body">
+                <div class="icon_close"
+                     onclick="$('#tasting_modal-{{$tasting->id}}').css('display', 'none');$('body').removeClass('nooverflow');"></div>
+                <h2>{{$tasting->title}}</h2>
+                <ul class="list-inline">
                     <li>
-                        {{isset($wine->winery) ? $wine->winery->title : '' }} |
-                        {{$wine->title}} | {{$wine->year}} |
-                        {{isset($wine->region) ? $wine->region->title : '' }}
+                        {{$tasting->user_count}} человек
                     </li>
+                    <li>
+                        {{$tasting->time}} минут
+                    </li>
+                    <li>
+                        {{count($tasting->wines)}} вин
+                    </li>
+                </ul>
+                <p class="tasting_desc">{!! $tasting->description  !!}</p>
+                @foreach($tasting->wines as  $wine)
+                    <a href="{{route('wine', $wine->slug)}}">
+                        <img class="tasting_wine_image" src="{{Voyager::image($wine->image)}}" alt="{{$wine->title}}">
+                    </a>
                 @endforeach
-            </ul>
-            <hr>
-            <a class="tasting_price">{{$tasting->price}} ₽ / чел</a>
-            <form method="post" action="{{route('tasting_checkout')}}">
-                @csrf
-                <input type="hidden" name="tasting" value="{{$tasting->id}}">
-                <a id="deg_order" onclick="$(this).closest('form').submit();">Заказать
-                    дегустацию</a>
-            </form>
+                <ul class="tasting_wine_title_list">
+                    @foreach($tasting->wines as $wine)
+                        <li>
+                            {{isset($wine->winery) ? $wine->winery->title : '' }} |
+                            {{$wine->title}} | {{$wine->year}} |
+                            {{isset($wine->region) ? $wine->region->title : '' }}
+                        </li>
+                    @endforeach
+                </ul>
+                <hr>
+                <div class="col-md-6"><a class="tasting_price">{{$tasting->price}} ₽ / чел</a></div>
+                <div class="col-md-6">
+                    <form method="post" action="{{route('tasting_checkout')}}">
+                        @csrf
+                        <input type="hidden" name="tasting" value="{{$tasting->id}}">
+                        <a id="deg_order" class="btn-danger" onclick="$(this).closest('form').submit();">Заказать
+                            дегустацию</a>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
     @endforeach
 @endsection
