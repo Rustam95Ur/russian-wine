@@ -81,11 +81,13 @@
                                                     <img alt="time_icon" src="{{asset('image/page/testing/time.png')}}">
                                                     {{$tasting->time}} минут
                                                 </li>
-                                                <li>
-                                                    <img alt="bottle_icon"
-                                                         src="{{asset('image/page/testing/bottle.png')}}">
-                                                    {{count($tasting->wines)}} вин
-                                                </li>
+                                                @if(count($tasting->wines) > 0)
+                                                    <li>
+                                                        <img alt="bottle_icon"
+                                                             src="{{asset('image/page/testing/bottle.png')}}">
+                                                        {{count($tasting->wines)}} вин
+                                                    </li>
+                                                @endif
                                             </ul>
                                         </div>
                                     </div>
@@ -257,9 +259,12 @@
                     <li>
                         {{$tasting->time}} минут
                     </li>
-                    <li>
-                        {{count($tasting->wines)}} вин
-                    </li>
+                    @if(count($tasting->wines) > 0)
+                        <li>
+                            {{count($tasting->wines) }} вин
+                        </li>
+                    @endif
+
                 </ul>
                 <p class="tasting_desc">{!! $tasting->description  !!}</p>
                 @foreach($tasting->wines as  $wine)
