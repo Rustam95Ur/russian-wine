@@ -1,10 +1,62 @@
 #product-category {
     width: 100%;
 }
+#product-category.container{
+  padding: 0!important;
+}
 #product-category .breadcrumb {
     display: none;
 }
 #product-category .col-sm-10 {
     width: 100%;
     padding: 0;
+}
+@media (max-width:991px) {
+    #top_podpiska p {
+        font-family: 'Lato', sans-serif;
+        font-size: 1.6rem;
+        padding-left: 0;
+        position: relative;
+        line-height: 1.8;
+        color: #ffffff !important;
+        letter-spacing: -.01em;
+        text-align: left;
+    }
+
+    #top_podpiska p::before {
+        display: none;
+    }
+
+    #top_podpiska .btn-danger {
+        background: #da224d;
+        font: 1.6rem ProximaNova-Bold;
+        text-align: center;
+        letter-spacing: -.01em;
+        border-radius: 50px;
+        border: none;
+        padding: 1.8rem 3rem;
+        text-transform: uppercase;
+        transition: .2s all linear;
+        height: auto;
+        margin-top: 3.7rem;
+        display: inline-block;
+        float: none;
+        position: relative;
+        left: 5%;
+    }
+
+    #top_podpiska {
+        padding: 2.5rem 2rem 12rem 2rem;
+        background: url(/image/page/subscription/background_top.jpg);
+        height: unset;
+        background-size: cover;
+        color: #fff;
+        box-sizing: initial;
+    }
+    #top_podpiska #title {
+        font-size: 5rem;
+        font-family: 'ProximaNova-Bold';
+        line-height: 1.2;
+    }
+
 }

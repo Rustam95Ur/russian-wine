@@ -267,11 +267,15 @@
 
                 </ul>
                 <p class="tasting_desc">{!! $tasting->description  !!}</p>
-                @foreach($tasting->wines as  $wine)
-                    <a href="{{route('wine', $wine->slug)}}">
-                        <img class="tasting_wine_image" src="{{Voyager::image($wine->image)}}" alt="{{$wine->title}}">
-                    </a>
-                @endforeach
+                <div class="modalOverflowSlider">
+                  <div class="modalOverflowWrap">
+                      @foreach($tasting->wines as  $wine)
+                          <a href="{{route('wine', $wine->slug)}}">
+                              <img class="tasting_wine_image" src="{{Voyager::image($wine->image)}}" alt="{{$wine->title}}">
+                          </a>
+                      @endforeach
+                  </div>
+                </div>                  
                 <ul class="tasting_wine_title_list">
                     @foreach($tasting->wines as $wine)
                         <li>

@@ -26,6 +26,21 @@
             },
         }
     });
+    if ($(window).width() < 991) {
+      var swiper = new Swiper('#home_slider', {
+        slidesPerView: 'auto',
+        spaceBetween: 0,
+        loop: true,
+        pagination: {
+          el: '.home-pagination',
+          clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+      });
+    };
     var swiper1 = new Swiper('#featured_slide0.swiper-container', {
         slidesPerView: 'auto',
         loop: true,

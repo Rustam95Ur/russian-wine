@@ -579,14 +579,14 @@ header #form-language .language-select {
     }
 
     p.likeSlider {
-         z-index: 10;
+         z-index: 1;
          position: absolute;
          left: 4vw;
          top: 4.8vw;
      }
 
     p.likeSlider img {
-        z-index: 10000;
+        z-index: 1;
         display: block;
     }
 }
@@ -7128,8 +7128,9 @@ h2.price {
     #itog p,
     #itog p span,
     #itog p span a {
-        font-size: 16px
-    }
+    font-size: 20px;
+    line-height: 3.5rem;
+  }
 
     #jur-info {
         font-size: 12px;
@@ -12120,10 +12121,13 @@ section#specials #specials-cont div.col-md-4 {
     }
 
     #cart-cart .remove button {
-        width: 6.806vw;
-        height: 6.806vw;
-        margin-top: 4.5vw;
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-top: 1.8rem;
         top: 0;
+        left: 1rem;
+        padding: 0;
+        border-radius: 0;
     }
 
     #itog span {
@@ -12154,9 +12158,9 @@ section#specials #specials-cont div.col-md-4 {
         text-align: center;
     }
 
-    #total_sub_total,
-    #itog .col-md-4.first_cl {
+    #total_sub_total, #itog .col-md-4.first_cl {
         text-align: center;
+        margin-bottom: 2rem;
     }
 
     /* checkout mob */
@@ -13313,9 +13317,9 @@ nav ul > li:hover #inda-club {
 .image-set {
     width: 100%;
     box-sizing: border-box;
-    padding: 1.645833VW 4.166666666666666VW 3.6458333333333335VW;
+    padding: 3.2rem 8rem 7rem;
     background: #fff;
-    min-height: 39.7vw;
+    min-height: 76rem;
 }
 
 .image-set a {
@@ -15435,16 +15439,22 @@ header ul li.active span:after {
     }
 
     .image-set a {
-        height: 102.778vw;
-        margin-right: 6vw;
-        width: auto;
+        height: 35rem;
+        margin-right: 1rem;
+        width: 20rem;
+        background: #fff;
+        padding: 2rem 0;
     }
 
     .image-set {
         overflow: scroll;
-        display: flex;
+        display: block;
         padding-left: 0;
         padding-right: 0;
+        width: max-content;
+        min-height: unset!important;
+        padding: 0;
+        background: transparent;
     }
 
     .image-set .swiper-wrapper {
@@ -15457,9 +15467,12 @@ header ul li.active span:after {
     }
 
     #spec-cont .inner-image {
+        position: relative;
         right: 0;
-        left: 0;
+        top: -0.5rem;
         width: 100%;
+        overflow: scroll;
+        overflow-y: hidden;
     }
 
     .other-product {
@@ -16139,10 +16152,14 @@ header ul li.active span:after {
         left: 3vw !important;
     }
 
-    #spec-cont,
-    .product-page {
-        width: 100vw;
+    #spec-cont, .product-page {
+        width: 100%;
         overflow: hidden;
+        padding: 0;
+        margin: 2rem 0.5rem 1rem;
+        min-height: 30rem;
+        height: unset!important;
+        background: transparent;
     }
 
     #for-menu-close {
@@ -17535,14 +17552,6 @@ header ul li.active span:after {
     background-size: cover !important;
 }
 
-.button_cont .prod_quantity input {
-    width: 3.958vw;
-    background: transparent;
-    border: none;
-    text-align: center;
-    font-size: 1.042vw;
-}
-
 .button_cont span:first-child {
     background: url('/image/minus.png') top left no-repeat;
 }
@@ -18042,7 +18051,7 @@ section#content_top, section#specials, section#content_bottom, section#swineries
     }
 
     p.likeSlider {
-        z-index: 1000;
+        z-index: 1;
         position: absolute;
         left: 2.89vw;
         top: 2.89vw;
@@ -18081,7 +18090,7 @@ p.likeSlider {
 }
 
 p.likeSlider img {
-    z-index: 10000;
+    z-index: 1;
     height: 17.5px !important;
 }
 

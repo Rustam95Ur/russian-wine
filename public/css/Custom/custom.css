@@ -43,12 +43,20 @@ html {
     margin-bottom: 3.6rem;
 }
 
+.button_cont .prod_quantity input {
+    width: 7.995rem;
+    background: transparent;
+    border: none;
+    text-align: center;
+    font-size: 2rem;
+}
+
 .shopContent .col-md-4:nth-child(3n) > .swiper-slide:hover {
-    margin-bottom: 3.9rem;
+    margin-bottom: 3.6rem;
 }
 
 .shopContent .featured_cont .swiper-slide {
-    padding-bottom: 3.6rem !important;
+    padding-bottom: 2rem!important;
     margin-bottom: 1.9rem;
     transition: all .3s ease;
 }
@@ -143,6 +151,12 @@ select#inputState:focus {
     outline: 0;
     line-height: 3.5rem;
     letter-spacing: -0.01em;
+    color: #000000;
+}
+
+.shopSearch .prod_quantity input {
+    padding: 0;
+    outline: 0;
     color: #000000;
 }
 
@@ -618,6 +632,17 @@ input {
 }
 
 
+.product_cont {
+    padding: 4rem 9.5rem 8rem;
+    background: #fff;
+    width: calc(33.333333% - 3rem);
+    box-sizing: border-box;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+    float: left;
+    min-height: 53rem;
+}
+
 .custom-select {
     position: relative;
     display: inline-block;
@@ -996,19 +1021,20 @@ span.currency {
 
 .shopSearch .button_cont {
     width: 100%;
-    height: 5.573vw;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-top: 1px solid #D2D2D2;
     overflow: hidden;
     transition: 0.3s;
-    bottom: -20%;
+    bottom: -1rem;
     position: relative;
     margin: 0 auto;
     top: auto;
     left: 0;
     right: 0;
+    padding: 2rem 0;
 }
 
 
@@ -1227,9 +1253,17 @@ span.currency {
     .col-md-6.decsRightSide, .row.secondDesc, #product-product #content_bottom, #product-product .toShop {
         display: none;
     }
+
     .wine #button-carts.active {
-        background-color: #261F30
+        background-color: #261F30;
+        width: 60%;
+        border-radius: 25px;
+        text-align: left;
+        font-size: 1rem;
+        background-position-x: 85%;
+        padding-right: 3rem;
     }
+
     #product-product.product-temp1 .col-xs-offset-6, #product-product.product-temp1 .col-xs-6 {
         padding-left: 20px;
         float: left;
@@ -1859,7 +1893,7 @@ span.currency {
     }
 
     .shopContent .featured_cont .swiper-slide {
-        padding-bottom: 3.6rem !important;
+        padding-bottom: 2rem !important;
         margin-bottom: 1.9rem;
         transition: all .3s ease;
     }
@@ -1876,11 +1910,6 @@ span.currency {
         margin-bottom: 0;
     }
 
-    .shopContent .featured_cont .swiper-slide {
-        padding-bottom: 3.6rem !important;
-        margin-bottom: 0;
-        transition: all .3s ease;
-    }
 
     .wine:hover .image img {
         transform: none !important;
@@ -1990,13 +2019,24 @@ span.currency {
 
 @media (max-width:991px) {
   .footerUl {
-    max-height: 20rem !important;
+      max-height: 20rem !important;
   }
   #wine_list_block .swiper-slide p {
-    min-height: calc(1.5rem * 2);
+      min-height: calc(1.5rem * 2);
   }
   .shopContent .featured_cont .swiper-slide {
-    min-height: 340px;
+      min-height: 340px;
+  }
+  .product_cont {
+      padding: 4rem 3rem 4rem;
+      background: #fff;
+      width: 100%;
+      box-sizing: border-box;
+      margin-right: 3rem;
+      margin-bottom: 3rem;
+      float: left;
+      min-height: 10rem;
+      height: unset;
   }
 }
 
@@ -2006,6 +2046,7 @@ span.currency {
     }
 
 }
+
 
 .hideMe {
     display: none !important;
@@ -2029,4 +2070,67 @@ span.currency {
     color: #Fff;
     float: right;
     font: 3.155vw 'ProximaNova-Light';
+}
+
+.modalOverflowSlider {
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.modalOverflowWrap {
+    width: max-content;
+    overflow-x: hidden;
+    display: inline-block;
+    overflow-y: hidden;
+    min-width: 105%;
+    height: 53rem;
+}
+
+.modalOverflowWrap a {
+    width: 38rem;
+    position: relative;
+    top: 0;
+    overflow: auto;
+    display: inherit;
+    border-right: 1px solid #cecece;
+    padding: 2rem 0;
+    text-align: center;
+}
+.modalOverflowWrap .tasting_wine_image {
+    width: auto;
+    height: 45rem!important;
+    margin: 0 auto;
+}
+
+#tasting-page .question_form::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border: 4px solid white;
+    border-bottom: 0;
+    border-right: 0;
+    width: 55%;
+    height: calc(100% + 8rem);
+    top: -8rem;
+    left: 1.4rem;
+    z-index: 111;
+}
+
+#tasting-page .question_form::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border: 4px solid white;
+  border-top: 0;
+  border-left: 0;
+  width: 98%;
+  height: 90%;
+  bottom: 0;
+  right: 0px;
+  z-index: 111;
+  float: right;
+}
+
+#tasting-page #question {
+  padding-bottom: 15rem;
 }
