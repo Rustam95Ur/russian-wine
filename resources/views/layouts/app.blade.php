@@ -48,6 +48,7 @@
     $(document).ready(function () {
         countItem();
         cart_table_update();
+        $('#search').val('')
     });
 </script>
 <script src="{{ asset('js/owl-carousel/owl.carousel.min.js') }}"></script>
@@ -82,13 +83,14 @@
 
 <script type="text/javascript">
     $('#search').on('keyup', function () {
-        if ($(this).val().length >= 3) {
+        if ($(this).val().length >= 2) {
             var value = $(this).val();
             $.ajax({
                 type: 'get',
                 url: '{{URL::to('search')}}',
                 data: {'title': value},
                 success: function (data) {
+                    $('.overlay-results').show();
                     var res = [],
                         wines = data.wines;
                     if (wines.length > 0) {
@@ -98,6 +100,7 @@
                         }
                         $("#searchResult").html(res)
                         $(".allResults").attr("href", "{{route('wine-shop')}}?" + data.link)
+                        $('.allResults').show();
                     } else {
                         $("#searchResult").html("<div class='col-md-12 searchError'>По вашему запросу ничего не найдено</div>")
                     }

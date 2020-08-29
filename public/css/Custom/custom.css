@@ -709,7 +709,10 @@ input {
     visibility: visible;
     pointer-events: all;
     transform: translateY(0);
-    z-index: 20;
+    z-index: 1;
+}
+.custom-select-trigger, .iconSort{
+    cursor: pointer;
 }
 
 .custom-options::before {

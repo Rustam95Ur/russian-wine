@@ -83,8 +83,8 @@
             </div>
             <div class="col-md-2 col-sm-2">
                 <div id="navSearch">
-                    <a onclick="$('#myOverlay').addClass('open', 1000); $('.allResults').show(); $('#searchResult').show(); $('#white-logo').hide(); $('#black-logo').show()"
-                       id="searchStart">
+                    <a onclick="$('#myOverlay').addClass('open', 1000);  $('#searchResult').show();
+                    $('#white-logo').hide(); $('.overlay-results').hide();  $('#black-logo').show()" id="searchStart">
                         <img alt="search icon" src="{{ asset ('image/search.svg') }}">
                     </a>
                 </div>
@@ -108,7 +108,8 @@
                 <div id="cart-cont">
                     <div>
                         <button id="close-cart"
-                                onclick="$('#cart-cont').removeClass('open');$('body').removeClass('nooverflow1');$('body').removeClass('nooverflow');"></button>
+                                onclick="$('#cart-cont').removeClass('open');$('body').removeClass('nooverflow1');
+                                $('body').removeClass('nooverflow');"></button>
                         <div id="close-mask" class="empty_cart_block empty-cart"></div>
                         <div id="cart-cart" class="empty_cart_block empty-cart">
                             <div class="newcart" id="for_the_scroll">
@@ -182,9 +183,10 @@
     </div>
     <div id="myOverlay" class="overlay">
         <a class="closebtn"
-           onclick=" $('.allResults').hide(); $('#searchResult').hide();  $('#myOverlay').removeClass('open'); $('#black-logo').hide(); $('#white-logo').show(); "
+           onclick=" $('.allResults').hide(); $('#searchResult').hide(); $('#search').val('');
+           $('#myOverlay').removeClass('open'); $('#black-logo').hide(); $('#white-logo').show();"
            title="Close Overlay">
-            <img src="{{ asset ('image/plus.png') }}" style="transform: rotateZ(45deg); ">
+            <img alt="close_icon" src="{{ asset ('image/plus.png') }}" style="transform: rotateZ(45deg); ">
         </a>
         <div class="overlay-content">
             <div class="overlay-form">
