@@ -275,12 +275,11 @@
                           </a>
                       @endforeach
                   </div>
-                </div>                  
+                </div>
                 <ul class="tasting_wine_title_list">
                     @foreach($tasting->wines as $wine)
                         <li>
-                            {{isset($wine->winery) ? $wine->winery->title : '' }} |
-                            {{$wine->title}} | {{$wine->year}} |
+                           Вино {{$wine->title}} {{isset($wine->sugar) ? $wine->sugar->title : '' }},
                             {{isset($wine->region) ? $wine->region->title : '' }}
                         </li>
                     @endforeach

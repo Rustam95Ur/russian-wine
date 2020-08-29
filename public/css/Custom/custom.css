@@ -2067,9 +2067,19 @@ span.currency {
 .winemaker-details #in_par p a {
     color: #D6D6D6;
 }
-#sety-calc + .price {
+.set-price {
     display: block;
     margin-top: 6vw;
+    color: #Fff;
+    float: right;
+    font: 3.155vw 'ProximaNova-Light';
+}
+.set-price span, .sale-set-price span {
+    font-family: RUBSN;
+    font-style: normal;
+}
+.sale-set-price {
+    margin-top: 1.7vw;
     color: #Fff;
     float: right;
     font: 3.155vw 'ProximaNova-Light';
@@ -2136,4 +2146,7 @@ span.currency {
 
 #tasting-page #question {
   padding-bottom: 15rem;
+}
+.body-bg-gray {
+    background: #F5F5F5;
 }

@@ -2,6 +2,7 @@
 @section('title', $region->seo_title)
 @section('description', $region->meta_description)
 @section('keywords', $region->meta_keywords)
+@section('body_class', 'body-bg-gray')
 @section('content')
     <div id="information-region" class="information-wine-region">
         <div id="content" class="">
@@ -139,7 +140,7 @@
                                                                      src="{{Voyager::image($winery->logo_image)}}"></a>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-7 col-sm-7 col-xs-12">
+                                                    <div class="col-lg-8 col-sm-7 col-xs-12">
                                                         <h4>
                                                             <a class="red-link"
                                                                href="{{route('winery', $winery->slug)}}">{{$winery->title}}</a>
@@ -235,19 +236,19 @@
                         el: '.swiper-pagination',
                         clickable: true,
                     },
-                    breakpoints: {
-                        1024: {
-                            slidesPerView: 4,
-                            spaceBetween: 40,
-                            slidesPerGroup: 4,
-                        },
-                        768: {
-                            slidesPerView: 'auto',
-                            spaceBetween: 30,
-                            freeMode: true,
-                            slidesPerGroup: 1,
-                        }
-                    }
+                    // breakpoints: {
+                    //     1024: {
+                    //         slidesPerView: 4,
+                    //         spaceBetween: 40,
+                    //         slidesPerGroup: 4,
+                    //     },
+                    //     768: {
+                    //         slidesPerView: 'auto',
+                    //         spaceBetween: 30,
+                    //         freeMode: true,
+                    //         slidesPerGroup: 1,
+                    //     }
+                    // }
                 });
                 </script>
                 <script>

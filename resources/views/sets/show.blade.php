@@ -75,29 +75,42 @@
                     <div class="description-set">
                         <h1>{{$set->title}}</h1>
                         <div class="nooverflow">
-                            <p>{!! $set->description!!}</p>
-                            <div class="quantity_quickorder" id="sety-calc">
-                                <p>Количество сетов</p>
-                                <span id="qminus"><input type="button" id="decrease_quickorder"
-                                                         onclick="button_minus();">
+                            {!! $set->description!!}
+                            @if(!$set->sale)
+                                <div class="quantity_quickorder" id="sety-calc">
+                                    <p>Количество сетов</p>
+                                    <span id="qminus"><input type="button" id="decrease_quickorder"
+                                                             onclick="button_minus();">
                                     <img alt="minus_image" src="{{asset('image/white_minus.png')}}"></span>
-                                <input type="text" data-quantity="1" class="qty_quickorder" name="quantity"
-                                       id="htop_quickorder1" size="2" value="1">
-                                <span id="qplus">
+                                    <input type="text" data-quantity="1" class="qty_quickorder" name="quantity"
+                                           id="htop_quickorder1" size="2" value="1">
+                                    <span id="qplus">
                                     <input type="button" id="increase_quickorder" value=""
                                            onclick="button_plus();">
                                     <img alt="plus_image" src="{{asset('image/white_plus.png')}}"></span>
-                            </div>
-                            <span class="price">{{$set->price}} <span>о</span>
+                                </div>
+                                <span class="set-price">{{$set->price}} <span>о</span>
                                <div id="skidka">
                                    @if($set->sale)
                                        -{{ $set->sale }}%
                                    @endif
 		                        </div>
 	                        </span>
-                            <button class="add-cart btn-danger" onclick="cart_add('{{$set->id}}', 1, 'set');">в
-                                корзину
-                            </button>
+                                <button class="add-cart btn-danger" onclick="cart_add('{{$set->id}}', 1, 'set');">в
+                                    корзину
+                                </button>
+                            @else
+                                <span class="sale-set-price">{{$set->price}} <span>о</span>
+                                   <div id="skidka">
+                                       @if($set->sale)
+                                           -{{ $set->sale }}%
+                                       @endif
+                                   </div>
+	                            </span>
+                                <button class="add-cart btn-danger" onclick="cart_add('{{$set->id}}', 1, 'set');">в
+                                    корзину
+                                </button>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -189,9 +202,9 @@
                 var total = {{$set->price}} *
                 count;
                 @if($set->sale)
-                $('.price').html(total + ' <span>о</span> <div id="skidka">-{{$set->sale}}%</div>');
+                $('.set-price').html(total + ' <span>о</span> <div id="skidka">-{{$set->sale}}%</div>');
                 @else
-                $('.price').html(total + ' <span>о</span>');
+                $('.set-price').html(total + ' <span>о</span>');
                 @endif
 
                 var asd = $('#htop_quickorder1').attr('data-quantity');
@@ -207,9 +220,9 @@
                         var total = {{$set->price}} *
                         count;
                         @if($set->sale)
-                        $('.price').html(total + ' <span>о</span> <div id="skidka">-{{$set->sale}}%</div>');
+                        $('.set-price').html(total + ' <span>о</span> <div id="skidka">-{{$set->sale}}%</div>');
                         @else
-                        $('.price').html(total + ' <span>о</span>');
+                        $('.set-price').html(total + ' <span>о</span>');
                         @endif
                         var asd = $('#htop_quickorder1').attr('data-quantity');
                         $('#htop_quickorder1').attr('data-quantity', asd - 1);
