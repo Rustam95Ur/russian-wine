@@ -22,7 +22,7 @@
                         </ul>
                     </div>
                     <div class="col-md-4">
-                        <img src="{{asset('image/quotes.png')}}" alt="quotes_icon">
+                        <img src="{{asset('image/quotes.png')}}"  class="quotes_icon" alt="quotes_icon">
                         <p class="quotes_text">Я продаю и продвигаю Русские Вина в течение 10 лет. Успешно работал на
                             крупных
                             винных заводах и небольших винодельнях, объехал все винные хозяйства РФ и могу рассказать о
@@ -230,6 +230,8 @@
             var swiper = new Swiper('#testimonials', {
                 slidesPerView: 3,
                 spaceBetween: 30,
+                centeredSlides: true,
+                center: true,
                 slidesPerGroup: 1,
                 loop: true,
                 loopFillGroupWithBlank: true,

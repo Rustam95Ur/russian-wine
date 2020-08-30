@@ -150,7 +150,6 @@
     margin-top: 150px;
     font-weight: bold;
     font-size: 50px;
-    s
 }
 
 #tasting-page .button_order {
@@ -952,7 +951,7 @@
     right: 0;
     top: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.5);
+    /*background: rgba(255, 255, 255, 0.5);*/
 }
 
 #tasting-page #testimonials .swiper-slide-next:after {
@@ -2533,4 +2532,131 @@
 
 #tasting-page #question {
   padding-bottom: 15rem;
+}
+
+@media (max-width: 991px) {
+    #tasting-page h1 {
+        font-size: 4rem;
+        line-height: 1;
+        margin-bottom: 3rem;
+        margin-top: 3rem;
+        text-align: center;
+    }
+    #tasting-page #list_under {
+        margin-top: 1rem;
+    }
+    #tasting-page #banner {
+        padding-top: 0;
+        height: unset;
+        background-size: auto;
+    }
+    #tasting-page .quotes_text {
+        font-size: 1.68rem;
+        line-height: 1;
+        text-align: center;
+        margin-top: 4rem;
+    }
+    #tasting-page #list_under li {
+        margin-bottom: 0;
+    }
+    #tasting-page #list_under li:before {
+        content: '';
+    }
+    /*#tasting-page .quotes_icon,  #tasting-page .portrait, #tasting-page .portrait_info {*/
+    /*    display: none;*/
+    /*}*/
+    #tasting-page .quotes_icon {
+        display: none;
+    }
+    #tasting-page #button_link {
+        margin-top: 1rem;
+    }
+    #tasting-page #button_link a {
+        padding: 0;
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    #tasting-page #second_block .swiper-viewport .title_prox_bold {
+        margin-top: 0;
+    }
+    #tasting-page .portrait_info {
+        text-align: center;
+    }
+    #tasting-page .title_prox_bold {
+        margin-top: 4rem;
+        font-size: 3rem;
+    }
+    #tasting-page .text_prox_l {
+        font-size: 2rem;
+        line-height: 1;
+    }
+    #tasting-page .product_layout .description .list-inline {
+        margin-top: 3rem;
+        text-align: center;
+    }
+    .tasting_modal .tasting_body {
+        width: 100%;
+        left: 0;
+        padding: 2rem;
+    }
+    .tasting_modal .tasting_wine_image {
+        width: 80%;
+        height: auto !important;
+    }
+    .modalOverflowWrap {
+        height: 24rem;
+    }
+    .modalOverflowWrap a {
+        width: 6rem;
+        border-right: 0
+    }
+    .tasting_modal .tasting_wine_title_list {
+        padding-left: 3rem;
+    }
+    .tasting_modal .tasting_wine_title_list li {
+        font-size: 1.5rem;
+        line-height: 1.5;
+    }
+    .tasting_modal .tasting_body .tasting_desc {
+        font-size: 1.5rem;
+        line-height: 1.5;
+    }
+    #tasting-page #testimonials {
+        display: unset;
+    }
+    #tasting-page #fourth_block {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+    #tasting-page #testimonials .swiper-inner h5, #tasting-page .slider-1 .swiper-inner h5 {
+        font-size: 2rem;
+
+    }
+    #tasting-page #testimonials .swiper-inner .testimonial, #tasting-page .slider-1 .swiper-inner .testimonial {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+    #tasting-page #testimonials .swiper-inner, #tasting-page .slider-1 .swiper-inner {
+        height: 450px;
+    }
+    #tasting-page #question h2 {
+        font-size: 4rem;
+        line-height: 1;
+    }
+    #tasting-page .question_form {
+        padding: 2rem;
+    }
+    #tasting-page .question_form .btn {
+        width: 100%;
+    }
+    #tasting-page .question_form::before {
+        left: 0.4rem;
+        width: 15%;
+    }
+    #tasting-page .question_form::after {
+        height: 110%;
+    }
+    #tasting-page #question {
+        padding-bottom: 4rem;
+    }
 }
