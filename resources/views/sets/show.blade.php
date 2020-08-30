@@ -96,7 +96,8 @@
                                    @endif
 		                        </div>
 	                        </span>
-                                <button class="add-cart btn-danger" onclick="cart_add('{{$set->id}}', 1, 'set');">в
+                                <button class="add-cart  set-buy-btn btn-danger"
+                                        onclick="cart_add('{{$set->id}}', 1, 'set');">в
                                     корзину
                                 </button>
                             @else
@@ -107,7 +108,8 @@
                                        @endif
                                    </div>
 	                            </span>
-                                <button class="add-cart btn-danger" onclick="cart_add('{{$set->id}}', 1, 'set');">в
+                                <button class="add-cart set-buy-btn btn-danger"
+                                        onclick="cart_add('{{$set->id}}', 1, 'set');">в
                                     корзину
                                 </button>
                             @endif
@@ -115,17 +117,20 @@
                     </div>
                 </div>
             </div>
-            {{--            <div id="mobile-instructions">--}}
-            {{--                Нажмите на бутылку,<br>Чтобы почитать о вине--}}
-            {{--            </div>--}}
+            <div id="mobile-instructions">
+                Нажмите на бутылку,<br>Чтобы почитать о вине
+            </div>
         </div>
-        {{--        <div id="mobile-price">--}}
-        {{--  <span class="price" id="calculatingprice">{{$set->price}} <span>о</span>--}}
-        {{--  <div id="skidka">--}}
-        {{--			</div>--}}
-        {{--	</span>--}}
-        {{--            <button id="podpisatsa" onclick="fastorder_open({{$set->id}});">Подписаться</button>--}}
-        {{--        </div>--}}
+        <div id="mobile-price">
+          <span class="price" id="calculatingprice">{{$set->price}} <span>о</span>
+          <div id="skidka">
+          @if($set->sale)
+                  -{{ $set->sale }}%
+              @endif
+          </div>
+        	</span>
+            <button id="podpisatsa" onclick="cart_add('{{$set->id}}', 1, 'set');">Купить</button>
+        </div>
     </div>
     <div id="bottle-container">
         <div id="bottle">

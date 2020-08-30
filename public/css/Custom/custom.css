@@ -640,7 +640,7 @@ input {
     margin-right: 3rem;
     margin-bottom: 3rem;
     float: left;
-    min-height: 53rem;
+    /*min-height: 53rem;*/
 }
 
 .custom-select {
@@ -1003,6 +1003,12 @@ span.currency {
     margin-bottom: 2.085vw;
 }
 
+#winemakers .description p {
+    margin-bottom: 0;
+}
+#winemakers .description ul li {
+    margin-left: 0;
+}
 .btn.btn-secondary.toCompany::before {
     display: none;
 }

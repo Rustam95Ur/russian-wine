@@ -103,7 +103,7 @@
                                 <div class="col-sp-24">
                                     <img alt="bokal" class="bokal" src="{{asset('image/page/subscription/bokal.png')}}">
                                     <h2>-20%</h2>
-                                </div>&gt;
+                                </div>
                                 <div class="col-sp-12">
                                     <a href="https://russianvine.ru">
                                         <img alt="logo_img" src="{{asset('image/logo/logo-club.png')}}">

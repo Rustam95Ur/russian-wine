@@ -14,10 +14,10 @@
 @media (max-width:991px) {
     #top_podpiska p {
         font-family: 'Lato', sans-serif;
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         padding-left: 0;
         position: relative;
-        line-height: 1.8;
+        line-height: 1.6;
         color: #ffffff !important;
         letter-spacing: -.01em;
         text-align: left;
@@ -48,15 +48,93 @@
     #top_podpiska {
         padding: 2.5rem 2rem 12rem 2rem;
         background: url(/image/page/subscription/background_top.jpg);
-        height: unset;
+        height: 14rem;
         background-size: cover;
         color: #fff;
         box-sizing: initial;
     }
     #top_podpiska #title {
-        font-size: 5rem;
+        font-size: 3rem;
         font-family: 'ProximaNova-Bold';
-        line-height: 1.2;
+        line-height: 1;
     }
-
+    .desc-mask h4 {
+        font-size: 7.5625VW;
+        text-align: center;
+    }
+    .desc-mask .description {
+        opacity: 1;
+    }
+    .description p {
+        font-size: 2.3rem;
+        line-height: 1.3;
+        text-align: center;
+    }
+    #secondblock img {
+        opacity: 0.5;
+    }
+    #thirdblock h4 {
+        font-size: 2.5rem;
+        padding: 0;
+        z-index: 3;
+        position: relative;
+        line-height: 0.9;
+    }
+    #thirdblock p {
+        z-index: 3;
+        position: relative;
+        font-size: 1.3rem;
+        margin-bottom: 0;
+        line-height: 1.4;
+    }
+    #thirdblock .col-sp-11 {
+        bottom: 28rem;
+    }
+    #thirdblock img {
+        opacity: 0.5;
+    }
+    #thirdblock {
+        padding-top: 1rem;
+        height: 60rem;
+    }
+    #pod_lastblock .bokal {
+        bottom: 12rem;
+        z-index: 3;
+        top: unset;
+        left: 0;
+        right: 0;
+    }
+    #pod_lastblock h2 {
+        bottom: 17rem;
+        top: unset;
+        left: 10.5rem;
+    }
+    #thirdblock a {
+        z-index: 3;
+        position: relative;
+    }
+    #thirdblock a button {
+        font-size: 1.2rem;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+    #pod_lastblock {
+        height: 0;
+        bottom: 4rem;
+    }
+    #pod_lastblock .col-sp-12 #mailto {
+        font-size: 1.4rem;
+    }
+    #pod_lastblock .col-sp-12 + .col-sp-12 .telephone {
+        font-size: 1.4rem;
+    }
+    #pod_lastblock .col-sp-12 button {
+        width: 86%;
+        height: auto;
+        font-size: 1rem;
+        position: absolute;
+        bottom: -2.5rem;
+        padding: 1rem;
+    }
 }

@@ -7128,7 +7128,7 @@ h2.price {
     #itog p,
     #itog p span,
     #itog p span a {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 3.5rem;
   }
 
@@ -13315,11 +13315,15 @@ nav ul > li:hover #inda-club {
 }
 
 .image-set {
+    /*width: 100%;*/
+    /*box-sizing: border-box;*/
+    /*padding: 3.2rem 8rem 7rem;*/
+    /*background: #fff;*/
+    /*min-height: 76rem;*/
     width: 100%;
     box-sizing: border-box;
-    padding: 3.2rem 8rem 7rem;
+    padding: 2.645833VW 4.166666666666666VW 3.6458333333333335VW;
     background: #fff;
-    min-height: 76rem;
 }
 
 .image-set a {
@@ -15395,6 +15399,9 @@ header ul li.active span:after {
     .product-page #slider-range-min,
     .product-page .ticks,
     .product-page .price,
+    .sale-set-price,
+    .set-price,
+    .set-buy-btn,
     .product-page #podpisatsa {
         display: none !important;
     }
@@ -15440,7 +15447,7 @@ header ul li.active span:after {
 
     .image-set a {
         height: 35rem;
-        margin-right: 1rem;
+        /*margin-right: 1rem;*/
         width: 20rem;
         background: #fff;
         padding: 2rem 0;
@@ -15556,7 +15563,8 @@ header ul li.active span:after {
 
     .main_img {
         display: block;
-        width: 31.944vw
+        width: 31.944vw;
+        margin-top: 10vw;
     }
 
     .bottle_info .attributes {
@@ -15700,7 +15708,7 @@ header ul li.active span:after {
         right: 0;
         background: #201c2a;
         height: 18.056vw;
-        width: 100vw;
+        width: 100%;
         box-sizing: border-box;
         z-index: 19;
         display: flex;
@@ -16156,7 +16164,7 @@ header ul li.active span:after {
         width: 100%;
         overflow: hidden;
         padding: 0;
-        margin: 2rem 0.5rem 1rem;
+        /*margin: 2rem 0 1rem;*/
         min-height: 30rem;
         height: unset!important;
         background: transparent;
@@ -16218,6 +16226,7 @@ header ul li.active span:after {
 .sety-category .product_info {
     font: 1.250vw ProximaNova-Light;
     margin: 0 -2.604vw;
+    margin-bottom: 2.3vw;
 }
 
 .sety-category .product_info a {
