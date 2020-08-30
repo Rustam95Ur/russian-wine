@@ -22,6 +22,7 @@
                                 <div class="row">
                                     <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
                                         <h1>{{$winemaker->full_name}}</h1>
+                                        <div class="icon-icon_x text-right close-icon"></div>
                                         <div id="in_par" class="text-center">
                                             <p>
                                                 @if(isset($winemaker->winery))
@@ -48,9 +49,6 @@
                                                 <span class="icon-icon_arrow_right"></span>
                                             </a>
                                         </div>
-                                    </div>
-                                    <div class="col-xs-3 col-sm-3">
-                                        <div class="icon-icon_x text-right close-icon"></div>
                                     </div>
                                 </div>
                             </div>

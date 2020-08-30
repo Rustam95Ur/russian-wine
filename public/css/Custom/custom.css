@@ -56,7 +56,7 @@ html {
 }
 
 .shopContent .featured_cont .swiper-slide {
-    padding-bottom: 2rem!important;
+    padding-bottom: 2rem !important;
     margin-bottom: 1.9rem;
     transition: all .3s ease;
 }
@@ -711,7 +711,8 @@ input {
     transform: translateY(0);
     z-index: 1;
 }
-.custom-select-trigger, .iconSort{
+
+.custom-select-trigger, .iconSort {
     cursor: pointer;
 }
 
@@ -1006,9 +1007,11 @@ span.currency {
 #winemakers .description p {
     margin-bottom: 0;
 }
+
 #winemakers .description ul li {
     margin-left: 0;
 }
+
 .btn.btn-secondary.toCompany::before {
     display: none;
 }
@@ -2026,27 +2029,30 @@ span.currency {
     }
 }
 
-@media (max-width:991px) {
-  .footerUl {
-      max-height: 20rem !important;
-  }
-  #wine_list_block .swiper-slide p {
-      min-height: calc(1.5rem * 2);
-  }
-  .shopContent .featured_cont .swiper-slide {
-      min-height: 340px;
-  }
-  .product_cont {
-      padding: 4rem 3rem 4rem;
-      background: #fff;
-      width: 100%;
-      box-sizing: border-box;
-      margin-right: 3rem;
-      margin-bottom: 3rem;
-      float: left;
-      min-height: 10rem;
-      height: unset;
-  }
+@media (max-width: 991px) {
+    .footerUl {
+        max-height: 20rem !important;
+    }
+
+    #wine_list_block .swiper-slide p {
+        min-height: calc(1.5rem * 2);
+    }
+
+    .shopContent .featured_cont .swiper-slide {
+        min-height: 340px;
+    }
+
+    .product_cont {
+        padding: 4rem 3rem 4rem;
+        background: #fff;
+        width: 100%;
+        box-sizing: border-box;
+        margin-right: 3rem;
+        margin-bottom: 3rem;
+        float: left;
+        min-height: 10rem;
+        height: unset;
+    }
 }
 
 @media (min-width: 960px) {
@@ -2073,6 +2079,7 @@ span.currency {
 .winemaker-details #in_par p a {
     color: #D6D6D6;
 }
+
 .set-price {
     display: block;
     margin-top: 6vw;
@@ -2080,10 +2087,12 @@ span.currency {
     float: right;
     font: 3.155vw 'ProximaNova-Light';
 }
+
 .set-price span, .sale-set-price span {
     font-family: RUBSN;
     font-style: normal;
 }
+
 .sale-set-price {
     margin-top: 1.7vw;
     color: #Fff;
@@ -2115,9 +2124,10 @@ span.currency {
     padding: 2rem 0;
     text-align: center;
 }
+
 .modalOverflowWrap .tasting_wine_image {
     width: auto;
-    height: 45rem!important;
+    height: 45rem !important;
     margin: 0 auto;
 }
 
@@ -2136,23 +2146,59 @@ span.currency {
 }
 
 #tasting-page .question_form::after {
-  content: '';
-  display: block;
-  position: absolute;
-  border: 4px solid white;
-  border-top: 0;
-  border-left: 0;
-  width: 98%;
-  height: 90%;
-  bottom: 0;
-  right: 0px;
-  z-index: 111;
-  float: right;
+    content: '';
+    display: block;
+    position: absolute;
+    border: 4px solid white;
+    border-top: 0;
+    border-left: 0;
+    width: 98%;
+    height: 90%;
+    bottom: 0;
+    right: 0px;
+    z-index: 111;
+    float: right;
 }
 
 #tasting-page #question {
-  padding-bottom: 15rem;
+    padding-bottom: 15rem;
 }
+
 .body-bg-gray {
     background: #F5F5F5;
+}
+
+#winemakers .close-icon {
+    position: relative;
+    float: right;
+    left: 20rem;
+    bottom: 10rem;
+}
+
+@media (max-width: 991px) {
+    .show-more {
+        background: unset;
+    }
+
+    #winemakers .description p {
+        font-size: 2rem;
+        line-height: 1.5;
+    }
+
+    #winemakers .close-icon {
+        left: 1rem;
+        font-size: 2rem;
+        bottom: 8.5rem;
+
+    }
+
+    .winemaker-details #in_par p a {
+        font-size: 2rem;
+    }
+
+    .winemaker-details #in_par p {
+        font-size: unset;
+        padding: 0;
+
+    }
 }
