@@ -2175,6 +2175,41 @@ span.currency {
     bottom: 10rem;
 }
 
+#wheretobuy .search {
+    margin-top: 0;
+    border-radius: 0;
+    font-size: 11px;
+    font-weight: 900;
+    box-shadow: none;
+    padding: 18px;
+    height: 50px
+}
+
+#wheretobuy .search::-webkit-placeholder {
+    color: #726477
+}
+
+#wheretobuy .search::-moz-placeholder {
+    color: #726477
+}
+
+#wheretobuy .search::placeholder {
+    color: #726477
+}
+
+#wheretobuy .addresses .address.selected, #wheretobuy .addresses .address {
+    background: #261F30;
+    border-bottom: 1px solid #DDD;
+}
+
+#wheretobuy .addresses .address h2 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0 0 10px
+}
+#wheretobuy .addresses .address.selected {
+    border-right: 4px solid #D9214D
+}
 @media (max-width: 991px) {
     .show-more {
         background: unset;

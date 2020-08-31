@@ -5,42 +5,18 @@
 @section('content')
     <div id="wheretobuy">
         <div id="content">
-            <div class="heading-wrap">
-                <div class="container container-lg">
-                    <div class="row">
-                        <div class="hidden-xs hidden-sm col-md-5 col-lg-4">
-                            <h1 class="title">Где купить</h1>
-                        </div>
-                        <div class="col-sm-12 col-md-7 col-lg-8">
-                            <input class="form-control search pac-target-input" type="text" placeholder="ВАШ ГОРОД"
-                                   autocomplete="off">
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="map-wrap">
                 <div class="row no-gutters row-eq-height">
                     <div class="hidden-xs col-sm-6 col-md-4 col-lg-3">
+                            <input class="form-control search pac-target-input" type="text" placeholder="ВАШ ГОРОД"
+                                   autocomplete="off">
                         <div class="addresses">
                             @foreach($contacts as $contact)
                                 <div class="address" data-index="{{$loop->iteration}}">
-                                    <h2>{{$contact->title}}</h2>
-                                    <p>
-                                    <span class="icon-wrap">
-                                        <img alt="address_icon" src="{{asset('image/address_marker.png')}}"></span>
-                                        {{$contact->address}}
-                                    </p>
-                                    <p>
-                                    <span class="icon-wrap">
-                                        <img alt="phone_icon" src="{{asset('image/address_phone.png')}}"></span>
-                                        {{$contact->phone}}
-                                    </p>
-                                    <p>
-                                    <span class="icon-wrap">
-                                        <img alt="time_icon" src="{{asset('image/address_time.png')}}">
-                                    </span>
-                                        {{$contact->schedule}}
-                                    </p>
+                                    <h2 class="text-white">{{$contact->title}}</h2>
+                                    <p class="text-white">{{$contact->address}}</p>
+                                    <p class="text-white"> {{$contact->phone}}</p>
+                                    <p class="text-white">{{$contact->schedule}}</p>
                                 </div>
                             @endforeach
                         </div>
@@ -55,7 +31,7 @@
                     var markers = [];
                     function initMap() {
                         var map = new google.maps.Map(document.getElementById('map'), {
-                            zoom: 10.3,
+                            zoom: 5.3,
                             center: {lat: 55.8410561, lng: 46.8521622},
                             styles: [
                                 {
@@ -262,7 +238,7 @@
                         (function () {
                             var marker = new google.maps.Marker({
                                 position: {lat: {{$contact->coordinate_lat}}, lng: {{$contact->coordinate_lon}}},
-                                icon: '{{asset('image/map_marker.png')}}',
+                                icon: '{{asset('image/map_marker_wine_active.png')}}',
                                 map: map
                             });
                             var infowindow = new google.maps.InfoWindow({
@@ -308,6 +284,7 @@
                         }).trigger('resize');
                         // autocomplete
                         var autocomplete = new google.maps.places.Autocomplete($('#wheretobuy .search')[0]);
+                        console.log(autocomplete)
                         autocomplete.addListener('place_changed', function () {
                             var place = autocomplete.getPlace();
                             if (!place.geometry) {
@@ -317,6 +294,7 @@
                         });
                     }
                 </script>
+
             @endpush
         </div>
     </div>

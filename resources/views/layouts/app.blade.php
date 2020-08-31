@@ -142,7 +142,7 @@
 @endif
 @if($route == 'where_to_by' or $route == 'regions' or $route == 'winery' )
 <script async="" defer=""
-        src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_API_KEY')}}&amp;callback=initMap&amp;language=ru"></script>
+        src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_API_KEY')}}&amp;callback=initMap&amp;libraries=places&amp;language=ru"></script>
 @endif
 </body>
 </html>
