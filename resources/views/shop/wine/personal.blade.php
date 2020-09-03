@@ -31,7 +31,7 @@
 
     <div id="information-informationwc" class="imennoe">
         <div class="row">
-            <div id="content" class="col-sm-12}">
+            <div id="content" class="col-sm-12">
                 <!-- Swiper -->
                 <div class="swiper-container swiper-container-h">
                     <div class="swiper-wrapper">

@@ -284,7 +284,6 @@
                         }).trigger('resize');
                         // autocomplete
                         var autocomplete = new google.maps.places.Autocomplete($('#wheretobuy .search')[0]);
-                        console.log(autocomplete)
                         autocomplete.addListener('place_changed', function () {
                             var place = autocomplete.getPlace();
                             if (!place.geometry) {

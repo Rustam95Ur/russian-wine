@@ -125,4 +125,19 @@
             </div>
         </div>
     </div>
+    <div class="modal winery-modal" id="modal_sviaz" style="display:none;">
+        <button class="winery-close" type="button" class="close"
+                onclick="document.getElementById('modal_sviaz').style.display = 'none';">
+        </button>
+        <form method="post" action="{{route('ask-question')}}">
+            @csrf
+                <h2 id="form-title-feedback" class="text-center">Задать вопрос</h2>
+            <input type="text" name="name" placeholder="Имя" required="required">
+            <input type="text" name="contact" placeholder="Телефон или e-mail"
+                   required="required"
+                   onclick="$(this).removeClass('wrong');$(this).attr('placeholder', 'Телефон или e-mail');">
+            <input type="text" id="text1" name="message" placeholder="Сообщение">
+            <button type="submit" id="feedsend" value="Отправить">Отправить сообщение</button>
+        </form>
+    </div>
 @endsection

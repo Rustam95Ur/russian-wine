@@ -12,5 +12,6 @@ class Order extends Model
     const TYPE_FRANCHISE = 4;
     const TYPE_CART = 5;
     const TYPE_FAVORITE = 6;
+    const TYPE_QUESTION = 7;
 
 }
