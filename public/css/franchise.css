@@ -1,22 +1,28 @@
 #franchise .heading-wrap {
     min-height: 800px;
     background: url(/image/bg/franchise_header_bg.jpg) no-repeat top center;
-    background-size: cover;
+        background-color: rgba(0, 0, 0, 0);
+        background-size: auto;
+    background-size: contain;
     color: #fff;
+    background-color: #251d2a;
 }
 
 #franchise .title-shop {
-    font-size: 10.416vw;
-    letter-spacing: 1.25vw;
-    color: #e5e5e530;
+    font-size: 15rem;
+    letter-spacing: 0.462em;
+    color: rgba(255,255,255,0.05);
     white-space: nowrap;
     text-align: center;
     overflow: hidden;
-    padding: 0 0 0 1.875vw;
+    padding: 0;
     position: relative;
-    z-index: 1;
+    z-index: 0;
     text-transform: uppercase;
-    margin-top: 150px;
+    margin-top: 15rem;
+    margin-left: -25px;
+    margin-right: -15px;
+    margin-bottom: -4.5rem;
 }
 
 #franchise .header-image-box {
@@ -32,23 +38,32 @@
 }
 
 #franchise .header-image-box .text-block {
-    padding: 20px;
-    min-height: 250px;
+    padding: 4rem;
+    min-height: 30rem;
 }
 
 #franchise .header-image-box .text-block h2 {
-    min-height: 60px;
+    font-size: 3rem;
+    line-height: 4rem;
+    margin-top: 0;
 }
 
 #franchise .header-image-box img {
-    height: 300px;
+    height: 35rem;
 }
 
 #franchise section {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    padding-top: 8rem;
+    padding-bottom: 50px;
     float: none;
+}
 
+#franchise .background-white {
+    background-color: #fff;
+    background: url('/image/bg/Franchise-LtGrayBg.png');
+    background-size: auto;
+    background-repeat: repeat-y;
+    background-position: 102%;
 }
 
 #franchise .searching {
@@ -56,41 +71,46 @@
 }
 
 #franchise .searching-result p {
-    font-size: 12px;
-    font-weight: 900;
+    font-size: 2rem;
     text-transform: uppercase;
     padding-bottom: 0;
+    line-height: 5.5rem;
+    letter-spacing: 0.2em;
+    font-family: 'ProximaNova-Xbold';
 }
 
 #franchise .searching-result h4 {
-    font-size: 70px;
+    font-size: 10rem;
     font-weight: 900;
     color: #da224d;
     text-transform: uppercase;
     margin-top: 0;
+    line-height: 5.5rem;
+    margin-bottom: 4rem;
 }
 
 #franchise .searching-result h4 b {
-    font-size: 30px;
-    top: -25px;
+    font-size: 6rem;
+    top: -2.5rem;
     position: relative;
+    left: 0;
 }
 
 #franchise .get-partner-block {
-    margin-top: -70px;
-    padding: 30px 30px 0;
+    margin-top: -100px;
     height: auto;
+    padding: 80px 130px 0 160px;
 }
 
 #franchise .get-partner-block h3 {
     color: white;
-    font-size: 37px;
-    margin-top: 0;
-    margin-left: 100px;
+    font-size: 4rem;
+    margin: 0;
+    line-height: 4rem;
 }
 
 #franchise .get-partner-result-block {
-    border: 1px solid #ffffff;
+    border: 1px solid #524d59;
     padding: 30px 30px 30px 0;
     margin-top: 30px;
     height: 150px;
@@ -99,29 +119,65 @@
 #franchise .get-partner-result-block h4 {
     color: white;
     padding-left: 30px;
-    border-left: 2px solid red;
+    border-left: 0;
     font-size: 20px;
 }
-#franchise .partner-result-container {
-    padding: 50px;
+
+#franchise .get-partner-result-block h4::before {
+    content: '';
+    position: absolute;
+    display: block;
+    border-right: 6px solid #da224d;
+    height: 46px;
+    left: 15px;
 }
+
+#franchise .partner-result-container {
+    padding: 80px;
+}
+
+#franchise .partner-result-container .col-md-3:nth-child(-n+4) div {
+    margin-top: 0;
+}
+
+#franchise .col-md-12.mb-sm h2 {
+    font-family: 'ProximaNova-Bold';
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 4.5rem;
+}
+
 #franchise .partner-requirement {
-    margin-top: 20px;
+    margin-top: 0;
     margin-bottom: 20px;
     border-bottom: 1px solid grey;
     padding-bottom: 20px;
+    font-family: 'ProximaNova-Reg';
+    padding-left: 0;
 }
+
+#franchise .partner-requirement div {
+    padding-left: 0;
+}
+
 #franchise .requirement {
     margin-top: 50px;
 }
 
 #franchise .requirement-right-box {
     border-left: 2px solid grey;
-    padding: 50px;
+    margin-top: 3rem;
+    padding-bottom: 6rem;
+    padding-right: 7.4rem;
+    padding-top: 4rem;
+    padding-left: 8rem;
 }
-#franchise .requirement-right-box h2 {
-    font-size: 30px;
-    margin-bottom: 60px;
+
+#franchise .contact h2 {
+    margin: 0;
+    line-height: 5rem;
+    font-size: 4rem;
+    text-align: left;
 }
 
 #franchise .requirement-right-box p {
@@ -130,17 +186,270 @@
     font-size: 15px;
     line-height: 1.6;
 }
+
 #franchise .contact h2{
     margin-top: 150px;
     text-align: left;
 }
+
 #franchise .contact {
-    padding-left: 40px;
+    margin: 14rem 0 0 0;
 }
-#franchise .bg-gray {
-    background: #dddddd;
-}
+
+
 #franchise .contact-block {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    background: url('/image/bg/Franchise-LtGrayBg.png');
+    background-size: auto;
+    background-repeat: repeat-y;
+    background-position-x: 120%;
+}
+
+#franchise .heading-wrap h1 {
+    font-size: 7.5rem;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 22rem 0 0;
+    line-height: 8rem;
+    letter-spacing: -.01em;
+}
+
+#franchise .heading-wrap p {
+    font-size: 2rem;
+    font-weight: 400;
+    padding-top: 4rem;
+    line-height: 3rem;
+    font-family: 'Lato', Open Sans;
+    letter-spacing: .01em;
+    position: absolute;
+    top: 70%;
+    padding-right: 8rem;
+}
+
+#franchise .heading-wrap p .icon-icon_arrow_down_2 {
+    margin-left: 8px;
+    font-size: 12px;
+    display: inline-block
+}
+
+#franchise .heading-wrap p a {
+    color: #fff
+}
+
+#franchise p {
+    font-size: 18px
+}
+
+#franchise .new-russian-wine {
+    text-align: center;
+    padding: 40px 10px 10px
+}
+
+#franchise .new-russian-wine img {
+    max-width: 154px
+}
+
+#franchise .new-russian-wine-title {
+    font-size: 10.416vw;
+    letter-spacing: 1.875vw;
+    color: #E5E5E5;
+    white-space: nowrap;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 0 0 1.875vw;
+    margin: 0 0 -2.395vw;
+    position: relative;
+    z-index: 1
+}
+
+#franchise .degustation-description.descr_franch_1 {
+    padding-top: 35px
+}
+
+#franchise #shop-carousel {
+    margin: 0 100px
+}
+
+#franchise #shop-carousel .arrow-left {
+    left: -100px;
+    bottom: 80px;
+    width: 100px;
+    font-size: 24px;
+    opacity: 1
+}
+
+#franchise #shop-carousel .arrow-right {
+    left: auto;
+    right: 0;
+    bottom: 80px;
+    width: 100px;
+    font-size: 24px;
+    opacity: 1
+}
+
+#franchise #shop-carousel .arrow-left span,
+#franchise #shop-carousel .arrow-right span {
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    display: inline-block;
+    color: #000
+}
+
+#franchise #shop-carousel .dots li.active {
+    background-color: #D9214D
+}
+
+#franchise .history p,
+#franchise .area-description p {
+    font-size: 22px
+}
+
+#franchise .area-description {
+    padding-top: 30px
+}
+
+#franchise .area {
+    color: #DA224D;
+    font-size: 10.416vw;
+    line-height: 150px;
+    height: 140px;
+    padding: 0;
+    margin: 0;
+    border-right: 3px solid #000
+}
+
+#franchise .area .sqm {
+    font-size: 70px;
+    margin-left: -15px
+}
+
+#franchise .degustations {
+    overflow: hidden
+}
+
+#franchise .degustations h2 {
+    margin: 0;
+    font-size: 90px;
+    margin-bottom: -21px;
+    position: relative;
+    z-index: 1
+}
+
+#franchise .degustation-description {
+    padding-top: 70px
+}
+
+#franchise .degustation-photo-2 {
+    height: 200px
+}
+
+#franchise .russian-wine {
+    color: #fff;
+    margin-bottom: 100px
+}
+
+#franchise .russian-wine h2 {
+    line-height: 12.5vw;
+    height: 15.625vw;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 15.625vw;
+    font-weight: 400;
+    text-align: center;
+    color: #35293A;
+    margin: 0 0 -120px
+}
+
+#franchise .russian-wine-description {
+    padding-top: 60px
+}
+
+#franchise .russian-wine-description p {
+    font-weight: 100;
+    font-size: 22px;
+    line-height: 1.6
+}
+
+#franchise .russian-wine-list {
+    padding-bottom: 60px
+}
+
+#franchise .russian-wine-list ul {
     margin-top: 50px;
-    margin-bottom: 50px;
+    border-left: 3px solid #D9224D;
+    font-size: 18px;
+    padding-left: 50px
+}
+
+#franchise .russian-wine-list li {
+    line-height: 1.8;
+    padding-bottom: 20px
+}
+
+#franchise .russian-wine-list li:last-child {
+    padding-bottom: 0
+}
+
+#franchise .russian-wine-image {
+    margin-bottom: -100px
+}
+
+#franchise .searching p {
+    font-size: 4rem;
+    font-family: 'ProximaNova-Bold';
+    line-height: 5rem;
+    margin-top: 4rem;
+    margin-right: 1.5rem;
+    letter-spacing: -.01em;
+}
+
+#franchise .contact {
+    margin: 80px 0
+}
+
+#franchise .contact h2 {
+    margin: 0;
+    line-height: 5rem;
+    font-size: 4rem;
+    text-align: left;
+}
+
+@media (max-width: 767px) {
+    #franchise .russian-wine h2 {
+        margin-bottom: -30px
+    }
+
+    #franchise .degustations h2,
+    #franchise .area .sqm {
+        font-size: 10.416vw !important
+    }
+
+    #product-product.product-temp1 .volume,
+    #product-product.product-temp1 .alcohol,
+    #product-product .alcohol,
+    #product-product .volume {
+        font-size: 7.8125vw !important
+    }
+
+    #product-product.product-temp1 .volume,
+    #product-product .volume {
+        margin-top: 105px !important
+    }
+
+    #product-product.product-temp1 .row .col-xs-6 .alcohol img,
+    #product-product .row .col-xs-6 .alcohol img {
+        margin: 6.5vw 0 6.5vw 11vw;
+        height: 7.8125vw;
+        width: auto
+    }
+
+    #product-product.product-temp1 .row .col-xs-6 img,
+    #product-product .row .col-xs-6 img {
+        height: 55px;
+        width: auto
+    }
 }

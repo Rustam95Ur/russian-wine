@@ -9,10 +9,10 @@
     <div id="franchise">
         <div id="content">
             <div class="heading-wrap">
-                <div class="container container-lg">
+                <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <h1>Хотите открыть винный магазин в своём городе?</h1>
+                            <h1>Хотите открыть винный магазин<br/>в своём городе?</h1>
                         </div>
                     </div>
                 </div>
@@ -21,25 +21,25 @@
                 </div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-md-4 mb-sm">
+                        <div class="col-xs-12 col-md-4 mb-md px-3 pl-6">
                             <div class="header-image-box">
                                 <img alt='header_image' src="{{asset('image/page/franchise/header_slider_1.png')}}">
                                 <div class="text-block">
-                                    <h2>Винотека редких вин</h2>
+                                    <h2>Винотека<br>редких вин</h2>
                                     <p>Вина отобраны из топовых виноделен и небольших фермерских хозяйств России </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-md-4 mb-sm">
+                        <div class="col-xs-12 col-md-4 mb-md pl-6 pr-6">
                             <div class="header-image-box">
                                 <img alt='header_image' src="{{asset('image/page/franchise/header_slider_2.png')}}">
                                 <div class="text-block">
-                                    <h2>Более 400 видов Русских Вин</h2>
+                                    <h2>Более 400 видов<br>Русских Вин</h2>
                                     <p>Это эксклюзивная и самая полная коллекция лучших Русских Вин</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-md-4 mb-sm">
+                        <div class="col-xs-12 col-md-4 mb-md px-3 pr-6">
                             <div class="header-image-box">
                                 <img alt='header_image' src="{{asset('image/page/franchise/header_slider_3.png')}}">
                                 <div class="text-block">
@@ -52,20 +52,20 @@
                 </div>
             </div>
             <section class="background-white">
-                <div class="container-fluid">
+                <div class="container px-0">
                     <div class="row">
-                        <div class="col-md-6 col-md-offset-1">
+                        <div class="col-md-7 pl-8">
                             <div class="searching">
                                 <p id="searching">Мы ищем партнера, который готов открыть мир Русского Вина для своих
-                                    клиентов, при этом организовать собственный успешный бизнес проект</p>
+                                    клиентов,<br>при этом организовать собственный успешный бизнес проект</p>
                             </div>
                         </div>
-                        <div class="col-md-4 col-md-offset-1 searching-result">
+                        <div class="col-md-3 px-3 col-md-offset-1 searching-result">
                             <p>Окупаемость</p>
                             <h4>14 <b>mec.</b></h4>
                             <p>Рентабельность</p>
                             <h4>50 <b>%</b></h4>
-                            <p>Роялити</p>
+                            <p>Роялти</p>
                             <h4>7 <b>%</b></h4>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                 </div>
             </section>
             <!-- end degustation -->
-            <div class="background-dark-purple partner-result-container">
+            <div class="background-dark-purple partner-result-container py-10">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-3">
@@ -128,8 +128,8 @@
             </div>
             <div class="container requirement">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-9">
-                        <div class="col-md-12 mb-sm">
+                    <div class="col-xs-12 col-sm-12 col-md-9 pr-8 pl">
+                        <div class="col-md-12 mb-sm pl-0">
                             <h2>Необходимые требования к партнеру:</h2>
                         </div>
                         <div class="col-md-12 partner-requirement">
@@ -185,25 +185,25 @@
             </div>
             <div class="container-fluid contact-block">
                 <div class="row">
-                    <div class="col-xs-12 col-md-3 col-md-offset-1">
+                    <div class="col-xs-12 col-md-4  pl-8">
                         <div class="contact">
-                            <h2>Если Вас заинтересовал наш проект, свяжитесь с нами</h2>
+                            <h2>Если Вас заинтересовал наш проект,<br>свяжитесь с нами</h2>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-md-offset-1 col-md-7 bg-gray">
+                    <div class="col-xs-12 col-md-offset-1 col-md-6 bg-gray">
                         <div class="col-md-10">
                             <div class="contact">
                                 <form method="post" class="form-common" action="{{route('franchise-order')}}">
                                     @csrf
-                                    <div class="p-t-30">
+                                    <div class="p-t-0">
                                         <input name="name" class="form-control" type="text"
                                                placeholder="Имя">
                                     </div>
-                                    <div class="p-t-30">
+                                    <div class="p-t-50">
                                         <input name="phone" class="form-control" type="text"
                                                placeholder="Телефон">
                                     </div>
-                                    <div class="text-center p-t-30">
+                                    <div class="text-left p-t-50">
                                         <input type="submit" class="btn-danger"
                                                value="Оставить заявку">
                                     </div>

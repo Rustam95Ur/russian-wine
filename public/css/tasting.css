@@ -1209,7 +1209,7 @@
     }
 
     #tasting-page #list_under li {
-        font-size: 3.888vw;
+        font-size: 1.6rem;
         display: block;
         margin-bottom: 6.944444444444445vw;
     }
@@ -1617,6 +1617,15 @@
         border-radius: 0;
         background: transparent !important;
     }
+    #tasting-page #testimonials .swiper-pagination {
+        display: none;
+    }
+    #tasting-page #testimonials .swiper-slide {
+        box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.1);
+        max-width: calc(100% - 2rem);
+        margin: 0 1rem;
+    }
+
 }
 
 /*
@@ -2321,6 +2330,7 @@
 #tasting-page .portrait {
     border-radius: 100px;
     margin-top: 20px;
+    margin-left: 21%;
 }
 
 #tasting-page .portrait_info {
@@ -2550,12 +2560,15 @@
         height: unset;
         background-size: auto;
     }
+
     #tasting-page .quotes_text {
-        font-size: 1.68rem;
-        line-height: 1;
+        font-size: 1.5rem;
         text-align: center;
         margin-top: 4rem;
+        line-height: 1.3em;
+        font-family: "ProximaNova-Reg";
     }
+
     #tasting-page #list_under li {
         margin-bottom: 0;
     }
@@ -2571,11 +2584,39 @@
     #tasting-page #button_link {
         margin-top: 1rem;
     }
+
     #tasting-page #button_link a {
         padding: 0;
-        font-size: 1rem;
+        font-size: 1.5rem;
         margin-bottom: 10px;
+        line-height: 3.5em;
     }
+
+    #tasting-page .question_form {
+        border: 0;
+        margin-top: 1.5rem;
+    }
+
+    #tasting-page #question p {
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: white;
+        margin-top: 3rem;
+        padding: 0 1.5rem;
+    }
+
+    #tasting-page #question h2 {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 60px;
+        margin-top: 4rem;
+        color: white;
+        margin-bottom: 2rem;
+    }
+
+
     #tasting-page #second_block .swiper-viewport .title_prox_bold {
         margin-top: 0;
     }
@@ -2654,7 +2695,8 @@
         width: 15%;
     }
     #tasting-page .question_form::after {
-        height: 110%;
+        height: calc(100% + 8rem);
+        border-top: 4px solid white;
     }
     #tasting-page #question {
         padding-bottom: 4rem;

@@ -1,0 +1,163 @@
+@font-face {
+    font-family: 'ProximaNova-Reg';
+    src: url(fonts/ProximaNova-Reg.eot);
+    src: local(â˜º), url(fonts/ProximaNova-Reg.woff) format("woff"), url(fonts/ProximaNova-Reg.ttf) format("truetype"), url(fonts/ProximaNova-Reg.svg) format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'ProximaNova-Xbold';
+    src: url(fonts/ProximaNova-Xbold.eot);
+    src: local(â˜º), url(fonts/ProximaNova-Xbold.woff) format("woff"), url(fonts/ProximaNova-Xbold.ttf) format("truetype"), url(fonts/ProximaNova-Xbold.svg) format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'ProximaNova-Light';
+    src: url(fonts/ProximaNova-Light.eot);
+    src: local(â˜º), url(fonts/ProximaNova-Light.woff) format("woff"), url(fonts/ProximaNova-Light.ttf) format("truetype"), url(fonts/ProximaNova-Light.svg) format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'ProximaNova-Bold';
+    src: url(fonts/ProximaNova-Bold.eot);
+    src: local(â˜º), url(fonts/ProximaNova-Bold.woff) format("woff"), url(fonts/ProximaNova-Bold.ttf) format("truetype"), url(fonts/ProximaNova-Bold.svg) format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'latobold';
+    src: url(../fonts/lato-bold-webfont.woff2) format("woff2"), url(../fonts/lato-bold-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'RUBSN';
+    src: url(fonts/RUBSN.eot);
+    src: local(â˜º), url(fonts/RUBSN.woff) format("woff"), url(fonts/RUBSN.ttf) format("truetype"), url(fonts/RUBSN.svg) format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-display: fallback
+}
+
+@font-face {
+    font-family: 'latoheavy';
+    src: url(../fonts/lato-heavy-webfont.woff2) format("woff2"), url(../fonts/lato-heavy-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'latolight';
+    src: url(../fonts/lato-light-webfont.woff2) format("woff2"), url(../fonts/lato-light-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'latomedium';
+    src: url(../fonts/lato-medium-webfont.woff2) format("woff2"), url(../fonts/lato-medium-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'latoregular';
+    src: url(../fonts/lato-regular-webfont.woff2) format("woff2"), url(../fonts/lato-regular-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'latosemibold';
+    src: url(../fonts/lato-semibold-webfont.woff2) format("woff2"), url(../fonts/lato-semibold-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'old_standard_ttregular';
+    src: url(../fonts/oldstandard-regular-webfont.woff2) format("woff2"), url(../fonts/oldstandard-regular-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url(../fonts/icomoon.eot?x2vo9n);
+    src: url(../fonts/icomoon.eot?x2vo9n#iefix) format("embedded-opentype"), url(../fonts/icomoon.ttf?x2vo9n) format("truetype"), url(../fonts/icomoon.woff?x2vo9n) format("woff"), url(../fonts/icomoon.svg?x2vo9n#icomoon) format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url(../fonts/lato-bold-webfont.eot);
+    src: url(../fonts/lato-bold-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/lato-bold-webfont.woff2) format("woff2"), url(../fonts/lato-bold-webfont.woff) format("woff"), url(../fonts/lato-bold-webfont.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url(../fonts/lato-heavy-webfont.eot);
+    src: url(../fonts/lato-heavy-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/lato-heavy-webfont.woff2) format("woff2"), url(../fonts/lato-heavy-webfont.woff) format("woff"), url(../fonts/lato-heavy-webfont.ttf) format("truetype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url(../fonts/lato-light-webfont.eot);
+    src: url(../fonts/lato-light-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/lato-light-webfont.woff2) format("woff2"), url(../fonts/lato-light-webfont.woff) format("woff"), url(../fonts/lato-light-webfont.ttf) format("truetype");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url(../fonts/lato-medium-webfont.eot);
+    src: url(../fonts/lato-medium-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/lato-medium-webfont.woff2) format("woff2"), url(../fonts/lato-medium-webfont.woff) format("woff"), url(../fonts/lato-medium-webfont.ttf) format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url(../fonts/lato-regular-webfont.eot);
+    src: url(../fonts/lato-regular-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/lato-regular-webfont.woff2) format("woff2"), url(../fonts/lato-regular-webfont.woff) format("woff"), url(../fonts/lato-regular-webfont.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url(../fonts/lato-semibold-webfont.eot);
+    src: url(../fonts/lato-semibold-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/lato-semibold-webfont.woff2) format("woff2"), url(../fonts/lato-semibold-webfont.woff) format("woff"), url(../fonts/lato-semibold-webfont.ttf) format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap
+}
