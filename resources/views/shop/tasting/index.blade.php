@@ -5,7 +5,7 @@
 @section('content')
     <div id="tasting-page">
         <section id="banner">
-            <div class="container">
+            <div class="pl-8 pr-8 container-fluid">
                 <div class="row">
                     <ul class="breadcrumb">
                         <li><a href="{{route('home')}}">Главная</a></li>
@@ -13,15 +13,19 @@
                     </ul>
                 </div>
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-7">
                         <h1>Персональные дегустации</h1>
                         <ul id="list_under">
                             <li>Корпоратив или ужин</li>
                             <li>Дома или в офисе</li>
                             <li>Редкие вина</li>
                         </ul>
+                        <div id="button_link">
+                            <a id="set_vybor" href="#sets_anchor">Выбрать сет</a>
+                            <a id="how_we" href="#how_we_cont">Как мы это делаем</a>
+                        </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 pl-10">
                         <img src="{{asset('image/quotes.png')}}"  class="quotes_icon" alt="quotes_icon">
                         <p class="quotes_text">Я продаю и продвигаю Русские Вина в течение 10 лет. Успешно работал на
                             крупных
@@ -38,10 +42,6 @@
                             <p>негоциант, основатель проекта Русское Вино</p>
                         </div>
                     </div>
-                </div>
-                <div id="button_link">
-                    <a id="set_vybor" href="#sets_anchor">Выбрать сет</a>
-                    <a id="how_we" href="#how_we_cont">Как мы это делаем</a>
                 </div>
                 <div class="row">
                     <div class="col-md-12" id="sets_anchor">
@@ -117,8 +117,8 @@
                         Как мы это делаем
                     </div>
                     <div class="text_light">
-                        Обладая опытом проведения дегустаций различного уровня, берёмся за форматы любой сложности, <br>
-                        как для профессионалов, так и для новичков в мире вина.
+                        Обладая опытом проведения дегустаций различного уровня,<br>
+                        берёмся за форматы любой сложности, как для профессионалов, так и для новичков в мире вина.
                     </div>
                     <div id="carousel0"
                          class="swiper-container swiper-container-initialized swiper-container-horizontal">
@@ -211,10 +211,7 @@
                 center: true,
                 spaceBetween: 30,
                 loopFillGroupWithBlank: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
+
                 // breakpoints: {
                 //     991: {
                 //         spaceBetween: 0,
@@ -228,8 +225,8 @@
 
             });
             var swiper = new Swiper('#testimonials', {
-                slidesPerView: 3,
-                spaceBetween: 30,
+                slidesPerView: 2,
+                spaceBetween: 80,
                 centeredSlides: true,
                 center: true,
                 slidesPerGroup: 1,

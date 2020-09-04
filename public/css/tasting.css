@@ -65,9 +65,8 @@
 
 #tasting-page #button_link {
     width: 100%;
-    /*text-align: center;*/
-    margin-top: 4.541vw;
-    padding-top: 1vw;
+    margin-top: 9rem;
+    padding-top: 0;
 }
 
 #tasting-page #set_vybor {
@@ -99,7 +98,7 @@
     text-align: center;
     font: 2.6vw 'ProximaNova-Bold';
     letter-spacing: 5px;
-    margin-bottom: 65px;
+    margin-bottom: 1rem;
 }
 
 #tasting-page .container {
@@ -147,7 +146,15 @@
 #tasting-page .title_prox_bold {
     font: 2.6vw 'ProximaNova-Bold';
     text-align: center;
-    margin-top: 150px;
+    margin-top: 18rem;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+#tasting-page #how_we_cont .title_prox_bold {
+    font: 2.6vw 'ProximaNova-Bold';
+    text-align: center;
+    margin-top: 7rem;
     font-weight: bold;
     font-size: 50px;
 }
@@ -260,9 +267,8 @@
 }
 
 #tasting-page #list_under {
-    /*text-align: center;*/
     padding-left: 0;
-    margin-top: 150px;
+    margin-top: 90px;
 }
 
 #tasting-page .image-additional {
@@ -582,7 +588,7 @@
 
 /* third_block */
 #tasting-page #second_block .swiper-viewport {
-    padding-top: 5.208vw;
+    padding-top: 0;
     color: #252525;
     border: none;
     box-shadow: none;
@@ -880,6 +886,7 @@
 
 #tasting-page #testimonials {
     padding-bottom: 8.85vw;
+    padding-top: 4vw;
 }
 
 #tasting-page #testimonials .swiper-pagination {
@@ -895,16 +902,36 @@
     margin-bottom: 2.864vw;
 }
 
-#tasting-page #testimonials .swiper-inner,
-#tasting-page .slider-1 .swiper-inner {
-    max-width: 555px;
+#tasting-page #testimonials .swiper-inner, #tasting-page .slider-1 .swiper-inner {
     width: 100%;
     padding: 20px;
-    height: 310px;
+    min-height: 35rem;
 }
 
 #tasting-page #testimonials .swiper-slide {
     box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.1);
+    margin-bottom: 6rem;
+    overflow: visible;
+    border-radius: 2rem;
+}
+
+.swiper-slide .swiper-inner::before {
+    content: '';
+    background: #fff;
+    width: 5rem;
+    height: 5rem;
+    right: 11.5%;
+    top: 59%;
+    display: block;
+    position: absolute;
+    box-shadow: 11px 25px 30px -17px rgba(0,0,0,.3);
+    transform: rotate(45deg) matrix(1.3, 0, 1, 1, 150, 0);
+    z-index: 0;
+}
+
+#tasting-page #testimonials .swiper-slide.swiper-slide-duplicate-active,
+#tasting-page #testimonials .swiper-slide.swiper-slide-active {
+    transform: scale(110%);
 }
 
 #tasting-page .slider-1 .swiper-inner img {
@@ -940,6 +967,13 @@
 /*#tasting-page #testimonials .swiper-inner .testimonial {*/
 /*    padding: 0 1vw;*/
 /*}*/
+
+#tasting-page #testimonials .swiper-slide-prev, #tasting-page #testimonials .swiper-slide-next {
+    opacity: .5;
+    background: #fff;
+    box-shadow: 0 0 30px 0 rgba(0,0,0, .25);
+}
+
 
 #tasting-page #testimonials .swiper-slide-prev:after,
 #tasting-page #testimonials .swiper-slide:after,
@@ -1045,6 +1079,9 @@
 
 #tasting-page .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background: #da224d !important;
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-bottom: -0.2rem;
 }
 
 #tasting-page #carousel0 .swiper-slide {
@@ -1182,6 +1219,7 @@
     #tasting-page #carousel0 .swiper-slide.swiper-slide-next {
         width: auto !important;
     }
+
 
     #tasting-page #carousel0 .swiper-slide {
         width: 60vw;
@@ -2265,10 +2303,11 @@
 
 #tasting-page .swiper-pagination-bullet {
     background: #d4d4d4 !important;
-    width: 11px;
-    height: 11px;
+    width: 1.4rem;
+    height: 1.4rem;
     box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3) !important;
     opacity: 1 !important;
+    margin-right: 3.8rem;
 }
 
 #tasting-page .swiper-button-next {
@@ -2301,6 +2340,7 @@
 
 #tasting-page .breadcrumb {
     background-color: unset !important;
+    padding: .8rem 2rem;
 }
 
 #tasting-page .breadcrumb a {
@@ -2308,6 +2348,7 @@
     font-weight: normal;
     font-size: 17px;
     line-height: 30px;
+    text-shadow: none;
 }
 
 #tasting-page h1 {
@@ -2330,7 +2371,15 @@
 #tasting-page .portrait {
     border-radius: 100px;
     margin-top: 20px;
-    margin-left: 21%;
+    margin-left: 0;
+}
+
+@media(max-width:768px){
+    #tasting-page .portrait {
+        border-radius: 100px;
+        margin-top: 20px;
+        margin-left: 21%;
+    }
 }
 
 #tasting-page .portrait_info {
@@ -2519,25 +2568,25 @@
     border-bottom: 0;
     border-right: 0;
     width: 55%;
-    height: calc(100% + 8rem);
-    top: -8rem;
+    height: calc(100% + 12rem);
+    top: -12rem;
     left: 1.4rem;
     z-index: 111;
 }
 
 #tasting-page .question_form::after {
-  content: '';
-  display: block;
-  position: absolute;
-  border: 4px solid white;
-  border-top: 0;
-  border-left: 0;
-  width: 98%;
-  height: 90%;
-  bottom: 0;
-  right: 0px;
-  z-index: 111;
-  float: right;
+    content: '';
+    display: block;
+    position: absolute;
+    border: 4px solid white;
+    border-top: 0;
+    border-left: 0;
+    width: 98%;
+    height: 95%;
+    bottom: 0;
+    right: -1px;
+    z-index: 111;
+    float: right;
 }
 
 #tasting-page #question {

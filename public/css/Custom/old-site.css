@@ -8042,9 +8042,34 @@ h2.price {
     border-radius: 50% !important
 }
 
+.pagination > li:nth-child(1) > a, .pagination > li:nth-child(1) > span {
+    font-size: 3rem;
+    padding-top: 0;
+}
+
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+    font-size: 3rem;
+    padding-top: 0;
+}
+
+.pagination > .active > span {
+    height: 4rem;
+    width: 4rem;
+    line-height: 8rem!Important;
+    font-size: 2.1rem;
+}
+
 .pagination > .active > span {
     background: #23252b;
     border-radius: 50% !important
+}
+
+.pagination > .active > span {
+    height: 4rem;
+    width: 4rem;
+    padding: 0.5rem;
+        padding-top: 0.5rem;
+    padding-top: .3rem;
 }
 
 #vinotheque .col-xs-12 {
@@ -8459,17 +8484,17 @@ h2.price {
     }
 
     .pagination > .active > span {
-        height: 2.318vw;
-        width: 2.318vw
+        height: 4rem;
+        width: 4rem;
     }
 
-    .pagination > li > span,
-    .pagination > li > a {
-        height: 2.318vw;
-        width: 2.318vw;
+    .pagination > li > span, .pagination > li > a {
+        height: 4rem;
+        width: 4rem;
         display: flex;
-        justify-content: center;
-        align-items: center
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 1rem;
     }
 }
 
