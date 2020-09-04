@@ -2111,23 +2111,23 @@ span.currency {
     display: inline-block;
     overflow-y: hidden;
     min-width: 105%;
-    height: 53rem;
+    height: 30rem;
 }
 
 .modalOverflowWrap a {
-    width: 38rem;
+    width: 9rem;
     position: relative;
     top: 0;
     overflow: auto;
     display: inherit;
-    border-right: 1px solid #cecece;
+    /*border-right: 1px solid #cecece;*/
     padding: 2rem 0;
     text-align: center;
 }
 
 .modalOverflowWrap .tasting_wine_image {
     width: auto;
-    height: 45rem !important;
+    height: 25rem !important;
     margin: 0 auto;
 }
 
@@ -2235,5 +2235,29 @@ span.currency {
         font-size: unset;
         padding: 0;
 
+    }
+    .message_body {
+        position: fixed;
+        height: auto;
+        top: 30%;
+        /*left: calc(50% - 43.933vw);*/
+        border-radius: 25px;
+        width: auto;
+        bottom: unset;
+        left: 0;
+        right: 0;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+@media (max-width:321px) {
+    #modal_sviaz #feedsend {
+        font-size: 2vh
+    }
+}
+
+@media (max-width:376px) {
+    #modal_sviaz #feedsend {
+        font-size: 2.5vh
     }
 }
