@@ -16,7 +16,10 @@
                                     <tbody>
                                     <tr id="fav-tr-{{$favorite->id}}">
                                         <td>
-                                            <input type="checkbox" form="favorite_order" value="{{$favorite->id}}" name="wines[]">
+                                            <div class="form-group">
+                                                <input type="checkbox" form="favorite_order" id="favorite-{{$favorite->id}}" value="{{$favorite->id}}" name="wines[]">
+                                                <label for="favorite-{{$favorite->id}}"></label>
+                                            </div>
                                         </td>
                                         <td>
                                             <img src="{{ asset ('image/1OLwTAcYZZn9L9hwUju2.png') }}" width="30px"

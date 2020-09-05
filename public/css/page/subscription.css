@@ -11,16 +11,18 @@
     width: 100%;
     padding: 0;
 }
+
 @media (max-width:991px) {
     #top_podpiska p {
         font-family: 'Lato', sans-serif;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         padding-left: 0;
         position: relative;
-        line-height: 1.6;
+        line-height: 3.5rem;
         color: #ffffff !important;
         letter-spacing: -.01em;
         text-align: left;
+        margin-top: 2rem;
     }
 
     #top_podpiska p::before {
@@ -42,40 +44,43 @@
         display: inline-block;
         float: none;
         position: relative;
-        left: 5%;
+        left: 15%;
     }
 
     #top_podpiska {
         padding: 2.5rem 2rem 12rem 2rem;
-        background: url(/image/page/subscription/background_top.jpg);
-        height: 14rem;
+        background: url(/image/page/subscription/background_top-mb.png);
+        height: 41rem;
         background-size: cover;
         color: #fff;
         box-sizing: initial;
     }
     #top_podpiska #title {
-        font-size: 3rem;
+        font-size: 5rem;
         font-family: 'ProximaNova-Bold';
         line-height: 1;
     }
     .desc-mask h4 {
-        font-size: 7.5625VW;
-        text-align: center;
+        font-size: 2rem;
+        margin: 2rem;
     }
     .desc-mask .description {
         opacity: 1;
     }
     .description p {
-        font-size: 2.3rem;
-        line-height: 1.3;
-        text-align: center;
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+        /*text-align: center;*/
     }
-    #secondblock img {
-        opacity: 0.5;
+    #secondblock img.subscription-image {
+        /*opacity: 0.5;*/
+        border-radius: 2rem;
+        filter: brightness(80%);
     }
+
     #thirdblock h4 {
-        font-size: 2.5rem;
-        padding: 0;
+        font-size: 5rem;
+        padding: 2rem;
         z-index: 3;
         position: relative;
         line-height: 0.9;
@@ -83,7 +88,8 @@
     #thirdblock p {
         z-index: 3;
         position: relative;
-        font-size: 1.9rem;
+        font-size: 1.8rem;
+        padding: 2rem;
         margin-bottom: 0;
         line-height: 1.4;
     }
@@ -91,32 +97,37 @@
         bottom: 40rem;
     }
     #thirdblock img {
-        opacity: 0.5;
+        /*opacity: 0.5;*/
     }
     #thirdblock {
         padding-top: 1rem;
-        height: 75rem;
+        height: 145rem;
     }
     #pod_lastblock .bokal {
-        bottom: 8rem;
+        bottom: 6rem;
         z-index: 3;
         top: unset;
         left: 0;
         right: 0;
+        width: 90%;
     }
     #pod_lastblock h2 {
-        bottom: 15rem;
+        bottom: 19rem;
         top: unset;
-        left: 14.5rem;
+        left: 8.5rem;
+        font-size: 12rem;
     }
     #thirdblock a {
         z-index: 3;
         position: relative;
+        top: 45rem;
+        padding: 2rem;
+        margin: 0 0 0 5rem;
     }
     #thirdblock a button {
         font-size: 1.5rem;
-        width: 100%;
-        height: auto;
+        width: 30rem;
+        height: 5rem;
         padding: 10px;
     }
     #pod_lastblock {
@@ -137,15 +148,72 @@
         bottom: -2.5rem;
         padding: 1rem;
     }
+
+    #firstblock img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #firstblock .text_s_s {
+        font-size: 1.8rem;
+        margin-top: 7vw;
+    }
+    .mobile-hide, #podpiska, #firstblock .col-sp-13,  #sety-title,  #secondblock .description .fordesc, #thirdblock .col-sp-11,
+    #pod_lastblock .col-sp-12 {
+        display: none;
+    }
+    #secondblock {
+        background: white;
+    }
+    #secondblock .subscription-title {
+        font-size: 3rem;
+        margin: 2rem;
+    }
+    #secondblock .col-sp-8 {
+        margin: 2rem;
+    }
+    .desc-mask .description {
+        margin-top: 13rem;
+    }
+    #thirdblock .col-sp-13 {
+        padding-top: 1rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
 }
 @media (max-width:376px) {
     #pod_lastblock h2 {
-        left: 12.5rem;
+        left: 5.5rem;
+        bottom: 19rem;
     }
+    .desc-mask .description {
+        margin-top: 2rem;
+    }
+    #pod_lastblock .bokal {
+        bottom: 9rem;
+    }
+    #thirdblock {
+        height: 140rem;
+    }
+    #thirdblock a {
+        top: 37rem;
+        margin-left: 2rem;
+    }
+
 }
 @media (max-width:321px) {
     #pod_lastblock h2 {
         left: 10.5rem;
         bottom: 13rem;
+    }
+    .desc-mask .description img {
+        padding-top: 0;
+        margin-top: 0;
+    }
+    #top_podpiska {
+        height: 45rem;
+    }
+    #top_podpiska .btn-danger {
+        left: 7%;
     }
 }

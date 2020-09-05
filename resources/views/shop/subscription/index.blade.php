@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @push('styles')
-    <link rel="stylesheet" type="text/css" href="{{asset('css/subscription.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/page/subscription.css')}}">
 @endpush
 @section('content')
     <div id="product-category" class="container">
@@ -33,6 +33,7 @@
                         </div>
                         <div id="firstblock">
                             <div class="col-sp-11">
+                                <img alt="" class="visible-xs" src="{{asset('image/page/subscription/first_img_mb.png')}}">
                                 <div class="text_s_s">
                                     <p>
                                         При оформлении подписки, Вы станете ежемесячно получать сет из 6 бутылок
@@ -40,7 +41,7 @@
                                         винодел. Сет будет обновляться каждый месяц.
 
                                     </p>
-                                    <p>
+                                    <p class="mobile-hide">
                                         Более того, при оформлении подписки Вы будете гарантированно получать вина,
                                         которые нельзя будет купить в винотеках.
                                     </p>
@@ -60,18 +61,21 @@
                             <h2 id="sety-title">СЕТЫ</h2>
                         </div>
                         <div id="secondblock">
+                            <h3 class="visible-xs subscription-title">Выберите сет и оформите подписку</h3>
                             @foreach($sets as $set)
                                 <div class="col-sp-8">
                                     <div class="podpiska-thumb">
                                         <a href="{{route('set', $set->slug)}}"></a>
                                         <img alt="{{$set->title}}"
-                                             src="{{Voyager::image($set->subscription_image)}}">
+                                             class="subscription-image" src="{{Voyager::image($set->subscription_image)}}">
                                         <div class="desc-mask">
                                             <h4>{{$set->title}}</h4>
                                             <div class="description subscription">
                                                 {!! $set->description !!}
                                                 <img alt="icon_pluc" class="fordesc"
                                                      src="{{asset('image/page/subscription/plus.png')}}">
+                                                <img alt="link_icon" src="{{asset('image/hlink-bg.png')}}"
+                                                     class="visible-xs mt-md">
                                             </div>
                                         </div>
                                     </div>
@@ -82,6 +86,7 @@
                             <div class="col-sp-13">
                                 <div class="newsletter">
                                     <h4>Годовая подписка</h4>
+                                    <img alt="subscription_last" class="visible-xs" src="{{asset('image/page/subscription/lastimg.jpg')}}">
                                     <p>
                                         Особое предложение для тех кто любит вино, постоянно экспериментирует и
                                         находится в активном поиске редких вин.
