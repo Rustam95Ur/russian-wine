@@ -16,7 +16,7 @@
                                     <tbody>
                                     <tr id="fav-tr-{{$favorite->id}}">
                                         <td>
-                                            <div class="form-group">
+                                            <div class="form-group-checkbox">
                                                 <input type="checkbox" form="favorite_order" id="favorite-{{$favorite->id}}" value="{{$favorite->id}}" name="wines[]">
                                                 <label for="favorite-{{$favorite->id}}"></label>
                                             </div>
