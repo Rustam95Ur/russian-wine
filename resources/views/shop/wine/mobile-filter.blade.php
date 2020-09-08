@@ -572,16 +572,16 @@
         <div class="sortOverlayBody">
             <ul>
                 <li>
-                    <input type="radio" class="form-check-input" form="searching-form" name="price_sort"
+                    <input type="radio" class="form-check-input hidden" form="searching-form" name="price_sort"
                            id="price-asc" value="asc">
-                    <label class="form-check-label" for="price-asc" style="color: black; font-size: 15px">
+                    <label class="form-check-label sort_label" for="price-asc" >
                         сначала дешевле
                     </label>
                 </li>
                 <li>
-                    <input type="radio" class="form-check-input" form="searching-form" name="price_sort"
+                    <input type="radio" class="form-check-input hidden" form="searching-form" name="price_sort"
                            id="price-desc" value="desc">
-                    <label class="form-check-label" for="price-des" style="color: black; font-size: 15px">
+                    <label class="form-check-label sort_label" for="price-desc" >
                         сначала дороже
                     </label>
                 </li>

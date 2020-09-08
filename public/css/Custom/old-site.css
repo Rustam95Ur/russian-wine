@@ -8484,8 +8484,10 @@ h2.price {
     }
 
     .pagination > .active > span {
-        height: 4rem;
-        width: 4rem;
+        height: 5rem;
+        width: 5rem;
+        margin-top: -0.4rem;
+
     }
 
     .pagination > li > span, .pagination > li > a {
