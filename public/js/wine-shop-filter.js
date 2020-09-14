@@ -27,8 +27,15 @@ $(window).on('hashchange', function () {
     }
 });
 /*  POPOVER JS END*/
-
+window.onpageshow = function (event) {
+    var url_parameters = window.location.search;
+    if (url_parameters.length === 0) clear_for_load()
+};
 $(document).ready(function () {
+
+    var url_parameters = window.location.search;
+    if (url_parameters.length === 0) clear_for_load()
+    console.log(url_parameters)
     $(document).on('click', '.pagination a', function (event) {
         event.preventDefault();
 
@@ -56,12 +63,57 @@ function wine_filter_search(filter, page = 1) {
         console.log(ajaxOptions)
         console.log(thrownError)
     });
+    filter_breadcrumb()
+
+}
+
+const main_breadcrumb = $('.breadcrumb').html();
+
+function filter_breadcrumb() {
+    var forms_filter = $('#searching-form').serializeArray(),
+        href,
+        title,
+        breadcrumb,
+        title_breadcrumb,
+        filter_breadcrumb = []
+    for (let i = 0; i < forms_filter.length; i++) {
+        if (forms_filter[i].value) {
+            if (forms_filter[i].name == 'title') {
+                href = 'title=' + forms_filter[i].value
+                title = forms_filter[i].value
+                title_breadcrumb = '<a href="?' + href + '">' + title + '</a>'
+            } else {
+                href = forms_filter[i].name + '=' + forms_filter[i].value
+                title = $(":checkbox[value='" + forms_filter[i].value + "']:checked").next('label').text();
+                breadcrumb = '<li><a href="?' + href + '">' + title + '</a></li>'
+                filter_breadcrumb.push(breadcrumb)
+            }
+        }
+    }
+    document.getElementById('breadcrumb').innerHTML = ''
+    $('.breadcrumb').append(main_breadcrumb)
+    document.getElementById('search_title').innerHTML = ''
+    if (title_breadcrumb) {
+        $('#search_title').show()
+        $('#search_title').append(title_breadcrumb)
+    } else {
+        $('#search_title').hide()
+    }
+    if (filter_breadcrumb.length > 0) {
+        $('.breadcrumb').append(filter_breadcrumb)
+    }
+
 }
 
 function clear_filter() {
     $("input[type=checkbox]").prop('checked', false)
     var filter = $('#searching-form').serialize()
     wine_filter_search(filter, '')
+    $("input[name=title]").val('')
+}
+
+function clear_for_load() {
+    $("input[type=checkbox]").prop('checked', false)
     $("input[name=title]").val('')
 }
 

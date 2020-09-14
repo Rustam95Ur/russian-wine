@@ -9,7 +9,7 @@
                 <div class="col-md-12">
                     <div class="col-md-6">
                         <div class="toShop">
-                            <a onclick="window.history.back();" class="pageControl">
+                            <a href="{{route('wine-shop')}}" class="pageControl">
                                 <i class="leftArrowSvg">
                                     <svg width="25" height="12" viewBox="0 0 31 16" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">

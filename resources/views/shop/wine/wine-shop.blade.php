@@ -2,9 +2,10 @@
 @section('content')
     <div class="shopContent">
         <div class="row subHeader">
-            <ul class="breadcrumb">
+            <ul class="breadcrumb" id="breadcrumb">
                 <li><a href="{{route('home')}}">Главная</a></li>
                 <li><a href="{{route('wine-shop')}}">Вино</a></li>
+                <li id="search_title" style="display: none"></li>
             </ul>
             <h1 class="pageHeading">Вино</h1>
             <p class="pageDesc">Мы собрали для Вас самую полную коллекцию Русских Вин, как крупных заводов, <br>
@@ -42,6 +43,7 @@
                         placeholder="по умолчанию">
                     @endif
                     @if(array_key_exists('price_sort', $filters))
+
                         <option value="asc" {{$filters['price_sort'] == 'asc' ? 'selected' : ''}}>
                             сначала дешевле
                         </option>
@@ -49,6 +51,7 @@
                             сначала дороже
                         </option>
                     @else
+                        <option disabled selected>по умолчанию</option>
                         <option value="asc">сначала дешевле</option>
                         <option value="desc">сначала дороже</option>
                     @endif

@@ -110,10 +110,15 @@ class WineFilter extends QueryFilter
         return $this->builder->whereIn('fortress', $value);
     }
 
-    public function price_sort($order = 'asc')
+    /**
+     * @param $order
+     * @return mixed
+     */
+    public function price_sort($order)
     {
-        return $this->builder->orderBy('price', $order);
-
+        if ($order) {
+            return $this->builder->orderBy('price', $order);
+        }
     }
 
 }

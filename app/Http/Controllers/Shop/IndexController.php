@@ -65,7 +65,7 @@ class IndexController extends Controller
             ]);
         }
 
-        return view('shop.wine.list', [
+        return view('shop.wine.wine-shop', [
             'wines' => $wines,
             'colors' => $colors,
             'regions' => $regions,
