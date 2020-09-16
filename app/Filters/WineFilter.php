@@ -11,7 +11,12 @@ class WineFilter extends QueryFilter
     public function title($keyword = null)
     {
         if ($keyword) {
-            return $this->builder->where('title', 'like', '%' . $keyword . '%');
+            return $this->builder->where(function ($query) use ($keyword) {
+                $query->where('title', 'like', '%' . $keyword . '%')
+                    ->orWhereHas('winery', function($q) use ($keyword) {
+                        $q->where('title', 'like', '%' . $keyword . '%');
+                    });
+            });
         }
     }
 

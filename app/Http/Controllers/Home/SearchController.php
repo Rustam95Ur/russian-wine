@@ -3,7 +3,6 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Models\Wine;
-use App\Models\Winery;
 use Illuminate\Http\Request;
 
 /**
@@ -13,30 +12,17 @@ class SearchController extends Controller
 {
     public function search(Request $request)
     {
-        $wines = Wine::where('title','LIKE','%'.$request->title."%")
+        $keyword = $request->title;
+        $wines = Wine::where(function ($query) use ($keyword) {
+            $query->where('title', 'like', '%' . $keyword . '%')
+                ->orWhereHas('winery', function ($q) use ($keyword) {
+                    $q->where('title', 'like', '%' . $keyword . '%');
+                });
+        })->where('price', '>', 0)
             ->where('status', '=', 'ACTIVE')
-            ->where('price', '>', 0)
             ->limit(3)->get();
-        $link = 'title='.$request->title;
-
-        if (count($wines) == 0) {
-            $wineries = Winery::where('title','LIKE','%'.$request->title."%")
-                ->where('status', '=', 'ACTIVE')->with('wines')->get();
-
-            $wines_array = [];
-            $winery_link = '';
-            foreach ($wineries as $winery) {
-                foreach ($winery->wines as $key => $wine_data) {
-                    if ($wine_data->price > 0 ) {
-                        $wines_array[] = $wine_data;
-                    }
-                }
-                $winery_link .= 'winery[]='.(string) $winery->id. '&';
-            }
-            $wines = $wines_array;
-            $link =  $winery_link;
-        }
+        $link = 'title=' . $request->title;
         return ['wines' => $wines, 'link' => $link];
     }
 }
-?>
+
