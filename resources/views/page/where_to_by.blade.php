@@ -271,7 +271,6 @@
                             active_marker = markers[$(this).attr('data-index') - 1];
                             active_marker.setIcon('/image/map_marker_wine_active.png');
                             map.panTo(active_marker.getPosition());
-                            markers.setMap(map)
 
                         });
                         // first active
