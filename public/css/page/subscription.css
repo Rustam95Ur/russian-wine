@@ -1,5 +1,6 @@
 #product-category {
-    width: 100%;
+    width: calc(100% - 15px) !important;
+    margin: 0;
 }
 #product-category.container{
   padding: 0!important;
