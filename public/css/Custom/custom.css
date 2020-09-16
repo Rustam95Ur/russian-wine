@@ -6,6 +6,21 @@
 html {
     font-size: 10px
 }
+@media (max-width:1660px){
+    html {
+        font-size: 8px;
+    }
+}
+@media (max-width:1380px){
+    html {
+        font-size: 6px;
+    }
+}
+@media (max-width:991px){
+    html {
+        font-size: 5px;
+    }
+}
 
 #menu.navbar-right .dropdown-menu-custom {
     left: 0;
@@ -600,11 +615,11 @@ input {
 }
 
 #information-winerywc .close_click img {
-    width: 1%;
+    width: 2rem;
     position: absolute;
     z-index: 4;
-    right: 2%;
-    top: 15%;
+    right: 2rem;
+    top: 7rem;
 }
 
 #modal_sviaz #feedsend, #podpisatsa, .done .content-cont a, #imennoe {
@@ -635,7 +650,11 @@ input {
     z-index: 50;
     background-image: none !important;
 }
-
+@media (max-width:1600px){
+    .product_cont {
+        min-height: 70rem;
+    }
+}
 
 .product_cont {
     padding: 4rem 9.5rem 8rem;
@@ -645,7 +664,7 @@ input {
     margin-right: 3rem;
     margin-bottom: 3rem;
     float: left;
-    /*min-height: 53rem;*/
+    min-height: 65rem;
 }
 
 .custom-select {
@@ -1350,6 +1369,39 @@ span.currency {
 /*       768px        */
 
 @media (max-width: 768px) {
+
+    .information-wine-regions .region-info {
+        padding: 1rem;
+    }
+
+    .information-wine-regions .region-description {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        line-height: 1.5;
+    }
+
+    .information-wine-regions .nav-pills > li.active > a {
+        background: none;
+        border-bottom: 4px solid #D9214D;
+        margin-right: 2rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .information-wine-regions .nav-pills {
+        display: flex;
+        overflow-x: scroll;
+        white-space: nowrap;
+        padding-bottom: 1rem;
+    }
+
+    #tasting-page .col-md-4.pl-10 {
+        padding: 0 3rem !important;
+    }
+
+    #tasting-page .pl-8.pr-8.container-fluid {
+        padding: 0 2rem !important;
+    }
+
     .col-md-6.decsRightSide, .row.secondDesc, #product-product #content_bottom, #product-product .toShop {
         display: none;
     }
@@ -1370,8 +1422,9 @@ span.currency {
     }
 
     #product-product.product-temp1 .image img {
-        width: 4.5em;
+        width: auto;
         margin-top: 0;
+        min-height: 60vh;
     }
 
     #product-product.product-temp1 h2, #product-product h2 {
@@ -1413,6 +1466,9 @@ span.currency {
         margin-left: auto;
         font-size: 10px;
         float: right;
+    }
+    .imennoe #content {
+        padding: 0!important;
     }
 
     #product-product.product-temp1 .iblock, #product-product.product-temp1 .iblock span, #product-product.product-temp1 .type {
@@ -1616,6 +1672,15 @@ span.currency {
 /*             Mobile style max-width 320px                        */
 
 @media (max-width: 481px) {
+
+    #tasting-page .col-md-4.pl-10 {
+        padding: 0 3rem !important;
+    }
+
+    #tasting-page .pl-8.pr-8.container-fluid {
+        padding: 0 2rem !important;
+    }
+
     .shopContent {
         margin-top: 1rem;
         padding: 0px 2rem;
@@ -2727,4 +2792,7 @@ span.currency {
     .container {
         width: 1720px!Important;
     }
+}
+.imennoe #content {
+    padding: 0!important;
 }

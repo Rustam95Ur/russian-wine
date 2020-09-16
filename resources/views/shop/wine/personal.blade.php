@@ -273,32 +273,32 @@
                             $('#slide-1').append('<img src="{{asset('image/mouse-personal.png')}}   " id="mob-mouse" />');
                             var setion = $('#slide-5');
                             var setionTop = setion.offset().top;
-                            $(window).bind('scroll', function () {
-                                var windowTop = $(window).scrollTop() + $(window).height();
+                            // $(window).bind('scroll', function () {
+                            //     var windowTop = $(window).scrollTop() + $(window).height();
 
-                                if (windowTop > sectionTop) {
-                                    $('#slide-6 .col-sss-4').addClass('fixxed');
-                                    $(section).attr('style', 'height:' + $(section).height() + 'px;padding-top:' + sectin + 'px;');
-                                }
-                                if (windowTop < sectionTop1) {
-                                    $('#slide-6 .col-sss-4').removeClass('fixxed')
-                                }
-                                if (windowTop > sectionTop2) {
-                                    $('#slide-6 .col-sss-4').addClass('tothetop');
-                                }
-                                if (windowTop < sectionTop2) {
-                                    $('#slide-6 .col-sss-4').removeClass('tothetop');
+                            //     if (windowTop > sectionTop) {
+                            //         $('#slide-6 .col-sss-4').addClass('fixxed');
+                            //         $(section).attr('style', 'height:' + $(section).height() + 'px;padding-top:' + sectin + 'px;');
+                            //     }
+                            //     if (windowTop < sectionTop1) {
+                            //         $('#slide-6 .col-sss-4').removeClass('fixxed')
+                            //     }
+                            //     if (windowTop > sectionTop2) {
+                            //         $('#slide-6 .col-sss-4').addClass('tothetop');
+                            //     }
+                            //     if (windowTop < sectionTop2) {
+                            //         $('#slide-6 .col-sss-4').removeClass('tothetop');
 
-                                }
-                                if (windowTop > setionTop) {
-                                    $('#slide-5').addClass('showbg');
+                            //     }
+                            //     if (windowTop > setionTop) {
+                            //         $('#slide-5').addClass('showbg');
 
-                                }
-                                if (windowTop < setionTop) {
-                                    $('#slide-5').removeClass('showbg');
+                            //     }
+                            //     if (windowTop < setionTop) {
+                            //         $('#slide-5').removeClass('showbg');
 
-                                }
-                            });
+                            //     }
+                            // });
                         }
                     </script>
                 @endpush
@@ -313,6 +313,7 @@
                 <img alt="close_icon" src="{{asset('image/closeicon.png')}}">
             </p>
             <div class="col-ss-6">
+            <h1 class="forwc">{{$winery->title}}</h1>
                 <div class="swiper-container swiper-container-winery">
                     <div class="swiper-wrapper">
                         @foreach($winery->images as $block)
@@ -330,7 +331,7 @@
                 </div>
             </div>
             <div class="col-ss-6">
-                <h1 class="forwc">{{$winery->title}}</h1>
+
                 <div class="winery-rt">
                     <h6>{{$winery->region->title}}</h6>
                     {!! $winery->description  !!}

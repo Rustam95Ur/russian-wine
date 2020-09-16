@@ -2073,10 +2073,15 @@ header #form-language .language-select {
     padding: 40px 0 20px
 }
 
+#winemakers .winemaker-cont{
+    margin-top: 3rem!important;
+}
+
 #winemakers .winemaker {
     background: #fff;
     margin-left: 15px;
-    background-clip: content-box
+    background-clip: content-box;
+    min-height: 70rem;
 }
 
 #winemakers .winemaker a {
@@ -7902,7 +7907,6 @@ h2.price {
         padding: 0 5.556vw;
         overflow: scroll;
         display: flex;
-        position: relative
     }
 
     .special-tab:after {
@@ -15999,16 +16003,6 @@ header ul li.active span:after {
     margin-top: -24.375vw;
 }
 
-.product_cont {
-    padding: 2.161vw 4.948vw 1.771vw;
-    background: #fff;
-    width: calc(33.333333% - 1.4vw);
-    box-sizing: border-box;
-    margin-right: 2.083vw;
-    margin-bottom: 2.083vw;
-    float: left;
-    height: 410px;
-}
 
 .product_cont img {
     transition: 0.35s;
@@ -16023,7 +16017,9 @@ header ul li.active span:after {
 }
 
 .product_cont img {
-    width: 100%;
+    width: 37vh;
+    position: absolute;
+    margin-top: -3vh;
 }
 
 .sety-category #sety-banner {
@@ -16417,7 +16413,7 @@ header ul li.active span:after {
 
         #slide-5 #left-side {
             background: transparent;
-            padding: 125.389vw 5.5556vw 0;
+            padding: 10rem 5.5556vw 0;
             box-sizing: border-box;
             left: 0;
             top: 0;
@@ -16474,11 +16470,11 @@ header ul li.active span:after {
             height: 2.339vw;
         }
 
-        #slide-6 .swiper-pagination-bullet.swiper-pagination-bullet-active:after {
-            left: -1.3vw;
-            top: -0.93vw;
-            height: 3.911vw;
-            width: 3.911vw;
+        #slide-6 .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
+            left: -0.3rem;
+            top: -.3rem;
+            height: 1.5rem;
+            width: 1.6rem;
             border: 1px solid #fff;
         }
 
@@ -16567,7 +16563,7 @@ header ul li.active span:after {
             width: 100%;
             float: left;
             height: auto;
-            padding-top: 17.359vh;
+            padding-top: 0rem;
             margin-bottom: 5vh;
         }
 
@@ -16584,12 +16580,10 @@ header ul li.active span:after {
         }
 
         #information-winerywc .col-ss-6 h1 {
-            font: 4.063vh ProximaNova-Bold;
+            font: 3rem ProximaNova-Bold;
             margin-left: 0;
-            top: 5vh;
-            left: 5.5556vw;
-            right: 5.5556vw;
-            position: Absolute;
+            left: 2rem;
+            padding-right: 7rem;
             z-index: 1;
         }
 
