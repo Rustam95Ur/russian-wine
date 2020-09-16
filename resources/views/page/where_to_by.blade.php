@@ -234,6 +234,7 @@
                                 }
                             ]
                         });
+
                         @foreach($contacts as $contact)
                         (function () {
                             var marker = new google.maps.Marker({
@@ -241,7 +242,7 @@
                                 icon: '{{asset('image/map_marker_wine_active.png')}}',
                                 map: map
                             });
-                            var infowindow = new google.maps.InfoWindow({
+                            var info_window = new google.maps.InfoWindow({
                                 content: '<div class="address">' +
                                     '<h2>{{$contact->title}}</h2>' +
                                     '<p><span class="icon-wrap"><img alt="address_icon" src="/image/address_marker.png" /></span> {{$contact->address}}</p>' +
@@ -251,22 +252,27 @@
                             });
                             markers.push(marker);
                             marker.addListener('click', function () {
-                                infowindow.open(map, marker);
+                                info_window.open(map, marker);
                                 $('.addresses .address[data-index="{{$loop->index}}"]').click();
+                                map.addListener('click', function () {
+                                    info_window.close();
+                                })
                             });
                         })();
                         @endforeach
                         var addresses = $('.addresses .address');
-                        var activemarker = null;
+                        var active_marker = null;
                         addresses.on('click', function () {
                             addresses.removeClass('selected');
                             $(this).addClass('selected');
-                            if (activemarker) {
-                                activemarker.setIcon('/image/map_marker_wine.png');
+                            if (active_marker) {
+                                active_marker.setIcon('/image/map_marker_wine.png');
                             }
-                            activemarker = markers[$(this).attr('data-index') - 1];
-                            activemarker.setIcon('/image/map_marker_wine_active.png');
-                            map.panTo(activemarker.getPosition());
+                            active_marker = markers[$(this).attr('data-index') - 1];
+                            active_marker.setIcon('/image/map_marker_wine_active.png');
+                            map.panTo(active_marker.getPosition());
+                            markers.setMap(map)
+
                         });
                         // first active
                         if (markers.length) {

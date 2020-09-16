@@ -2294,6 +2294,7 @@ span.currency {
 #wheretobuy .addresses .address.selected, #wheretobuy .addresses .address {
     background: #261F30;
     border-bottom: 1px solid #DDD;
+    cursor: pointer;
 }
 
 #wheretobuy .addresses .address h2 {
@@ -2355,7 +2356,12 @@ span.currency {
         font-size: 2.5vh
     }
 }
-
+.set-buy-btn:hover, .set-buy-btn.active {
+    background-color: #261F30;
+}
+.imennoe #content {
+    padding: 0;
+}
 
 
 

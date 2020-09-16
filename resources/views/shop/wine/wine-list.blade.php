@@ -33,13 +33,13 @@
                             </div>
                             <div class="button_cont">
                                 <div class="prod_quantity">
-                                    <span class="qua_mins"></span>
-                                    <input type="number" class="quantity" data-id="{{$wine->id}}"
+                                    <span class="qua_mins" onclick="qua_mins({{$wine->id}})"></span>
+                                    <input type="number" class="quantity" id="wine-{{$wine->id}}"
                                            value="1">
-                                    <span class="qua_plus"></span>
+                                    <span class="qua_plus" onclick="qua_plus({{$wine->id}})"></span>
                                 </div>
                                 <button id="button-carts" class="cart-btn-{{$wine->id}}"
-                                        onclick="cart_add('{{$wine->id}}', 1, 'wine');">
+                                        onclick="cart_add('{{$wine->id}}', 1, 'wine');$(this).addClass('active')">
                                     <span>В корзину</span></button>
                             </div>
                         </div>

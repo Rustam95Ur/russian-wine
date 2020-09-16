@@ -35,7 +35,6 @@ $(document).ready(function () {
 
     var url_parameters = window.location.search;
     if (url_parameters.length === 0) clear_for_load()
-    console.log(url_parameters)
     $(document).on('click', '.pagination a', function (event) {
         event.preventDefault();
 
@@ -63,6 +62,7 @@ function wine_filter_search(filter, page = 1) {
         console.log(ajaxOptions)
         console.log(thrownError)
     });
+
     filter_breadcrumb()
 
 }
@@ -240,3 +240,5 @@ function search(type) {
         $('#btnCollapse-' + type).hide()
     }
 }
+
+

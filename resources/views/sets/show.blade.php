@@ -79,14 +79,12 @@
                             @if(!$set->sale)
                                 <div class="quantity_quickorder" id="sety-calc">
                                     <p>Количество сетов</p>
-                                    <span id="qminus"><input type="button" id="decrease_quickorder"
-                                                             onclick="button_minus();">
+                                    <span id="qminus"><input type="button" onclick="button_minus({{$set->id}});">
                                     <img alt="minus_image" src="{{asset('image/white_minus.png')}}"></span>
                                     <input type="text" data-quantity="1" class="qty_quickorder" name="quantity"
-                                           id="htop_quickorder1" size="2" value="1">
+                                           id="set_qua" size="2" value="1">
                                     <span id="qplus">
-                                    <input type="button" id="increase_quickorder" value=""
-                                           onclick="button_plus();">
+                                    <input type="button" onclick="button_plus({{$set->id}});">
                                     <img alt="plus_image" src="{{asset('image/white_plus.png')}}"></span>
                                 </div>
                                 <span class="set-price">{{$set->price}} <span>о</span>
@@ -97,7 +95,7 @@
 		                        </div>
 	                        </span>
                                 <button class="add-cart  set-buy-btn btn-danger"
-                                        onclick="cart_add('{{$set->id}}', 1, 'set');">в
+                                        onclick="cart_add('{{$set->id}}', 1, 'set');$(this).addClass('active')">в
                                     корзину
                                 </button>
                             @else
@@ -109,7 +107,7 @@
                                    </div>
 	                            </span>
                                 <button class="add-cart set-buy-btn btn-danger"
-                                        onclick="cart_add('{{$set->id}}', 1, 'set');">в
+                                        onclick="cart_add('{{$set->id}}', 1, 'set');$(this).addClass('active')">в
                                     корзину
                                 </button>
                             @endif
@@ -201,37 +199,29 @@
     @push('scripts')
 
         <script type="text/javascript"><!--
-            function button_plus() {
-                document.getElementById("htop_quickorder1").value++;
-                var count = document.getElementById("htop_quickorder1").value;
-                var total = {{$set->price}} *
-                count;
+            function button_plus(set_id) {
+                var input_val = parseInt($('#set_qua').val()) + 1
+                $('#set_qua').val(input_val)
+                var total = {{$set->price}} * input_val
                 @if($set->sale)
                 $('.set-price').html(total + ' <span>о</span> <div id="skidka">-{{$set->sale}}%</div>');
                 @else
                 $('.set-price').html(total + ' <span>о</span>');
                 @endif
-
-                var asd = $('#htop_quickorder1').attr('data-quantity');
-                $('#htop_quickorder1').attr('data-quantity', ++asd);
+                $('.add-cart').attr("onclick", "cart_add('" + set_id + "', '" + input_val + "', 'set'); $(this).addClass('active')");
             }
 
-            function button_minus() {
-                var button_val = $('#htop_quickorder1').val();
-                if (button_val > 1) {
-                    document.getElementById("htop_quickorder1").value--;
-                    var count = document.getElementById("htop_quickorder1").value;
-                    if (count > 0) {
-                        var total = {{$set->price}} *
-                        count;
-                        @if($set->sale)
-                        $('.set-price').html(total + ' <span>о</span> <div id="skidka">-{{$set->sale}}%</div>');
-                        @else
-                        $('.set-price').html(total + ' <span>о</span>');
-                        @endif
-                        var asd = $('#htop_quickorder1').attr('data-quantity');
-                        $('#htop_quickorder1').attr('data-quantity', asd - 1);
-                    }
+            function button_minus(set_id) {
+                var input_val = parseInt($('#set_qua').val()) - 1
+                if (input_val > 0) {
+                    $('#set_qua').val(input_val)
+                    var total = {{$set->price}} * input_val
+                    @if($set->sale)
+                    $('.set-price').html(total + ' <span>о</span> <div id="skidka">-{{$set->sale}}%</div>');
+                    @else
+                    $('.set-price').html(total + ' <span>о</span>');
+                    @endif
+                    $('.add-cart').attr("onclick", "cart_add('" + set_id + "', '" + input_val + "', 'set'); $(this).addClass('active')");
                 }
 
             }
