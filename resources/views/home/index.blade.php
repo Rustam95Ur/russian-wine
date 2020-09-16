@@ -315,13 +315,13 @@
                                     <ul>
 
                                         <li>
-                                            @if($wine->winery)
-                                                <p><a class="text-black" href="{{route('winery', $wine->winery->slug)}}">{{$wine->winery->title}}</a> </p>
+                                            @if($winemaker->winery)
+                                                <p><a class="text-black" href="{{route('winery', $winemaker->winery->slug)}}">{{$winemaker->winery->title}}</a> </p>
                                             @endif
                                         </li>
                                         <li>
-                                            @if($wine->region)
-                                                <p><a class="text-black" href="{{route('region', $wine->region->slug)}}">{{$wine->region->title}}</a> </p>
+                                            @if($winemaker->region)
+                                                <p><a class="text-black" href="{{route('region', $winemaker->region->slug)}}">{{$winemaker->region->title}}</a> </p>
                                             @endif
                                         <li><p>Вина:
                                                 @foreach($winemaker->wines as $wine)
