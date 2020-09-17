@@ -124,6 +124,9 @@ class WineFilter extends QueryFilter
         if ($order) {
             return $this->builder->orderBy('price', $order);
         }
+        else {
+            return $this->builder->orderByRaw('-sort_id DESC');
+        }
     }
 
 }

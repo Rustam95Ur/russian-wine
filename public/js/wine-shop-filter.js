@@ -107,6 +107,8 @@ function filter_breadcrumb() {
 
 function clear_filter() {
     $("input[type=checkbox]").prop('checked', false)
+    $('.custom-select-trigger').text('по умолчанию')
+    $('#inputState').find('option:not(:first)').remove();
     var filter = $('#searching-form').serialize()
     wine_filter_search(filter, '')
     $("input[name=title]").val('')
