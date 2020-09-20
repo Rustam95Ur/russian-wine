@@ -30,7 +30,7 @@ class IndexController extends Controller
 
         $wineries = Winery::where('status', '=', 'ACTIVE')->orderBy('title', 'ASC')
             ->get();
-        $mobile_wineries = $wineries->groupBy(function($item) {
+        $mobile_wineries = $wineries->groupBy(function ($item) {
             return mb_substr($item->title, 0, 1);
         });
         $colors = Color::orderBy('title', 'ASC')->get();
@@ -152,6 +152,10 @@ class IndexController extends Controller
         } else {
             $wines = Wine::where('price', '>', 0)->limit(20)->get();
         }
+        $vintages = Wine::where('status', '=', 'ACTIVE')
+            ->where('price', '>', 0)
+            ->where('vintage_id', '=', $wine->vintage_id)
+            ->get();
         $is_favorite = false;
         if (Auth::guard('client')->user()) {
             $client = Auth::guard('client')->user();
@@ -167,6 +171,7 @@ class IndexController extends Controller
             'wines' => $wines,
             'is_favorite' => $is_favorite,
             'bread_crumbs' => $bread_crumbs,
+            'vintages' => $vintages
 
         ]);
     }
@@ -193,10 +198,15 @@ class IndexController extends Controller
                 }
             }
         }
+        $vintages = Wine::where('status', '=', 'ACTIVE')
+            ->where('price', '>', 0)
+            ->where('vintage_id', '=', $wine->vintage_id)
+            ->get();
         return view('shop.wine.show', [
             'wine' => $wine,
             'wines' => $wines,
             'is_favorite' => $is_favorite,
+            'vintages' => $vintages
         ]);
     }
 

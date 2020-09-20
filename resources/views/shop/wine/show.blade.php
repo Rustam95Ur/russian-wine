@@ -156,34 +156,19 @@
                             <h2 class="region">{{$wine->region->title}}</h2>
                         @endif
                         <div class="col-12">
-                            <h4 class="wineSubtype">Винтаж</h4>
-                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-secondary active">
-                                    <input type="radio" name="options" id="option1" checked="">
-                                    <p>2017 г. </p><i class="priceDefice"></i>
-                                    <p>2 500 р.</p>
-                                </label>
-                                <label class="btn btn-secondary">
-                                    <input type="radio" name="options" id="option1">
-                                    <p>2016 г. </p><i class="priceDefice"></i>
-                                    <p>3 500 р.</p>
-                                </label>
-                                <label class="btn btn-secondary">
-                                    <input type="radio" name="options" id="option1">
-                                    <p>2015 г. </p><i class="priceDefice"></i>
-                                    <p>4 500 р.</p>
-                                </label>
-                                <label class="btn btn-secondary">
-                                    <input type="radio" name="options" id="option1">
-                                    <p>2014 г. </p><i class="priceDefice"></i>
-                                    <p>5 500 р.</p>
-                                </label>
-                                <label class="btn btn-secondary">
-                                    <input type="radio" name="options" id="option1">
-                                    <p>2013 г. </p><i class="priceDefice"></i>
-                                    <p>6 500 р.</p>
-                                </label>
-                            </div>
+                            @if(count($vintages) > 0)
+                                <h4 class="wineSubtype">Винтаж</h4>
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    @foreach($vintages as $vintage)
+                                        <label
+                                            class="btn btn-secondary {{($vintage->id == $wine->id) ? 'active' : '' }}">
+                                            <input type="radio" name="vintage" checked="" value="{{$vintage->slug}}">
+                                            <p>{{$vintage->year}} г. </p><i class="priceDefice"></i>
+                                            <p>{{$vintage->price}} р.</p>
+                                        </label>
+                                    @endforeach
+                                </div>
+                            @endif
                         </div>
                         <div id="product">
                             <div id="priceBlock" class="form-group">
@@ -238,7 +223,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row secondDesc" >
+                <div class="row secondDesc">
                     <div class="col-md-6 description" id="description-info">
                         <h4>Особенности производства</h4>
                         {!! $wine->production_feature !!}
@@ -345,5 +330,10 @@
     @push('scripts')
         <script src="{{ asset('js/cart.js') }}"></script>
         <script src="{{ asset('js/favorite.js') }}"></script>
+        <script>
+            $("input[name='vintage']").on('change', function() {
+                window.location.href=$(this).val();
+            });
+        </script>
     @endpush
 @endsection
