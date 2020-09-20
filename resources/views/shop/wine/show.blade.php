@@ -156,7 +156,7 @@
                             <h2 class="region">{{$wine->region->title}}</h2>
                         @endif
                         <div class="col-12">
-                            @if(count($vintages) > 0)
+                            @if($vintages)
                                 <h4 class="wineSubtype">Винтаж</h4>
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     @foreach($vintages as $vintage)

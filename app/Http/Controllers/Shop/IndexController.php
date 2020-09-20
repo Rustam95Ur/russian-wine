@@ -152,10 +152,15 @@ class IndexController extends Controller
         } else {
             $wines = Wine::where('price', '>', 0)->limit(20)->get();
         }
-        $vintages = Wine::where('status', '=', 'ACTIVE')
-            ->where('price', '>', 0)
-            ->where('vintage_id', '=', $wine->vintage_id)
-            ->get();
+        if ($wine->vintage_id) {
+            $vintages = Wine::where('status', '=', 'ACTIVE')
+                ->where('price', '>', 0)
+                ->where('vintage_id', '=', $wine->vintage_id)
+                ->get();
+        } else {
+            $vintages = 0;
+        }
+
         $is_favorite = false;
         if (Auth::guard('client')->user()) {
             $client = Auth::guard('client')->user();
@@ -198,10 +203,14 @@ class IndexController extends Controller
                 }
             }
         }
-        $vintages = Wine::where('status', '=', 'ACTIVE')
-            ->where('price', '>', 0)
-            ->where('vintage_id', '=', $wine->vintage_id)
-            ->get();
+        if ($wine->vintage_id) {
+            $vintages = Wine::where('status', '=', 'ACTIVE')
+                ->where('price', '>', 0)
+                ->where('vintage_id', '=', $wine->vintage_id)
+                ->get();
+        } else {
+            $vintages = null;
+        }
         return view('shop.wine.show', [
             'wine' => $wine,
             'wines' => $wines,
