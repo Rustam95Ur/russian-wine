@@ -155,7 +155,7 @@
                                 <label for="status">{{ __('product.status.title') }}</label>
                                 <select class="form-control" name="status">
                                     <option value="ACTIVE"@if(isset($dataTypeContent->status) && $dataTypeContent->status == 'ACTIVE') selected="selected"@endif>{{ __('product.status.active') }}</option>
-                                    <option value="INCATIVE"@if(isset($dataTypeContent->status) && $dataTypeContent->status == 'INCATIVE') selected="selected"@endif>{{ __('product.status.inactive') }}</option>
+                                    <option value="INACTIVE"@if(isset($dataTypeContent->status) && $dataTypeContent->status == 'INACTIVE') selected="selected"@endif>{{ __('product.status.inactive') }}</option>
                                 </select>
                             </div>
                             <div class="form-group">
