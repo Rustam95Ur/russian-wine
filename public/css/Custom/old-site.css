@@ -16017,9 +16017,7 @@ header ul li.active span:after {
 }
 
 .product_cont img {
-    width: 37vh;
-    position: absolute;
-    margin-top: -3vh;
+    width: 100%;
 }
 
 .sety-category #sety-banner {
@@ -17975,4 +17973,59 @@ p.likeSlider img {
     width: 22%;
     height: 100%;
     position: absolute;
+}
+.iconSort {
+    position: absolute;
+    right: 2.7vw;
+    top: 0.7vw;
+    height: 0.5vw;
+}
+.sortingTitle {
+    font-size: 0.9vw;
+    line-height: 2.1vw;
+    letter-spacing: -0.01em;
+    color: #726C6C;
+    padding-right: 0.6vw;
+    position: relative;
+    right: 10.5vw;
+    top: -2.3vw;
+}
+@media (min-width: 768px) {
+    #head_f .container {
+        width: 92%!important;
+        margin: 0 auto;
+    }
+    .custom-select {
+        position: relative;
+        display: inline-block;
+        padding: .47vw 2.15vw .47vw 1.174vw;
+        font: 0.9vw ProximaNova-Bold;
+        line-height: normal;
+        height: auto;
+        width: auto;
+        outline: 0;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+        color: #827E7E;
+        border-radius: 25px;
+        left: 11vw;
+        top: -0.2vw;
+    }
+    .iconSort {
+        position: absolute;
+        right: 2.2vw;
+        top: 1vw;
+        height: 0.4vw;
+    }
+    .sortingTitle {
+        font-size: 0.9vw;
+        line-height: 2.1vw;
+        letter-spacing: -0.01em;
+        color: #726C6C;
+        padding-right: 0.6vw;
+        position: relative;
+        right: 9.5vw;
+        top: -2.3vw;
+    }
+    
 }
