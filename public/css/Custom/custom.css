@@ -3178,6 +3178,21 @@ span.currency {
         right: 9.5vw;
         top: -2.3vw;
     }
+    .letter-title {
+        margin-left: 4vw;
+        font-size: 5vw;
+    }
+
+    .filterHeading {
+        font-size: 3vw;
+        text-transform: uppercase;
+        line-height: 2em;
+        margin: 3.5vw 0 1.5vw 4vw;
+    }
+    .collapseBtn span {
+        font-size: 4vw;
+        padding: 1.5vw 2vw 1.5vw 4vw;
+    }
     
 }
 
@@ -3190,6 +3205,53 @@ span.currency {
         padding-top: 0.8vw;
         top: 2vw;
         font-size: 3.5vw;
+    }
+    .sort_label {
+        font-size: 3.5vw;
+        font-weight: normal;
+        color: black;
+        font-family: ProximaNova-reg;
+    }
+    .sortOverlayBtn {
+        background: #da224d;
+        font-size: 3.5vw;
+        text-align: center;
+        border-radius: 25px;
+        border: none;
+        color: #fff;
+        padding: 3.5vw 12vw;
+        line-height: 1.2em;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin: 2vw auto;
+    }
+    .collapseBtn span {
+        font-size: 4vw;
+        padding: .4rem 1rem .4rem 2.5rem;
+    }
+    .SubOverlay .collapseBtn {
+        font: 3vw ProximaNova-Reg, sans-serif;
+        line-height: 3.5em;
+    }
+    .sortOverlayHeader {
+        min-height: 10vw;
+    }
+    .sortOverlayBack {
+        line-height: 10vw;
+    }
+    #liveSearch-form input {
+        padding: 1vw 0;
+        font: 3.5vw ProximaNova-Bold;
+            line-height: normal;
+        width: 100%;
+        line-height: 1.5em;
+        letter-spacing: -0.01em;
+    }
+    .liveSearchIcon {
+        height: 4vw;
+        margin-top: 2vw;
+        margin-right: 2vw;
     }
 }
 
