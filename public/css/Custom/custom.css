@@ -1661,11 +1661,13 @@ span.currency {
 
     .subHeader .pageDesc {
         font-weight: normal;
-        font-size: 1.6rem;
+        font-size: 3.3vw;
         line-height: 1.5em;
         letter-spacing: -0.01em;
         padding-bottom: 1rem;
+        font-family: ProximaNova-Reg;
     }
+    
 }
 
 
@@ -1694,11 +1696,11 @@ span.currency {
 
     h1.pageHeading {
         font-weight: bold;
-        font-size: 3rem;
+        font-size: 8vw;
         line-height: 1.3333em;
         letter-spacing: -0.01em;
         margin-top: 0;
-        margin-bottom: 2rem;
+        margin-bottom: 3vw;
     }
 
     .mobileFilters {
@@ -1727,21 +1729,21 @@ span.currency {
 
     .sortingIconsMobile {
         filter: brightness(0);
-        padding: 1rem 0.5rem 1rem 3rem;
+        padding: 1vw 0.5vw 1vw 8vw;
         float: unset;
-        height: 3.6rem;
+        height: 6vw;
     }
 
     .filtersIconsMobile {
         filter: brightness(0);
-        padding: 1rem .7rem 1rem 5rem;
+        padding: 1vw .7vw 1vw 11vw;
         float: unset;
-        height: 3.8rem;
+        height: 6vw;
     }
 
     .mobileFiltersText {
-        font-size: 1.2rem;
-        line-height: 1.8rem;
+        font-size: 3.5vw;
+        line-height: 3em;
         text-align: center;
         letter-spacing: 0.1em;
         text-transform: uppercase;
@@ -1767,8 +1769,8 @@ span.currency {
     }
 
     .sortOverlayHeader img {
-        padding: 1.5rem 1.2rem 1.5rem 2.1rem;
-        height: 4.4rem;
+        padding: 2vw 2vw 2vw 3vw;
+        height: 7vw;
     }
 
     .sortingOverlay a {
@@ -1925,11 +1927,11 @@ span.currency {
     }
 
     .sortingMobile .form-check input, .sortingMobile .form-check label {
-        font-size: 1.5rem;
-        font-family: ProximaNova-reg, sans-serif;
+        font-size: 3.5vw;
+        font-family: ProximaNova-Reg, sans-serif;
         width: auto;
         outline: 0;
-        line-height: 3.5rem;
+        line-height: 1.5em;
         letter-spacing: -0.01em;
         color: #000000;
         padding: 0;
@@ -1947,10 +1949,11 @@ span.currency {
         display: inline-grid;
         transition: all .3s ease;
         opacity: .3;
-        font-size: 2.5rem;
+        font-size: 3.5rem;
         position: relative;
-        left: -.5rem;
-        top: 0.3rem;
+        left: -1.6vw;
+        top: 0.6vw;
+    
     }
 
     .sortOverlayHeader .sortHeader {
@@ -1960,31 +1963,30 @@ span.currency {
         letter-spacing: -0.01em;
         color: #000000;
         margin: 0;
-        margin-bottom: 2.6rem;
+        margin-bottom: 1vw;
         margin-left: -4rem;
-        height: 20px;
+        height: 10vw;
     }
 
     .sortOverlayClear {
-        font-size: 1.5rem;
-        line-height: 1.6rem;
-        align-items: center;
+        font-size: 4vw;
+        line-height: 1.6em;
         letter-spacing: -0.01em;
         color: #7E7E7E !important;
         font-family: ProximaNova-Reg, sans-serif !important;
         float: left;
-        margin: 1.5rem -5rem 1.5rem 4.5rem;
+        margin: 2vw -6vw 2vw 5.3vw;
     }
 
     .sortOverlayClose {
         padding: 0 !important;
-        height: 1.8rem !important;
+        height: 4vw !important;
         float: right;
-        margin: 1.4rem 0.5rem;
+        margin: 3.4vw 0.5vw;
     }
 
     .tippyTooltip {
-        width: 1.5rem;
+        width: 3vw;
         float: right;
         margin: 1rem 0.6rem;
     }
@@ -2085,13 +2087,22 @@ span.currency {
     }
 
     .featured_cont .swiper-slide .price-vinoteka a {
-        font: 1.8rem 'ProximaNova-Bold';
+        font: 5vw 'ProximaNova-Bold';
+            line-height: normal;
         line-height: normal;
         line-height: 4rem;
     }
+    .button_cont button#button-carts {
+        top: -3vw!important;
+
+    }
+    .wine #button-carts.active {
+        font-size: 2.6vw!important;
+        padding-right: 8vw!important;
+    }
 
     .featured_cont .swiper-slide .meta .price-vinoteka span {
-        font: 1.8rem 'RUBSN' !important;
+        font: 3.8rem 'RUBSN' !important;
         font-style: normal;
         text-transform: none;
     }
@@ -2128,11 +2139,11 @@ span.currency {
     }
 
     .SubOverlay .form-check input, .SubOverlay .form-check label {
-        font-size: 1.5rem;
+        font-size: 3.5vw;
         font-family: ProximaNova-reg, sans-serif;
         width: auto;
         outline: 0;
-        line-height: 3.5rem;
+        line-height: 1.5em;
         letter-spacing: -0.01em;
         color: #000000;
         padding: 0;
@@ -2213,7 +2224,9 @@ span.currency {
         height: unset;
     }
 }
-
+.mobileToShop a.pageControl {
+    display: none;
+}
 @media (min-width: 960px) {
     .mobileHidden {
         display: block;
@@ -2410,9 +2423,261 @@ span.currency {
         margin-right: 10px;
     }
 }
+
+@media (max-width:682px ){
+    #product-product.product-temp1 .showcase {
+        min-height: unset;
+        margin-bottom: 50px;
+    }
+    #product-product.product-temp1 .image img {
+        width: auto;
+        margin-top: 0;
+        max-height: 120vw;
+        min-height: unset;
+    }
+    .button_cont button#button-carts {
+        padding: 0.417vw 1.563vw 0.417vw 3.125vw;
+        font: 3.8vw 'ProximaNova-Bold';
+        color: #fff;
+        text-transform: uppercase;
+        float: right;
+    }
+    .col-xs-offset-6 {
+        margin-left: 50%!important;
+    }
+    #product-product.product-temp1 .col-xs-6 {
+        width: 50%;
+    }
+    #product-product.product-temp1 .col-xs-6 {
+        padding-left: 12vw;
+        float: left;
+    }
+    #product-product.product-temp1 .col-xs-offset-6 {
+        padding-left: 1vw;
+    }
+    #product-product.product-temp1 .manufacturer a, #product-product .manufacturer a {
+        width: auto;
+        display: block;
+    }
+    #product-product.product-temp1 .manufacturer, #product-product .manufacturer {
+        height: unset;
+        line-height: 2.5em;
+        text-align: left;
+        border-bottom: none;
+        padding-right: 0;
+        margin-left: auto;
+        font-size: 10px;
+        float: right;
+        margin-bottom: 5vw;
+    }
+
+    #product-product.product-temp1 .aging .iblock, #product-product .aging .iblock {
+        text-align: left;
+        position: relative;
+        width: 100%;
+    }
+    #product-product.product-temp1 .aging, #product-product .aging {
+        line-height: 8em;
+        border-bottom: none;
+        height: unset;
+        float: left;
+        width: 100%;
+        margin-top: -7em;
+        padding-left: 14vw;
+        text-align: left;
+    }
+
+    #product-product.product-temp1 .alcohol, #product-product .alcohol {
+        margin-top: 10vw;
+        color: #DEDDDF;
+        font-size: 8vw;
+        font-weight: 900;
+        text-align: right;
+        white-space: nowrap;
+        padding-left: 0.5em;
+    }
+
+    #product-product.product-temp1 .amount {
+        border-bottom: none;
+        height: unset;
+        margin-top: 0;
+        line-height: 6em;
+        padding-left: 14vw;
+        margin-left: auto;
+        text-align: left;
+        width: 100%;
+    }
+    #product-product.product-temp1 .amount .iblock {
+        text-align: left;
+        border-bottom: 1px solid #E1E1E1;
+        width: 100%;
+    }
+
+    #product-product.product-temp1 .species, #product-product .species {
+        margin-top: unset;
+        text-align: right;
+        padding-right: 0;
+        border-bottom: none;
+        height: unset;
+        line-height: 2em;
+        position: relative;
+        margin-left: -6vw;
+        float: left;
+    }
+
+    #product-product.product-temp1 .species .iblock span {
+        font-weight: 900;
+        text-transform: uppercase;
+        padding-top: 3vw;
+    }
+
+    #product-product.product-temp1 .row .col-xs-6 .species img {
+        position: absolute;
+        top: 10.5vw;
+        left: 12vw;
+    }
+
+    #product-product.product-temp1 .volume {
+        margin-top: 120px;
+        font-size: 9vw;
+        font-weight: 900;
+        text-align: left;
+        padding-left: 19vw;
+        color: #DEDDDF;
+        margin-top: 7vw !important;
+    }
+
+    .btn-danger {
+        background: #da224d;
+        font: 1.4rem ProximaNova-Reg;
+        text-align: center;
+        letter-spacing: 0.1em;
+        border-radius: 50px;
+        border: none;
+        padding: 4vw 12vw;
+        color: #fff;
+        text-transform: uppercase;
+        transition: .2s all linear;
+        display: inline-block;
+        font-weight: 800;
+        height: unset !important;
+        width: unset !important;
+    }
+    #cart-cart .remove button {
+        top: 5vw;
+        left: 1rem;
+        padding: 0;
+        border-radius: 0;
+        width: 6vw !important;
+        height: 6vw !important;
+    }
+    .auth_modal .form-control {
+        margin: 1.041vw auto;
+        background: transparent;
+        border: none;
+            border-bottom-color: currentcolor;
+            border-bottom-style: none;
+            border-bottom-width: medium;
+        border-bottom: 2px solid #ffffff;
+        color: #ffffff;
+        padding-left: 0;
+        border-radius: 0;
+        outline: 0 !important;
+        box-shadow: none;
+        display: block;
+        float: none;
+        width: 80%;
+    }
+    .close {
+        background: transparent;
+        position: absolute;
+        top: 30vw;
+        right: 10vw;
+        border: none;
+        box-shadow: none;
+    }
+    .login_container .btn-danger {
+        background: #da224d;
+        font: 3.5vw ProximaNova-bold;
+        text-align: center;
+        letter-spacing: -.01em;
+        border-radius: 50px;
+        border: none;
+        padding: 2.5rem 15rem;
+        color: #fff;
+        float: none;
+        margin: 8vw auto 4vw;
+    }
+    .auth_modal {
+        margin-top: 50vw;
+    }
+    #register_modal .auth_modal {
+        margin-top: 30vw;
+    }
+    .mobileToShop a.pageControl {
+        filter: brightness(0.6);
+        position: relative;
+        top: 0vw;
+        right: 3vw;
+        float: right;
+        display: block;
+        z-index: 1;
+    }
+
+}
+
 @media (max-width:321px) {
     #modal_sviaz #feedsend {
         font-size: 2vh
+    }
+    .auth_modal .form-control {
+        margin: 1.041vw auto;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid #ffffff;
+        color: #ffffff;
+        padding-left: 0;
+        border-radius: 0;
+        outline: 0 !important;
+        box-shadow: none;
+        display: block;
+        float: none;
+        width: 80%;
+    }
+    .close {
+        background: transparent;
+        position: absolute;
+        top: 30vw;
+        right: 10vw;
+        border: none;
+        box-shadow: none;
+    }
+    .login_container .btn-danger {
+        background: #da224d;
+        font: 3.5vw ProximaNova-bold;
+        text-align: center;
+        letter-spacing: -.01em;
+        border-radius: 50px;
+        border: none;
+        padding: 2.5rem 15rem;
+        color: #fff;
+        float: none;
+        margin: 8vw auto 4vw;
+    }
+    .auth_modal {
+        margin-top: 50vw;
+    }
+    #register_modal .auth_modal {
+        margin-top: 30vw;
+    }
+    .mobileToShop a.pageControl {
+        filter: brightness(0.6);
+        position: relative;
+        top: 0vw;
+        right: 3vw;
+        float: right;
+        display: block;
+        z-index: 1;
     }
 }
 
@@ -2916,7 +3181,17 @@ span.currency {
     
 }
 
-
+@media (max-width:768px){
+    .pagination > .active > span {
+        height: 8vw;
+        width: 8vw;
+        padding: 0.5vw;
+            padding-top: 0.5vw;
+        padding-top: 0.8vw;
+        top: 2vw;
+        font-size: 3.5vw;
+    }
+}
 
 
 

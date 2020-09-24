@@ -20,6 +20,11 @@
                                 Вернуться в каталог
                             </a>
                         </div>
+                        <div class="mobileToShop">
+                            <a href="{{route('wine-shop')}}" class="pageControl">
+                                    <img alt="close_icon" src="http://dev.wine/image/closeicon.png">
+                            </a>
+                        </div>
                         <div class="showcase">
                             <h2 class="desktopHidden">{{$wine->title}}</h2>
                             <div>
