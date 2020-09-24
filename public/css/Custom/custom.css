@@ -3270,6 +3270,11 @@ span.currency {
 }
 
 @media (max-width:768px){
+
+    .back img {
+        height: auto !important;
+    }
+
     .pagination > .active > span {
         height: 8vw;
         width: 8vw;

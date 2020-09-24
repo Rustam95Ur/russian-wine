@@ -6840,7 +6840,8 @@ h2.price {
     }
 
     #itog {
-        text-align: center
+        text-align: center;
+        margin-bottom: 20vw;
     }
 
     #itog span + span {
