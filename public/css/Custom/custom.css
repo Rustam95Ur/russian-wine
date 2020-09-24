@@ -2209,7 +2209,7 @@ span.currency {
         margin-right: 3rem;
         margin-bottom: 3rem;
         float: left;
-        min-height: 10rem;
+        /*min-height: 10rem;*/
         height: unset;
     }
 }
