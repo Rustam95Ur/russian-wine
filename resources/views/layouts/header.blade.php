@@ -135,10 +135,10 @@
                                                     <table class="ul-cart" id="cart_table">
                                                         <colgroup>
                                                             <col class="image">
-                                                            <col class="name">
+                                                            <!-- <col class="name">
                                                             <col class="quantity">
                                                             <col class="total">
-                                                            <col class="remove">
+                                                            <col class="remove"> -->
                                                         </colgroup>
                                                         <tbody id="product_buy">
 

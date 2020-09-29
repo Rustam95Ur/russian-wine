@@ -4,7 +4,8 @@
 
 
 html {
-    font-size: 10px
+    font-size: 10px;        
+    overflow-x:hidden;
 }
 @media (max-width:1660px){
     html {
@@ -61,11 +62,11 @@ html {
 }
 
 .button_cont .prod_quantity input {
-    width: 7.995rem;
+    width: 3vw;
     background: transparent;
     border: none;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1vw;
 }
 
 .shopContent .col-md-4:nth-child(3n) > .swiper-slide:hover {
@@ -973,9 +974,9 @@ span.currency {
 
 .priceDefice {
     content: '';
-    width: 10px;
+    width: 0.5vw;
     display: block;
-    height: 2px;
+    height: 0.1vw;
     background: #000;
     position: relative;
     top: 0.8vw;
@@ -1163,15 +1164,15 @@ span.currency {
     line-height: 1.512vw;
     text-align: left;
     border-bottom: none;
-    padding-left: 8vw;
-    padding-right: 0;
-    margin-left: auto;
     font-size: 0.834vw;
+    width: 100%;
+    padding: 0;
 }
 
-#product-product.product-temp1 .manufacturer .iblock, #product-product .manufacturer .iblock {
+#product-product.product-temp1 .amount .iblock {
     text-align: left;
     border-bottom: 1px solid #E1E1E1;
+    padding-left: 8vw;
 }
 
 #product-product.product-temp1 .type, #product-product .type {
@@ -1179,15 +1180,15 @@ span.currency {
     margin-top: 4.69vw;
     padding-left: 0;
     border-bottom: 1px solid #E1E1E1;
-    line-height: 1.512vw;
-    font-size: 0.834vw;
+    line-height: 1.5;
+    font-size: 1.4vw;
     font-weight: 900;
     text-transform: uppercase;
 }
 
 #product-product.product-temp1 .aging, #product-product .aging {
     text-align: right;
-    padding-left: 8vw;
+    padding-left: 0;
     line-height: 1.512vw;
     border-bottom: none;
     font-size: 0.834vw;
@@ -1197,6 +1198,8 @@ span.currency {
 
 #product-product.product-temp1 .aging .iblock, #product-product .aging .iblock {
     border-bottom: 1px solid #E1E1E1;
+    width: 100%;
+    padding-left: 6.5vw;
 }
 
 #product-product.product-temp1 .alcohol, #product-product .alcohol {
@@ -1215,11 +1218,12 @@ span.currency {
     height: 1.512vw;
     margin-top: 3.127vw;
     line-height: 1.512vw;
-    padding-left: 8vw;
-    max-width: 400px;
+    padding-left: 0;
+    max-width: unset;
     margin-left: auto;
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 2vw;
+    padding-right: unset;
 }
 
 #product-product.product-temp1 .amount .iblock {
@@ -1227,47 +1231,71 @@ span.currency {
     border-bottom: 1px solid #E1E1E1;
 }
 
+#product-product.product-temp1 .manufacturer .iblock, #product-product .manufacturer .iblock {
+    text-align: right;
+    width: 100%;
+    border-bottom: 1px solid #E1E1E1;
+}
+
 #product-product.product-temp1 .species, #product-product .species {
     margin-top: 3.388vw;
     text-align: right;
-    padding-right: 12vw;
+    padding-right: 0;
     border-bottom: none;
     font-size: 0.834vw;
     height: 1.512vw;
     line-height: 1.512vw;
     position: relative;
-    margin-left: auto;
+    margin-left: 0;
+}
+.bigDesc svg {
+    width: 1vw;
+    height: 1vw;
+}
+.col-md-6.decsRightSide .social img, .col-md-6.decsRightSide .social svg {
+    width: 1.4vw;
+    height: 1.4vw;
 }
 
 #product-product.product-temp1 .species .iblock, #product-product .species .iblock {
     border-bottom: 1px solid #E1E1E1;
+    width: 100%;
+    padding-right: 9vw;
 }
 
 #product-product.product-temp1 .species img {
     position: absolute;
-    top: 3vw;
-}
-
-#product-product.product-temp1 .volume {
-    margin-top: 120px;
-    font-size: 3.127vw;
-    font-weight: 900;
-    text-align: left;
-    padding-left: 8vw;
-    color: #DEDDDF;
+    top: 3.1vw;
+    left: 5vw;
+    height: 5vw;
 }
 
 .decsRightSide .social .one-social {
     color: #979797;
     background: transparent;
-    width: 55px;
-    height: 55px;
+    width: 2.9vw;
+    height: 2.9vw;
+    padding-top: 0.8vw;
+    text-align: center;
+    display: table;
+    clear: both;
+    margin: 0 0 2px;
+    font-size: 2vw;
+}
+
+.decsRightSide .social .one-social {
+
+    color: #979797;
+    background: transparent;
+    width: 2.9vw;
+    height: 2.9vw;
     padding-top: 16px;
     text-align: center;
     display: table;
     clear: both;
     margin: 0 0 2px;
     font-size: 21px;
+
 }
 
 .desktopHidden {
@@ -1352,14 +1380,16 @@ span.currency {
     }
 
     .button_cont .prod_quantity input {
-        width: 5rem;
+        width: 3vw;
         background: transparent;
             background-size: auto;
+        background-size: auto;
         border: none;
         text-align: center;
-        font-size: 2rem;
-        line-height: 2rem;
+        font-size: 1.2vw;
+        line-height: 1vw;
     }
+
 
 }
 /* Shop page end */
@@ -1625,8 +1655,8 @@ span.currency {
         border: none;
         border-radius: 25px;
         position: absolute;
-        bottom: 5px;
-        top: auto;
+        bottom: 0;
+        top: 1.3vw !important;
         right: 10px;
         background-size: 3.611vw auto;
         background-position: center;
@@ -3136,6 +3166,43 @@ span.currency {
         top: 1vw;
         height: 0.4vw;
     }
+    .priceContainer .button_cont button#button-carts {
+        left: 1.7vw;
+    }
+    .prod_quantity.col-md-cstm span:first-child, .prod_quantity.col-md-cstm span:last-child {
+        background-size: contain !important;
+    }
+    .sortingTitle {
+        font-size: 0.9vw;
+        line-height: 2.1vw;
+        letter-spacing: -0.01em;
+        color: #726C6C;
+        padding-right: 0.6vw;
+        position: relative;
+        right: 9.5vw;
+        top: -2.3vw;
+    }
+    .letter-title {
+        margin-left: 4vw;
+        font-size: 5vw;
+    }
+
+    .filterHeading {
+        font-size: 3vw;
+        text-transform: uppercase;
+        line-height: 2em;
+        margin: 3.5vw 0 1.5vw 4vw;
+    }
+    .collapseBtn span {
+        font-size: 4vw;
+        padding: 1.5vw 2vw 1.5vw 4vw;
+    }
+    .priceContainer .button_cont button#button-carts {
+        left: 1.7vw;
+    }
+    .prod_quantity.col-md-cstm span:first-child, .prod_quantity.col-md-cstm span:last-child {
+        background-size: contain !important;
+    }
 
 }
 
@@ -3193,10 +3260,21 @@ span.currency {
         font-size: 4vw;
         padding: 1.5vw 2vw 1.5vw 4vw;
     }
+    .priceContainer .button_cont button#button-carts {
+        left: 1.7vw;
+    }
+    .prod_quantity.col-md-cstm span:first-child, .prod_quantity.col-md-cstm span:last-child {
+        background-size: contain !important;
+    }
     
 }
 
 @media (max-width:768px){
+
+    .back img {
+        height: auto !important;
+    }
+
     .pagination > .active > span {
         height: 8vw;
         width: 8vw;
@@ -3260,4 +3338,7 @@ span.currency {
 .close {
     filter: alpha(opacity=100);
     opacity: 1;
+}
+#cart-cart tr{
+    min-width: 100%!Important;
 }

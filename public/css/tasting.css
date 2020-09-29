@@ -512,16 +512,17 @@
     color: #242424;
     padding-bottom: 3rem;
     background: #fff;
+    height: 12.5vw;
 }
 
 #tasting-page .product_layout .description h6 {
-    font: 0.98vw 'ProximaNova-Bold';
+    font: 1.28vw 'ProximaNova-Bold';
+        line-height: normal;
     color: #242424;
     text-align: center;
     text-transform: uppercase;
-    line-height: 1.8;
+    line-height: 1.5;
     margin-bottom: 3.6458333333333335vw;
-    height: 3rem;
 }
 
 #tasting-page .product_layout .description .list-inline {
@@ -530,9 +531,8 @@
 }
 
 #tasting-page .product_layout .description li {
-    padding-left: 0.941vw;
-    padding-right: 0.941vw;
-    font: 0.8375vw 'ProximaNova-Reg';
+    padding: 0 1.841vw;
+    font: 0.938vw 'ProximaNova-Reg';
     border-right: 1px solid;
 }
 
@@ -1172,20 +1172,27 @@
     }
 
     #tasting-page .product_layout .description h6 {
-        font-size: 1.5vw;
+        font-size: 1.25vw;
+        line-height: 1.2;
     }
 
     #tasting-page .product_layout .description li {
-        font-size: 1.375vw;
+        font-size: 1.075vw;
     }
 
     #tasting-page .prod_footer .price {
-        font-size: 1.6vw;
+        font-size: 1.3vw;
     }
 
     #tasting-page .prod_footer div {
         font-size: 1.4vw;
-        padding: 2vw 0;
+        padding: 1.4vw 0;
+    }
+    #tasting-page #second_block .inner_ban {
+        max-width: 60.6rem;
+    }
+    #tasting-page #second_block .desc {
+        font-size: 2.21vw;
     }
 }
 
@@ -1615,7 +1622,7 @@
 /* Trigger bootstrap navbar collapse pada viewport <= 1200px */
 @media (max-width: 1200px) {
     #tasting-page #second_block .desc {
-        font-size: 3.61vw;
+        font-size: 2.71vw;
     }
 
     #hhrs.fixed_m {
@@ -2476,8 +2483,8 @@
 
 #tasting-page .contact_info a {
     font-weight: normal;
-    font-size: 2rem;
-    line-height: 3.4rem;
+    font-size: 1.5vw;
+    line-height: 1.2;
     color: #FFFFFF;
 }
 
@@ -2649,9 +2656,9 @@
     }
 
     #tasting-page #question p {
-        font-size: 16px;
+        font-size: 4vw;
         font-weight: normal;
-        line-height: 25px;
+        line-height: 1.2;
         color: white;
         margin-top: 3rem;
         padding: 0 1.5rem;
@@ -2721,22 +2728,21 @@
         margin-bottom: 5rem;
     }
     #tasting-page #testimonials .swiper-inner h5, #tasting-page .slider-1 .swiper-inner h5 {
-        font-size: 2rem;
-
+        font-size: 6vw;
     }
     #tasting-page #testimonials .swiper-inner .testimonial, #tasting-page .slider-1 .swiper-inner .testimonial {
-        font-size: 1.5rem;
-        padding: 1rem;
+        font-size: 4vw;
+        padding: 3vw;
     }
     #tasting-page #testimonials .swiper-inner, #tasting-page .slider-1 .swiper-inner {
         height: 450px;
     }
     #tasting-page #question h2 {
-        font-size: 4rem;
-        line-height: 1;
+        font-size: 9vw;
+        line-height: 3;
     }
     #tasting-page .question_form {
-        padding: 0 2rem 2rem;
+        padding: 2vw 2rem 2rem;
     }
     #tasting-page .question_form .btn {
         width: 100%;
@@ -2752,6 +2758,13 @@
         height: calc(100% + 8rem);
         border-top: 4px solid white;
     }
+    
+#tasting-page .contact_info a {
+    font-weight: normal;
+    font-size: 3.5vw;
+    line-height: 2;
+    color: #FFFFFF;
+}
     #tasting-page #question {
         padding-bottom: 4rem;
     }
@@ -2760,6 +2773,10 @@
         top: 65%;
         display: block;
         position: absolute;
+    }
+    #tasting-page .question_form .btn {
+        background: #ea2b58;
+        font: 2.8vw 'ProximaNova-Bold';
     }
     #tasting-page #testimonials .swiper-slide.swiper-slide-duplicate-active, #tasting-page #testimonials .swiper-slide.swiper-slide-active {
         transform: scale(100%);

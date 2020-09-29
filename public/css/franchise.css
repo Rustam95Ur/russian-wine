@@ -63,7 +63,7 @@
     background: url('/image/bg/Franchise-LtGrayBg.png');
     background-size: auto;
     background-repeat: repeat-y;
-    background-position: 102%;
+    background-position: 33vw;
 }
 
 #franchise .searching {
@@ -97,16 +97,16 @@
 }
 
 #franchise .get-partner-block {
-    margin-top: -100px;
+    margin-top: -5.6vw;
     height: auto;
-    padding: 80px 130px 0 160px;
+    padding: 4.169vw 6.775vw 0 8.338vw;
 }
 
 #franchise .get-partner-block h3 {
     color: white;
-    font-size: 4rem;
+    font-size: 2vw;
     margin: 0;
-    line-height: 4rem;
+    line-height: 1;
 }
 
 #franchise .get-partner-result-block {
@@ -118,9 +118,9 @@
 
 #franchise .get-partner-result-block h4 {
     color: white;
-    padding-left: 30px;
+    padding-left: 2vw;
     border-left: 0;
-    font-size: 20px;
+    font-size: 1.35vw;
 }
 
 #franchise .get-partner-result-block h4::before {
@@ -203,7 +203,7 @@
     background: url('/image/bg/Franchise-LtGrayBg.png');
     background-size: auto;
     background-repeat: repeat-y;
-    background-position-x: 120%;
+    background-position-x: 33vw;
 }
 
 #franchise .heading-wrap h1 {
@@ -417,6 +417,115 @@
     font-size: 4rem;
     text-align: left;
 }
+
+@media (max-width:1200px){
+    #franchise .heading-wrap h1 {
+        font-size: 3.909vw;
+        color: #fff;
+        text-align: center;
+        margin: 0;
+        padding: 11.465vw;
+        line-height: 4.2vw;
+        letter-spacing: -.01em;
+    }
+    #franchise .title-shop {
+        font-size: 7.817vw;
+        letter-spacing: 0.462em;
+        color: rgba(255,255,255,0.05);
+        white-space: nowrap;
+        text-align: center;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        z-index: 0;
+        text-transform: uppercase;
+        margin-top: 2vw;
+        margin-left: -25px;
+        margin-right: -15px;
+        margin-bottom: -2.4vw;
+    }
+    #franchise .header-image-box .text-block h2 {
+        font-size: 1.564vw;
+        line-height: 2.085vw;
+        margin-top: 0;
+    }
+    #franchise .heading-wrap p {
+        font-size: 1.043vw;
+        font-weight: 400;
+        padding-top: 2.085vw;
+        line-height: 1.564vw;
+        font-family: 'Lato', Open Sans;
+        letter-spacing: .01em;
+        position: absolute;
+        top: 70%;
+        padding-right: 4.169vw;
+    }
+    #franchise .header-image-box img {
+        height: 18.239vw;
+    }
+    #franchise .searching p {
+        font-size: 2.085vw;
+        font-family: 'ProximaNova-Bold';
+        line-height: 2.606vw;
+        margin-top: 2.085vw;
+        margin-right: 0.782vw;
+        letter-spacing: -.01em;
+    }
+    #franchise .searching-result p {
+        font-size: 1.043vw;
+        text-transform: uppercase;
+        padding-bottom: 0;
+        line-height: 2.8665vw;
+        letter-spacing: 0.2em;
+        font-family: 'ProximaNova-Xbold';
+    }
+    #franchise .searching-result h4 {
+        font-size: 5.2115vw;
+        font-weight: 900;
+        color: #da224d;
+        text-transform: uppercase;
+        margin-top: 0;
+        line-height: 2.8662vw;
+        margin-bottom: 2.085vw;
+    }
+    #franchise .searching-result h4 b {
+        font-size: 3.127vw;
+        top: -1.303vw;
+        position: relative;
+        left: 0;
+    }
+    #franchise .col-md-12.mb-sm h2 {
+        font-family: 'ProximaNova-Bold';
+        font-size: 2.085vw;
+        font-weight: 400;
+        line-height: 2.345vw;
+    }
+    #franchise .requirement-right-box p {
+        font-weight: 100;
+        margin-top: 1.824vw;
+        font-size: 1.282vw;
+        line-height: 1.6;
+    }
+    #franchise .contact h2 {
+        margin: 0;
+        line-height: 2.6vw;
+        font-size: 2.085vw;
+        text-align: left;
+    }
+
+    #franchise .get-partner-block {
+        margin-top: -4.6vw;
+        height: auto;
+        padding: 4.169vw 6.775vw 3vw 8.338vw;
+    }
+    #franchise .get-partner-result-block {
+        border: 1px solid #524d59;
+        padding: 1.564vw 1.564vw 1.564vw 0;
+        margin-top: 1.6vw !important;
+        height: 7.817vw;
+    }
+}
+
 
 @media (max-width: 767px) {
     #franchise .russian-wine h2 {

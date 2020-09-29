@@ -162,8 +162,8 @@ h2 {
 
 h3 {
     font-family: 'ProximaNova-Bold';
-    font-size: 21px;
-    font-weight: 400
+    font-size: 1vw;
+    font-weight: 400;
 }
 
 h4 {
@@ -2582,13 +2582,12 @@ header #form-language .language-select {
 
 
 
-#product-product.product-temp1 .showcase,
-#product-product .showcase {
+#product-product.product-temp1 .showcase, #product-product .showcase {
     position: relative;
-    min-height: 1250px;
+    min-height: 65vw;
     -moz-transition: .5s all linear;
     -webkit-transition: .5s all linear;
-    transition: .5s all linear
+    transition: .5s all linear;
 }
 
 #product-product.product-temp1 .iblock,
@@ -2617,13 +2616,12 @@ header #form-language .language-select {
     height: 0
 }
 
-#product-product.product-temp1 .image img,
-#product-product .image img {
-    height: 1038px;
+#product-product.product-temp1 .image img, #product-product .image img {
+    height: 55vw;
     width: auto;
     -moz-transition: .5s all linear;
     -webkit-transition: .5s all linear;
-    transition: .5s all linear
+    transition: .5s all linear;
 }
 
 #product-product.product-temp1 .showcase.scrolled,
@@ -2678,11 +2676,10 @@ header #form-language .language-select {
     text-align: right
 }
 
-#product-product.product-temp1 .manufacturer .iblock span,
-#product-product .manufacturer .iblock span {
-    font-size: 20px;
+#product-product.product-temp1 .manufacturer .iblock span, #product-product .manufacturer .iblock span {
+    font-size: 1.4vw;
     font-weight: 900;
-    text-transform: uppercase
+    text-transform: uppercase;
 }
 
 #product-product.product-temp1 .type,
@@ -2698,11 +2695,11 @@ header #form-language .language-select {
     max-width: 400px
 }
 
-#product-product.product-temp1 .type img,
-#product-product .type img {
+#product-product.product-temp1 .type img, #product-product .type img {
     vertical-align: bottom;
-    padding-bottom: 6px;
-    padding-right: 10px
+    padding-bottom: 0.5vw;
+    padding-right: 0;
+    height: 4vw;
 }
 
 #product-product.product-temp1 .alcohol,
@@ -2723,14 +2720,12 @@ header #form-language .language-select {
     top: -6px
 }
 
-#product-product.product-temp1 .aging,
-#product-product .aging {
-    text-align: left;
-    padding-left: 230px;
-    border-bottom: 1px solid #E1E1E1;
-    line-height: 36px;
-    height: 36px;
-    max-width: 450px
+#product-product.product-temp1 .aging .iblock span, #product-product .aging .iblock span {
+    font-size: 1.4vw;
+    font-weight: 900;
+    display: inline-block;
+    line-height: 1.2;
+    text-transform: uppercase;
 }
 
 #product-product.product-temp1 .aging .iblock,
@@ -2739,13 +2734,12 @@ header #form-language .language-select {
     position: relative
 }
 
-#product-product.product-temp1 .aging .iblock span,
-#product-product .aging .iblock span {
-    font-size: 18px;
+#product-product.product-temp1 .aging .iblock span, #product-product .aging .iblock span {
+    font-size: 1.5vw;
     font-weight: 900;
     display: inline-block;
-    line-height: 30px;
-    text-transform: uppercase
+    line-height: 1.2;
+    text-transform: uppercase;
 }
 
 #product-product.product-temp1 .aging .iblock .icon-icon_barrel,
@@ -2779,10 +2773,11 @@ header #form-language .language-select {
     position: relative
 }
 
-#product-product.product-temp1 .species .iblock span {
-    font-size: 18px;
+#product-product.product-temp1 .amount .iblock span {
+    font-size: 1.8vw;
     font-weight: 900;
-    text-transform: uppercase
+    text-transform: uppercase;
+    line-height: 1.2;
 }
 
 #product-product.product-temp1 .species img {
@@ -2791,12 +2786,12 @@ header #form-language .language-select {
 }
 
 #product-product.product-temp1 .volume {
-    margin-top: 120px;
-    font-size: 60px;
+    margin-top: 12vw;
+    font-size: 3vw;
     font-weight: 900;
     text-align: left;
-    padding-left: 230px;
-    color: #DEDDDF
+    color: #DEDDDF;
+    padding-left: 10vw;
 }
 
 #product-product.product-temp1 .amount {
@@ -2816,18 +2811,20 @@ header #form-language .language-select {
 }
 
 #product-product.product-temp1 .amount .iblock span {
-    font-size: 18px;
+    font-size: 1.8vw;
     font-weight: 900;
-    text-transform: uppercase
-}
+    text-transform: uppercase;
+    line-height: 1;
+}   
 
 #product-product.product-temp1 .amount .iblock .bottles {
     vertical-align: super;
-    font-size: 14px;
+    font-size: 1.2vw;
     position: relative;
     display: inline-block;
-    top: 4px;
-    padding-left: 4px
+    top: 0.4vw;
+    padding-left: 0;
+    line-height: 1;
 }
 
 #product-product.product-temp1 .descriptions {
@@ -6843,7 +6840,8 @@ h2.price {
     }
 
     #itog {
-        text-align: center
+        text-align: center;
+        margin-bottom: 20vw;
     }
 
     #itog span + span {
@@ -17974,22 +17972,7 @@ p.likeSlider img {
     height: 100%;
     position: absolute;
 }
-.iconSort {
-    position: absolute;
-    right: 2.7vw;
-    top: 0.7vw;
-    height: 0.5vw;
-}
-.sortingTitle {
-    font-size: 0.9vw;
-    line-height: 2.1vw;
-    letter-spacing: -0.01em;
-    color: #726C6C;
-    padding-right: 0.6vw;
-    position: relative;
-    right: 10.5vw;
-    top: -2.3vw;
-}
+
 @media (min-width: 768px) {
     #head_f .container {
         width: 92%!important;
