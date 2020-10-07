@@ -4,7 +4,7 @@
 
 
 html {
-    font-size: 10px;        
+    font-size: 10px;
     overflow-x:hidden;
 }
 @media (max-width:1660px){
@@ -1172,6 +1172,7 @@ span.currency {
 
 .prod_quantity.col-md-cstm span {
     transform: scale(0.56);
+    cursor: pointer;
 }
 
 .prod_quantity.col-md-cstm input {
@@ -1720,7 +1721,7 @@ span.currency {
         padding-bottom: 1rem;
         font-family: ProximaNova-Reg;
     }
-    
+
 }
 
 
@@ -2006,7 +2007,7 @@ span.currency {
         position: relative;
         left: -1.6vw;
         top: 0.6vw;
-    
+
     }
 
     .sortOverlayHeader .sortHeader {
@@ -3168,7 +3169,7 @@ span.currency {
         left: 11vw;
         top: -0.2vw;
     }
-    
+
 }
 
 @media (max-width: 1024px) and (min-width: 992px)  {
@@ -3297,7 +3298,7 @@ span.currency {
     .prod_quantity.col-md-cstm span:first-child, .prod_quantity.col-md-cstm span:last-child {
         background-size: contain !important;
     }
-    
+
 }
 
 @media (max-width:768px){

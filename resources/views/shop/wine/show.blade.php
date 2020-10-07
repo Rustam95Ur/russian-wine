@@ -181,8 +181,9 @@
                                     <div class="button_cont">
                                         <div class="col-md-6">
                                             <div class="price-vinoteka col-md-12">
-                                                <a href="#" class="preview">{{$wine->price}} <span
-                                                        class="currency">п</span></a>
+                                                <a href="#" class="preview wine_show_price">{{$wine->price}} <span
+                                                        class="currency ">п</span></a>
+                                                <input type="hidden" value="{{$wine->price}}" class="wine_price">
 
                                             </div>
                                             <div class="col-md-12">
@@ -193,10 +194,10 @@
                                             </div>
                                         </div>
                                         <div class="prod_quantity col-md-cstm">
-                                            <span class="qua_plus"></span>
-                                            <input type="number" class="quantity" data-id="{{$wine->id}}"
+                                            <span class="qua_plus" onclick="qua_plus({{$wine->id}})" ></span>
+                                            <input type="number" class="quantity" id="wine-{{$wine->id}}"
                                                    value="1">
-                                            <span class="qua_mins"></span>
+                                            <span class="qua_mins" onclick="qua_mins({{$wine->id}})"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -246,17 +247,7 @@
                             </div>
                             <div class="col-md-8 companyDesc">
                                 <h3 class="companyTitle">{{$wine->winery->title}}</h3>
-                                <p>
-                                    Крымский негоциантский проект YAIYLA это новое явление в современном российском
-                                    виноделии.
-                                    Негоцианство это не просто<br>
-                                    бизнес, это определённая философия,
-                                    через которую Виталий Маринчук старается выразить самобытную природу Крыма и
-                                    доказать,
-                                    что в этом регионе можно выпускать вина не только высокого качества, но и вина из
-                                    редких,
-                                    автохтонных сортов винограда.
-                                </p>
+                                {!! $wine->winery->description !!}
                                 <a href="{{route('winery', $wine->winery->slug)}}" class="btn btn-secondary toCompany">
                                     Подробнее о винодельне
                                 </a>
