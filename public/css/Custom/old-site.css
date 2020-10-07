@@ -1000,7 +1000,8 @@ header #form-language .language-select {
 }
 
 .information-wine-regions h2 {
-    font-size: 50px
+    font-size: 2.606vw;
+    margin-bottom: 1vw;
 }
 
 .information-wine-regions h3 {
@@ -2584,7 +2585,6 @@ header #form-language .language-select {
 
 #product-product.product-temp1 .showcase, #product-product .showcase {
     position: relative;
-    min-height: 65vw;
     -moz-transition: .5s all linear;
     -webkit-transition: .5s all linear;
     transition: .5s all linear;
@@ -2617,12 +2617,13 @@ header #form-language .language-select {
 }
 
 #product-product.product-temp1 .image img, #product-product .image img {
-    height: 55vw;
+    height: 45vw;
     width: auto;
     -moz-transition: .5s all linear;
     -webkit-transition: .5s all linear;
     transition: .5s all linear;
 }
+
 
 #product-product.product-temp1 .showcase.scrolled,
 #product-product .showcase.scrolled {
@@ -2677,7 +2678,7 @@ header #form-language .language-select {
 }
 
 #product-product.product-temp1 .manufacturer .iblock span, #product-product .manufacturer .iblock span {
-    font-size: 1.4vw;
+    font-size: .938vw;
     font-weight: 900;
     text-transform: uppercase;
 }
@@ -2721,7 +2722,7 @@ header #form-language .language-select {
 }
 
 #product-product.product-temp1 .aging .iblock span, #product-product .aging .iblock span {
-    font-size: 1.4vw;
+    font-size: .938vw;
     font-weight: 900;
     display: inline-block;
     line-height: 1.2;
@@ -2732,14 +2733,6 @@ header #form-language .language-select {
 #product-product .aging .iblock {
     text-align: left;
     position: relative
-}
-
-#product-product.product-temp1 .aging .iblock span, #product-product .aging .iblock span {
-    font-size: 1.5vw;
-    font-weight: 900;
-    display: inline-block;
-    line-height: 1.2;
-    text-transform: uppercase;
 }
 
 #product-product.product-temp1 .aging .iblock .icon-icon_barrel,
@@ -2772,12 +2765,11 @@ header #form-language .language-select {
     text-align: right;
     position: relative
 }
-
 #product-product.product-temp1 .amount .iblock span {
-    font-size: 1.8vw;
+    font-size: 1.147vw;
     font-weight: 900;
     text-transform: uppercase;
-    line-height: 1.2;
+    line-height: 1;
 }
 
 #product-product.product-temp1 .species img {
@@ -2810,16 +2802,9 @@ header #form-language .language-select {
     text-align: right
 }
 
-#product-product.product-temp1 .amount .iblock span {
-    font-size: 1.8vw;
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 1;
-}   
-
 #product-product.product-temp1 .amount .iblock .bottles {
     vertical-align: super;
-    font-size: 1.2vw;
+    font-size: .834vw;
     position: relative;
     display: inline-block;
     top: 0.4vw;
@@ -2899,6 +2884,38 @@ header #form-language .language-select {
 
 
 @media (max-width: 991px) {
+
+    #product-product.product-temp1 .manufacturer .iblock span, #product-product .manufacturer .iblock span {
+        font-size: 1.4vw;
+        font-weight: 900;
+        text-transform: uppercase;
+    }    
+    
+    #product-product.product-temp1 .amount .iblock .bottles {
+        vertical-align: super;
+        font-size: 1.2vw;
+        position: relative;
+        display: inline-block;
+        top: 0.4vw;
+        padding-left: 0;
+        line-height: 1;
+    }
+    
+    #product-product.product-temp1 .aging .iblock span, #product-product .aging .iblock span {
+        font-size: 1.5vw;
+        font-weight: 900;
+        display: inline-block;
+        line-height: 1.2;
+        text-transform: uppercase;
+    }
+
+    #product-product.product-temp1 .amount .iblock span {
+        font-size: 1.8vw;
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 1.2;
+    }
+
     #product-product.product-temp1 .year-dashes {
         height: auto
     }
@@ -17186,7 +17203,7 @@ header ul li.active span:after {
 
 /* new home */
 .featured_cont {
-    padding: 2.3vw 0 5vw;
+    padding: 2.3vw 0 0vw;
     position: relative;
     margin-bottom: 2.083vw;
 }

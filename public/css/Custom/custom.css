@@ -221,6 +221,29 @@ select#inputState:focus {
     /* no standardized syntax available, no ie-friendly solution available */
 }
 
+.information-wine-regions .region-description {
+    font-size: 0.938vw;
+    font-family: ProximaNova-reg;
+    line-height: 1.5;
+}
+
+.information-wine-regions .region-info .wine-species-text {
+    font-family: 'ProximaNova-reg';
+    font-size: .834vw;
+    line-height: 1.3;
+}
+
+.tab-content > .tab-pane {
+    visibility: hidden;
+    display: none!important;
+}
+.tab-content > .active {
+    animation: fadeInDown;
+    animation-duration: 1s;
+    visibility: visible;
+    display: block !important;
+}
+
 .sorting select option {
     font: 1.6rem ProximaNova-Bold;
     line-height: 2rem;
@@ -2260,6 +2283,14 @@ span.currency {
 @media (min-width: 960px) {
     .mobileHidden {
         display: block;
+    }
+    #description-info {
+        padding-top: 6vw;
+        margin-top: -6vw;
+    }
+    .secondDesc .col-md-6.pl-12.row {
+        padding-top: 6vw;
+        margin-top: -6vw;
     }
 
 }
