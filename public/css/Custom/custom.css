@@ -561,7 +561,7 @@ input {
     letter-spacing: 0.1em;
     border-radius: 50px;
     border: none;
-    padding: 1.3rem 4rem;
+    padding: .5vw 2.5vw;
     color: #fff;
     margin-top: 4rem;
     display: inline-block;
@@ -688,7 +688,7 @@ input {
     margin-right: 3rem;
     margin-bottom: 3rem;
     float: left;
-    min-height: 65rem;
+    min-height: 34vw;
 }
 
 .custom-select {
@@ -1164,10 +1164,12 @@ span.currency {
 
 .prod_quantity.col-md-cstm span:last-child {
     background: url('/image/minus.png') top left no-repeat !important;
+    background-size: cover !important;
 }
 
 .prod_quantity.col-md-cstm span:first-child {
     background: url('/image/plus.png') top left no-repeat !important;
+    background-size: cover !important;
 }
 
 .prod_quantity.col-md-cstm span {
@@ -1339,8 +1341,14 @@ span.currency {
 /* shop page */
 @media (max-width: 1661px){
 
+    #swinemakers .swiper-slide {
+        height: 28.469vw;
+        width: 20.833vw;
+        margin: 0 1.380vw;
+        box-shadow: 0px 4px 2.083vw rgba(0, 0, 0, 0.1);
+    }
     .shopContent {
-        margin-top: 8rem;
+        margin-top: 5.5vw;
         padding: 0px 7.9rem;
     }
 
@@ -2335,33 +2343,33 @@ span.currency {
 }
 
 .modalOverflowSlider {
-    width: 100%;
-    overflow-x: scroll;
+    overflow: hidden;
+    margin: 0 auto;
 }
 
 .modalOverflowWrap {
-    width: max-content;
-    overflow-x: hidden;
-    display: inline-block;
-    overflow-y: hidden;
-    min-width: 105%;
-    height: 30rem;
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: inherit;
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: thin;
 }
 
 .modalOverflowWrap a {
-    width: 9rem;
     position: relative;
     top: 0;
     overflow: auto;
-    display: inherit;
-    /*border-right: 1px solid #cecece;*/
+    display: flex;
     padding: 2rem 0;
     text-align: center;
+    min-width: 16.5%;
 }
 
 .modalOverflowWrap .tasting_wine_image {
     width: auto;
-    height: 25rem !important;
+    height: 22vw !important;
     margin: 0 auto;
 }
 
@@ -2749,7 +2757,19 @@ span.currency {
     }
 }
 .set-buy-btn:hover, .set-buy-btn.active {
-    background-color: #261F30;
+    background-color: #da224d;
+}
+.add-cart.set-buy-btn.btn-danger::before {
+    content: '';
+    position: relative;
+    background-image: url(/image/cart.png);
+    background-size: cover;
+    display: inline flow-root list-item;
+    left: -1vw;
+    top: 0.3vw;
+    width: 1vw;
+    height: 1.3vw;
+    list-style: none;
 }
 .imennoe #content {
     padding: 0;
@@ -3373,4 +3393,9 @@ span.currency {
 }
 #cart-cart tr{
     min-width: 100%!Important;
+}
+@media(min-width:1668px){
+    .container {
+        width: 1500px;
+    }
 }

@@ -25,7 +25,7 @@
                             <a id="how_we" href="#how_we_cont">Как мы это делаем</a>
                         </div>
                     </div>
-                    <div class="col-md-4 pl-10">
+                    <div class="col-md-5 pl-10">
                         <img src="{{asset('image/quotes.png')}}"  class="quotes_icon" alt="quotes_icon">
                         <p class="quotes_text">Я продаю и продвигаю Русские Вина в течение 10 лет. Успешно работал на
                             крупных
@@ -33,7 +33,7 @@
                             каждом подробно и интересно: какие вина лучше пить, как правильно выбрать вино, и кто
                             выпускает гаражные вина. Я привожу редкие вина, тираж которых может быть ограничен всего
                             одной бочкой</p>
-                        <div class="col-md-5">
+                        <div class="col-md-4">
                             <img alt="portrait" class="portrait"
                                  src="{{asset('image/page/testing/portrait_img_new.png')}}">
                         </div>
@@ -56,7 +56,7 @@
                 </div>
                 <div class="row">
                     @foreach($tastings as $tasting)
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="product_layout">
                                 <div class="image">
                                     <a class="preview"
@@ -73,18 +73,13 @@
                                         <div class="parametr">
                                             <ul class="list-inline">
                                                 <li>
-                                                    <img alt="user_icon"
-                                                         src="{{asset('image/page/testing/users.png')}}">
                                                     {{$tasting->user_count}} человек
                                                 </li>
                                                 <li>
-                                                    <img alt="time_icon" src="{{asset('image/page/testing/time.png')}}">
                                                     {{$tasting->time}} минут
                                                 </li>
                                                 @if(count($tasting->wines) > 0)
                                                     <li>
-                                                        <img alt="bottle_icon"
-                                                             src="{{asset('image/page/testing/bottle.png')}}">
                                                         {{count($tasting->wines)}} вин
                                                     </li>
                                                 @endif
@@ -94,7 +89,7 @@
                                 </div>
                                 <div class="prod_footer">
                                     <div class="price ">
-                                        {{$tasting->price}} <span class="rub_p">ш</span>/чел.<p></p>
+                                        {{$tasting->price}} <span class="rub_p">ш</span> / чел.<p></p>
                                     </div>
                                     <form method="post" action="{{route('tasting_checkout')}}">
                                         @csrf
@@ -184,6 +179,7 @@
                                     <textarea class="form-control" placeholder="Сообщение"></textarea>
                                 </div>
                                 <button type="submit" class="btn">Отправить</button>
+                                <p class="user_agreement">Нажимая кнопку «Отправить» вы даете согласие на обработку персональных данных в соответствии с условиями Пользовательского соглашения.</p>
                             </form>
                         </div>
                         <div class="col-md-4 col-md-offset-1 contact_info">
@@ -248,52 +244,57 @@
             <div class="shadow_close"
                  onclick="$('#tasting_modal-{{$tasting->id}}').css('display', 'none');$('body').removeClass('nooverflow');"></div>
             <div class="tasting_body">
-                <div class="icon_close"
-                     onclick="$('#tasting_modal-{{$tasting->id}}').css('display', 'none');$('body').removeClass('nooverflow');"></div>
-                <h2>{{$tasting->title}}</h2>
-                <ul class="list-inline">
-                    <li>
-                        {{$tasting->user_count}} человек
-                    </li>
-                    <li>
-                        {{$tasting->time}} минут
-                    </li>
-                    @if(count($tasting->wines) > 0)
+                <div class="tasting-modal-body">
+                    <div class="icon_close"
+                        onclick="$('#tasting_modal-{{$tasting->id}}').css('display', 'none');$('body').removeClass('nooverflow');">
+                        <img src="{{asset('image/plus.png')}}" alt="Close modal">
+                    </div>
+                    <h2>{{$tasting->title}}</h2>
+                    <ul class="list-inline">
                         <li>
-                            {{count($tasting->wines) }} вин
+                            {{$tasting->user_count}} человек
                         </li>
-                    @endif
+                        <li>
+                            {{$tasting->time}} минут
+                        </li>
+                        @if(count($tasting->wines) > 0)
+                            <li>
+                                {{count($tasting->wines) }} вин
+                            </li>
+                        @endif
 
-                </ul>
-                <p class="tasting_desc">{!! $tasting->description  !!}</p>
-                <div class="modalOverflowSlider">
-                  <div class="modalOverflowWrap">
-                      @foreach($tasting->wines as  $wine)
-                          <a href="{{route('wine', $wine->slug)}}">
-                              <img class="tasting_wine_image" src="{{Voyager::image($wine->image)}}" alt="{{$wine->title}}">
-                          </a>
-                      @endforeach
-                  </div>
+                    </ul>
+                    <p class="tasting_desc">{!! $tasting->description  !!}</p>
+                    <div class="modalOverflowSlider">
+                    <div class="modalOverflowWrap">
+                        @foreach($tasting->wines as  $wine)
+                            <a href="{{route('wine', $wine->slug)}}">
+                                <img class="tasting_wine_image" src="{{Voyager::image($wine->image)}}" alt="{{$wine->title}}">
+                            </a>
+                        @endforeach
+                    </div>
+                    </div>
+                    <ul class="tasting_wine_title_list">
+                        @foreach($tasting->wines as $wine)
+                            <li>
+                            Вино {{$wine->title}} {{isset($wine->sugar) ? $wine->sugar->title : '' }},
+                                {{isset($wine->region) ? $wine->region->title : '' }}
+                            </li>
+                        @endforeach
+                    </ul>
                 </div>
-                <ul class="tasting_wine_title_list">
-                    @foreach($tasting->wines as $wine)
-                        <li>
-                           Вино {{$wine->title}} {{isset($wine->sugar) ? $wine->sugar->title : '' }},
-                            {{isset($wine->region) ? $wine->region->title : '' }}
-                        </li>
-                    @endforeach
-                </ul>
-                <hr>
-                <div class="col-md-6"><a class="tasting_price">{{$tasting->price}} ₽ / чел</a></div>
-                <div class="col-md-6">
-                    <form method="post" action="{{route('tasting_checkout')}}">
-                        @csrf
-                        <input type="hidden" name="tasting" value="{{$tasting->id}}">
-                        <a id="deg_order" class="btn-danger" onclick="$(this).closest('form').submit();">Заказать
-                            дегустацию</a>
-                    </form>
+                <div class="tasting-modal-footer">
+                        <div class="col-md-6"><a class="tasting_price">{{$tasting->price}} ₽ / чел</a></div>
+                        <div class="col-md-6">
+                            <form method="post" action="{{route('tasting_checkout')}}">
+                                @csrf
+                                <input type="hidden" name="tasting" value="{{$tasting->id}}">
+                                <a id="deg_order" class="btn-danger" onclick="$(this).closest('form').submit();">Заказать
+                                    дегустацию</a>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
         </div>
     @endforeach
 @endsection

@@ -19,7 +19,7 @@
                 <div class="container-fluid">
                     <h2 class="title-shop">Русское Вино</h2>
                 </div>
-                <div class="container">
+                <div class="container-fluid cont-center">
                     <div class="row">
                         <div class="col-xs-12 col-md-4 mb-md px-3 pl-6">
                             <div class="header-image-box">

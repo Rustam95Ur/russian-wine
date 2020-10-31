@@ -11641,7 +11641,8 @@ section#specials #specials-cont div.col-md-4 {
     display: block;
     margin-top: 2.604vw;
     margin-bottom: 3.385vw;
-    font: .677vw latoheavy;
+    font: .887vw ProximaNova-bold;
+        line-height: normal;
     text-align: center;
     line-height: 2.604vw;
     text-transform: uppercase;
@@ -11651,6 +11652,7 @@ section#specials #specials-cont div.col-md-4 {
     width: 10.416vw;
     color: #fff;
     border: none;
+    letter-spacing: .05em;
 }
 
 
@@ -17789,6 +17791,18 @@ section#content_top, section#specials, section#content_bottom, section#swineries
 .featured_cont {
     max-width: 100vw;
     overflow: hidden;
+}
+
+.col-md-4.bannerstitle {
+    overflow: hidden;
+}
+
+.col-md-4.bannerstitle:hover img {
+    transform: scale(1.05);
+}
+.col-md-4.bannerstitle img {
+    width: 100%;
+    transition: all .3s ease;
 }
 
 .col-md-4.bannerstitle img {

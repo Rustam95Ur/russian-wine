@@ -35,8 +35,11 @@
                 <div class="social">
                     <a href="https://instagram.com/russianvine.ru?igshid=1kot521x7b8l">
                       <img alt='instagram-icon' src="{{ asset ('image/iconInst.png') }}"></a>
-                    <a href="https://www.facebook.com">
-                        <img alt="facebook-icon" src="{{ asset ('image/iconF.png') }}"></a>
+                    <a target="_blank" href="https://www.youtube.com/channel/UCN-RcIaaNGUmZBYg9HJtoKg">
+                        <img alt="youtube-icon" src="{{ asset ('image/youtube.png') }}">
+                    </a>
+                    <a href="https://zen.yandex.ru/russianvine">
+                        <img alt="facebook-icon" src="{{ asset ('image/Zen.svg') }}"></a>
                 </div>
             </div>
             <div class="footer-logo col-sm-12 col-md-12 col-lg-3 col-lg-pull-8">

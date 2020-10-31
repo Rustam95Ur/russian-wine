@@ -147,14 +147,6 @@
                                style="display: {{($is_favorite) ? 'block' : 'none'}}">
                                 <img src="{{asset('image/unlike_wine.svg')}}">
                             </a>
-                            <a href="#" class="one-social">
-                                <svg width="30" height="36" viewBox="0 0 30 36" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M1 18V31.6C1 32.5017 1.36875 33.3665 2.02513 34.0042C2.6815 34.6418 3.57174 35 4.5 35H25.5C26.4283 35 27.3185 34.6418 27.9749 34.0042C28.6313 33.3665 29 32.5017 29 31.6V18M22 7.8L15 1M15 1L8 7.8M15 1L15 23.1"
-                                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
                         </div>
                         <h1>{{$wine->title}}</h1>
                         @if(isset($wine->region))

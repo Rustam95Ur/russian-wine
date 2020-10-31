@@ -52,15 +52,16 @@
 }
 
 #tasting-page #button_link a {
-    width: 13.541vw;
-    font: 1.4rem 'ProximaNova-Bold';
+    font: 1.001vw 'ProximaNova-Bold';
     color: #fff;
     text-transform: uppercase;
     display: inline-block;
     border-radius: 4rem;
-    line-height: 5;
+    line-height: 2.877vw;
     margin: 0 1.5rem;
     text-align: center;
+    padding: 0.688vw 2.502vw;
+    white-space: nowrap;
 }
 
 #tasting-page #button_link {
@@ -109,12 +110,11 @@
 
 #tasting-page #banner {
     background: url(/image/bg/tasting_bg.png);
-    background-size: cover;
-    /*height: 56vw;*/
-    padding-top: 9vw;
-    background-color: black;
+    background-size: contain;
+    padding-top: 7vw;
+    background-color: #0e0c12;
+    background-repeat: no-repeat;
 }
-
 #tasting-page .swiper-slide {
     color: #23252b;
 }
@@ -496,42 +496,62 @@
     border-radius: 18px;
 }
 
+#tasting-page .image:hover img {
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
+}
 #tasting-page .image img {
     width: 100%;
     border-top-right-radius: 18px;
     border-top-left-radius: 18px;
+    transition: all .3s ease-in-out;
+    transition-delay: .1s;
 }
 
+#tasting-page .product_layout:hover {
+    transition: all .3s ease-in-out;
+    overflow: hidden;
+}
 #tasting-page .product_layout {
     margin-bottom: 3rem;
     background: transparent;
+    max-height: 44.4vw;
+    overflow: hidden;
 }
 
 #tasting-page .product_layout .description {
-    padding-top: 2.34vw;
+    margin-top: 0;
     color: #242424;
     padding-bottom: 3rem;
     background: #fff;
-    height: 12.5vw;
+    height: initial;
+    z-index: 1;
+    position: relative;
 }
 
 #tasting-page .product_layout .description h6 {
-    font: 1.28vw 'ProximaNova-Bold';
-        line-height: normal;
+    font: 1.043vw 'ProximaNova-reg';
     color: #242424;
-    text-align: center;
+    text-transform: none;
+    line-height: 1.4;
+    text-align: left;
+    padding: 1vw 1.6vw;
+    margin-top: 0;
+    min-height: 4.9vw;
+}
+
+#tasting-page .rub_p {
+    font-family: RUBSN;
+    font-style: normal;
     text-transform: uppercase;
-    line-height: 1.5;
-    margin-bottom: 3.6458333333333335vw;
 }
 
 #tasting-page .product_layout .description .list-inline {
     margin-left: 0;
-    padding-left: .5rem;
+    padding: 0 1.564vw;
 }
-
 #tasting-page .product_layout .description li {
-    padding: 0 1.841vw;
+    padding: 0 0.5215vw;
     font: 0.938vw 'ProximaNova-Reg';
     border-right: 1px solid;
 }
@@ -576,9 +596,10 @@
 
 #tasting-page .prod_footer .price {
     float: left;
-    font-size: 1.146vw;
+    font-size: 0.834vw;
     border-left: none;
     border-bottom-left-radius: 18px;
+    text-transform: none !important;
 }
 
 #tasting-page .popup-heading {
@@ -893,18 +914,16 @@
     bottom: 5.25vw;
 }
 
-#tasting-page #testimonials .swiper-inner h5,
-#tasting-page .slider-1 .swiper-inner h5 {
+#tasting-page #testimonials .swiper-inner h5, #tasting-page .slider-1 .swiper-inner h5 {
     font: 0.9375vw 'ProximaNova-Bold';
     text-transform: uppercase;
     position: relative;
-    /*text-align: center;*/
-    margin-bottom: 2.864vw;
+    margin-bottom: 2vw;
 }
 
 #tasting-page #testimonials .swiper-inner, #tasting-page .slider-1 .swiper-inner {
     width: 100%;
-    padding: 2rem;
+    padding: 2.9vw;
     min-height: 3.5rem;
 }
 
@@ -915,13 +934,13 @@
     border-radius: 2rem;
 }
 
-.swiper-slide .swiper-inner::before {
+.swiper-slide .swiper-inner::after {
     content: '';
     background: #fff;
     width: 5rem;
     height: 5rem;
-    right: 11.5%;
-    top: 59%;
+    right: 5.4vw;
+    top: 11.6vw;
     display: block;
     position: absolute;
     box-shadow: 11px 25px 30px -17px rgba(0,0,0,.3);
@@ -958,10 +977,10 @@
     width: auto !important;
 }
 
-#tasting-page #testimonials .swiper-inner .testimonial,
-#tasting-page .slider-1 .swiper-inner .testimonial {
+#tasting-page #testimonials .swiper-inner .testimonial, #tasting-page .slider-1 .swiper-inner .testimonial {
     font: 0.9375vw 'ProximaNova-Reg';
     line-height: 1.8;
+    margin-top: 1vw;
 }
 
 /*#tasting-page #testimonials .swiper-inner .testimonial {*/
@@ -2369,10 +2388,11 @@
 #tasting-page .quotes_text {
     font-style: normal;
     font-weight: normal;
-    font-size: 2rem;
-    line-height: 3rem;
+    font-size: 1.151vw;
+    line-height: 1.5;
     color: white;
     margin-top: 2rem;
+    font-family: ProximaNova-Reg;
 }
 
 #tasting-page .portrait {
@@ -2434,7 +2454,7 @@
 
 #tasting-page .question_form {
     border: 0;
-    padding: 8rem;
+    padding: 4.2vw 4.2vw 3.4vw;
     margin-top: -8rem;
 }
 
@@ -2513,9 +2533,41 @@
     margin-left: auto;
     margin-right: auto;
     background: #fff;
-    overflow: scroll;
+    overflow-y: scroll;
     z-index: 253;
-    padding: 80px;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+}
+
+.tasting-modal-body .icon_close {
+    width: 2vw;
+    position: absolute;
+    right: 1.2vw;
+    top: 1.5vw;
+    cursor: pointer;
+}
+
+.tasting-modal-body .icon_close img {
+    transform: rotate(45deg);
+}
+
+.tasting-modal-body h2 {
+    font-size: 2.6vw;
+    line-height: 1.2;
+}
+
+.tasting-modal-body {
+    padding: 5.2vw 4.2vw 3.1vw;
+    border-bottom: 1px solid lightgray;
+}
+
+.tasting-modal-footer {
+    text-align: center;
+    background: #f3f3f3;
+    width: 100%;
+    position: relative;
+    padding: 2.085vw 0;
+    min-height: 7vw;
 }
 
 .tasting_modal .tasting_body .list-inline {
@@ -2602,7 +2654,54 @@
   padding-bottom: 15rem;
 }
 
+p.user_agreement {
+    font-size: 0.834vw !important;
+    line-height: 1.3 !important;
+    margin-top: 2.1vw !important;
+}
+
+@media (max-width: 1668px) {
+
+    #tasting-page #carousel0 .swiper-slide {
+        width: 310px;
+    }
+    .swiper-slide .swiper-inner::after {
+        content: '';
+        background: #fff;
+        width: 5rem;
+        height: 5rem;
+        right: 6.8vw;
+        top: 11vw;
+        display: block;
+        position: absolute;
+        box-shadow: 11px 25px 30px -17px rgba(0,0,0,.3);
+        transform: rotate(45deg) matrix(1.3, 0, 1, 1, 150, 0);
+        z-index: 0;
+    }
+}
+
+@media(max-width: 1280px){
+    .swiper-slide .swiper-inner::after {
+        content: '';
+        background: #fff;
+        width: 5rem;
+        height: 5rem;
+        right: 8.2vw;
+        top: 10.4vw;
+        display: block;
+        position: absolute;
+        box-shadow: 11px 25px 30px -17px rgba(0,0,0,.3);
+        transform: rotate(45deg) matrix(1.3, 0, 1, 1, 150, 0);
+        z-index: 0;
+    }
+}
+
 @media (max-width: 991px) {
+
+    #tasting-page #carousel0 .swiper-slide {
+        width: 310px;
+    }
+
     #tasting-page h1 {
         font-size: 4rem;
         line-height: 1;
