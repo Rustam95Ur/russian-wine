@@ -198,8 +198,8 @@
                         <div class="row bigDesc">
                             <div class="col-md-6">
                                 <a href="#description-info">
-                                    <h3>Характеристики
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    <h3 class="hover_red">Характеристики
+                                        <svg class="icon-red" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
 
                                             <path d="M12 5V19" stroke="black" stroke-width="2" stroke-linecap="round"
@@ -212,10 +212,10 @@
                             </div>
                             <div class="col-md-6">
                                 @if(isset($wine->winery))
-                                    <a href="{{route('wine-shop')}}?winery[]={{$wine->winery->id}}"><h3>Другие вина
+                                    <a href="{{route('wine-shop')}}?winery[]={{$wine->winery->id}}"><h3 class="hover_red">Другие вина
                                             винодельни</h3></a>
                                 @else
-                                    <a href="#"><h3>Другие вина винодельни</h3></a>
+                                    <a href="#"><h3 class="hover_red">Другие вина винодельни</h3></a>
                                 @endif
                             </div>
                         </div>

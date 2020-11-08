@@ -161,7 +161,7 @@
                                                                href="{{route('checkout')}}">Оформить заявку</a>
                                                         </div>
                                                         <div class="col-md-4 third_cl">
-                                                            <p>Пожалуйста
+                                                            <p style="font-family: ProximaNova-reg;">Пожалуйста
                                                                 <a href="{{route('wine-shop')}}"
                                                                    style="color: #23252b;text-decoration:underline;"
                                                                    id="link_wine">добавьте</a>

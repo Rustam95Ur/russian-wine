@@ -300,6 +300,19 @@ header #form-language .language-select {
     background-repeat: repeat-x
 }
 
+.hover_red:hover,
+.hover_red:hover > .icon-red{
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+    color: #DA224D;
+}
+
+.icon-red:hover,
+.icon-red:hover > .hover_red{
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+    color: #DA224D;
+}
+
+
 #top .btn-link,
 #top-links li,
 #top-links a {
@@ -11615,6 +11628,7 @@ section#specials #specials-cont div.col-md-4 {
 
 #cart-cart.empty-cart {
     width: 43.9vw;
+    z-index: 111;
 }
 
 #close-mask.empty-cart {
