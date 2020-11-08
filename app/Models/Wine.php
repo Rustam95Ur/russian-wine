@@ -69,6 +69,14 @@ class Wine extends Model
         return $this->belongsTo('App\Models\Excerpt', 'excerpt_id', 'id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function wine_class()
+    {
+        return $this->belongsTo('App\Models\WineClass', 'class_id', 'id');
+    }
+
     public function scopeFilter(Builder $builder, QueryFilter $filters)
     {
         return $filters->apply($builder);

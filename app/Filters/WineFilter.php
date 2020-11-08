@@ -15,7 +15,23 @@ class WineFilter extends QueryFilter
                 $query->where('title', 'like', '%' . $keyword . '%')
                     ->orWhereHas('winery', function($q) use ($keyword) {
                         $q->where('title', 'like', '%' . $keyword . '%');
-                    });
+                    })
+                    ->orWhereHas('wine_class', function($q) use ($keyword) {
+                        $q->where('title', 'like', '%' . $keyword . '%');
+                    })
+                    ->orWhereHas('sort', function($q) use ($keyword) {
+                        $q->where('title', 'like', '%' . $keyword . '%');
+                    })
+                    ->orWhereHas('color', function($q) use ($keyword) {
+                        $q->where('title', 'like', '%' . $keyword . '%');
+                    })
+                    ->orWhereHas('sugar', function($q) use ($keyword) {
+                        $q->where('title', 'like', '%' . $keyword . '%');
+                    })
+                    ->orWhereHas('region', function($q) use ($keyword) {
+                        $q->where('title', 'like', '%' . $keyword . '%');
+                    })
+                ;
             });
         }
     }

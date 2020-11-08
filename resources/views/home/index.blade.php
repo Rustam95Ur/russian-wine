@@ -325,7 +325,10 @@
                                             @endif
                                         <li><p>Вина:
                                                 @foreach($winemaker->wines as $wine)
-                                                    <a class="text-black" href="{{route('wine', $wine->slug)}}"> {{$wine->title}}</a>
+                                                    <a href="{{route('wine-shop')}}?sort[]={{$wine->sort->id}}&winery[]={{$wine->winery->id}}"
+                                                       class="text-black">
+                                                        {{$wine->title}}
+                                                    </a>
                                                     @if(!$loop->last),@endif
                                                 @endforeach
                                             </p>
