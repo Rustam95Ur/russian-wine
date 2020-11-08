@@ -37,7 +37,7 @@
             <div class="sorting col-md-3 mobileHidden">
                 <select id="inputState" name="price_sort" class="form-control custom-select sources"
                         form="searching-form"
-                        @if(array_key_exists('price_sort', $filters))
+                    @if(array_key_exists('price_sort', $filters))
                         placeholder="{{$filters['price_sort'] == 'asc' ? 'сначала дешевле' : ' сначала дороже'}}">
                     @else
                         placeholder="по умолчанию">
@@ -295,7 +295,7 @@
             <!--   collapse other prices   -->
                 <div class="panel-group">
                     <div class="panel panel-default">
-                        <div id="collapse-winery-suboverlay" class="panel-collapse collapse">
+                        <div id="collapse-winery" class="panel-collapse collapse">
                             <!--  Collapse inner space   -->
                             @foreach($wineries as $winery)
                                 @if($loop->index > 5)
@@ -315,9 +315,8 @@
                         <!--  Collapse inner space end -->
                         </div>
                         <button class="collapseBtn" id="btnCollapse-winery" name="button" data-toggle="collapse"
-                                data-target="#collapse-winery-suboverlay" onclick="collapse_click('winery')"
-                                aria-expanded="false"
-                                aria-controls="collapse-winery-suboverlay" type="button">
+                                data-target="#collapse-winery" onclick="collapse_click('winery')" aria-expanded="false"
+                                aria-controls="collapse-winery" type="button">
                             <span>Посмотреть все</span>
                             <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
                         </button>

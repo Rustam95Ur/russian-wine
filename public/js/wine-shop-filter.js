@@ -183,6 +183,9 @@ $(".custom-select").each(function () {
         if ($(this).attr("value")) {
             template += '<span class="custom-option" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
         }
+        else {
+            template += '<span class="custom-option" data-value="">по умолчанию</span>';
+        }
     });
     template += '</div></div>';
     $(this).wrap('<div class="custom-select-wrapper"></div>');
