@@ -172,7 +172,7 @@
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="custom-control-input" form="searching-form" name="price[]" type="checkbox"
+                                <input class="form-check-input" form="searching-form" name="price[]" type="checkbox"
                                        value="15000-30000" id="winePrice7"
                                        @if(array_key_exists('price', $filters) and in_array('15000-30000', $filters['price']))
                                        checked
@@ -182,7 +182,7 @@
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="custom-control-input" form="searching-form" name="price[]" type="checkbox"
+                                <input class="form-check-input" form="searching-form" name="price[]" type="checkbox"
                                        value="30000-50000" id="winePrice8"
                                        @if(array_key_exists('price', $filters) and in_array('30000-50000', $filters['price']))
                                        checked
