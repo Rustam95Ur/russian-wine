@@ -167,7 +167,7 @@
                         <p class="text-center">Свяжитесь с нами по указанным данным или отправьте сообщение
                     </div>
                     <div class="col-md-12 col-md-offset-1">
-                        <div class="col-md-5">
+                        <div class="col-md-5 question_block">
                             <form class="question_form">
                                 <div class="form-group">
                                     <input class="form-control" type="text" placeholder="Имя">
