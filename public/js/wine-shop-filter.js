@@ -45,8 +45,29 @@ $(document).ready(function () {
         var filter = $('#searching-form').serialize()
         wine_filter_search(filter, page)
     });
-
 });
+
+function url_breadcrumb_checked() {
+    var urls = getUrlVars()
+    for (let i = 0; i < urls.length; i++) {
+        $('input[name="' + urls[i].name + '"]').filter(function () {
+            if (this.value === urls[i].value) {
+                $(this).prop('checked', true)
+            }
+        })
+    }
+}
+
+function getUrlVars() {
+    var in_url = [];
+    var in_url_str = window.location.search.replace('?', '').split('&');
+    $.each(in_url_str, function (key, val) {
+        var v = val.split('=');
+        var test = {'name': v[0], 'value': v[1]}
+        in_url.push(test)
+    });
+    return in_url;
+}
 
 function wine_filter_search(filter, page = 1) {
     $.ajax(
@@ -67,7 +88,8 @@ function wine_filter_search(filter, page = 1) {
 
 }
 
-const main_breadcrumb = $('.breadcrumb').html();
+const main_breadcrumb = '<li><a href="/">Главная</a></li><li><a href="wine-shop">Вино</a></li>\n' +
+    '<li id="search_title" style="display: none"></li>';
 
 function filter_breadcrumb() {
     var forms_filter = $('#searching-form').serializeArray(),
@@ -75,35 +97,57 @@ function filter_breadcrumb() {
         title,
         breadcrumb,
         title_breadcrumb,
-        filter_breadcrumb = []
+        filter_breadcrumb = [],
+        breadcrumb_class = $('.breadcrumb'),
+        form_filter_dict = {},
+        form_filter_array = [];
     for (let i = 0; i < forms_filter.length; i++) {
         if (forms_filter[i].value) {
-            if (forms_filter[i].name == 'title') {
-                href = 'title=' + forms_filter[i].value
-                title = forms_filter[i].value
-                title_breadcrumb = '<a href="?' + href + '">' + title + '</a>'
-            } else {
-                href = forms_filter[i].name + '=' + forms_filter[i].value
-                title = $(":checkbox[value='" + forms_filter[i].value + "']:checked").next('label').text();
-                breadcrumb = '<li><a href="?' + href + '">' + title + '</a></li>'
-                filter_breadcrumb.push(breadcrumb)
+            form_filter_dict = {'name': forms_filter[i].name, 'value': forms_filter[i].value}
+            if (!form_filter_array.some(e => e.name == forms_filter[i].name)) {
+                form_filter_array.push(form_filter_dict)
+                if (forms_filter[i].name == 'title') {
+                    href = 'title=' + forms_filter[i].value
+                    title = forms_filter[i].value
+                    title_breadcrumb = '<a href="?' + href + '">' + title + '</a>'
+                } else {
+                    href = forms_filter[i].name + '=' + forms_filter[i].value
+                    title = $(":checkbox[name='" + forms_filter[i].name + "']:checked").next('label').text();
+                    title = title.replace(/\r?\n/g, "").split("  ")
+                    var new_title_array = [];
+                    for (let k = 0; k < title.length; k++) {
+                        if (new_title_array[k] == ' ') {
+                            delete new_title_array[k];
+                        } else {
+                            if (new_title_array.indexOf(title[k]) === -1 && title[k] != '') {
+                                new_title_array.push(title[k]);
+                            }
+                        }
+                    }
+                    for (let k = 0; k < new_title_array.length; k++) {
+                        breadcrumb = '<li><a href="?' + href + '">' + new_title_array[k] + '</a></li>'
+                        filter_breadcrumb.push(breadcrumb)
+                    }
+
+                }
             }
         }
     }
     document.getElementById('breadcrumb').innerHTML = ''
-    $('.breadcrumb').append(main_breadcrumb)
+    breadcrumb_class.append(main_breadcrumb)
     document.getElementById('search_title').innerHTML = ''
     if (title_breadcrumb) {
-        $('#search_title').show()
-        $('#search_title').append(title_breadcrumb)
+        breadcrumb_class.show()
+        breadcrumb_class.append(title_breadcrumb)
     } else {
         $('#search_title').hide()
     }
     if (filter_breadcrumb.length > 0) {
-        $('.breadcrumb').append(filter_breadcrumb)
+        breadcrumb_class.append(filter_breadcrumb)
     }
 
 }
+
 
 function clear_filter() {
     $("input[type=checkbox]").prop('checked', false)
@@ -127,6 +171,12 @@ $(".form-check-input").change(function () {
     var filter = $('#searching-form').serialize()
     wine_filter_search(filter)
 });
+
+$(".form-check-input-mobile").change(function () {
+    var filter = $('#searching-form-mobile').serialize()
+    wine_filter_search(filter)
+});
+
 $("select[name='price_sort']").change(function () {
     var filter = $('#searching-form').serialize()
     wine_filter_search(filter)
@@ -182,8 +232,7 @@ $(".custom-select").each(function () {
     $(this).find("option").each(function () {
         if ($(this).attr("value")) {
             template += '<span class="custom-option" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
-        }
-        else {
+        } else {
             template += '<span class="custom-option" data-value="">по умолчанию</span>';
         }
     });

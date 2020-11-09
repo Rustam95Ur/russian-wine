@@ -5,7 +5,16 @@
             <ul class="breadcrumb" id="breadcrumb">
                 <li><a href="{{route('home')}}">Главная</a></li>
                 <li><a href="{{route('wine-shop')}}">Вино</a></li>
-                <li id="search_title" style="display: none"></li>
+                @if(isset($bread_crumbs))
+                    @foreach($bread_crumbs as $bread_crumb)
+                        <li>
+                            <a href="{{route('wine-shop')}}?{{$bread_crumb['type']}}={{$bread_crumb['id']}}">{{$bread_crumb['title']}}</a>
+                        </li>
+                    @endforeach
+                @else
+                    <li id="search_title" style="display: none"></li>
+                @endif
+
             </ul>
             <h1 class="pageHeading">Вино</h1>
             <p class="pageDesc">Мы собрали для Вас самую полную коллекцию Русских Вин, как крупных заводов, <br>
@@ -37,7 +46,7 @@
             <div class="sorting col-md-3 mobileHidden">
                 <select id="inputState" name="price_sort" class="form-control custom-select sources"
                         form="searching-form"
-                    @if(array_key_exists('price_sort', $filters))
+                        @if(array_key_exists('price_sort', $filters))
                         placeholder="{{$filters['price_sort'] == 'asc' ? 'сначала дешевле' : ' сначала дороже'}}">
                     @else
                         placeholder="по умолчанию">
@@ -282,11 +291,11 @@
                 @foreach($wineries as $winery)
                     <div class="form-check" id="form-winery-{{$winery->id}}">
                         <input class="form-check-input" form="searching-form" type="checkbox" value="{{$winery->id}}"
-                               name="winery[]" id="shop-winery{{$winery->id}}"
+                               name="winery[]" id="shop-winery-{{$winery->id}}"
                                @if(array_key_exists('winery', $filters) and in_array($winery->id, $filters['winery']))
                                checked
                             @endif>
-                        <label class="form-check-label" for="shop-winery{{$winery->id}}">
+                        <label class="form-check-label" for="shop-winery-{{$winery->id}}">
                             {{$winery->title}}
                         </label>
                     </div>
@@ -488,8 +497,7 @@
             </div>
         </div>
     </div>
-    @include('shop.wine.mobile-filter')
-
+            @include('shop.wine.mobile-filter')
     @push('scripts')
         <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
         <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>

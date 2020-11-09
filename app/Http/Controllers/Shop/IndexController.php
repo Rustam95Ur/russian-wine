@@ -46,9 +46,12 @@ class IndexController extends Controller
         $wines = Wine::where('status', '=', 'ACTIVE')->where('price', '>', 0)->filter($filters)->with('color', 'sugar', 'winery')
             ->orderByRaw('-sort_id DESC')->paginate(30);
 
-        $filters = request()->input();
-        $cookei_filter = json_encode($filters);
-        Cookie::queue('filters', $cookei_filter, 60);
+        $bread_crumbs = [];
+        $request_filter = [];
+        if (\request()->get('request')) {
+            $request_filter =  (array) json_decode(Cookie::get('filters'));
+            $bread_crumbs = $this->bread_crumbs();
+        }
         $favorite_id_list = [];
         if (Auth::guard('client')->user()) {
             $client = Auth::guard('client')->user();
@@ -60,11 +63,10 @@ class IndexController extends Controller
         if (\request()->ajax()) {
             return view('shop.wine.wine-list', [
                 'wines' => $wines,
-                'filters' => $filters,
+                'filters' => $request_filter,
                 'favorite' => $favorite_id_list
             ]);
         }
-
         return view('shop.wine.wine-shop', [
             'wines' => $wines,
             'colors' => $colors,
@@ -77,9 +79,18 @@ class IndexController extends Controller
             'classes' => $classes,
             'years' => $years,
             'fortresses' => $fortresses,
-            'filters' => $filters,
-            'favorite' => $favorite_id_list
+            'filters' => $request_filter,
+            'favorite' => $favorite_id_list,
+            'bread_crumbs' => $bread_crumbs
         ]);
+    }
+
+    public function wine_filter()
+    {
+        $filters = request()->input();
+        $cookei_filter = json_encode($filters);
+        Cookie::queue('filters', $cookei_filter, 60);
+        return redirect()->route('wine-shop', 'request=1');
     }
 
     /**
@@ -88,64 +99,8 @@ class IndexController extends Controller
      */
     public function wine_bread($slug)
     {
-        $filters = json_decode(Cookie::get('filters'));
-        $bread_crumbs = [];
-        foreach ($filters as $key => $values) {
-            switch ($key) {
-                case 'title';
-                    if (($values)) {
-                        $wine_title = ['title' => $values, 'type' => 'title', 'id' => $values, ''];
-                        array_push($bread_crumbs, $wine_title);
-                    }
-                    break;
-                case 'color';
-                    if (($values)) {
-                        $bread_crumbs = $this->set_array_with_model(new Color(), 'color[]', $values, $bread_crumbs);
-                    }
-                    break;
-                case 'sugar';
-                    if (($values)) {
-                        $bread_crumbs = $this->set_array_with_model(new Sugar(), 'sugar[]', $values, $bread_crumbs);
-                    }
-                    break;
-                case 'winery';
-                    if (($values)) {
-                        $bread_crumbs = $this->set_array_with_model(new Winery(), 'winery[]', $values, $bread_crumbs);
-                    }
-                    break;
-                case 'sort';
-                    if (($values)) {
-                        $bread_crumbs = $this->set_array_with_model(new GrapeSort(), 'sort[]', $values, $bread_crumbs);
-                    }
-                    break;
-                case 'region';
-                    if (($values)) {
-                        $bread_crumbs = $this->set_array_with_model(new Region(), 'region[]', $values, $bread_crumbs);
-                    }
-                    break;
-                case 'year';
-                    if (($values)) {
-                        $bread_crumbs = $this->set_simple_array($values, 'year[]', $bread_crumbs);
-                    }
-                    break;
-                case 'wine_class';
-                    if (($values)) {
-                        $bread_crumbs = $this->set_array_with_model(new WineClass(), 'wine_class[]', $values, $bread_crumbs);
-                    }
-                    break;
 
-                case 'price';
-                    if (($values)) {
-                        $bread_crumbs = $this->set_simple_array($values, 'price[]', $bread_crumbs);
-                    }
-                    break;
-                case 'fortress';
-                    if (($values)) {
-                        $bread_crumbs = $this->set_simple_array($values, 'fortress[]', $bread_crumbs);
-                    }
-                    break;
-            }
-        }
+        $bread_crumbs = $this->bread_crumbs();
         $wine = Wine::where('slug', '=', $slug)->where('status', '=', 'ACTIVE')->firstOrFail();
         if (isset($wine->winery)) {
             $wines = Wine::where('winery_id', '=', $wine->winery->id)->where('price', '>', 0)->get();
@@ -535,6 +490,71 @@ class IndexController extends Controller
         foreach ($array_value as $value) {
             $value_info = ['title' => $value, 'type' => $type, 'id' => $value];
             array_push($bread_crumbs, $value_info);
+        }
+        return $bread_crumbs;
+    }
+
+    protected function bread_crumbs()
+    {
+        $filters = json_decode(Cookie::get('filters'));
+        $bread_crumbs = [];
+        if ($filters) {
+            foreach ($filters as $key => $values) {
+                switch ($key) {
+                    case 'title';
+                        if (($values)) {
+                            $wine_title = ['title' => $values, 'type' => 'title', 'id' => $values, ''];
+                            array_push($bread_crumbs, $wine_title);
+                        }
+                        break;
+                    case 'color';
+                        if (($values)) {
+                            $bread_crumbs = $this->set_array_with_model(new Color(), 'color[]', $values, $bread_crumbs);
+                        }
+                        break;
+                    case 'sugar';
+                        if (($values)) {
+                            $bread_crumbs = $this->set_array_with_model(new Sugar(), 'sugar[]', $values, $bread_crumbs);
+                        }
+                        break;
+                    case 'winery';
+                        if (($values)) {
+                            $bread_crumbs = $this->set_array_with_model(new Winery(), 'winery[]', $values, $bread_crumbs);
+                        }
+                        break;
+                    case 'sort';
+                        if (($values)) {
+                            $bread_crumbs = $this->set_array_with_model(new GrapeSort(), 'sort[]', $values, $bread_crumbs);
+                        }
+                        break;
+                    case 'region';
+                        if (($values)) {
+                            $bread_crumbs = $this->set_array_with_model(new Region(), 'region[]', $values, $bread_crumbs);
+                        }
+                        break;
+                    case 'year';
+                        if (($values)) {
+                            $bread_crumbs = $this->set_simple_array($values, 'year[]', $bread_crumbs);
+                        }
+                        break;
+                    case 'wine_class';
+                        if (($values)) {
+                            $bread_crumbs = $this->set_array_with_model(new WineClass(), 'wine_class[]', $values, $bread_crumbs);
+                        }
+                        break;
+
+                    case 'price';
+                        if (($values)) {
+                            $bread_crumbs = $this->set_simple_array($values, 'price[]', $bread_crumbs);
+                        }
+                        break;
+                    case 'fortress';
+                        if (($values)) {
+                            $bread_crumbs = $this->set_simple_array($values, 'fortress[]', $bread_crumbs);
+                        }
+                        break;
+                }
+            }
         }
         return $bread_crumbs;
     }

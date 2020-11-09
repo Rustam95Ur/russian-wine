@@ -325,7 +325,7 @@
                                             @endif
                                         <li><p>Вина:
                                                 @foreach($winemaker->wines as $wine)
-                                                    <a href="{{route('wine-shop')}}?sort[]={{$wine->sort->id}}&winery[]={{$wine->winery->id}}"
+                                                    <a href="{{route('wine_filter')}}?sort[]={{$wine->sort->id}}&winery[]={{$wine->winery->id}}"
                                                        class="text-black">
                                                         {{$wine->title}}
                                                     </a>
