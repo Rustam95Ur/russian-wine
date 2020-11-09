@@ -2806,11 +2806,12 @@ header #form-language .language-select {
     text-transform: uppercase;
     line-height: 1;    
 }
+
 div{
-    font-family: 'ProximaNova-Bold', sans-serif !important;
+    font-family: 'ProximaNova-Bold', sans-serif;
 }
 span{
-    font-family: 'ProximaNova-Reg', sans-serif !important;
+    font-family: 'ProximaNova-Reg', sans-serif;
 }
 
 #product-product.product-temp1 .species img {
