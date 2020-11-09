@@ -57,7 +57,7 @@
     text-transform: uppercase;
     display: inline-block;
     border-radius: 4rem;
-    line-height: 2.877vw;
+    line-height: 1.877vw;
     margin: 0 1.5rem;
     text-align: center;
     padding: 0.688vw 2.502vw;
@@ -2422,6 +2422,7 @@
 }
 
 #tasting-page .portrait_info p {
+    font-family:'ProximaNova-Reg';
     font-style: normal;
     font-weight: normal;
     font-size: 1.8rem;

@@ -300,6 +300,19 @@ header #form-language .language-select {
     background-repeat: repeat-x
 }
 
+.hover_red:hover,
+.hover_red:hover > .icon-red{
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+    color: #DA224D;
+}
+
+.icon-red:hover,
+.icon-red:hover > .hover_red{
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+    color: #DA224D;
+}
+
+
 #top .btn-link,
 #top-links li,
 #top-links a {
@@ -2506,6 +2519,20 @@ header #form-language .language-select {
     display: inline-block;
     width: 28px
 }
+.contact_info_name{
+    font-size: 17px;
+}
+
+.contact_info_name:hover{
+    color: #D9214D;
+}
+
+.contact_info{
+    font-family: ProximaNova-Reg; 
+    font-style: normal; 
+    font-weight: normal; 
+    font-size: 14px;
+}
 
 .white-box-red-dash {
     background: #fff
@@ -2772,10 +2799,25 @@ header #form-language .language-select {
     line-height: 1;
 }
 
+
+#product-product.product-temp1 .species .iblock span {
+    font-size: 1.147vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;    
+}
+div{
+    font-family: 'ProximaNova-Bold', sans-serif !important;
+}
+span{
+    font-family: 'ProximaNova-Reg', sans-serif !important;
+}
+
 #product-product.product-temp1 .species img {
     position: absolute;
     top: 35px
 }
+
 
 #product-product.product-temp1 .volume {
     margin-top: 12vw;
@@ -11615,6 +11657,7 @@ section#specials #specials-cont div.col-md-4 {
 
 #cart-cart.empty-cart {
     width: 43.9vw;
+    z-index: 111;
 }
 
 #close-mask.empty-cart {

@@ -38,8 +38,8 @@
                     <a target="_blank" href="https://www.youtube.com/channel/UCN-RcIaaNGUmZBYg9HJtoKg">
                         <img alt="youtube-icon" src="{{ asset ('image/youtube.png') }}">
                     </a>
-                    <a href="https://zen.yandex.ru/russianvine">
-                        <img alt="facebook-icon" src="{{ asset ('image/Zen.svg') }}"></a>
+                    <a href="https://zen.yandex.ru/id/5cdfc1be0a0d8b00b24d0819 ">
+                        <img alt="yandexzen-icon" src="{{ asset ('image/zen-icon.svg') }}"></a>
                 </div>
             </div>
             <div class="footer-logo col-sm-12 col-md-12 col-lg-3 col-lg-pull-8">
