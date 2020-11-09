@@ -2807,11 +2807,13 @@ header #form-language .language-select {
     line-height: 1;    
 }
 
-div{
-    font-family: 'ProximaNova-Bold', sans-serif;
+.bold_font{
+    font-family: 'ProximaNova-Bold', sans-serif !important;
 }
-span{
-    font-family: 'ProximaNova-Reg', sans-serif;
+.light_font{
+    font-family: 'ProximaNova-Reg', sans-serif !important;
+    font-size: 0.834vw !important; 
+    text-transform: initial !important;
 }
 
 #product-product.product-temp1 .species img {

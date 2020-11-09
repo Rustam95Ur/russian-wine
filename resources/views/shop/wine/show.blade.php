@@ -39,7 +39,7 @@
                                                 @if(isset($wine->winery))
                                                     <a href="{{route('winery', $wine->winery->slug )}}">
                                                               <span
-                                                                  class="iblock" style="padding-left: 9.5vw; text-align: left;"><span style="font-size: 0.834vw; font-weight: normal; text-transform: initial;">Производитель</span><br><span>{{$wine->manufacture->title}}</span></span>
+                                                                  class="iblock" style="padding-left: 9.5vw; text-align: left;"><span class="light_font">Производитель</span><br><span class="bold_font">{{$wine->manufacture->title}}</span></span>
                                                     </a>
                                                 @else
                                                     <a href="#">
@@ -52,7 +52,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-6 col-md-6 col-lg-6">
-                                            <div class="type">
+                                            <div class="type bold_font">
                                                 @if(isset($wine->color))
                                                     <img src="{{Voyager::image($wine->color->image)}}"
                                                          alt=""> {{$wine->color->title}}
@@ -66,7 +66,7 @@
                                             <div class="aging">
                                                 @if(isset($wine->excerpt))
                                                     <span
-                                                        class="iblock">Выдержка<br><span>{{$wine->excerpt->title}}</span>
+                                                        class="iblock"><span class="light_font">Выдержка</span><br><span class="bold_font">{{$wine->excerpt->title}}</span>
                                                   @if($wine->excerpt->type == 1)
                                                             <span class="icon-icon_champagne"></span>
                                                         @elseif($wine->excerpt->type == 2)
@@ -87,16 +87,16 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-xs-offset-6">
                                             <div class="amount"><span
-                                                    class="iblock">Тираж<br><span>{{$wine->edition}} <span
-                                                            class="bottles">бутылок</span></span></span>
+                                                    class="iblock"><span class="light_font">Тираж</span><br><span>{{$wine->edition}} <span
+                                                            class="bottles bold_font">бутылок</span></span></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-6">
                                             <div class="species">
-                                                          <span class="iblock">Сорт винограда<br>
-                                                                <span>{{$wine->sort->title}}</span>
+                                                          <span class="iblock"><span class="light_font">Сорт винограда</span><br>
+                                                                <span class="bold_font">{{$wine->sort->title}}</span>
                                                           </span>
                                                 <img src="{{asset('image/vinograd.png')}}" alt="">
                                             </div>
