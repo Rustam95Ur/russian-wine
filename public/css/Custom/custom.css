@@ -954,7 +954,7 @@ input {
 #priceBlock .price-vinoteka {
     transition: .3s;
     text-align: center;
-    margin: 1.25vw auto;
+    margin: 1.025vw auto;
 }
 
 #priceBlock .price-vinoteka a {

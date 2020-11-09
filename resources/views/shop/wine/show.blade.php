@@ -171,8 +171,7 @@
                                     <div class="button_cont">
                                         <div class="col-md-6">
                                             <div class="price-vinoteka col-md-12">
-                                                <a href="#" class="preview wine_show_price">{{$wine->price}} <span
-                                                        class="currency "></span></a>
+                                                <a href="#" class="preview wine_show_price">{{$wine->price}} <span>п</span></a>
                                                 <input type="hidden" value="{{$wine->price}}" class="wine_price">
 
                                             </div>
