@@ -191,7 +191,7 @@
         <div class="overlay-content">
             <div class="overlay-form">
                 <img alt="search icon" src="{{ asset ('image/search.svg') }}" id="searchInputIcon">
-                <input type="text" placeholder="Поиск..." name="search" id="search">
+                <input type="text" placeholder="Поиск..." name="search" id="search" style="font-family: Proxima Nova;">
             </div>
         </div>
         <div class="overlay-results">
