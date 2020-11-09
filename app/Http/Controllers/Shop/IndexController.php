@@ -45,7 +45,6 @@ class IndexController extends Controller
         $fortresses = Wine::select('fortress')->where('fortress', '!=', null)->groupBy('fortress')->orderBy('fortress', 'DESC')->get();
         $wines = Wine::where('status', '=', 'ACTIVE')->where('price', '>', 0)->filter($filters)->with('color', 'sugar', 'winery')
             ->orderByRaw('-sort_id DESC')->paginate(30);
-
         $bread_crumbs = [];
         $request_filter = [];
         if (\request()->get('request')) {
@@ -61,6 +60,8 @@ class IndexController extends Controller
             }
         }
         if (\request()->ajax()) {
+            $cookei_filter = json_encode(request()->input());
+            Cookie::queue('filters', $cookei_filter, 60);
             return view('shop.wine.wine-list', [
                 'wines' => $wines,
                 'filters' => $request_filter,
