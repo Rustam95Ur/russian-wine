@@ -118,7 +118,7 @@
                                             <div class="button_cont">
                                                 <div class="prod_quantity">
                                                     <span class="qua_mins" onclick="qua_mins({{$wine->id}})"></span>
-                                                    <input type="number" class="quantity" data-id="{{$wine->id}}"
+                                                    <input type="number" class="quantity" id="wine-{{$wine->id}}"
                                                            value="1">
                                                     <span class="qua_plus" onclick="qua_plus({{$wine->id}})"></span>
                                                 </div>
@@ -256,7 +256,7 @@
                                         <div class="button_cont">
                                             <div class="prod_quantity">
                                                 <span class="qua_mins" onclick="qua_mins({{$wine->id}})"></span>
-                                                <input type="number" class="quantity" data-id="{{$wine->id}}"
+                                                <input type="number" class="quantity" id="wine-{{$wine->id}}"
                                                        value="1">
                                                 <span class="qua_plus" onclick="qua_plus({{$wine->id}})"></span>
                                             </div>
@@ -313,7 +313,6 @@
                                         </a>
                                     </h6>
                                     <ul>
-
                                         <li>
                                             @if($winemaker->winery)
                                                 <p><a class="text-black" href="{{route('winery', $winemaker->winery->slug)}}">{{$winemaker->winery->title}}</a> </p>

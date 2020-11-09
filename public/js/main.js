@@ -43,7 +43,6 @@
     };
     var swiper1 = new Swiper('#featured_slide0.swiper-container', {
         slidesPerView: 'auto',
-        loop: true,
         spaceBetween: 0,
         pagination: {
                     el: '.feat-pagination0',
@@ -57,7 +56,6 @@
 
 var swiper = new Swiper('#featured_slide1.swiper-container', {
     slidesPerView: 'auto',
-    loop: true,
     spaceBetween: 0,
     pagination: {
                 el: '.feat-pagination1',

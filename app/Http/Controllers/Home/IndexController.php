@@ -19,13 +19,13 @@ class IndexController extends Controller
             ->where('price', '>', 0)
             ->with('color', 'sugar', 'winery')
             ->orderBy('id', 'DESC')
-            ->limit(10)
+            ->limit(20)
             ->get();
         $new_wines = Wine::where('status', '=', 'ACTIVE')
             ->with('color', 'sugar', 'winery')
             ->where('price', '>', 0)
             ->orderBy('id', 'DESC')
-            ->limit(10)
+            ->limit(20)
             ->get();
 
         $favorite_wine_id = [];
