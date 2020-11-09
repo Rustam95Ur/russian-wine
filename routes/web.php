@@ -20,6 +20,7 @@ Auth::routes();
 
 Route::get('', 'Home\IndexController@index')->name('home');
 Route::get('/wine-shop', 'Shop\IndexController@wine_list')->name('wine-shop');
+Route::get('/wine-filter', 'Shop\IndexController@wine_filter')->name('wine_filter');
 Route::get('/wine/{slug}', 'Shop\IndexController@wine_info')->name('wine');
 Route::get('/wine/bread/{slug}', 'Shop\IndexController@wine_bread')->name('wine-bread');
 Route::get('/sets', 'Shop\SetController@index')->name('sets');

@@ -14,7 +14,7 @@
             <div class="favFiltersOverlay">
                 @foreach($classes as $class)
                     <div class="form-check">
-                        <input class="form-check-input" form="searching-form" name="wine_class[]" type="checkbox"
+                        <input class="form-check-input-mobile" form="searching-form-mobile" name="wine_class[]" type="checkbox"
                                value="{{$class->id}}" id="classSortMob{{$class->id}}"
                                @if(array_key_exists('wine_class', $filters) and in_array($class->id, $filters['wine_class']))
                                checked
@@ -57,7 +57,7 @@
                         <div class="sortOverlayBody">
                             @foreach($colors as $color)
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" form="searching-form"
+                                    <input class="form-check-input-mobile" type="checkbox" form="searching-form-mobile"
                                            value="{{$color->id}}"
                                            name="color[]" id="wineColorMob{{$color->id}}"
                                            @if(array_key_exists('color', $filters) and in_array($color->id, $filters['color']))
@@ -85,7 +85,7 @@
                         </div>
                         <div class="sortOverlayBody">
                             <div class="form-check">
-                                <input class="form-check-input" form="searching-form" name="price[]" type="checkbox"
+                                <input class="form-check-input-mobile" form="searching-form-mobile" name="price[]" type="checkbox"
                                        value="0-1000"
                                        id="winePriceMob1"
                                        @if(array_key_exists('price', $filters) and in_array('0-1000', $filters['price']))
@@ -96,7 +96,7 @@
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" form="searching-form" name="price[]" type="checkbox"
+                                <input class="form-check-input-mobile" form="searching-form-mobile" name="price[]" type="checkbox"
                                        value="1000-1500" id="winePriceMob2"
                                        @if(array_key_exists('price', $filters) and in_array('1000-1500', $filters['price']))
                                        checked
@@ -106,7 +106,7 @@
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" form="searching-form" name="price[]" type="checkbox"
+                                <input class="form-check-input-mobile" form="searching-form-mobile" name="price[]" type="checkbox"
                                        value="1500-3000" id="winePriceMob3"
                                        @if(array_key_exists('price', $filters) and in_array('1500-3000', $filters['price']))
                                        checked
@@ -116,7 +116,7 @@
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" form="searching-form" name="price[]" type="checkbox"
+                                <input class="form-check-input-mobile" form="searching-form-mobile" name="price[]" type="checkbox"
                                        value="3000-5000" id="winePriceMob4"
                                        @if(array_key_exists('price', $filters) and in_array('3000-5000', $filters['price']))
                                        checked
@@ -126,7 +126,7 @@
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" form="searching-form" name="price[]" type="checkbox"
+                                <input class="form-check-input-mobile" form="searching-form-mobile" name="price[]" type="checkbox"
                                        value="5000-10000" id="winePriceMob5"
                                        @if(array_key_exists('price', $filters) and in_array('5000-10000', $filters['price']))
                                        checked
@@ -136,7 +136,7 @@
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" form="searching-form" name="price[]" type="checkbox"
+                                <input class="form-check-input-mobile" form="searching-form-mobile" name="price[]" type="checkbox"
                                        value="10000-15000" id="winePriceMob6"
                                        @if(array_key_exists('price', $filters) and in_array('10000-15000', $filters['price']))
                                        checked
@@ -146,7 +146,7 @@
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="custom-control-input" form="searching-form" name="price[]"
+                                <input class="custom-control-input" form="searching-form-mobile" name="price[]"
                                        type="checkbox"
                                        value="15000-30000" id="winePriceMob7"
                                        @if(array_key_exists('price', $filters) and in_array('15000-30000', $filters['price']))
@@ -157,7 +157,7 @@
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="custom-control-input" form="searching-form" name="price[]"
+                                <input class="custom-control-input" form="searching-form-mobile" name="price[]"
                                        type="checkbox"
                                        value="30000-50000" id="winePriceMob8"
                                        @if(array_key_exists('price', $filters) and in_array('30000-50000', $filters['price']))
@@ -186,7 +186,7 @@
                         <div class="sortOverlayBody">
                             @foreach($sugars as $sugar)
                                 <div class="form-check">
-                                    <input class="form-check-input" form="searching-form" name="sugar[]"
+                                    <input class="form-check-input-mobile" form="searching-form-mobile" name="sugar[]"
                                            type="checkbox"
                                            value="{{$sugar->id}}" id="wineTypeMob{{$sugar->id}}"
                                            @if(array_key_exists('sugar', $filters) and in_array($sugar->id, $filters['sugar']))
@@ -216,7 +216,7 @@
                         <div class="sortOverlayBody">
                             @foreach($regions as $region)
                                 <div class="form-check">
-                                    <input class="form-check-input" form="searching-form" type="checkbox"
+                                    <input class="form-check-input-mobile" form="searching-form-mobile" type="checkbox"
                                            value="{{$region->id}}"
                                            name="region[]" id="wineRegionMob{{$region->id}}"
                                            @if(array_key_exists('region', $filters) and in_array($region->id, $filters['region']))
@@ -260,7 +260,7 @@
                                 @foreach($letterCities as $winery)
                                     <div class="form-check no-letter-winery-overlay"
                                          id="form-winery-mob-{{$winery->id}}">
-                                        <input class="form-check-input no_letter" form="searching-form"
+                                        <input class="form-check-input-mobile no_letter" form="searching-form-mobile"
                                                type="checkbox"
                                                value="{{$winery->id}}"
                                                id="shop-winery-mob{{$winery->id}}"
@@ -286,8 +286,8 @@
                                             @foreach($letterCities as $winery)
                                                 <div class="form-check"
                                                      id="form-winery-mob-{{$winery->id}}">
-                                                    <input class="form-check-input letter_collapse"
-                                                           form="searching-form"
+                                                    <input class="form-check-input-mobile letter_collapse"
+                                                           form="searching-form-mobile"
                                                            type="checkbox"
                                                            value="{{$winery->id}}"
                                                            id="shop-winery-letter{{$winery->id}}"
@@ -334,7 +334,7 @@
                                     src="{{ asset ('image/ArrowLeft.svg') }}" alt="Go back">Сорт винограда</a>
                         </div>
                         <div class="sortOverlayBody">
-                            <form name="filter_form" method="get" class="filtersMain showME">
+                            <form id="searching-form-mobile" name="filter_form" method="get" class="filtersMain showME">
                                 <!--  filter live search  -->
                                 <div id="liveSearch-form">
                                     <input id="search-main-sort-mob" onkeyup="search('sort-mob')" type="text"
@@ -350,8 +350,8 @@
                                     @break($sort_counter > 5)
                                     @foreach($letterCities as $sort)
                                         <div class="form-check no-letter-sort-overlay" id="form-sort-mob-{{$sort->id}}">
-                                            <input class="form-check-input no_letter" type="checkbox"
-                                                   form="searching-form"
+                                            <input class="form-check-input-mobile no_letter" type="checkbox"
+                                                   form="searching-form-mobile"
                                                    value="{{$sort->id}}"
                                                    name="sort[]" id="shop-sort-mob{{$sort->id}}"
                                                    @if(array_key_exists('sort', $filters) and in_array($sort->id, $filters['sort']))
@@ -374,8 +374,8 @@
                                                 <h4 class="letter-title">{{$letter}}</h4>
                                                 @foreach($letterCities as $sort)
                                                     <div class="form-check" id="form-sort-mob-{{$sort->id}}">
-                                                        <input class="form-check-input letter_collapse"
-                                                               form="searching-form"
+                                                        <input class="form-check-input-mobile letter_collapse"
+                                                               form="searching-form-mobile"
                                                                type="checkbox"
                                                                name="sort[]" value="{{$sort->id}}"
                                                                id="shop-sort-letter{{$sort->id}}"
@@ -423,7 +423,7 @@
                             <form name="filter_form" method="get" class="filtersMain showME">
                                 @foreach($years as $year)
                                     <div class="form-check">
-                                        <input class="form-check-input" form="searching-form" name="year[]"
+                                        <input class="form-check-input-mobile" form="searching-form-mobile" name="year[]"
                                                type="checkbox"
                                                value="{{$year->year}}" id="shopWineAgeMob{{$loop->iteration}}"
                                                @if(array_key_exists('year', $filters) and in_array($year->year, $filters['year']))
@@ -445,7 +445,7 @@
                                             @foreach($years as $year)
                                                 @if($loop->index > 5)
                                                     <div class="form-check">
-                                                        <input class="form-check-input" form="searching-form"
+                                                        <input class="form-check-input-mobile" form="searching-form-mobile"
                                                                name="year[]"
                                                                type="checkbox" value="{{$year->year}}"
                                                                id="shopWineAgeMob{{$loop->iteration}}"
@@ -494,7 +494,7 @@
                             <h4 class="filterHeading">Крепость</h4>
                             @foreach($fortresses as $fortress)
                                 <div class="form-check">
-                                    <input class="form-check-input" form="searching-form" name="fortress[]"
+                                    <input class="form-check-input-mobile" form="searching-form-mobile" name="fortress[]"
                                            type="checkbox"
                                            value="{{$fortress->fortress}}" id="shopGradMob{{$loop->iteration}}"
                                            @if(array_key_exists('fortress', $filters) and in_array($fortress->fortress, $filters['fortress']))
@@ -516,7 +516,7 @@
                                         @foreach($fortresses as $fortress)
                                             @if($loop->index > 5)
                                                 <div class="form-check">
-                                                    <input class="form-check-input" form="searching-form"
+                                                    <input class="form-check-input-mobile" form="searching-form-mobile"
                                                            name="fortress[]"
                                                            type="checkbox" value="{{$fortress->fortress}}"
                                                            id="shopGradMob{{$loop->iteration}}"
@@ -572,14 +572,14 @@
         <div class="sortOverlayBody">
             <ul>
                 <li>
-                    <input type="radio" class="form-check-input hidden" form="searching-form" name="price_sort"
+                    <input type="radio" class="form-check-input-mobile hidden" form="searching-form-mobile" name="price_sort"
                            id="price-asc" value="asc">
                     <label class="form-check-label sort_label" for="price-asc" >
                         сначала дешевле
                     </label>
                 </li>
                 <li>
-                    <input type="radio" class="form-check-input hidden" form="searching-form" name="price_sort"
+                    <input type="radio" class="form-check-input-mobile hidden" form="searching-form-mobile" name="price_sort"
                            id="price-desc" value="desc">
                     <label class="form-check-label sort_label" for="price-desc" >
                         сначала дороже

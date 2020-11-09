@@ -19,13 +19,13 @@ class IndexController extends Controller
             ->where('price', '>', 0)
             ->with('color', 'sugar', 'winery')
             ->orderBy('id', 'DESC')
-            ->limit(10)
+            ->limit(20)
             ->get();
         $new_wines = Wine::where('status', '=', 'ACTIVE')
             ->with('color', 'sugar', 'winery')
             ->where('price', '>', 0)
             ->orderBy('id', 'DESC')
-            ->limit(10)
+            ->limit(20)
             ->get();
 
         $favorite_wine_id = [];
@@ -39,6 +39,7 @@ class IndexController extends Controller
         $winemakers = Winemaker::where('status', '=', 'ACTIVE')->with('wines', 'region', 'winery')->get();
         $home_set = Set::where('in_home', true)->first();
         $home_tasting = Tasting::where('in_home', true)->first();
+        session()->forget('filters');
         return view('home.index', [
             'new_wines' => $new_wines,
             'popular_wines' => $popular_wines,

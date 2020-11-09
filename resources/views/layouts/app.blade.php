@@ -102,7 +102,7 @@
                             res[i] = "<ul><li><a class='text-danger' href='/wine/" + wines[i].slug + "'><img id='search' src='/storage/" + wines[i].image + "' class='xs-thumb'>" + wines[i].title + ' ' + wine_desc + '...' + "</a></li></ul>"
                         }
                         $("#searchResult").html(res)
-                        $(".allResults").attr("href", "{{route('wine-shop')}}?" + data.link)
+                        $(".allResults").attr("href", "{{route('wine_filter')}}?" + data.link)
                         $('.allResults').show();
                     } else {
                         $("#searchResult").html("<div class='col-md-12 searchError'>По вашему запросу ничего не найдено</div>")
