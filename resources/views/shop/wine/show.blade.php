@@ -39,7 +39,7 @@
                                                 @if(isset($wine->winery))
                                                     <a href="{{route('winery', $wine->winery->slug )}}">
                                                               <span
-                                                                  class="iblock">Производитель<br><span>{{$wine->manufacture->title}}</span></span>
+                                                                  class="iblock" style="padding-left: 9.5vw; text-align: left;"><span style="font-size: 0.834vw; font-weight: normal; text-transform: initial;">Производитель</span><br><span>{{$wine->manufacture->title}}</span></span>
                                                     </a>
                                                 @else
                                                     <a href="#">
@@ -71,8 +71,6 @@
                                                             <span class="icon-icon_champagne"></span>
                                                         @elseif($wine->excerpt->type == 2)
                                                             <span class="icon-icon_barrel"></span>
-                                                        @else
-                                                            <span class=""></span>
                                                         @endif
                                               </span>
                                                 @endif
@@ -251,7 +249,7 @@
             <div class="row">
                 <section id="content_bottom">
                     <!-- 2nd slider here -->
-                    <div class="featured_cont">
+                    <div class="featured_cont" style="padding-bottom: 1vw;">
                         <!-- slider here -->
                         <!-- Swiper -->
                         <h4>Рекомендуем также</h4>

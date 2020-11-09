@@ -13,10 +13,10 @@
                         <div class="addresses">
                             @foreach($contacts as $contact)
                                 <div class="address" data-index="{{$loop->iteration}}">
-                                    <h2 class="text-white">{{$contact->title}}</h2>
-                                    <p class="text-white">{{$contact->address}}</p>
-                                    <p class="text-white"> {{$contact->phone}}</p>
-                                    <p class="text-white">{{$contact->schedule}}</p>
+                                    <h2 class="text-white contact_info_name">{{$contact->title}}</h2>
+                                    <p class="text-white contact_info">{{$contact->address}}</p>
+                                    <p class="text-white contact_info"> {{$contact->phone}}</p>
+                                    <p class="text-white contact_info">{{$contact->schedule}}</p>
                                 </div>
                             @endforeach
                         </div>
