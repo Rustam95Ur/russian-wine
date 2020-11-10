@@ -27,7 +27,6 @@ class IndexController extends Controller
      */
     public function wine_list(WineFilter $filters)
     {
-
         $wineries = Winery::where('status', '=', 'ACTIVE')->orderBy('title', 'ASC')
             ->get();
         $mobile_wineries = $wineries->groupBy(function ($item) {
@@ -46,10 +45,9 @@ class IndexController extends Controller
         $wines = Wine::where('status', '=', 'ACTIVE')->where('price', '>', 0)->filter($filters)->with('color', 'sugar', 'winery')
             ->orderByRaw('-sort_id DESC')->paginate(30);
         $bread_crumbs = [];
-        $request_filter = [];
-        if (\request()->get('request')) {
-            $request_filter =  (array) json_decode(Cookie::get('filters'));
-            $bread_crumbs = $this->bread_crumbs();
+        $request_filter = \request()->input();
+        if ($request_filter) {
+            $bread_crumbs = $this->bread_crumbs($request_filter);
         }
         $favorite_id_list = [];
         if (Auth::guard('client')->user()) {
@@ -84,14 +82,6 @@ class IndexController extends Controller
             'favorite' => $favorite_id_list,
             'bread_crumbs' => $bread_crumbs
         ]);
-    }
-
-    public function wine_filter()
-    {
-        $filters = request()->input();
-        $cookei_filter = json_encode($filters);
-        Cookie::queue('filters', $cookei_filter, 60);
-        return redirect()->route('wine-shop', 'request=1');
     }
 
     /**
@@ -495,9 +485,14 @@ class IndexController extends Controller
         return $bread_crumbs;
     }
 
-    protected function bread_crumbs()
+    protected function bread_crumbs($requests=null)
     {
-        $filters = json_decode(Cookie::get('filters'));
+        if ($requests) {
+            $filters = $requests;
+        }else {
+            $filters = json_decode(Cookie::get('filters'));
+
+        }
         $bread_crumbs = [];
         if ($filters) {
             foreach ($filters as $key => $values) {

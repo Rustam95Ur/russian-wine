@@ -38,7 +38,7 @@
                 @if(count($orders) == 0)
                     <div class="mt-lg text-center">
                         <h3>Вы не сделали ни одного заказа</h3>
-                        <a href={{route('wine-shop')}}>
+                        <a href={{route('wine_shop')}}>
                             <button class="btn-danger">Перейти в Винотеку</button>
                         </a>
                     </div>

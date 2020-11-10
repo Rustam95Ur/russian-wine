@@ -43,7 +43,7 @@
                         </button>
                         <ul class="nav navbar-nav">
                             <li><a class="{{(\Request::route()->getName() == 'wine-shop') ? 'active_link' : ''}}"
-                                   href="{{route('wine-shop')}}">{{trans('header.wine')}}</a>
+                                   href="{{route('wine_shop')}}">{{trans('header.wine')}}</a>
                             </li>
                             <li><a class="{{(\Request::route()->getName() == 'sets') ? 'active_link' : ''}}"
                                    href="{{route('sets')}}">{{trans('header.sets')}}</a></li>
@@ -121,7 +121,7 @@
                                                 Ваша корзина ещё пуста
                                             </h2>
                                             <img alt="cart-icon" src="{{ asset ('image/empty.jpg') }}">
-                                            <button onclick="window.location.href=' {{route('wine-shop')}} ';">
+                                            <button onclick="window.location.href=' {{route('wine_shop')}} ';">
                                                 Выбрать вино
                                             </button>
                                         </div>
@@ -162,7 +162,7 @@
                                                         </div>
                                                         <div class="col-md-4 third_cl">
                                                             <p style="font-family: ProximaNova-reg;">Пожалуйста
-                                                                <a href="{{route('wine-shop')}}"
+                                                                <a href="{{route('wine_shop')}}"
                                                                    style="color: #23252b;text-decoration:underline;"
                                                                    id="link_wine">добавьте</a>
                                                                 товары в корзину
@@ -197,7 +197,7 @@
         <div class="overlay-results">
             <div id="searchResult">
             </div>
-            <a href="{{route('wine-shop')}}" class="allResults" style="display: none">Показать все результаты</a>
+            <a href="{{route('wine_shop')}}" class="allResults" style="display: none">Показать все результаты</a>
         </div>
     </div>
 </header>

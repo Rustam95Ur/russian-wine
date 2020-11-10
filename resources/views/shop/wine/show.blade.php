@@ -9,7 +9,7 @@
                 <div class="col-md-12">
                     <div class="col-md-6">
                         <div class="toShop">
-                            <a href="{{route('wine-shop')}}" class="pageControl">
+                            <a href="{{route('wine_shop')}}" class="pageControl">
                                 <i class="leftArrowSvg">
                                     <svg width="25" height="12" viewBox="0 0 31 16" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -21,7 +21,7 @@
                             </a>
                         </div>
                         <div class="mobileToShop">
-                            <a href="{{route('wine-shop')}}" class="pageControl">
+                            <a href="{{route('wine_shop')}}" class="pageControl">
                                     <img alt="close_icon" src="http://dev.wine/image/closeicon.png">
                             </a>
                         </div>
@@ -126,11 +126,11 @@
                         <div class="product_page_Controls">
                             <ul class="breadcrumb">
                                 <li><a href="{{route('home')}}">Главная</a></li>
-                                <li><a href="{{route('wine-shop')}}">Вино</a></li>
+                                <li><a href="{{route('wine_shop')}}">Вино</a></li>
                                 @if(isset($bread_crumbs))
                                     @foreach($bread_crumbs as $bread_crumb)
                                         <li>
-                                            <a href="{{route('wine-shop')}}?{{$bread_crumb['type']}}={{$bread_crumb['id']}}">{{$bread_crumb['title']}}</a>
+                                            <a href="{{route('wine_shop')}}?{{$bread_crumb['type']}}={{$bread_crumb['id']}}">{{$bread_crumb['title']}}</a>
                                         </li>
                                     @endforeach
                                 @endif
@@ -209,7 +209,7 @@
                             </div>
                             <div class="col-md-6">
                                 @if(isset($wine->winery))
-                                    <a href="{{route('wine-shop')}}?winery[]={{$wine->winery->id}}"><h3 class="hover_red">Другие вина
+                                    <a href="{{route('wine_shop')}}?winery[]={{$wine->winery->id}}"><h3 class="hover_red">Другие вина
                                             винодельни</h3></a>
                                 @else
                                     <a href="#"><h3 class="hover_red">Другие вина винодельни</h3></a>

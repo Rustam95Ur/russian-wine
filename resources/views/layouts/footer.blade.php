@@ -4,7 +4,7 @@
             <div class="ftr__list nav col-sm-3 col-md-4 col-lg-3 col-lg-push-3">
                 <h5 onclick="$('#footer1').toggleClass('footerUl');">Клиентам <i class="fa fa-chevron-down"></i></h5>
                 <ul class="list-unstyled" id="footer1">
-                    <li><a href="{{route('wine-shop')}}">{{trans('header.wine')}}</a></li>
+                    <li><a href="{{route('wine_shop')}}">{{trans('header.wine')}}</a></li>
                     <li><a href="{{route('sets')}}">{{trans('footer.sets')}}</a></li>
                     <li><a href="{{route('subscription')}}">{{trans('header.subscription')}}</a></li>
                     <li><a href="{{route('personal-wine')}}">{{trans('header.personal-wine')}}</a></li>

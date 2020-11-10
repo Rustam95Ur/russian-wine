@@ -54,7 +54,7 @@
                         </div>
                         <div class="mt-lg text-center" id="favorite_zero" style="display: {{(count($favorites) > 0 ) ? 'none' : ''}}">
                             <h3>В избраном пока ничего нет <br> но вы можете их добавить из винотеки</h3>
-                            <a href={{route('wine-shop')}}>
+                            <a href={{route('wine_shop')}}>
                                 <button class="btn-danger">Перейти в Винотеку</button>
                             </a>
                         </div>
