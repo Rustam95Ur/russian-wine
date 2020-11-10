@@ -1031,7 +1031,7 @@ header #form-language .language-select {
 }
 
 .information-wine-regions .nav-pills {
-    text-align: justify
+    text-align: center;
 }
 
 .information-wine-regions .nav-pills > li {

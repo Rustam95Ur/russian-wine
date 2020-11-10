@@ -22,7 +22,8 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-8 col-lg-9">
-                        <div id="map"></div>
+
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A039ba814ab18459dd12cbdcbbfa3250c8a2bd73218901b0cec73c6858b34d84a&amp;width=100%25&amp;height=385&amp;lang=ru_RU&amp;scroll=true"></script>
                     </div>
                 </div>
             </div>

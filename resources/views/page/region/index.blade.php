@@ -23,8 +23,7 @@
                 </div>
             </div>
             <div class="map">
-                <div id="map" style="position: relative; overflow: hidden;">
-                </div>
+                 <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A857e021fb321f3e65130d4328fb639b8a6965c6f92447c7ac8d82ab239ba8a77&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
             </div>
             <div class="tab-content">
                 @foreach($regions as $region)
@@ -102,6 +101,7 @@
                 @endforeach
             </div>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
             <script>
                 var markers = [];
 
@@ -121,6 +121,8 @@
                         showActiveMarkers(region);
                     });
                 });
+
+
 
                 function initMap() {
                     var map = new google.maps.Map(document.getElementById('map'), {
