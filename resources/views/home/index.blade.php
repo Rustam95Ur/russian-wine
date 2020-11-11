@@ -12,7 +12,7 @@
             <div id="home_slider" class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide text-center">
-                        <a href="{{route('wine-shop')}}">
+                        <a href="{{route('wine_shop')}}">
                             <img alt="Subscribe Bg" src="{{ asset ('image/background_podpiska.png') }}">
                             <span>Вино</span>
                             <p>
@@ -20,7 +20,7 @@
                                 авторских микровиноделен.
                             </p>
                         </a>
-                        <a href="{{route('wine-shop')}}" class="home_btn">Все вина</a>
+                        <a href="{{route('wine_shop')}}" class="home_btn">Все вина</a>
                     </div>
                     <div class="swiper-slide text-center">
                         <a href="{{route('sets')}}">
@@ -117,10 +117,10 @@
                                             </div>
                                             <div class="button_cont">
                                                 <div class="prod_quantity">
-                                                    <span class="qua_mins" onclick="qua_mins({{$wine->id}})"></span>
+                                                    <span class="qua_mins" onclick="update_count({{$wine->id}}, 'minus')"></span>
                                                     <input type="number" class="quantity" id="wine-{{$wine->id}}"
                                                            value="1">
-                                                    <span class="qua_plus" onclick="qua_plus({{$wine->id}})"></span>
+                                                    <span class="qua_plus" onclick="update_count({{$wine->id}}, 'plus')"></span>
                                                 </div>
                                                 <button id="button-carts" class="cart-btn-{{$wine->id}}"
                                                         onclick="cart_add('{{$wine->id}}', 1, 'wine');">
@@ -138,7 +138,7 @@
                 <!-- Swiper JS -->
                 <div class="swiper-pagination feat-pagination0"></div>
             </div>
-            <a class="all_wines" href="{{route('wine-shop')}}">Все вина</a>
+            <a class="all_wines" href="{{route('wine_shop')}}">Все вина</a>
         </section>
 
         <section id="specials">
@@ -255,10 +255,10 @@
                                         </div>
                                         <div class="button_cont">
                                             <div class="prod_quantity">
-                                                <span class="qua_mins" onclick="qua_mins({{$wine->id}})"></span>
+                                                <span class="qua_mins" onclick="update_count({{$wine->id}}, 'minus')"></span>
                                                 <input type="number" class="quantity" id="wine-{{$wine->id}}"
                                                        value="1">
-                                                <span class="qua_plus" onclick="qua_plus({{$wine->id}})"></span>
+                                                <span class="qua_plus" onclick="update_count({{$wine->id}}, 'plus')"></span>
                                             </div>
                                             <button id="button-carts" class="cart-btn-{{$wine->id}}"
                                                     onclick="cart_add('{{$wine->id}}', 1, 'wine');">
@@ -324,7 +324,7 @@
                                             @endif
                                         <li><p>Вина:
                                                 @foreach($winemaker->wines as $wine)
-                                                    <a href="{{route('wine_filter')}}?sort[]={{$wine->sort->id}}&winery[]={{$wine->winery->id}}"
+                                                    <a href="{{route('wine_shop')}}?sort[]={{$wine->sort->id}}&winery[]={{($winemaker->winery) ?$winemaker->winery->id : ''}}"
                                                        class="text-black">
                                                         {{$wine->title}}
                                                     </a>

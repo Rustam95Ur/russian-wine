@@ -44,7 +44,10 @@ $(document).ready(function () {
         var page = $(this).attr('href').split('page=')[1];
         var filter = $('#searching-form').serialize()
         wine_filter_search(filter, page)
+
     });
+
+
 });
 
 function url_breadcrumb_checked() {
@@ -70,9 +73,20 @@ function getUrlVars() {
 }
 
 function wine_filter_search(filter, page = 1) {
+    var ajax_url = '?' + filter + '&page=' + page
+    setupPage();
+    history.pushState(ajax_url, document.title, ajax_url);
+    onpopstate = function (event) {
+        setupPage(event.state);
+    }
+    function setupPage() {
+        document.links[0].href = ''
+        document.links[0].href = ajax_url;
+    }
+
     $.ajax(
         {
-            url: '?' + filter + '&page=' + page,
+            url: ajax_url,
             type: "get",
             datatype: "html"
         }).done(function (data) {
@@ -83,7 +97,7 @@ function wine_filter_search(filter, page = 1) {
         console.log(ajaxOptions)
         console.log(thrownError)
     });
-
+    scroll_up()
     filter_breadcrumb()
 
 }
@@ -270,8 +284,6 @@ $(".custom-option").on("click", function () {
     var filter = $('#searching-form').serialize()
     wine_filter_search(filter)
 });
-
-
 function search(type) {
     var search_input, filter, inputs, label_text, i;
     search_input = document.getElementById("search-main-" + type);

@@ -79,12 +79,12 @@
                             @if(!$set->sale)
                                 <div class="quantity_quickorder" id="sety-calc">
                                     <p>Количество сетов</p>
-                                    <span id="qminus"><input type="button" onclick="button_minus({{$set->id}});">
+                                    <span id="qminus"><input type="button" onclick="update_set_price({{$set->id}}, 'minus');">
                                     <img alt="minus_image" src="{{asset('image/white_minus.png')}}"></span>
                                     <input type="text" data-quantity="1" class="qty_quickorder" name="quantity"
                                            id="set_qua" size="2" value="1">
                                     <span id="qplus">
-                                    <input type="button" onclick="button_plus({{$set->id}});">
+                                    <input type="button" onclick="update_set_price({{$set->id}}, 'plus');">
                                     <img alt="plus_image" src="{{asset('image/white_plus.png')}}"></span>
                                 </div>
                                 <span class="set-price">{{$set->price}} <span>о</span>
@@ -95,7 +95,7 @@
 		                        </div>
 	                        </span>
                                 <button class="add-cart  set-buy-btn btn-danger"
-                                        onclick="cart_add('{{$set->id}}', 1, 'set');$(this).addClass('active')">в
+                                        onclick="cart_add('{{$set->id}}', 1, 'set');$(this).addClass('active'); $(this).text('В корзине')">в
                                     корзину
                                 </button>
                             @else
@@ -107,7 +107,7 @@
                                    </div>
 	                            </span>
                                 <button class="add-cart set-buy-btn btn-danger"
-                                        onclick="cart_add('{{$set->id}}', 1, 'set');$(this).addClass('active')">в
+                                        onclick="cart_add('{{$set->id}}', 1, 'set');$(this).addClass('active'); $(this).text('В корзине')">в
                                     корзину
                                 </button>
                             @endif
@@ -199,31 +199,24 @@
     @push('scripts')
 
         <script type="text/javascript"><!--
-            function button_plus(set_id) {
-                var input_val = parseInt($('#set_qua').val()) + 1
-                $('#set_qua').val(input_val)
-                var total = {{$set->price}} * input_val
-                @if($set->sale)
-                $('.set-price').html(total + ' <span>о</span> <div id="skidka">-{{$set->sale}}%</div>');
-                @else
-                $('.set-price').html(total + ' <span>о</span>');
-                @endif
-                $('.add-cart').attr("onclick", "cart_add('" + set_id + "', '" + input_val + "', 'set'); $(this).addClass('active')");
-            }
-
-            function button_minus(set_id) {
-                var input_val = parseInt($('#set_qua').val()) - 1
+            function update_set_price(set_id, currency_type) {
+                var set_qua = $('#set_qua'),
+                    currency_symbol = (currency_type == 'minus') ? -1 : 1,
+                    input_val = parseInt(set_qua.val()) + currency_symbol,
+                    total = (parseInt({{$set->price}}) * input_val),
+                    set_price_class = $('.set-price'),
+                    add_cart_class = $('.add-cart');
                 if (input_val > 0) {
-                    $('#set_qua').val(input_val)
-                    var total = {{$set->price}} * input_val
+                    set_qua.val(input_val)
                     @if($set->sale)
-                    $('.set-price').html(total + ' <span>о</span> <div id="skidka">-{{$set->sale}}%</div>');
+                    set_price_class.html(total + ' <span>о</span> <div id="skidka">-{{$set->sale}}%</div>');
                     @else
-                    $('.set-price').html(total + ' <span>о</span>');
+                    set_price_class.html(total + ' <span>о</span>');
                     @endif
-                    $('.add-cart').attr("onclick", "cart_add('" + set_id + "', '" + input_val + "', 'set'); $(this).addClass('active')");
+                    add_cart_class.attr("onclick", "cart_add('" + set_id + "', '" + input_val + "', 'set'); $(this).addClass('active'); $(this).text('В корзине')");
+                    add_cart_class.removeClass('active')
+                    add_cart_class.html('В корзину');
                 }
-
             }
 
             //--></script>

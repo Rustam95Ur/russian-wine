@@ -1161,7 +1161,7 @@ span.currency {
     text-align: center;
     padding: 10px 20px;
     width: 11.063vw;
-    left: 0 !important; 
+    left: 0 !important;
 }
 
 .prod_quantity.col-md-cstm span:last-child {
@@ -2758,8 +2758,8 @@ span.currency {
         font-size: 2.5vh
     }
 }
-.set-buy-btn:hover, .set-buy-btn.active {
-    background-color: #da224d;
+.set-buy-btn.active {
+    background-color: #261F30;
 }
 .add-cart.set-buy-btn.btn-danger::before {
     content: '';

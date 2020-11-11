@@ -4,11 +4,11 @@
         <div class="row subHeader">
             <ul class="breadcrumb" id="breadcrumb">
                 <li><a href="{{route('home')}}">Главная</a></li>
-                <li><a href="{{route('wine-shop')}}">Вино</a></li>
+                <li><a href="{{route('wine_shop')}}">Вино</a></li>
                 @if(isset($bread_crumbs))
                     @foreach($bread_crumbs as $bread_crumb)
                         <li>
-                            <a href="{{route('wine-shop')}}?{{$bread_crumb['type']}}={{$bread_crumb['id']}}">{{$bread_crumb['title']}}</a>
+                            <a href="{{route('wine_shop')}}?{{$bread_crumb['type']}}={{$bread_crumb['id']}}">{{$bread_crumb['title']}}</a>
                         </li>
                     @endforeach
                 @else
