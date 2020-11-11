@@ -177,7 +177,7 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <button id="button-carts" class="cart-btn-{{$wine->id}}"
-                                                        onclick="cart_add('{{$wine->id}}', 1, 'wine');">
+                                                        onclick="cart_add('{{$wine->id}}', 1, 'wine',  'wine-show');">
                                                     <span>Добавить в корзину</span>
                                                 </button>
                                             </div>
