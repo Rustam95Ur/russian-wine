@@ -1103,9 +1103,10 @@ span.currency {
     padding-left: 4.15vw;
     font-style: normal;
     font-weight: normal;
-    font-size: 35px;
+    font-size: 30px;
     line-height: 70px;
     color: #000000;
+    font-family: 'ProximaNova-Reg' !important;
 }
 
 #myOverlay .overlay-content .overlay-form {
@@ -2365,7 +2366,7 @@ span.currency {
     display: flex;
     padding: 2rem 0;
     text-align: center;
-    min-width: 16.5%;
+    min-width: 14%;
 }
 
 .modalOverflowWrap .tasting_wine_image {
