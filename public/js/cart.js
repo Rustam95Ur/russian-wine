@@ -17,13 +17,18 @@ function qua_mins(wine_id) {
 }
 
 function cart_add(wine_id, qtn, type) {
+    var wine_btn = $('.cart-btn-' + wine_id)
     $.ajax({
         url: '/cart/add/' + type + '/' + wine_id + '/' + qtn,
         success: function (data) {
         },
         complete: function () {
-            $('.cart-btn-' + wine_id).addClass('active');
-            $('.cart-btn-' + wine_id).text('В корзине');
+            wine_btn.addClass('active');
+            wine_btn.text('В корзине');
+            setTimeout(function () {
+                wine_btn.removeClass('active');
+                wine_btn.text('В корзину');
+            }, 1500);
             cart_table_update()
             countItem();
         }

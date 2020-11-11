@@ -284,8 +284,6 @@ $(".custom-option").on("click", function () {
     var filter = $('#searching-form').serialize()
     wine_filter_search(filter)
 });
-
-
 function search(type) {
     var search_input, filter, inputs, label_text, i;
     search_input = document.getElementById("search-main-" + type);
