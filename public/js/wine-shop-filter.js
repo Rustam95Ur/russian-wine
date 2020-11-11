@@ -97,7 +97,7 @@ function wine_filter_search(filter, page = 1) {
         console.log(ajaxOptions)
         console.log(thrownError)
     });
-
+    scroll_up()
     filter_breadcrumb()
 
 }

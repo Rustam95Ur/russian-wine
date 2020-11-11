@@ -117,10 +117,10 @@
                                             </div>
                                             <div class="button_cont">
                                                 <div class="prod_quantity">
-                                                    <span class="qua_mins" onclick="qua_mins({{$wine->id}})"></span>
+                                                    <span class="qua_mins" onclick="update_count({{$wine->id}}, 'minus')"></span>
                                                     <input type="number" class="quantity" id="wine-{{$wine->id}}"
                                                            value="1">
-                                                    <span class="qua_plus" onclick="qua_plus({{$wine->id}})"></span>
+                                                    <span class="qua_plus" onclick="update_count({{$wine->id}}, 'plus')"></span>
                                                 </div>
                                                 <button id="button-carts" class="cart-btn-{{$wine->id}}"
                                                         onclick="cart_add('{{$wine->id}}', 1, 'wine');">
@@ -255,10 +255,10 @@
                                         </div>
                                         <div class="button_cont">
                                             <div class="prod_quantity">
-                                                <span class="qua_mins" onclick="qua_mins({{$wine->id}})"></span>
+                                                <span class="qua_mins" onclick="update_count({{$wine->id}}, 'minus')"></span>
                                                 <input type="number" class="quantity" id="wine-{{$wine->id}}"
                                                        value="1">
-                                                <span class="qua_plus" onclick="qua_plus({{$wine->id}})"></span>
+                                                <span class="qua_plus" onclick="update_count({{$wine->id}}, 'plus')"></span>
                                             </div>
                                             <button id="button-carts" class="cart-btn-{{$wine->id}}"
                                                     onclick="cart_add('{{$wine->id}}', 1, 'wine');">

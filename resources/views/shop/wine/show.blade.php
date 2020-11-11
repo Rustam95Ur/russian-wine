@@ -177,16 +177,16 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <button id="button-carts" class="cart-btn-{{$wine->id}}"
-                                                        onclick="cart_add('{{$wine->id}}', 1, 'wine',  'wine-show');">
+                                                        onclick="cart_add('{{$wine->id}}', 1, 'wine');">
                                                     <span>Добавить в корзину</span>
                                                 </button>
                                             </div>
                                         </div>
                                         <div class="prod_quantity col-md-cstm">
-                                            <span class="qua_plus" onclick="qua_plus({{$wine->id}})" ></span>
+                                            <span class="qua_plus" onclick="update_count({{$wine->id}},'plus', 'wine-show')" ></span>
                                             <input type="number" class="quantity" id="wine-{{$wine->id}}"
                                                    value="1">
-                                            <span class="qua_mins" onclick="qua_mins({{$wine->id}})"></span>
+                                            <span class="qua_mins" onclick="update_count({{$wine->id}}, 'minus', 'wine-show')"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -259,47 +259,49 @@
                                 src="{{ asset ('image/slidearrow.png') }}"></div>
                         <div class="swiper-container" id="featured_slide1">
                             <div class="swiper-wrapper">
-                                @foreach($wines as $wine)
+                                @foreach($wines as $feature_wine)
+                                    @if ($feature_wine->id !=  $wine->id)
                                     <div class="swiper-slide">
                                         <div class="wine">
                                             <div class="slider_image">
-                                                <a href="{{route('wine', $wine->slug)}}" class="preview">
+                                                <a href="{{route('wine', $feature_wine->slug)}}" class="preview">
                                                     <img alt="{{$wine->title}}"
-                                                         src="{{ Voyager::image($wine->image) }}">
+                                                         src="{{ Voyager::image($feature_wine->image) }}">
                                                     <span class="attributes"></span>
                                                 </a>
                                             </div>
-                                            <h2><a href="{{route('wine', $wine->slug)}}"
-                                                   class="preview">{{$wine->title}}</a>
+                                            <h2><a href="{{route('wine', $feature_wine->slug)}}"
+                                                   class="preview">{{$feature_wine->title}}</a>
                                             </h2>
-                                            <p>{{isset($wine->winery) ? $wine->winery->title : ''}}</p>
+                                            <p>{{isset($feature_wine->winery) ? $feature_wine->winery->title : ''}}</p>
                                             <div class="meta">
                                         <span
-                                            class="color">{{isset($wine->color) ? $wine->color->title : '' }} </span><span
+                                            class="color">{{isset($feature_wine->color) ? $feature_wine->color->title : '' }} </span><span
                                                     class="sep"> | </span>
                                                 <span
-                                                    class="hardness">{{isset($wine->sugar) ? $wine->sugar->title : ''}} </span><span
+                                                    class="hardness">{{isset($feature_wine->sugar) ? $feature_wine->sugar->title : ''}} </span><span
                                                     class="sep"> | </span>
-                                                <span class=""> {{$wine->year}}</span>
+                                                <span class=""> {{$feature_wine->year}}</span>
                                                 <div class="price-vinoteka">
-                                                    <a href="{{route('wine', $wine->slug)}}"
-                                                       class="preview">{{$wine->price}}
+                                                    <a href="{{route('wine', $feature_wine->slug)}}"
+                                                       class="preview">{{$feature_wine->price}}
                                                         <span>п</span></a>
                                                 </div>
                                                 <div class="button_cont">
                                                     <div class="prod_quantity">
-                                                        <span class="qua_mins"></span>
-                                                        <input type="number" class="quantity" data-id="{{$wine->id}}"
+                                                        <span class="qua_mins" onclick="update_count({{$feature_wine->id}}, 'minus')"></span>
+                                                        <input type="number" class="quantity" id="wine-{{$feature_wine->id}}"
                                                                value="1">
-                                                        <span class="qua_plus"></span>
+                                                        <span class="qua_plus" onclick="update_count({{$feature_wine->id}}, 'plus')"></span>
                                                     </div>
-                                                    <button id="button-carts" class="cart-btn-{{$wine->id}}"
-                                                            onclick="cart_add('{{$wine->id}}', 1, 'wine');">
+                                                    <button id="button-carts" class="cart-btn-{{$feature_wine->id}}"
+                                                            onclick="cart_add('{{$feature_wine->id}}', 1, 'wine');">
                                                         <span>В корзину</span></button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    @endif
                                 @endforeach
                             </div>
                             <!-- Add Pagination -->
