@@ -171,7 +171,7 @@
                                     <div class="button_cont">
                                         <div class="col-md-6">
                                             <div class="price-vinoteka col-md-12">
-                                                <a href="#" class="preview wine_show_price">{{$wine->price}} <span>п</span></a>
+                                                <a href="#" class="preview wine_show_price">{{$wine->price}} <span style="background: none;">п</span></a>
                                                 <input type="hidden" value="{{$wine->price}}" class="wine_price">
 
                                             </div>
@@ -195,7 +195,7 @@
                         <div class="row bigDesc">
                             <div class="col-md-6">
                                 <a href="#description-info">
-                                    <h3 class="hover_red">Характеристики
+                                    <h3 class="hover_red" style="text-transform: uppercase;">Характеристики
                                         <svg class="icon-red" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
 
@@ -209,7 +209,7 @@
                             </div>
                             <div class="col-md-6">
                                 @if(isset($wine->winery))
-                                    <a href="{{route('wine_shop')}}?winery[]={{$wine->winery->id}}"><h3 class="hover_red">Другие вина
+                                    <a href="{{route('wine_shop')}}?winery[]={{$wine->winery->id}}"><h3 class="hover_red" style="text-transform: uppercase; font-size: 0.9vw;">Другие вина
                                             винодельни</h3></a>
                                 @else
                                     <a href="#"><h3 class="hover_red">Другие вина винодельни</h3></a>

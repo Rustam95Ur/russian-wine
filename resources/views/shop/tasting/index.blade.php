@@ -22,7 +22,7 @@
                         </ul>
                         <div id="button_link">
                             <a id="set_vybor" href="#sets_anchor">Выбрать сет</a>
-                            <a id="how_we" href="#how_we_cont">Как мы это делаем</a>
+                            <a id="how_we" href="#how_we_cont" >Как мы это делаем</a>
                         </div>
                     </div>
                     <div class="col-md-5 pl-10">
@@ -108,7 +108,7 @@
         <section id="second_block">
             <div id="how_we_cont">
                 <div class="swiper-viewport" id="how_we">
-                    <div class="title_prox_bold">
+                    <div class="title_prox_bold" style="text-transform: inherit; letter-spacing: 0.1vw;">
                         Как мы это делаем
                     </div>
                     <div class="text_light">
@@ -137,7 +137,7 @@
         </section>
         <section id="fourth_block">
             {{--                    <img alt="image" id="talks_before" src="{{asset('image/page/testing/talks_before.png')}}">--}}
-            <h5 id="block_title">О НАС ГОВОРЯТ</h5>
+            <h5 id="block_title" style="text-transform: inherit; letter-spacing: 0.1vw;">О нас говорят</h5>
             <div class="swiper-container swiper-container-horizontal" id="testimonials">
                 <div class="swiper-wrapper">
                     @foreach($comments as $comment)

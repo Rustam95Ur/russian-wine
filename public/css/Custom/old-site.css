@@ -11652,6 +11652,10 @@ section#specials #specials-cont div.col-md-4 {
     line-height: 1.4;
 }
 
+.breadcrumb a{
+    font-family: 'ProximaNova-Reg';
+}
+
 
 /* success end */
 
