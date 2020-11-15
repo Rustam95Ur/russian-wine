@@ -212,7 +212,7 @@
                                     <a href="{{route('wine_shop')}}?winery[]={{$wine->winery->id}}"><h3 class="hover_red" style="text-transform: uppercase; font-size: 0.9vw;">Другие вина
                                             винодельни</h3></a>
                                 @else
-                                    <a href="#"><h3 class="hover_red">Другие вина винодельни</h3></a>
+                                    <a href="#"><h3 class="hover_red" style="text-transform: uppercase; font-size: 0.9vw;">Другие вина винодельни</h3></a>
                                 @endif
                             </div>
                         </div>

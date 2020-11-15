@@ -2619,6 +2619,8 @@
 }
 .tasting_modal .list-inline li {
     border-right: 1px solid;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 

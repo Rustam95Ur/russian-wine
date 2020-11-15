@@ -2706,8 +2706,9 @@ header #form-language .language-select {
 
 #product-product.product-temp1 .manufacturer .iblock span, #product-product .manufacturer .iblock span {
     font-size: .938vw;
-    font-weight: 900;
     text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'ProximaNova-Bold';
 }
 
 #product-product.product-temp1 .type,
@@ -2823,12 +2824,13 @@ header #form-language .language-select {
 
 
 #product-product.product-temp1 .volume {
-    margin-top: 12vw;
+    margin-top: 6vw;
     font-size: 3vw;
     font-weight: 900;
     text-align: left;
     color: #DEDDDF;
     padding-left: 10vw;
+    margin-bottom: 5vw;
 }
 
 #product-product.product-temp1 .amount {
@@ -14652,6 +14654,9 @@ select:-internal-autofill-selected {
     width: 100vw;
     color: #fff;
     text-align: left;
+    z-index: 99999;
+    position: relative;
+    padding: 8rem;
 }
 
 #information-winerywc .col-ss-6 {
@@ -14659,7 +14664,7 @@ select:-internal-autofill-selected {
     float: left;
     position: relative;
     box-sizing: border-box;
-    padding-top: 4.167vw;
+    /*padding-top: 4.167vw;*/
 }
 
 #information-winerywc .col-ss-6 + .col-ss-6 {
@@ -14667,9 +14672,8 @@ select:-internal-autofill-selected {
 }
 
 #information-winerywc h1 {
-    font: 4.167vw ProximaNova-Bold;
+    font: 2.5vw ProximaNova-Bold;
     position: relative;
-    margin-left: -16.666vw;
     margin-top: 0;
     letter-spacing: 0.1vw;
     text-align: left;
@@ -14725,7 +14729,7 @@ select:-internal-autofill-selected {
 #information-winerywc .swiper-container .swiper-pagination {
     left: 5.469vw;
     text-align: left;
-    top: 34.2vw;
+    top: 30vw;
     bottom: auto;
     width: 5vw;
 }
@@ -14776,7 +14780,7 @@ select:-internal-autofill-selected {
 #information-winerywc .swiper-button-next {
     right: 0 !important;
     margin: 0;
-    bottom: 3.3vw;
+    /*bottom: 3.3vw;*/
     top: auto !important;
 }
 
@@ -14784,7 +14788,7 @@ select:-internal-autofill-selected {
     right: 5.990vw !important;
     left: auto !important;
     margin: 0;
-    bottom: 3.3vw;
+    /*bottom: 3.3vw;*/
     top: auto !important;
 }
 

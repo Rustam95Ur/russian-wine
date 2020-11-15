@@ -1103,12 +1103,20 @@ span.currency {
     padding-left: 4.15vw;
     font-style: normal;
     font-weight: normal;
-    font-size: 30px;
+    font-size: 35px;
     line-height: 70px;
     color: #000000;
     font-family: 'ProximaNova-Reg' !important;
 }
+#searchResult .text-danger{
+    font-size: 18px;
+    color: #000000;
+}
 
+#searchResult .text-danger #search{
+    width: 29px;
+    height: 71px;
+}
 #myOverlay .overlay-content .overlay-form {
     height: inherit;
 }
@@ -3170,7 +3178,7 @@ span.currency {
 @media (max-width: 1860px) and (min-width:1024px) {
     .iconSort {
         position: absolute;
-        right: 2.5vw;
+        right: 1.75vw;
         top: 0.7vw;
         height: 0.4vw;
     }
@@ -3182,7 +3190,7 @@ span.currency {
             line-height: normal;
         line-height: normal;
         height: auto;
-        width: auto;
+        width: 11vw;;
         outline: 0;
         line-height: 1.3;
         letter-spacing: -0.01em;
