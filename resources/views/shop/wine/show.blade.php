@@ -22,7 +22,7 @@
                         </div>
                         <div class="mobileToShop">
                             <a href="{{route('wine_shop')}}" class="pageControl">
-                                    <img alt="close_icon" src="http://dev.wine/image/closeicon.png">
+                                <img alt="close_icon" src="http://dev.wine/image/closeicon.png">
                             </a>
                         </div>
                         <div class="showcase">
@@ -39,7 +39,10 @@
                                                 @if(isset($wine->winery))
                                                     <a href="{{route('winery', $wine->winery->slug )}}">
                                                               <span
-                                                                  class="iblock" style="padding-left: 9.5vw; text-align: left;"><span class="light_font">Производитель</span><br><span class="bold_font">{{$wine->manufacture->title}}</span></span>
+                                                                  class="iblock"
+                                                                  style="padding-left: 9.5vw; text-align: left;"><span
+                                                                      class="light_font">Производитель</span><br><span
+                                                                      class="bold_font">{{$wine->manufacture->title}}</span></span>
                                                     </a>
                                                 @else
                                                     <a href="#">
@@ -66,7 +69,8 @@
                                             <div class="aging">
                                                 @if(isset($wine->excerpt))
                                                     <span
-                                                        class="iblock"><span class="light_font">Выдержка</span><br><span class="bold_font">{{$wine->excerpt->title}}</span>
+                                                        class="iblock"><span class="light_font">Выдержка</span><br><span
+                                                            class="bold_font">{{$wine->excerpt->title}}</span>
                                                   @if($wine->excerpt->type == 1)
                                                             <span class="icon-icon_champagne"></span>
                                                         @elseif($wine->excerpt->type == 2)
@@ -95,7 +99,8 @@
                                     <div class="row">
                                         <div class="col-xs-6">
                                             <div class="species">
-                                                          <span class="iblock"><span class="light_font">Сорт винограда</span><br>
+                                                          <span class="iblock"><span
+                                                                  class="light_font">Сорт винограда</span><br>
                                                                 <span class="bold_font">{{$wine->sort->title}}</span>
                                                           </span>
                                                 <img src="{{asset('image/vinograd.png')}}" alt="">
@@ -151,19 +156,27 @@
                             <h2 class="region">{{$wine->region->title}}</h2>
                         @endif
                         <div class="col-12">
-                            @if($vintages)
-                                <h4 class="wineSubtype">Винтаж</h4>
-                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <h4 class="wineSubtype">Винтаж</h4>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                @if($vintages)
                                     @foreach($vintages as $vintage)
                                         <label
                                             class="btn btn-secondary {{($vintage->id == $wine->id) ? 'active' : '' }}">
                                             <input type="radio" name="vintage" checked="" value="{{$vintage->slug}}">
-                                            <p>{{$vintage->year}} г. </p><i class="priceDefice"></i>
-                                            <p>{{$vintage->price}} р.</p>
+                                            <span>{{$vintage->year}} г. </span><i class="priceDefice"></i>
+                                            <span>{{$vintage->price}} р.</span>
                                         </label>
                                     @endforeach
-                                </div>
-                            @endif
+                                @else
+                                    <label
+                                        class="btn btn-secondary active ">
+                                        <input type="radio" name="vintage" checked>
+                                        <span>{{$wine->year}} г. </span>
+                                        <i class="priceDefice"></i>
+                                        <span>{{$wine->price}} р.</span>
+                                    </label>
+                                @endif
+                            </div>
                         </div>
                         <div id="product">
                             <div id="priceBlock" class="form-group">
@@ -171,7 +184,8 @@
                                     <div class="button_cont">
                                         <div class="col-md-6">
                                             <div class="price-vinoteka col-md-12">
-                                                <a href="#" class="preview wine_show_price">{{$wine->price}} <span style="background: none;">п</span></a>
+                                                <a href="#" class="preview wine_show_price">{{$wine->price}} <span
+                                                        style="background: none;">п</span></a>
                                                 <input type="hidden" value="{{$wine->price}}" class="wine_price">
 
                                             </div>
@@ -183,10 +197,12 @@
                                             </div>
                                         </div>
                                         <div class="prod_quantity col-md-cstm">
-                                            <span class="qua_plus" onclick="update_count({{$wine->id}},'plus', 'wine-show')" ></span>
+                                            <span class="qua_plus"
+                                                  onclick="update_count({{$wine->id}},'plus', 'wine-show')"></span>
                                             <input type="number" class="quantity" id="wine-{{$wine->id}}"
                                                    value="1">
-                                            <span class="qua_mins" onclick="update_count({{$wine->id}}, 'minus', 'wine-show')"></span>
+                                            <span class="qua_mins"
+                                                  onclick="update_count({{$wine->id}}, 'minus', 'wine-show')"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -209,7 +225,9 @@
                             </div>
                             <div class="col-md-6">
                                 @if(isset($wine->winery))
-                                    <a href="{{route('wine_shop')}}?winery[]={{$wine->winery->id}}"><h3 class="hover_red" style="text-transform: uppercase; font-size: 0.9vw;">Другие вина
+                                    <a href="{{route('wine_shop')}}?winery[]={{$wine->winery->id}}"><h3
+                                            class="hover_red" style="text-transform: uppercase; font-size: 0.9vw;">
+                                            Другие вина
                                             винодельни</h3></a>
                                 @else
                                     <a href="#"><h3 class="hover_red">Другие вина винодельни</h3></a>
@@ -261,46 +279,49 @@
                             <div class="swiper-wrapper">
                                 @foreach($wines as $feature_wine)
                                     @if ($feature_wine->id !=  $wine->id)
-                                    <div class="swiper-slide">
-                                        <div class="wine">
-                                            <div class="slider_image">
-                                                <a href="{{route('wine', $feature_wine->slug)}}" class="preview">
-                                                    <img alt="{{$wine->title}}"
-                                                         src="{{ Voyager::image($feature_wine->image) }}">
-                                                    <span class="attributes"></span>
-                                                </a>
-                                            </div>
-                                            <h2><a href="{{route('wine', $feature_wine->slug)}}"
-                                                   class="preview">{{$feature_wine->title}}</a>
-                                            </h2>
-                                            <p>{{isset($feature_wine->winery) ? $feature_wine->winery->title : ''}}</p>
-                                            <div class="meta">
+                                        <div class="swiper-slide">
+                                            <div class="wine">
+                                                <div class="slider_image">
+                                                    <a href="{{route('wine', $feature_wine->slug)}}" class="preview">
+                                                        <img alt="{{$wine->title}}"
+                                                             src="{{ Voyager::image($feature_wine->image) }}">
+                                                        <span class="attributes"></span>
+                                                    </a>
+                                                </div>
+                                                <h2><a href="{{route('wine', $feature_wine->slug)}}"
+                                                       class="preview">{{$feature_wine->title}}</a>
+                                                </h2>
+                                                <p>{{isset($feature_wine->winery) ? $feature_wine->winery->title : ''}}</p>
+                                                <div class="meta">
                                         <span
                                             class="color">{{isset($feature_wine->color) ? $feature_wine->color->title : '' }} </span><span
-                                                    class="sep"> | </span>
-                                                <span
-                                                    class="hardness">{{isset($feature_wine->sugar) ? $feature_wine->sugar->title : ''}} </span><span
-                                                    class="sep"> | </span>
-                                                <span class=""> {{$feature_wine->year}}</span>
-                                                <div class="price-vinoteka">
-                                                    <a href="{{route('wine', $feature_wine->slug)}}"
-                                                       class="preview">{{$feature_wine->price}}
-                                                        <span>п</span></a>
-                                                </div>
-                                                <div class="button_cont">
-                                                    <div class="prod_quantity">
-                                                        <span class="qua_mins" onclick="update_count({{$feature_wine->id}}, 'minus')"></span>
-                                                        <input type="number" class="quantity" id="wine-{{$feature_wine->id}}"
-                                                               value="1">
-                                                        <span class="qua_plus" onclick="update_count({{$feature_wine->id}}, 'plus')"></span>
+                                                        class="sep"> | </span>
+                                                    <span
+                                                        class="hardness">{{isset($feature_wine->sugar) ? $feature_wine->sugar->title : ''}} </span><span
+                                                        class="sep"> | </span>
+                                                    <span class=""> {{$feature_wine->year}}</span>
+                                                    <div class="price-vinoteka">
+                                                        <a href="{{route('wine', $feature_wine->slug)}}"
+                                                           class="preview">{{$feature_wine->price}}
+                                                            <span>п</span></a>
                                                     </div>
-                                                    <button id="button-carts" class="cart-btn-{{$feature_wine->id}}"
-                                                            onclick="cart_add('{{$feature_wine->id}}', 1, 'wine');">
-                                                        <span>В корзину</span></button>
+                                                    <div class="button_cont">
+                                                        <div class="prod_quantity">
+                                                            <span class="qua_mins"
+                                                                  onclick="update_count({{$feature_wine->id}}, 'minus')"></span>
+                                                            <input type="number" class="quantity"
+                                                                   id="wine-{{$feature_wine->id}}"
+                                                                   value="1">
+                                                            <span class="qua_plus"
+                                                                  onclick="update_count({{$feature_wine->id}}, 'plus')"></span>
+                                                        </div>
+                                                        <button id="button-carts" class="cart-btn-{{$feature_wine->id}}"
+                                                                onclick="cart_add('{{$feature_wine->id}}', 1, 'wine');">
+                                                            <span>В корзину</span></button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                     @endif
                                 @endforeach
                             </div>
@@ -318,18 +339,18 @@
         <script src="{{ asset('js/cart.js') }}"></script>
         <script src="{{ asset('js/favorite.js') }}"></script>
         <script>
-            $("input[name='vintage']").on('change', function() {
-                window.location.href=$(this).val();
+            $("input[name='vintage']").on('change', function () {
+                window.location.href = $(this).val();
             });
         </script>
         <script>
             $(document).on('click', 'a[href^="#"]', function (event) {
-                    event.preventDefault();
+                event.preventDefault();
 
-                    $('html, body').animate({
-                        scrollTop: $($.attr(this, 'href')).offset().top
-                    }, 1500);
-                });
+                $('html, body').animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top
+                }, 1500);
+            });
         </script>
     @endpush
 @endsection
