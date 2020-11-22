@@ -199,11 +199,11 @@
                                         <input name="name" class="form-control" type="text"
                                                placeholder="Имя">
                                     </div>
-                                    <div class="p-t-50">
+                                    <div class="p-t-0">
                                         <input name="phone" class="form-control" type="text"
                                                placeholder="Телефон">
                                     </div>
-                                    <div class="text-left p-t-50">
+                                    <div class="text-left p-t-0">
                                         <input type="submit" class="btn-danger"
                                                value="Оставить заявку">
                                     </div>

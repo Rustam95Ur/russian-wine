@@ -27,7 +27,7 @@
                         </div>
                         <div class="showcase">
                             <h2 class="desktopHidden">{{$wine->title}}</h2>
-                            <div>
+                            <div class="height_90">
                                 <div class="image">
                                     <img src="{{Voyager::image($wine->image)}}" title="{{$wine->title}}"
                                          alt="{{$wine->title}}">

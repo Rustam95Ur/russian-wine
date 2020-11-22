@@ -250,6 +250,10 @@ span.hidden-lg {
     margin-bottom: 15px
 }
 
+.height_90{
+    height: 90vh !important;
+}
+
 div.required .control-label:before {
     content: '* ';
     color: red;
@@ -417,6 +421,9 @@ header #form-language .language-select {
 @media (max-width: 478px) {
     #cart .dropdown-menu {
         width: 100%
+    }
+    .height_90{
+        height: 75vh !important;
     }
 }
 
@@ -1440,7 +1447,13 @@ header #form-language .language-select {
 
 #information-winery .description-first {
     font-size: 22px;
-    font-weight: 100
+    font-weight: 100;
+    font-family: "ProximaNova-Reg";
+}
+
+#information-winery .description-first p{
+    font-weight: 400;
+    font-family: 'ProximaNova-Reg', sans-serif;
 }
 
 #information-winery .description-second-title h2 {
@@ -12994,7 +13007,7 @@ nav ul > li:hover #inda-club {
 #thirdblock h4 {
     padding-right: 20.865936358894103VW;
     font-size: 3.6515388628064684VW;
-    margin: 0 0 4.694835680751173VW;
+    margin: 0 0 1.694835680751173VW;
     font-family: 'ProximaNova-Bold';
     color: #fff;
 }
@@ -13002,7 +13015,7 @@ nav ul > li:hover #inda-club {
 #thirdblock p {
     font-family: 'ProximaNova-Reg', sans-serif;;
     font-size: 1.1541666666666667VW;
-    margin-bottom: 3.694836VW;
+    margin-bottom: 1.694836VW;
     line-height: 1.6;
     padding-right: 5vw;
 }
@@ -13084,6 +13097,25 @@ nav ul > li:hover #inda-club {
     font-family: 'ProximaNova-Bold';
     border: 1.5px solid #fff;
 }
+
+@media (max-width: 1680px){
+
+    #pod_lastblock .col-sp-12 button {
+        margin-bottom: -0.2vw;
+        letter-spacing: 0.13vw;
+        height: 45px;
+        width: 11.5VW;
+        text-align: center;
+        background: transparent;
+        border-radius: 50px;
+        font-size: 0.65VW;
+        text-transform: uppercase;
+        color: #fff;
+        font-family: 'ProximaNova-Bold';
+        border: 1.5px solid #fff;
+    }
+}
+
 
 #pod_lastblock .col-sp-12 + .col-sp-12 {
     text-align: right;

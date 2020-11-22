@@ -23,7 +23,19 @@
                 </div>
             </div>
             <div class="map">
-                 <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A857e021fb321f3e65130d4328fb639b8a6965c6f92447c7ac8d82ab239ba8a77&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
+                 <div id="map" style="position: relative; overflow: hidden;">
+                    <div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);">
+                        <div class="gm-err-container">
+                            <div class="gm-err-content">
+                                <div class="gm-err-icon">
+                                    <img src="https://maps.gstatic.com/mapfiles/api-3/images/icon_error.png" draggable="false" style="user-select: none;">
+                                </div>
+                                <div class="gm-err-title">Ошибка</div>
+                                <div class="gm-err-message">При загрузке Google Карт на этой странице возникла проблема. Подробности вы найдете в консоли JavaScript.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="tab-content">
                 @foreach($regions as $region)
