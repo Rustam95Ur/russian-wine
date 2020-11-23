@@ -1095,6 +1095,10 @@ span.currency {
     padding: 2rem 0;
 }
 
+#myOverlay .overlay-content .overlay-form input::placeholder {
+    color: #000000 !important;
+    font-size: 30px !important;
+}
 
 #myOverlay .overlay-content .overlay-form input {
     border: none;
@@ -1103,7 +1107,7 @@ span.currency {
     padding-left: 4.15vw;
     font-style: normal;
     font-weight: normal;
-    font-size: 35px;
+    font-size: 30px;
     line-height: 70px;
     color: #000000;
     font-family: 'ProximaNova-Reg' !important;
@@ -1114,8 +1118,8 @@ span.currency {
 }
 
 #searchResult .text-danger #search{
-    width: 29px;
-    height: 71px;
+    width: auto;
+    height: auto;
 }
 #myOverlay .overlay-content .overlay-form {
     height: inherit;
@@ -1217,9 +1221,9 @@ span.currency {
     padding-left: 0;
     border-bottom: 1px solid #E1E1E1;
     line-height: 1.5;
-    font-size: 1.4vw;
+    font-size: 1.25vw;
     font-weight: 900;
-    text-transform: uppercase;
+    text-transform: inherit;
 }
 
 #product-product.product-temp1 .aging, #product-product .aging {

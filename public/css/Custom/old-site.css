@@ -2719,7 +2719,7 @@ header #form-language .language-select {
 
 #product-product.product-temp1 .manufacturer .iblock span, #product-product .manufacturer .iblock span {
     font-size: .938vw;
-    text-transform: uppercase;
+    text-transform: inherit;
     font-weight: bold;
     font-family: 'ProximaNova-Bold';
 }
@@ -2767,7 +2767,7 @@ header #form-language .language-select {
     font-weight: 900;
     display: inline-block;
     line-height: 1.2;
-    text-transform: uppercase;
+    text-transform: inherit;
 }
 
 #product-product.product-temp1 .aging .iblock,
@@ -2817,7 +2817,7 @@ header #form-language .language-select {
 #product-product.product-temp1 .species .iblock span {
     font-size: 1.147vw;
     font-weight: 900;
-    text-transform: uppercase;
+    text-transform: inherit;
     line-height: 1;    
 }
 
@@ -2948,7 +2948,7 @@ header #form-language .language-select {
     #product-product.product-temp1 .manufacturer .iblock span, #product-product .manufacturer .iblock span {
         font-size: 1.4vw;
         font-weight: 900;
-        text-transform: uppercase;
+        text-transform: inherit;
     }    
     
     #product-product.product-temp1 .amount .iblock .bottles {

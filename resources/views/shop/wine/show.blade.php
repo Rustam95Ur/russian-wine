@@ -57,8 +57,8 @@
                                         <div class="col-xs-6 col-md-6 col-lg-6">
                                             <div class="type bold_font">
                                                 @if(isset($wine->color))
-                                                    <img src="{{Voyager::image($wine->color->image)}}"
-                                                         alt=""> {{$wine->color->title}}
+                                                    <!-- <img src="{{Voyager::image($wine->color->image)}}"
+                                                         alt="">  -->{{$wine->color->title}}
                                                 @endif
                                             </div>
                                         </div>
