@@ -1,9 +1,21 @@
 #profile {
     margin-top: 4.844vw;
 }
-
+#content{
+    background: #2D1F31;
+    position: relative;
+    top: -5px;
+}
 #profile .profile-info {
     margin: 50px;
+}
+
+#profile .profile-info h1, h2, h3, h4, h5, h6{
+    color: white;
+}
+
+input::placeholder {
+  color: #aaaaaa !important;
 }
 
 #profile .profile-form {
@@ -193,4 +205,10 @@
     margin-bottom: 0;
     display: none;
     cursor: pointer;
+}
+
+@media (max-width: 760px){
+    #profile {
+        margin-top: 0;
+    }
 }

@@ -2618,8 +2618,14 @@
     margin: 0;
 }
 .tasting_modal .list-inline li {
-    border-right: 1px solid;
+    font-size: 18px;
+    padding: 0 20px 0 20px;
+    border-right: 1px solid #d4d4d4;
     font-weight: bold;
+}
+
+.tasting_modal .list-inline .right-border{
+    border-right: 1px solid #d4d4d4;
     font-size: 18px;
 }
 

@@ -14686,7 +14686,7 @@ select:-internal-autofill-selected {
     width: 100vw;
     color: #fff;
     text-align: left;
-    z-index: 99999;
+    z-index: 100;
     position: relative;
     padding: 8rem;
 }

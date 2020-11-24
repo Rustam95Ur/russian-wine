@@ -72,10 +72,10 @@
                                     <div class="parametrs">
                                         <div class="parametr">
                                             <ul class="list-inline">
-                                                <li>
+                                                <li class="right-border">
                                                     {{$tasting->user_count}} человек
                                                 </li>
-                                                <li>
+                                                <li class="right-border">
                                                     {{$tasting->time}} минут
                                                 </li>
                                                 @if(count($tasting->wines) > 0)
