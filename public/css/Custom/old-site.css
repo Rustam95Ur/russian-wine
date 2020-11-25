@@ -254,6 +254,8 @@ span.hidden-lg {
     height: 90vh !important;
 }
 
+
+
 div.required .control-label:before {
     content: '* ';
     color: red;
