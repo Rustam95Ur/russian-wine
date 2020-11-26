@@ -8,7 +8,7 @@
         <div id="content">
             <div class="row">
                 @include('profile.layouts.left-side-menu')
-                <div class="col-md-8">
+                <div class="col-md-8 bg_white">
                     <div class="sets-block" >
                         <h1>Сеты</h1>
                         @if(count($sets) > 0)

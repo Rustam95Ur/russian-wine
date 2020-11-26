@@ -8,7 +8,7 @@
         <div id="content">
             <div class="row">
                 @include('profile.layouts.left-side-menu')
-                <div class="col-md-8">
+                <div class="col-md-8 bg_white">
                         <div class="favorite_block" style="display: {{(count($favorites) > 0 ) ? '' : 'none'}}">
                             <h1>Избранное</h1>
                             <table class="table" id="favorite_table">

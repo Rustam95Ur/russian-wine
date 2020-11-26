@@ -8,7 +8,7 @@
         <div id="content">
             <div class="row">
                 @include('profile.layouts.left-side-menu')
-                <div class="col-md-8">
+                <div class="col-md-8 bg_white">
                     <div class="order-table-block">
                         <h1>Мои заказы</h1>
                         @if(count($orders) > 0)
