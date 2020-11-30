@@ -9,7 +9,7 @@ class RegionController extends Controller
 {
     public function index()
     {
-        $regions = Region::all();
+        $regions = Region::with('wines', 'wineries', 'quote')->get();
         return view('page.region.index', [
             'regions' => $regions
         ]);

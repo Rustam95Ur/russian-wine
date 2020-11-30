@@ -19,7 +19,7 @@ class Region extends Model
      */
     public function wineries()
     {
-        return $this->hasMany('App\Models\Winery');
+        return $this->hasMany('App\Models\Winery')->orderBy('sort_order', 'ASC');
     }
 
     /**

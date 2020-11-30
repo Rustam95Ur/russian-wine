@@ -97,7 +97,6 @@ function wine_filter_search(filter, page = 1) {
         console.log(ajaxOptions)
         console.log(thrownError)
     });
-    scroll_up()
     filter_breadcrumb()
 
 }
@@ -183,16 +182,19 @@ $('#search-main').on('keyup', function () {
 })
 $(".form-check-input").change(function () {
     var filter = $('#searching-form').serialize()
+    scroll_up()
     wine_filter_search(filter)
 });
 
 $(".form-check-input-mobile").change(function () {
     var filter = $('#searching-form-mobile').serialize()
+    scroll_up()
     wine_filter_search(filter)
 });
 
 $("select[name='price_sort']").change(function () {
     var filter = $('#searching-form').serialize()
+    scroll_up()
     wine_filter_search(filter)
 });
 

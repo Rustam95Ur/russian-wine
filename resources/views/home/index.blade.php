@@ -305,7 +305,7 @@
                                     <div>
                                         <a href="{{route('winemakers')}}?id={{$winemaker->id}}">
                                             <img alt="{{$winemaker->seo_title}}"
-                                                 src="{{ Voyager::image($winemaker->image) }}"></a>
+                                                 src="{{ Voyager::image($winemaker->main_image) }}"></a>
                                     </div>
                                     <h6>
                                         <a href="{{route('winemakers')}}?id={{$winemaker->id}}">
@@ -324,11 +324,10 @@
                                             @endif
                                         <li><p>Вина:
                                                 @foreach($winemaker->wines as $wine)
-                                                    <a href="{{route('wine_shop')}}?sort[]={{$wine->sort->id}}&winery[]={{($winemaker->winery) ?$winemaker->winery->id : ''}}"
+                                                    <a href="{{route('wine_shop')}}?sort[]={{$wine->sort->id}}&winery[]={{($winemaker->winery) ? $winemaker->winery->id : ''}}"
                                                        class="text-black">
-                                                        {{$wine->title}}
+                                                        {{$wine->title}}@if(!$loop->last),@endif
                                                     </a>
-                                                    @if(!$loop->last),@endif
                                                 @endforeach
                                             </p>
                                         </li>
