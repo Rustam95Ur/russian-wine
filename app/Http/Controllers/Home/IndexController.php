@@ -36,7 +36,11 @@ class IndexController extends Controller
                 $favorite_wine_id[] = $wine->id;
             }
         }
-        $winemakers = Winemaker::where('status', '=', 'ACTIVE')->with('wines', 'region', 'winery')->get();
+        $winemakers = Winemaker::where('status', '=', 'ACTIVE')
+            ->where('main_image', '!=', null)
+            ->with('wines', 'region', 'winery')
+            ->limit(7)
+            ->get();
         $home_set = Set::where('in_home', true)->first();
         $home_tasting = Tasting::where('in_home', true)->first();
         session()->forget('filters');
