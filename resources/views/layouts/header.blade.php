@@ -157,11 +157,11 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 second_cl">
-                                                            <a id="oformlenie" class="btn-danger"
+                                                            <a id="oformlenie" class="btn-danger btn-in-cart"
                                                                href="{{route('checkout')}}">Оформить заявку</a>
                                                         </div>
                                                         <div class="col-md-4 third_cl">
-                                                            <p style="font-family: ProximaNova-reg;">Пожалуйста
+                                                            <p style="font-family: ProximaNova-reg; font-size: 1vw;">Пожалуйста
                                                                 <a href="{{route('wine_shop')}}"
                                                                    style="color: #23252b;text-decoration:underline;"
                                                                    id="link_wine">добавьте</a>
@@ -197,7 +197,7 @@
         <div class="overlay-results">
             <div id="searchResult">
             </div>
-            <a href="{{route('wine_shop')}}" class="allResults" style="display: none">Показать все результаты</a>
+            <a href="{{route('wine_shop')}}" class="allResults" style="display: none; padding: 0.85vw 2.25vw">Показать все результаты</a>
         </div>
     </div>
 </header>

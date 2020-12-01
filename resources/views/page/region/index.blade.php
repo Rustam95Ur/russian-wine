@@ -44,7 +44,7 @@
                             <div class="row">
                                 <div class="col-lg-6 region-description">
                                     <h2>{{$region->title}}</h2>
-                                    {!! $region->description !!}
+                                    <p style="padding: 0; line-height: 1.8;">{!! $region->description !!}</p>
                                     <p><a href="{{route('region', $region->slug)}}" class="btn-white">Подробнее о
                                             регионе</a>
                                     </p>

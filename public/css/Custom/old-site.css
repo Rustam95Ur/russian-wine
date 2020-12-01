@@ -3328,6 +3328,7 @@ header #form-language .language-select {
     color: #fff
 }
 
+
 .btn-white {
     display: inline-block;
     color: #2D2032;
@@ -3589,6 +3590,13 @@ footer .eighteenplus {
 
 footer .footer-contact {
     text-align: right
+}
+
+@media (max-width: 1450px) {
+    .region-description .btn-white {
+        padding: 10px 20px !important;
+        font-size: 12px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -3873,6 +3881,9 @@ footer .footer-contact {
 .product-list .product-thumb .caption {
     margin-left: 230px
 }
+
+
+
 
 @media (max-width: 1200px) {
     .product-grid .product-thumb .caption {
@@ -11251,6 +11262,11 @@ section#specials #specials-cont div.col-md-4 {
     }
 }
 
+.btn-in-cart{
+    padding: 0.75vw 2.5vw !important;
+    font-size: 1.6rem !important;
+    font-family: 'ProximaNova-Reg' !important;
+}
 
 /* cart & checkout & success */
 
@@ -11286,7 +11302,7 @@ section#specials #specials-cont div.col-md-4 {
 }
 
 #close-mask {
-    z-index: 100;
+    z-index: -1;
     position: fixed;
     right: 62.500vw;
     left: 0;
@@ -17395,6 +17411,18 @@ header ul li.active span:after {
 
 .featured_cont .wine:hover .button_cont {
     opacity: 1;
+}
+
+.featured_cont .swiper-slide img {
+    -moz-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    -webkit-transition: all 0.25s ease-out;
+}
+
+.featured_cont .wine:hover img {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
 }
 
 .button_cont span {

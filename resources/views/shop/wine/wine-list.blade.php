@@ -50,7 +50,7 @@
         @endforeach
         @if(count($wines) == 0)
             <div class="text-center">
-                <h2>По вашему фильтру ничего не найдено</h2>
+                <h2 style="color: #ea0000;">По вашему фильтру ничего не найдено</h2>
             </div>
         @endif
         <div class="col-md-12 col-xs-12 mt-lg text-center">
