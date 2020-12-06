@@ -122,9 +122,11 @@ function cart_table_update() {
             success: function (data) {
                 document.getElementById("product_buy").innerHTML = "";
                 $.each(data.products, function (key, value) {
-                    $("#product_buy").append("<tr id='tr-" + value['product_id'] + "'><td class='image'>\n" +
+                    console.log(value['type'])
+                    if(value['type'] == 'set'){
+                        $("#product_buy").append("<tr id='tr-" + value['product_id'] + "'><td class='image'>\n" +
                         "<a><img src='" + value['image'] + "' alt='" + value['title'] + "' title='" + value['title'] + "' " +
-                        "style='width: 50%'></a></td><td class='name'><a>" + value['title'] + "</a>" + value['price'] +
+                        "style='width: 8.021vw; max-width: 8.021vw;'></a></td><td class='name'><a>" + value['title'] + "</a>" + value['price'] +
                         "<span>п</span><div class='options'></div></td><td class='quantity'>" +
                         "<div class='input-group btn-block' style='max-width: 200px;'><span class='input-group-btn cheight'>\n" +
                         "<button class='btn btn-primary decreaseQty' id='decrease-" + value['product_id'] + "' data-toggle='tooltip' " +
@@ -137,6 +139,23 @@ function cart_table_update() {
                         "<span>о</span></td><td class='remove'><button class='btn btn-danger cart_remove' " +
                         "id='cart-wine-remove-" + value['product_id'] + "' title='Удалить'><i class='fa fa-times-circle'></i>\n" +
                         "</button><input type='hidden' name='type' value='"+ value['type'] + "' id='type-"+ value['product_id'] +"'></td></tr>")
+                    } else {
+                        $("#product_buy").append("<tr id='tr-" + value['product_id'] + "'><td class='image'>\n" +
+                        "<a><img src='" + value['image'] + "' alt='" + value['title'] + "' title='" + value['title'] + "' " +
+                        "style='width: 50%;'></a></td><td class='name'><a>" + value['title'] + "</a>" + value['price'] +
+                        "<span>п</span><div class='options'></div></td><td class='quantity'>" +
+                        "<div class='input-group btn-block' style='max-width: 200px;'><span class='input-group-btn cheight'>\n" +
+                        "<button class='btn btn-primary decreaseQty' id='decrease-" + value['product_id'] + "' data-toggle='tooltip' " +
+                        "type='submit' data-original-title='' title=''><i class='fa fa-minus'></i></button></span>\n" +
+                        "<input class='form-control cheight' data-price='" + value['price'] + "' type='text' data-onchange='changeProductQuantity' " +
+                        "name='quantity[" + value['product_id'] + "]' value='" + value['count'] + "' size='1'>\n" +
+                        "<span class='input-group-btn cheight'><button class='btn btn-primary increaseQty' id='increase-" + value['product_id'] + "' " +
+                        "data-toggle='tooltip' type='submit' data-original-title='' title=''><i class='fa fa-plus'></i>\n" +
+                        "</button></span></div></td><td class='total'><b>" + value['total'] + "</b>\n" +
+                        "<span>о</span></td><td class='remove'><button class='btn btn-danger cart_remove' " +
+                        "id='cart-wine-remove-" + value['product_id'] + "' title='Удалить'><i class='fa fa-times-circle'></i>\n" +
+                        "</button><input type='hidden' name='type' value='"+ value['type'] + "' id='type-"+ value['product_id'] +"'></td></tr>")
+                    }
                 })
                 $('#total_price').text(data.total_sum);
                 $('#count-prods').text(data.count_products);
@@ -145,8 +164,7 @@ function cart_table_update() {
                 cart_remove()
             }
         }
-    )
-    ;
+    );
 }
 
 

@@ -17419,7 +17419,7 @@ header ul li.active span:after {
     -webkit-transition: all 0.25s ease-out;
 }
 
-.featured_cont .wine:hover img {
+.featured_cont .new_wine:hover img {
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
     -o-transform: scale(1.2);

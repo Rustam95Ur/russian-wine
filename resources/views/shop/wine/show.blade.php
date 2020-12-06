@@ -280,7 +280,7 @@
                                 @foreach($wines as $feature_wine)
                                     @if ($feature_wine->id !=  $wine->id)
                                         <div class="swiper-slide">
-                                            <div class="wine">
+                                            <div class="wine new_wine">
                                                 <div class="slider_image">
                                                     <a href="{{route('wine', $feature_wine->slug)}}" class="preview">
                                                         <img alt="{{$wine->title}}"
