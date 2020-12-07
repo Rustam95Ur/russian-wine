@@ -105,7 +105,7 @@
                         $(".allResults").attr("href", "{{route('wine_shop')}}?" + data.link)
                         $('.allResults').show();
                     } else {
-                        $("#searchResult").html("<div class='col-md-12' style='padding: 1.5rem; font-size: 2.5rem;'>По вашему запросу ничего не найдено</div>")
+                        $("#searchResult").html("<div class='col-md-12' style='padding: 1.5rem; font-size: 2.5rem; font-weight: bold;'>По вашему запросу ничего не найдено</div>")
                     }
                 }
 

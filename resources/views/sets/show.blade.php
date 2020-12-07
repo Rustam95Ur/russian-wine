@@ -94,7 +94,7 @@
                                    @endif
 		                        </div>
 	                        </span>
-                                <button class="add-cart  set-buy-btn btn-danger"
+                                <button class="add-cart  set-buy-btn btn-danger" style="padding: .75vw 3.5vw;" 
                                         onclick="cart_add('{{$set->id}}', 1, 'set');$(this).addClass('active'); $(this).text('В корзине')">в
                                     корзину
                                 </button>
