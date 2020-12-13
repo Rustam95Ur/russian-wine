@@ -142,7 +142,7 @@ function cart_table_update() {
                     } else {
                         $("#product_buy").append("<tr id='tr-" + value['product_id'] + "'><td class='image'>\n" +
                         "<a><img src='" + value['image'] + "' alt='" + value['title'] + "' title='" + value['title'] + "' " +
-                        "style='width: 4.021vw;'></a></td><td class='name'><a>" + value['title'] + "</a>" + value['price'] +
+                        "style='width: 2.8vw; margin-left: 2.5vw;'></a></td><td class='name'><a>" + value['title'] + "</a>" + value['price'] +
                         "<span>п</span><div class='options'></div></td><td class='quantity'>" +
                         "<div class='input-group btn-block' style='max-width: 200px;'><span class='input-group-btn cheight'>\n" +
                         "<button class='btn btn-primary decreaseQty' id='decrease-" + value['product_id'] + "' data-toggle='tooltip' " +
