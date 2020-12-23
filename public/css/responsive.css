@@ -1835,6 +1835,7 @@
     }
    .set-page .image-set img {
        height: 100%;
+	   margin-top: 0;
     }
    .set-page #spec-cont {
        height: 70.056vw;
