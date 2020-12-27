@@ -46,7 +46,7 @@
                                         которые нельзя будет купить в винотеках.
                                     </p>
                                     @foreach($sets as $set)
-                                        <a href="{{route('set', $set->slug)}}">
+                                        <a href="{{route('set', $set->slug)}}?type=subscription">
                                             <button id="podpiska" data-toggle="modal" data-target="#modal_podpiska">
                                                 оформить подписку
                                             </button>
@@ -65,7 +65,7 @@
                             @foreach($sets as $set)
                                 <div class="col-sp-8">
                                     <div class="podpiska-thumb">
-                                        <a href="{{route('set', $set->slug)}}"></a>
+                                        <a href="{{route('set', $set->slug)}}?type=subscription"></a>
                                         <img alt="{{$set->title}}"
                                              class="subscription-image" src="{{Voyager::image($set->subscription_image)}}">
                                         <div class="desc-mask">
