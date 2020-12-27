@@ -29,8 +29,18 @@
                                 class="sep"> | </span>
                             <span class="year"> {{$wine->year}}</span>
                             <div class="price-vinoteka">
-                                <a href="{{route('wine-bread', $wine->slug)}}" class="preview">{{$wine->price}}
-                                    <span>п</span></a>
+
+                                <a href="{{route('wine-bread', $wine->slug)}}" class="preview">
+                                    @if($wine->price > 0)
+                                    {{$wine->price}}
+                                    <span>п</span>
+                                    @else
+                                        Коллекция
+                                    @endif
+
+                                </a>
+
+
                             </div>
                             <div class="button_cont">
                                 <div class="prod_quantity">

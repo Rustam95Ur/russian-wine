@@ -42,7 +42,7 @@ class IndexController extends Controller
         $classes = WineClass::orderBy('title', 'ASC')->get();
         $years = Wine::select('year')->where('year', '!=', null)->groupBy('year')->orderBy('year', 'DESC')->get();
         $fortresses = Wine::select('fortress')->where('fortress', '!=', null)->groupBy('fortress')->orderBy('fortress', 'DESC')->get();
-        $wines = Wine::where('status', '=', 'ACTIVE')->where('price', '>', 0)->filter($filters)->with('color', 'sugar', 'winery')
+        $wines = Wine::where('status', '=', 'ACTIVE')->filter($filters)->with('color', 'sugar', 'winery')
             ->orderByRaw('-sort_id DESC')->paginate(30);
         $bread_crumbs = [];
         $request_filter = \request()->input();

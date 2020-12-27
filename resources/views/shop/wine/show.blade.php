@@ -173,7 +173,13 @@
                                         <input type="radio" name="vintage" checked>
                                         <span>{{$wine->year}} г. </span>
                                         <i class="priceDefice"></i>
-                                        <span>{{$wine->price}} р.</span>
+                                        <span>
+                                            @if($wine->price > 0)
+                                            {{$wine->price}} р.
+                                            @else
+                                                Коллекция
+                                            @endif
+                                        </span>
                                     </label>
                                 @endif
                             </div>
@@ -184,11 +190,19 @@
                                     <div class="button_cont">
                                         <div class="col-md-6">
                                             <div class="price-vinoteka col-md-12">
-                                                <a href="#" class="preview wine_show_price">{{$wine->price}} <span
-                                                        style="background: none;">п</span></a>
+                                                <a href="#" class="preview wine_show_price">
+                                                    @if($wine->price > 0)
+                                                    {{$wine->price}}
+                                                    <span style="background: none;">п</span>
+                                                    @else
+                                                        Коллекция
+                                                    @endif
+
+                                                </a>
                                                 <input type="hidden" value="{{$wine->price}}" class="wine_price">
 
                                             </div>
+
                                             <div class="col-md-12">
                                                 <button id="button-carts" class="cart-btn-{{$wine->id}}"
                                                         onclick="cart_add('{{$wine->id}}', 1, 'wine');">
@@ -196,6 +210,7 @@
                                                 </button>
                                             </div>
                                         </div>
+                                        @if($wine->price > 0)
                                         <div class="prod_quantity col-md-cstm">
                                             <span class="qua_plus"
                                                   onclick="update_count({{$wine->id}},'plus', 'wine-show')"></span>
@@ -204,6 +219,7 @@
                                             <span class="qua_mins"
                                                   onclick="update_count({{$wine->id}}, 'minus', 'wine-show')"></span>
                                         </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
