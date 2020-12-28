@@ -2641,7 +2641,7 @@
     height: 0;
     top: -12rem;
     left: 1.4rem;
-    z-index: 111;
+    z-index: 1;
 }
 #tasting-page .question_block:before {
     content: '';
@@ -2654,7 +2654,7 @@
     height: calc(100% + 12rem);
     top: -12rem;
     left: 1.4rem;
-    z-index: 111;
+    z-index: 1;
 }
 #tasting-page .question_block::after {
     content: '';
@@ -2667,7 +2667,7 @@
     height: 95%;
     bottom: 0;
     right: -1px;
-    z-index: 111;
+    z-index: 1;
     float: right;
 }
 #tasting-page .question_form::after {
@@ -2681,7 +2681,7 @@
     height: 1%;
     bottom: 0;
     right: -1px;
-    z-index: 111;
+    z-index: 1;
     float: right;
 }
 

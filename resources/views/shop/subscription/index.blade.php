@@ -121,11 +121,6 @@
                                     задать вопрос
                                 </button>
                             </div>
-                            <div class="col-sp-12">
-                                <div><a class="telephone">+7 (915) 457 60 81</a><br>
-                                    <a id="mailto" href="mailto:info@russianvine.ru">info@russianvine.ru</a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
