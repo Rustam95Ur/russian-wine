@@ -2108,7 +2108,7 @@ header #form-language .language-select {
     background: #fff;
     margin-left: 15px;
     background-clip: content-box;
-    min-height: 70rem;
+    min-height: 50rem;
 }
 
 #winemakers .winemaker a {
@@ -2117,22 +2117,21 @@ header #form-language .language-select {
 
 #winemakers .winemaker .image {
     position: relative;
-    top: -30px;
-    left: -15px
 }
 
 #winemakers .winemaker .image img {
-    max-width: 90%
+    max-width: 100%
 }
 
 #winemakers .winemaker h2 {
     font-size: 26px;
     margin: 0;
-    padding: 0 0 15px
+    padding: 0 0 15px;
+    text-align: center;
 }
 
 #winemakers .winemaker .description-wrap {
-    padding: 5px 30px 30px;
+    padding: 20px;
     line-height: 1.8;
     font-size: 16px
 }
@@ -2143,11 +2142,11 @@ header #form-language .language-select {
 }
 
 #winemakers .winemaker .description li {
-    padding: 0 0 10px
+    list-style-type: none;
 }
 
 #winemakers .winemaker-details {
-    display: none
+    display: none;
 }
 
 .winemaker-details h1 {
@@ -9121,7 +9120,7 @@ h2.price {
 }
 
 .winemaker-cont {
-    height: 640px !important
+    height: 600px !important
 }
 
 body {
