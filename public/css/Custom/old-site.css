@@ -13099,14 +13099,13 @@ nav ul > li:hover #inda-club {
 }
 
 #pod_lastblock .col-sp-12 button {
-    margin-bottom: -0.7vw;
     letter-spacing: 0.13vw;
-    height: 65px;
-    width: 12.5VW;
+    height: 50px;
+    width: 11VW;
     text-align: center;
     background: transparent;
     border-radius: 50px;
-    font-size: 0.8333333333333334VW;
+    font-size: 0.7VW;
     text-transform: uppercase;
     color: #fff;
     font-family: 'ProximaNova-Bold';
