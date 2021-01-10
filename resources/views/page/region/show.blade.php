@@ -22,7 +22,7 @@ object-fit: cover;">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <img class="img-responsive" style="border: 1px solid #eee"
+                            <img class="img-responsive" style="border: 1px solid #eee;"
                                  src="https://maps.googleapis.com/maps/api/staticmap?center={{$region->coordinate_lat}},{{$region->coordinate_lon}}&amp;zoom=6&amp;size=553x400&amp;maptype=roadmap&amp;language=ru&amp;key={{env('GOOGLE_API_KEY')}}&amp;style=feature%3Aall%7Celement%3Alabels.text.fill%7Ccolor%3A0x333333%7Clightness%3A40%7C&amp;style=feature%3Aall%7Celement%3Alabels.text.stroke%7Cvisibility%3Aon%7Ccolor%3A0xffffff%7Clightness%3A16%7C&amp;style=feature%3Aall%7Celement%3Alabels.icon%7Cvisibility%3Aoff%7C&amp;style=feature%3Aadministrative%7Celement%3Ageometry.fill%7Ccolor%3A0xfefefe%7Clightness%3A20%7C&amp;style=feature%3Aadministrative%7Celement%3Ageometry.stroke%7Ccolor%3A0xfefefe%7Clightness%3A17%7Cweight%3A1.2%7C&amp;style=feature%3Aadministrative%7Celement%3Alabels%7Cvisibility%3Aon%7C&amp;style=feature%3Alandscape%7Celement%3Ageometry%7Ccolor%3A0xffffff%7Clightness%3A20%7Cgamma%3A0.61%7C&amp;style=feature%3Apoi%7Celement%3Ageometry%7Ccolor%3A0xf5f5f5%7Clightness%3A21%7C&amp;style=feature%3Apoi.park%7Celement%3Ageometry%7Ccolor%3A0xebebeb%7Clightness%3A21%7C&amp;style=feature%3Aroad.highway%7Celement%3Ageometry.fill%7Ccolor%3A0xffffff%7Clightness%3A17%7C&amp;style=feature%3Aroad.highway%7Celement%3Ageometry.stroke%7Ccolor%3A0xffffff%7Clightness%3A29%7Cweight%3A0.2%7C&amp;style=feature%3Aroad.arterial%7Celement%3Ageometry%7Ccolor%3A0xffffff%7Clightness%3A18%7C&amp;style=feature%3Aroad.arterial%7Celement%3Ageometry.fill%7Cgamma%3A1%7C&amp;style=feature%3Aroad.local%7Celement%3Ageometry%7Ccolor%3A0xffffff%7Clightness%3A16%7C&amp;style=feature%3Atransit%7Celement%3Ageometry%7Ccolor%3A0xf2f2f2%7Clightness%3A19%7C&amp;style=feature%3Awater%7Celement%3Ageometry%7Ccolor%3A0xe1e1e1%7Clightness%3A17%7C">
                         </div>
                     </div>
@@ -57,7 +57,7 @@ object-fit: cover;">
                     <div class="row">
                         @foreach (json_decode($region->vineyard_image) as $image)
                             <div class="col-xs-12 col-md-5 mb-xs">
-                                <img alt="" class="img-responsive" src="{{Voyager::image($image)}}">
+                                <img alt="" class="img-responsive" src="{{Voyager::image($image)}}" style="object-fit: cover; height: 300px;">
                             </div>
                         @endforeach
                     </div>

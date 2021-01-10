@@ -113,9 +113,6 @@
                                 <h2>-20%</h2>
                             </div>
                             <div class="col-sp-12">
-                                <a href="https://russianvine.ru">
-                                    <img alt="logo_img" src="{{asset('image/logo/logo-club.png')}}">
-                                </a>
                                 <button id="question"
                                         onclick="document.getElementById('modal_sviaz').style.display = 'block';$('#blur_cont').attr('class','show');$('body').attr('class','nooverflow');">
                                     задать вопрос

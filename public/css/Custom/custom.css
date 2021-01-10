@@ -2329,7 +2329,7 @@ span.currency {
 }
 
 .winery-info-height {
-    /*height: calc(70vh - 50px);*/
+    height: calc(50vh - 50px);
     position: relative;
 }
 
