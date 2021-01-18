@@ -561,6 +561,104 @@
         height: 55px;
         width: auto
     }
+
+    #franchise .header-image-box img {
+        height: 51vw;
+    }
+    #franchise .header-image-box .text-block h2 {
+        font-size: 20px;
+        line-height: 3rem;
+        margin-top: 0;
+        text-align: center;
+    }
+    #franchise .heading-wrap p {
+        font-size: 16px;
+        text-align: center;
+        font-weight: 400;
+        padding-top: 0px;
+        line-height: 3rem;
+        font-family: 'Lato', Open Sans;
+        letter-spacing: .01em;
+        position: absolute;
+        top: 70%;
+        padding-right: 10vw;
+    }
+    #franchise .searching p {
+        font-size: 16px;
+        font-family: 'ProximaNova-Bold';
+        line-height: 3rem;
+        margin-top: 0;
+        margin-right: 0;
+        letter-spacing: -.01em;
+    }
+    #franchise .searching-result p {
+        font-size: 14px;
+        text-transform: uppercase;
+        padding-bottom: 0;
+        line-height: 3rem;
+        letter-spacing: 0.2em;
+        font-family: 'ProximaNova-Xbold';
+        text-align: center;
+    }
+    #franchise .searching-result h4 {
+        font-size: 16px;
+        font-weight: 900;
+        color: #da224d;
+        text-transform: uppercase;
+        margin-top: 10px;
+        line-height: 3rem;
+        margin-bottom: 2.085vw;
+        text-align: center;
+    }
+    #franchise .get-partner-block {
+        margin-top: 0;
+        height: auto;
+        padding: 4.169vw 6.775vw 3vw 8.338vw;
+        position: absolute;
+        width: 100%;
+    }
+    #franchise .get-partner-block h3 {
+        color: white;
+        font-size: 16px;
+        margin: 0;
+        line-height: 1;
+    }
+    #franchise .partner-result-container {
+        padding: 20px;
+    }
+    #franchise .get-partner-result-block h4 {
+        color: white;
+        padding-left: 0;
+        border-left: 0;
+        font-size: 14px;
+        text-align: center;
+        padding: 0 10px;
+    }
+    #franchise .get-partner-result-block h4::before{
+        height: 40px;
+        top: 5px;
+    }
+    #franchise .get-partner-result-block {
+        height: 14vw;
+    }
+    #franchise .col-md-12.mb-sm h2 {
+        font-family: 'ProximaNova-Bold';
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 2.345vw;
+    }
+    #franchise .requirement-right-box p {
+        font-weight: 100;
+        margin-top: 1.824vw;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    #franchise .contact h2 {
+        margin: 0;
+        line-height: 3rem;
+        font-size: 16px;
+        text-align: left;
+    }
 }
 .cont-center {
     width: 88%;

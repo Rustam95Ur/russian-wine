@@ -2916,3 +2916,74 @@ p.user_agreement {
         transform: scale(100%);
     }
 }
+
+
+@media (max-width: 691px) {
+    #tasting-page .question_block:before {
+        display: none;
+    }
+    #tasting-page #question p {
+        font-size: 12px !important;
+        font-weight: normal;
+        line-height: 1.2;
+        color: white;
+        margin-top: 3rem;
+        padding: 0 1.5rem;
+    }
+    .tasting_modal .tasting_body {
+        height: 100vh;
+        top: 0;
+    }
+    .tasting_modal .tasting_wine_image {
+        width: 80%;
+        height: auto !important;
+    }
+    .modalOverflowWrap {
+        height: 35rem;
+    }
+    .tasting-modal-body .icon_close {
+        width: 20px;
+        position: absolute;
+        right: 1.2vw;
+        top: 1.5vw;
+        cursor: pointer;
+    }
+    #tasting-page .quotes_text {
+        font-size: 12px;
+        text-align: center;
+        margin-top: 4rem;
+        line-height: 1.3em;
+        font-family: "ProximaNova-Reg";
+    }
+    #tasting-page #list_under li:first-child {
+        font-size: 14px;
+    }
+    #tasting-page #list_under li {
+        font-size: 14px;
+    }
+    #tasting-page #button_link a {
+        padding: 0;
+        font-size: 2rem;
+        margin-bottom: 10px;
+        line-height: 3em;
+    }
+    #tasting-page .portrait_info h3 {
+        color: #FFFFFF;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 3.4rem;
+        font-style: normal;
+    }
+    #tasting-page .portrait_info p {
+        font-family: 'ProximaNova-Reg';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 2.4rem;
+        color: #FFFFFF;
+    }
+    .mob_pl{
+        padding-left: 20px !important;
+        padding: 0 20px;
+    }
+}

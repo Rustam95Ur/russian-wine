@@ -1455,6 +1455,13 @@ span.currency {
         padding-top: 1rem;
         padding-bottom: 2rem;
         line-height: 1.5;
+        font-size: 17px;
+    }
+    .information-wine-regions h2{
+        font-size: 20px;
+    }
+    .information-wine-regions .region-info .wine-species-text{
+        font-size: 17px;
     }
 
     .information-wine-regions .nav-pills > li.active > a {

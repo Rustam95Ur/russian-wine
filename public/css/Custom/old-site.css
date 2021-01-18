@@ -2141,10 +2141,6 @@ header #form-language .language-select {
     list-style: none;
 }
 
-#winemakers .winemaker .description li {
-    list-style-type: none;
-}
-
 #winemakers .winemaker-details {
     display: none;
 }
@@ -18100,6 +18096,20 @@ p.likeSlider img {
 @media (max-width: 478px) {
     .slide-inner div:first-child {
         max-height: 230px !important;
+    }
+
+    #information-winerywc .col-ss-6 #imennoe {
+        border-radius: 30px !important;
+        z-index: 999;
+        letter-spacing: 0.4vh;
+        width: 100% !important;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        height: 9.063vh;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        font-size: 17px;
     }
 }
 .close-icon {

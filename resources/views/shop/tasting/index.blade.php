@@ -25,7 +25,7 @@
                             <a id="how_we" href="#how_we_cont" >Как мы это делаем</a>
                         </div>
                     </div>
-                    <div class="col-md-5 pl-10">
+                    <div class="col-md-5 pl-10 mob_pl">
                         <img src="{{asset('image/quotes.png')}}"  class="quotes_icon" alt="quotes_icon">
                         <p class="quotes_text">Я продаю и продвигаю Русские Вина в течение 10 лет. Успешно работал на
                             крупных
