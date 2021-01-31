@@ -251,7 +251,7 @@
                     </div>
                     <h2>{{$tasting->title}}</h2>
                     <ul class="list-inline">
-                        <li>
+                        <li style="padding-left: 5px !important;">
                             {{$tasting->user_count}} человек
                         </li>
                         <li>

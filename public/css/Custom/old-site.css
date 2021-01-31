@@ -2133,7 +2133,8 @@ header #form-language .language-select {
 #winemakers .winemaker .description-wrap {
     padding: 20px;
     line-height: 1.8;
-    font-size: 16px
+    font-size: 16px;
+    height: 250px !important;
 }
 
 #winemakers .winemaker .description ul {
@@ -16752,7 +16753,7 @@ header ul li.active span:after {
             top: 5.556vw;
             right: 5.556vw;
             z-index: 120;
-            background: url(/image/close.png);
+            background: url(/image/closeicon.png);
             background-size: cover;
         }
 

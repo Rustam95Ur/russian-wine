@@ -528,6 +528,9 @@
 
 
 @media (max-width: 767px) {
+    #franchise .contact {
+        margin: 20px 0
+    }
     #franchise .russian-wine h2 {
         margin-bottom: -30px
     }

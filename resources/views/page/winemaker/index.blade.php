@@ -39,7 +39,7 @@
                                         <img src="{{Voyager::image($winemaker->modal_image)}}"
                                              alt="{{$winemaker->full_name}}"
                                              class="img-responsive">
-                                        <div class="description" style="text-align: center;">
+                                        <div class="description" style="text-align: left;">
                                             {!!  $winemaker->description !!}
                                         </div>
                                         <div class="winery-link">

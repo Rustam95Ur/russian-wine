@@ -2336,7 +2336,7 @@ span.currency {
 }
 
 .winery-info-height {
-    height: calc(50vh - 50px);
+    height: 100%;
     position: relative;
 }
 

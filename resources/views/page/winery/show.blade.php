@@ -56,7 +56,7 @@
                                                                 <a href="{{route('wine', $wine->slug)}}"
                                                                    class="preview">
                                                                     <img alt="{{$wine->title}}" class="img-responsive"
-                                                                         src="{{Voyager::image($wine->image)}}">
+                                                                         src="{{Voyager::image($wine->image)}}" style="height: auto; width: auto;">
                                                                 </a>
                                                             </div>
                                                         </div>
