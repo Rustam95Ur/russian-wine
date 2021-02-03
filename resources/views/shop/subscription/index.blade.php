@@ -13,7 +13,7 @@
                                 <div id="title">
                                     Подписка<br> на вино
                                 </div>
-                                <div class="inner f26pl">
+                                <div class="inner f26pl" style="margin-bottom: 20px;">
                                     <p class="mobileHidden">Как же порой трудно ориентироваться в мире вина, особенно
                                         Русского! Чтобы
                                         облегчить Вам решение этой непростой задачи, мы сами отобрали лучшие вина и

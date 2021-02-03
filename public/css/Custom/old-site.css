@@ -15537,9 +15537,11 @@ header ul li.active span:after {
         left: 5.556vw;
         right: auto;
         top: 5vw;
-        background: url(/image/mob_close.png);
-        width: 28px;
-        height: 16px;
+        background: url(/image/closecart.png);
+        width: 25px;
+        height: 25px;
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 
     #bottle .col-sp-12 + .col-sp-12 {
@@ -18111,6 +18113,17 @@ p.likeSlider img {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         font-size: 17px;
+    }
+    #firstblock img {
+        max-width: 100%;
+        margin-top: -18VW;
+    }
+    #secondblock .subscription-title {
+        margin: 6rem 2rem !important;
+    }
+    #itog p {
+        font-size: 16px !important;
+        text-align: center;
     }
 }
 .close-icon {

@@ -152,7 +152,7 @@
         <div id="bottle">
             <div class="close"
                  onclick="$('#bottle-container').removeClass('show'); $('#other-page').removeClass('nooverflow');$('body').removeClass('nooverflow');$('body').addClass('other-page');$('body').attr('style', '');$('#desktop-product').removeClass('nooverflow');">
-                <img alt="close_img" src="{{asset('image/closeicon.png')}}"></div>
+                <img alt="close_img" src="{{asset('image/closecart.png')}}"></div>
             <ul class="otherbottles">
                 @foreach($set->wines as $wine)
                     <li class="bottle_list" data-bottle="{{$wine->id}}">
