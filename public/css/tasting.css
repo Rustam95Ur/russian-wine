@@ -2986,4 +2986,23 @@ p.user_agreement {
         padding-left: 20px !important;
         padding: 0 20px;
     }
+    .mobile_css{
+        height: 100vh;
+        padding: 25vh 0;
+    }
+    #tasting-page h1 {
+        font-size: 9.25rem;
+        margin-bottom: 20px;
+    }
+    #tasting-page #list_under li:first-child {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    #tasting-page #list_under li {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    #tasting-page #button_link a {
+        font-size: 3.25rem;
+    }
 }

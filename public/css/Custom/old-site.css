@@ -18125,6 +18125,10 @@ p.likeSlider img {
         font-size: 16px !important;
         text-align: center;
     }
+    #swinemakers .swiper-slide {
+        height: 101.469vw;
+        width: 84.833vw;
+    }
 }
 .close-icon {
     margin-top: 50px;

@@ -13,7 +13,7 @@
                     </ul>
                 </div>
                 <div class="row">
-                    <div class="col-md-7 col-sm-10">
+                    <div class="col-md-7 col-sm-10 mobile_css">
                         <h1>Персональные дегустации</h1>
                         <ul id="list_under">
                             <li>Корпоратив или ужин</li>
