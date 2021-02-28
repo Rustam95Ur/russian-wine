@@ -59,6 +59,10 @@ class TastingsController extends Controller
         $saveRequest->message = $message_info;
         $saveRequest->request = json_encode($request_info);
         $saveRequest->save();
+        $message = 'Мы забранировали для вас дегустацию. <br>В ближайшее время свяжемся с Вами';
+        return view('shop.checkout.success', [
+            'message' => $message
+        ]);
         return redirect()->route('home')->with('success', trans('order.success.tasting'));
     }
 }

@@ -188,7 +188,7 @@
                         </a>
                     </li>
                     <li class="bag_icon">
-                        <a href="{{route('tastings')}}">
+                        <a href="{{route('sets')}}">
                             <svg width="57" height="62" viewBox="0 0 57 62" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path

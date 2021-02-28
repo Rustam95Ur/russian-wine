@@ -193,7 +193,10 @@ class IndexController extends Controller
         $saveRequest->type = Order::TYPE_NOMINAL_WINE;
         $saveRequest->message = $request['message'];
         $saveRequest->save();
-        return redirect()->back()->with('success', trans('order.success.nominal'));
+        $message = 'Мы забранировали для вас именное вино. В ближайшее время свяжемся с Вами';
+        return view('shop.checkout.success', [
+            'message' => $message
+        ]);
     }
 
     /**
@@ -450,7 +453,10 @@ class IndexController extends Controller
      */
     public function checkout_success()
     {
-        return view('shop.checkout.success');
+        $message = 'Мы забронировали для Вас<br> лучшее вино и в ближайшее время<br> свяжемся с Вами';
+        return view('shop.checkout.success', [
+            'message' => $message
+        ]);
     }
 
     /**

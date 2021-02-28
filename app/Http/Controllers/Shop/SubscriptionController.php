@@ -35,7 +35,10 @@ class SubscriptionController extends Controller
         $saveRequest->type = Order::TYPE_QUESTION;
         $saveRequest->message = $request['message'];
         $saveRequest->save();
-        return redirect()->back()->with('success', trans('order.success.question'));
+        $message = 'В ближайшее время свяжемся с Вами';
+        return view('shop.checkout.success', [
+            'message' => $message
+        ]);
     }
 
 }

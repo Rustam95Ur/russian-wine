@@ -6,7 +6,7 @@
     <div class="row">
         <div id="content" class="">
             <h1>Ваша заявка принята</h1>
-            <div id="main-text">Мы забронировали для Вас<br> лучшее вино и в ближайшее время<br> свяжемся с Вами</div>
+            <div id="main-text">{!! $message !!}</div>
 
             <div id="subtext">
                 <p>

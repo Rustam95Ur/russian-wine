@@ -228,7 +228,7 @@
                                            placeholder="E-mail" value="" name="email" required>
                                 </div>
                             </div>
-                            <input type="hidden" value="{{$home_tasting->id}}" name="tasting_id">
+                            <input type="hidden" value="{{$home_tasting->id}}" name="checkout_id">
                             <input class="btn btn-quickorder-one" type="submit" value="Заказать дегустацию">
                         </form>
                     </div>

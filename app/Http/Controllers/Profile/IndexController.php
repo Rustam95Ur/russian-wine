@@ -203,10 +203,14 @@ class IndexController extends Controller
             $requests = json_decode($order->request);
             if ($requests) {
                 foreach ($requests as $request) {
-                    $requestType = $request->type;
-                    if ($requestType === 'set') {
-                        $set_id_array[] = $request->product_id;
+                    if (isset($request->type)) {
+                        $requestType = $request->type;
+                        if ($requestType === 'set') {
+                            $set_id_array[] = $request->product_id;
+                        }
+
                     }
+                    
                 }
             }
 
@@ -253,7 +257,7 @@ class IndexController extends Controller
             if ($order->type == Order::TYPE_CART) {
                 $request = json_decode($order->request);
                 foreach ($request as $item) {
-                    if ($item->type == 'set') {
+                    if (isset($item->type) and $item->type == 'set') {
                         $count_sets += $item->qty;
                     }
                 }
