@@ -7,8 +7,8 @@
     <div id="information-region" class="information-wine-region">
         <div id="content" class="">
             <div>
-                <img alt="{{ $region->title  }}" class="img-responsive" src="{{Voyager::image($region->banner_image)}}" style="height: 20vw;
-object-fit: cover;">
+                <img alt="{{ $region->title  }}" class="img-responsive" src="{{Voyager::image($region->banner_image)}}">          
+                <!-- style="height: 20vw; object-fit: cover;"  -->
             </div>
             <div class="background-white">
                 <div class="container container-lg">

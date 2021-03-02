@@ -681,14 +681,14 @@ input {
 }
 
 .product_cont {
-    padding: 4rem 9.5rem 8rem;
+    padding: 2rem 9.5rem 1rem;
     background: #fff;
     width: calc(33.333333% - 3rem);
     box-sizing: border-box;
     margin-right: 3rem;
     margin-bottom: 3rem;
     float: left;
-    min-height: 34vw;
+    min-height: 29vw;
 }
 
 .custom-select {
