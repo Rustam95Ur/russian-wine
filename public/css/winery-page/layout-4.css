@@ -154,7 +154,7 @@
     }
 
     .layout-4 .species_box {
-        padding-top: 280px;
+        padding-top:500px;
         padding-bottom: 145px;
         padding-left: 5%;
     }
@@ -192,7 +192,7 @@
         background-position: center center;
         background-repeat: no-repeat;
         background-size: auto auto;
-        height: 550px;
+        height: 800px;
         z-index: -1;
     }
 
