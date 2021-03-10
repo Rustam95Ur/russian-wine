@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="flex_elem row">
                     <div class="col-md-8 col-xs-12 row-no-padding text_img">
-                        <img alt='image' src="{{Voyager::image($block->image)}}" class="person_img">
+                        <img alt='image' src="{{Voyager::image($block->image)}}" class="person_img" style="width: 100%;">
                         {!!$block->addition!!}
                     </div>
                     <div class="col-md-4 col-xs-12 person_text">
