@@ -290,3 +290,10 @@
         </div>
     </div>
 </div>
+
+<style type="text/css">
+    p{
+        font-weight: 400;
+        font-family: 'ProximaNova-Reg', sans-serif !important;
+    }
+</style>

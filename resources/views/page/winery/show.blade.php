@@ -386,3 +386,19 @@
         </div>
     </div>
 @endsection
+
+<style type="text/css">
+    
+@media (min-width:1600px){
+    .mt-md{
+        padding-top: 70px !important;
+    }
+}
+
+@media (min-width:1600px){
+    .mt-md{
+        padding-top: 95px !important;
+    }
+}
+
+</style>
