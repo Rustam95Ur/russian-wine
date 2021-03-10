@@ -80,8 +80,8 @@
     }
 
     .layout-19 .margin_row .col-md-offset-8.col-md-4.text_s_s.half_minus {
-        margin-top: -350px;
-        padding: 7% 5%
+        margin-top: -375px;
+        padding: 5% 5%
     }
 
     .layout-19 .margin_row .col-md-offset-8 p {
@@ -236,7 +236,7 @@
         padding: 0 21.5% 0 0;
         text-align: right;
         z-index: 1;
-        top: -86px;
+        top: -150px;
         position: absolute;
         width: 100%
     }

@@ -347,3 +347,9 @@
         </div>
     </div>
 </div>
+
+<style type="text/css">
+    .vinogradniki_title{
+        font: 130px ProximaNova-Bold!important;
+    }
+</style>
