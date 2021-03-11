@@ -110,11 +110,13 @@
                                    @endif
 		                        </div>
 	                        </span>
+                            <div style="float: left; width: 100%;">
                                 <button class="add-cart  set-buy-btn btn-danger" style="padding: .75vw 3.5vw;"
                                         onclick="cart_add('{{$set->id}}', 1, 'set');$(this).addClass('active'); $(this).text('В корзине')">
                                     в
                                     корзину
                                 </button>
+                            </div>
                             @else
                                 <span class="sale-set-price">{{$set->price}} <span>о</span>
                                    <div id="skidka">

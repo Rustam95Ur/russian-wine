@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @push('styles')
     <link rel="stylesheet" type="text/css" href="{{asset('css/tasting.css')}}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 @endpush
 @section('content')
     <div id="tasting-page">
@@ -297,12 +298,13 @@
                 </div>
         </div>
 
+
         <script type="text/javascript">
             $(function(){
                 $('a[href^="#"]').click(function(){
-                   var target = $(this).attr('href');
-                   $('html, body').animate({scrollTop: $(target).offset().top}, 1000);
-                   return false;
+                    var target = $(this).attr('href');
+                    $('html, body').animate({scrollTop: $(target).offset().top}, 1000);
+                    return false;
                 });
              });
         </script>
