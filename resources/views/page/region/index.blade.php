@@ -141,7 +141,7 @@
                             // Custom image for the placemark icon.
                             iconImageHref: 'image/map_marker_wine_active.png',
                             // The size of the placemark.
-                            iconImageSize: [30, 42],
+                            iconImageSize: [50, 60],
                             /**
                              * The offset of the upper left corner of the icon relative
                              * to its "tail" (the anchor point).
@@ -152,7 +152,7 @@
                         myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
                             hintContent: 'A custom placemark icon with contents',
                             balloonContent: 'This one — for Christmas',
-                            iconContent: '12'
+                            // iconContent: '12'
                         }, {
                             /**
                              * Options.
@@ -162,16 +162,16 @@
                             // Custom image for the placemark icon.
                             iconImageHref: 'image/map_marker_wine_active.png',
                             // The size of the placemark.
-                            iconImageSize: [48, 48],
+                            iconImageSize: [50, 60],
                             /**
                              * The offset of the upper left corner of the icon relative
                              * to its "tail" (the anchor point).
                              */
                             iconImageOffset: [-24, -24],
                             // Offset of the layer with content relative to the layer with the image.
-                            iconContentOffset: [15, 15],
+                            // iconContentOffset: [15, 15],
                             // Content layout.
-                            iconContentLayout: MyIconContentLayout
+                            // iconContentLayout: MyIconContentLayout
                         });
 
                     myMap.geoObjects
