@@ -46,7 +46,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12" id="sets_anchor">
-                        <h5 class="title_prox_bold">
+                        <h5 class="title_prox_bold" style="margin-bottom: 6rem">
                             Дегустационные сеты
                         </h5>
                     </div>
