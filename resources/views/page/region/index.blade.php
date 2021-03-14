@@ -139,7 +139,7 @@
                              */
                             iconLayout: 'default#image',
                             // Custom image for the placemark icon.
-                            iconImageHref: 'image/ball.png',
+                            iconImageHref: 'image/map_marker_wine_active.png',
                             // The size of the placemark.
                             iconImageSize: [30, 42],
                             /**
@@ -160,7 +160,7 @@
                              */
                             iconLayout: 'default#imageWithContent',
                             // Custom image for the placemark icon.
-                            iconImageHref: 'images/ball.png',
+                            iconImageHref: 'image/map_marker_wine_active.png',
                             // The size of the placemark.
                             iconImageSize: [48, 48],
                             /**
