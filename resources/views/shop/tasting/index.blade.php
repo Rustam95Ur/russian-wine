@@ -296,13 +296,17 @@
 
 
         <script type="text/javascript">
-            $(function(){
-                $('a[href^="#"]').click(function(){
-                    var target = $(this).attr('href');
-                    $('html, body').animate({scrollTop: $(target).offset().top}, 1000);
+
+             $(document).ready(function() {
+                  $("a").click(function() {
+                    var elementClick = $(this).attr("href")
+                    var destination = $(elementClick).offset().top;
+                    jQuery("html:not(:animated),body:not(:animated)").animate({
+                      scrollTop: destination
+                    }, 800);
                     return false;
+                  });
                 });
-             });
         </script>
     @endforeach
 @endsection
