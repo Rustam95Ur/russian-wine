@@ -118,7 +118,7 @@
                 <script type="text/javascript">
                     ymaps.ready(function () {
                     var myMap = new ymaps.Map('map', {
-                            center: [55.751574, 37.573856],
+                            center: [45.034937, 38.984963],
                             zoom: 11
                         }, {
                             searchControlProvider: 'yandex#search'
@@ -149,7 +149,132 @@
                             iconImageOffset: [-5, -38]
                         }),
 
-                        myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
+                        myPlacemarkWithContent = new ymaps.Placemark([47.216655, 39.678577], {
+                            hintContent: 'A custom placemark icon with contents',
+                            balloonContent: 'This one — for Christmas',
+                            // iconContent: '12'
+                        }, {
+                            /**
+                             * Options.
+                             * You must specify this type of layout.
+                             */
+                            iconLayout: 'default#imageWithContent',
+                            // Custom image for the placemark icon.
+                            iconImageHref: 'image/map_marker_wine_active.png',
+                            // The size of the placemark.
+                            iconImageSize: [50, 60],
+                            /**
+                             * The offset of the upper left corner of the icon relative
+                             * to its "tail" (the anchor point).
+                             */
+                            iconImageOffset: [-24, -24],
+                            // Offset of the layer with content relative to the layer with the image.
+                            // iconContentOffset: [15, 15],
+                            // Content layout.
+                            // iconContentLayout: MyIconContentLayout
+                        }),
+
+                        myPlacemarkWithContent2 = new ymaps.Placemark([44.957931, 34.098635], {
+                            hintContent: 'A custom placemark icon with contents',
+                            balloonContent: 'This one — for Christmas',
+                            // iconContent: '12'
+                        }, {
+                            /**
+                             * Options.
+                             * You must specify this type of layout.
+                             */
+                            iconLayout: 'default#imageWithContent',
+                            // Custom image for the placemark icon.
+                            iconImageHref: 'image/map_marker_wine_active.png',
+                            // The size of the placemark.
+                            iconImageSize: [50, 60],
+                            /**
+                             * The offset of the upper left corner of the icon relative
+                             * to its "tail" (the anchor point).
+                             */
+                            iconImageOffset: [-24, -24],
+                            // Offset of the layer with content relative to the layer with the image.
+                            // iconContentOffset: [15, 15],
+                            // Content layout.
+                            // iconContentLayout: MyIconContentLayout
+                        }),
+
+                        myPlacemarkWithContent3 = new ymaps.Placemark([48.709632, 44.520324], {
+                            hintContent: 'A custom placemark icon with contents',
+                            balloonContent: 'This one — for Christmas',
+                            // iconContent: '12'
+                        }, {
+                            /**
+                             * Options.
+                             * You must specify this type of layout.
+                             */
+                            iconLayout: 'default#imageWithContent',
+                            // Custom image for the placemark icon.
+                            iconImageHref: 'image/map_marker_wine_active.png',
+                            // The size of the placemark.
+                            iconImageSize: [50, 60],
+                            /**
+                             * The offset of the upper left corner of the icon relative
+                             * to its "tail" (the anchor point).
+                             */
+                            iconImageOffset: [-24, -24],
+                            // Offset of the layer with content relative to the layer with the image.
+                            // iconContentOffset: [15, 15],
+                            // Content layout.
+                            // iconContentLayout: MyIconContentLayout
+                        }),
+
+                        myPlacemarkWithContent4 = new ymaps.Placemark([45.043366, 41.979728], {
+                            hintContent: 'A custom placemark icon with contents',
+                            balloonContent: 'This one — for Christmas',
+                            // iconContent: '12'
+                        }, {
+                            /**
+                             * Options.
+                             * You must specify this type of layout.
+                             */
+                            iconLayout: 'default#imageWithContent',
+                            // Custom image for the placemark icon.
+                            iconImageHref: 'image/map_marker_wine_active.png',
+                            // The size of the placemark.
+                            iconImageSize: [50, 60],
+                            /**
+                             * The offset of the upper left corner of the icon relative
+                             * to its "tail" (the anchor point).
+                             */
+                            iconImageOffset: [-24, -24],
+                            // Offset of the layer with content relative to the layer with the image.
+                            // iconContentOffset: [15, 15],
+                            // Content layout.
+                            // iconContentLayout: MyIconContentLayout
+                        }),
+
+                        myPlacemarkWithContent5 = new ymaps.Placemark([44.579121, 46.155391], {
+                            hintContent: 'A custom placemark icon with contents',
+                            balloonContent: 'This one — for Christmas',
+                            // iconContent: '12'
+                        }, {
+                            /**
+                             * Options.
+                             * You must specify this type of layout.
+                             */
+                            iconLayout: 'default#imageWithContent',
+                            // Custom image for the placemark icon.
+                            iconImageHref: 'image/map_marker_wine_active.png',
+                            // The size of the placemark.
+                            iconImageSize: [50, 60],
+                            /**
+                             * The offset of the upper left corner of the icon relative
+                             * to its "tail" (the anchor point).
+                             */
+                            iconImageOffset: [-24, -24],
+                            // Offset of the layer with content relative to the layer with the image.
+                            // iconContentOffset: [15, 15],
+                            // Content layout.
+                            // iconContentLayout: MyIconContentLayout
+                        }),
+
+                        myPlacemarkWithContent6 = new ymaps.Placemark([43.040077, 44.659892], {
                             hintContent: 'A custom placemark icon with contents',
                             balloonContent: 'This one — for Christmas',
                             // iconContent: '12'
@@ -176,8 +301,13 @@
 
                     myMap.geoObjects
                         .add(myPlacemark)
-                        .add(myPlacemarkWithContent);
-                });
+                        .add(myPlacemarkWithContent)
+                        .add(myPlacemarkWithContent2)
+                        .add(myPlacemarkWithContent3)
+                        .add(myPlacemarkWithContent4)
+                        .add(myPlacemarkWithContent5)
+                        .add(myPlacemarkWithContent6);
+                })
 
                 </script>
 
