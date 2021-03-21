@@ -1667,7 +1667,7 @@ header #form-language .language-select {
 }
 
 #information-winery .swiper-slide.swiper-slide-active .item-inner img {
-    max-height: 540px
+    max-height: 465px;
 }
 
 #information-winery .swiper-slide.swiper-slide {
@@ -1678,7 +1678,7 @@ header #form-language .language-select {
 #information-winery .swiper-slide.swiper-slide-next {
     text-align: center;
     padding: 0 2.5vw;
-    opacity: .25
+    opacity: 0;
 }
 
 #information-winery .swiper-slide.swiper-slide-prev .image {
