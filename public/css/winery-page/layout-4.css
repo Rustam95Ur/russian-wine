@@ -15,7 +15,7 @@
     }
 
     .layout-4 .text_below_img, .layout-4 .about_person_below .about_text_first p {
-        font-family: Lato-Light;
+        font-family: 'Lato', 'Open Sans', sans-serif !important;
     }
 
     .layout-4 .person_text {

@@ -21,14 +21,91 @@
                             @endforeach
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-8 col-lg-9">
-
-                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A039ba814ab18459dd12cbdcbbfa3250c8a2bd73218901b0cec73c6858b34d84a&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+                    <div class="col-xs-12 col-sm-6 col-md-8 col-lg-9" style="height: 60vh;">
+                        <!-- <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A039ba814ab18459dd12cbdcbbfa3250c8a2bd73218901b0cec73c6858b34d84a&amp;width=100%25&amp;height=580&amp;lang=ru_RU&amp;scroll=true"></script> -->
+                        <div id="map" style="position: relative; overflow: hidden;">
+                            <div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);">
+                                <div class="gm-err-container">
+                                    <div class="gm-err-content">
+                                        <div class="gm-err-icon">
+                                            <img src="https://maps.gstatic.com/mapfiles/api-3/images/icon_error.png" draggable="false" style="user-select: none;">
+                                        </div>
+                                        <div class="gm-err-title">Ошибка</div>
+                                        <div class="gm-err-message">При загрузке Google Карт на этой странице возникла проблема. Подробности вы найдете в консоли JavaScript.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            @push('scripts')
-                <script>
+            @push('scripts')<script src="https://api-maps.yandex.ru/2.1/?lang=en_RU&amp;apikey=<your API-key>" type="text/javascript"></script>
+                <script type="text/javascript">
+                    ymaps.ready(function () {
+                    var myMap = new ymaps.Map('map', {
+                            center: [55.751574, 37.573856],
+                            zoom: 11
+                        }, {
+                            searchControlProvider: 'yandex#search'
+                        }),
+
+                        // Creating a content layout.
+                        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+                        ),
+
+                        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                            hintContent: 'A custom placemark icon',
+                            balloonContent: 'This is a pretty placemark'
+                        }, {
+                            /**
+                             * Options.
+                             * You must specify this type of layout.
+                             */
+                            iconLayout: 'default#image',
+                            // Custom image for the placemark icon.
+                            iconImageHref: 'image/map_marker_wine_active.png',
+                            // The size of the placemark.
+                            iconImageSize: [30, 42],
+                            /**
+                             * The offset of the upper left corner of the icon relative
+                             * to its "tail" (the anchor point).
+                             */
+                            iconImageOffset: [-5, -38]
+                        }),
+
+                        myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
+                            hintContent: 'A custom placemark icon with contents',
+                            balloonContent: 'This one — for Christmas',
+                            iconContent: '12'
+                        }, {
+                            /**
+                             * Options.
+                             * You must specify this type of layout.
+                             */
+                            iconLayout: 'default#imageWithContent',
+                            // Custom image for the placemark icon.
+                            iconImageHref: 'images/map_marker_wine_active.png',
+                            // The size of the placemark.
+                            iconImageSize: [48, 48],
+                            /**
+                             * The offset of the upper left corner of the icon relative
+                             * to its "tail" (the anchor point).
+                             */
+                            iconImageOffset: [-24, -24],
+                            // Offset of the layer with content relative to the layer with the image.
+                            iconContentOffset: [15, 15],
+                            // Content layout.
+                            iconContentLayout: MyIconContentLayout
+                        });
+
+                    myMap.geoObjects
+                        .add(myPlacemark)
+                        .add(myPlacemarkWithContent);
+                });
+
+                </script>
+                <!-- <script>
                     var markers = [];
                     function initMap() {
                         var map = new google.maps.Map(document.getElementById('map'), {
@@ -298,7 +375,7 @@
                             map.panTo(place.geometry.location);
                         });
                     }
-                </script>
+                </script> -->
 
             @endpush
         </div>
