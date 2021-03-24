@@ -1446,14 +1446,9 @@ header #form-language .language-select {
 }
 
 #information-winery .description-first {
-    font-size: 22px;
-    font-weight: 100;
-    font-family: "ProximaNova-Reg";
-}
-
-#information-winery .description-first p{
-    font-weight: 400;
-    font-family: 'ProximaNova-Reg', sans-serif;
+    font-size: 23px;
+    font-weight: 200;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 #information-winery .description-second-title h2 {
@@ -1667,7 +1662,7 @@ header #form-language .language-select {
 }
 
 #information-winery .swiper-slide.swiper-slide-active .item-inner img {
-    max-height: 465px;
+    max-height: 540px;
 }
 
 #information-winery .swiper-slide.swiper-slide {
@@ -1678,7 +1673,7 @@ header #form-language .language-select {
 #information-winery .swiper-slide.swiper-slide-next {
     text-align: center;
     padding: 0 2.5vw;
-    opacity: 0;
+    opacity: .25;
 }
 
 #information-winery .swiper-slide.swiper-slide-prev .image {

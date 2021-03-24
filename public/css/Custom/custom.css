@@ -2465,6 +2465,7 @@ span.currency {
     background: #261F30;
     border-bottom: 1px solid #DDD;
     cursor: pointer;
+    height: 220px;
 }
 
 #wheretobuy .addresses .address h2 {
@@ -2473,7 +2474,8 @@ span.currency {
     padding: 0 0 10px
 }
 #wheretobuy .addresses .address.selected {
-    border-right: 4px solid #D9214D
+    border-right: 4px solid #D9214D;
+    height: 220px;
 }
 @media (max-width: 991px) {
     .show-more {
