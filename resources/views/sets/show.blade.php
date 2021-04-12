@@ -62,14 +62,25 @@
                             {{--                            @endforeach--}}
                         </div>
                     </div>
+                    @if($page_type == 'subscription')
                     <a class="other-product"
-                       href="{{ isset($set->prevSet) ? route('set', $set->prevSet->slug)  : '/' }}">
+                       href="{{ isset($set->prevSet) ? route('set', $set->prevSet->slug.'?type=subscription')  : '/?type=subscription' }}">
                         <img alt="prev_image" src="{{asset('image/prev.png')}}">
                     </a>
                     <a class="other-product"
-                       href="{{isset($set->nextSet) ? route('set', $set->nextSet->slug ) : '/'}}">
+                       href="{{isset($set->nextSet) ? route('set', $set->nextSet->slug.'?type=subscription' ) : '/?type=subscription'}}">
                         <img alt="next_image" src="{{asset('image/next.png')}}">
                     </a>
+                    @else
+                        <a class="other-product"
+                           href="{{ isset($set->prevSet) ? route('set', $set->prevSet->slug)  : '/' }}">
+                            <img alt="prev_image" src="{{asset('image/prev.png')}}">
+                        </a>
+                        <a class="other-product"
+                           href="{{isset($set->nextSet) ? route('set', $set->nextSet->slug ) : '/'}}">
+                            <img alt="next_image" src="{{asset('image/next.png')}}">
+                        </a>
+                    @endif
                 </div>
                 <div class="col-sp-7">
                     <div class="description-set">
@@ -234,7 +245,8 @@
                         add_cart_class.removeClass('active')
                         add_cart_class.html('В корзину');
                         if(input_val === 12) {
-                            set_price_class.html(total + ' <span>о</span> <div id="skidka">-20%</div>');
+                            var totalPrice = total * 0.8
+                            set_price_class.html(totalPrice + ' <span>о</span> <div id="skidka">-20%</div>');
                         }
                     }
                 } else {

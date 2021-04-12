@@ -31,8 +31,14 @@ class IndexController extends Controller
         $saveRequest->phone = $request['phone'];
         $saveRequest->type = Order::TYPE_TOUR;
         $saveRequest->save();
-        SendMail::tour($request);
-        return redirect()->back()->with('success', trans('order.success.tour'));
+       // SendMail::tour($request);
+
+        $message = 'Заявка на Винный тур успешно создана! Мы с вами свяжемся в ближайшее время!';
+
+        return view('shop.checkout.success', [
+            'message' => $message
+        ]);
+       // return redirect()->back()->with('success', trans('order.success.tour'));
     }
 
 

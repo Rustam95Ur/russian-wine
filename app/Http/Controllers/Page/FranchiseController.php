@@ -27,6 +27,12 @@ class FranchiseController extends Controller
         $saveRequest->phone = $request['phone'];
         $saveRequest->type = Order::TYPE_FRANCHISE;
         $saveRequest->save();
-        return redirect()->back()->with('success', trans('order.success.franchise'));
+
+        $message = 'Заявка на получение Франшизы успешно создана! Мы с вами свяжемся в ближайшее время!';
+
+        return view('shop.checkout.success', [
+            'message' => $message
+        ]);
+       // return redirect()->back()->with('success', trans('order.success.franchise'));
     }
 }

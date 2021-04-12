@@ -18,7 +18,7 @@ class SearchController extends Controller
                 ->orWhereHas('winery', function ($q) use ($keyword) {
                     $q->where('title', 'like', '%' . $keyword . '%');
                 });
-        })->where('price', '>', 0)
+        })->where('price', '>=', 0)
             ->where('status', '=', 'ACTIVE')
             ->limit(3)->get();
         $link = 'title=' . $request->title;
