@@ -91,6 +91,7 @@ function wine_filter_search(filter, page = 1) {
             datatype: "html"
         }).done(function (data) {
         $("#wine_list_block").empty().html(data);
+
         // location.hash = page;
     }).error(function (jqXHR, ajaxOptions, thrownError) {
         console.log(jqXHR)
@@ -170,6 +171,7 @@ function clear_filter() {
     var filter = $('#searching-form').serialize()
     wine_filter_search(filter, '')
     $("input[name=title]").val('')
+    scroll_up()
 }
 
 function clear_for_load() {
