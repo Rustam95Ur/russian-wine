@@ -22,7 +22,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <img src="{{ asset ('image/1OLwTAcYZZn9L9hwUju2.png') }}" width="30px"
+                                            <img src="{{ Voyager::image($favorite->image) }}" width="30px"
                                                  height="100px" alt="">'
                                         </td>
                                         <td>
