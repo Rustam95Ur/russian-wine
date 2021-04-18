@@ -52,6 +52,11 @@
             nextEl: '.nextslide0',
             prevEl: '.prevslide0',
         },
+        autoplay:
+            {
+                delay: 2000,
+            },
+        loop: true
     });
 
 var swiper = new Swiper('#featured_slide1.swiper-container', {
@@ -65,6 +70,11 @@ var swiper = new Swiper('#featured_slide1.swiper-container', {
         nextEl: '.nextslide1',
         prevEl: '.prevslide1',
     },
+    autoplay:
+        {
+            delay: 2000,
+        },
+    loop: true
 });
 var swiper = new Swiper('#winemakers_slider1.swiper-container', {
     slidesPerView: 'auto',
