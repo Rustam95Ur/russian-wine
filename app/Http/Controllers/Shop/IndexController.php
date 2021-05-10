@@ -341,8 +341,14 @@ class IndexController extends Controller
             foreach ($countCartItems as $item) {
                 if ($item['type'] == 'wine') {
                     $product = Wine::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
+                    $price = (int)$product->price * $item['qty'];
                 } elseif ($item['type'] == 'set') {
                     $product = Set::select('title', 'price', 'image', 'id')->where('id', '=', $item['product_id'])->first();
+                    if ($item['qty'] >= 12) {
+                        $price = (int)$product->price * $item['qty'] - ((int)$product->price * $item['qty'] * 0.2);
+                    } else {
+                        $price = (int)$product->price * $item['qty'];
+                    }
                 }
                 if ($product) {
                     $product_array = [
@@ -352,7 +358,7 @@ class IndexController extends Controller
                         'title' => $product->title,
                         'price' => $product->price,
                         'image' => Voyager::image($product->image),
-                        'total' => (int)$product->price * $item['qty']
+                        'total' => $price
                     ];
                     array_push($cart_products, $product_array);
                     $total_sum += (int)$product->price * $item['qty'];
