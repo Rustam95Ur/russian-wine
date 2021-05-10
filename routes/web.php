@@ -82,7 +82,7 @@ Route::get('/profile/subscription', 'Profile\IndexController@subscription')->nam
 
 Route::get('/{slug}', 'Page\IndexController@simple_page')->name('simple_page');
 
-Route::post('/reorder', 'Profile\IndexController@reorder')->name('reorder');
+Route::post('/profile/reorder', 'Profile\IndexController@reorder')->name('reorder');
 
 
 

@@ -275,7 +275,7 @@ class IndexController extends Controller
         return $menu;
     }
 
-    public function reorder()
+    public function reorder(Request $request)
     {
         $message = 'Вы успешно продублировали заказ. <br>В ближайшее время свяжемся с Вами';
 
