@@ -104,7 +104,13 @@ class IndexController extends Controller
         $saveRequest->type = Order::TYPE_CART;
         $saveRequest->message = $cart_info;
         $saveRequest->save();
-        return redirect()->back()->with('success', 'Заявка успешно отправлена');
+
+        $message = 'Заявка успешно отправлена. <br>В ближайшее время свяжемся с Вами';
+
+        return view('shop.checkout.success', [
+            'message' => $message
+        ]);
+//        return redirect()->back()->with('success', 'Заявка успешно отправлена');
     }
 
     /**
@@ -267,5 +273,14 @@ class IndexController extends Controller
         $menu['set_count'] = $count_sets;
         $menu['subscription_count'] = $subscriptions;
         return $menu;
+    }
+
+    public function reorder()
+    {
+        $message = 'Вы успешно продублировали заказ. <br>В ближайшее время свяжемся с Вами';
+
+        return view('shop.checkout.success', [
+            'message' => $message
+        ]);
     }
 }
