@@ -70,7 +70,12 @@ class IndexController extends Controller
         $saveRequest->type = Order::TYPE_FAVORITE;
         $saveRequest->message = $cart_info;
         $saveRequest->save();
-        return redirect()->back()->with('success', 'Заявка успешно отправлена');
+        $message = 'Заявка успешно отправлена. <br>В ближайшее время свяжемся с Вами';
+
+        return view('shop.checkout.success', [
+            'message' => $message
+        ]);
+        //return redirect()->back()->with('success', 'Заявка успешно отправлена');
 
     }
 
