@@ -2813,7 +2813,9 @@ header #form-language .language-select {
 }
 
 .bold_font{
-    font-family: 'ProximaNova-Bold', sans-serif !important;
+    letter-spacing: 0.1vw;
+    font: 0.8333333333333334VW 'ProximaNova-Bold';
+    /*font-family: 'ProximaNova-Bold', sans-serif !important;*/
 }
 .light_font{
     font-family: 'ProximaNova-Reg', sans-serif !important;
