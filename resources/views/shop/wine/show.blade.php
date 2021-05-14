@@ -142,11 +142,11 @@
                             </ul>
                         </div>
                         <div class="social">
-                            <a class="add_to_favorite one-social like-{{$wine->id}}" id="{{$wine->id}}"
+                            <a onclick="add_delete_favorite({{$wine->id}}, 'add')" class="one-social like-{{$wine->id}}" id="{{$wine->id}}"
                                style="display: {{($is_favorite) ? 'none' : 'block'}}">
                                 <img src="{{asset('image/like_wine.svg')}}">
                             </a>
-                            <a class="delete_favorite one-social unlike-{{$wine->id}}" id="{{$wine->id}}"
+                            <a onclick="add_delete_favorite({{$wine->id}}, 'delete')"  class="one-social unlike-{{$wine->id}}" id="{{$wine->id}}"
                                style="display: {{($is_favorite) ? 'block' : 'none'}}">
                                 <img src="{{asset('image/unlike_wine.svg')}}">
                             </a>

@@ -14,7 +14,7 @@ class CreateClientWineTable extends Migration
     public function up()
     {
         Schema::create('client_wine', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+            $table->increments('id');
             $table->integer('client_id');
             $table->integer('wine_id');
             $table->timestamps();
