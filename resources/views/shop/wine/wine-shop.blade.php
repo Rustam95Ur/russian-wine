@@ -486,7 +486,7 @@
                                 <img src="{{ asset ('image/arrow-down.svg') }}" alt="" class="collapseIcon">
                             </button>
                         </div>
-                        <button class="btn-danger" type="button" onclick="clear_filter()">Очистить</button>
+                        <button class="btn-danger" type="button" style="margin-top: 20px" onclick="clear_filter()">Очистить</button>
                     </div>
                 </form>
             </div>
