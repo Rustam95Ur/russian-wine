@@ -150,7 +150,7 @@ class IndexController extends Controller
     public function orders()
     {
         $data = $this->menu_item_count();
-        $orders = Order::where('email', '=', Auth::user()->email)->where('type', '=', Order::TYPE_CART)->where('request', '!=', null)->get();
+        $orders = Order::where('email', '=', Auth::user()->email)->where('type', '=', Order::TYPE_CART)->where('request', '!=', null)->orderBy('created_at', 'DESC')->get();
         $order_list = [];
         foreach ($orders as $key => $value) {
             $total_price = 0;
