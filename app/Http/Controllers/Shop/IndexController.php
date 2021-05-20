@@ -10,12 +10,15 @@ use App\Models\Set;
 use App\Models\Wine;
 use App\Models\WineClass;
 use App\Models\Winery;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Sugar;
 use App\Filters\WineFilter;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 use TCG\Voyager\Facades\Voyager;
 use App\Http\Controllers\Mail\IndexController as SendMail;
 
@@ -23,7 +26,7 @@ class IndexController extends Controller
 {
     /**
      * @param WineFilter $filters
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function wine_list(WineFilter $filters)
     {
@@ -86,7 +89,7 @@ class IndexController extends Controller
 
     /**
      * @param $slug
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function wine_bread($slug)
     {
@@ -129,7 +132,7 @@ class IndexController extends Controller
 
     /**
      * @param $slug
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function wine_info($slug)
     {
@@ -166,7 +169,7 @@ class IndexController extends Controller
     }
 
     /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function personal_wine()
     {
@@ -176,9 +179,9 @@ class IndexController extends Controller
         ]);
     }
 
-    /**
+    /***
      * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return Application|Factory|View
      */
     public function personal_wine_order(Request $request)
     {
@@ -218,17 +221,14 @@ class IndexController extends Controller
         }
         $item = ['product_id' => $product_id, 'qty' => $qty, 'type' => $type, 'price' => $checkProduct->price];
         $sessionItems = session()->get('cart');
-        $results = [];
         if ($sessionItems and count($sessionItems) > 0) {
             $status = array_search($product_id, array_column($sessionItems, 'product_id'));
             $status_type = array_search($type, array_column($sessionItems, 'type'));
             if ($status === false or $status_type === false) {
                 array_push($sessionItems, $item);
-                session()->forget('cart');
-                foreach ($sessionItems as $result) {
-                    session()->push('cart', $result);
-                }
+                session()->put('cart', $sessionItems);
             } else {
+                $results = [];
                 for ($i = 0; $i < count($sessionItems); $i++) {
                     $sum = ($sessionItems[$i]['product_id'] == $product_id and $sessionItems[$i]['type'] == $type) ? $sessionItems[$i]['qty'] + $qty : $sessionItems[$i]['qty'];
 
@@ -239,14 +239,11 @@ class IndexController extends Controller
                         'product_id' => $sessionItems[$i]['product_id'],
                         'qty' => $sum,
                         'type' => $sessionItems[$i]['type'],
-                        'price' => $checkProduct->price,
+                        'price' => $sessionItems[$i]['price'],
                     ];
-                    $results[$i] = $newArray;
+                    array_push($results, $newArray);
                 }
-                session()->forget('cart');
-                foreach ($results as $result) {
-                    session()->push('cart', $result);
-                }
+                session()->put('cart', $results);
             }
         } else {
             session()->push('cart', $item);
@@ -374,11 +371,12 @@ class IndexController extends Controller
     }
 
     /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     * @return Application|Factory|\Illuminate\Http\RedirectResponse|View
      */
     public function checkout()
     {
         $countCartItems = session()->get('cart');
+
         if ($countCartItems != false) {
             $total_sum = 0;
             foreach ($countCartItems as $item) {
@@ -455,7 +453,7 @@ class IndexController extends Controller
     }
 
     /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function checkout_success()
     {
