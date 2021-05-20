@@ -8,9 +8,12 @@ use App\Models\Order;
 use App\Models\Set;
 use DB;
 use App\Models\Wine;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 use TCG\Voyager\Facades\Voyager;
 
 class IndexController extends Controller
@@ -21,7 +24,7 @@ class IndexController extends Controller
     }
 
     /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function show()
     {
@@ -30,7 +33,7 @@ class IndexController extends Controller
     }
 
     /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function favorite()
     {
@@ -42,7 +45,7 @@ class IndexController extends Controller
 
     /**
      * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return Application|Factory|View
      */
     public function favorite_order(Request $request)
     {
@@ -119,7 +122,7 @@ class IndexController extends Controller
     }
 
     /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function subscription()
     {
@@ -145,12 +148,12 @@ class IndexController extends Controller
     }
 
     /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function orders()
     {
         $data = $this->menu_item_count();
-        $orders = Order::where('email', '=', Auth::user()->email)->where('type', '=', Order::TYPE_CART)->where('request', '!=', null)->orderBy('created_at', 'DESC')->get();
+        $orders = Order::where('email', '=', Auth::user()->email)->whereIn('type', [Order::TYPE_CART,  Order::TYPE_FAVORITE])->where('request', '!=', null)->orderBy('created_at', 'DESC')->get();
         $order_list = [];
         foreach ($orders as $key => $value) {
             $total_price = 0;
@@ -203,7 +206,7 @@ class IndexController extends Controller
     }
 
     /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function sets()
     {
