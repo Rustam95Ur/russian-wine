@@ -221,7 +221,7 @@ class IndexController extends Controller
                         }
 
                     }
-                    
+
                 }
             }
 
@@ -283,7 +283,9 @@ class IndexController extends Controller
     public function reorder(Request $request)
     {
         $message = 'Вы успешно продублировали заказ. <br>В ближайшее время свяжемся с Вами';
-
+        $old_orders = Order::find($request['orders']);
+        $new_order = $old_orders->replicate();
+        $new_order->save();
         return view('shop.checkout.success', [
             'message' => $message
         ]);
