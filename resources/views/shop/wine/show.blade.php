@@ -352,7 +352,6 @@
         </div>
     </div>
     @push('scripts')
-        <script src="{{ asset('js/cart.js') }}"></script>
         <script src="{{ asset('js/favorite.js') }}"></script>
         <script>
             $("input[name='vintage']").on('change', function () {

@@ -45,7 +45,7 @@
 
 {{--<a id="scroll-top"><i class="fa fa-angle-right" aria-hidden="true"></i></a> <!-- /#scroll-top -->--}}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="{{ asset('js/header_cart.js') }}"></script>
+
 <script>
     $(document).ready(function () {
         countItem();
@@ -63,6 +63,8 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('js/cart.js') }}"></script>
+<script src="{{ asset('js/header_cart.js') }}"></script>
 @stack('scripts')
 <script>
     @php

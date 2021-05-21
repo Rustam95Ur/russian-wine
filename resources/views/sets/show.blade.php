@@ -289,7 +289,6 @@
             });
 
         </script>
-        <script src="{{ asset('js/cart.js') }}"></script>
     @endpush
 
 @endsection

@@ -117,10 +117,10 @@
                                             </div>
                                             <div class="button_cont">
                                                 <div class="prod_quantity">
-                                                    <span class="qua_mins" onclick="update_count({{$wine->id}}, 'minus')"></span>
-                                                    <input type="number" class="quantity" id="wine-{{$wine->id}}"
+                                                    <span class="qua_mins" onclick="update_count({{$wine->id}}, 'minus', null, 'popular')"></span>
+                                                    <input type="number" class="quantity popular-{{$wine->id}}" id="wine-{{$wine->id}}"
                                                            value="1">
-                                                    <span class="qua_plus" onclick="update_count({{$wine->id}}, 'plus')"></span>
+                                                    <span class="qua_plus" onclick="update_count({{$wine->id}}, 'plus', null, 'popular')"></span>
                                                 </div>
                                                 <button id="button-carts" class="cart-btn-{{$wine->id}}"
                                                         onclick="cart_add('{{$wine->id}}', 1, 'wine');">
@@ -255,13 +255,13 @@
                                         </div>
                                         <div class="button_cont">
                                             <div class="prod_quantity">
-                                                <span class="qua_mins" onclick="update_count({{$wine->id}}, 'minus')"></span>
-                                                <input type="number" class="quantity" id="wine-{{$wine->id}}"
+                                                <span class="qua_mins" onclick="update_count({{$wine->id}}, 'minus',  null, 'new')"></span>
+                                                <input type="number" class="quantity new-{{$wine->id}}" id="wine-{{$wine->id}}"
                                                        value="1">
-                                                <span class="qua_plus" onclick="update_count({{$wine->id}}, 'plus')"></span>
+                                                <span class="qua_plus" onclick="update_count({{$wine->id}}, 'plus', null, 'new')"></span>
                                             </div>
                                             <button id="button-carts" class="cart-btn-{{$wine->id}}"
-                                                    onclick="cart_add('{{$wine->id}}', 1, 'wine');">
+                                                    onclick="cart_add('{{$wine->id}}', 1, 'wine', null, 'new');">
                                                 <span>В корзину</span></button>
                                         </div>
                                     </div>
@@ -340,7 +340,6 @@
             </div>
         </section>
         @push('scripts')
-            <script src="{{ asset('js/cart.js') }}"></script>
             <script src="{{ asset('js/favorite.js') }}"></script>
     @endpush
 @endsection
