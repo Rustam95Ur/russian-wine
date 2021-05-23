@@ -117,7 +117,7 @@
                                     <div class="cart-content">
                                         <div class="empty_cart" id="empty_cart"
                                              style="display: none">
-                                            <h2>
+                                            <h2 style="color:black">
                                                 Ваша корзина ещё пуста
                                             </h2>
                                             <img alt="cart-icon" src="{{ asset ('image/empty.jpg') }}">

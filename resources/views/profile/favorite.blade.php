@@ -9,8 +9,16 @@
             <div class="row">
                 @include('profile.layouts.left-side-menu')
                 <div class="col-md-8 bg_white">
-                        <div class="favorite_block" style="display: {{(count($favorites) > 0 ) ? '' : 'none'}}">
+                        <div class="favorite_block">
                             <h1>Избранное</h1>
+                            @if($favorites->isEmpty())
+                                <div class="mt-lg text-center" id="favorite_zero">
+                                    <h3 style="color: black; font-size: 20px">В избраном пока ничего нет <br> но вы можете их добавить из винотеки</h3>
+                                    <a href={{route('wine_shop')}}>
+                                        <button class="btn-danger">Перейти в Винотеку</button>
+                                    </a>
+                                </div>
+                            @else
                             <table class="table" id="favorite_table">
                                 @foreach($favorites as $favorite)
                                     <tbody>
@@ -47,17 +55,13 @@
                                     </tbody>
                                 @endforeach
                             </table>
+                            @endif
                             <form method="post" id="favorite_order" action="{{route('profile-favorite-order')}}">
                                 @csrf
                                 <input class="btn-danger" type="submit" id="form-send-btn" value='Сделать заказ' style="display: none">
                             </form>
                         </div>
-                        <div class="mt-lg text-center" id="favorite_zero" style="display: {{(count($favorites) > 0 ) ? 'none' : ''}}">
-                            <h3>В избраном пока ничего нет <br> но вы можете их добавить из винотеки</h3>
-                            <a href={{route('wine_shop')}}>
-                                <button class="btn-danger">Перейти в Винотеку</button>
-                            </a>
-                        </div>
+
                 </div>
             </div>
         </div>

@@ -20,7 +20,7 @@
                             <hr>
                             @if($active_count == 0)
                                 <div class="mt-lg text-center">
-                                    <h3>У вас нет действующих подписок</h3>
+                                    <h3 style="color: black; font-size: 20px">У вас нет действующих подписок</h3>
                                     <a href={{route('subscription')}}>
                                         <button class="btn-danger">Оформить
                                             подписку

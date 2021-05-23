@@ -39,7 +39,7 @@
                         </table>
                         @else
                             <div class="mt-lg text-center">
-                                <h3>Вы не заказали ни одного сета</h3>
+                                <h3 style="color: black; font-size: 20px">Вы не заказали ни одного сета</h3>
                                 <a href={{route('wine_shop')}}>
                                     <button class="btn-danger">Перейти в Винотеку</button>
                                 </a>
