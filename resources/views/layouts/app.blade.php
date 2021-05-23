@@ -121,6 +121,11 @@
         $('#login_modal').removeClass('hide')
     }
 
+    function restore_password_modal() {
+        $('.auth_register_modal').addClass('hide')
+        $('#restore_password_modal').removeClass('hide')
+    }
+
     function register_modal() {
         $('.auth_register_modal').addClass('hide')
         $('#register_modal').removeClass('hide')

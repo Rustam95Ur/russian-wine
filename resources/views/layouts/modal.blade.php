@@ -47,7 +47,7 @@
                             <div class="col-md-7 text-light">
                                 <div class="forgotdiv">
                                     @if (Route::has('password.request'))
-                                        <a class="forgot" href="#">
+                                        <a class="forgot" onclick="restore_password_modal()">
                                             Забыли пароль ?
                                         </a>
                                     @endif
@@ -65,6 +65,60 @@
         </div>
     </div>
 </div>
+
+<div id="restore_password_modal" class="auth_register_modal hide">
+    <div class="container login_container auth_modal">
+        <div class="close">
+            <p class="closeclick" onclick="close_modal()">
+                <img alt="close_icon" src="{{asset('image/closeicon.png')}}">
+            </p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Восстановление пароля</h2>
+                    </div>
+
+                        <p style="font-size: 20px; color:white;">Для восстановления пароля введите email привязанный к вашему профилю</p>
+
+
+                    <div class="card-body">
+                        <form method="POST" action="#">
+                            @csrf
+                            <div class="form-group row">
+                                <input type="email"
+                                       class="form-control @error('email') is-invalid @enderror" name="email"
+                                       value="{{ old('email') }}" required autocomplete="email" placeholder="Email"
+                                       autofocus>
+
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <div class="form-group row mb-0 text-center" style="display: flex; justify-content: center">
+                                <button type="submit" class="btn btn-danger">
+                                    Далее
+                                </button>
+                            </div>
+
+                            <div class="col-md-12 mt-xs">
+                                <a class="regist" onclick="login_modal()">
+                                    Войти
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div id="register_modal" class="auth_register_modal hide">
     <div class="close">
         <p class="closeclick" onclick="close_modal()">
