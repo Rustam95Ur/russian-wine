@@ -52,7 +52,7 @@ class LoginController extends Controller
             return redirect()->back()->with('error', trans('auth.not_found'));
         }
         $credentials = $request->only('email', 'password');
-        if (Auth::guard()->attempt($credentials)) {
+        if ($this->guard()->attempt($credentials)) {
             return redirect(route('profile-favorite'));
         }
         return redirect()->back()->with('error', trans('auth.failed_password'));
