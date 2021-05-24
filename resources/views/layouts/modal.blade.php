@@ -84,7 +84,7 @@
 
 
                     <div class="card-body">
-                        <form method="POST" action="#">
+                        <form method="POST" action="{{ route('password.email') }}">
                             @csrf
                             <div class="form-group row">
                                 <input type="email"
