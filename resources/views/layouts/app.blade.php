@@ -121,6 +121,32 @@
         $('#login_modal').removeClass('hide')
     }
 
+    function email_send_success_modal() {
+        var token = '{{ csrf_token() }}'
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        var email = document.getElementById('restore-email').value
+
+        console.log(email)
+
+        $.ajax({
+            url: '{{url("password/email")}}',
+            type: "POST",
+            headers: {
+                'X-CSRF-Token': '{{ csrf_token() }}',
+            },
+            data: {_token: token, email: email},
+            success: function (response) {
+                console.log(response)
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            }
+        });
+
+        $('.auth_register_modal').addClass('hide')
+        $('#email_modal').removeClass('hide')
+    }
+
     function restore_password_modal() {
         $('.auth_register_modal').addClass('hide')
         $('#restore_password_modal').removeClass('hide')

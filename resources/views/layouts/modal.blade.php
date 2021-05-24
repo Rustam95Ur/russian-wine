@@ -66,6 +66,28 @@
     </div>
 </div>
 
+<div id="email_modal" class="auth_register_modal hide">
+    <div class="container login_container auth_modal">
+        <div class="close">
+            <p class="closeclick" onclick="close_modal()">
+                <img alt="close_icon" src="{{asset('image/closeicon.png')}}">
+            </p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Проверте ваш Email</h2>
+                    </div>
+                    <div class="card-body">
+                        <h3 style="font-size: 20px; color: white">На ваш email отправлена инструкция по восстановлению пароля. Если вы не получили письмо проверте спам</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="restore_password_modal" class="auth_register_modal hide">
     <div class="container login_container auth_modal">
         <div class="close">
@@ -85,10 +107,10 @@
 
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('password.email') }}">
-                            @csrf
+                        {{--<form method="POST" action="{{ route('password.email') }}">--}}
+                            {{--@csrf--}}
                             <div class="form-group row">
-                                <input type="email"
+                                <input id="restore-email" type="email"
                                        class="form-control @error('email') is-invalid @enderror" name="email"
                                        value="{{ old('email') }}" required autocomplete="email" placeholder="Email"
                                        autofocus>
@@ -101,7 +123,7 @@
                             </div>
 
                             <div class="form-group row mb-0 text-center" style="display: flex; justify-content: center">
-                                <button type="submit" class="btn btn-danger">
+                                <button class="btn btn-danger" onclick="email_send_success_modal()">
                                     Далее
                                 </button>
                             </div>
@@ -111,7 +133,7 @@
                                     Войти
                                 </a>
                             </div>
-                        </form>
+                        {{--</form>--}}
                     </div>
                 </div>
             </div>
