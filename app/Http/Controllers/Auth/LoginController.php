@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Client;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -42,5 +44,17 @@ class LoginController extends Controller
     public function guard()
     {
         return Auth::guard('client');
+    }
+
+    public function login(Request $request){
+        $check_email_exists = Client::where('email', $request->email)->first();
+        if(!$check_email_exists) {
+            return redirect()->back()->with('error', trans('auth.not_found'));
+        }
+        $credentials = $request->only('email', 'password');
+        if (Auth::guard()->attempt($credentials)) {
+            return redirect(route('profile-favorite'));
+        }
+        return redirect()->back()->with('error', trans('auth.failed_password'));
     }
 }

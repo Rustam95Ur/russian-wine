@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\ConfirmsPasswords;
+use Illuminate\Support\Facades\Password;
 
 class ConfirmPasswordController extends Controller
 {
@@ -35,6 +36,11 @@ class ConfirmPasswordController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('guest:client');
+    }
+
+    protected function broker()
+    {
+        return Password::broker('clients'); //set password broker name according to guard which you have set in config/auth.php
     }
 }

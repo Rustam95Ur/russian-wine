@@ -80,7 +80,8 @@
                         <h2>Восстановление пароля</h2>
                     </div>
 
-                        <p style="font-size: 20px; color:white;">Для восстановления пароля введите email привязанный к вашему профилю</p>
+                    <p style="font-size: 20px; color:white;">Для восстановления пароля введите email привязанный к
+                        вашему профилю</p>
 
 
                     <div class="card-body">
@@ -195,23 +196,26 @@
         <div class="icon_close"
              onclick="$('#messageModal').css('display', 'none');$('body').removeClass('nooverflow');"></div>
         <h2 class="text-center m-b-50">Сообщение</h2>
-        @if ($message = session()->get('success'))
-            <h3 class="text-center text-success">{!! $message !!}</h3>
+        @if (session()->get('success'))
+            <h3 class="text-center text-success">{!! session('success') !!}</h3>
         @endif
-        @if ($message = session()->get('error'))
-            <h3 class="text-center text-danger">{!! $message !!}</h3>
+        @if (session('status'))
+            <h3 class="text-center text-success">{!! session('status') !!}</h3>
         @endif
-        @if ($message = session()->get('warning'))
-            <h3 class="text-center text-danger">{!! $message !!}</h3>
-                @endif
-                @if ($message = session()->get('info'))
-                    <h3 class="text-center text-danger">{!! $message !!}</h3>
-                @endif
-                @if ($errors->any())
-                    @foreach($errors->all() as $error)
-                        <ul class="questions text-center">
-                            <li class="text-danger"><h3>{!! $error !!}</h3></li>
-                        </ul>
+        @if (session()->get('error'))
+            <h3 class="text-center text-danger">{!! session('error') !!}</h3>
+        @endif
+        @if (session()->get('warning'))
+            <h3 class="text-center text-danger">{!! session('warning') !!}</h3>
+        @endif
+        @if (session()->get('info'))
+            <h3 class="text-center text-danger">{!! session('info') !!}</h3>
+        @endif
+        @if ($errors->any())
+            @foreach($errors->all() as $error)
+                <ul class="questions text-center">
+                    <li class="text-danger"><h3>{!! $error !!}</h3></li>
+                </ul>
             @endforeach
         @endif
     </div>

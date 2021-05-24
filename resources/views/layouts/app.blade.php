@@ -138,7 +138,7 @@
 
 
 @include('layouts.modal')
-@if ($message = Session::get('success') or $message = Session::get('error') or $message = Session::get('warning') or $message = Session::get('info') or $errors->any())
+@if (session()->get('success') or session()->get('error') or session()->get('warning') or session()->get('info') or session()->get('status') or $errors->any())
     <script>
         (function ($) {
             $(function () {
