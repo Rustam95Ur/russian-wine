@@ -1,4 +1,15 @@
 <div id="login_modal" class="auth_register_modal hide">
+    @if($message = session()->get('failed_password'))
+        <script>
+            login_modal()
+        </script>
+    @endif
+
+    @if($message_email = session()->get('email_error'))
+        <script>
+            login_modal()
+        </script>
+    @endif
     <div class="container login_container auth_modal">
         <div class="close">
             <p class="closeclick" onclick="close_modal()">
@@ -20,22 +31,22 @@
                                        value="{{ old('email') }}" required autocomplete="email" placeholder="Email"
                                        autofocus>
 
-                                @error('email')
+                                {{--@error('email')--}}
                                 <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: red">{{ $message_email }}</strong>
                                     </span>
-                                @enderror
+                                {{--@enderror--}}
                             </div>
                             <div class="form-group row">
                                 <input id="password" type="password"
-                                       class="form-control @error('password') is-invalid @enderror" name="password"
+                                       class="form-control @error('failed_password') is-invalid @enderror" name="password"
                                        required autocomplete="current-password" placeholder="Пароль">
 
-                                @error('password')
+                                {{--@error('failed_password')--}}
                                 <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong style="color: red">{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                {{--@enderror--}}
                             </div>
                             <div class="col-md-5">
                                 <div class="form-group row mb-0">
@@ -107,8 +118,6 @@
 
 
                     <div class="card-body">
-                        {{--<form method="POST" action="{{ route('password.email') }}">--}}
-                            {{--@csrf--}}
                             <div class="form-group row">
                                 <input id="restore-email" type="email"
                                        class="form-control @error('email') is-invalid @enderror" name="email"
@@ -133,7 +142,6 @@
                                     Войти
                                 </a>
                             </div>
-                        {{--</form>--}}
                     </div>
                 </div>
             </div>

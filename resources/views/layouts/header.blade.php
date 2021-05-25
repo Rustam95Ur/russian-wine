@@ -90,7 +90,7 @@
                 </div>
                 <div id="login">
                     @if(Auth::guard('client')->check())
-                        <a href="{{route('profile')}}">
+                        <a href="{{route('profile-favorite')}}">
                             <img alt="login icon" src="{{ asset ('image/login.svg') }}">
                         </a>
                     @else

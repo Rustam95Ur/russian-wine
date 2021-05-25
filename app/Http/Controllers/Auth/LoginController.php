@@ -49,12 +49,13 @@ class LoginController extends Controller
     public function login(Request $request){
         $check_email_exists = Client::where('email', $request->email)->first();
         if(!$check_email_exists) {
-            return redirect()->back()->with('error', trans('auth.not_found'));
+            return redirect()->back()->with('email_error', trans('auth.not_found'));
         }
         $credentials = $request->only('email', 'password');
         if ($this->guard()->attempt($credentials)) {
             return redirect(route('profile-favorite'));
         }
-        return redirect()->back()->with('error', trans('auth.failed_password'));
+        return redirect()->back()->with('failed_password', trans('auth.failed_password'));
+
     }
 }
