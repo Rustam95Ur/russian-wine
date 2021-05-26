@@ -45,12 +45,10 @@
                 </div>
             </div>
             <div class="footer-logo col-sm-12 col-md-12 col-lg-3 col-lg-pull-8">
-                <h5>
                     <a href="{{route('home')}}" id="footer_logo">
                         <img title="{{Voyager::setting('site.title')}}" alt="{{Voyager::setting('site.title')}}"
                              src="{{ Voyager::image(setting('site.logo'))}}">
                     </a>
-                </h5>
                 <p class="about">
                     Сайт о Русском Вине, виноделах <br>
                     и винодельнях. Все права защищены
