@@ -2532,9 +2532,9 @@ header #form-language .language-select {
 }
 
 .contact_info{
-    font-family: ProximaNova-Reg; 
-    font-style: normal; 
-    font-weight: normal; 
+    font-family: ProximaNova-Reg;
+    font-style: normal;
+    font-weight: normal;
     font-size: 14px;
 }
 
@@ -2809,7 +2809,7 @@ header #form-language .language-select {
     font-size: 1.147vw;
     font-weight: 900;
     text-transform: inherit;
-    line-height: 1;    
+    line-height: 1;
 }
 
 .bold_font{
@@ -2819,7 +2819,7 @@ header #form-language .language-select {
 }
 .light_font{
     font-family: 'ProximaNova-Reg', sans-serif !important;
-    font-size: 0.834vw !important; 
+    font-size: 0.834vw !important;
     text-transform: initial !important;
 }
 
@@ -2942,8 +2942,8 @@ header #form-language .language-select {
         font-size: 1.4vw;
         font-weight: 900;
         text-transform: inherit;
-    }    
-    
+    }
+
     #product-product.product-temp1 .amount .iblock .bottles {
         vertical-align: super;
         font-size: 1.2vw;
@@ -2953,7 +2953,7 @@ header #form-language .language-select {
         padding-left: 0;
         line-height: 1;
     }
-    
+
     #product-product.product-temp1 .aging .iblock span, #product-product .aging .iblock span {
         font-size: 1.5vw;
         font-weight: 900;
@@ -6501,7 +6501,7 @@ h2.price {
     }
 
     #cart-cart table img {
-        width: 8.021vw;
+        width: 3.021vw;
         max-width: 8.021vw
     }
 
@@ -6825,6 +6825,17 @@ h2.price {
     .person-access {
         float: left;
         width: 100%
+    }
+    #simplecheckout_cart tr td.image {
+
+        padding: 0 12rem 0 5rem !important;
+    }
+    #cart-cart .remove button {
+        top: -5vw !important;
+    }
+    #out_cart tr td.image img {
+        width: 7.222vw !important;
+        max-width: 12.222vw !important;
     }
 
     #total_price:after {
@@ -10256,12 +10267,12 @@ section#specials #specials-cont div.col-md-4 {
     }
 
     #swinemakers .swiper-slide h6 {
-        font: 6.111vw ProximaNova-Bold;
-        padding: 5.556vw 5.556vw 0
+        /*font: 6.111vw ProximaNova-Bold;*/
+        padding: 4vw;
     }
 
     #swinemakers .swiper-slide ul li p {
-        font: 3.889vw ProximaNova-reg
+        font: 1.889vw ProximaNova-reg
     }
 
     #swinemakers .swiper-slide ul {
@@ -11045,14 +11056,14 @@ section#specials #specials-cont div.col-md-4 {
     }
 
     #simplecheckout_cart tr td.image {
-        padding: 0 6.944vw 0 0;
+        padding: 0 25rem 0 10rem;
         float: left;
         display: block
     }
 
     #simplecheckout_cart tr td.image img {
-        width: 27.222vw;
-        max-width: 27.222vw
+        width: 6.222vw;
+        max-width: 12.222vw;
     }
 
     #simplecheckout_cart tr td:nth-child(4n) {
@@ -11124,7 +11135,7 @@ section#specials #specials-cont div.col-md-4 {
     }
 
     #simplecheckout_cart .quantity span button {
-        height: 10vw;
+        height: 8vw;
         width: 10.556vw;
         border-top-left-radius: 15vw;
         border-bottom-left-radius: 15vw
@@ -11202,8 +11213,14 @@ section#specials #specials-cont div.col-md-4 {
 
     #simplecheckout_cart .quantity button {
         height: 10vw;
-        width: 10.556vw !important;
+        width: 8.556vw !important;
         padding: 0
+    }
+    #simplecheckout_cart tr td:nth-child(2) a {
+        font: 3.25vw ProximaNova-Reg;
+    }
+    #simplecheckout_cart tr td:nth-child(2) {
+        font-size: 3.354vw;
     }
 
     #for-cart .quantity input {
@@ -11949,9 +11966,9 @@ section#specials #specials-cont div.col-md-4 {
     }
 
     #cart-cart .quantity input {
-        width: 14.444vw;
-        height: 10vw;
-        font-size: 6.111vw;
+        width: 10.444vw;
+        height: 8vw;
+        font-size: 5.111vw;
     }
 
     #cart-cart .total {
@@ -11964,9 +11981,9 @@ section#specials #specials-cont div.col-md-4 {
     }
 
     #cart-cart .remove button {
-        width: 2.5rem;
-        height: 2.5rem;
-        margin-top: 1.8rem;
+        width: 7.5rem;
+        height: 7.5rem;
+        margin-top: 7.9rem;
         top: 0;
         left: 1rem;
         padding: 0;
@@ -16963,8 +16980,8 @@ header ul li.active span:after {
 
 #is18plus .btn-white {
     width: auto;
-    display: block;
-    margin: 30px 0 0 0;
+    /*display: block;*/
+    /*margin: 30px 0 0 0;*/
     border-width: 2px;
     cursor: pointer;
     border-radius: 50px;
@@ -17546,8 +17563,8 @@ input[type=number] {
     }
 
     #swinemakers .swiper-slide {
-        width: 75.833vw;
-        height: 111.206vw;
+        width: 28.833vw !important;
+        height: 51vw !important;
         background: #fff;
         padding: 0 1.389vw;
         margin: 0;
@@ -18123,8 +18140,11 @@ p.likeSlider img {
         text-align: center;
     }
     #swinemakers .swiper-slide {
-        height: 101.469vw;
-        width: 84.833vw;
+        height: 101.469vw !important;
+        width: 50.833vw !important;
+    }
+    #swinemakers .swiper-slide ul li p {
+        font: 3rem ProximaNova-reg !important;
     }
 }
 .close-icon {
@@ -18179,5 +18199,5 @@ p.likeSlider img {
         right: 9.5vw;
         top: -2.3vw;
     }
-    
+
 }
