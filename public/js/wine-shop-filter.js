@@ -79,6 +79,7 @@ function wine_filter_search(filter, page = 1) {
     onpopstate = function (event) {
         setupPage(event.state);
     }
+
     function setupPage() {
         document.links[0].href = ''
         document.links[0].href = ajax_url;
@@ -289,7 +290,8 @@ $(".custom-option").on("click", function () {
     var filter = $('#searching-form').serialize()
     wine_filter_search(filter)
 });
-function search(type) {
+
+function search(type, search_type = null) {
     var search_input, filter, inputs, label_text, i;
     search_input = document.getElementById("search-main-" + type);
     filter = search_input.value.toUpperCase();
@@ -297,19 +299,37 @@ function search(type) {
     inputs = $('input[name="' + input_type + '[]"]').map((i, el) => $(el).val()).get();
     for (i = 0; i < inputs.length; i++) {
         label_text = $("label[for='shop-" + type + inputs[i] + "']").text()
+        if (inputs[i] == 42) {
+        }
         if (label_text.toUpperCase().indexOf(filter) > -1) {
             $("#form-" + type + "-" + inputs[i]).show()
         } else {
             $("#form-" + type + "-" + inputs[i]).hide()
+
         }
     }
-    if (filter.length === 0) {
-        $('#collapse-' + type).removeClass('show')
-        $('#btnCollapse-' + type).show()
+    if (search_type == 'mobile') {
+        if (filter.length === 0) {
+            $('#collapse-' + input_type + '-overlay').removeClass('show')
+            $('#btnCollapse-' + input_type + '-overlay').show()
+            $('.letter-title').show()
+            $(".no-letter-winery-overlay").show()
+        } else {
+            $('#collapse-' + input_type + '-overlay').addClass('show')
+            $('#btnCollapse-' + input_type + '-overlay').hide()
+            $('.letter-title').hide()
+            $(".no-letter-winery-overlay").hide()
+        }
     } else {
-        $('#collapse-' + type).addClass('show')
-        $('#btnCollapse-' + type).hide()
+        if (filter.length === 0) {
+            $('#collapse-' + type).removeClass('show')
+            $('#btnCollapse-' + type).show()
+        } else {
+            $('#collapse-' + type).addClass('show')
+            $('#btnCollapse-' + type).hide()
+        }
     }
+
 }
 
 

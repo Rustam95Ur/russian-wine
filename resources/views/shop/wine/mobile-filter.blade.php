@@ -247,7 +247,7 @@
                             <h4 class="filterHeading"></h4>
                             <!--  filter live search  -->
                             <div id="liveSearch-form">
-                                <input id="search-main-winery-mob" onkeyup="search('winery-mob')" type="text"
+                                <input id="search-main-winery-mob" onkeyup="search('winery-mob', 'mobile')" type="text"
                                        placeholder="Поиск...">
                                 <a type="submit" id="sfb" class="preview">
                                     <img src="{{ asset ('image/searchSort.svg') }}" alt="" class="liveSearchIcon">
@@ -258,8 +258,8 @@
                             @foreach($mobile_wineries as $letter => $letterCities)
                                 @break($winery_counter > 5)
                                 @foreach($letterCities as $winery)
-                                    <div class="form-check no-letter-winery-overlay"
-                                         id="form-winery-mob-{{$winery->id}}">
+                                    <div class="form-check no-letter-winery-overlay "
+                                         id="form-winery-mob-main{{$winery->id}}">
                                         <input class="form-check-input-mobile no_letter" form="searching-form-mobile"
                                                type="checkbox"
                                                value="{{$winery->id}}"
@@ -290,13 +290,13 @@
                                                            form="searching-form-mobile"
                                                            type="checkbox"
                                                            value="{{$winery->id}}"
-                                                           id="shop-winery-letter{{$winery->id}}"
+                                                           id="shop-winery-mob{{$winery->id}}"
                                                            name="winery[]"
                                                            @if(array_key_exists('winery', $filters) and in_array($winery->id, $filters['winery']))
                                                            checked
                                                         @endif>
                                                     <label class="form-check-label"
-                                                           for="shop-winery-letter{{$winery->id}}">
+                                                           for="shop-winery-mob{{$winery->id}}">
                                                         {{$winery->title}}
                                                     </label>
                                                 </div>
@@ -491,7 +491,6 @@
                         </div>
                         <div class="sortOverlayBody">
                             <!--     wine grad filters                        -->
-                            <h4 class="filterHeading">Крепость</h4>
                             @foreach($fortresses as $fortress)
                                 <div class="form-check">
                                     <input class="form-check-input-mobile" form="searching-form-mobile" name="fortress[]"
@@ -535,8 +534,8 @@
                                     <button class="collapseBtn" id="btnCollapse-fortress-overlay"
                                             onclick="collapse_click('fortress-overlay')"
                                             name="button" data-toggle="collapse"
-                                            data-target="#collapse-fortress" aria-expanded="false"
-                                            aria-controls="collapse-fortress" type="button">
+                                            data-target="#collapse-fortress-overlay" aria-expanded="false"
+                                            aria-controls="collapse-fortress-overlay" type="button">
                                         <span>Посмотреть все</span>
                                         <img src="{{ asset ('image/arrow-down.svg') }}" alt=""
                                              class="collapseIcon">

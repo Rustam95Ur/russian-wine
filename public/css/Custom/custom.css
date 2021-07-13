@@ -1852,7 +1852,7 @@ span.currency {
     }
 
     .sortOverlayHeader img {
-        padding: 2vw 2vw 2vw 3vw;
+        padding: 1vw 2vw 2vw 3vw;
         height: 7vw;
     }
 
@@ -2011,7 +2011,7 @@ span.currency {
 
     .sortingMobile .form-check input, .sortingMobile .form-check label {
         font-size: 3.5vw;
-        font-family: ProximaNova-Reg, sans-serif;
+        font-family: 'ProximaNova-Bold', sans-serif;
         width: auto;
         outline: 0;
         line-height: 1.5em;
@@ -2032,7 +2032,7 @@ span.currency {
         display: inline-grid;
         transition: all .3s ease;
         opacity: .3;
-        font-size: 3.5rem;
+        font-size: 4.5rem;
         position: relative;
         left: -1.6vw;
         top: 0.6vw;
@@ -2046,7 +2046,7 @@ span.currency {
         letter-spacing: -0.01em;
         color: #000000;
         margin: 0;
-        margin-bottom: 1vw;
+        margin-bottom: 3vw;
         margin-left: -4rem;
         height: 10vw;
     }
@@ -2055,15 +2055,19 @@ span.currency {
         font-size: 4vw;
         line-height: 1.6em;
         letter-spacing: -0.01em;
-        color: #7E7E7E !important;
+        color: #171717 !important;
         font-family: ProximaNova-Reg, sans-serif !important;
         float: left;
         margin: 2vw -6vw 2vw 5.3vw;
+        font-weight: bold;
+    }
+    .letter-title {
+        padding-left: 4rem;
     }
 
     .sortOverlayClose {
         padding: 0 !important;
-        height: 4vw !important;
+        height: 6vw !important;
         float: right;
         margin: 3.4vw 0.5vw;
     }
@@ -2222,7 +2226,7 @@ span.currency {
     }
 
     .SubOverlay .form-check input, .SubOverlay .form-check label {
-        font-size: 3.5vw;
+        font-size: 4.5vw;
         font-family: ProximaNova-reg, sans-serif;
         width: auto;
         outline: 0;
@@ -3395,6 +3399,7 @@ span.currency {
     }
     .sortOverlayBack {
         line-height: 10vw;
+        font-size: 4rem;
     }
     #liveSearch-form input {
         padding: 1vw 0;
