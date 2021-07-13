@@ -68,7 +68,7 @@ var swiper = new Swiper('#featured_slide1.swiper-container', {
     },
     loop: true
 });
-var swiper = new Swiper('#winemakers_slider1.swiper-container', {
+var swiper = new Swiper('#winemakers_slider.swiper-container', {
     slidesPerView: 'auto',
     slidesPerGroup: 1,
     loop: true,
