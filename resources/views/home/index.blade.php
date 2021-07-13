@@ -297,8 +297,8 @@
                 <h4>Русские виноделы</h4>
                 <a href="{{route('winemakers')}}">Все виноделы</a>
                 <!-- 3rd slider here -->
-                <div class="swiper-container" id="winemakers_slider1">
-                    <div class="swiper-wrapper" id="winemakers_slider">
+                <div class="swiper-container" id="winemakers_slider">
+                    <div class="swiper-wrapper">
                         @foreach($winemakers as $winemaker)
                             <div class="swiper-slide">
                                 <div class="slide-inner">

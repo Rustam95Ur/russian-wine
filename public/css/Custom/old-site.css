@@ -5758,7 +5758,6 @@ h2.price {
     #menu .dropdown-inner li a {
         font: 24px ProximaNova-Bold;
         color: #fff;
-        text-transform: none;
         padding: 8px 15px;
         text-align: left;
     }
@@ -7016,7 +7015,7 @@ h2.price {
     }
 
     #cart {
-        position: Absolute !important;
+        position: absolute !important;
         top: -8vw;
         right: 6vw
     }
@@ -15961,7 +15960,7 @@ header ul li.active span:after {
 
     header ul li a,
     #menu .dropdown-inner li a {
-        padding: 12px 15px !important;
+        padding: 8px 3px !important;
         margin-top: 0 !important;
         text-transform: uppercase;
         width: 100% !important;
@@ -17037,13 +17036,14 @@ header ul li.active span:after {
 
     #cart {
         height: 9.722vw;
-        width: 9.722vw;
+        width: 100%;
         margin-right: 2.222vw;
         background: #DA224D !important;
     }
 
     #cart b {
-        display: none;
+        margin-left: 0.5rem;
+        font-size: 3rem;
     }
 
     #cart > a {
@@ -17618,6 +17618,7 @@ input[type=number] {
         margin: 2.444vw 0 0;
         font-size: 3.611vw;
         padding-bottom: 0;
+        height: 5rem;
     }
 
     .featured_cont .swiper-slide .meta span {
@@ -17642,9 +17643,7 @@ input[type=number] {
     }
 
     .button_cont {
-        position: relative;
-        width: auto;
-        top: -10vw;
+        position: absolute;
         left: 2.083vw;
         right: 2.083vw;
         opacity: 1;
@@ -17669,7 +17668,7 @@ input[type=number] {
         bottom: 3.271vw;
         top: auto;
         right: 3.611vw;
-        background-size: 3.611vw auto;
+        background-size: 4vw auto;
         background-position: center;
         display: flex;
         align-items: center;
@@ -18175,8 +18174,8 @@ p.likeSlider img {
         text-align: center;
     }
     #swinemakers .swiper-slide {
-        height: 101.469vw !important;
-        width: 50.833vw !important;
+        height: 110.469vw !important;
+        width: 75.833vw !important;
     }
     #swinemakers .swiper-slide ul li p {
         font: 3rem ProximaNova-reg !important;

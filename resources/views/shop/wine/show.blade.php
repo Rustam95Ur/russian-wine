@@ -34,15 +34,15 @@
                                 </div>
                                 <div class="back">
                                     <div class="row">
-                                        <div class="col-xs-6 col-md-6 col-xs-offset-6 col-md-offset-6">
+                                        <div class="col-xs-5 col-md-5 col-xs-offset-7 col-md-offset-6">
                                             <div class="manufacturer">
                                                 @if(isset($wine->winery))
                                                     <a href="{{route('winery', $wine->winery->slug )}}">
-                                                              <span
-                                                                  class="iblock"
-                                                                  style="padding-left: 9.5vw; text-align: left;"><span
-                                                                      class="light_font">Производитель</span><br><span
-                                                                      class="bold_font">{{$wine->manufacture->title}}</span></span>
+                                                      <span class="iblock" style="text-align: right;">
+                                                          <span class="light_font">Производитель</span>
+                                                          <br>
+                                                          <span class="bold_font">{{$wine->manufacture->title}}</span>
+                                                      </span>
                                                     </a>
                                                 @else
                                                     <a href="#">
@@ -56,8 +56,8 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-md-6 col-lg-6">
                                             <div class="type bold_font">
-                                                @if(isset($wine->color))
-                                                    <!-- <img src="{{Voyager::image($wine->color->image)}}"
+                                            @if(isset($wine->color))
+                                                <!-- <img src="{{Voyager::image($wine->color->image)}}"
                                                          alt="">  -->{{$wine->color->title}}
                                                 @endif
                                             </div>
@@ -142,11 +142,13 @@
                             </ul>
                         </div>
                         <div class="social">
-                            <a onclick="add_delete_favorite({{$wine->id}}, 'add')" class="one-social like-{{$wine->id}}" id="{{$wine->id}}"
+                            <a onclick="add_delete_favorite({{$wine->id}}, 'add')" class="one-social like-{{$wine->id}}"
+                               id="{{$wine->id}}"
                                style="display: {{($is_favorite) ? 'none' : 'block'}}">
                                 <img src="{{asset('image/like_wine.svg')}}">
                             </a>
-                            <a onclick="add_delete_favorite({{$wine->id}}, 'delete')"  class="one-social unlike-{{$wine->id}}" id="{{$wine->id}}"
+                            <a onclick="add_delete_favorite({{$wine->id}}, 'delete')"
+                               class="one-social unlike-{{$wine->id}}" id="{{$wine->id}}"
                                style="display: {{($is_favorite) ? 'block' : 'none'}}">
                                 <img src="{{asset('image/unlike_wine.svg')}}">
                             </a>
@@ -175,7 +177,7 @@
                                         <i class="priceDefice"></i>
                                         <span>
                                             @if($wine->price > 0)
-                                            {{$wine->price}} р.
+                                                {{$wine->price}} р.
                                             @else
                                                 Коллекция
                                             @endif
@@ -192,8 +194,8 @@
                                             <div class="price-vinoteka col-md-12">
                                                 <a href="#" class="preview wine_show_price">
                                                     @if($wine->price > 0)
-                                                    {{$wine->price}}
-                                                    <span style="background: none;">п</span>
+                                                        {{$wine->price}}
+                                                        <span style="background: none;">п</span>
                                                     @else
                                                         Коллекция
                                                     @endif
@@ -211,14 +213,14 @@
                                             </div>
                                         </div>
                                         @if($wine->price > 0)
-                                        <div class="prod_quantity col-md-cstm">
+                                            <div class="prod_quantity col-md-cstm">
                                             <span class="qua_plus"
                                                   onclick="update_count({{$wine->id}},'plus', 'wine-show')"></span>
-                                            <input type="number" class="quantity" id="wine-{{$wine->id}}"
-                                                   value="1">
-                                            <span class="qua_mins"
-                                                  onclick="update_count({{$wine->id}}, 'minus', 'wine-show')"></span>
-                                        </div>
+                                                <input type="number" class="quantity" id="wine-{{$wine->id}}"
+                                                       value="1">
+                                                <span class="qua_mins"
+                                                      onclick="update_count({{$wine->id}}, 'minus', 'wine-show')"></span>
+                                            </div>
                                         @endif
                                     </div>
                                 </div>
@@ -246,7 +248,9 @@
                                             Другие вина
                                             винодельни</h3></a>
                                 @else
-                                    <a href="#"><h3 class="hover_red" style="text-transform: uppercase; font-size: 0.9vw;">Другие вина винодельни</h3></a>
+                                    <a href="#"><h3 class="hover_red"
+                                                    style="text-transform: uppercase; font-size: 0.9vw;">Другие вина
+                                            винодельни</h3></a>
                                 @endif
                             </div>
                         </div>

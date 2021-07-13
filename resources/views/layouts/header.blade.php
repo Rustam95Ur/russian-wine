@@ -27,7 +27,7 @@
                 <nav id="menu" class="navbar navbar-right" style="pointer-events:all">
                     <div class="navbar-header">
                         <button type="button" class="btn btn-navbar navbar-toggle"
-                                onclick="$('body').addClass('nooverflow');" data-toggle="collapse"
+                                onclick="$('body').addClass('nooverflow'); $('.desktopHidden').hide()" data-toggle="collapse"
                                 data-target=".navbar-ex1-collapse">
                             <div></div>
                             <div></div>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <button type="button" class="btn btn-navbar navbar-toggle"
-                                onclick="$('body').removeClass('nooverflow');" data-toggle="collapse"
+                                onclick="$('body').removeClass('nooverflow'); $('.desktopHidden').show()" data-toggle="collapse"
                                 data-target=".navbar-ex1-collapse">
                             <div></div>
                             <div></div>

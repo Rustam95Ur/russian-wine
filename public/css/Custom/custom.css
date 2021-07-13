@@ -1239,7 +1239,7 @@ span.currency {
 #product-product.product-temp1 .aging .iblock, #product-product .aging .iblock {
     border-bottom: 1px solid #E1E1E1;
     width: 100%;
-    padding-left: 9.5vw;
+    padding-left: 4.5vw;
 }
 
 #product-product.product-temp1 .alcohol, #product-product .alcohol {
@@ -2284,7 +2284,7 @@ span.currency {
 
 @media (max-width: 991px) {
     .footerUl {
-        max-height: 20rem !important;
+        max-height: 50rem !important;
     }
 
     #wine_list_block .swiper-slide p {
@@ -2542,8 +2542,11 @@ span.currency {
         width: 50%;
     }
     #product-product.product-temp1 .col-xs-6 {
-        padding-left: 12vw;
+        padding-left: 10vw;
         float: left;
+    }
+    #product-product.product-temp1 .species .iblock, #product-product .species .iblock {
+        padding: 0;
     }
     #product-product.product-temp1 .col-xs-offset-6 {
         padding-left: 1vw;
@@ -2583,7 +2586,7 @@ span.currency {
     #product-product.product-temp1 .alcohol, #product-product .alcohol {
         margin-top: 10vw;
         color: #DEDDDF;
-        font-size: 8vw;
+        font-size: 7.1vw;
         font-weight: 900;
         text-align: right;
         white-space: nowrap;
