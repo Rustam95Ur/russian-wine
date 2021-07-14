@@ -11094,6 +11094,21 @@ section#specials #specials-cont div.col-md-4 {
         width: 6.222vw;
         max-width: 12.222vw;
     }
+    #simplecheckout_cart tr td.image .set_img {
+        width: 20.222vw;
+        height: auto;
+        max-width: 100%;
+    }
+    #simplecheckout_cart tr td.set_image_block {
+        padding: 0 5rem 0 5rem !important;
+    }
+
+    #oformlenie, #itog p, #itog p span, #itog p span a {
+        font-size: 16px !important;
+        height: 8rem !important;
+        line-height: 7.5rem;
+    }
+
 
     #simplecheckout_cart tr td:nth-child(4n) {
         display: none
@@ -11246,10 +11261,10 @@ section#specials #specials-cont div.col-md-4 {
         padding: 0
     }
     #simplecheckout_cart tr td:nth-child(2) a {
-        font: 3.25vw ProximaNova-Reg;
+        font: 4.25vw ProximaNova-Reg;
     }
     #simplecheckout_cart tr td:nth-child(2) {
-        font-size: 3.354vw;
+        font-size: 4.354vw;
     }
 
     #for-cart .quantity input {

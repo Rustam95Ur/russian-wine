@@ -122,10 +122,10 @@ function cart_table_update() {
             success: function (data) {
                 document.getElementById("product_buy").innerHTML = "";
                 $.each(data.products, function (key, value) {
-                    console.log(value['type'])
+
                     if(value['type'] == 'set'){
-                        $("#product_buy").append("<tr id='tr-" + value['product_id'] + "'><td class='image'>\n" +
-                        "<a><img src='" + value['image'] + "' alt='" + value['title'] + "' title='" + value['title'] + "' " +
+                        $("#product_buy").append("<tr id='tr-" + value['product_id'] + "'><td class='image set_image_block'>\n" +
+                        "<a><img class='set_img' src='" + value['image'] + "' alt='" + value['title'] + "' title='" + value['title'] + "' " +
                         "style=''></a></td><td class='name'><a>" + value['title'] + "</a>" + value['price'] +
                         "<span>п</span><div class='options'></div></td><td class='quantity'>" +
                         "<div class='input-group btn-block'><span class='input-group-btn cheight'>\n" +
