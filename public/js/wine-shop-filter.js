@@ -313,12 +313,12 @@ function search(type, search_type = null) {
             $('#collapse-' + input_type + '-overlay').removeClass('show')
             $('#btnCollapse-' + input_type + '-overlay').show()
             $('.letter-title').show()
-            $(".no-letter-winery-overlay").show()
+            $(".no-letter-"+ input_type+ "-overlay").show()
         } else {
             $('#collapse-' + input_type + '-overlay').addClass('show')
             $('#btnCollapse-' + input_type + '-overlay').hide()
             $('.letter-title').hide()
-            $(".no-letter-winery-overlay").hide()
+            $(".no-letter-"+ input_type+ "-overlay").hide()
         }
     } else {
         if (filter.length === 0) {

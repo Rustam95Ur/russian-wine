@@ -337,7 +337,7 @@
                             <form id="searching-form-mobile" name="filter_form" method="get" class="filtersMain showME">
                                 <!--  filter live search  -->
                                 <div id="liveSearch-form">
-                                    <input id="search-main-sort-mob" onkeyup="search('sort-mob')" type="text"
+                                    <input id="search-main-sort-mob" onkeyup="search('sort-mob', 'mobile')" type="text"
                                            placeholder="Поиск...">
                                     <a type="submit" id="sfb" class="preview">
                                         <img src="{{ asset ('image/searchSort.svg') }}" alt=""
@@ -349,7 +349,7 @@
                                 @foreach($mobile_sorts as $letter => $letterCities)
                                     @break($sort_counter > 5)
                                     @foreach($letterCities as $sort)
-                                        <div class="form-check no-letter-sort-overlay" id="form-sort-mob-{{$sort->id}}">
+                                        <div class="form-check no-letter-sort-overlay" id="form-sort-mob-main{{$sort->id}}">
                                             <input class="form-check-input-mobile no_letter" type="checkbox"
                                                    form="searching-form-mobile"
                                                    value="{{$sort->id}}"
@@ -378,7 +378,7 @@
                                                                form="searching-form-mobile"
                                                                type="checkbox"
                                                                name="sort[]" value="{{$sort->id}}"
-                                                               id="shop-sort-letter{{$sort->id}}"
+                                                               id="shop-sort-mob{{$sort->id}}"
                                                                @if(array_key_exists('sort', $filters) and in_array($sort->id, $filters['sort']))
                                                                checked
                                                             @endif>
@@ -395,7 +395,7 @@
                                                 data-toggle="collapse"
                                                 data-target="#collapse-sort-overlay"
                                                 onclick="collapse_click('sort-overlay')" aria-expanded="false"
-                                                aria-controls="collapse-sort" type="button">
+                                                aria-controls="collapse-sort-overlay" type="button">
                                             <span>Посмотреть все</span>
                                             <img src="{{ asset ('image/arrow-down.svg') }}" alt=""
                                                  class="collapseIcon">
@@ -570,6 +570,13 @@
         </div>
         <div class="sortOverlayBody">
             <ul>
+                <li>
+                    <input type="radio" class="form-check-input-mobile hidden" form="searching-form-mobile"
+                            id="price-default" name="price_sort" value="default">
+                    <label class="form-check-label sort_label" for="price-default" >
+                        по умолчанию
+                    </label>
+                </li>
                 <li>
                     <input type="radio" class="form-check-input-mobile hidden" form="searching-form-mobile" name="price_sort"
                            id="price-asc" value="asc">

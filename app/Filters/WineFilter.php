@@ -137,7 +137,7 @@ class WineFilter extends QueryFilter
      */
     public function price_sort($order)
     {
-        if ($order) {
+        if ($order and $order != 'default') {
             return $this->builder->orderBy('price', $order);
         }
         else {

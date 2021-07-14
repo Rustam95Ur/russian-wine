@@ -52,7 +52,9 @@
                         placeholder="по умолчанию">
                     @endif
                     @if(array_key_exists('price_sort', $filters))
-
+                        <option value="default" {{$filters['price_sort'] == 'default' ? 'selected' : ''}}>
+                                по умолчанию
+                        </option>
                         <option value="asc" {{$filters['price_sort'] == 'asc' ? 'selected' : ''}}>
                             сначала дешевле
                         </option>
@@ -60,7 +62,7 @@
                             сначала дороже
                         </option>
                     @else
-                        <option disabled selected>по умолчанию</option>
+                        <option value="default">по умолчанию</option>
                         <option value="asc">сначала дешевле</option>
                         <option value="desc">сначала дороже</option>
                     @endif

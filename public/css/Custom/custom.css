@@ -696,12 +696,12 @@ input {
     padding: .8rem 3.8rem .8rem 2rem;
     font: 1.6rem ProximaNova-Bold;
     height: auto;
-    width: auto;
     outline: 0;
     line-height: 2rem;
     letter-spacing: -0.01em;
     color: #827E7E;
     border-radius: 25px;
+    width: 50%;
 }
 
 .iconSort {
@@ -1466,8 +1466,11 @@ span.currency {
     .information-wine-regions .nav-pills > li.active > a {
         background: none;
         border-bottom: 4px solid #D9214D;
-        margin-right: 2rem;
+        /*margin-right: 2rem;*/
         padding-bottom: 0.5rem;
+    }
+    .information-wine-regions .nav-pills > li > a {
+        margin: 0 25px 0 0;
     }
 
     .information-wine-regions .nav-pills {
@@ -2806,7 +2809,7 @@ span.currency {
 }
 .iconSort {
     position: absolute;
-    right: 3.5vw;
+    right: 2.5vw;
     top: 0.7vw;
     height: 0.4vw;
 }
@@ -3367,7 +3370,7 @@ span.currency {
         font-size: 3.5vw;
     }
     .sort_label {
-        font-size: 3.5vw;
+        font-size: 5.5vw;
         font-weight: normal;
         color: black;
         font-family: ProximaNova-reg;
