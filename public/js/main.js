@@ -1,117 +1,120 @@
-      var swiperV = new Swiper('#smolSlider.swiper-container-v', {
-        slidesPerView: 3,
-        centeredSlides: true,
-        mousewheel: true,
-        loopFillGroupWithBlank: true,
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination-v',
-            clickable: true,
-            type: 'fraction',
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        keyboard: {
-            enabled: true,
-        },
-        breakpoints: {
-            991: {
-                slidesPerView: 'auto',
-                centeredSlides: false,
-                pagination: {
-                    type: 'bullets',
-                },
-            },
-        }
-    });
-    if ($(window).width() < 991) {
-      var swiper = new Swiper('#home_slider', {
-        slidesPerView: 'auto',
-        spaceBetween: 0,
-        loop: true,
-        pagination: {
-          el: '.home-pagination',
-          clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-      });
-    };
-    var swiper1 = new Swiper('#featured_slide0.swiper-container', {
-        slidesPerView: 'auto',
-        spaceBetween: 0,
-        pagination: {
-                    el: '.feat-pagination0',
-                    clickable: true,
-                },
-        navigation: {
-            nextEl: '.nextslide0',
-            prevEl: '.prevslide0',
-        },
-        loop: true
-    });
-
-var swiper = new Swiper('#featured_slide1.swiper-container', {
-    slidesPerView: 'auto',
-    spaceBetween: 0,
+var swiperV = new Swiper('#smolSlider.swiper-container-v', {
+    slidesPerView: 3,
+    centeredSlides: true,
+    mousewheel: true,
+    loopFillGroupWithBlank: true,
+    loop: true,
     pagination: {
-                el: '.feat-pagination1',
-                clickable: true,
-            },
-    navigation: {
-        nextEl: '.nextslide1',
-        prevEl: '.prevslide1',
+        el: '.swiper-pagination-v',
+        clickable: true,
+        type: 'fraction',
     },
-    loop: true
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    keyboard: {
+        enabled: true,
+    },
+    breakpoints: {
+        991: {
+            slidesPerView: 'auto',
+            centeredSlides: false,
+            pagination: {
+                type: 'bullets',
+            },
+        },
+    }
 });
-var swiper = new Swiper('#winemakers_slider.swiper-container', {
+new Swiper('#winemakers_slider.swiper-container', {
     slidesPerView: 'auto',
     slidesPerGroup: 1,
     loop: true,
     loopFillGroupWithBlank: true,
 
 });
+if ($(window).width() < 991) {
+    var swiper = new Swiper('#home_slider', {
+        slidesPerView: 'auto',
+        spaceBetween: 0,
+        loop: true,
+        pagination: {
+            el: '.home-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+}
+;
+var swiper1 = new Swiper('#featured_slide0.swiper-container', {
+    slidesPerView: 'auto',
+    spaceBetween: 0,
+    pagination: {
+        el: '.feat-pagination0',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.nextslide0',
+        prevEl: '.prevslide0',
+    },
+    loop: true
+});
 
-;(function($) {
+var swiper = new Swiper('#featured_slide1.swiper-container', {
+    slidesPerView: 'auto',
+    spaceBetween: 0,
+    pagination: {
+        el: '.feat-pagination1',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.nextslide1',
+        prevEl: '.prevslide1',
+    },
+    loop: true
+});
+
+
+
+;(function ($) {
     "use strict";
 
     var isMobile = {
 
-        Android: function() {
+        Android: function () {
 
             return navigator.userAgent.match(/Android/i);
 
         },
 
-        BlackBerry: function() {
+        BlackBerry: function () {
 
             return navigator.userAgent.match(/BlackBerry/i);
 
         },
 
-        iOS: function() {
+        iOS: function () {
 
             return navigator.userAgent.match(/iPhone|iPad|iPod/i);
 
         },
 
-        Opera: function() {
+        Opera: function () {
 
             return navigator.userAgent.match(/Opera Mini/i);
 
         },
 
-        Windows: function() {
+        Windows: function () {
 
             return navigator.userAgent.match(/IEMobile/i);
 
         },
 
-        any: function() {
+        any: function () {
 
             return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
 
@@ -120,13 +123,13 @@ var swiper = new Swiper('#winemakers_slider.swiper-container', {
     };
 
 
-    var inViewport =  function() {
-        $('[data-inviewport="yes"]').waypoint(function() {
+    var inViewport = function () {
+        $('[data-inviewport="yes"]').waypoint(function () {
             $(this).trigger('on-appear');
-        }, { offset: '90%', triggerOnce: true });
+        }, {offset: '90%', triggerOnce: true});
 
-        $(window).on('load', function() {
-            setTimeout(function() {
+        $(window).on('load', function () {
+            setTimeout(function () {
                 $.waypoints('refresh');
             }, 100);
         });
@@ -148,39 +151,39 @@ var swiper = new Swiper('#winemakers_slider.swiper-container', {
     //     }
     // };
 
-    var flatOwl = function() {
+    var flatOwl = function () {
 
-        if ( $().owlCarousel ) {
-            $('.flat-carousel-box').each(function(){
+        if ($().owlCarousel) {
+            $('.flat-carousel-box').each(function () {
                 var
-                $this = $(this),
-                auto = $this.data("auto"),
-                item = $this.data("column"),
-                item2 = $this.data("column2"),
-                item3 = $this.data("column3"),
-                gap = Number($this.data("gap")),
-                dots = $this.data("dots"),
-                nav = $this.data("nav");
+                    $this = $(this),
+                    auto = $this.data("auto"),
+                    item = $this.data("column"),
+                    item2 = $this.data("column2"),
+                    item3 = $this.data("column3"),
+                    gap = Number($this.data("gap")),
+                    dots = $this.data("dots"),
+                    nav = $this.data("nav");
 
 
                 $this.find('.owl-carousel').owlCarousel({
                     margin: gap,
-                    loop:true,
-                    dots:dots,
+                    loop: true,
+                    dots: dots,
                     nav: true,
-                    navigation : true,
+                    navigation: true,
                     pagination: true,
                     autoplay: auto,
                     autoplayTimeout: 5000,
                     responsive: {
-                        0:{
-                            items:item3
+                        0: {
+                            items: item3
                         },
-                        765:{
-                            items:item2
+                        765: {
+                            items: item2
                         },
-                        1000:{
-                            items:item
+                        1000: {
+                            items: item
                         }
                     }
                 });
@@ -276,19 +279,19 @@ var swiper = new Swiper('#winemakers_slider.swiper-container', {
     //     });
     // };
 
-    var flatPrice = function() {
-        if( $().slider ) {
-            $( function() {
-                $( "#slide-range" ).slider({
-                  range: true,
-                  min: 0,
-                  max: 120,
-                  values: [ 30, 120 ],
-                  slide: function( event, ui ) {
-                    $( "#amount" ).html( "$" + ui.values[ 0 ]  + " - " + "$" + ui.values[ 1 ] );
-                  }
+    var flatPrice = function () {
+        if ($().slider) {
+            $(function () {
+                $("#slide-range").slider({
+                    range: true,
+                    min: 0,
+                    max: 120,
+                    values: [30, 120],
+                    slide: function (event, ui) {
+                        $("#amount").html("$" + ui.values[0] + " - " + "$" + ui.values[1]);
+                    }
                 });
-                $( "#amount" ).html( $( "#slide-range" ).slider( "values", 0 ) + "$" + " - " + $( "#slide-range" ).slider( "values", 1 ) + "$" );
+                $("#amount").html($("#slide-range").slider("values", 0) + "$" + " - " + $("#slide-range").slider("values", 1) + "$");
             });
         }
     };
@@ -307,20 +310,20 @@ var swiper = new Swiper('#winemakers_slider.swiper-container', {
     //     });
     // };
 
-    var responsiveMenu = function() {
+    var responsiveMenu = function () {
         var menuType = 'desktop';
 
-        $(window).on('load resize', function() {
+        $(window).on('load resize', function () {
             var currMenuType = 'desktop';
 
-            if ( matchMedia( 'only screen and (max-width: 991px)' ).matches ) {
+            if (matchMedia('only screen and (max-width: 991px)').matches) {
                 currMenuType = 'mobile';
             }
 
-            if ( currMenuType !== menuType ) {
+            if (currMenuType !== menuType) {
                 menuType = currMenuType;
 
-                if ( currMenuType === 'mobile' ) {
+                if (currMenuType === 'mobile') {
                     var $mobileMenu = $('#mainnav').attr('id', 'mainnav-mobi').hide();
                     var hasChildMenu = $('#mainnav-mobi').find('li:has(ul)');
 
@@ -338,12 +341,12 @@ var swiper = new Swiper('#winemakers_slider.swiper-container', {
             }
         });
 
-        $('.mobile-button').on('click', function() {
+        $('.mobile-button').on('click', function () {
             $('#mainnav-mobi').slideToggle(300);
             $(this).toggleClass('active');
         });
 
-        $(document).on('click', '#mainnav-mobi li .btn-submenu', function(e) {
+        $(document).on('click', '#mainnav-mobi li .btn-submenu', function (e) {
             $(this).toggleClass('active').next('ul').slideToggle(300);
             e.stopImmediatePropagation()
         });
@@ -523,7 +526,7 @@ var swiper = new Swiper('#winemakers_slider.swiper-container', {
     //     });
     // };
 
-    var flatRetinaLogo = function() {
+    var flatRetinaLogo = function () {
         var retina = window.devicePixelRatio > 1 ? true : false;
         var $logo = $('.logo img');
         var $logo_retina = $logo.data('retina');
@@ -531,7 +534,7 @@ var swiper = new Swiper('#winemakers_slider.swiper-container', {
         var $logo_ft = $('.logo-ft img');
         var $logo_retina_ft = $logo_ft.data('retina');
 
-        if ( retina && $logo_retina ) {
+        if (retina && $logo_retina) {
             $logo.attr({
                 src: $logo.data('retina'),
                 width: $logo.data('width'),
@@ -539,7 +542,7 @@ var swiper = new Swiper('#winemakers_slider.swiper-container', {
             });
         }
 
-        if ( retina && $logo_retina_ft ) {
+        if (retina && $logo_retina_ft) {
             $logo_ft.attr({
                 src: $logo_ft.data('retina'),
                 width: $logo_ft.data('width'),
@@ -632,13 +635,13 @@ var swiper = new Swiper('#winemakers_slider.swiper-container', {
     //
     //
 
-    $(function() {
+    $(function () {
         flatPrice();
         // woocommerceTabs();
         flatOwl();
         // flatFilterBox();
 // /        flatIsotope();
-       // flatIsotope2();
+        // flatIsotope2();
         // searchIcon();
         // goTop();
         // countDownTime();
