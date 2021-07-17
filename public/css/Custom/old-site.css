@@ -17054,6 +17054,7 @@ header ul li.active span:after {
         width: 100%;
         margin-right: 2.222vw;
         background: #DA224D !important;
+        padding: 1.5rem;
     }
     #login {
         height: 9.722vw;
@@ -17062,7 +17063,8 @@ header ul li.active span:after {
 
     #cart b {
         margin-left: 0.5rem;
-        font-size:3rem;
+        font-size: 3.5rem;
+        margin-top: 0.5rem;
     }
 
     #cart > a {
@@ -17178,10 +17180,8 @@ header ul li.active span:after {
     }
 
     #cart img {
-        width: 3.611vw;
+        width: 4.611vw;
         height: 5vw;
-        height: auto;
-
     }
 
     #cart a {
