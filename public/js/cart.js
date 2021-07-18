@@ -8,7 +8,6 @@ function update_count(wine_id, currency_type, page = null, css_class = null) {
         wine_cart_text = 'В корзину';
     if (css_class) {
         wine_count = $('.' + css_class + '-' + wine_id);
-        console.log(wine_count)
     }
     if (qua > 0) {
         $('.wine_show_price').html(price * qua + ' <span class="currency">п</span>')

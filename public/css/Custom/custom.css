@@ -1720,6 +1720,9 @@ span.currency {
         align-items: center;
         justify-content: center;
     }
+    #product-product .button_cont button#button-carts.active {
+        background: #261F30;
+    }
 
     .button_cont.desktopHidden {
         position: fixed;
@@ -2489,7 +2492,7 @@ span.currency {
     }
 
     #winemakers .description p {
-        font-size: 2rem;
+        font-size: 4rem;
         line-height: 1.5;
     }
 

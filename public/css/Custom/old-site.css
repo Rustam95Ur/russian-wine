@@ -2096,7 +2096,7 @@ header #form-language .language-select {
 }
 
 #winemakers .winemaker-cont{
-    margin-top: 3rem!important;
+    margin-top: 4rem!important;
 }
 
 #winemakers .winemaker {
@@ -2126,10 +2126,10 @@ header #form-language .language-select {
 }
 
 #winemakers .winemaker .description-wrap {
-    padding: 20px;
+    padding: 2rem 4rem 2rem 4rem;
     line-height: 1.8;
     font-size: 16px;
-    height: 250px !important;
+    height: 300px !important;
 }
 
 #winemakers .winemaker .description ul {
@@ -5661,6 +5661,9 @@ h2.price {
     .nav-folderized .nav h5 {
         cursor: pointer
     }
+    #winemakers .winemaker .description-wrap {
+        padding: 2rem 8rem 2rem 8rem;
+    }
 
     footer .col-sm-3 {
         width: 100%;
@@ -5757,7 +5760,7 @@ h2.price {
     header .container #menu .navbar-ex1-collapse .nav.navbar-nav li a,
     #menu .dropdown-inner li a {
         font: 24px ProximaNova-Bold;
-        color: #fff;
+        color: #6f6772;
         padding: 8px 15px;
         text-align: left;
     }
