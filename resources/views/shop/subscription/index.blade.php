@@ -25,9 +25,14 @@
                                         облегчить Вам решение этой непростой задачи, мы сами отобрали лучшие вина и
                                         скомпоновали их в сеты.
                                     </p>
-                                    <button type="button" class="btn btn-danger desktopHidden" name="button"><a href="#"
-                                                                                                                class=" ">Оформить
-                                            подписку</a></button>
+                                    @foreach($sets as $set)
+                                        <a href="{{route('set', $set->slug)}}?type=subscription">
+                                            <button id="podpiska" class="btn btn-danger desktopHidden" data-toggle="modal" data-target="#modal_podpiska">
+                                                Оформить подписку
+                                            </button>
+                                        </a>
+                                        @break
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
